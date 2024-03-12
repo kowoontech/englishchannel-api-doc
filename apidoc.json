@@ -1,0 +1,12 @@
+{
+  "name": "LMS API Doc",
+  "version": "1.0.0",
+  "description": "",
+  "title": "",
+  "url" : "",
+
+  "header": {
+    "title": "General",
+    "filename": "src/common/header.md"
+  }
+}
