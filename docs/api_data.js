@@ -62,7 +62,7 @@ define({ "api": [
     "title": "01. 회원 목록 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회</p>",
     "version": "1.0.0",
-    "name": "getUsers",
+    "name": "admin_getUsers",
     "group": "1._Admin_API",
     "examples": [
       {
@@ -133,6 +133,12 @@ define({ "api": [
             "optional": true,
             "field": "direction",
             "description": "<p>정렬 방향 (ASD: 오름차순, DESC: 내림차순)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "TBD",
+            "description": "<p>등록구분, 담당강사, 수강상태 확인필요</p>"
           }
         ]
       }

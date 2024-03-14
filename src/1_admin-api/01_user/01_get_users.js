@@ -4,7 +4,7 @@
  * @apiDescription 회원관리 > 회원 목록 조회
  *
  * @apiVersion 1.0.0
- * @apiName getUsers
+ * @apiName admin_getUsers
  * @apiGroup 1. Admin API
  *
  * @apiExample {curl} REQUEST
@@ -20,6 +20,7 @@
  * @apiParam (Query) [page] 조회할 페이지
  * @apiParam (Query) [order] 정렬 선택
  * @apiParam (Query) [direction] 정렬 방향 (ASD: 오름차순, DESC: 내림차순)
+ * @apiParam (Query) [TBD] 등록구분, 담당강사, 수강상태 확인필요
  *
  * @apiSuccess {Object[]} list 회원 목록
  * @apiSuccess {Number} list.id 회원 식별키
