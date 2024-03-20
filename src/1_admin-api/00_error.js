@@ -7,7 +7,7 @@
  * @apiName adminApiError
  * @apiGroup 1. Admin API
  *
- * @apiError (Unauthorized Errors) {401} admin-api-0100 로그인 필요
+ * @apiError (Error) {401} admin-api-0100 로그인 필요
  * @apiErrorExample {json} LOGIN_REQUIRED
  * HTTP/1.1 401
  * {
@@ -15,14 +15,15 @@
  *     "message": "Login is required."
  * }
  *
- * @apiError (Other Errors) {500} admin-api-9999 기타 서버 에러
- * @apiError (Other Errors) {400} admin-api-9900 기타 잘못된 요청
+ * @apiError (Error) {500} admin-api-9999 기타 서버 에러
  * @apiErrorExample {json} SERVER_ERROR
  * HTTP/1.1 500
  * {
  *     "code": "admin-api-9999",
  *     "message": "Internal Server Error."
  * }
+ * 
+ * @apiError (Error) {400} admin-api-9900 기타 잘못된 요청
  * @apiErrorExample {json} BAD_REQUEST
  * HTTP/1.1 400
  * {

@@ -28,11 +28,11 @@
  * @apiSuccess {Object[]} list 회원 목록
  * @apiSuccess {Number} list.id 회원 식별키
  * @apiSuccess {String} list.name 이름
- * @apiSuccess {String} list.email 이메일
- * @apiSuccess {String} list.cellPhone 휴대전화번호
- * @apiSuccess {String} [list.company] 회사/직장명
  * @apiSuccess {String} list.createDate 가입일
- * @apiSuccess {String} list.expirationDate 만료일
+ * @apiSuccess {String} list.cellPhone 휴대전화번호
+ * @apiSuccess {String} list.email 이메일
+ * @apiSuccess {String} [list.company] 회사/직장명
+ * @apiSuccess {String} [list.expirationDate] 만료일
  * @apiSuccess {Number} list.remainingCount 잔여횟수
  * @apiSuccess {Number} totalCount 전체 회원 수
  * @apiSuccess {Number} page 현재 페이지
@@ -47,7 +47,7 @@
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
- * {
+{
     "list": [
         {
             "id": 9049,
