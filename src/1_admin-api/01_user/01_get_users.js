@@ -1,7 +1,8 @@
 /**
  * @api {get} /admin/v1/users 01. 회원 목록 조회
  *
- * @apiDescription 회원관리 > 회원 목록 조회
+ * @apiDescription 회원관리 > 회원 목록 조회<br/>
+ * 모든 파라미터는 안넘기면 전체임
  *
  * @apiVersion 1.0.0
  * @apiName admin_getUsers
@@ -12,7 +13,10 @@
  *
  * @apiParam (Query) [createDateFrom] 가입일자 검색 ~부터 (yyyy-mm-dd)
  * @apiParam (Query) [createDateTo] 가입일자 검색 ~까지 (yyyy-mm-dd)
+ * @apiParam (Query) [isRegistered] 등록구분 (true: 등록회원, false: 미등록회원)
  * @apiParam (Query) [isActive] 상태 (true: 활동, false: 비활동)
+ * @apiParam (Query) [isExpired] 만료구분 (true: 만료됨, false: 만료안됨)
+ * @apiParam (Query) [isRemaining] 잔여구분 (true: 잔여있음, false: 잔여없음)
  * @apiParam (Query) [limit] 한페이지에 보여줄 회원 수
  * @apiParam (Query) [search] 검색 선택 (name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)
  * @apiParam (Query) [keyword] 검색어
@@ -26,8 +30,10 @@
  * @apiSuccess {String} list.name 이름
  * @apiSuccess {String} list.email 이메일
  * @apiSuccess {String} list.cellPhone 휴대전화번호
- * @apiSuccess {String} [list.company] 회사/직장명 (list에서 구분 데이터)
- * @apiSuccess {String} list.createDate 가입일 (list에서 이름 아래 표시)
+ * @apiSuccess {String} [list.company] 회사/직장명
+ * @apiSuccess {String} list.createDate 가입일
+ * @apiSuccess {String} list.expirationDate 만료일
+ * @apiSuccess {Number} list.remainingCount 잔여횟수
  * @apiSuccess {Number} totalCount 전체 회원 수
  * @apiSuccess {Number} page 현재 페이지
  * @apiSuccess {Number} limit 한페이지에 보여줄 회원 수

@@ -60,7 +60,7 @@ define({ "api": [
     "type": "get",
     "url": "/admin/v1/users",
     "title": "01. 회원 목록 조회",
-    "description": "<p>회원관리 &gt; 회원 목록 조회</p>",
+    "description": "<p>회원관리 &gt; 회원 목록 조회<br/> 모든 파라미터는 안넘기면 전체임</p>",
     "version": "1.0.0",
     "name": "admin_getUsers",
     "group": "1._Admin_API",
@@ -89,8 +89,26 @@ define({ "api": [
           {
             "group": "Query",
             "optional": true,
+            "field": "isRegistered",
+            "description": "<p>등록구분 (true: 등록회원, false: 미등록회원)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
             "field": "isActive",
             "description": "<p>상태 (true: 활동, false: 비활동)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "isExpired",
+            "description": "<p>만료구분 (true: 만료됨, false: 만료안됨)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "isRemaining",
+            "description": "<p>잔여구분 (true: 잔여있음, false: 잔여없음)</p>"
           },
           {
             "group": "Query",
@@ -180,14 +198,28 @@ define({ "api": [
             "type": "String",
             "optional": true,
             "field": "list.company",
-            "description": "<p>회사/직장명 (list에서 구분 데이터)</p>"
+            "description": "<p>회사/직장명</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "list.createDate",
-            "description": "<p>가입일 (list에서 이름 아래 표시)</p>"
+            "description": "<p>가입일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.expirationDate",
+            "description": "<p>만료일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "list.remainingCount",
+            "description": "<p>잔여횟수</p>"
           },
           {
             "group": "Success 200",
