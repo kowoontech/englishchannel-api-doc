@@ -1,67 +1,12 @@
 [
   {
-    "type": " ",
-    "url": "{code:'에러코드',message:'에러메시지'}",
-    "title": "00. 공통 에러 코드",
-    "description": "<p>Admin API 공통 에러 코드 <br/></p>",
-    "version": "1.0.0",
-    "name": "adminApiError",
-    "group": "1._Admin_API",
-    "error": {
-      "fields": {
-        "Error": [
-          {
-            "group": "Error",
-            "type": "401",
-            "optional": false,
-            "field": "admin-api-0100",
-            "description": "<p>로그인 필요</p>"
-          },
-          {
-            "group": "Error",
-            "type": "500",
-            "optional": false,
-            "field": "admin-api-9999",
-            "description": "<p>기타 서버 에러</p>"
-          },
-          {
-            "group": "Error",
-            "type": "400",
-            "optional": false,
-            "field": "admin-api-9900",
-            "description": "<p>기타 잘못된 요청</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "LOGIN_REQUIRED",
-          "content": "HTTP/1.1 401\n{\n    \"code\": \"admin-api-0100\",\n    \"message\": \"Login is required.\"\n}",
-          "type": "json"
-        },
-        {
-          "title": "SERVER_ERROR",
-          "content": "HTTP/1.1 500\n{\n    \"code\": \"admin-api-9999\",\n    \"message\": \"Internal Server Error.\"\n}",
-          "type": "json"
-        },
-        {
-          "title": "BAD_REQUEST",
-          "content": "HTTP/1.1 400\n{\n    \"code\": \"admin-api-9900\",\n    \"message\": \"Bad Request.\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/00_error.js",
-    "groupTitle": "1._Admin_API"
-  },
-  {
     "type": "get",
     "url": "/admin/v1/users/{id}",
     "title": "02. 회원 기본정보 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 기본 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUser",
-    "group": "1._Admin_API",
+    "group": "1._Admin_API_>_1._회원관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -74,7 +19,7 @@
         "Path": [
           {
             "group": "Path",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "id",
             "description": "<p>회원 식별키</p>"
@@ -87,10 +32,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>회원 식별키</p>"
+            "description": "<p>회원 식별키 (이름 옆에 표시)</p>"
           },
           {
             "group": "Success 200",
@@ -98,13 +43,6 @@
             "optional": false,
             "field": "name",
             "description": "<p>이름</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "uid",
-            "description": "<p>고유 아이디 (이름 옆에 표시)</p>"
           },
           {
             "group": "Success 200",
@@ -335,7 +273,7 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": 14011,\n    \"name\": \"RE:김미경\",\n    \"uid\": \"rosyeos\",\n    \"firstNameEn\": \"Mikyung\",\n    \"lastNameEn\": \"Kim\",\n    \"nickname\": \"Cathy Kim\",\n    \"textbook\": \"SPEAK YOUR MIND 1\",\n    \"loginId\": \"mkkim@eosi.kr\",\n    \"email\": \"mkkim@eosi.kr\",\n    \"isReceiveEmail\": false,\n    \"gender\": \"F\",\n    \"phone\": \"\",\n    \"phoneType\": \"H\",\n    \"cellPhone\": \"fCH710Q/N+d9L7co4axhXQ==\",\n    \"isReceiveSms\": true,\n    \"isOfficeWorker\": false,\n    \"company\": \"대표이사, 고문님지인\",\n    \"position\": \"\",\n    \"note\": \"▣ 고정예약자 : 11월>월/수 오후 8시 랜덤 원어민 PT (원어민 선생님 수업 선호하심/Erin,Alex선호)  LDF 메일발송 필요 X 16보7060  47거5732 33조 8332 39마3200\",\n    \"createDateTime\": \"2007-04-03T00:00:00\",\n    \"isActive\": true,\n    \"zipcode\": \"152-848\",\n    \"address\": \"서울 구로구 구로3동\",\n    \"detailedAddress\": \"184-1 우림e-Biz2차 202호\",\n    \"addressType\": \"H\",\n    \"joinPath\": \"LEAFLET\",\n    \"languages\": [\n        \"EN\"\n    ],\n    \"languageSkills\": [\n        {\n            \"languageTest\": \"SJPT\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"HKC\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"TOEIC\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"TSC\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"ETC\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"TOEIC_S\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"OPIC\",\n            \"score\": null\n        }\n    ],\n    \"foreignCountry\": \"\",\n    \"foreignPeriod\": \"\",\n    \"foreignPurpose\": \"\",\n    \"coursePurposes\": [\n        \"WORK\",\n        \"DEVELOPMENT\"\n    ]\n}",
+          "content": "HTTP/1.1 200\n{\n    \"id\": \"rosyeos\",\n    \"name\": \"RE:김미경\",\n    \"firstNameEn\": \"Mikyung\",\n    \"lastNameEn\": \"Kim\",\n    \"nickname\": \"Cathy Kim\",\n    \"textbook\": \"SPEAK YOUR MIND 1\",\n    \"loginId\": \"mkkim@eosi.kr\",\n    \"email\": \"mkkim@eosi.kr\",\n    \"isReceiveEmail\": false,\n    \"gender\": \"F\",\n    \"phone\": \"\",\n    \"phoneType\": \"H\",\n    \"cellPhone\": \"fCH710Q/N+d9L7co4axhXQ==\",\n    \"isReceiveSms\": true,\n    \"isOfficeWorker\": false,\n    \"company\": \"대표이사, 고문님지인\",\n    \"position\": \"\",\n    \"note\": \"▣ 고정예약자 : 11월>월/수 오후 8시 랜덤 원어민 PT (원어민 선생님 수업 선호하심/Erin,Alex선호)  LDF 메일발송 필요 X 16보7060  47거5732 33조 8332 39마3200\",\n    \"createDateTime\": \"2007-04-03T00:00:00\",\n    \"isActive\": true,\n    \"zipcode\": \"152-848\",\n    \"address\": \"서울 구로구 구로3동\",\n    \"detailedAddress\": \"184-1 우림e-Biz2차 202호\",\n    \"addressType\": \"H\",\n    \"joinPath\": \"LEAFLET\",\n    \"languages\": [\n        \"EN\"\n    ],\n    \"languageSkills\": [\n        {\n            \"languageTest\": \"SJPT\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"HKC\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"TOEIC\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"TSC\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"ETC\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"TOEIC_S\",\n            \"score\": null\n        },\n        {\n            \"languageTest\": \"OPIC\",\n            \"score\": null\n        }\n    ],\n    \"foreignCountry\": \"\",\n    \"foreignPeriod\": \"\",\n    \"foreignPurpose\": \"\",\n    \"coursePurposes\": [\n        \"WORK\",\n        \"DEVELOPMENT\"\n    ]\n}",
           "type": "json"
         }
       ]
@@ -361,7 +299,7 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/02_get_user.js",
-    "groupTitle": "1._Admin_API"
+    "groupTitle": "1._Admin_API_>_1._회원관리"
   },
   {
     "type": "get",
@@ -370,7 +308,7 @@
     "description": "<p>회원관리 &gt; 회원 목록 조회<br/> 모든 파라미터는 안넘기면 전체임</p>",
     "version": "1.0.0",
     "name": "admin_getUsers",
-    "group": "1._Admin_API",
+    "group": "1._Admin_API_>_1._회원관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -474,7 +412,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "list.id",
             "description": "<p>회원 식별키</p>"
@@ -603,12 +541,67 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 9049,\n            \"name\": \"황순안\",\n            \"email\": \"1028151@naver.com\",\n            \"cellPhone\": \"gOI7YKz4khanfsIk9Wc/Wg==\",\n            \"company\": \"필립스\",\n            \"createDate\": \"2007-03-10\"\n        },\n        {\n            \"id\": 9048,\n            \"name\": \"trial\",\n            \"email\": \"\",\n            \"cellPhone\": \"\",\n            \"company\": \"\",\n            \"createDate\": \"2007-03-12\"\n        },\n        {\n            \"id\": 9047,\n            \"name\": \"신혜정(6)\",\n            \"email\": \"Jung81@hanmail.net\",\n            \"cellPhone\": \"ir6AWdZaG3cyl7iaLn/vWA==\",\n            \"company\": \"\",\n            \"createDate\": \"2007-03-14\"\n        },\n        {\n            \"id\": 9046,\n            \"name\": \"이경란(6)\",\n            \"email\": \"1028238@naver.com\",\n            \"cellPhone\": \"bzsxKc8rSfi0SYlKEK4V6g==\",\n            \"company\": \"\",\n            \"createDate\": \"2007-03-14\"\n        },\n        {\n            \"id\": 9045,\n            \"name\": \"이영진(6)\",\n            \"email\": \"1028792@naver.com\",\n            \"cellPhone\": \"AH7uYqBQ9U4QqYCICnQrLw==\",\n            \"company\": \"(주)이원이앤씨\",\n            \"createDate\": \"2007-04-13\"\n        },\n        {\n            \"id\": 9044,\n            \"name\": \"함형택\",\n            \"email\": \"1029034@naver.com\",\n            \"cellPhone\": \"AToyr1ia+3AnDeBFeCY/TQ==\",\n            \"company\": \"\",\n            \"createDate\": \"2007-04-27\"\n        },\n        {\n            \"id\": 9043,\n            \"name\": \"신용다\",\n            \"email\": \"1029325@naver.com\",\n            \"cellPhone\": \"OTglatIm5cwqIVr6O78A7g==\",\n            \"company\": \"대한공인중개사무소\",\n            \"createDate\": \"2007-05-11\"\n        },\n        {\n            \"id\": 9042,\n            \"name\": \"노하형(6)\",\n            \"email\": \"1029458@naver.com\",\n            \"cellPhone\": \"PGRRhMsscaV0lUxnhBEmcg==\",\n            \"company\": \"\",\n            \"createDate\": \"2007-05-21\"\n        },\n        {\n            \"id\": 9041,\n            \"name\": \"이영재(6)\",\n            \"email\": \"hanilceo@hanilworld.com\",\n            \"cellPhone\": \"Vi9mlIAjWtm05JWVKNlRqA==\",\n            \"company\": \"한일월드(주)\",\n            \"createDate\": \"2007-05-25\"\n        },\n        {\n            \"id\": 9040,\n            \"name\": \"문경하\",\n            \"email\": \"biomoon88@naver.com\",\n            \"cellPhone\": \"AXAzEvHSnhNUdZbhAS/Ckg==\",\n            \"company\": \"\",\n            \"createDate\": \"2007-05-29\"\n        }\n    ],\n    \"totalCount\": 4899,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 490,\n    \"endPage\": 10,\n    \"hasNext\": true,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": false\n}",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": \"9049\",\n            \"name\": \"황순안\",\n            \"email\": \"1028151@naver.com\",\n            \"cellPhone\": \"gOI7YKz4khanfsIk9Wc/Wg==\",\n            \"company\": \"필립스\",\n            \"createDate\": \"2007-03-10\"\n        },\n        {\n            \"id\": \"9048\",\n            \"name\": \"trial\",\n            \"email\": \"\",\n            \"cellPhone\": \"\",\n            \"company\": \"\",\n            \"createDate\": \"2007-03-12\"\n        },\n        {\n            \"id\": \"9047\",\n            \"name\": \"신혜정(6)\",\n            \"email\": \"Jung81@hanmail.net\",\n            \"cellPhone\": \"ir6AWdZaG3cyl7iaLn/vWA==\",\n            \"company\": \"\",\n            \"createDate\": \"2007-03-14\"\n        },\n        {\n            \"id\": \"9046\",\n            \"name\": \"이경란(6)\",\n            \"email\": \"1028238@naver.com\",\n            \"cellPhone\": \"bzsxKc8rSfi0SYlKEK4V6g==\",\n            \"company\": \"\",\n            \"createDate\": \"2007-03-14\"\n        },\n        {\n            \"id\": \"9045\",\n            \"name\": \"이영진(6)\",\n            \"email\": \"1028792@naver.com\",\n            \"cellPhone\": \"AH7uYqBQ9U4QqYCICnQrLw==\",\n            \"company\": \"(주)이원이앤씨\",\n            \"createDate\": \"2007-04-13\"\n        },\n        {\n            \"id\": \"9044\",\n            \"name\": \"함형택\",\n            \"email\": \"1029034@naver.com\",\n            \"cellPhone\": \"AToyr1ia+3AnDeBFeCY/TQ==\",\n            \"company\": \"\",\n            \"createDate\": \"2007-04-27\"\n        },\n        {\n            \"id\": \"9043\",\n            \"name\": \"신용다\",\n            \"email\": \"1029325@naver.com\",\n            \"cellPhone\": \"OTglatIm5cwqIVr6O78A7g==\",\n            \"company\": \"대한공인중개사무소\",\n            \"createDate\": \"2007-05-11\"\n        },\n        {\n            \"id\": \"9042\",\n            \"name\": \"노하형(6)\",\n            \"email\": \"1029458@naver.com\",\n            \"cellPhone\": \"PGRRhMsscaV0lUxnhBEmcg==\",\n            \"company\": \"\",\n            \"createDate\": \"2007-05-21\"\n        },\n        {\n            \"id\": \"9041\",\n            \"name\": \"이영재(6)\",\n            \"email\": \"hanilceo@hanilworld.com\",\n            \"cellPhone\": \"Vi9mlIAjWtm05JWVKNlRqA==\",\n            \"company\": \"한일월드(주)\",\n            \"createDate\": \"2007-05-25\"\n        },\n        {\n            \"id\": \"9040\",\n            \"name\": \"문경하\",\n            \"email\": \"biomoon88@naver.com\",\n            \"cellPhone\": \"AXAzEvHSnhNUdZbhAS/Ckg==\",\n            \"company\": \"\",\n            \"createDate\": \"2007-05-29\"\n        }\n    ],\n    \"totalCount\": 4899,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 490,\n    \"endPage\": 10,\n    \"hasNext\": true,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": false\n}",
           "type": "json"
         }
       ]
     },
     "filename": "src/1_admin-api/01_user/01_get_users.js",
+    "groupTitle": "1._Admin_API_>_1._회원관리"
+  },
+  {
+    "type": " ",
+    "url": "{code:'에러코드',message:'에러메시지'}",
+    "title": "00. 공통 에러 코드",
+    "description": "<p>Admin API 공통 에러 코드 <br/></p>",
+    "version": "1.0.0",
+    "name": "adminApiError",
+    "group": "1._Admin_API",
+    "error": {
+      "fields": {
+        "Error": [
+          {
+            "group": "Error",
+            "type": "401",
+            "optional": false,
+            "field": "admin-api-0100",
+            "description": "<p>로그인 필요</p>"
+          },
+          {
+            "group": "Error",
+            "type": "500",
+            "optional": false,
+            "field": "admin-api-9999",
+            "description": "<p>기타 서버 에러</p>"
+          },
+          {
+            "group": "Error",
+            "type": "400",
+            "optional": false,
+            "field": "admin-api-9900",
+            "description": "<p>기타 잘못된 요청</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "LOGIN_REQUIRED",
+          "content": "HTTP/1.1 401\n{\n    \"code\": \"admin-api-0100\",\n    \"message\": \"Login is required.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SERVER_ERROR",
+          "content": "HTTP/1.1 500\n{\n    \"code\": \"admin-api-9999\",\n    \"message\": \"Internal Server Error.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "BAD_REQUEST",
+          "content": "HTTP/1.1 400\n{\n    \"code\": \"admin-api-9900\",\n    \"message\": \"Bad Request.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/00_error.js",
     "groupTitle": "1._Admin_API"
   }
 ]

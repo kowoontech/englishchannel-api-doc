@@ -5,16 +5,15 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_getUser
- * @apiGroup 1. Admin API
+ * @apiGroup 1. Admin API > 1. 회원관리
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users/14011'
  *
- * @apiParam (Path) {Number} id 회원 식별키
+ * @apiParam (Path) {String} id 회원 식별키
  *
- * @apiSuccess {Number} id 회원 식별키
+ * @apiSuccess {String} id 회원 식별키 (이름 옆에 표시)
  * @apiSuccess {String} name 이름
- * @apiSuccess {String} uid 고유 아이디 (이름 옆에 표시)
  * @apiSuccess {String} [firstNameEn] 영문 이름
  * @apiSuccess {String} [lastNameEn] 영문 성
  * @apiSuccess {String} [nickname] 닉네임
@@ -51,9 +50,8 @@
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 {
-    "id": 14011,
+    "id": "rosyeos",
     "name": "RE:김미경",
-    "uid": "rosyeos",
     "firstNameEn": "Mikyung",
     "lastNameEn": "Kim",
     "nickname": "Cathy Kim",

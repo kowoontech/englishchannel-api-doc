@@ -4,9 +4,12 @@
   "description": "",
   "title": "",
   "url" : "",
-
   "header": {
-    "title": "General",
+    "title": "LMS API",
     "filename": "src/common/header.md"
+  },
+  "footer": {
+    "title": "버전이력",
+    "filename": "src/common/footer.md"
   }
 }

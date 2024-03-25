@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_getUsers
- * @apiGroup 1. Admin API
+ * @apiGroup 1. Admin API > 1. 회원관리
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users'
@@ -26,7 +26,7 @@
  * @apiParam (Query) [TBD] 등록구분, 담당강사, 수강상태 확인필요
  *
  * @apiSuccess {Object[]} list 회원 목록
- * @apiSuccess {Number} list.id 회원 식별키
+ * @apiSuccess {String} list.id 회원 식별키
  * @apiSuccess {String} list.name 이름
  * @apiSuccess {String} list.createDate 가입일
  * @apiSuccess {String} list.cellPhone 휴대전화번호
@@ -50,7 +50,7 @@
 {
     "list": [
         {
-            "id": 9049,
+            "id": "9049",
             "name": "황순안",
             "email": "1028151@naver.com",
             "cellPhone": "gOI7YKz4khanfsIk9Wc/Wg==",
@@ -58,7 +58,7 @@
             "createDate": "2007-03-10"
         },
         {
-            "id": 9048,
+            "id": "9048",
             "name": "trial",
             "email": "",
             "cellPhone": "",
@@ -66,7 +66,7 @@
             "createDate": "2007-03-12"
         },
         {
-            "id": 9047,
+            "id": "9047",
             "name": "신혜정(6)",
             "email": "Jung81@hanmail.net",
             "cellPhone": "ir6AWdZaG3cyl7iaLn/vWA==",
@@ -74,7 +74,7 @@
             "createDate": "2007-03-14"
         },
         {
-            "id": 9046,
+            "id": "9046",
             "name": "이경란(6)",
             "email": "1028238@naver.com",
             "cellPhone": "bzsxKc8rSfi0SYlKEK4V6g==",
@@ -82,7 +82,7 @@
             "createDate": "2007-03-14"
         },
         {
-            "id": 9045,
+            "id": "9045",
             "name": "이영진(6)",
             "email": "1028792@naver.com",
             "cellPhone": "AH7uYqBQ9U4QqYCICnQrLw==",
@@ -90,7 +90,7 @@
             "createDate": "2007-04-13"
         },
         {
-            "id": 9044,
+            "id": "9044",
             "name": "함형택",
             "email": "1029034@naver.com",
             "cellPhone": "AToyr1ia+3AnDeBFeCY/TQ==",
@@ -98,7 +98,7 @@
             "createDate": "2007-04-27"
         },
         {
-            "id": 9043,
+            "id": "9043",
             "name": "신용다",
             "email": "1029325@naver.com",
             "cellPhone": "OTglatIm5cwqIVr6O78A7g==",
@@ -106,7 +106,7 @@
             "createDate": "2007-05-11"
         },
         {
-            "id": 9042,
+            "id": "9042",
             "name": "노하형(6)",
             "email": "1029458@naver.com",
             "cellPhone": "PGRRhMsscaV0lUxnhBEmcg==",
@@ -114,7 +114,7 @@
             "createDate": "2007-05-21"
         },
         {
-            "id": 9041,
+            "id": "9041",
             "name": "이영재(6)",
             "email": "hanilceo@hanilworld.com",
             "cellPhone": "Vi9mlIAjWtm05JWVKNlRqA==",
@@ -122,7 +122,7 @@
             "createDate": "2007-05-25"
         },
         {
-            "id": 9040,
+            "id": "9040",
             "name": "문경하",
             "email": "biomoon88@naver.com",
             "cellPhone": "AXAzEvHSnhNUdZbhAS/Ckg==",
