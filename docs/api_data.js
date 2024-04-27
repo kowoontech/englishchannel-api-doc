@@ -346,6 +346,18 @@ define({ "api": [
           {
             "group": "Query",
             "optional": true,
+            "field": "teacherId",
+            "description": "<p>담당강사</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "courseStatus",
+            "description": "<p>수강상태 (ATTENDING: 수강중, NOT_ATTENDING: 비수강중, WAITING: 대기중)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
             "field": "isExpired",
             "description": "<p>만료구분 (true: 만료됨, false: 만료안됨)</p>"
           },
