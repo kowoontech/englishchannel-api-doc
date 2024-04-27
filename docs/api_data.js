@@ -334,38 +334,38 @@ define({ "api": [
           {
             "group": "Query",
             "optional": true,
-            "field": "isRegistered",
-            "description": "<p>등록구분 (true: 등록회원, false: 미등록회원)</p>"
+            "field": "registerType",
+            "description": "<p>등록구분 (ALL: 전체, REGISTERED: 등록회원, UNREGISTERED: 미등록회원)</p>"
           },
           {
             "group": "Query",
             "optional": true,
-            "field": "isActive",
-            "description": "<p>상태 (true: 활동, false: 비활동)</p>"
+            "field": "status",
+            "description": "<p>상태 (ALL: 전체, ACTIVE: 활동, INACTIVE: 비활동)</p>"
           },
           {
             "group": "Query",
             "optional": true,
             "field": "teacherId",
-            "description": "<p>담당강사</p>"
+            "description": "<p>담당강사 ID</p>"
           },
           {
             "group": "Query",
             "optional": true,
             "field": "courseStatus",
-            "description": "<p>수강상태 (ATTENDING: 수강중, NOT_ATTENDING: 비수강중, WAITING: 대기중)</p>"
+            "description": "<p>수강상태 (ALL: 전체, ATTENDING: 수강중, NOT_ATTENDING: 비수강중, WAITING: 대기중)</p>"
           },
           {
             "group": "Query",
             "optional": true,
-            "field": "isExpired",
-            "description": "<p>만료구분 (true: 만료됨, false: 만료안됨)</p>"
+            "field": "expireType",
+            "description": "<p>만료구분 (ALL: 전체, EXPIRED: 만료됨, NOT_EXPIRED: 만료안됨)</p>"
           },
           {
             "group": "Query",
             "optional": true,
-            "field": "isRemaining",
-            "description": "<p>잔여구분 (true: 잔여있음, false: 잔여없음)</p>"
+            "field": "remainingType",
+            "description": "<p>잔여구분 (ALL: 전체, REMAINING: 잔여있음, NOT_REMAINING: 잔여없음)</p>"
           },
           {
             "group": "Query",
@@ -402,12 +402,6 @@ define({ "api": [
             "optional": true,
             "field": "direction",
             "description": "<p>정렬 방향 (ASD: 오름차순, DESC: 내림차순)</p>"
-          },
-          {
-            "group": "Query",
-            "optional": true,
-            "field": "TBD",
-            "description": "<p>등록구분, 담당강사, 수강상태 확인필요</p>"
           }
         ]
       }

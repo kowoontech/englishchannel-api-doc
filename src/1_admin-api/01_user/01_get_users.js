@@ -13,19 +13,18 @@
  *
  * @apiParam (Query) [createDateFrom] 가입일자 검색 ~부터 (yyyy-mm-dd)
  * @apiParam (Query) [createDateTo] 가입일자 검색 ~까지 (yyyy-mm-dd)
- * @apiParam (Query) [isRegistered] 등록구분 (true: 등록회원, false: 미등록회원)
- * @apiParam (Query) [isActive] 상태 (true: 활동, false: 비활동)
- * @apiParam (Query) [teacherId] 담당강사
- * @apiParam (Query) [courseStatus] 수강상태 (ATTENDING: 수강중, NOT_ATTENDING: 비수강중, WAITING: 대기중)
- * @apiParam (Query) [isExpired] 만료구분 (true: 만료됨, false: 만료안됨)
- * @apiParam (Query) [isRemaining] 잔여구분 (true: 잔여있음, false: 잔여없음)
+ * @apiParam (Query) [registerType] 등록구분 (ALL: 전체, REGISTERED: 등록회원, UNREGISTERED: 미등록회원)
+ * @apiParam (Query) [status] 상태 (ALL: 전체, ACTIVE: 활동, INACTIVE: 비활동)
+ * @apiParam (Query) [teacherId] 담당강사 ID
+ * @apiParam (Query) [courseStatus] 수강상태 (ALL: 전체, ATTENDING: 수강중, NOT_ATTENDING: 비수강중, WAITING: 대기중)
+ * @apiParam (Query) [expireType] 만료구분 (ALL: 전체, EXPIRED: 만료됨, NOT_EXPIRED: 만료안됨)
+ * @apiParam (Query) [remainingType] 잔여구분 (ALL: 전체, REMAINING: 잔여있음, NOT_REMAINING: 잔여없음)
  * @apiParam (Query) [limit] 한페이지에 보여줄 회원 수
  * @apiParam (Query) [search] 검색 선택 (name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)
  * @apiParam (Query) [keyword] 검색어
  * @apiParam (Query) [page] 조회할 페이지
  * @apiParam (Query) [order] 정렬 선택
  * @apiParam (Query) [direction] 정렬 방향 (ASD: 오름차순, DESC: 내림차순)
- * @apiParam (Query) [TBD] 등록구분, 담당강사, 수강상태 확인필요
  *
  * @apiSuccess {Object[]} list 회원 목록
  * @apiSuccess {String} list.id 회원 식별키
