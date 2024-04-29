@@ -2,14 +2,15 @@
  * @api {get} /admin/v1/users 01. 회원 목록 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회<br/>
- * 모든 파라미터는 안넘기면 전체임
+ * 모든 파라미터는 안넘기면 전체<br/>
+ * 전체가 명시되어 있는 셀렉트박스는 "ALL"을 넘겨도 전체
  *
  * @apiVersion 1.0.0
- * @apiName admin_getUsers
+ * @apiName admin_listUsers
  * @apiGroup 1. Admin API > 1. 회원관리
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/users'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/users?createDateFrom=2023-01-01&createDateTo=2023-12-31&page=1&registerType=REGISTERED&status=ACTIVE&teacherId=M1594795852631377&courseStatus=NOT_ATTENDING&expireType=EXPIRED&remainingType=NOT_REMAINING'
  *
  * @apiParam (Query) [createDateFrom] 가입일자 검색 ~부터 (yyyy-mm-dd)
  * @apiParam (Query) [createDateTo] 가입일자 검색 ~까지 (yyyy-mm-dd)
