@@ -1,6 +1,391 @@
 [
   {
     "type": "get",
+    "url": "/admin/v1/options",
+    "title": "01. 공통 옵션 목록 조회",
+    "description": "<p>어드민 옵션에 필요한 데이터 목록 조회</p>",
+    "version": "1.0.0",
+    "name": "admin_getOptions",
+    "group": "1._Admin_API_>_0._공통_API",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/options?fields=TEACHERS'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "fields",
+            "description": "<p>조회할 옵션 (,로 복수 가능)<br/></p> <ul> <li>TEACHERS:담당강사 목록</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "teachers",
+            "description": "<p>담당강사 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teachers.value",
+            "description": "<p>담당강사 키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teachers.label",
+            "description": "<p>담당강사명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"teachers\": [\n        {\n            \"value\": \"M1400118325784523\",\n            \"label\": \"한가영\"\n        },\n        {\n            \"value\": \"M1487640799950353\",\n            \"label\": \"Alex\"\n        },\n        {\n            \"value\": \"M1594795852631377\",\n            \"label\": \"Steven\"\n        },\n        {\n            \"value\": \"M1657064932771055\",\n            \"label\": \"김나래\"\n        },\n        {\n            \"value\": \"M1661138591404520\",\n            \"label\": \"최태연\"\n        },\n        {\n            \"value\": \"M1681990831501448\",\n            \"label\": \"정지은\"\n        },\n        {\n            \"value\": \"M1691559227102239\",\n            \"label\": \"Sadie\"\n        },\n        {\n            \"value\": \"M1693558129675151\",\n            \"label\": \"Tyler\"\n        },\n        {\n            \"value\": \"M1695013438115743\",\n            \"label\": \"서안나\"\n        },\n        {\n            \"value\": \"M1698204875465368\",\n            \"label\": \"Olivia\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/00_common/01_get_options.js",
+    "groupTitle": "1._Admin_API_>_0._공통_API"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/users/{userId}/options",
+    "title": "02. 회원 옵션 목록 조회",
+    "description": "<p>어드민 옵션에 필요한 데이터 목록 조회</p>",
+    "version": "1.0.0",
+    "name": "admin_getUserOptions",
+    "group": "1._Admin_API_>_0._공통_API",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1703814296618972/options?fields=COURSES'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "fields",
+            "description": "<p>조회할 옵션 (,로 복수 가능)<br/></p> <ul> <li>COURSES:과정 목록</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "courses",
+            "description": "<p>과정 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.value",
+            "description": "<p>과정 키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.label",
+            "description": "<p>과정명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"courses\": [\n        {\n            \"value\": \"75587\",\n            \"label\": \"NEW PT 24회 3개월/26.0회\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/00_common/02_get_user_options.js",
+    "groupTitle": "1._Admin_API_>_0._공통_API"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/users",
+    "title": "03. 회원 등록",
+    "description": "<p>회원관리 &gt; 회원 등록</p>",
+    "version": "1.0.0",
+    "name": "admin_createUser",
+    "group": "1._Admin_API_>_1._회원관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"name\": \"테스터\",\n    \"firstNameEn\": \"Ster\",\n    \"lastNameEn\": \"Te\",\n    \"nickname\": \"별명스\",\n    \"textbook\": \"왕초보 1권\",\n    \"loginId\": \"test12346\",\n    \"email\": \"test12345@naver.com\",\n    \"password\": \"11111\",\n    \"gender\": \"M\",\n    \"phone\": \"02-1111-2222\",\n    \"phoneType\": \"H\",\n    \"cellPhone\": \"010-1234-5678\",\n    \"isReceiveSms\": true,\n    \"isOfficeWorker\": true,\n    \"company\": \"남산회사\",\n    \"position\": \"대리\",\n    \"note\": \"놈놈놈\",\n    \"isActive\": true,\n    \"zipcode\": \"12345\",\n    \"address\": \"서울시 중구\",\n    \"detailedAddress\": \"남산타워\",\n    \"addressType\": \"C\",\n    \"joinPath\": \"ONLINE\",\n    \"languages\": [\"EN\", \"KR\", \"ETC\"],\n    \"etcLanguage\": \"아랍어\",\n    \"languageSkills\": [{\"languageTest\": \"TOEIC\", \"score\": \"900점이상\"}, {\"languageTest\": \"HKC\", \"score\": \"만점\"}],\n    \"foreignCountry\": \"호주\",\n    \"foreignPeriod\": \"1년\",\n    \"foreignPurpose\": \"여행\",\n    \"coursePurposes\": [\"STUDY_ABROAD\", \"DEVELOPMENT\"]\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>이름</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "firstNameEn",
+            "description": "<p>영문 이름(이름)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "lastNameEn",
+            "description": "<p>영문 이름(성)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "nickname",
+            "description": "<p>닉네임</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "textbook",
+            "description": "<p>교재</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "loginId",
+            "description": "<p>아이디</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>이메일</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>비밀번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>성별 (M:남, F:여)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "phone",
+            "description": "<p>유선전화</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "phoneType",
+            "description": "<p>유선전화 유형 (H:자택, C:직장)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "cellPhone",
+            "description": "<p>휴대전화번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "isReceiveSms",
+            "description": "<p>SMS수신 여부</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "isOfficeWorker",
+            "description": "<p>직장인 여부</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "company",
+            "description": "<p>직장/학교</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "position",
+            "description": "<p>직책/학과</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "note",
+            "description": "<p>특이사항</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "isActive",
+            "description": "<p>활동 여부</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "zipcode",
+            "description": "<p>우편번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "address",
+            "description": "<p>주소</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "detailedAddress",
+            "description": "<p>상세 주소</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "addressType",
+            "description": "<p>주소 유형 (H:자택, C:직장)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "joinPath",
+            "description": "<p>가입 경로 (10:간판, 20:온라인검색, 30:지인추천, 40:부채, 50:3단리플릿, 60:지하철광고, 70:기업제휴, 900: 기타)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String[]",
+            "optional": true,
+            "field": "languages",
+            "description": "<p>학습희망언어 목록 (EN:영어, CN:중국어, JP:일본어, KR:한국어, ETC:기타)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "etcLanguage",
+            "description": "<p>학습희망언어 기타</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Object[]",
+            "optional": true,
+            "field": "languageSkills",
+            "description": "<p>외국어실력 목록</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "languageSkills.languageTest",
+            "description": "<p>외국어시험 (SJPT, HKC, TOEIC, TSC, TOEIC-S, OPIc, 기타)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "languageSkills.score",
+            "description": "<p>외국어시험 점수 (900점이상, 800-900점, ...)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "foreignCountry",
+            "description": "<p>외국거주경험 국가명</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "foreignPeriod",
+            "description": "<p>외국거주경험 기간</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "foreignPurpose",
+            "description": "<p>외국거주경험 목적</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String[]",
+            "optional": true,
+            "field": "coursePurposes",
+            "description": "<p>수강의 목적 (STUDY_ABROAD:유학, TEST:시험, EMPLOYMENT:취업, WORK:업무, DEVELOPMENT:자기계발)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/03_create_user.js",
+    "groupTitle": "1._Admin_API_>_1._회원관리"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/users/{id}",
     "title": "02. 회원 기본정보 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 기본 탭</p>",
@@ -299,263 +684,6 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/02_get_user.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
-  },
-  {
-    "type": "get",
-    "url": "/admin/v1/users",
-    "title": "03. 회원 등록",
-    "description": "<p>회원관리 &gt; 회원 등록</p>",
-    "version": "1.0.0",
-    "name": "admin_getUsers",
-    "group": "1._Admin_API_>_1._회원관리",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"name\": \"테스터\",\n    \"firstNameEn\": \"Ster\",\n    \"lastNameEn\": \"Te\",\n    \"nickname\": \"별명스\",\n    \"textbook\": \"왕초보 1권\",\n    \"loginId\": \"test12346\",\n    \"email\": \"test12345@naver.com\",\n    \"password\": \"11111\",\n    \"gender\": \"M\",\n    \"phone\": \"02-1111-2222\",\n    \"phoneType\": \"H\",\n    \"cellPhone\": \"010-1234-5678\",\n    \"isReceiveSms\": true,\n    \"isOfficeWorker\": true,\n    \"company\": \"남산회사\",\n    \"position\": \"대리\",\n    \"note\": \"놈놈놈\",\n    \"isActive\": true,\n    \"zipcode\": \"12345\",\n    \"address\": \"서울시 중구\",\n    \"detailedAddress\": \"남산타워\",\n    \"addressType\": \"C\",\n    \"joinPath\": \"ONLINE\",\n    \"languages\": [\"EN\", \"KR\", \"ETC\"],\n    \"etcLanguage\": \"아랍어\",\n    \"languageSkills\": [{\"languageTest\": \"TOEIC\", \"score\": \"900점이상\"}, {\"languageTest\": \"HKC\", \"score\": \"만점\"}],\n    \"foreignCountry\": \"호주\",\n    \"foreignPeriod\": \"1년\",\n    \"foreignPurpose\": \"여행\",\n    \"coursePurposes\": [\"STUDY_ABROAD\", \"DEVELOPMENT\"]\n}\"",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Body": [
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "name",
-            "description": "<p>이름</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "firstNameEn",
-            "description": "<p>영문 이름(이름)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "lastNameEn",
-            "description": "<p>영문 이름(성)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "nickname",
-            "description": "<p>닉네임</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "textbook",
-            "description": "<p>교재</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "loginId",
-            "description": "<p>아이디</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "email",
-            "description": "<p>이메일</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "password",
-            "description": "<p>비밀번호</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "gender",
-            "description": "<p>성별 (M:남, F:여)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "phone",
-            "description": "<p>유선전화</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "phoneType",
-            "description": "<p>유선전화 유형 (H:자택, C:직장)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "cellPhone",
-            "description": "<p>휴대전화번호</p>"
-          },
-          {
-            "group": "Body",
-            "type": "Boolean",
-            "optional": true,
-            "field": "isReceiveSms",
-            "description": "<p>SMS수신 여부</p>"
-          },
-          {
-            "group": "Body",
-            "type": "Boolean",
-            "optional": true,
-            "field": "isOfficeWorker",
-            "description": "<p>직장인 여부</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "company",
-            "description": "<p>직장/학교</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "position",
-            "description": "<p>직책/학과</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "note",
-            "description": "<p>특이사항</p>"
-          },
-          {
-            "group": "Body",
-            "type": "Boolean",
-            "optional": true,
-            "field": "isActive",
-            "description": "<p>활동 여부</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "zipcode",
-            "description": "<p>우편번호</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "address",
-            "description": "<p>주소</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "detailedAddress",
-            "description": "<p>상세 주소</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "addressType",
-            "description": "<p>주소 유형 (H:자택, C:직장)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "joinPath",
-            "description": "<p>가입 경로 (10:간판, 20:온라인검색, 30:지인추천, 40:부채, 50:3단리플릿, 60:지하철광고, 70:기업제휴, 900: 기타)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String[]",
-            "optional": true,
-            "field": "languages",
-            "description": "<p>학습희망언어 목록 (EN:영어, CN:중국어, JP:일본어, KR:한국어, ETC:기타)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "etcLanguage",
-            "description": "<p>학습희망언어 기타</p>"
-          },
-          {
-            "group": "Body",
-            "type": "Object[]",
-            "optional": true,
-            "field": "languageSkills",
-            "description": "<p>외국어실력 목록</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "languageSkills.languageTest",
-            "description": "<p>외국어시험 (SJPT, HKC, TOEIC, TSC, TOEIC-S, OPIc, 기타)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "languageSkills.score",
-            "description": "<p>외국어시험 점수 (900점이상, 800-900점, ...)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "foreignCountry",
-            "description": "<p>외국거주경험 국가명</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "foreignPeriod",
-            "description": "<p>외국거주경험 기간</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "foreignPurpose",
-            "description": "<p>외국거주경험 목적</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String[]",
-            "optional": true,
-            "field": "coursePurposes",
-            "description": "<p>수강의 목적 (STUDY_ABROAD:유학, TEST:시험, EMPLOYMENT:취업, WORK:업무, DEVELOPMENT:자기계발)</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/01_user/03_create_user.js",
     "groupTitle": "1._Admin_API_>_1._회원관리"
   },
   {

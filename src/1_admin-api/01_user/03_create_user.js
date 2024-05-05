@@ -4,7 +4,7 @@
  * @apiDescription 회원관리 > 회원 등록
  *
  * @apiVersion 1.0.0
- * @apiName admin_getUsers
+ * @apiName admin_createUser
  * @apiGroup 1. Admin API > 1. 회원관리
  *
  * @apiExample {curl} REQUEST
