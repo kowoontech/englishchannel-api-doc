@@ -665,7 +665,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "courses.id",
-            "description": "<p>과정 ID</p>"
+            "description": "<p>과정 식별키</p>"
           },
           {
             "group": "Success 200",
