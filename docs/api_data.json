@@ -738,6 +738,234 @@
   },
   {
     "type": "get",
+    "url": "/admin/v1/users/{id}/courses",
+    "title": "05. 회원 예약 목록 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_listUserReservations",
+    "group": "1._Admin_API_>_1._회원관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1427783489308244/reservations?courseId=75508'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "courseId",
+            "description": "<p>과정 식별키</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "dateFrom",
+            "description": "<p>수업일 검색 ~부터 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "dateTo",
+            "description": "<p>수업일 검색 ~까지 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "includeCancel",
+            "description": "<p>true: 취소포함</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "includeAttendance",
+            "description": "<p>true: 출결완료포함</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 예약 수</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "page",
+            "description": "<p>조회할 페이지</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "list",
+            "description": "<p>예약 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.id",
+            "description": "<p>예약 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.teacherName",
+            "description": "<p>강사</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.lessonType",
+            "description": "<p>수업</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.date",
+            "description": "<p>수업일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.startTime",
+            "description": "<p>수업시작시간</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.endTime",
+            "description": "<p>수업종료시간</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.attendanceStatus",
+            "description": "<p>출결 (Y: 출석, N: 결석, R: 예약)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.modifierName",
+            "description": "<p>처리직원</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.modifiedOn",
+            "description": "<p>처리일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalCount",
+            "description": "<p>전체 예약 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>현재 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 예약 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalPage",
+            "description": "<p>전체 페이지 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "startPage",
+            "description": "<p>페이징 영역에 노출될 첫 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "endPage",
+            "description": "<p>페이징 영역에 노출될 마지막 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasPrev",
+            "description": "<p>전 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasNext",
+            "description": "<p>다음 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isFirst",
+            "description": "<p>첫 페이징 영역 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isLast",
+            "description": "<p>마지막 페이징 영역 여부</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 2626222,\n            \"teacherName\": \"Alex\",\n            \"lessonType\": null,\n            \"date\": \"2024-01-20\",\n            \"startTime\": \"12:00:00\",\n            \"endTime\": \"12:30:00\",\n            \"attendanceStatus\": \"R\",\n            \"modifierName\": \"채안나\",\n            \"modifiedOn\": \"2023-12-30\"\n        },\n        {\n            \"id\": 2626223,\n            \"teacherName\": \"Alex\",\n            \"lessonType\": null,\n            \"date\": \"2024-01-20\",\n            \"startTime\": \"12:30:00\",\n            \"endTime\": \"13:00:00\",\n            \"attendanceStatus\": \"R\",\n            \"modifierName\": \"채안나\",\n            \"modifiedOn\": \"2023-12-30\"\n        }\n    ],\n    \"totalCount\": 2,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"hasNext\": false,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/05_list_user_reservations.js",
+    "groupTitle": "1._Admin_API_>_1._회원관리"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/users",
     "title": "01. 회원 목록 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회<br/> 모든 파라미터는 안넘기면 전체<br/> 전체가 명시되어 있는 셀렉트박스는 &quot;ALL&quot;을 넘겨도 전체</p>",
