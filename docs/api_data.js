@@ -624,6 +624,120 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/admin/v1/users/{id}/courses",
+    "title": "04. 회원 과정 목록 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_listUserCourses",
+    "group": "1._Admin_API_>_1._회원관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1672401688362469/courses'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "courses",
+            "description": "<p>과정 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.id",
+            "description": "<p>과정 ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.name",
+            "description": "<p>과정명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.lessonCount",
+            "description": "<p>레슨횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.assignmentCount",
+            "description": "<p>배정횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.remainCount",
+            "description": "<p>잔여횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.startDate",
+            "description": "<p>수강기간 시작일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.endDate",
+            "description": "<p>수강기간 종료일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.teacherName",
+            "description": "<p>담임강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.assistantTeacherName",
+            "description": "<p>부담임강사명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"courses\": [\n        {\n            \"id\": 71840,\n            \"name\": \"NEW PT 24회 3개월/24.0회\",\n            \"lessonCount\": 24.0,\n            \"assignmentCount\": 24.0,\n            \"startDate\": \"2023-01-09\",\n            \"endDate\": \"2023-04-08\",\n            \"teacherName\": \"Airin\",\n            \"assistantTeacherName\": \"Adam\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 72884,\n            \"name\": \"PTM (주2회 3개월)/26.0회\",\n            \"lessonCount\": 26.0,\n            \"assignmentCount\": 26.0,\n            \"startDate\": \"2023-04-11\",\n            \"endDate\": \"2023-07-20\",\n            \"teacherName\": \"Adam\",\n            \"assistantTeacherName\": \"Daniel\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 73912,\n            \"name\": \"PTM (주2회 3개월)/26.0회\",\n            \"lessonCount\": 26.0,\n            \"assignmentCount\": 26.0,\n            \"startDate\": \"2023-07-19\",\n            \"endDate\": \"2024-01-28\",\n            \"teacherName\": \"한가영\",\n            \"assistantTeacherName\": \"김나래\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 75615,\n            \"name\": \"PTG (주2회 3개월)/50.0회\",\n            \"lessonCount\": 50.0,\n            \"assignmentCount\": 0.0,\n            \"startDate\": \"2023-12-30\",\n            \"endDate\": \"2024-12-29\",\n            \"teacherName\": \"서안나\",\n            \"assistantTeacherName\": \"정지은\",\n            \"remainCount\": 50.0\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/04_list_user_courses.js",
+    "groupTitle": "1._Admin_API_>_1._회원관리"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/users",
     "title": "01. 회원 목록 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회<br/> 모든 파라미터는 안넘기면 전체<br/> 전체가 명시되어 있는 셀렉트박스는 &quot;ALL&quot;을 넘겨도 전체</p>",
