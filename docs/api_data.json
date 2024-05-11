@@ -1219,6 +1219,76 @@
     "groupTitle": "1._Admin_API_>_1._회원관리"
   },
   {
+    "type": "put",
+    "url": "/admin/v1/users/{id}/reservations",
+    "title": "06. 회원 예약 수정",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭<br/></p> <ul> <li>예약 취소</li> </ul>",
+    "version": "1.0.0",
+    "name": "admin_updateUserReservations",
+    "group": "1._Admin_API_>_1._회원관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/users/M1427783489308244/reservations' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"reservations\": [\n        {\n            \"id\": 1,\n            \"isCancel\": true,\n            \"cancelReason\": \"취소 사유\"\n        }\n    ]\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Object[]",
+            "optional": false,
+            "field": "reservations",
+            "description": "<p>수정할 예약 목록</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "reservations.id",
+            "description": "<p>예약 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "reservations.isCancel",
+            "description": "<p>취소 여부 (예약 취소시 true)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "reservations.cancelReason",
+            "description": "<p>취소 사유</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/06_update_user_reservations.js",
+    "groupTitle": "1._Admin_API_>_1._회원관리"
+  },
+  {
     "type": " ",
     "url": "{code:'에러코드',message:'에러메시지'}",
     "title": "00. 공통 에러 코드",
