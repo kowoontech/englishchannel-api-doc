@@ -64,7 +64,7 @@
     "groupTitle": "1._Admin_API_>_0._공통_API"
   },
   {
-    "type": "get",
+    "type": "post",
     "url": "/admin/v1/users",
     "title": "03. 회원 등록",
     "description": "<p>회원관리 &gt; 회원 등록</p>",

@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users 03. 회원 등록
+ * @api {post} /admin/v1/users 03. 회원 등록
  *
  * @apiDescription 회원관리 > 회원 등록
  *
