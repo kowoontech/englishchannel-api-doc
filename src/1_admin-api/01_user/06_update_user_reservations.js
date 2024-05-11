@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/users/{id}/reservations 06. 회원 예약 수정
+ * @api {put} /admin/v1/users/{id}/reservations 06. 회원 예약 수정(취소)
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭<br/>
  * - 예약 취소

@@ -1221,7 +1221,7 @@
   {
     "type": "put",
     "url": "/admin/v1/users/{id}/reservations",
-    "title": "06. 회원 예약 수정",
+    "title": "06. 회원 예약 수정(취소)",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭<br/></p> <ul> <li>예약 취소</li> </ul>",
     "version": "1.0.0",
     "name": "admin_updateUserReservations",
