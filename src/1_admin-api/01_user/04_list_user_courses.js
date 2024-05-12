@@ -20,7 +20,9 @@
  * @apiSuccess {Number} courses.remainCount 잔여횟수
  * @apiSuccess {String} courses.startDate 수강기간 시작일
  * @apiSuccess {String} courses.endDate 수강기간 종료일
+ * @apiSuccess {String} courses.teacherId 담임강사 실별키
  * @apiSuccess {String} courses.teacherName 담임강사명
+ * @apiSuccess {String} courses.assistantTeacherId 부담임강사 식별키
  * @apiSuccess {String} courses.assistantTeacherName 부담임강사명
  *
  * @apiSuccessExample {json} SUCCESS
@@ -34,7 +36,9 @@
             "assignmentCount": 24.0,
             "startDate": "2023-01-09",
             "endDate": "2023-04-08",
+            "teacherId": "M1523939117926947",
             "teacherName": "Airin",
+            "assistantTeacherId": "M1660267538951028",
             "assistantTeacherName": "Adam",
             "remainCount": 0.0
         },
@@ -45,7 +49,9 @@
             "assignmentCount": 26.0,
             "startDate": "2023-04-11",
             "endDate": "2023-07-20",
+            "teacherId": "M1660267538951028",
             "teacherName": "Adam",
+            "assistantTeacherId": "M1679893566676420",
             "assistantTeacherName": "Daniel",
             "remainCount": 0.0
         },
@@ -56,7 +62,9 @@
             "assignmentCount": 26.0,
             "startDate": "2023-07-19",
             "endDate": "2024-01-28",
+            "teacherId": "M1400118325784523",
             "teacherName": "한가영",
+            "assistantTeacherId": "M1657064932771055",
             "assistantTeacherName": "김나래",
             "remainCount": 0.0
         },
@@ -67,7 +75,9 @@
             "assignmentCount": 0.0,
             "startDate": "2023-12-30",
             "endDate": "2024-12-29",
+            "teacherId": "M1695013438115743",
             "teacherName": "서안나",
+            "assistantTeacherId": "M1681990831501448",
             "assistantTeacherName": "정지은",
             "remainCount": 50.0
         }

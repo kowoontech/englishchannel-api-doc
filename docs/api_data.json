@@ -713,8 +713,22 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "courses.teacherId",
+            "description": "<p>담임강사 실별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "courses.teacherName",
             "description": "<p>담임강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.assistantTeacherId",
+            "description": "<p>부담임강사 식별키</p>"
           },
           {
             "group": "Success 200",
@@ -728,7 +742,7 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"courses\": [\n        {\n            \"id\": 71840,\n            \"name\": \"NEW PT 24회 3개월/24.0회\",\n            \"lessonCount\": 24.0,\n            \"assignmentCount\": 24.0,\n            \"startDate\": \"2023-01-09\",\n            \"endDate\": \"2023-04-08\",\n            \"teacherName\": \"Airin\",\n            \"assistantTeacherName\": \"Adam\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 72884,\n            \"name\": \"PTM (주2회 3개월)/26.0회\",\n            \"lessonCount\": 26.0,\n            \"assignmentCount\": 26.0,\n            \"startDate\": \"2023-04-11\",\n            \"endDate\": \"2023-07-20\",\n            \"teacherName\": \"Adam\",\n            \"assistantTeacherName\": \"Daniel\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 73912,\n            \"name\": \"PTM (주2회 3개월)/26.0회\",\n            \"lessonCount\": 26.0,\n            \"assignmentCount\": 26.0,\n            \"startDate\": \"2023-07-19\",\n            \"endDate\": \"2024-01-28\",\n            \"teacherName\": \"한가영\",\n            \"assistantTeacherName\": \"김나래\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 75615,\n            \"name\": \"PTG (주2회 3개월)/50.0회\",\n            \"lessonCount\": 50.0,\n            \"assignmentCount\": 0.0,\n            \"startDate\": \"2023-12-30\",\n            \"endDate\": \"2024-12-29\",\n            \"teacherName\": \"서안나\",\n            \"assistantTeacherName\": \"정지은\",\n            \"remainCount\": 50.0\n        }\n    ]\n}",
+          "content": "HTTP/1.1 200\n{\n    \"courses\": [\n        {\n            \"id\": 71840,\n            \"name\": \"NEW PT 24회 3개월/24.0회\",\n            \"lessonCount\": 24.0,\n            \"assignmentCount\": 24.0,\n            \"startDate\": \"2023-01-09\",\n            \"endDate\": \"2023-04-08\",\n            \"teacherId\": \"M1523939117926947\",\n            \"teacherName\": \"Airin\",\n            \"assistantTeacherId\": \"M1660267538951028\",\n            \"assistantTeacherName\": \"Adam\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 72884,\n            \"name\": \"PTM (주2회 3개월)/26.0회\",\n            \"lessonCount\": 26.0,\n            \"assignmentCount\": 26.0,\n            \"startDate\": \"2023-04-11\",\n            \"endDate\": \"2023-07-20\",\n            \"teacherId\": \"M1660267538951028\",\n            \"teacherName\": \"Adam\",\n            \"assistantTeacherId\": \"M1679893566676420\",\n            \"assistantTeacherName\": \"Daniel\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 73912,\n            \"name\": \"PTM (주2회 3개월)/26.0회\",\n            \"lessonCount\": 26.0,\n            \"assignmentCount\": 26.0,\n            \"startDate\": \"2023-07-19\",\n            \"endDate\": \"2024-01-28\",\n            \"teacherId\": \"M1400118325784523\",\n            \"teacherName\": \"한가영\",\n            \"assistantTeacherId\": \"M1657064932771055\",\n            \"assistantTeacherName\": \"김나래\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 75615,\n            \"name\": \"PTG (주2회 3개월)/50.0회\",\n            \"lessonCount\": 50.0,\n            \"assignmentCount\": 0.0,\n            \"startDate\": \"2023-12-30\",\n            \"endDate\": \"2024-12-29\",\n            \"teacherId\": \"M1695013438115743\",\n            \"teacherName\": \"서안나\",\n            \"assistantTeacherId\": \"M1681990831501448\",\n            \"assistantTeacherName\": \"정지은\",\n            \"remainCount\": 50.0\n        }\n    ]\n}",
           "type": "json"
         }
       ]
