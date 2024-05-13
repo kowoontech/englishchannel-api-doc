@@ -1,7 +1,8 @@
 /**
  * @api {get} /admin/v1/options 01. 공통 옵션 목록 조회
  *
- * @apiDescription 어드민 옵션에 필요한 데이터 목록 조회
+ * @apiDescription 어드민 옵션에 필요한 데이터 목록 조회<br/>
+ * 강사 목록 조회
  *
  * @apiVersion 1.0.0
  * @apiName admin_getOptions

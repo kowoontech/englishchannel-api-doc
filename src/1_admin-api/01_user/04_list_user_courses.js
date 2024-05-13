@@ -1,7 +1,8 @@
 /**
  * @api {get} /admin/v1/users/{id}/courses 04. 회원 과정 목록 조회
  *
- * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭
+ * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭<br/>
+ * 회원관리 > 회원 목록 조회 > 예약 탭 > 예약 등록
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUserCourses
