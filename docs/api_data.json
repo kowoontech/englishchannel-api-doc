@@ -331,7 +331,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1699689011700418/reservations' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"reservations\": [\n        {\n            \"courseId\": 1,\n            \"scheduleId\": 2\n        },\n        {\n            \"courseId\": 10,\n            \"scheduleId\": 100\n        }\n    ]\n}\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1699689011700418/reservations' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"courseId\": 1,\n    \"scheduleIds\": [10, 11, 12]\n}\"",
         "type": "curl"
       }
     ],
@@ -340,24 +340,17 @@
         "Body": [
           {
             "group": "Body",
-            "type": "Object[]",
+            "type": "Number",
             "optional": false,
-            "field": "reservations",
-            "description": "<p>등록할 예약 목록</p>"
+            "field": "courseId",
+            "description": "<p>예약할 과정 식별키</p>"
           },
           {
             "group": "Body",
-            "type": "Number",
+            "type": "Number[]",
             "optional": false,
-            "field": "reservations.courseId",
-            "description": "<p>과정 식별키</p>"
-          },
-          {
-            "group": "Body",
-            "type": "Number",
-            "optional": false,
-            "field": "reservations.scheduleId",
-            "description": "<p>담임강사 또는 부담임강사 스케줄 식별키</p>"
+            "field": "scheduleIds",
+            "description": "<p>예약할 담임강사 또는 부담임강사 스케줄 식별키 목록</p>"
           }
         ]
       }

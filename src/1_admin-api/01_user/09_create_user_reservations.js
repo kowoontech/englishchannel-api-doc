@@ -11,21 +11,12 @@
  * curl -i -X POST 'http://localhost:8080/admin/v1/users/M1699689011700418/reservations' \
  * -H "Content-Type: application/json" \
  * -d "{
-    "reservations": [
-        {
-            "courseId": 1,
-            "scheduleId": 2
-        },
-        {
-            "courseId": 10,
-            "scheduleId": 100
-        }
-    ]
+    "courseId": 1,
+    "scheduleIds": [10, 11, 12]
 }"
  *
- * @apiParam (Body) {Object[]} reservations 등록할 예약 목록
- * @apiParam (Body) {Number} reservations.courseId 과정 식별키
- * @apiParam (Body) {Number} reservations.scheduleId 담임강사 또는 부담임강사 스케줄 식별키
+ * @apiParam (Body) {Number} courseId 예약할 과정 식별키
+ * @apiParam (Body) {Number[]} scheduleIds 예약할 담임강사 또는 부담임강사 스케줄 식별키 목록
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
