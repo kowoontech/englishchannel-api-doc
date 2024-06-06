@@ -1,12 +1,11 @@
 /**
  * @api {put} /admin/v1/users/{id}/reservations 06. 회원 예약 수정(취소)
  *
- * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭<br/>
- * - 예약 취소
+ * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭 > 예약 체크 후 예약 취소
  *
  * @apiVersion 1.0.0
  * @apiName admin_updateUserReservations
- * @apiGroup 1. Admin API > 1. 회원관리
+ * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X PUT 'http://localhost:8080/admin/v1/users/M1427783489308244/reservations' \

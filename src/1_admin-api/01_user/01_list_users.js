@@ -7,7 +7,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUsers
- * @apiGroup 1. Admin API > 1. 회원관리
+ * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users?createDateFrom=2023-01-01&createDateTo=2023-12-31&page=1&registerType=REGISTERED&status=ACTIVE&teacherId=M1594795852631377&courseStatus=NOT_ATTENDING&expireType=EXPIRED&remainingType=NOT_REMAINING'

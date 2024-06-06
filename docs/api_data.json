@@ -3,7 +3,7 @@
     "type": "get",
     "url": "/admin/v1/options",
     "title": "01. 공통 옵션 목록 조회",
-    "description": "<p>어드민 옵션에 필요한 데이터 목록 조회<br/> 강사 목록 조회</p>",
+    "description": "<p>어드민 옵션에 필요한 데이터 목록 조회<br/> 강사 목록<br/> 상담사 목록</p>",
     "version": "1.0.0",
     "name": "admin_getOptions",
     "group": "1._Admin_API_>_0._공통_API",
@@ -49,13 +49,34 @@
             "optional": false,
             "field": "teachers.label",
             "description": "<p>담당강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "consultants",
+            "description": "<p>상담사 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "consultants.value",
+            "description": "<p>상담사 키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "consultants.label",
+            "description": "<p>상담사명</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"teachers\": [\n        {\n            \"value\": \"M1400118325784523\",\n            \"label\": \"한가영\"\n        },\n        {\n            \"value\": \"M1487640799950353\",\n            \"label\": \"Alex\"\n        },\n        {\n            \"value\": \"M1594795852631377\",\n            \"label\": \"Steven\"\n        },\n        {\n            \"value\": \"M1657064932771055\",\n            \"label\": \"김나래\"\n        },\n        {\n            \"value\": \"M1661138591404520\",\n            \"label\": \"최태연\"\n        },\n        {\n            \"value\": \"M1681990831501448\",\n            \"label\": \"정지은\"\n        },\n        {\n            \"value\": \"M1691559227102239\",\n            \"label\": \"Sadie\"\n        },\n        {\n            \"value\": \"M1693558129675151\",\n            \"label\": \"Tyler\"\n        },\n        {\n            \"value\": \"M1695013438115743\",\n            \"label\": \"서안나\"\n        },\n        {\n            \"value\": \"M1698204875465368\",\n            \"label\": \"Olivia\"\n        }\n    ]\n}",
+          "content": "HTTP/1.1 200\n{\n    \"teachers\": [\n        {\n            \"value\": \"M1400118325784523\",\n            \"label\": \"한가영\"\n        },\n        {\n            \"value\": \"M1695013438115743\",\n            \"label\": \"서안나\"\n        },\n        {\n            \"value\": \"M1657064932771055\",\n            \"label\": \"김나래\"\n        },\n        {\n            \"value\": \"M1661138591404520\",\n            \"label\": \"최태연\"\n        },\n        {\n            \"value\": \"M1681990831501448\",\n            \"label\": \"정지은\"\n        },\n        {\n            \"value\": \"M1594795852631377\",\n            \"label\": \"Steven\"\n        },\n        {\n            \"value\": \"M1487640799950353\",\n            \"label\": \"Alex\"\n        },\n        {\n            \"value\": \"M1698204875465368\",\n            \"label\": \"Olivia\"\n        },\n        {\n            \"value\": \"M1691559227102239\",\n            \"label\": \"Sadie\"\n        },\n        {\n            \"value\": \"M1693558129675151\",\n            \"label\": \"Tyler\"\n        }\n    ],\n    \"consultants\": [\n        {\n            \"value\": \"U1370839971594082\",\n            \"label\": \"채인숙\"\n        },\n        {\n            \"value\": \"U1629938464848865\",\n            \"label\": \"신원준2\"\n        },\n        {\n            \"value\": \"U1643253882478908\",\n            \"label\": \"최지혜\"\n        },\n        {\n            \"value\": \"U1658468539178711\",\n            \"label\": \"박수현\"\n        },\n        {\n            \"value\": \"U1670565899112697\",\n            \"label\": \"한시내\"\n        },\n        {\n            \"value\": \"U1675406451584692\",\n            \"label\": \"박지수\"\n        },\n        {\n            \"value\": \"U1684455278686108\",\n            \"label\": \"김새롬\"\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -70,11 +91,11 @@
     "description": "<p>회원관리 &gt; 회원 등록</p>",
     "version": "1.0.0",
     "name": "admin_createUser",
-    "group": "1._Admin_API_>_1._회원관리",
+    "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"name\": \"테스터\",\n    \"firstNameEn\": \"Ster\",\n    \"lastNameEn\": \"Te\",\n    \"nickname\": \"별명스\",\n    \"textbook\": \"왕초보 1권\",\n    \"loginId\": \"test12346\",\n    \"email\": \"test12345@naver.com\",\n    \"password\": \"11111\",\n    \"gender\": \"M\",\n    \"phone\": \"02-1111-2222\",\n    \"phoneType\": \"H\",\n    \"cellPhone\": \"010-1234-5678\",\n    \"isReceiveSms\": true,\n    \"isOfficeWorker\": true,\n    \"company\": \"남산회사\",\n    \"position\": \"대리\",\n    \"note\": \"놈놈놈\",\n    \"isActive\": true,\n    \"zipcode\": \"12345\",\n    \"address\": \"서울시 중구\",\n    \"detailedAddress\": \"남산타워\",\n    \"addressType\": \"C\",\n    \"joinPath\": \"ONLINE\",\n    \"languages\": [\"EN\", \"KR\", \"ETC\"],\n    \"etcLanguage\": \"아랍어\",\n    \"languageSkills\": [{\"languageTest\": \"TOEIC\", \"score\": \"900점이상\"}, {\"languageTest\": \"HKC\", \"score\": \"만점\"}],\n    \"foreignCountry\": \"호주\",\n    \"foreignPeriod\": \"1년\",\n    \"foreignPurpose\": \"여행\",\n    \"coursePurposes\": [\"STUDY_ABROAD\", \"DEVELOPMENT\"]\n}\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"name\": \"테스터\",\n    \"firstNameEn\": \"Ster\",\n    \"lastNameEn\": \"Te\",\n    \"nickname\": \"별명스\",\n    \"textbook\": \"왕초보 1권\",\n    \"loginId\": \"test12346\",\n    \"email\": \"test12345@naver.com\",\n    \"isReceiveEmail\": true,\n    \"password\": \"11111\",\n    \"gender\": \"M\",\n    \"phone\": \"02-1111-2222\",\n    \"phoneType\": \"H\",\n    \"cellPhone\": \"010-1234-5678\",\n    \"isReceiveSms\": true,\n    \"isOfficeWorker\": true,\n    \"company\": \"남산회사\",\n    \"position\": \"대리\",\n    \"note\": \"놈놈놈\",\n    \"isActive\": true,\n    \"zipcode\": \"12345\",\n    \"address\": \"서울시 중구\",\n    \"detailedAddress\": \"남산타워\",\n    \"addressType\": \"C\",\n    \"joinPath\": \"ONLINE\",\n    \"languages\": [\"EN\", \"KR\", \"ETC\"],\n    \"etcLanguage\": \"아랍어\",\n    \"languageSkills\": [{\"languageTest\": \"TOEIC\", \"score\": \"900점이상\"}, {\"languageTest\": \"HKC\", \"score\": \"만점\"}],\n    \"foreignCountry\": \"호주\",\n    \"foreignPeriod\": \"1년\",\n    \"foreignPurpose\": \"여행\",\n    \"coursePurposes\": [\"STUDY_ABROAD\", \"DEVELOPMENT\"]\n}\"",
         "type": "curl"
       }
     ],
@@ -132,6 +153,13 @@
           },
           {
             "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "isReceiveEmail",
+            "description": "<p>이메일 수신 여부</p>"
+          },
+          {
+            "group": "Body",
             "type": "String",
             "optional": false,
             "field": "password",
@@ -170,7 +198,7 @@
             "type": "Boolean",
             "optional": true,
             "field": "isReceiveSms",
-            "description": "<p>SMS수신 여부</p>"
+            "description": "<p>SMS 수신 여부</p>"
           },
           {
             "group": "Body",
@@ -318,16 +346,70 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/03_create_user.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/users/{id}/consultations",
+    "title": "17. 회원 상담 등록",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_createUserConsultation",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1374063899995477/consultations' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"consultationDate\": \"2024-01-01 09:00\",\n    \"type\": \"ETC\",\n    \"details\": \"기타 상담\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "consultationDate",
+            "description": "<p>상담일시 (yyyy-MM-dd HH:mm)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>구분 (COURSE_REGISTRATION: 수강등록, PROGRESS: 진도, LESSON: 레슨, RESERVATION: 예약, CLASS_CONTENT: 수업내용, TEACHER: 강사, ETC: 기타)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "details",
+            "description": "<p>상담내용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/17_create_user_consultation.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
     "type": "post",
     "url": "/admin/v1/users/{id}/reservations",
     "title": "09. 예약 등록",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록</p>",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 일정 체크 후 저장</p>",
     "version": "1.0.0",
     "name": "admin_createUserReservations",
-    "group": "1._Admin_API_>_1._회원관리",
+    "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -365,7 +447,7 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/09_create_user_reservations.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
+    "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
     "type": "get",
@@ -374,7 +456,7 @@
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 기본 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUser",
-    "group": "1._Admin_API_>_1._회원관리",
+    "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -667,20 +749,269 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/02_get_user.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
+    "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
     "type": "get",
-    "url": "/admin/v1/users/{id}/courses",
-    "title": "04. 회원 과정 목록 조회",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭<br/> 회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록</p>",
+    "url": "/admin/v1/users/{id}/courses/{courseId}",
+    "title": "11. 회원 수강 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 수강 탭</p>",
     "version": "1.0.0",
-    "name": "admin_listUserCourses",
-    "group": "1._Admin_API_>_1._회원관리",
+    "name": "admin_getUserCourse",
+    "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1672401688362469/courses'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1672401688362469/courses/75615'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "Number",
+            "optional": false,
+            "field": "courseId",
+            "description": "<p>수강 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>수강 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "language",
+            "description": "<p>언어</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>수강명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonCount",
+            "description": "<p>레슨횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "assignmentCount",
+            "description": "<p>배정횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "remainCount",
+            "description": "<p>잔여횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "countChangeReason",
+            "description": "<p>레슨횟수 변경시사유</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "startDate",
+            "description": "<p>수강기간 시작일 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "endDate",
+            "description": "<p>수강기간 종료일 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "dateChangeReason",
+            "description": "<p>수강기간 변경시사유</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>담임강사 실별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "assistantTeacherId",
+            "description": "<p>부담임강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "createdOn",
+            "description": "<p>등록일 (yyyy-mm-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>상태 (WAITING: 대기, NORMAL: 정상, CANCEL: 취소)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": 75615,\n    \"language\": \"영어\",\n    \"name\": \"PTG (주2회 3개월)\",\n    \"lessonCount\": 50.0,\n    \"assignmentCount\": 0.0,\n    \"remainCount\": 50.0,\n    \"countChangeReason\": \"수강권추가구매\",\n    \"startDate\": \"2023-12-30\",\n    \"endDate\": \"2024-12-29\",\n    \"dateChangeReason\": \"어플 사용을 위해 수강시작일 임시변경\",\n    \"teacherId\": \"M1695013438115743\",\n    \"assistantTeacherId\": \"M1681990831501448\",\n    \"createdOn\": \"2023-12-30 14:32:36\",\n    \"status\": \"NORMAL\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/11_get_user_course.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/users/{id}/reservations/{reservationId}",
+    "title": "14. 회원 예약 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 학습 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_getUserReservation",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1427783489308244/reservations/1366328'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "Number",
+            "optional": false,
+            "field": "reservationId",
+            "description": "<p>예약 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>예약 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>수업일 (yyyy-MM-dd (EEE))</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>수업시작시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>수업종료시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attendanceStatus",
+            "description": "<p>출결 (Y: 출석, N: 결석, R: 예약)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courseName",
+            "description": "<p>과정명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "report",
+            "description": "<p>학사보고서</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": 1366328,\n    \"date\": \"2018-03-05 (Mon)\",\n    \"startTime\": \"08:00\",\n    \"endTime\": \"08:30\",\n    \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n    \"attendanceStatus\": \"Y\",\n    \"report\": \"1:1 inter 17(done) 두번째 다이얼로그 마무리. 주요표현들을 모두 잘기억하고계심.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/14_get_user_reservation.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/users/{id}/consultations",
+    "title": "16. 회원 상담 목록 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_listUserConsultations",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/consultations'",
         "type": "curl"
       }
     ],
@@ -704,107 +1035,474 @@
             "group": "Success 200",
             "type": "Object[]",
             "optional": false,
-            "field": "courses",
-            "description": "<p>과정 목록</p>"
+            "field": "consultations",
+            "description": "<p>상담 목록</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "courses.id",
-            "description": "<p>과정 식별키</p>"
+            "field": "consultations.id",
+            "description": "<p>상담 식별키</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "courses.name",
-            "description": "<p>과정명</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "courses.lessonCount",
-            "description": "<p>레슨횟수</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "courses.assignmentCount",
-            "description": "<p>배정횟수</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "courses.remainCount",
-            "description": "<p>잔여횟수</p>"
+            "field": "consultations.consultationDate",
+            "description": "<p>상담일시 (yyyy-mm-dd HH:mm)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "courses.startDate",
-            "description": "<p>수강기간 시작일</p>"
+            "field": "consultations.type",
+            "description": "<p>구분</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "courses.endDate",
-            "description": "<p>수강기간 종료일</p>"
+            "field": "consultations.details",
+            "description": "<p>상담내용</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "courses.teacherId",
-            "description": "<p>담임강사 실별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "courses.teacherName",
-            "description": "<p>담임강사명</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "courses.assistantTeacherId",
-            "description": "<p>부담임강사 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "courses.assistantTeacherName",
-            "description": "<p>부담임강사명</p>"
+            "field": "consultations.creatorName",
+            "description": "<p>상담직원</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"courses\": [\n        {\n            \"id\": 71840,\n            \"name\": \"NEW PT 24회 3개월/24.0회\",\n            \"lessonCount\": 24.0,\n            \"assignmentCount\": 24.0,\n            \"startDate\": \"2023-01-09\",\n            \"endDate\": \"2023-04-08\",\n            \"teacherId\": \"M1523939117926947\",\n            \"teacherName\": \"Airin\",\n            \"assistantTeacherId\": \"M1660267538951028\",\n            \"assistantTeacherName\": \"Adam\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 72884,\n            \"name\": \"PTM (주2회 3개월)/26.0회\",\n            \"lessonCount\": 26.0,\n            \"assignmentCount\": 26.0,\n            \"startDate\": \"2023-04-11\",\n            \"endDate\": \"2023-07-20\",\n            \"teacherId\": \"M1660267538951028\",\n            \"teacherName\": \"Adam\",\n            \"assistantTeacherId\": \"M1679893566676420\",\n            \"assistantTeacherName\": \"Daniel\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 73912,\n            \"name\": \"PTM (주2회 3개월)/26.0회\",\n            \"lessonCount\": 26.0,\n            \"assignmentCount\": 26.0,\n            \"startDate\": \"2023-07-19\",\n            \"endDate\": \"2024-01-28\",\n            \"teacherId\": \"M1400118325784523\",\n            \"teacherName\": \"한가영\",\n            \"assistantTeacherId\": \"M1657064932771055\",\n            \"assistantTeacherName\": \"김나래\",\n            \"remainCount\": 0.0\n        },\n        {\n            \"id\": 75615,\n            \"name\": \"PTG (주2회 3개월)/50.0회\",\n            \"lessonCount\": 50.0,\n            \"assignmentCount\": 0.0,\n            \"startDate\": \"2023-12-30\",\n            \"endDate\": \"2024-12-29\",\n            \"teacherId\": \"M1695013438115743\",\n            \"teacherName\": \"서안나\",\n            \"assistantTeacherId\": \"M1681990831501448\",\n            \"assistantTeacherName\": \"정지은\",\n            \"remainCount\": 50.0\n        }\n    ]\n}",
+          "content": "HTTP/1.1 200\n{\n    \"consultations\": [\n        {\n            \"id\": 6651,\n            \"consultationDate\": \"2013-08-16 07:00\",\n            \"type\": \"기타\",\n            \"details\": \"정세진 학생과 쌍둥이 자매.고3이며 대입 수시 면접 준비로 주2회 수업 나옴. 승무원 학교 갈 예정임.\",\n            \"creatorName\": \"권정민\"\n        },\n        {\n            \"id\": 10895,\n            \"consultationDate\": \"2013-11-18 19:00\",\n            \"type\": \"예약\",\n            \"details\": \"12월 부터 오전 9:30 고정예약 요청하심.\",\n            \"creatorName\": \"채인숙\"\n        },\n        {\n            \"id\": 13209,\n            \"consultationDate\": \"2014-01-06 10:00\",\n            \"type\": \"예약\",\n            \"details\": \"Christoph 강사랑 예약 피해달라 부탁 하심. \",\n            \"creatorName\": \"권정민\"\n        },\n        {\n            \"id\": 13429,\n            \"consultationDate\": \"2014-01-08 10:00\",\n            \"type\": \"기타\",\n            \"details\": \"12월 8회 커피 상품권 드림.\",\n            \"creatorName\": \"권정민\"\n        },\n        {\n            \"id\": 18817,\n            \"consultationDate\": \"2014-05-12 11:30\",\n            \"type\": \"예약\",\n            \"details\": \"Juan 강사와 예약 피할것.\",\n            \"creatorName\": \"권정민\"\n        },\n        {\n            \"id\": 21055,\n            \"consultationDate\": \"2014-06-26 19:00\",\n            \"type\": \"예약\",\n            \"details\": \"당분간 다른 일정으로 사정이 생겨서 수업 못나온다고 함. 이번주 토요일 수업 먼저 취소해달라고 했고, 수강 기간 & 횟수 확인 요청. 수강 기간도 3주 정도 남았고, 수업도 7회 남았으니 방문해서 홀딩 서류 작성하고 방학 중의 일정이 끝나면 다시 수업할 수 있도록 할 것을 권유. 일단 알겠다고 함\",\n            \"creatorName\": \"편효린\"\n        },\n        {\n            \"id\": 21788,\n            \"consultationDate\": \"2014-07-09 12:00\",\n            \"type\": \"기타\",\n            \"details\": \"월드컵 이벤트 당첨 1회 추가해드림.\",\n            \"creatorName\": \"권정민\"\n        },\n        {\n            \"id\": 26914,\n            \"consultationDate\": \"2014-10-30 12:00\",\n            \"type\": \"예약\",\n            \"details\": \"예약하시고 계속 결석 하심.당분간 수업 오시기 힘드실 것 같다 말씀 하시며,홀딩 원하심. 겨울방학 12월중순부터 다시 컴백하시겠다 하심.\",\n            \"creatorName\": \"권정민\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/16_list_user_consultations.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/users/{id}/courses/{courseId}/histories",
+    "title": "13. 회원 수강관리이력 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 수강 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_listUserCourseHistories",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1672401688362469/courses/75615/histories'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "Number",
+            "optional": false,
+            "field": "courseId",
+            "description": "<p>수강 식별키</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 이력 수</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "page",
+            "description": "<p>조회할 페이지</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "list",
+            "description": "<p>이력 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "list.id",
+            "description": "<p>이력 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.modifiedOn",
+            "description": "<p>날짜 (yyyy-mm-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.modifierName",
+            "description": "<p>처리자</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.type",
+            "description": "<p>구분</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalCount",
+            "description": "<p>전체 이력 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>현재 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 이력 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalPage",
+            "description": "<p>전체 페이지 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "startPage",
+            "description": "<p>페이징 영역에 노출될 첫 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "endPage",
+            "description": "<p>페이징 영역에 노출될 마지막 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasPrev",
+            "description": "<p>전 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasNext",
+            "description": "<p>다음 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isFirst",
+            "description": "<p>첫 페이징 영역 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isLast",
+            "description": "<p>마지막 페이징 영역 여부</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 3817438,\n            \"modifiedOn\": \"2023-12-30 14:35:53\",\n            \"modifierName\": \"손진\",\n            \"type\": \"변경\",\n            \"content\": \"레슨횟수 : 54.0 -&gt; 50(수강권추가구매)<br>수강시작일 : 2024-01-06 -&gt; 2023-12-30(어플 사용을 위해 수강시작일 임시변경)<br>수강종료일 : 2024-04-05 -&gt; 2024-12-29(어플 사용을 위해 수강시작일 임시변경)\"\n        },\n        {\n            \"id\": 3817435,\n            \"modifiedOn\": \"2023-12-30 14:32:36\",\n            \"modifierName\": \"손진\",\n            \"type\": \"주문\",\n            \"content\": \"PTG (주2회 3개월)/54회\"\n        }\n    ],\n    \"totalCount\": 2,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"hasNext\": false,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/13_list_user_course_histories.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/users/{id}/courses",
+    "title": "04. 회원 과정(수강) 목록 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 과정 정보<br/> 회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 과정 정보<br/> 회원관리 &gt; 회원 목록 조회 &gt; 수강 탭<br/></p>",
+    "version": "1.0.0",
+    "name": "admin_listUserCourses",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1672401688362469/courses?status=VALID'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "status",
+            "description": "<p>조회할 수강 상태 (VALID: 기본 조회, ATTENDING: 수강중, WAITING: 대기중, COMPLETE: 수강완료, REFUND: 환불)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 과정 수</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "page",
+            "description": "<p>조회할 페이지</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "list",
+            "description": "<p>과정 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "list.id",
+            "description": "<p>과정 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.name",
+            "description": "<p>과정명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "list.lessonCount",
+            "description": "<p>레슨횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "list.assignmentCount",
+            "description": "<p>배정횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "list.remainCount",
+            "description": "<p>잔여횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.startDate",
+            "description": "<p>수강기간 시작일 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.endDate",
+            "description": "<p>수강기간 종료일 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.teacherId",
+            "description": "<p>담임강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.teacherName",
+            "description": "<p>담임강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "list.assistantTeacherId",
+            "description": "<p>부담임강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "list.assistantTeacherName",
+            "description": "<p>부담임강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.createDate",
+            "description": "<p>등록일 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>상태</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalCount",
+            "description": "<p>전체 과정 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>현재 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 과정 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalPage",
+            "description": "<p>전체 페이지 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "startPage",
+            "description": "<p>페이징 영역에 노출될 첫 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "endPage",
+            "description": "<p>페이징 영역에 노출될 마지막 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasPrev",
+            "description": "<p>전 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasNext",
+            "description": "<p>다음 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isFirst",
+            "description": "<p>첫 페이징 영역 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isLast",
+            "description": "<p>마지막 페이징 영역 여부</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 75615,\n            \"name\": \"PTG (주2회 3개월)/50.0회\",\n            \"lessonCount\": 50.0,\n            \"assignmentCount\": 0.0,\n            \"remainCount\": 50.0,\n            \"startDate\": \"2023-12-30\",\n            \"endDate\": \"2024-12-29\",\n            \"teacherId\": \"M1695013438115743\",\n            \"teacherName\": \"서안나\",\n            \"assistantTeacherId\": \"M1681990831501448\",\n            \"assistantTeacherName\": \"정지은\",\n            \"createDate\": \"2023-12-30\",\n            \"status\": \"정상\"\n        },\n        {\n            \"id\": 73912,\n            \"name\": \"PTM (주2회 3개월)/26.0회\",\n            \"lessonCount\": 26.0,\n            \"assignmentCount\": 26.0,\n            \"remainCount\": 0.0,\n            \"startDate\": \"2023-07-19\",\n            \"endDate\": \"2024-01-28\",\n            \"teacherId\": \"M1400118325784523\",\n            \"teacherName\": \"한가영\",\n            \"assistantTeacherId\": \"M1657064932771055\",\n            \"assistantTeacherName\": \"김나래\",\n            \"createDate\": \"2023-07-19\",\n            \"status\": \"정상\"\n        },\n        {\n            \"id\": 72884,\n            \"name\": \"PTM (주2회 3개월)/26.0회\",\n            \"lessonCount\": 26.0,\n            \"assignmentCount\": 26.0,\n            \"remainCount\": 0.0,\n            \"startDate\": \"2023-04-11\",\n            \"endDate\": \"2023-07-20\",\n            \"teacherId\": \"M1660267538951028\",\n            \"teacherName\": \"Adam\",\n            \"assistantTeacherId\": \"M1679893566676420\",\n            \"assistantTeacherName\": \"Daniel\",\n            \"createDate\": \"2023-03-31\",\n            \"status\": \"정상\"\n        },\n        {\n            \"id\": 71840,\n            \"name\": \"NEW PT 24회 3개월/24.0회\",\n            \"lessonCount\": 24.0,\n            \"assignmentCount\": 24.0,\n            \"remainCount\": 0.0,\n            \"startDate\": \"2023-01-09\",\n            \"endDate\": \"2023-04-08\",\n            \"teacherId\": \"M1523939117926947\",\n            \"teacherName\": \"Airin\",\n            \"assistantTeacherId\": \"M1660267538951028\",\n            \"assistantTeacherName\": \"Adam\",\n            \"createDate\": \"2022-12-30\",\n            \"status\": \"정상\"\n        }\n    ],\n    \"totalCount\": 4,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"hasNext\": false,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": true\n}",
           "type": "json"
         }
       ]
     },
     "filename": "src/1_admin-api/01_user/04_list_user_courses.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
+    "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/notes",
     "title": "10. 회원 비고 목록 조회",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록</p>",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP</p>",
     "version": "1.0.0",
     "name": "admin_listUserNotes",
-    "group": "1._Admin_API_>_1._회원관리",
+    "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -949,20 +1647,283 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/10_list_user_notes.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
+    "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
     "type": "get",
-    "url": "/admin/v1/users/{id}/courses",
-    "title": "05. 회원 예약 목록 조회",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭<br/> 회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록</p>",
+    "url": "/admin/v1/users/{id}/orders",
+    "title": "19. 회원 주문 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
-    "name": "admin_listUserReservations",
-    "group": "1._Admin_API_>_1._회원관리",
+    "name": "admin_listUserOrder",
+    "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1427783489308244/reservations?courseId=75508'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "orderId",
+            "description": "<p>주문 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>주문 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "supplyAmount",
+            "description": "<p>공급가액 합계</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "discountAmount",
+            "description": "<p>할인액 합계</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "billingAmount",
+            "description": "<p>실청구금액 합계</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "refundAmount",
+            "description": "<p>환불금액 합계</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "orderProducts",
+            "description": "<p>주문 상세 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.id",
+            "description": "<p>주문 상세 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.amount",
+            "description": "<p>공급가액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.discountAmount",
+            "description": "<p>할인액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.billingAmount",
+            "description": "<p>실청구금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.refundAmount",
+            "description": "<p>환불금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.productType",
+            "description": "<p>분류</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.createdOn",
+            "description": "<p>주문일시 (yyyy-MM-dd HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.orderType",
+            "description": "<p>구분</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": \"O1374064016311096\",\n    \"supplyAmount\": 1320000,\n    \"discountAmount\": 264000,\n    \"billingAmount\": 1056000,\n    \"refundAmount\": 0,\n    \"orderProducts\": [\n        {\n            \"id\": \"I1374064016316423\",\n            \"name\": \"PTG (주2회 3개월)/3개월/24회\",\n            \"amount\": 1320000,\n            \"discountAmount\": 264000,\n            \"billingAmount\": 1056000,\n            \"refundAmount\": 0,\n            \"productType\": \"과정\",\n            \"createdOn\": \"2013-07-17 21:26\",\n            \"orderType\": \"신규\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/19_get_user_order.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/users/{id}/orders",
+    "title": "18. 회원 주문 목록 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_listUserOrders",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "order",
+            "description": "<p>주문 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "order.id",
+            "description": "<p>주문 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "order.supplyAmount",
+            "description": "<p>공급가액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "order.discountAmount",
+            "description": "<p>할인액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "order.billingAmount",
+            "description": "<p>주문금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "order.paymentAmount",
+            "description": "<p>매출액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "order.receivableAmount",
+            "description": "<p>미수금</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "order.createdOn",
+            "description": "<p>주문일시 (yyyy-MM-dd HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "order.creatorName",
+            "description": "<p>처리자</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "order.orderProductName",
+            "description": "<p>상품명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"order\": [\n        {\n            \"id\": \"O1374064016311096\",\n            \"supplyAmount\": 1320000,\n            \"discountAmount\": 264000,\n            \"billingAmount\": 1056000,\n            \"paymentAmount\": 1056000,\n            \"receivableAmount\": 0,\n            \"createdOn\": \"2013-07-17 21:26\",\n            \"creatorName\": \"김현희\",\n            \"orderProductName\": \"PTG (주2회 3개월)/3개월/24회\"\n        },\n        {\n            \"id\": \"O1380100895273346\",\n            \"supplyAmount\": 1320000,\n            \"discountAmount\": 264000,\n            \"billingAmount\": 1056000,\n            \"paymentAmount\": 1056000,\n            \"receivableAmount\": 0,\n            \"createdOn\": \"2013-09-25 18:21\",\n            \"creatorName\": \"김현희\",\n            \"orderProductName\": \"PTG (주2회 3개월)/3개월/24회\"\n        },\n        {\n            \"id\": \"O1389141061183888\",\n            \"supplyAmount\": 1320000,\n            \"discountAmount\": 264000,\n            \"billingAmount\": 1056000,\n            \"paymentAmount\": 1056000,\n            \"receivableAmount\": 0,\n            \"createdOn\": \"2014-01-08 09:31\",\n            \"creatorName\": \"권정민\",\n            \"orderProductName\": \"PTG (주2회 3개월)/3개월/24회\"\n        },\n        {\n            \"id\": \"O1396685391422969\",\n            \"supplyAmount\": 1320000,\n            \"discountAmount\": 264000,\n            \"billingAmount\": 1056000,\n            \"paymentAmount\": 1056000,\n            \"receivableAmount\": 0,\n            \"createdOn\": \"2014-04-05 17:09\",\n            \"creatorName\": \"김현희\",\n            \"orderProductName\": \"PTG (주2회 3개월)/3개월/24회\"\n        },\n        {\n            \"id\": \"O1407978923393461\",\n            \"supplyAmount\": 1320000,\n            \"discountAmount\": 264000,\n            \"billingAmount\": 1056000,\n            \"paymentAmount\": 1056000,\n            \"receivableAmount\": 0,\n            \"createdOn\": \"2014-08-14 10:15\",\n            \"creatorName\": \"권정민\",\n            \"orderProductName\": \"PTG (주2회 3개월)/3개월/24회\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/18_list_user_orders.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/users/{id}/reservations",
+    "title": "05. 회원 예약 목록 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭<br/> 회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 최근 5회 수강현황<br/> 회원관리 &gt; 회원 목록 조회 &gt; 학습 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_listUserReservations",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1427783489308244/reservations?courseId=52506'",
         "type": "curl"
       }
     ],
@@ -999,14 +1960,26 @@
           {
             "group": "Query",
             "optional": true,
-            "field": "includeCancel",
-            "description": "<p>true: 취소포함</p>"
+            "field": "yearMonth",
+            "description": "<p>수업월 검색 (yyyy-mm)</p>"
           },
           {
             "group": "Query",
             "optional": true,
-            "field": "includeAttendance",
-            "description": "<p>true: 출결완료포함</p>"
+            "field": "date",
+            "description": "<p>수업일 검색 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "excludeCancel",
+            "description": "<p>true: 취소 미포함, false: 포함 (default false)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "excludeAttendance",
+            "description": "<p>true: 출결완료 미포함, false: 포함 (default false)</p>"
           },
           {
             "group": "Query",
@@ -1059,28 +2032,28 @@
             "type": "String",
             "optional": false,
             "field": "list.date",
-            "description": "<p>수업일</p>"
+            "description": "<p>수업일 (yyyy-mm-dd (EEE))</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "list.startTime",
-            "description": "<p>수업시작시간</p>"
+            "description": "<p>수업시작시간 (HH:mm)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "list.endTime",
-            "description": "<p>수업종료시간</p>"
+            "description": "<p>수업종료시간 (HH:mm)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "list.attendanceStatus",
-            "description": "<p>출결 (Y: 출석, N: 결석, R: 예약)</p>"
+            "description": "<p>출결</p>"
           },
           {
             "group": "Success 200",
@@ -1094,7 +2067,21 @@
             "type": "String",
             "optional": false,
             "field": "list.modifiedOn",
-            "description": "<p>처리일</p>"
+            "description": "<p>처리일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.courseName",
+            "description": "<p>과정명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.report",
+            "description": "<p>학사보고서</p>"
           },
           {
             "group": "Success 200",
@@ -1171,22 +2158,22 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 2626222,\n            \"teacherName\": \"Alex\",\n            \"lessonType\": null,\n            \"date\": \"2024-01-20\",\n            \"startTime\": \"12:00:00\",\n            \"endTime\": \"12:30:00\",\n            \"attendanceStatus\": \"R\",\n            \"modifierName\": \"채안나\",\n            \"modifiedOn\": \"2023-12-30\"\n        },\n        {\n            \"id\": 2626223,\n            \"teacherName\": \"Alex\",\n            \"lessonType\": null,\n            \"date\": \"2024-01-20\",\n            \"startTime\": \"12:30:00\",\n            \"endTime\": \"13:00:00\",\n            \"attendanceStatus\": \"R\",\n            \"modifierName\": \"채안나\",\n            \"modifiedOn\": \"2023-12-30\"\n        }\n    ],\n    \"totalCount\": 2,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"hasNext\": false,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": true\n}",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 1366328,\n            \"teacherName\": \"송예희\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-03-05 (Mon)\",\n            \"startTime\": \"08:00\",\n            \"endTime\": \"08:30\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-02-23\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"1:1 inter 17(done) 두번째 다이얼로그 마무리. 주요표현들을 모두 잘기억하고계심.\"\n        },\n        {\n            \"id\": 1366327,\n            \"teacherName\": \"Brett\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-03-05 (Mon)\",\n            \"startTime\": \"07:30\",\n            \"endTime\": \"08:00\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-02-23\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"FT about his weekend and how his daughters are doing and what kind of alcohol he drinks when he goes out.\"\n        },\n        {\n            \"id\": 1366322,\n            \"teacherName\": \"Jason\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-03-02 (Fri)\",\n            \"startTime\": \"08:00\",\n            \"endTime\": \"08:30\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-02-23\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"Ft  Talked about a custom cabinet he had made in honor of his mother who passed away.\"\n        },\n        {\n            \"id\": 1366321,\n            \"teacherName\": \"송예희\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-03-02 (Fri)\",\n            \"startTime\": \"07:30\",\n            \"endTime\": \"08:00\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-02-23\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"1:1 inter 17(#2) 17.2 스크립트 연습. 주요 표현의 의미 확인하고, 발음과 억양 연습. \"\n        },\n        {\n            \"id\": 1359079,\n            \"teacherName\": \"Brett\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-02-21 (Wed)\",\n            \"startTime\": \"08:00\",\n            \"endTime\": \"08:30\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-02-14\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"FT about his recent holiday and certain Korean traditions as well.\"\n        },\n        {\n            \"id\": 1342251,\n            \"teacherName\": \"Brett\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-02-28 (Wed)\",\n            \"startTime\": \"08:00\",\n            \"endTime\": \"08:30\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-01-18\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"Ft about shamans and fortune tellers in Korea and experiences of the supernatural and metaphysical.\"\n        },\n        {\n            \"id\": 1342250,\n            \"teacherName\": \"송예희\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-02-28 (Wed)\",\n            \"startTime\": \"07:30\",\n            \"endTime\": \"08:00\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-01-18\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"1:1 inter 17(#2) 17.1까지만 진행. 주요 표현의 의미와 확장적 의미 확인하고 예문만들어봄. 자연스러운 억양과 발음 연습.  * next: 1:1 inter 17(#3) \"\n        },\n        {\n            \"id\": 1342246,\n            \"teacherName\": \"Brett\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-02-26 (Mon)\",\n            \"startTime\": \"07:30\",\n            \"endTime\": \"08:00\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-01-18\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"FT about his nephew passing the medical bar exam and giving gifts overseas.\"\n        },\n        {\n            \"id\": 1342247,\n            \"teacherName\": \"송예희\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-02-26 (Mon)\",\n            \"startTime\": \"08:00\",\n            \"endTime\": \"08:30\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-01-18\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"1:1 inter 17(#1) 랭귀지박스까지만 진행. 주말에 있으셨던 일과 현사무실 구조 등 설명. 담시간에 17과 끝내기로함. \"\n        },\n        {\n            \"id\": 1342242,\n            \"teacherName\": \"송예희\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-02-21 (Wed)\",\n            \"startTime\": \"07:30\",\n            \"endTime\": \"08:00\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-01-18\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"Free talking about his two daughters\"\n        }\n    ],\n    \"totalCount\": 38,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 4,\n    \"endPage\": 4,\n    \"hasNext\": false,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": true\n}",
           "type": "json"
         }
       ]
     },
     "filename": "src/1_admin-api/01_user/05_list_user_reservations.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
+    "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/schedules/by-date",
     "title": "08. 회원 날짜별 스케줄 조회",
-    "description": "<p>조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.<br/> 회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 주별</p>",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 주별<br/> 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
     "version": "1.0.0",
     "name": "admin_listUserSchedulesByDate",
-    "group": "1._Admin_API_>_1._회원관리",
+    "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1317,16 +2304,16 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/08_list_user_schedules_by_date.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
+    "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/schedules/by-time",
     "title": "07. 회원 시간별 스케줄 조회",
-    "description": "<p>조회할 날짜의 6:00~23:30 까지의 스케줄을 조회한다.<br/> 회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 일별</p>",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 일별<br/> 조회할 날짜의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
     "version": "1.0.0",
     "name": "admin_listUserSchedulesByTime",
-    "group": "1._Admin_API_>_1._회원관리",
+    "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1418,7 +2405,7 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/07_list_user_schedules_by_time.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
+    "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
     "type": "get",
@@ -1427,7 +2414,7 @@
     "description": "<p>회원관리 &gt; 회원 목록 조회<br/> 모든 파라미터는 안넘기면 전체<br/> 전체가 명시되어 있는 셀렉트박스는 &quot;ALL&quot;을 넘겨도 전체</p>",
     "version": "1.0.0",
     "name": "admin_listUsers",
-    "group": "1._Admin_API_>_1._회원관리",
+    "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1672,16 +2659,184 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/01_list_users.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "put",
+    "url": "/admin/v1/users/{id}/courses/{courseId}",
+    "title": "12. 회원 수강 수정",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 수강 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_updateUserCourse",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/users/M1672401688362469/courses/75615'\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"lessonCount\":50,\n    \"startDate\":\"2023-12-30\",\n    \"endDate\":\"2024-12-29\",\n    \"teacherId\":\"M1695013438115743\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "Number",
+            "optional": false,
+            "field": "courseId",
+            "description": "<p>수강 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonCount",
+            "description": "<p>레슨횟수</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "countChangeReason",
+            "description": "<p>레슨횟수 변경시사유</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "startDate",
+            "description": "<p>수강기간 시작일 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "endDate",
+            "description": "<p>수강기간 종료일 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "dateChangeReason",
+            "description": "<p>수강기간 변경시사유</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "reservations.cancelReason",
+            "description": "<p>취소 사유</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>담임강사 실별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "assistantTeacherId",
+            "description": "<p>부담임강사 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/12_update_user_course.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "put",
+    "url": "/admin/v1/users/{id}/reservations/{reservationId}",
+    "title": "15. 회원 예약 수정(학사보고서)",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 학습 탭 &gt; 학사보고서 등록/수정</p>",
+    "version": "1.0.0",
+    "name": "admin_updateUserReservation",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/users/M1427783489308244/reservations/1366328' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"attendanceStatus\": \"Y\",\n    \"report\": \"학사보고서\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "reservationId",
+            "description": "<p>예약 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "attendanceStatus",
+            "description": "<p>출결 상태 (R: 예약, Y: 출석, N: 결석)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "report",
+            "description": "<p>취소 사유</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/15_update_user_reservation.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
     "type": "put",
     "url": "/admin/v1/users/{id}/reservations",
     "title": "06. 회원 예약 수정(취소)",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭<br/></p> <ul> <li>예약 취소</li> </ul>",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 체크 후 예약 취소</p>",
     "version": "1.0.0",
     "name": "admin_updateUserReservations",
-    "group": "1._Admin_API_>_1._회원관리",
+    "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1742,7 +2897,246 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/06_update_user_reservations.js",
-    "groupTitle": "1._Admin_API_>_1._회원관리"
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/products/languages",
+    "title": "02. 상품 언어 목록 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_listProductLanguages",
+    "group": "1._Admin_API_>_2._상품",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/products/languages'",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "languages",
+            "description": "<p>언어 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "languages.value",
+            "description": "<p>Value</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "languages.label",
+            "description": "<p>Label</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"languages\": [\n        {\n            \"value\": \"EN\",\n            \"label\": \"영어\"\n        },\n        {\n            \"value\": \"CN\",\n            \"label\": \"중국어\"\n        },\n        {\n            \"value\": \"JP\",\n            \"label\": \"일본어\"\n        },\n        {\n            \"value\": \"KR\",\n            \"label\": \"한국어\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/02_product/02_list_product_languages.js",
+    "groupTitle": "1._Admin_API_>_2._상품"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/products/lessonTypes",
+    "title": "03. 상품 수업 유형 목록 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_listProductLessonTypes",
+    "group": "1._Admin_API_>_2._상품",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/products/lessonTypes'",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "lessonTypes",
+            "description": "<p>수업 유형 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lessonTypes.value",
+            "description": "<p>Value</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lessonTypes.label",
+            "description": "<p>Label</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"lessonTypes\": [\n        {\n            \"value\": \"PT\",\n            \"label\": \"PT\"\n        },\n        {\n            \"value\": \"TT\",\n            \"label\": \"TT\"\n        },\n        {\n            \"value\": \"GT\",\n            \"label\": \"GT\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/02_product/03_list_product_lesson_types.js",
+    "groupTitle": "1._Admin_API_>_2._상품"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/products/types",
+    "title": "01. 상품 유형 목록 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_listProductTypes",
+    "group": "1._Admin_API_>_2._상품",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/products/types'",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "types",
+            "description": "<p>상품 유형 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "types.value",
+            "description": "<p>Value</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "types.label",
+            "description": "<p>Label</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"types\": [\n        {\n            \"value\": \"CURRICULUM\",\n            \"label\": \"과정\"\n        },\n        {\n            \"value\": \"CONTENTS\",\n            \"label\": \"컨텐츠\"\n        },\n        {\n            \"value\": \"DEVICE\",\n            \"label\": \"기기\"\n        },\n        {\n            \"value\": \"TEXTBOOK\",\n            \"label\": \"교재\"\n        },\n        {\n            \"value\": \"PACKAGE\",\n            \"label\": \"패키지\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/02_product/01_list_product_types.js",
+    "groupTitle": "1._Admin_API_>_2._상품"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/products",
+    "title": "04. 상품 목록 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_listProducts",
+    "group": "1._Admin_API_>_2._상품",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/products?type=CURRICULUM&language=EN&lessonType=PT'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "type",
+            "description": "<p>상품 유형</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "language",
+            "description": "<p>언어</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "lessonType",
+            "description": "<p>수업 유형</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "products",
+            "description": "<p>상품 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "products.id",
+            "description": "<p>상품 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "products.name",
+            "description": "<p>상품명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "products.price",
+            "description": "<p>상품 가격</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"products\": [\n        {\n            \"id\": \"P1350556710397836\",\n            \"name\": \"PTG (주1회 1개월)\",\n            \"price\": 55000\n        },\n        {\n            \"id\": \"P1350556747894625\",\n            \"name\": \"PTG (주2회 6개월)\",\n            \"price\": 53000\n        },\n        {\n            \"id\": \"P1350566735444807\",\n            \"name\": \"Plug-in 30분\",\n            \"price\": 30000\n        },\n        {\n            \"id\": \"P1357195231862759\",\n            \"name\": \"MISEC/미수금정보\",\n            \"price\": 0\n        },\n        {\n            \"id\": \"P1361514930881960\",\n            \"name\": \"PTM (주2회 3개월)\",\n            \"price\": 60000\n        },\n        {\n            \"id\": \"P1364295608035901\",\n            \"name\": \"PTG (주2회 3개월)\",\n            \"price\": 55000\n        },\n        {\n            \"id\": \"P1364375717944669\",\n            \"name\": \"PTM (주2회 6개월)\",\n            \"price\": 58000\n        },\n        {\n            \"id\": \"P1425279988311032\",\n            \"name\": \"NEW PT 24회 3개월\",\n            \"price\": 65000\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/02_product/04_list_products.js",
+    "groupTitle": "1._Admin_API_>_2._상품"
   },
   {
     "type": " ",

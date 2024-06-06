@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_createUser
- * @apiGroup 1. Admin API > 1. 회원관리
+ * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X POST 'http://localhost:8080/admin/v1/users' \
@@ -18,6 +18,7 @@
     "textbook": "왕초보 1권",
     "loginId": "test12346",
     "email": "test12345@naver.com",
+    "isReceiveEmail": true,
     "password": "11111",
     "gender": "M",
     "phone": "02-1111-2222",
@@ -50,12 +51,13 @@
  * @apiParam (Body) {String} [textbook] 교재
  * @apiParam (Body) {String} loginId 아이디
  * @apiParam (Body) {String} email 이메일
+ * @apiParam (Body) {Boolean} [isReceiveEmail] 이메일 수신 여부
  * @apiParam (Body) {String} password 비밀번호
  * @apiParam (Body) {String} gender 성별 (M:남, F:여)
  * @apiParam (Body) {String} [phone] 유선전화
  * @apiParam (Body) {String} [phoneType] 유선전화 유형 (H:자택, C:직장)
  * @apiParam (Body) {String} cellPhone 휴대전화번호 
- * @apiParam (Body) {Boolean} [isReceiveSms] SMS수신 여부
+ * @apiParam (Body) {Boolean} [isReceiveSms] SMS 수신 여부
  * @apiParam (Body) {Boolean} [isOfficeWorker] 직장인 여부
  * @apiParam (Body) {String} [company] 직장/학교
  * @apiParam (Body) {String} [position] 직책/학과

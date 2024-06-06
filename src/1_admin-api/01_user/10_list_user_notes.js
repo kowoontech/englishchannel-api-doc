@@ -1,11 +1,11 @@
 /**
  * @api {get} /admin/v1/users/{id}/notes 10. 회원 비고 목록 조회
  *
- * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭 > 예약 등록
+ * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭 > 예약 등록 > TIP
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUserNotes
- * @apiGroup 1. Admin API > 1. 회원관리
+ * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/notes?limit=5'
