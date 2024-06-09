@@ -365,6 +365,15 @@
     ],
     "parameter": {
       "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ],
         "Body": [
           {
             "group": "Body",
@@ -400,6 +409,143 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/17_create_user_consultation.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/users/{id}/orders/products",
+    "title": "22. 회원 주문 상품 등록 (주문 등록)",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_createUserOrderProduct",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/products' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"productId\": \"P1350556710397836\",\n    \"months\": 3,\n    \"quantity\": 12,\n    \"teacherId\": \"M1400118325784523\",\n    \"assistantTeacherId\": \"M1695013438115743\",\n    \"discountAmount\": 100,\n    \"billingAmount\": 54900\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "orderId",
+            "description": "<p>주문 번호 (기존 주문에 주문 추가시)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "productId",
+            "description": "<p>상품 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "months",
+            "description": "<p>설정 개월</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "quantity",
+            "description": "<p>설정 횟수</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "teacherId",
+            "description": "<p>담임 강사 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "assistantTeacherId",
+            "description": "<p>부담임 강사 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "isRetake",
+            "description": "<p>등록 구분 (신규: false, 재등록: true)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "retakeTeacherId",
+            "description": "<p>재등록 대상 강사 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "retakeNote",
+            "description": "<p>재등록 사유</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "discountAmount",
+            "description": "<p>할인 금액</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "billingAmount",
+            "description": "<p>청구 금액</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "productOption",
+            "description": "<p>상품 옵션</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderId",
+            "description": "<p>주문 식별키 (신규 주문은 새로 생성된 식별키, 기존 주문은 기존 주문의 식별키 그대로)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n {\n    \"orderId\": \"O1717904811849755\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/22_create_user_order_product.js",
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
@@ -3379,7 +3525,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/products?type=CURRICULUM&language=EN&lessonType=PT'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/products?type=DEVICE'",
         "type": "curl"
       }
     ],
@@ -3437,13 +3583,34 @@
             "optional": false,
             "field": "products.price",
             "description": "<p>상품 가격</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "products.options",
+            "description": "<p>옵션 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "products.options.value",
+            "description": "<p>Value</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "products.options.label",
+            "description": "<p>Label</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"products\": [\n        {\n            \"id\": \"P1350556710397836\",\n            \"name\": \"PTG (주1회 1개월)\",\n            \"price\": 55000\n        },\n        {\n            \"id\": \"P1350556747894625\",\n            \"name\": \"PTG (주2회 6개월)\",\n            \"price\": 53000\n        },\n        {\n            \"id\": \"P1350566735444807\",\n            \"name\": \"Plug-in 30분\",\n            \"price\": 30000\n        },\n        {\n            \"id\": \"P1357195231862759\",\n            \"name\": \"MISEC/미수금정보\",\n            \"price\": 0\n        },\n        {\n            \"id\": \"P1361514930881960\",\n            \"name\": \"PTM (주2회 3개월)\",\n            \"price\": 60000\n        },\n        {\n            \"id\": \"P1364295608035901\",\n            \"name\": \"PTG (주2회 3개월)\",\n            \"price\": 55000\n        },\n        {\n            \"id\": \"P1364375717944669\",\n            \"name\": \"PTM (주2회 6개월)\",\n            \"price\": 58000\n        },\n        {\n            \"id\": \"P1425279988311032\",\n            \"name\": \"NEW PT 24회 3개월\",\n            \"price\": 65000\n        }\n    ]\n}",
+          "content": "HTTP/1.1 200\n{\n    \"products\": [\n        {\n            \"id\": \"P1350566928359647\",\n            \"name\": \"맥북에어 - 11.6(128 Flash)\",\n            \"price\": 1390000,\n            \"options\": [\n                {\n                    \"value\": \"색상:Silver\",\n                    \"label\": \"Silver\"\n                }\n            ]\n        },\n        {\n            \"id\": \"P1352098696544281\",\n            \"name\": \"아이패드 미니 - 16G\",\n            \"price\": 420000,\n            \"options\": [\n                {\n                    \"value\": \"색상:White\",\n                    \"label\": \"White\"\n                },\n                {\n                    \"value\": \"색상:Black\",\n                    \"label\": \"Black\"\n                }\n            ]\n        },\n        {\n            \"id\": \"P1352098762823637\",\n            \"name\": \"아이패드 미니 - 32G\",\n            \"price\": 540000,\n            \"options\": [\n                {\n                    \"value\": \"색상:White\",\n                    \"label\": \"White\"\n                },\n                {\n                    \"value\": \"색상:Black\",\n                    \"label\": \"Black\"\n                }\n            ]\n        },\n        {\n            \"id\": \"P1352098835580142\",\n            \"name\": \"아이패드 미니 - 64G\",\n            \"price\": 660000,\n            \"options\": [\n                {\n                    \"value\": \"색상:White\",\n                    \"label\": \"White\"\n                },\n                {\n                    \"value\": \"색상:Black\",\n                    \"label\": \"Black\"\n                }\n            ]\n        },\n        {\n            \"id\": \"P1352098897939225\",\n            \"name\": \"아이패드4 - 32G\",\n            \"price\": 740000,\n            \"options\": [\n                {\n                    \"value\": \"색상:White\",\n                    \"label\": \"White\"\n                },\n                {\n                    \"value\": \"색상:Black\",\n                    \"label\": \"Black\"\n                }\n            ]\n        },\n        {\n            \"id\": \"P1363942256811053\",\n            \"name\": \"맥북에어  - 11.6(64 Flash)\",\n            \"price\": 1290000,\n            \"options\": [\n                {\n                    \"value\": \"색상:Silver\",\n                    \"label\": \"Silver\"\n                }\n            ]\n        }\n    ]\n}",
           "type": "json"
         }
       ]

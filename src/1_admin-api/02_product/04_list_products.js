@@ -9,7 +9,7 @@
  * @apiGroup 1. Admin API > 2. 상품
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/products?type=CURRICULUM&language=EN&lessonType=PT'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/products?type=DEVICE'
  * 
  * @apiParam (Query) type 상품 유형
  * @apiParam (Query) [language] 언어
@@ -19,50 +19,95 @@
  * @apiSuccess {String} products.id 상품 식별키
  * @apiSuccess {String} products.name 상품명
  * @apiSuccess {String} products.price 상품 가격
+ * @apiSuccess {Object[]} products.options 옵션 목록
+ * @apiSuccess {String} products.options.value Value
+ * @apiSuccess {String} products.options.label Label
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 {
     "products": [
         {
-            "id": "P1350556710397836",
-            "name": "PTG (주1회 1개월)",
-            "price": 55000
+            "id": "P1350566928359647",
+            "name": "맥북에어 - 11.6(128 Flash)",
+            "price": 1390000,
+            "options": [
+                {
+                    "value": "색상:Silver",
+                    "label": "Silver"
+                }
+            ]
         },
         {
-            "id": "P1350556747894625",
-            "name": "PTG (주2회 6개월)",
-            "price": 53000
+            "id": "P1352098696544281",
+            "name": "아이패드 미니 - 16G",
+            "price": 420000,
+            "options": [
+                {
+                    "value": "색상:White",
+                    "label": "White"
+                },
+                {
+                    "value": "색상:Black",
+                    "label": "Black"
+                }
+            ]
         },
         {
-            "id": "P1350566735444807",
-            "name": "Plug-in 30분",
-            "price": 30000
+            "id": "P1352098762823637",
+            "name": "아이패드 미니 - 32G",
+            "price": 540000,
+            "options": [
+                {
+                    "value": "색상:White",
+                    "label": "White"
+                },
+                {
+                    "value": "색상:Black",
+                    "label": "Black"
+                }
+            ]
         },
         {
-            "id": "P1357195231862759",
-            "name": "MISEC/미수금정보",
-            "price": 0
+            "id": "P1352098835580142",
+            "name": "아이패드 미니 - 64G",
+            "price": 660000,
+            "options": [
+                {
+                    "value": "색상:White",
+                    "label": "White"
+                },
+                {
+                    "value": "색상:Black",
+                    "label": "Black"
+                }
+            ]
         },
         {
-            "id": "P1361514930881960",
-            "name": "PTM (주2회 3개월)",
-            "price": 60000
+            "id": "P1352098897939225",
+            "name": "아이패드4 - 32G",
+            "price": 740000,
+            "options": [
+                {
+                    "value": "색상:White",
+                    "label": "White"
+                },
+                {
+                    "value": "색상:Black",
+                    "label": "Black"
+                }
+            ]
         },
         {
-            "id": "P1364295608035901",
-            "name": "PTG (주2회 3개월)",
-            "price": 55000
-        },
-        {
-            "id": "P1364375717944669",
-            "name": "PTM (주2회 6개월)",
-            "price": 58000
-        },
-        {
-            "id": "P1425279988311032",
-            "name": "NEW PT 24회 3개월",
-            "price": 65000
+            "id": "P1363942256811053",
+            "name": "맥북에어  - 11.6(64 Flash)",
+            "price": 1290000,
+            "options": [
+                {
+                    "value": "색상:Silver",
+                    "label": "Silver"
+                }
+            ]
         }
     ]
 }
