@@ -12,13 +12,14 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/options?fields=TEACHERS'
  *
- * @apiParam (Query) [fields] 조회할 옵션 (,로 복수 가능)<br/>
+ * @apiParam (Query) fields 조회할 옵션 (,로 복수 가능)<br/>
  * * TEACHERS:담당강사 목록
+ * * CONSULTANTS:상담사 목록
  *
- * @apiSuccess {Object[]} teachers 담당강사 목록
+ * @apiSuccess {Object[]} [teachers] 담당강사 목록
  * @apiSuccess {String} teachers.value 담당강사 키
  * @apiSuccess {String} teachers.label 담당강사명
- * @apiSuccess {Object[]} consultants 상담사 목록
+ * @apiSuccess {Object[]} [consultants] 상담사 목록
  * @apiSuccess {String} consultants.value 상담사 키
  * @apiSuccess {String} consultants.label 상담사명
  *

@@ -19,9 +19,9 @@ define({ "api": [
         "Query": [
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "fields",
-            "description": "<p>조회할 옵션 (,로 복수 가능)<br/></p> <ul> <li>TEACHERS:담당강사 목록</li> </ul>"
+            "description": "<p>조회할 옵션 (,로 복수 가능)<br/></p> <ul> <li>TEACHERS:담당강사 목록</li> <li>CONSULTANTS:상담사 목록</li> </ul>"
           }
         ]
       }
@@ -32,7 +32,7 @@ define({ "api": [
           {
             "group": "Success 200",
             "type": "Object[]",
-            "optional": false,
+            "optional": true,
             "field": "teachers",
             "description": "<p>담당강사 목록</p>"
           },
@@ -53,7 +53,7 @@ define({ "api": [
           {
             "group": "Success 200",
             "type": "Object[]",
-            "optional": false,
+            "optional": true,
             "field": "consultants",
             "description": "<p>상담사 목록</p>"
           },
