@@ -5,15 +5,15 @@
  * 회원관리 > 학사보고서 > 수정/등록 시 사용
  *
  * @apiVersion 1.0.0
- * @apiName admin_listUserOrder
+ * @apiName admin_getReport
  * @apiGroup 1. Admin API > 3. 학사보고서
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/reservations/report/1317368'
  *
- * @apiParam (Path) {String} 예약id 식별키
+ * @apiParam (Path) {String} id 예약id 식별키
  * 
- * @apiSuccess {long} id 예약식별키
+ * @apiSuccess {String} id 예약식별키
  * @apiSuccess {String} date 예약일
  * @apiSuccess {String} startTime 시작시간
  * @apiSuccess {String} endTime 종료시간

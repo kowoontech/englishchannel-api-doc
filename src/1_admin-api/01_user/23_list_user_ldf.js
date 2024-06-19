@@ -4,7 +4,7 @@
  * @apiDescription 회원관리 > 회원 목록 조회 > LDF 탭
  *
  * @apiVersion 1.0.0
- * @apiName admin_listUsers
+ * @apiName admin_listUserLdfs
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
