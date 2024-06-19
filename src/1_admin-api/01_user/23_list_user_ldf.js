@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users 23. 회원 LDF 목록 조회
+ * @api {get} /admin/v1/users/{id}/ldfs 23. 회원 LDF 목록 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > LDF 탭
  *
