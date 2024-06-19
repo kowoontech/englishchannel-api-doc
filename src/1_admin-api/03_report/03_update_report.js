@@ -16,7 +16,7 @@
     "report" : "TEST"
 }"
  *
- * @apiParam (Path) {String} id 회원 식별키
+ * @apiParam (Path) {String} id 예약식별키
  * 
  * @apiParam (Body) {String} 참석여부(Y:출석 , N:결석, R:예약)
  * @apiParam (Body) {String} report 학사보고서내용
