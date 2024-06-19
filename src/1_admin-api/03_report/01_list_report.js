@@ -5,7 +5,7 @@
  * 회원관리 > 학사보고서
  *
  * @apiVersion 1.0.0
- * @apiName admin_listUsers
+ * @apiName listReport
  * @apiGroup 1. Admin API > 3. 학사보고서
  *
  * @apiExample {curl} REQUEST

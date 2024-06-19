@@ -2,11 +2,11 @@
  * @api {get} /admin/v1/reservations/report/{reservationId} 02. 학사보고서조회
  *
  * @apiDescription 회원관리 > 학사보고서<br/>
- * 회원관리 > 학사보고서 > 수정/등록 시 사용 (예약식별키, 예약일,시간은 고정 출력)
+ * 회원관리 > 학사보고서 > 수정/등록 시 사용
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUserOrder
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 3. 학사보고서
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096'
