@@ -1,7 +1,7 @@
 /**
- * @api {get} /admin/v1/reservations 01. 학사보고서 목록 조회
+ * @api {get} /admin/v1/reservations/report 01. 학사보고서 목록 조회
  *
- * @apiDescription 회원관리 > 회원 목록 조회<br/>
+ * @apiDescription 회원관리 > 학사보고서<br/>
  * 회원관리 > 학사보고서
  *
  * @apiVersion 1.0.0
