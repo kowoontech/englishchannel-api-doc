@@ -11,13 +11,13 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/reservations/report?dateFrom=2024-01-01&dateTo=2024-01-31&reportCondition=REPORT&reportSort=TIME'
  *
- * @apiParam (Query) [dateFrom] 가입일자 검색 ~부터 (yyyy-mm-dd)
- * @apiParam (Query) [dateTo] 가입일자 검색 ~까지 (yyyy-mm-dd)
+ * @apiParam (Query) dateFrom 가입일자 검색 ~부터 (yyyy-mm-dd)
+ * @apiParam (Query) dateTo 가입일자 검색 ~까지 (yyyy-mm-dd)
  * @apiParam (Query) teacherId 강사식별키
  * @apiParam (Query) search 검색 선택(이름)
  * @apiParam (Query) keyword 검색어
- * @apiParam (Query) [courseStatus] 정렬순서 ( TIME: 시간, TEACHER: 강사)
- * @apiParam (Query) [reportCondition] 검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)
+ * @apiParam (Query) courseStatus 정렬순서 ( TIME: 시간, TEACHER: 강사)
+ * @apiParam (Query) reportCondition 검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)
  * @apiParam (Query) limit 한페이지에 보여줄 회원 수
  * @apiParam (Query) page 조회할 페이지
  * @apiParam (Query) order 정렬 선택

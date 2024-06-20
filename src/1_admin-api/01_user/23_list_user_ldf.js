@@ -8,12 +8,12 @@
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
- *  curl -i -X GET 'http://localhost:8080/admin/v1/users/M1672193890143260/ldfs
+ *  curl -i -X GET 'http://localhost:8080/admin/v1/users/M1654741178072018/ldfs
  *
  * @apiParam (Path) {String} id 회원 식별키
- * @apiParam (Query) [date] 날짜
- * @apiParam (Query) [limit] 한페이지에 보여줄 LDF 수
- * @apiParam (Query) [page] 조회할 페이지
+ * @apiParam (Query) date 날짜 (yyyy-mm-dd)
+ * @apiParam (Query) limit 한페이지에 보여줄 LDF 수
+ * @apiParam (Query) page 조회할 페이지
  *
  * @apiSuccess {Object[]} list LDF 목록
  * @apiSuccess {String} list.id 예약 식별키
