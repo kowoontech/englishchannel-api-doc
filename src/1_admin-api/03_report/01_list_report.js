@@ -18,10 +18,10 @@
  * @apiParam (Query) keyword 검색어
  * @apiParam (Query) [courseStatus] 정렬순서 ( TIME: 시간, TEACHER: 강사)
  * @apiParam (Query) [reportCondition] 검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)
- * @apiParam (Query) [limit] 한페이지에 보여줄 회원 수
- * @apiParam (Query) [page] 조회할 페이지
+ * @apiParam (Query) limit 한페이지에 보여줄 회원 수
+ * @apiParam (Query) page 조회할 페이지
  * @apiParam (Query) order 정렬 선택
- * @apiParam (Query) [direction] 정렬 방향 (ASD: 오름차순, DESC: 내림차순)
+ * @apiParam (Query) direction 정렬 방향 (ASD: 오름차순, DESC: 내림차순)
  *
  * @apiSuccess {Object[]} list 학사 보고서 목록
  * @apiSuccess {long} list.id 학사보고서 식별키(예약식별키)

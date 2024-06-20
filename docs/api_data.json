@@ -4147,13 +4147,13 @@
           },
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "limit",
             "description": "<p>한페이지에 보여줄 회원 수</p>"
           },
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "page",
             "description": "<p>조회할 페이지</p>"
           },
@@ -4165,7 +4165,7 @@
           },
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "direction",
             "description": "<p>정렬 방향 (ASD: 오름차순, DESC: 내림차순)</p>"
           }
