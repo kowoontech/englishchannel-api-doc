@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/consultations 01. 상담관리- 상담고객
+ * @api {post} /admin/v1/consultations 01. 상담관리- 상담고객
  *
  * @apiDescription 회원관리 > 상담관리 > 상담고객<br/>
  *  모든 파라미터는 안넘기면 전체<br/>
