@@ -30,6 +30,7 @@
  * @apiParam (Body) {String} statuses 처리상태[  WAITING("3")대기,NO_CONTACT("4")컨택금지,UNVISITED("5"),RESERVED("6"),NOT_REGISTERED("7"),REGISTERED("8"),NO_SHOW("9"),MISSED("10")]
  * @apiParam (Body) {String} search 검색구분[ name:이름, phone: 전화번호 , details :상담내용]
  * @apiParam (Body) {String} keyword 검색내용
+ * @apiParam (Body) {Number} limit 한페이지에 보여줄 회원 수
 
  * @apiSuccess {Object[]} list 회원 목록
  * @apiSuccess {String} list.id 예약 식별키

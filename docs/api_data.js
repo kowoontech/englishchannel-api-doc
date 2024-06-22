@@ -4422,6 +4422,13 @@ define({ "api": [
             "optional": false,
             "field": "keyword",
             "description": "<p>검색내용</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 회원 수</p>"
           }
         ]
       }
