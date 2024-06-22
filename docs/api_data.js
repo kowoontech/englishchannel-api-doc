@@ -2110,7 +2110,7 @@ define({ "api": [
     "type": "get",
     "url": "/admin/v1/users/{id}/notes",
     "title": "10. 회원 비고 목록 조회",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP <br/> modifiedOn null일 시에는 createdOn와 creatorName 출력 <br/> modifiedOn null이 아닐 시에는 modifiedOn, modifierName 출력</p>",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP <br/> modifiedBy null일 시에는 createdOn와 creatorName 출력 <br/> modifiedBy null이 아닐 시에는 modifiedOn, modifierName 출력</p>",
     "version": "1.0.0",
     "name": "admin_listUserNotes",
     "group": "1._Admin_API_>_1._회원",
@@ -2187,6 +2187,13 @@ define({ "api": [
             "optional": false,
             "field": "creatorName",
             "description": "<p>등록자</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "modifiedBy",
+            "description": "<p>등록자 식별키</p>"
           }
         ]
       },
@@ -4082,6 +4089,62 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/03_report/02_get_report.js",
+    "groupTitle": "1._Admin_API_>_3._학사보고서"
+  },
+  {
+    "type": "put",
+    "url": "/admin/v1/reservations/report/{reservationId}",
+    "title": "03. 학사보고서 수정/등록",
+    "description": "<p>회원관리 &gt; 학사보고서 <br/></p>",
+    "version": "1.0.0",
+    "name": "admin_updateReport",
+    "group": "1._Admin_API_>_3._학사보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/reservations/report/1317368'\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"attendanceStatus\" : \"N\",\n    \"report\" : \"TEST\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>예약식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "attendanceStatus",
+            "description": "<p>참석여부(Y:출석 , N:결석, R:예약)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "report",
+            "description": "<p>학사보고서내용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/03_report/03_update_report.js",
     "groupTitle": "1._Admin_API_>_3._학사보고서"
   },
   {

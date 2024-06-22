@@ -2,8 +2,8 @@
  * @api {get} /admin/v1/users/{id}/notes 10. 회원 비고 목록 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭 > 예약 등록 > TIP <br/>
- * modifiedOn null일 시에는 createdOn와 creatorName 출력 <br/>
- * modifiedOn null이 아닐 시에는 modifiedOn, modifierName 출력
+ * modifiedBy null일 시에는 createdOn와 creatorName 출력 <br/>
+ * modifiedBy null이 아닐 시에는 modifiedOn, modifierName 출력
 
  * @apiVersion 1.0.0
  * @apiName admin_listUserNotes
@@ -21,6 +21,7 @@
  * @apiSuccess {String} createdOn 등록일시 (yyyy-MM-dd HH:mm:ss)
  * @apiSuccess {String} modifierName 수정자
  * @apiSuccess {String} creatorName 등록자
+ * @apiSuccess {String} modifiedBy 등록자 식별키
 
  *
  * @apiSuccessExample {json} SUCCESS
