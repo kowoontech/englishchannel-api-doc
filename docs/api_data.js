@@ -350,6 +350,62 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/admin/v1/users",
+    "title": "25. 비고등록",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
+    "version": "1.0.0",
+    "name": "admin_createUser",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/ataraxia22/notes' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"courseId\" : 28074,\n     \"content\" : \"TEST12\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": true,
+            "field": "id",
+            "description": "<p>과정 회원 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "courseId",
+            "description": "<p>강의 식별키(오른쪽에 있는 과정의 식별키와 일치)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "content",
+            "description": "<p>비고 내용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/25_create_user_notes.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "post",
     "url": "/admin/v1/users/{id}/consultations",
     "title": "17. 회원 상담 등록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
@@ -1202,6 +1258,64 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/admin/v1/users/{id}/notes/{noteId}",
+    "title": "26. 비고 상세 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
+    "version": "1.0.0",
+    "name": "admin_getUserLdf",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http:localhost:8080/admin/v1/users/M1537176724121409/notes/2610803'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": true,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "Number",
+            "optional": true,
+            "field": "noteId",
+            "description": "<p>식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>비고 내용</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"content\": \"2020-01-30 19:00 수업을 결석처리\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/26_get_user_notes.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/users/{id}/reservations/{reservationId}",
     "title": "14. 회원 예약 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 학습 탭</p>",
@@ -1996,31 +2110,35 @@ define({ "api": [
     "type": "get",
     "url": "/admin/v1/users/{id}/notes",
     "title": "10. 회원 비고 목록 조회",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP</p>",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP <br/> modifiedOn null일 시에는 createdOn와 creatorName 출력 <br/> modifiedOn null이 아닐 시에는 modifiedOn, modifierName 출력</p>",
     "version": "1.0.0",
     "name": "admin_listUserNotes",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/notes?limit=5'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/ataraxia22/notes?courseId=28071",
         "type": "curl"
       }
     ],
     "parameter": {
       "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": true,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ],
         "Query": [
           {
             "group": "Query",
+            "type": "Number",
             "optional": true,
-            "field": "limit",
-            "description": "<p>한페이지에 보여줄 비고 수</p>"
-          },
-          {
-            "group": "Query",
-            "optional": true,
-            "field": "page",
-            "description": "<p>조회할 페이지</p>"
+            "field": "courseId",
+            "description": "<p>수강 식별키</p>"
           }
         ]
       }
@@ -2030,115 +2148,52 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "list",
-            "description": "<p>비고 목록</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "list.id",
+            "field": "id",
             "description": "<p>비고 식별키</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "list.content",
+            "field": "content",
             "description": "<p>비고 내용</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "list.modifiedOn",
+            "field": "modifiedOn",
             "description": "<p>수정일시 (yyyy-MM-dd HH:mm:ss)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "list.modifierName",
+            "field": "createdOn",
+            "description": "<p>등록일시 (yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "modifierName",
             "description": "<p>수정자</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
-            "field": "totalCount",
-            "description": "<p>전체 비고 수</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "page",
-            "description": "<p>현재 페이지</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "limit",
-            "description": "<p>한페이지에 보여줄 비고 수</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "totalPage",
-            "description": "<p>전체 페이지 수</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "startPage",
-            "description": "<p>페이징 영역에 노출될 첫 페이지</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "endPage",
-            "description": "<p>페이징 영역에 노출될 마지막 페이지</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Boolean",
-            "optional": false,
-            "field": "hasPrev",
-            "description": "<p>전 페이징 영역 존재 여부</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Boolean",
-            "optional": false,
-            "field": "hasNext",
-            "description": "<p>다음 페이징 영역 존재 여부</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Boolean",
-            "optional": false,
-            "field": "isFirst",
-            "description": "<p>첫 페이징 영역 여부</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Boolean",
-            "optional": false,
-            "field": "isLast",
-            "description": "<p>마지막 페이징 영역 여부</p>"
+            "field": "creatorName",
+            "description": "<p>등록자</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 452458,\n            \"content\": \"Juan 수업 넣지 말 것!\",\n            \"modifiedOn\": \"2014-06-04 16:48:50\",\n            \"modifierName\": \"편효린\"\n        },\n        {\n            \"id\": 306750,\n            \"content\": \"Christoph 강사 예약 하지 원하지 않음.\",\n            \"modifiedOn\": \"2014-01-06 10:45:16\",\n            \"modifierName\": \"권정민\"\n        }\n    ],\n    \"totalCount\": 2,\n    \"page\": 1,\n    \"limit\": 5,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"hasNext\": false,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": true\n}",
+          "content": "HTTP/1.1 200\n{\n[\n\n    {\n        \"id\": 2666892,\n        \"content\": \"노화선T 불호\",\n        \"modifiedOn\": \"2020-03-24 19:53:19\",\n        \"modifierName\": \"배시현\",\n        \"createdOn\": \"2020-03-24 19:53:19\",\n        \"creatorName\": \"배시현\"\n    },\n    {\n        \"id\": 2658891,\n        \"content\": \"Erin 불호\",\n        \"modifiedOn\": \"2020-03-17 11:14:23\",\n        \"modifierName\": \"배규리\",\n        \"createdOn\": \"2020-03-17 11:14:23\",\n        \"creatorName\": \"배규리\"\n    },\n    {\n        \"id\": 2657874,\n        \"content\": \"6:00pm 월 Brett TT, 수 Erin TT\",\n        \"modifiedOn\": \"2020-03-16 14:06:30\",\n        \"modifierName\": \"배시현\",\n        \"createdOn\": \"2020-03-16 14:06:30\",\n        \"creatorName\": \"배시현\"\n    },\n    {\n        \"id\": 2642209,\n        \"content\": \"노화선 T 불호\",\n        \"modifiedOn\": \"2020-02-26 13:26:43\",\n        \"modifierName\": \"신희진\",\n        \"createdOn\": \"2020-02-26 13:26:43\",\n        \"creatorName\": \"신희진\"\n    }\n]\n}",
           "type": "json"
         }
       ]

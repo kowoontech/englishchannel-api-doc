@@ -23,7 +23,7 @@
  * @apiSuccess {String} list.courseName 강의명
  * @apiSuccess {String} list.content 콘텐츠
  * @apiSuccess {String} list.teacherName 강사명
- * @apiSuccess {Number} list.attendanceStatus 출석여부(출석, 결석, 예약)
+ * @apiSuccess {Number} list.attendanceStatus 출석여부(출석/ 결석/ 예약) 출석 시 등록 버튼 출력.
  * @apiSuccess {Number} list.ldfId  LDF 파일 유무 (파일이 있을 시 LDF 식별키/없을 시 NULL)
  * @apiSuccess {Number} list.teacherName 강사명
  * @apiSuccess {Number} page 현재 페이지
