@@ -4353,7 +4353,7 @@ define({ "api": [
     "type": "get",
     "url": "/admin/v1/consultations",
     "title": "01. 상담관리- 상담고객",
-    "description": "<p>회원관리 &gt; 상담관리 &gt; 상담고객<br/> 모든 파라미터는 안넘기면 전체 파마미터의 [전체] checkbox 선택 시 나머지 checkbox 선택 제거</p>",
+    "description": "<p>회원관리 &gt; 상담관리 &gt; 상담고객<br/> 모든 파라미터는 안넘기면 전체<br/> 파마미터의 [전체] checkbox 선택 시 나머지 checkbox 선택 제거</p>",
     "version": "1.0.0",
     "name": "all_consultation",
     "group": "1._Admin_API_>_4._상담관리",

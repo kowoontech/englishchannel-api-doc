@@ -2,7 +2,7 @@
  * @api {get} /admin/v1/consultations 01. 상담관리- 상담고객
  *
  * @apiDescription 회원관리 > 상담관리 > 상담고객<br/>
- *  모든 파라미터는 안넘기면 전체
+ *  모든 파라미터는 안넘기면 전체<br/>
  *  파마미터의 [전체] checkbox 선택 시 나머지 checkbox 선택 제거
  *
  * @apiVersion 1.0.0
