@@ -1806,7 +1806,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1672193890143260/ldfs",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1654741178072018/ldfs",
         "type": "curl"
       }
     ],
@@ -1824,19 +1824,19 @@
         "Query": [
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "date",
-            "description": "<p>날짜</p>"
+            "description": "<p>날짜 (yyyy-mm-dd)</p>"
           },
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "limit",
             "description": "<p>한페이지에 보여줄 LDF 수</p>"
           },
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "page",
             "description": "<p>조회할 페이지</p>"
           }
@@ -1907,7 +1907,7 @@
             "type": "Number",
             "optional": false,
             "field": "list.attendanceStatus",
-            "description": "<p>출석여부(출석, 결석, 예약)</p>"
+            "description": "<p>출석여부(출석/ 결석/ 예약) 출석 시 등록 버튼 출력.</p>"
           },
           {
             "group": "Success 200",
@@ -4105,13 +4105,13 @@
         "Query": [
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "dateFrom",
             "description": "<p>가입일자 검색 ~부터 (yyyy-mm-dd)</p>"
           },
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "dateTo",
             "description": "<p>가입일자 검색 ~까지 (yyyy-mm-dd)</p>"
           },
@@ -4135,13 +4135,13 @@
           },
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "courseStatus",
             "description": "<p>정렬순서 ( TIME: 시간, TEACHER: 강사)</p>"
           },
           {
             "group": "Query",
-            "optional": true,
+            "optional": false,
             "field": "reportCondition",
             "description": "<p>검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)</p>"
           },
@@ -4353,7 +4353,7 @@
     "type": "get",
     "url": "/admin/v1/consultations",
     "title": "01. 상담관리- 상담고객",
-    "description": "<p>회원관리 &gt; 상담관리 &gt; 상담고객</p>",
+    "description": "<p>회원관리 &gt; 상담관리 &gt; 상담고객<br/> 모든 파라미터는 안넘기면 전체 파마미터의 [전체] checkbox 선택 시 나머지 checkbox 선택 제거</p>",
     "version": "1.0.0",
     "name": "all_consultation",
     "group": "1._Admin_API_>_4._상담관리",
@@ -4364,6 +4364,61 @@
         "type": "curl"
       }
     ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "createDateFrom",
+            "description": "<p>등록일(시작)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "createDateTo",
+            "description": "<p>등록일(끝)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "visitDateFrom",
+            "description": "<p>방문예약일(시작)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "consultationType",
+            "description": "<p>상담구분[P: 전화상담,V: 방문상담,K: 카카오채널,N: 네이버예약]</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "statuses",
+            "description": "<p>처리상태[  WAITING(&quot;3&quot;)대기,NO_CONTACT(&quot;4&quot;)컨택금지,UNVISITED(&quot;5&quot;),RESERVED(&quot;6&quot;),NOT_REGISTERED(&quot;7&quot;),REGISTERED(&quot;8&quot;),NO_SHOW(&quot;9&quot;),MISSED(&quot;10&quot;)]</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "search",
+            "description": "<p>검색구분[ name:이름, phone: 전화번호 , details :상담내용]</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "keyword",
+            "description": "<p>검색내용</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [

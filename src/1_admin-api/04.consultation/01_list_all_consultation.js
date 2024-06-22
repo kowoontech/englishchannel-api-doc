@@ -1,7 +1,9 @@
 /**
  * @api {get} /admin/v1/consultations 01. 상담관리- 상담고객
  *
- * @apiDescription 회원관리 > 상담관리 > 상담고객
+ * @apiDescription 회원관리 > 상담관리 > 상담고객<br/>
+ *  모든 파라미터는 안넘기면 전체
+ *  파마미터의 [전체] checkbox 선택 시 나머지 checkbox 선택 제거
  *
  * @apiVersion 1.0.0
  * @apiName all_consultation
@@ -19,6 +21,15 @@
      "search" :"name",
      "keyword" : "임"
 }"
+
+ * @apiParam (Body) {String} createDateFrom 등록일(시작)
+ * @apiParam (Body) {String} createDateTo 등록일(끝)
+ * @apiParam (Body) {String} visitDateFrom 방문예약일(시작)
+ * @apiParam (Body) {String} visitDateFrom 방문예약일(끝)
+ * @apiParam (Body) {String} consultationType 상담구분[P: 전화상담,V: 방문상담,K: 카카오채널,N: 네이버예약]
+ * @apiParam (Body) {String} statuses 처리상태[  WAITING("3")대기,NO_CONTACT("4")컨택금지,UNVISITED("5"),RESERVED("6"),NOT_REGISTERED("7"),REGISTERED("8"),NO_SHOW("9"),MISSED("10")]
+ * @apiParam (Body) {String} search 검색구분[ name:이름, phone: 전화번호 , details :상담내용]
+ * @apiParam (Body) {String} keyword 검색내용
 
  * @apiSuccess {Object[]} list 회원 목록
  * @apiSuccess {String} list.id 예약 식별키
