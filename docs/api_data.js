@@ -4392,6 +4392,13 @@ define({ "api": [
             "group": "Body",
             "type": "String",
             "optional": false,
+            "field": "visitDateTo",
+            "description": "<p>방문예약일(끝)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
             "field": "consultationType",
             "description": "<p>상담구분[P: 전화상담,V: 방문상담,K: 카카오채널,N: 네이버예약]</p>"
           },
