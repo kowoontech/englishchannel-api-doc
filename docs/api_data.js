@@ -4816,6 +4816,90 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_4._상담관리"
   },
   {
+    "type": "post",
+    "url": "/admin/v1/teachers/{id}/schedules",
+    "title": "06. 강사 스케줄 저장",
+    "description": "<p>강사관리 &gt; 강의OPEN(주별)<br/> 선택한 스케줄은 등록하고, 선택하지 않은 스케줄은 삭제한다.</p>",
+    "version": "1.0.0",
+    "name": "admin_createTeacherSchedules",
+    "group": "1._Admin_API_>_5._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/teachers/M1695013438115743/schedules'\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"dateFrom\": \"2023-10-04\",\n    \"dateTo\": \"2023-10-05\",\n    \"workTime\": \"AM_16\",\n    \"schedules\": [\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"06:30\"\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"07:00\"\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"07:30\"\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"08:00\"\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"08:30\"\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"09:30\"\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"10:00\",\n            \"isScheduled\": true\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"11:00\"\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"06:30\"\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"07:00\"\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"07:30\"\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"08:00\"\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"08:30\"\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"09:00\"\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"09:30\"\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"10:00\"\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"11:00\"\n        }\n    ]\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>강사 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "dateFrom",
+            "description": "<p>조회 시작일 (yyyy-MM-dd, 조회 시작일 ~ 종료일 사이의 선택하지 않은 스케줄은 모두 삭제)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "dateTo",
+            "description": "<p>조회 종료일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "workTime",
+            "description": "<p>근무시간 (AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Object[]",
+            "optional": true,
+            "field": "schedules",
+            "description": "<p>선택한 스케줄 목록</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.date",
+            "description": "<p>날짜 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.time",
+            "description": "<p>시간 (HH:mm)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/06_create_teacher_schedules.js",
+    "groupTitle": "1._Admin_API_>_5._강사"
+  },
+  {
     "type": "get",
     "url": "/admin/v1/teachers/{id}/schedules",
     "title": "05. 강사 스케줄 조회",
