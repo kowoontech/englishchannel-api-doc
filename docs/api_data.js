@@ -4511,6 +4511,46 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_3._학사보고서"
   },
   {
+    "type": "post",
+    "url": "/admin/v1/consultations/{id}/users",
+    "title": "02. 상담 회원 등록",
+    "description": "<p>회원관리 &gt; 상담관리 &gt; 회원등록</p>",
+    "version": "1.0.0",
+    "name": "admin_createConsultationUser",
+    "group": "1._Admin_API_>_4._상담관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/consultations/14946/users'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>상담 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/04.consultation/02_create_consultation_user.js",
+    "groupTitle": "1._Admin_API_>_4._상담관리"
+  },
+  {
     "type": "get",
     "url": "/admin/v1/consultations",
     "title": "01. 상담관리 > 상담고객목록",
