@@ -4816,6 +4816,92 @@
     "groupTitle": "1._Admin_API_>_4._상담관리"
   },
   {
+    "type": "get",
+    "url": "/admin/v1/teachers/{id}/schedules",
+    "title": "05. 강사 스케줄 조회",
+    "description": "<p>강사관리 &gt; 강의OPEN(주별)<br/> 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
+    "version": "1.0.0",
+    "name": "admin_listTeacherSchedules",
+    "group": "1._Admin_API_>_5._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/teachers/M1695013438115743/schedules?dateFrom=2023-10-04&dateTo=2023-10-05'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>강사 식별키</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "dateFrom",
+            "description": "<p>조회할 날짜 ~부터 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "dateTo",
+            "description": "<p>조회할 날짜 ~까지 (yyyy-MM-dd)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>스케줄</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.date",
+            "description": "<p>날짜 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.time",
+            "description": "<p>시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "schedules.scheduled",
+            "description": "<p>스케줄 저장 여부</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"schedules\": [\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"06:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"06:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"07:00\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"07:30\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"08:00\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"08:30\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"09:00\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"09:30\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"10:00\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"10:30\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"11:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"11:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"12:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"12:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"13:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"13:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"14:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"14:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"15:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"15:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"16:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"16:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"17:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"17:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"18:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"18:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"19:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"19:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"20:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"20:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"21:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"21:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"22:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"22:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"23:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-04\",\n            \"time\": \"23:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"06:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"06:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"07:00\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"07:30\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"08:00\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"08:30\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"09:00\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"09:30\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"10:00\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"10:30\",\n            \"scheduled\": true\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"11:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"11:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"12:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"12:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"13:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"13:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"14:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"14:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"15:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"15:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"16:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"16:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"17:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"17:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"18:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"18:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"19:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"19:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"20:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"20:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"21:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"21:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"22:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"22:30\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"23:00\",\n            \"scheduled\": false\n        },\n        {\n            \"date\": \"2023-10-05\",\n            \"time\": \"23:30\",\n            \"scheduled\": false\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/05_list_teacher_schedules.js",
+    "groupTitle": "1._Admin_API_>_5._강사"
+  },
+  {
     "type": " ",
     "url": "{code:'에러코드',message:'에러메시지'}",
     "title": "00. 공통 에러 코드",
