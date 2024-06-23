@@ -4,7 +4,7 @@
  * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭 > 예약 등록 > TIP(비고)
  *
  * @apiVersion 1.0.0
- * @apiName admin_getUserLdf
+ * @apiName admin_getUserNote
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST

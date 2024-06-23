@@ -86,6 +86,105 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/admin/v1/login",
+    "title": "02. 로그인",
+    "description": "<p>어드민 로그인<br/> 모든 API 요청의 header에 Login-Profile=test 를 넣으면 로그인 우회</p>",
+    "version": "1.0.0",
+    "name": "admin_login",
+    "group": "1._Admin_API_>_0._공통_API",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/login' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"type\": \"A\",\n    \"id\": \"123123123123@naver.com\",\n    \"password\": \"1111\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>로그인 유형 (T: 강사, A:운영자)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>로그인 아이디</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>비밀번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>이름</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": \"M1568918323745589\",\n    \"name\": \"test\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/00_common/02_login.js",
+    "groupTitle": "1._Admin_API_>_0._공통_API"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/logout",
+    "title": "03. 로그아웃",
+    "description": "<p>어드민 로그아웃</p>",
+    "version": "1.0.0",
+    "name": "admin_logout",
+    "group": "1._Admin_API_>_0._공통_API",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/logout'",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/00_common/03_logout.js",
+    "groupTitle": "1._Admin_API_>_0._공통_API"
+  },
+  {
+    "type": "post",
     "url": "/admin/v1/users",
     "title": "03. 회원 등록",
     "description": "<p>회원관리 &gt; 회원 등록</p>",
@@ -350,62 +449,6 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/admin/v1/users",
-    "title": "25. 비고등록",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
-    "version": "1.0.0",
-    "name": "admin_createUser",
-    "group": "1._Admin_API_>_1._회원",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/ataraxia22/notes' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"courseId\" : 28074,\n     \"content\" : \"TEST12\"\n}\"",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Query": [
-          {
-            "group": "Query",
-            "type": "String",
-            "optional": true,
-            "field": "id",
-            "description": "<p>과정 회원 식별키</p>"
-          }
-        ],
-        "Body": [
-          {
-            "group": "Body",
-            "type": "Number",
-            "optional": true,
-            "field": "courseId",
-            "description": "<p>강의 식별키(오른쪽에 있는 과정의 식별키와 일치)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "content",
-            "description": "<p>비고 내용</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/01_user/25_create_user_notes.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
-  },
-  {
-    "type": "post",
     "url": "/admin/v1/users/{id}/consultations",
     "title": "17. 회원 상담 등록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
@@ -465,6 +508,62 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/17_create_user_consultation.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/users",
+    "title": "25. 비고등록",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
+    "version": "1.0.0",
+    "name": "admin_createUserNote",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/ataraxia22/notes' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"courseId\" : 28074,\n     \"content\" : \"TEST12\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": true,
+            "field": "id",
+            "description": "<p>과정 회원 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "courseId",
+            "description": "<p>강의 식별키(오른쪽에 있는 과정의 식별키와 일치)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "content",
+            "description": "<p>비고 내용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/25_create_user_notes.js",
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
@@ -1262,7 +1361,7 @@ define({ "api": [
     "title": "26. 비고 상세 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
     "version": "1.0.0",
-    "name": "admin_getUserLdf",
+    "name": "admin_getUserNote",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
