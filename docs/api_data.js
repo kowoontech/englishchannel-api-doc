@@ -4521,7 +4521,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/consultations/14946/users'",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/consultations/14949/users'",
         "type": "curl"
       }
     ],
@@ -4539,10 +4539,21 @@ define({ "api": [
       }
     },
     "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>회원 식별키</p>"
+          }
+        ]
+      },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
+          "content": "HTTP/1.1 200\n{\n    \"userId\": \"M1719131763363954\"\n}",
           "type": "json"
         }
       ]
