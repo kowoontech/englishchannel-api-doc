@@ -350,7 +350,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/admin/v1/users",
+    "url": "/admin/v1/users/{id}/notes",
     "title": "25. 비고등록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
     "version": "1.0.0",
