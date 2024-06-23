@@ -449,62 +449,6 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/admin/v1/users",
-    "title": "25. 비고등록",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
-    "version": "1.0.0",
-    "name": "admin_createUser",
-    "group": "1._Admin_API_>_1._회원",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/ataraxia22/notes' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"courseId\" : 28074,\n     \"content\" : \"TEST12\"\n}\"",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Query": [
-          {
-            "group": "Query",
-            "type": "String",
-            "optional": true,
-            "field": "id",
-            "description": "<p>과정 회원 식별키</p>"
-          }
-        ],
-        "Body": [
-          {
-            "group": "Body",
-            "type": "Number",
-            "optional": true,
-            "field": "courseId",
-            "description": "<p>강의 식별키(오른쪽에 있는 과정의 식별키와 일치)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "content",
-            "description": "<p>비고 내용</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/01_user/25_create_user_notes.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
-  },
-  {
-    "type": "post",
     "url": "/admin/v1/users/{id}/consultations",
     "title": "17. 회원 상담 등록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
@@ -564,6 +508,62 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/17_create_user_consultation.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/users/{id}/notes",
+    "title": "25. 비고등록",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
+    "version": "1.0.0",
+    "name": "admin_createUserNote",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/ataraxia22/notes' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"courseId\" : 28074,\n     \"content\" : \"TEST12\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": true,
+            "field": "id",
+            "description": "<p>과정 회원 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "courseId",
+            "description": "<p>강의 식별키(오른쪽에 있는 과정의 식별키와 일치)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "content",
+            "description": "<p>비고 내용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/25_create_user_notes.js",
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
@@ -1361,7 +1361,7 @@ define({ "api": [
     "title": "26. 비고 상세 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
     "version": "1.0.0",
-    "name": "admin_getUserLdf",
+    "name": "admin_getUserNote",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
@@ -4509,6 +4509,57 @@ define({ "api": [
     },
     "filename": "src/1_admin-api/03_report/01_list_report.js",
     "groupTitle": "1._Admin_API_>_3._학사보고서"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/consultations/{id}/users",
+    "title": "02. 상담 회원 등록",
+    "description": "<p>회원관리 &gt; 상담관리 &gt; 회원등록</p>",
+    "version": "1.0.0",
+    "name": "admin_createConsultationUser",
+    "group": "1._Admin_API_>_4._상담관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/consultations/14949/users'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>상담 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>회원 식별키</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"userId\": \"M1719131763363954\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/04.consultation/02_create_consultation_user.js",
+    "groupTitle": "1._Admin_API_>_4._상담관리"
   },
   {
     "type": "get",
