@@ -19,7 +19,7 @@
  * @apiSuccess {Object[]} schedules 스케줄
  * @apiSuccess {String} schedules.date 날짜 (yyyy-MM-dd)
  * @apiSuccess {String} schedules.time 시간 (HH:mm)
- * @apiSuccess {Boolean} schedules.scheduled 스케줄 저장 여부
+ * @apiSuccess {Boolean} schedules.isScheduled 저장된 스케줄 여부
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
@@ -28,362 +28,362 @@
         {
             "date": "2023-10-04",
             "time": "06:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "06:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "07:00",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-04",
             "time": "07:30",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-04",
             "time": "08:00",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-04",
             "time": "08:30",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-04",
             "time": "09:00",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-04",
             "time": "09:30",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-04",
             "time": "10:00",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-04",
             "time": "10:30",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-04",
             "time": "11:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "11:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "12:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "12:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "13:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "13:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "14:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "14:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "15:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "15:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "16:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "16:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "17:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "17:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "18:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "18:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "19:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "19:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "20:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "20:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "21:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "21:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "22:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "22:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "23:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-04",
             "time": "23:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "06:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "06:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "07:00",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-05",
             "time": "07:30",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-05",
             "time": "08:00",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-05",
             "time": "08:30",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-05",
             "time": "09:00",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-05",
             "time": "09:30",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-05",
             "time": "10:00",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-05",
             "time": "10:30",
-            "scheduled": true
+            "isScheduled": true
         },
         {
             "date": "2023-10-05",
             "time": "11:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "11:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "12:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "12:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "13:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "13:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "14:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "14:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "15:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "15:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "16:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "16:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "17:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "17:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "18:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "18:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "19:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "19:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "20:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "20:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "21:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "21:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "22:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "22:30",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "23:00",
-            "scheduled": false
+            "isScheduled": false
         },
         {
             "date": "2023-10-05",
             "time": "23:30",
-            "scheduled": false
+            "isScheduled": false
         }
     ]
 }
