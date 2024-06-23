@@ -4511,9 +4511,9 @@
     "groupTitle": "1._Admin_API_>_3._학사보고서"
   },
   {
-    "type": "post",
+    "type": "get",
     "url": "/admin/v1/consultations",
-    "title": "01. 상담관리- 상담고객",
+    "title": "01. 상담관리 > 상담고객목록",
     "description": "<p>회원관리 &gt; 상담관리 &gt; 상담고객<br/> 모든 파라미터는 안넘기면 전체<br/> 파마미터의 [전체] checkbox 선택 시 나머지 checkbox 선택 제거</p>",
     "version": "1.0.0",
     "name": "all_consultation",
@@ -4521,71 +4521,71 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/consultations\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"createDateFrom\" : \"2013-01-01\",\n     \"createDateTo\" : \"2023-01-02\",\n     \"visitDateFrom\" :\"2013-07-01\",\n     \"visitDateTo\" : \"2023-02-01\",\n     \"consultationType\" :[\"N\",\"P\"],\n     \"search\" :\"name\",\n     \"keyword\" : \"임\"\n}\"",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/consultations?statusCodes=3&statusCodes=7",
         "type": "curl"
       }
     ],
     "parameter": {
       "fields": {
-        "Body": [
+        "Query": [
           {
-            "group": "Body",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "createDateFrom",
             "description": "<p>등록일(시작)</p>"
           },
           {
-            "group": "Body",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "createDateTo",
             "description": "<p>등록일(끝)</p>"
           },
           {
-            "group": "Body",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "visitDateFrom",
             "description": "<p>방문예약일(시작)</p>"
           },
           {
-            "group": "Body",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "visitDateTo",
             "description": "<p>방문예약일(끝)</p>"
           },
           {
-            "group": "Body",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "consultationType",
             "description": "<p>상담구분[P: 전화상담,V: 방문상담,K: 카카오채널,N: 네이버예약]</p>"
           },
           {
-            "group": "Body",
-            "type": "String",
+            "group": "Query",
+            "type": "Number",
             "optional": false,
-            "field": "statuses",
-            "description": "<p>처리상태[  WAITING(&quot;3&quot;)대기,NO_CONTACT(&quot;4&quot;)컨택금지,UNVISITED(&quot;5&quot;),RESERVED(&quot;6&quot;),NOT_REGISTERED(&quot;7&quot;),REGISTERED(&quot;8&quot;),NO_SHOW(&quot;9&quot;),MISSED(&quot;10&quot;)]</p>"
+            "field": "statusCodes",
+            "description": "<p>처리상태[WAITING(&quot;3&quot;),NO_CONTACT(&quot;4&quot;),UNVISITED(&quot;5&quot;),RESERVED(&quot;6&quot;),NOT_REGISTERED(&quot;7&quot;),REGISTERED(&quot;8&quot;),NO_SHOW(&quot;9&quot;),MISSED(&quot;10&quot;)]</p>"
           },
           {
-            "group": "Body",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "search",
             "description": "<p>검색구분[ name:이름, phone: 전화번호 , details :상담내용]</p>"
           },
           {
-            "group": "Body",
+            "group": "Query",
             "type": "String",
             "optional": false,
             "field": "keyword",
             "description": "<p>검색내용</p>"
           },
           {
-            "group": "Body",
+            "group": "Query",
             "type": "Number",
             "optional": false,
             "field": "limit",
@@ -4655,28 +4655,28 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "list.visitDate",
             "description": "<p>방문일정</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "list.createdOn",
             "description": "<p>등록일</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "list.creatorName",
             "description": "<p>상담직원</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "list.details",
             "description": "<p>상담내용</p>"
@@ -4756,7 +4756,7 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": \"22475\",\n            \"type\": \"P\",\n            \"status\": \"8\",\n            \"name\": \"임수진:등록완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2023-01-02T16:00:00\",\n            \"createdOn\": \"2023-01-02T14:51:31\",\n            \"creatorName\": \"한시내\",\n            \"details\": \"[레테] 1/2(월) 16:00 Alex.T 임수진님 010-5229-9799\"\n        },\n        {\n            \"id\": \"21865\",\n            \"type\": \"P\",\n            \"status\": \"8\",\n            \"name\": \"임정희:등록완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": \"50\",\n            \"visitDate\": \"2022-10-31T17:00:00\",\n            \"createdOn\": \"2022-10-28T14:32:37\",\n            \"creatorName\": \"장지영\",\n            \"details\": \"[레테] 10/31(월) 17:00 ,Adam T 임정희님 010-7191-4866\"\n        },\n        {\n            \"id\": \"20993\",\n            \"type\": \"N\",\n            \"status\": \"8\",\n            \"name\": \"임은옥:등록완료\",\n            \"phone\": null,\n            \"company\": \"모아래 어린이집\",\n            \"callTime\": null,\n            \"visitDate\": \"2022-08-06T17:30:00\",\n            \"createdOn\": \"2022-08-06T14:08:22\",\n            \"creatorName\": \"고연정\",\n            \"details\": \"[LEVEL TEST] 08/06(토) 17:30 pm Erin T 임은옥 010-2106-9311 \"\n        },\n        {\n            \"id\": \"20674\",\n            \"type\": \"N\",\n            \"status\": \"8\",\n            \"name\": \"임세은:등록완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2022-07-08T18:00:00\",\n            \"createdOn\": \"2022-07-06T07:09:51\",\n            \"creatorName\": \"천지은\",\n            \"details\": \"*네이버인입 7/8(금) 오후4시로 예약 잡으심 > 확인차 연락드렸으나 부재중  7/9(금) 6:00pm Level Test. Alex T. 010-5851-4409\"\n        },\n        {\n            \"id\": \"20240\",\n            \"type\": \"N\",\n            \"status\": \"7\",\n            \"name\": \"임다예:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2022-06-04T14:30:00\",\n            \"createdOn\": \"2022-06-01T17:53:09\",\n            \"creatorName\": \"최지혜\",\n            \"details\": \"* 네이버예약 -> 전화상담 간단히 진행 * 자세한 내용 아래 상담이력 참조 \"\n        },\n        {\n            \"id\": \"19949\",\n            \"type\": \"N\",\n            \"status\": \"9\",\n            \"name\": \"임지영:NOSHOW\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2022-05-12T18:00:00\",\n            \"createdOn\": \"2022-05-06T09:50:09\",\n            \"creatorName\": \"권혁인\",\n            \"details\": \"[LEVEL TEST]  - 네이버 예약 인입 - 임지영님 \\t010-9534-1135 - 5/12(목) 18:00 Alex T\"\n        },\n        {\n            \"id\": \"19846\",\n            \"type\": \"N\",\n            \"status\": \"7\",\n            \"name\": \"임지현:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2022-04-25T19:30:00\",\n            \"createdOn\": \"2022-04-25T15:17:48\",\n            \"creatorName\": \"천지은\",\n            \"details\": \"[신규 상담] - 현재 직장인, 외국계로 추후 이직 희망하셔서 영어 공부 필요하다고 하심 - 수강료 / 강사 퀄리티 중요시 하시는 분 - lv 500-3 by Alex.T(실제 실력보다 점수 후하게 준듯 한 느낌) - 단어와 단어를 나열하는 수준이라 본인 생각에는 문장으로 수월하게 말하는 연습 하고 싶다고 하심 - 초반에 한인 선생님 위주로 수업 하시면서 어느정도 실력 향상 되었을 때 원어민T로 넘어가라고 권해드림 - JE, AISAC +, CUBE 500-1 권해드렸고, 큐브가 제일 맘에 든다고 하셨음 - 3개월 바짝 해보시라고 권유드렸으나 조금 더 생각해보겠다고 망설이셔서 좀 더 생각해보시고 연락주시라 함 - 추후 전화 한번 드려보면 좋을 듯 함   -------------------------------------------- [level test] 네이버 인입 \\t임지현  \\t010-9158-0992 4/25 7:30pm Alex.T\"\n        },\n        {\n            \"id\": \"19645\",\n            \"type\": \"P\",\n            \"status\": \"7\",\n            \"name\": \"임세현:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2022-03-30T17:30:00\",\n            \"createdOn\": \"2022-03-30T17:09:17\",\n            \"creatorName\": \"이국화\",\n            \"details\": \"- 전화/당일상담 요청하심 - 5:30PM AlexT 로 예약 - 2명 방문예정\"\n        },\n        {\n            \"id\": \"19631\",\n            \"type\": \"P\",\n            \"status\": \"8\",\n            \"name\": \"임성령:등록완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2022-03-30T09:00:00\",\n            \"createdOn\": \"2022-03-29T13:23:56\",\n            \"creatorName\": \"권혁인\",\n            \"details\": \"[레테예약] 3/30(수) 9am Brett T.\"\n        },\n        {\n            \"id\": \"19431\",\n            \"type\": \"P\",\n            \"status\": \"8\",\n            \"name\": \"임준영:등록완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2022-05-09T18:00:00\",\n            \"createdOn\": \"2022-03-07T18:58:39\",\n            \"creatorName\": \"이국화\",\n            \"details\": \"- 영어회화/자기개발 목적 - 3/10(목) 6PM StevenT 레테예약  >> 전화로 다시예약 5/09(월) 6:00PM steven T\"\n        }\n    ],\n    \"totalCount\": 65,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"endPage\": 7,\n    \"totalPage\": 7,\n    \"startPage\": 1,\n    \"hasNext\": false,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": true\n}",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 26268,\n            \"type\": \"N\",\n            \"status\": \"7\",\n            \"name\": \"원지연:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2023-12-30T11:30:00\",\n            \"createdOn\": \"2023-12-29T21:48:08\",\n            \"creatorName\": \"박지수\",\n            \"details\": \"[레테] 12/30(토) 11:30am Steven.T 원지연 010-2727-7972\"\n        },\n        {\n            \"id\": 26223,\n            \"type\": \"N\",\n            \"status\": \"7\",\n            \"name\": \"유병주:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2024-01-02T14:00:00\",\n            \"createdOn\": \"2023-12-26T11:19:06\",\n            \"creatorName\": \"손진\",\n            \"details\": \"[레테] 12/27(수) 14:00pm AlexT 유병주 010-2798-4312>> 21년도 등록고객으로 재상담받기를 원하심. >>예약변경: 상으로 예약상담변경요청하심.  >> [레테] 01/02(화) 14:00pm AlexT 유병주 010-2798-4312\"\n        },\n        {\n            \"id\": 26222,\n            \"type\": \"N\",\n            \"status\": \"7\",\n            \"name\": \"조승인:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2023-12-27T09:30:00\",\n            \"createdOn\": \"2023-12-26T11:07:51\",\n            \"creatorName\": \"손진\",\n            \"details\": \"[레테] 12/27(수) 9:30am OliviaT 조승인 010-3223-7499 \"\n        },\n        {\n            \"id\": 26200,\n            \"type\": \"N\",\n            \"status\": \"7\",\n            \"name\": \"소현진:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2023-12-21T20:30:00\",\n            \"createdOn\": \"2023-12-21T14:13:59\",\n            \"creatorName\": \"한시내\",\n            \"details\": \"[레테] 12/21(목) 20:30pm AlexT 소현진 010-2520-6618\"\n        },\n        {\n            \"id\": 26185,\n            \"type\": \"N\",\n            \"status\": \"7\",\n            \"name\": \"안솔:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2023-12-20T17:30:00\",\n            \"createdOn\": \"2023-12-20T07:28:48\",\n            \"creatorName\": \"손진\",\n            \"details\": \"[레테] 12/20(수) 17:30pm OliviaT 안솔 010-9319-6207\"\n        },\n        {\n            \"id\": 26160,\n            \"type\": \"P\",\n            \"status\": \"7\",\n            \"name\": \"최시연:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2023-12-18T18:30:00\",\n            \"createdOn\": \"2023-12-18T17:18:13\",\n            \"creatorName\": \"한시내\",\n            \"details\": \"[레테] 12/18(월) 18:30pm SadieT 최시연님 010-4142-5723\"\n        },\n        {\n            \"id\": 26159,\n            \"type\": \"V\",\n            \"status\": \"7\",\n            \"name\": \"유서현:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": null,\n            \"createdOn\": \"2023-12-18T17:14:12\",\n            \"creatorName\": \"박수현\",\n            \"details\": \"예약없이 워크인으로 오셔서 레테없이 상담도와드림. 고3여학생, 어머니와 상의 후 12/22(금)까지 오시면 당일할인 적용해드리기로 함. 증명서(수강확인서,출석확인서)는 어머니 이름으로 발급 해드리기로 함.\"\n        },\n        {\n            \"id\": 26153,\n            \"type\": \"N\",\n            \"status\": \"7\",\n            \"name\": \"윤소민:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2023-12-18T20:00:00\",\n            \"createdOn\": \"2023-12-18T10:14:01\",\n            \"creatorName\": \"박수현\",\n            \"details\": \"[레테] 12/18(월) 8:00pm Alex.T 윤소민 010-3096-3175  예약확인전화 드릴때 화상수업도 가능한지 문의하심. 대면수업으로 진행하나 불가시엔 화상,전화수업으로 대체 가능하다고 말씀드림.\"\n        },\n        {\n            \"id\": 26096,\n            \"type\": \"N\",\n            \"status\": \"7\",\n            \"name\": \"장이룸:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2023-12-13T20:30:00\",\n            \"createdOn\": \"2023-12-11T16:49:46\",\n            \"creatorName\": \"박지수\",\n            \"details\": \"[레테] 12/13(수) 8:30pm Sadie.T 장이룸 010-3844-8052\"\n        },\n        {\n            \"id\": 26082,\n            \"type\": \"N\",\n            \"status\": \"7\",\n            \"name\": \"김민철:상담완료\",\n            \"phone\": null,\n            \"company\": null,\n            \"callTime\": null,\n            \"visitDate\": \"2023-12-12T10:30:00\",\n            \"createdOn\": \"2023-12-08T21:08:02\",\n            \"creatorName\": \"한시내\",\n            \"details\": \"[레테] 12/9(토) 10:30am SadieT 김민철님 010-7175-5317 >> 방문예약인지 몰랐다고 하시며 취소하심. 월요일에 시간 확인하고 다시 예약하겠다고 하심  >>상담 재예약주심(전화로 시간준수 안내완료) [레테] 12/12(화) 10:30am Olivia.T 김민철 010-7175-5317\"\n        }\n    ],\n    \"totalCount\": 476,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 48,\n    \"endPage\": 10,\n    \"hasNext\": true,\n    \"isFirst\": true,\n    \"isLast\": false,\n    \"hasPrev\": false\n}",
           "type": "json"
         }
       ]
