@@ -5061,6 +5061,78 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_4._상담관리"
   },
   {
+    "type": "get",
+    "url": "/admin/v1/consultations/history/{id}",
+    "title": "09. 추가 상담 목록",
+    "description": "<p>상담관리 &gt; 상세페이지 조회 &gt; 추가 상담 이력 <br/> 상세 페이지 들어올 때 상담 식별키 가져옴</p>",
+    "version": "1.0.0",
+    "name": "admin_listUserNotes",
+    "group": "1._Admin_API_>_4._상담관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/consultations/history/520",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "Number",
+            "optional": true,
+            "field": "id",
+            "description": "<p>상담 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>추가 상담 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "details",
+            "description": "<p>추가 상담 내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "modifiedName",
+            "description": "<p>수정한사람</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "createdName",
+            "description": "<p>등록자</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n[\n    {\n        \"id\": 1,\n        \"details\": \"test\",\n        \"modifiedName\": \"황순안\",\n        \"createdName\": \"황순안\"\n    },\n    {\n        \"id\": 2,\n        \"details\": \"test1\",\n        \"modifiedName\": \"황순안\",\n        \"createdName\": \"황순안\"\n    },\n    {\n        \"id\": 3,\n        \"details\": \"test2\",\n        \"modifiedName\": \"황순안\",\n        \"createdName\": \"황순안\"\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/04.consultation/08_list_consultationHistory.js",
+    "groupTitle": "1._Admin_API_>_4._상담관리"
+  },
+  {
     "type": "put",
     "url": "/admin/v1/consultations/{id}",
     "title": "04. 기본정보수정",
