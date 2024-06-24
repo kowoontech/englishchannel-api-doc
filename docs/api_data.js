@@ -4740,6 +4740,46 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_4._상담관리"
   },
   {
+    "type": "delete",
+    "url": "/admin/v1/consultations/history/{id}",
+    "title": "07. 추가 상담 삭제",
+    "description": "<p>상담관리 &gt; 상세조회 페이지</p>",
+    "version": "1.0.0",
+    "name": "admin_deleteUser",
+    "group": "1._Admin_API_>_4._상담관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/users/notes/2610931'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>추가 상담 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/04.consultation/07_delete_consultationHistory.js",
+    "groupTitle": "1._Admin_API_>_4._상담관리"
+  },
+  {
     "type": "get",
     "url": "/admin/v1/consultations/{id}",
     "title": "03. 상담고객 상세조회",
