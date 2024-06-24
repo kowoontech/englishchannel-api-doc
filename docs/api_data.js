@@ -5018,34 +5018,6 @@ define({ "api": [
             "optional": false,
             "field": "modifiedName",
             "description": "<p>상담자(수정한사람이름)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": true,
-            "field": "histories",
-            "description": "<p>추가상담이력</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "histories.id",
-            "description": "<p>추가상담이력 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "histories.date",
-            "description": "<p>사용여부미정</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "histories.details",
-            "description": "<p>상담내용</p>"
           }
         ]
       },

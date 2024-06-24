@@ -77,12 +77,6 @@
 
  * @apiSuccess {String} createdName 상담자(등록한사람이름)
  * @apiSuccess {String} modifiedName 상담자(수정한사람이름)
-
- * @apiSuccess {Object[]} [histories] 추가상담이력
- * @apiSuccess {String} histories.id 추가상담이력 식별키
- * @apiSuccess {String} histories.date 사용여부미정
- * @apiSuccess {String} histories.details 상담내용
- * @apiSuccess {String} histories.date 사용여부미정
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
