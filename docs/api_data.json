@@ -1112,6 +1112,46 @@
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
+    "type": "delete",
+    "url": "/admin/v1/consultations/{id}",
+    "title": "05. 상담삭제",
+    "description": "<p>상담관리 &gt; 상세조회 &gt; 삭제</p>",
+    "version": "1.0.0",
+    "name": "admin_deleteUser",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/consultations/634'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>상담식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/04.consultation/05_delete_consultation.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
     "type": "get",
     "url": "/admin/v1/users/{id}",
     "title": "02. 회원 기본정보 조회",
