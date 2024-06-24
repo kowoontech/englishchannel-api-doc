@@ -5309,28 +5309,28 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "createDateFrom",
-            "description": "<p>등록일(시작)</p>"
+            "description": "<p>등록일(시작) [yyyy-MM-dd]</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "createDateTo",
-            "description": "<p>등록일(끝)</p>"
+            "description": "<p>등록일(끝) [yyyy-MM-dd]</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "visitDateFrom",
-            "description": "<p>방문예약일(시작)</p>"
+            "description": "<p>방문예약일(시작) [yyyy-MM-dd]</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "visitDateTo",
-            "description": "<p>방문예약일(끝)</p>"
+            "description": "<p>방문예약일(끝) [yyyy-MM-dd]</p>"
           },
           {
             "group": "Query",

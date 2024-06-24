@@ -12,10 +12,10 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/consultations?statusCodes=3&statusCodes=7
  *
- * @apiParam (Query) {String} createDateFrom 등록일(시작)
- * @apiParam (Query) {String} createDateTo 등록일(끝)
- * @apiParam (Query) {String} visitDateFrom 방문예약일(시작)
- * @apiParam (Query) {String} visitDateTo 방문예약일(끝)
+ * @apiParam (Query) {String} createDateFrom 등록일(시작) [yyyy-MM-dd]
+ * @apiParam (Query) {String} createDateTo 등록일(끝) [yyyy-MM-dd]
+ * @apiParam (Query) {String} visitDateFrom 방문예약일(시작) [yyyy-MM-dd]
+ * @apiParam (Query) {String} visitDateTo 방문예약일(끝) [yyyy-MM-dd]
  * @apiParam (Query) {String} consultationType 상담구분[P: 전화상담,V: 방문상담,K: 카카오채널,N: 네이버예약]
  * @apiParam (Query) {Number} statusCodes 처리상태[WAITING("3"),NO_CONTACT("4"),UNVISITED("5"),RESERVED("6"),NOT_REGISTERED("7"),REGISTERED("8"),NO_SHOW("9"),MISSED("10")]
  * @apiParam (Query) {String} search 검색구분[ name:이름, phone: 전화번호 , details :상담내용]
