@@ -5338,6 +5338,13 @@ define({ "api": [
             "optional": false,
             "field": "limit",
             "description": "<p>한페이지에 보여줄 회원 수</p>"
+          },
+          {
+            "group": "Query",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>현재 페이지</p>"
           }
         ]
       }
