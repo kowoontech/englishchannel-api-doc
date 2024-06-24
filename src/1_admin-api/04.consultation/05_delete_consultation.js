@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_deleteUser
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 4. 상담관리
  *
  * @apiExample {curl} REQUEST
  * curl -i -X DELETE 'http://localhost:8080/admin/v1/consultations/634'

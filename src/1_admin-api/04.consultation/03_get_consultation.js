@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_getOptions
- * @apiGroup 1. Admin API > 0. 공통 API
+ * @apiGroup 1. Admin API > 4. 상담관리
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/consultations/14890'
