@@ -4651,6 +4651,55 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_4._상담관리"
   },
   {
+    "type": "post",
+    "url": "/admin/v1/consultations/history/{id}",
+    "title": "06. 추가 상담 등록",
+    "description": "<p>상담관리 &gt; 상세페이지조회 &gt; 추가 상담 이력 <br/> 상세 페이지 누를 시 상담 식별키 넘겨 받음-&gt; 식별키 가지고 추가 상담 이력 출력</p>",
+    "version": "1.0.0",
+    "name": "admin_createUserConsultation",
+    "group": "1._Admin_API_>_4._상담관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/consultations/history/520' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"details\" : \"ㅇㅇㅇㅇ\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>상담 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "details",
+            "description": "<p>내용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/04.consultation/06_create_consultationHistory.js",
+    "groupTitle": "1._Admin_API_>_4._상담관리"
+  },
+  {
     "type": "delete",
     "url": "/admin/v1/consultations/{id}",
     "title": "05. 상담삭제",
