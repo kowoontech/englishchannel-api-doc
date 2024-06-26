@@ -1,7 +1,7 @@
 /**
  * @api {delete} /admin/v1/consultations/history/{id} 07. 추가 상담 삭제
  *
- * @apiDescription 상담관리 > 상세조회 페이지
+ * @apiDescription 상담관리 > 상세조회 페이지 >
  *
  * @apiVersion 1.0.0
  * @apiName admin_deleteUser
