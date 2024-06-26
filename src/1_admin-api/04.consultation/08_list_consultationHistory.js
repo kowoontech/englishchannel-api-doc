@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/consultations/history/{id} 09. 추가 상담 목록
+ * @api {get} /admin/v1/consultations/history/{id} 08. 추가 상담 목록
  *
  * @apiDescription 상담관리 > 상세페이지 조회 > 추가 상담 이력 <br/>
  * 상세 페이지 들어올 때 상담 식별키 가져옴

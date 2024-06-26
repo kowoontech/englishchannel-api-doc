@@ -4702,7 +4702,7 @@
   {
     "type": "delete",
     "url": "/admin/v1/consultations/{id}",
-    "title": "05. 상담삭제",
+    "title": "05. 상담관리 기본정보 삭제",
     "description": "<p>상담관리 &gt; 상세조회 &gt; 삭제</p>",
     "version": "1.0.0",
     "name": "admin_deleteUser",
@@ -5035,7 +5035,7 @@
   {
     "type": "get",
     "url": "/admin/v1/consultations/history/{id}",
-    "title": "09. 추가 상담 목록",
+    "title": "08. 추가 상담 목록",
     "description": "<p>상담관리 &gt; 상세페이지 조회 &gt; 추가 상담 이력 <br/> 상세 페이지 들어올 때 상담 식별키 가져옴</p>",
     "version": "1.0.0",
     "name": "admin_listUserNotes",
@@ -5107,7 +5107,7 @@
   {
     "type": "put",
     "url": "/admin/v1/consultations/{id}",
-    "title": "04. 기본정보수정",
+    "title": "04. 상담 관리 기본 정보 수정",
     "description": "<p>상담관리 &gt; 상세관리수정</p>",
     "version": "1.0.0",
     "name": "admin_updateUser",

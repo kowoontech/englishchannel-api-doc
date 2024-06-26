@@ -1,5 +1,5 @@
 /**
- * @api {delete} /admin/v1/consultations/{id}  05. 상담삭제
+ * @api {delete} /admin/v1/consultations/{id}  05. 상담관리 기본정보 삭제
  *
  * @apiDescription 상담관리 > 상세조회 > 삭제
  *

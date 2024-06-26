@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/consultations/{id} 04. 기본정보수정
+ * @api {put} /admin/v1/consultations/{id} 04. 상담 관리 기본 정보 수정
  *
  * @apiDescription 상담관리 > 상세관리수정
  *
