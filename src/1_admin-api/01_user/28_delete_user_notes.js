@@ -4,7 +4,7 @@
  * @apiDescription 회원관리 > 예약 > 예약등록 > TIP
  *
  * @apiVersion 1.0.0
- * @apiName admin_deleteUser
+ * @apiName admin_User_Note
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST

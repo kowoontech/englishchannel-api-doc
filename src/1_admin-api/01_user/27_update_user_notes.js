@@ -4,7 +4,7 @@
  * @apiDescription 회원관리 > 기본 탭 > 예약 > 예약등록 > TIP
  *
  * @apiVersion 1.0.0
- * @apiName admin_updateUser
+ * @apiName admin_updateUserNote
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
