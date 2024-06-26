@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_getOptions
- * @apiGroup 1. Admin API > 5. 강사관리
+ * @apiGroup 1. Admin API > 5. 강사
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/teachers/M1574925585880330'

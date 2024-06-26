@@ -5604,6 +5604,201 @@
     "groupTitle": "1._Admin_API_>_5._강사"
   },
   {
+    "type": "delete",
+    "url": "/admin/v1/teachers/{id}",
+    "title": "05. 강사삭제",
+    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/> 데이터가 많지 않아 오류 가능성 높음. M1594795852631377 안될시 알려주세요.</p>",
+    "version": "1.0.0",
+    "name": "admin_deleteUser",
+    "group": "1._Admin_API_>_5._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/teachers/M1594795852631377'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": true,
+            "field": "id",
+            "description": "<p>강사식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/04_delete_teacher.js",
+    "groupTitle": "1._Admin_API_>_5._강사"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/consultations/{id}",
+    "title": "02. 강사 상세조회",
+    "description": "<p>상세보기/ 수정/삭제 시 사용<br/></p>",
+    "version": "1.0.0",
+    "name": "admin_getOptions",
+    "group": "1._Admin_API_>_5._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/teachers/M1574925585880330'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "id",
+            "description": "<p>강사 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "loginId",
+            "description": "<p>강사 아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "nameEn",
+            "description": "<p>영어이름 [lastNameEn과 분리해서 이름/성 나눠야할듯]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastNameEn",
+            "description": "<p>성</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>비밀번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>이메일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>성별 [F,M]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cellPhone",
+            "description": "<p>전화번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>강사타입 [HT, LT]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "workStartDate",
+            "description": "<p>근무시작일[yyyy-MM-dd]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "language",
+            "description": "<p>언어 [ ENGLISH, CHINESE, JAPANESE]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "workTime",
+            "description": "<p>근무시간[AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "workType",
+            "description": "<p>근무타입[A, C]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "partnerTeacherId",
+            "description": "<p>파트너강사</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "active",
+            "description": "<p>활동여부 [true:활동, false:비활동]</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": \"M1574925585880330\",\n    \"loginId\": \"joyjoyjoy20@naver.com\",\n    \"name\": \"나기쁨\",\n    \"nameEn\": \"Joy Na\",\n    \"lastNameEn\": \"Na\",\n    \"password\": \"e10adc3949ba59abbe56e057f20f883e\",\n    \"email\": \"joyjoyjoy20@naver.com\",\n    \"gender\": \"F\",\n    \"cellPhone\": \"UdWtv6wc/t4H/Qfph7VnyA==\",\n    \"type\": \"HT\",\n    \"workStartDate\": \"2019-12-02\",\n    \"language\": \"ENGLISH\",\n    \"workTime\": \"PM_16\",\n    \"workType\": \"A\",\n    \"partnerTeacherId\": \"M1567752637796763\",\n    \"active\": false\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/02_get_teacher.js",
+    "groupTitle": "1._Admin_API_>_5._강사"
+  },
+  {
     "type": "get",
     "url": "/admin/v1/teachers/attendances",
     "title": "07. 출석/결석률 조회",
@@ -5823,208 +6018,13 @@
     "groupTitle": "1._Admin_API_>_5._강사"
   },
   {
-    "type": "delete",
-    "url": "/admin/v1/teachers/{id}",
-    "title": "05. 상담삭제",
-    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/> 데이터가 많지 않아 오류 가능성 높음. M1594795852631377 안될시 알려주세요.</p>",
-    "version": "1.0.0",
-    "name": "admin_deleteUser",
-    "group": "1._Admin_API_>_5._강사관리",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/teachers/M1594795852631377'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Path": [
-          {
-            "group": "Path",
-            "type": "String",
-            "optional": true,
-            "field": "id",
-            "description": "<p>강사식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/05_teacher/04_delete_teacher.js",
-    "groupTitle": "1._Admin_API_>_5._강사관리"
-  },
-  {
-    "type": "get",
-    "url": "/admin/v1/consultations/{id}",
-    "title": "02. 강사 상세조회",
-    "description": "<p>상세보기/ 수정/삭제 시 사용<br/></p>",
-    "version": "1.0.0",
-    "name": "admin_getOptions",
-    "group": "1._Admin_API_>_5._강사관리",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/teachers/M1574925585880330'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Query": [
-          {
-            "group": "Query",
-            "optional": false,
-            "field": "id",
-            "description": "<p>강사 식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>강사 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "loginId",
-            "description": "<p>강사 아이디</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "name",
-            "description": "<p>강사명</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "nameEn",
-            "description": "<p>영어이름 [lastNameEn과 분리해서 이름/성 나눠야할듯]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "lastNameEn",
-            "description": "<p>성</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "password",
-            "description": "<p>비밀번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "email",
-            "description": "<p>이메일</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "gender",
-            "description": "<p>성별 [F,M]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "cellPhone",
-            "description": "<p>전화번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "type",
-            "description": "<p>강사타입 [HT, LT]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "workStartDate",
-            "description": "<p>근무시작일[yyyy-MM-dd]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "language",
-            "description": "<p>언어 [ ENGLISH, CHINESE, JAPANESE]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "workTime",
-            "description": "<p>근무시간[AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "workType",
-            "description": "<p>근무타입[A, C]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "partnerTeacherId",
-            "description": "<p>파트너강사</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Boolean",
-            "optional": false,
-            "field": "active",
-            "description": "<p>활동여부 [true:활동, false:비활동]</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": \"M1574925585880330\",\n    \"loginId\": \"joyjoyjoy20@naver.com\",\n    \"name\": \"나기쁨\",\n    \"nameEn\": \"Joy Na\",\n    \"lastNameEn\": \"Na\",\n    \"password\": \"e10adc3949ba59abbe56e057f20f883e\",\n    \"email\": \"joyjoyjoy20@naver.com\",\n    \"gender\": \"F\",\n    \"cellPhone\": \"UdWtv6wc/t4H/Qfph7VnyA==\",\n    \"type\": \"HT\",\n    \"workStartDate\": \"2019-12-02\",\n    \"language\": \"ENGLISH\",\n    \"workTime\": \"PM_16\",\n    \"workType\": \"A\",\n    \"partnerTeacherId\": \"M1567752637796763\",\n    \"active\": false\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/05_teacher/02_get_teacher.js",
-    "groupTitle": "1._Admin_API_>_5._강사관리"
-  },
-  {
     "type": "put",
     "url": "/admin/v1/teachers/{id}",
     "title": "03. 강사수정",
     "description": "<p>강사관리 &gt; 강사상세조회 &gt; 수정</p>",
     "version": "1.0.0",
     "name": "admin_updateUser",
-    "group": "1._Admin_API_>_5._강사관리",
+    "group": "1._Admin_API_>_5._강사",
     "examples": [
       {
         "title": "REQUEST",
@@ -6155,7 +6155,7 @@
       ]
     },
     "filename": "src/1_admin-api/05_teacher/03_update_teacher.js",
-    "groupTitle": "1._Admin_API_>_5._강사관리"
+    "groupTitle": "1._Admin_API_>_5._강사"
   },
   {
     "type": "get",
@@ -6164,7 +6164,7 @@
     "description": "<p>강사관리 &gt; <br/> 제대로된 데이터가 별로 없어서 오류 가능성 높으니 계약기간 제외하고 테스트 해주세요</p>",
     "version": "1.0.0",
     "name": "all_consultation",
-    "group": "1._Admin_API_>_5._강사관리",
+    "group": "1._Admin_API_>_5._강사",
     "examples": [
       {
         "title": "REQUEST",
@@ -6360,7 +6360,7 @@
       ]
     },
     "filename": "src/1_admin-api/05_teacher/01_list_all_teacher.js",
-    "groupTitle": "1._Admin_API_>_5._강사관리"
+    "groupTitle": "1._Admin_API_>_5._강사"
   },
   {
     "type": " ",

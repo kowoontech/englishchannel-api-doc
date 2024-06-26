@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName all_consultation
- * @apiGroup 1. Admin API > 5. 강사관리
+ * @apiGroup 1. Admin API > 5. 강사
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/teachers?active=INACTIVE&type=LT&search=name&keyword=Da
