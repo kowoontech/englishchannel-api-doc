@@ -3739,7 +3739,7 @@ define({ "api": [
   },
   {
     "type": "put",
-    "url": "/admin/v1/users/note/{id}",
+    "url": "/admin/v1/users/notes/{id}",
     "title": "27. 비고 수정",
     "description": "<p>회원관리 &gt; 기본 탭 &gt; 예약 &gt; 예약등록 &gt; TIP</p>",
     "version": "1.0.0",

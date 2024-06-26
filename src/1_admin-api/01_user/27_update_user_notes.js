@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/users/note/{id} 27. 비고 수정
+ * @api {put} /admin/v1/users/notes/{id} 27. 비고 수정
  *
  * @apiDescription 회원관리 > 기본 탭 > 예약 > 예약등록 > TIP
  *
