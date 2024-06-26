@@ -1,5 +1,5 @@
 /**
- * @api {delete} /admin/v1/teachers/{id}  05. 강사삭제
+ * @api {delete} /admin/v1/teachers/{id}  04. 강사삭제
  *
  * @apiDescription 강사관리 > 강사상세조회 > 삭제 <br/>
  * 데이터가 많지 않아 오류 가능성 높음. M1594795852631377 안될시 알려주세요.
