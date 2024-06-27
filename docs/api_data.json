@@ -185,51 +185,11 @@
   },
   {
     "type": "delete",
-    "url": "/admin/v1/users/notes/{id}",
-    "title": "28. 비고 삭제",
-    "description": "<p>회원관리 &gt; 예약 &gt; 예약등록 &gt; TIP</p>",
-    "version": "1.0.0",
-    "name": "admin_User_Note",
-    "group": "1._Admin_API_>_1._회원",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/users/notes/2610931'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Path": [
-          {
-            "group": "Path",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>비고식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/01_user/28_delete_user_notes.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
-  },
-  {
-    "type": "delete",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
     "title": "33. 레벨테스트 삭제",
     "description": "<p>회원관리 &gt; 상세조회 &gt; 테스트탭 <br/> id : 1028151  / testId : 6118</p>",
     "version": "1.0.0",
-    "name": "admin_User_Note",
+    "name": "admin_User_DELETE_LevelTest",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
@@ -268,6 +228,46 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/33_delete_user_levelTest.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "delete",
+    "url": "/admin/v1/users/notes/{id}",
+    "title": "28. 비고 삭제",
+    "description": "<p>회원관리 &gt; 예약 &gt; 예약등록 &gt; TIP</p>",
+    "version": "1.0.0",
+    "name": "admin_User_Note",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/users/notes/2610931'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>비고식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/28_delete_user_notes.js",
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {

@@ -5,7 +5,7 @@
  * id : 1028151  / testId : 6118
  *
  * @apiVersion 1.0.0
- * @apiName admin_User_Note
+ * @apiName admin_User_DELETE_LevelTest
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
