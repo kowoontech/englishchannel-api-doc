@@ -10,14 +10,14 @@ define({
   },
   "footer": {
     "title": "버전이력",
-    "content": "<br/>\n<br/>\n<h1>버전 이력</h1>\n<table>\n<thead>\n<tr>\n<th>VERSION</th>\n<th>DESCRIPTION</th>\n<th>DATE</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1.0.0</td>\n<td>최초 생성</td>\n<td>2024.03.12</td>\n</tr>\n<tr>\n<td></td>\n<td>로그인, 상담 회원등록 추가, 강사 스케줄 조회, 강사 스케줄 저장, 강사 출석/결석률</td>\n<td>2024.06.23</td>\n</tr>\n</tbody>\n</table>\n<br/>\n<br/>"
+    "content": "<br/>\n<br/>\n<h1>버전 이력</h1>\n<table>\n<thead>\n<tr>\n<th>VERSION</th>\n<th>DESCRIPTION</th>\n<th>DATE</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1.0.0</td>\n<td>최초 생성</td>\n<td>2024.03.12</td>\n</tr>\n<tr>\n<td></td>\n<td>로그인, 상담 회원등록 추가, 강사 스케줄 조회, 강사 스케줄 저장, 강사 출석/결석률</td>\n<td>2024.06.23</td>\n</tr>\n<tr>\n<td></td>\n<td>테스트탭 조회, 등록, 수정, 삭제, 목록</td>\n<td>2024.06.27</td>\n</tr>\n</tbody>\n</table>\n<br/>\n<br/>"
   },
   "sampleUrl": false,
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2024-06-26T12:56:58.615Z",
+    "time": "2024-06-27T11:07:19.140Z",
     "url": "https://apidocjs.com",
     "version": "0.29.0"
   }
