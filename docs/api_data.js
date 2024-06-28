@@ -5242,7 +5242,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/reservations/report/1317368'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/reservations/report/1317329'",
         "type": "curl"
       }
     ],
@@ -5301,8 +5301,22 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "todayLesson",
+            "description": "<p>Today's Lesson</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "report",
-            "description": "<p>학사보고서내용</p>"
+            "description": "<p>보고서(Lesson Content and Feedback)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "nextLesson",
+            "description": "<p>Next Lesson</p>"
           },
           {
             "group": "Success 200",
@@ -5323,7 +5337,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": 1317368,\n    \"date\": \"2018-01-04 (Thu)\",\n    \"startTime\": \"12:00\",\n    \"endTime\": \"12:30\",\n    \"attendanceStatus\": \"N\",\n    \"report\": \"TEST\",\n    \"userName\": \"RE-노희은\",\n    \"courseName\": \"NEW PT 24회 3개월\"\n}",
+          "content": "HTTP/1.1 200\n{\n    \"id\": 1317329,\n    \"date\": \"2018-01-03 (Wed)\",\n    \"startTime\": \"07:30\",\n    \"endTime\": \"08:00\",\n    \"attendanceStatus\": \"Y\",\n    \"report\": \"중간\",\n    \"todayLesson\": \"처음\",\n    \"nextLesson\": \"마지막\",\n    \"userName\": \"전연호\",\n    \"courseName\": \"PTM (주2회 6개월)\"\n}",
           "type": "json"
         }
       ]
@@ -5342,7 +5356,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/reservations/report/1317368'\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"attendanceStatus\" : \"N\",\n    \"report\" : \"TEST\"\n}\"",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/reservations/report/1317329'\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"attendanceStatus\" :\"Y\",\n           \"report\" : \"중간\",\n           \"todayLesson\": \"처음\",\n           \"nextLesson\":\"마지막\"\n       }\"",
         "type": "curl"
       }
     ],
@@ -5369,8 +5383,22 @@ define({ "api": [
             "group": "Body",
             "type": "String",
             "optional": false,
+            "field": "todayLesson",
+            "description": "<p>Today's Lesson</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
             "field": "report",
-            "description": "<p>학사보고서내용</p>"
+            "description": "<p>보고서(Lesson Content and Feedback)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "nextLesson",
+            "description": "<p>Next Lesson</p>"
           }
         ]
       }
