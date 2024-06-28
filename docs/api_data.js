@@ -274,7 +274,7 @@ define({ "api": [
     "type": "post",
     "url": "/admin/v1/users/{id}/levelTests",
     "title": "31. 레벨 테스트 등록",
-    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 사용해주세요<br/> 체크박스 중복 선택이던데 로직 수정이 필요하니 무조건 하나만 넘겨주세요. 수정 후 말씀드리겠습니다.</p>",
+    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 사용해주세요<br/></p>",
     "version": "1.0.0",
     "name": "admin_creatLevelTest",
     "group": "1._Admin_API_>_1._회원",
@@ -362,8 +362,8 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
-            "optional": true,
+            "type": "String[]",
+            "optional": false,
             "field": "studyType",
             "description": "<p>What kind of English do you want to study and learn?<br/> [NONE: 선택 없음 , EC: English Conversation,<br/> BE: Business English ,TS:Toeic Speaking , I:Interview ,ETC: ETC]<br></p>"
           },
@@ -411,17 +411,17 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
-            "optional": true,
+            "type": "String[]",
+            "optional": false,
             "field": "consonants",
             "description": "<p>consonants <br/> [NONE : 선택 안함, R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH]<br/></p>"
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "String[]",
             "optional": false,
             "field": "vowels",
-            "description": "<p>[vowels] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N]</p>"
+            "description": "<p>vowels [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N]</p>"
           },
           {
             "group": "Body",
@@ -516,7 +516,7 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "String[]",
             "optional": false,
             "field": "recommendedLevel",
             "description": "<p>Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"
@@ -1175,7 +1175,7 @@ define({ "api": [
     "type": "get",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
     "title": "30. 레벨테스트 상세조회",
-    "description": "<p>회원관리 &gt; 회원  상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 , testId : 6118 사용해주세요</p>",
+    "description": "<p>회원관리 &gt; 회원  상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 , testId : 6118 사용해주세요 <br/> [NONE, NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS] 는 NONE과 NEVER로만 테스트 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_getLevelTest",
     "group": "1._Admin_API_>_1._회원",
@@ -1211,262 +1211,297 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "Object[]",
             "optional": false,
-            "field": "id",
-            "description": "<p>LevelTest 식별키</p>"
+            "field": "levelTest",
+            "description": "<p>LevelTest 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Long",
+            "optional": false,
+            "field": "levelTest.id",
+            "description": "<p>테스트 식별키</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "userId",
+            "field": "levelTest.Id",
             "description": "<p>회원 식별키</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "testStartTime",
+            "field": "levelTest.testStartTime",
             "description": "<p>테스트일시(시작) (yyyy-mm-dd HH:mm:ss)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "testEndTime",
+            "field": "levelTest.testEndTime",
             "description": "<p>테스트일시(끝)(yyyy-mm-dd HH:mm:ss)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "interviewer",
+            "field": "levelTest.interviewer",
             "description": "<p>Interviewer</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "lbt",
+            "field": "levelTest.lbt",
             "description": "<p>LBT 테스트결과</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "rbt",
+            "field": "levelTest.rbt",
             "description": "<p>RBT 테스트결과</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "obt",
+            "field": "levelTest.obt",
             "description": "<p>OBT</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "testIp",
+            "field": "levelTest.testIp",
             "description": "<p>TEST IP</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "file",
+            "field": "levelTest.file",
             "description": "<p>첨부파일</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "note",
+            "field": "levelTest.note",
             "description": "<p>특이사항</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "purpose",
+            "field": "levelTest.purpose",
             "description": "<p>Purpose of Study</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
-            "optional": true,
-            "field": "studyType",
-            "description": "<p>What kind of English do you want to study and learn?<br/> [NONE: 선택 없음 , EC: English Conversation,<br/> BE: Business English ,TS:Toeic Speaking , I:Interview ,ETC: ETC]<br></p>"
+            "optional": false,
+            "field": "levelTest.studyType",
+            "description": "<p>What kind of English do you want to study and learn?<br/> (사용x , 아래 studyType 사용해주세요)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "studyTypeEtc",
+            "field": "levelTest.studyTypeEtc",
             "description": "<p>ETC 이유</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "familyBackground",
+            "field": "levelTest.familyBackground",
             "description": "<p>Family Background</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "usageType",
+            "field": "levelTest.usageType",
             "description": "<p>Company or School</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "occupation",
+            "field": "levelTest.occupation",
             "description": "<p>Occupation</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "spareTime",
+            "field": "levelTest.spareTime",
             "description": "<p>Spare Time</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "Travel",
+            "field": "levelTest.Travel",
             "description": "<p>Abroad</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "futurePlans",
+            "field": "levelTest.futurePlans",
             "description": "<p>Future Plans</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
-            "optional": true,
-            "field": "consonants",
-            "description": "<p>consonants <br/> [NONE : 선택 안함, R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH]<br/></p>"
+            "optional": false,
+            "field": "levelTest.consonants",
+            "description": "<p>consonants(사용x, 아래 consonants 사용해주세요)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "vowels",
-            "description": "<p>[vowels] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N]</p>"
+            "field": "levelTest.vowels",
+            "description": "<p>vowels(사용x, 아래 vowels 사용해주세요)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "clarity",
+            "field": "levelTest.clarity",
             "description": "<p>[clarity] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "intonation",
+            "field": "levelTest.intonation",
             "description": "<p>[intonation] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "vocabulary",
+            "field": "levelTest.vocabulary",
             "description": "<p>[vocabulary] [V,L,A,AA,E]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "verbsTense",
+            "field": "levelTest.verbsTense",
             "description": "<p>[verbsTense] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "agreement",
+            "field": "levelTest.agreement",
             "description": "<p>[agreement] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "prepositions",
+            "field": "levelTest.prepositions",
             "description": "<p>[prepositions] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "articles",
+            "field": "levelTest.articles",
             "description": "<p>[articles] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "plurals",
+            "field": "levelTest.plurals",
             "description": "<p>[plurals] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "others",
+            "field": "levelTest.others",
             "description": "<p>[others] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "strongPoint",
+            "field": "levelTest.strongPoint",
             "description": "<p>strongPoint</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "weakPoint",
+            "field": "levelTest.weakPoint",
             "description": "<p>weakPoint</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "comprehension",
+            "field": "levelTest.comprehension",
             "description": "<p>Comprehension How much does learner understand <br/> [선택안함:NONE, AN , SP, MP, AE, E]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "confidence",
+            "field": "levelTest.confidence",
             "description": "<p>confidence [선택안함:NONE, CL , L, A, AA,VC]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "recommendedLevel",
-            "description": "<p>Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"
+            "field": "levelTest.recommendedLevel",
+            "description": "<p>Recommended Level(사용x 아래 recommendedLevel 사용해주세요 )</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "recommendedLevelEtc",
+            "field": "levelTest.recommendedLevelEtc",
             "description": "<p>Etc 이유</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": false,
+            "field": "recommendedLevel",
+            "description": "<p>Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": false,
+            "field": "vowels",
+            "description": "<p>vowels(NONE,A,B,C,D,E,F,G,H,I,J,K,L,M,N)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": false,
+            "field": "consonaants",
+            "description": "<p>consonaants(NONE, R,L,P,F,B,V,Z,SH,EZH,CH,G,TTH,TH)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": false,
+            "field": "studyType",
+            "description": "<p>studyType(NONE, EC,BE,TS,I,ETC)</p>"
           }
         ]
       },
@@ -4079,14 +4114,14 @@ define({ "api": [
     "type": "put",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
     "title": "32. 레벨테스트 수정",
-    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭<br/> id : 1028151  / testId: 6118 <br/> 체크박스는 하나만 선택해서 넘겨주세요. 수정 후 말씀드리겠습니다</p>",
+    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭<br/> id : 1028151  / testId: 6118 <br/></p>",
     "version": "1.0.0",
     "name": "admin_updateLevelTest",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/users/1028151/levelTests/6118'\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"interviewer\": \"TEST\",\n    \"studyType\": \"NONE\",\n    \"studyTypeEtc\": \"수정TEST\",\n    \"consonants\": \"R\",\n    \"vowels\": \"D\",\n    \"clarity\": \"E\",\n    \"intonation\": \"VK\",\n    \"vocabulary\": \"AA\",\n    \"verbsTense\": \"NEVER\",\n    \"agreement\": \"NEVER\",\n    \"prepositions\": \"NEVER\",\n    \"articles\": \"NEVER\",\n    \"plurals\": \"NEVER\",\n    \"others\": \"NEVER\",\n    \"comprehension\": \"AE\",\n    \"confidence\": \"CL\",\n    \"recommendedLevel\": \"R2\"\n}\"",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/users/1028151/levelTests/6118'\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"interviewer\": \"TEST\",\n    \"studyType\": [\"NONE\"],\n    \"studyTypeEtc\": \"수정TEST\",\n    \"consonants\":[\"R\"],\n    \"vowels\": [\"D\"],\n    \"clarity\": \"E\",\n    \"intonation\": \"VK\",\n    \"vocabulary\": \"AA\",\n    \"verbsTense\": \"NEVER\",\n    \"agreement\": \"NEVER\",\n    \"prepositions\": \"NEVER\",\n    \"articles\": \"NEVER\",\n    \"plurals\": \"NEVER\",\n    \"others\": \"NEVER\",\n    \"comprehension\": \"AE\",\n    \"confidence\": \"CL\",\n    \"recommendedLevel\": [\"R2\"]\n}\"",
         "type": "curl"
       }
     ],
@@ -4188,8 +4223,8 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
-            "optional": true,
+            "type": "String[]",
+            "optional": false,
             "field": "studyType",
             "description": "<p>What kind of English do you want to study and learn?<br/> [NONE: 선택 없음 , EC: English Conversation,<br/> BE: Business English ,TS:Toeic Speaking , I:Interview ,ETC: ETC]<br></p>"
           },
@@ -4244,31 +4279,31 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
-            "optional": true,
+            "type": "String[]",
+            "optional": false,
             "field": "consonants",
             "description": "<p>consonants <br/> [NONE : 선택 안함, R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH]<br/></p>"
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "String[]",
             "optional": false,
             "field": "vowels",
-            "description": "<p>[vowels] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N]</p>"
+            "description": "<p>vowels [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "clarity",
-            "description": "<p>[clarity] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>[clarity] [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "intonation",
-            "description": "<p>[intonation] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>[intonation] [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
           },
           {
             "group": "Body",
@@ -4349,7 +4384,7 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "String[]",
             "optional": false,
             "field": "recommendedLevel",
             "description": "<p>Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"

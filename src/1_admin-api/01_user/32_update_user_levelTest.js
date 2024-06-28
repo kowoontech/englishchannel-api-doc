@@ -3,7 +3,7 @@
  *
  * @apiDescription 회원관리 > 회원 상세 조회 > 테스트 탭<br/>
  * id : 1028151  / testId: 6118 <br/>
- * 체크박스는 하나만 선택해서 넘겨주세요. 수정 후 말씀드리겠습니다
+ *
  *
  * @apiVersion 1.0.0
  * @apiName admin_updateLevelTest
@@ -14,10 +14,10 @@
  * -H "Content-Type: application/json" \
  * -d "{
     "interviewer": "TEST",
-    "studyType": "NONE",
+    "studyType": ["NONE"],
     "studyTypeEtc": "수정TEST",
-    "consonants": "R",
-    "vowels": "D",
+    "consonants":["R"],
+    "vowels": ["D"],
     "clarity": "E",
     "intonation": "VK",
     "vocabulary": "AA",
@@ -29,7 +29,7 @@
     "others": "NEVER",
     "comprehension": "AE",
     "confidence": "CL",
-    "recommendedLevel": "R2"
+    "recommendedLevel": ["R2"]
 }"
  *
  * @apiParam (Path) {String} id 회원 식별키
@@ -47,7 +47,7 @@
 * @apiParam (Body) {String} file 첨부파일
 * @apiParam (Body) {String} note 특이사항
 * @apiParam (Body) {String} purpose  Purpose of Study
-* @apiParam (Body) {String} [studyType] What kind of English do you want to study and learn?<br/>
+* @apiParam (Body) {String[]} studyType What kind of English do you want to study and learn?<br/>
                                  [NONE: 선택 없음 , EC: English Conversation,<br/>
                                  BE: Business English ,TS:Toeic Speaking , I:Interview ,ETC: ETC]<br>
 * @apiParam (Body) {String} studyTypeEtc ETC 이유
@@ -57,11 +57,11 @@
 * @apiParam (Body) {String} spareTime Spare Time
 * @apiParam (Body) {String} Travel Abroad
 * @apiParam (Body) {String} futurePlans Future Plans
-* @apiParam (Body) {String} [consonants] consonants <br/>
+* @apiParam (Body) {String[]} consonants consonants <br/>
                                  [NONE : 선택 안함, R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH]<br/>
-* @apiParam (Body) {String} vowels [vowels] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N]
-* @apiParam (Body) {String} clarity [clarity] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N
-* @apiParam (Body) {String} intonation [intonation] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N
+* @apiParam (Body) {String[]} vowels vowels [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N]
+* @apiParam (Body) {String} clarity [clarity] [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N
+* @apiParam (Body) {String} intonation [intonation] [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N
 * @apiParam (Body) {String} vocabulary [vocabulary] [V,L,A,AA,E]
 * @apiParam (Body) {String} verbsTense [verbsTense] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
 * @apiParam (Body) {String} agreement [agreement] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
@@ -74,7 +74,7 @@
 * @apiParam (Body) {String} comprehension Comprehension How much does learner understand <br/>
                                      [선택안함:NONE, AN , SP, MP, AE, E]
 * @apiParam (Body) {String} confidence confidence [선택안함:NONE, CL , L, A, AA,VC]
-* @apiParam (Body) {String} recommendedLevel Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]
+* @apiParam (Body) {String[]} recommendedLevel Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]
 * @apiParam (Body) {String} recommendedLevelEtc Etc 이유
  *
  * @apiSuccessExample {json} SUCCESS
