@@ -274,14 +274,14 @@
     "type": "post",
     "url": "/admin/v1/users/{id}/levelTests",
     "title": "31. 레벨 테스트 등록",
-    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 사용해주세요<br/></p>",
+    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 사용해주세요<br/> [NONE, NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS] 는 NONE과 NEVER로만 테스트 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_creatLevelTest",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/1028151/levelTests' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"interviewer\": \"TEST\",\n    \"studyType\": \"NONE\",\n    \"studyTypeEtc\": \"TEST4\",\n    \"consonants\": \"R\",\n    \"vowels\": \"D\",\n    \"clarity\": \"E\",\n    \"intonation\": \"VK\",\n    \"vocabulary\": \"AA\",\n    \"verbsTense\": \"NEVER\",\n    \"agreement\": \"NEVER\",\n    \"prepositions\": \"NEVER\",\n    \"articles\": \"NEVER\",\n    \"plurals\": \"NEVER\",\n    \"others\": \"NEVER\",\n    \"comprehension\": \"AE\",\n    \"confidence\": \"CL\",\n    \"recommendedLevel\": \"R2\"\n}\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/1028151/levelTests' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"interviewer\": \"TEST\",\n    \"studyType\": [\"NONE\"],\n    \"studyTypeEtc\": \"TEST4\",\n    \"consonants\": [\"R\"],\n    \"vowels\": [\"D\"],\n    \"clarity\": \"E\",\n    \"intonation\": \"VK\",\n    \"vocabulary\": \"AA\",\n    \"verbsTense\": \"NEVER\",\n    \"agreement\": \"NEVER\",\n    \"prepositions\": \"NEVER\",\n    \"articles\": \"NEVER\",\n    \"plurals\": \"NEVER\",\n    \"others\": \"NEVER\",\n    \"comprehension\": \"AE\",\n    \"confidence\": \"CL\",\n    \"recommendedLevel\":[\"R2\"]\n}\"",
         "type": "curl"
       }
     ],
@@ -4114,7 +4114,7 @@
     "type": "put",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
     "title": "32. 레벨테스트 수정",
-    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭<br/> id : 1028151  / testId: 6118 <br/></p>",
+    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭<br/> id : 1028151  / testId: 6118 <br/> [NONE, NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS] 는 NONE과 NEVER로만 테스트 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_updateLevelTest",
     "group": "1._Admin_API_>_1._회원",

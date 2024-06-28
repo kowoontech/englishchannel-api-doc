@@ -3,7 +3,8 @@
  *
  * @apiDescription 회원관리 > 회원 상세 조회 > 테스트 탭 <br/>
  * 없는 데이터가 많으니 id : 1028151 사용해주세요<br/>
- *
+ *[NONE, NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS] 는 NONE과 NEVER로만 테스트 해주세요
+
  * @apiVersion 1.0.0
  * @apiName admin_creatLevelTest
  * @apiGroup 1. Admin API > 1. 회원
@@ -13,10 +14,10 @@
  * -H "Content-Type: application/json" \
  * -d "{
     "interviewer": "TEST",
-    "studyType": "NONE",
+    "studyType": ["NONE"],
     "studyTypeEtc": "TEST4",
-    "consonants": "R",
-    "vowels": "D",
+    "consonants": ["R"],
+    "vowels": ["D"],
     "clarity": "E",
     "intonation": "VK",
     "vocabulary": "AA",
@@ -28,7 +29,7 @@
     "others": "NEVER",
     "comprehension": "AE",
     "confidence": "CL",
-    "recommendedLevel": "R2"
+    "recommendedLevel":["R2"]
 }"
  *
  * @apiParam (Path) {String} id 회원 식별키

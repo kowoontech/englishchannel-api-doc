@@ -3,7 +3,7 @@
  *
  * @apiDescription 회원관리 > 회원 상세 조회 > 테스트 탭<br/>
  * id : 1028151  / testId: 6118 <br/>
- *
+ * [NONE, NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS] 는 NONE과 NEVER로만 테스트 해주세요
  *
  * @apiVersion 1.0.0
  * @apiName admin_updateLevelTest
