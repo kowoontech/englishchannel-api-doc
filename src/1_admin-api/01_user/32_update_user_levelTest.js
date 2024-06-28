@@ -60,15 +60,15 @@
 * @apiParam (Body) {String[]} consonants consonants <br/>
                                  [NONE : 선택 안함, R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH]<br/>
 * @apiParam (Body) {String[]} vowels vowels [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N]
-* @apiParam (Body) {String} clarity [clarity] [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N
-* @apiParam (Body) {String} intonation [intonation] [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N
-* @apiParam (Body) {String} vocabulary [vocabulary] [V,L,A,AA,E]
-* @apiParam (Body) {String} verbsTense [verbsTense] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
-* @apiParam (Body) {String} agreement [agreement] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
-* @apiParam (Body) {String} prepositions [prepositions] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
-* @apiParam (Body) {String} articles [articles] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
-* @apiParam (Body) {String} plurals [plurals] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
-* @apiParam (Body) {String} others [others] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
+* @apiParam (Body) {String} clarity clarity [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N
+* @apiParam (Body) {String} intonation intonation [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N
+* @apiParam (Body) {String} vocabulary vocabulary [V,L,A,AA,E]
+* @apiParam (Body) {String} verbsTense verbsTense [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
+* @apiParam (Body) {String} agreement agreement [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
+* @apiParam (Body) {String} prepositions prepositions [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
+* @apiParam (Body) {String} articles articles [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
+* @apiParam (Body) {String} plurals plurals [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
+* @apiParam (Body) {String} others others [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
 * @apiParam (Body) {String} strongPoint strongPoint
 * @apiParam (Body) {String} weakPoint weakPoint
 * @apiParam (Body) {String} comprehension Comprehension How much does learner understand <br/>

@@ -428,63 +428,63 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "clarity",
-            "description": "<p>[clarity] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>clarity [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "intonation",
-            "description": "<p>[intonation] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>intonation [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "vocabulary",
-            "description": "<p>[vocabulary] [V,L,A,AA,E]</p>"
+            "description": "<p>vocabulary [V,L,A,AA,E]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "verbsTense",
-            "description": "<p>[verbsTense] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>verbsTense [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "agreement",
-            "description": "<p>[agreement] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>agreement [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "prepositions",
-            "description": "<p>[prepositions] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>prepositions [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "articles",
-            "description": "<p>[articles] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>articles [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "plurals",
-            "description": "<p>[plurals] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>plurals [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "others",
-            "description": "<p>[others] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>others [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
@@ -1375,63 +1375,63 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "levelTest.clarity",
-            "description": "<p>[clarity] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>clarity [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.intonation",
-            "description": "<p>[intonation] [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>intonation [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.vocabulary",
-            "description": "<p>[vocabulary] [V,L,A,AA,E]</p>"
+            "description": "<p>vocabulary [V,L,A,AA,E]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.verbsTense",
-            "description": "<p>[verbsTense] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>verbsTense [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.agreement",
-            "description": "<p>[agreement] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>agreement [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.prepositions",
-            "description": "<p>[prepositions] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>prepositions [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.articles",
-            "description": "<p>[articles] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>articles [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.plurals",
-            "description": "<p>[plurals] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>plurals [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.others",
-            "description": "<p>[others] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>others [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Success 200",
@@ -4296,63 +4296,63 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "clarity",
-            "description": "<p>[clarity] [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>clarity [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "intonation",
-            "description": "<p>[intonation] [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>intonation [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "vocabulary",
-            "description": "<p>[vocabulary] [V,L,A,AA,E]</p>"
+            "description": "<p>vocabulary [V,L,A,AA,E]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "verbsTense",
-            "description": "<p>[verbsTense] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>verbsTense [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "agreement",
-            "description": "<p>[agreement] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>agreement [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "prepositions",
-            "description": "<p>[prepositions] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>prepositions [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "articles",
-            "description": "<p>[articles] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>articles [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "plurals",
-            "description": "<p>[plurals] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>plurals [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "others",
-            "description": "<p>[others] [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>others [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
           },
           {
             "group": "Body",
