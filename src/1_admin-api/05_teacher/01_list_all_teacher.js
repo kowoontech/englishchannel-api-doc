@@ -26,6 +26,8 @@
  * @apiSuccess {String} list.teacherName  강사명
  * @apiSuccess {String} list.workTime 근무시간[AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]
  * @apiSuccess {String} list.sort 순번
+ * @apiSuccess {String} list.email 이메일
+ * @apiSuccess {String} list.cellPhone 전화번호
  *
  * @apiSuccess {Number} totalCount 전체 수
  * @apiSuccess {Number} page 현재 페이지

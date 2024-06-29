@@ -7361,6 +7361,20 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.email",
+            "description": "<p>이메일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.cellPhone",
+            "description": "<p>전화번호</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "totalCount",
@@ -7441,6 +7455,435 @@ define({ "api": [
     },
     "filename": "src/1_admin-api/05_teacher/01_list_all_teacher.js",
     "groupTitle": "1._Admin_API_>_5._강사"
+  },
+  {
+    "type": "delete",
+    "url": "/admin/v1/statistics/sms/{id}",
+    "title": "04. 강사삭제",
+    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/> 데이터가 많지 않아 오류 가능성 높음. id:7 사용. 안될시 알려주세요.</p>",
+    "version": "1.0.0",
+    "name": "admin_deleteSms",
+    "group": "1._Admin_API_>_6._통계보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/statistics/sms/7'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": true,
+            "field": "id",
+            "description": "<p>sms 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/06_statistics/03_delete_sms.js",
+    "groupTitle": "1._Admin_API_>_6._통계보고서"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/statistics/sms/{id}",
+    "title": "02. 발송 내역 상세 조회",
+    "description": "<p>통계보고서 &gt; sms전송현황 &gt; 상세 조회<br/> id: 5 사용해주세요</p>",
+    "version": "1.0.0",
+    "name": "admin_getSms",
+    "group": "1._Admin_API_>_6._통계보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/sms/5'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "id",
+            "description": "<p>sms 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>sms 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "target",
+            "description": "<p>sms 받은 사람들의 정보(smsTarget)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.id",
+            "description": "<p>smsTarget 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.smsId",
+            "description": "<p>사용x</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.email",
+            "description": "<p>수취인 메일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.recipientPhone",
+            "description": "<p>발송상태 (WAITING: 대기, SUCCESS:성공, FAIL: 실패)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.sendDate",
+            "description": "<p>발송일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reservationDate",
+            "description": "<p>예약발송일[yyyy-MM-dd HH:mm:ss]</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": 5,\n    \"target\": [\n        {\n            \"id\": 1,\n            \"smsId\": null,\n            \"email\": \"이메일1@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국\",\n            \"status\": \"WAITING\",\n            \"sendDate\": \"2012-11-12T00:00:00\"\n        },\n        {\n            \"id\": 2,\n            \"smsId\": null,\n            \"email\": \"이메일2@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국2\",\n            \"status\": \"WAITING\",\n            \"sendDate\": \"2012-11-12T00:00:00\"\n        },\n        {\n            \"id\": 3,\n            \"smsId\": null,\n            \"email\": \"이메일3@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국3\",\n            \"status\": \"WAITING\",\n            \"sendDate\": \"2012-11-12T00:00:00\"\n        },\n        {\n            \"id\": 4,\n            \"smsId\": null,\n            \"email\": \"이메일4@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국4\",\n            \"status\": \"SUCCESS\",\n            \"sendDate\": \"2012-11-12T00:00:00\"\n        },\n        {\n            \"id\": 5,\n            \"smsId\": null,\n            \"email\": \"이메일5@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국5\",\n            \"status\": \"SUCCESS\",\n            \"sendDate\": \"2012-11-12T00:00:00\"\n        },\n        {\n            \"id\": 6,\n            \"smsId\": null,\n            \"email\": \"이메일5@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국5\",\n            \"status\": \"FAIL\",\n            \"sendDate\": \"2012-11-12T00:00:00\"\n        },\n        {\n            \"id\": 7,\n            \"smsId\": null,\n            \"email\": \"이메일6@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국6\",\n            \"status\": \"FAIL\",\n            \"sendDate\": \"2012-11-12T00:00:00\"\n        },\n        {\n            \"id\": 8,\n            \"smsId\": null,\n            \"email\": \"이메일7@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국7\",\n            \"status\": \"FAIL\",\n            \"sendDate\": \"2012-11-12T00:00:00\"\n        },\n        {\n            \"id\": 9,\n            \"smsId\": null,\n            \"email\": \"이메일8@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국8\",\n            \"status\": \"FAIL\",\n            \"sendDate\": \"2012-11-12T00:00:00\"\n        },\n        {\n            \"id\": 10,\n            \"smsId\": null,\n            \"email\": \"이메일9@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국9\",\n            \"status\": \"FAIL\",\n            \"sendDate\": \"2012-11-12T00:00:00\"\n        }\n    ],\n    \"reservationDate\": \"2021-12-12T00:00:00\",\n    \"content\": \"문자메세지\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/06_statistics/02_get_sms.js",
+    "groupTitle": "1._Admin_API_>_6._통계보고서"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/statistics/sms/{id}/target",
+    "title": "04. 대상자 보기",
+    "description": "<p>통계보고서 &gt; sms전송현황 &gt; 목록 조회&gt; 대상자보기<br/></p>",
+    "version": "1.0.0",
+    "name": "admin_getSmsTarget",
+    "group": "1._Admin_API_>_6._통계보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/sms/5'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "id",
+            "description": "<p>sms 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "list",
+            "description": "<p>수취인 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.id",
+            "description": "<p>수취인 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.email",
+            "description": "<p>사용x</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.recipientPhone",
+            "description": "<p>수취인 메일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.recipientName",
+            "description": "<p>수취인 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.status",
+            "description": "<p>발송상태 (WAITING: 대기, SUCCESS:성공, FAIL: 실패)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 10,\n            \"email\": \"이메일9@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국9\",\n            \"status\": \"FAIL\"\n        },\n        {\n            \"id\": 9,\n            \"email\": \"이메일8@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국8\",\n            \"status\": \"FAIL\"\n        },\n        {\n            \"id\": 8,\n            \"email\": \"이메일7@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국7\",\n            \"status\": \"FAIL\"\n        },\n        {\n            \"id\": 7,\n            \"email\": \"이메일6@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국6\",\n            \"status\": \"FAIL\"\n        },\n        {\n            \"id\": 6,\n            \"email\": \"이메일5@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국5\",\n            \"status\": \"FAIL\"\n        },\n        {\n            \"id\": 5,\n            \"email\": \"이메일5@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국5\",\n            \"status\": \"SUCCESS\"\n        },\n        {\n            \"id\": 4,\n            \"email\": \"이메일4@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국4\",\n            \"status\": \"SUCCESS\"\n        },\n        {\n            \"id\": 3,\n            \"email\": \"이메일3@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국3\",\n            \"status\": \"WAITING\"\n        },\n        {\n            \"id\": 2,\n            \"email\": \"이메일2@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국2\",\n            \"status\": \"WAITING\"\n        },\n        {\n            \"id\": 1,\n            \"email\": \"이메일1@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국\",\n            \"status\": \"WAITING\"\n        }\n    ],\n    \"totalCount\": 10,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"hasNext\": false,\n    \"isFirst\": true,\n    \"isLast\": true,\n    \"hasPrev\": false\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/06_statistics/04_get_smsTarget.js",
+    "groupTitle": "1._Admin_API_>_6._통계보고서"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/statistics/sms",
+    "title": "01. 발송 내역 목록",
+    "description": "<p>SMS 전송현황 &gt; <br/> 통계보고서 &gt; sms전송현황 &gt; 발송 내역</p>",
+    "version": "1.0.0",
+    "name": "all_Sms",
+    "group": "1._Admin_API_>_6._통계보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/sms",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "sendDateFrom",
+            "description": "<p>발송일 시작 [yyyy-MM-dd]</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "sendDateTo",
+            "description": "<p>발송일 종료 [yyyy-MM-dd]</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "sendType",
+            "description": "<p>구분 [L:LMS , S: SMS] 전체 시 null값 넘겨주세요</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "search",
+            "description": "<p>검색조건[content: 내용,senderName:발송인]</p>"
+          },
+          {
+            "group": "Query",
+            "type": "Number",
+            "optional": false,
+            "field": "keyword",
+            "description": "<p>검색내용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "list",
+            "description": "<p>SMS 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.id",
+            "description": "<p>SMS 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.senderName",
+            "description": "<p>발송인</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.sendDate",
+            "description": "<p>발송일[yyyy-MM-dd HH:mm:ss]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.count",
+            "description": "<p>발송건수(성공/실패)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.recipientName",
+            "description": "<p>수취인</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.reservationDate",
+            "description": "<p>예약일시(성공/실패)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalCount",
+            "description": "<p>전체 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>현재 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 회원 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalPage",
+            "description": "<p>전체 페이지 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "startPage",
+            "description": "<p>페이징 영역에 노출될 첫 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "endPage",
+            "description": "<p>페이징 영역에 노출될 마지막 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasPrev",
+            "description": "<p>전 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasNext",
+            "description": "<p>다음 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isFirst",
+            "description": "<p>첫 페이징 영역 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isLast",
+            "description": "<p>마지막 페이징 영역 여부</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 5,\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\",\n            \"sendDate\": \"2021-12-12T00:00:00\",\n            \"count\": 0,\n            \"recipientName\": \"홍길동\",\n            \"reservationDate\": \"2021-12-12T00:00:00\"\n        },\n        {\n            \"id\": 6,\n            \"senderName\": \"고길동1\",\n            \"content\": \"문자메세지1\",\n            \"sendDate\": \"2021-12-12T00:00:00\",\n            \"count\": 0,\n            \"recipientName\": \"홍길동1\",\n            \"reservationDate\": \"2021-12-12T00:00:00\"\n        },\n        {\n            \"id\": 7,\n            \"senderName\": \"고길동2\",\n            \"content\": \"문자메세지2\",\n            \"sendDate\": \"2021-12-12T00:00:00\",\n            \"count\": 0,\n            \"recipientName\": \"홍길동2\",\n            \"reservationDate\": \"2021-12-12T00:00:00\"\n        },\n        {\n            \"id\": 8,\n            \"senderName\": \"고길동3\",\n            \"content\": \"문자메세지3\",\n            \"sendDate\": \"2021-12-12T00:00:00\",\n            \"count\": 0,\n            \"recipientName\": \"홍길동3\",\n            \"reservationDate\": \"2021-12-12T00:00:00\"\n        }\n    ],\n    \"totalCount\": 4,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"hasNext\": false,\n    \"isFirst\": true,\n    \"isLast\": true,\n    \"hasPrev\": false\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/06_statistics/01_list_all_sms.js",
+    "groupTitle": "1._Admin_API_>_6._통계보고서"
   },
   {
     "type": " ",
