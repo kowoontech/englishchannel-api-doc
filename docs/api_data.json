@@ -7459,7 +7459,7 @@
   {
     "type": "delete",
     "url": "/admin/v1/statistics/sms/{id}",
-    "title": "04. 강사삭제",
+    "title": "03. 발송 내역 삭제",
     "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/> 데이터가 많지 않아 오류 가능성 높음. id:7 사용. 안될시 알려주세요.</p>",
     "version": "1.0.0",
     "name": "admin_deleteSms",

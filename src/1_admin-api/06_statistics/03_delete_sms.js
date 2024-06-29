@@ -1,5 +1,5 @@
 /**
- * @api {delete} /admin/v1/statistics/sms/{id}  04. 강사삭제
+ * @api {delete} /admin/v1/statistics/sms/{id}  03. 발송 내역 삭제
  *
  * @apiDescription 강사관리 > 강사상세조회 > 삭제 <br/>
  * 데이터가 많지 않아 오류 가능성 높음. id:7 사용. 안될시 알려주세요.
