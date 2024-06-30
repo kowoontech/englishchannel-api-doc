@@ -15,6 +15,7 @@
  * @apiParam (Query) fields 조회할 옵션 (,로 복수 가능)<br/>
  * * TEACHERS:담당강사 목록
  * * CONSULTANTS:상담사 목록
+ * * MEMBER_CONSULTATION_TYPES:회원 상담 구분 목록
  *
  * @apiSuccess {Object[]} [teachers] 담당강사 목록
  * @apiSuccess {String} teachers.value 담당강사 키
@@ -22,50 +23,21 @@
  * @apiSuccess {Object[]} [consultants] 상담사 목록
  * @apiSuccess {String} consultants.value 상담사 키
  * @apiSuccess {String} consultants.label 상담사명
+ * @apiSuccess {Object[]} [memberConsultationTypes] 회원 상담 구분 목록
+ * @apiSuccess {String} memberConsultationTypes.value 회원 상담 구분 키
+ * @apiSuccess {String} memberConsultationTypes.label 회원 상담 구분명
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
-{
+ {
     "teachers": [
+        {
+            "value": "500982",
+            "label": "강사수정222"
+        },
         {
             "value": "M1400118325784523",
             "label": "한가영"
-        },
-        {
-            "value": "M1695013438115743",
-            "label": "서안나"
-        },
-        {
-            "value": "M1657064932771055",
-            "label": "김나래"
-        },
-        {
-            "value": "M1661138591404520",
-            "label": "최태연"
-        },
-        {
-            "value": "M1681990831501448",
-            "label": "정지은"
-        },
-        {
-            "value": "M1594795852631377",
-            "label": "Steven"
-        },
-        {
-            "value": "M1487640799950353",
-            "label": "Alex"
-        },
-        {
-            "value": "M1698204875465368",
-            "label": "Olivia"
-        },
-        {
-            "value": "M1691559227102239",
-            "label": "Sadie"
-        },
-        {
-            "value": "M1693558129675151",
-            "label": "Tyler"
         }
     ],
     "consultants": [
@@ -76,27 +48,17 @@
         {
             "value": "U1629938464848865",
             "label": "신원준2"
+        }
+    ],
+    "memberConsultationTypes": [
+        {
+            "value": "COURSE_REGISTRATION",
+            "label": "수강등록"
         },
         {
-            "value": "U1643253882478908",
-            "label": "최지혜"
-        },
-        {
-            "value": "U1658468539178711",
-            "label": "박수현"
-        },
-        {
-            "value": "U1670565899112697",
-            "label": "한시내"
-        },
-        {
-            "value": "U1675406451584692",
-            "label": "박지수"
-        },
-        {
-            "value": "U1684455278686108",
-            "label": "김새롬"
+            "value": "PROGRESS",
+            "label": "진도"
         }
     ]
-}
+ }
  */
