@@ -874,7 +874,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "backgroundColor",
-            "description": "<p>배경색 [NONE,ORANGE,YELLOW,FLUORESCENT]</p>"
+            "description": "<p>배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]</p>"
           }
         ]
       }
@@ -7108,7 +7108,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/consultations/522' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"name\" : \"강사수정222\",\n           \"firstNameEn\" : \"hong\",\n           \"lastNameEn\" : \"gildong\",\n           \"loginId\" : \"강사수정됨222\",\n           \"password\" : \"임시 비밀번호\",\n           \"email\": \"ddd@naver.com\",\n           \"gender\" :\"F\",\n           \"workStartDate\" : \"2021-12-12\",\n           \"type\" :\"HT\",\n           \"workTime\" : \"AM_16\",\n           \"workType\" : \"A\",\n           \"partnerTeacherId\" :\"M1567752637796763\",\n           \"active\": true,\n           \"cellPhone\" :\"010-2222-2222\"\n\n       }\"",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/500593' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"name\" : \"강사수정222\",\n           \"firstNameEn\" : \"hong\",\n           \"lastNameEn\" : \"gildong\",\n           \"password\" : \"임시 비밀번호\",\n           \"email\": \"ddd@naver.com\",\n           \"gender\" :\"F\",\n           \"workStartDate\" : \"2021-12-12\",\n           \"type\" :\"HT\",\n           \"workTime\" : \"AM_16\",\n           \"workType\" : \"A\",\n           \"partnerTeacherId\" :\"M1567752637796763\",\n           \"active\": true,\n           \"cellPhone\" :\"010-2222-2222\"\n\n       }\"",
         "type": "curl"
       }
     ],

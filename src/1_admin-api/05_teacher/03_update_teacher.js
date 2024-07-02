@@ -8,13 +8,12 @@
  * @apiGroup 1. Admin API > 5. 강사
  *
  * @apiExample {curl} REQUEST
- * curl -i -X PUT 'http://localhost:8080/admin/v1/consultations/522' \
+ * curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/500593' \
  * -H "Content-Type: application/json" \
  * -d "{
            "name" : "강사수정222",
            "firstNameEn" : "hong",
            "lastNameEn" : "gildong",
-           "loginId" : "강사수정됨222",
            "password" : "임시 비밀번호",
            "email": "ddd@naver.com",
            "gender" :"F",

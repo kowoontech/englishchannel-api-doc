@@ -24,7 +24,7 @@
  * @apiParam (Body) {String} details 상담내용
  * @apiParam (Body) {String} topFixedYn 상단고정 [체크:Y 아닐시 N]
  * @apiParam (Body) {String} fontBoldYn 상담 내용 굵게 [체크:Y 아닐시 N]
- * @apiParam (Body) {String} backgroundColor 배경색 [NONE,ORANGE,YELLOW,FLUORESCENT]
+ * @apiParam (Body) {String} backgroundColor 배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]
 
  *
  * @apiSuccessExample {json} SUCCESS
