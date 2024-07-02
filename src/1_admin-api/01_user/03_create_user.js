@@ -67,7 +67,7 @@
  * @apiParam (Body) {String} [address] 주소
  * @apiParam (Body) {String} [detailedAddress] 상세 주소
  * @apiParam (Body) {String} [addressType] 주소 유형 (H:자택, C:직장)
- * @apiParam (Body) {String} [joinPath] 가입 경로 (10:간판, 20:온라인검색, 30:지인추천, 40:부채, 50:3단리플릿, 60:지하철광고, 70:기업제휴, 900: 기타)
+ * @apiParam (Body) {String} [joinPath] 가입 경로 ( SIGN:간판, ONLINE:온라인검색, RECOMMEND:지인추천, FAN:부채, LEAFLET:3단리플릿, SUBWAY:지하철광고, ALLIANCE:기업제휴,  ETC: 기타)
  * @apiParam (Body) {String[]} [languages] 학습희망언어 목록 (EN:영어, CN:중국어, JP:일본어, KR:한국어, ETC:기타)
  * @apiParam (Body) {String} [etcLanguage] 학습희망언어 기타
  * @apiParam (Body) {Object[]} [languageSkills] 외국어실력 목록

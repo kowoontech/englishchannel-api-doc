@@ -755,7 +755,7 @@ define({ "api": [
             "type": "String",
             "optional": true,
             "field": "joinPath",
-            "description": "<p>가입 경로 (10:간판, 20:온라인검색, 30:지인추천, 40:부채, 50:3단리플릿, 60:지하철광고, 70:기업제휴, 900: 기타)</p>"
+            "description": "<p>가입 경로 ( SIGN:간판, ONLINE:온라인검색, RECOMMEND:지인추천, FAN:부채, LEAFLET:3단리플릿, SUBWAY:지하철광고, ALLIANCE:기업제휴,  ETC: 기타)</p>"
           },
           {
             "group": "Body",
