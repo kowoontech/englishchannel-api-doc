@@ -7730,7 +7730,7 @@
   {
     "type": "get",
     "url": "/admin/v1/statistics/sms/{id}",
-    "title": "02. 발송 내역 상세 조회",
+    "title": "06. LDF 상세 조회",
     "description": "<p>통계보고서 &gt; 평가현황 &gt; 상세보기 &gt; LDF 보기<br/> id: 288497 사용해주세요</p>",
     "version": "1.0.0",
     "name": "admin_evaluation_ldf",

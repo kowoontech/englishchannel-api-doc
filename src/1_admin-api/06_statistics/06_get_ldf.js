@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/statistics/sms/{id} 02. 발송 내역 상세 조회
+ * @api {get} /admin/v1/statistics/sms/{id} 06. LDF 상세 조회
  *
  * @apiDescription  통계보고서 > 평가현황 > 상세보기 > LDF 보기<br/>
  * id: 288497 사용해주세요
