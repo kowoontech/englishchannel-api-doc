@@ -7731,6 +7731,91 @@
     "type": "get",
     "url": "/admin/v1/statistics/sms/{id}",
     "title": "02. 발송 내역 상세 조회",
+    "description": "<p>통계보고서 &gt; 평가현황 &gt; 상세보기 &gt; LDF 보기<br/> id: 288497 사용해주세요</p>",
+    "version": "1.0.0",
+    "name": "admin_evaluation_ldf",
+    "group": "1._Admin_API_>_6._통계보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/ldfs/2884975'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "id",
+            "description": "<p>LDF 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>LDF 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lesson",
+            "description": "<p>lesson</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contentSp",
+            "description": "<p>Stress and Pronunciation</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contentV",
+            "description": "<p>Vocabulary</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contentSg",
+            "description": "<p>Sentence Structure &amp; Grammar</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contentC",
+            "description": "<p>Comment</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": 288497,\n    \"lesson\": \"Jan. 2nd\",\n    \"contentSp\": \"<p><span style=\\\"font-size: 20px\\\">impressed- 감명받은</span></p> <p><span style=\\\"font-size: 20px\\\">tired- 피곤한</span></p> <p><span style=\\\"font-size: 20px\\\">freshman- 1학년, 신입사원</span></p> <p><span style=\\\"font-size: 20px\\\">popular- 인기있는</span></p> <p><span style=\\\"font-size: 20px\\\">each other-&nbsp;</span><span style=\\\"font-size: 20px\\\">서로 서로&nbsp;</span></p> <p><span style=\\\"font-size: 20px\\\">outgoing- 외향적인</span></p> <p><span style=\\\"font-size: 20px\\\">hardworking- 성실한</span></p> <p><span style=\\\"font-size: 20px\\\">mutual- 서로의</span></p>\",\n    \"contentV\": \"<p><span style=\\\"font-size: 20px\\\">&nbsp; socialize- 어울리다</span></p> <p><span style=\\\"font-size: 20px\\\">hit it off- 죽이 잘 맞다</span></p> <p><span style=\\\"font-size: 20px\\\">blow me away- 놀라게하다</span></p> <p><span style=\\\"font-size: 20px\\\">life time partner- 평생동반자</span></p> <p><span style=\\\"font-size: 20px\\\">manage- (겨우) 해내다</span></p> <p><span style=\\\"font-size: 20px\\\">conflict-갈등</span></p>\",\n    \"contentSg\": \"<p>&nbsp;</p>\",\n    \"contentC\": \"<p>&nbsp;</p>\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/06_statistics/06_get_ldf.js",
+    "groupTitle": "1._Admin_API_>_6._통계보고서"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/statistics/sms/{id}",
+    "title": "02. 발송 내역 상세 조회",
     "description": "<p>통계보고서 &gt; sms전송현황 &gt; 상세 조회<br/> id: 5 사용해주세요</p>",
     "version": "1.0.0",
     "name": "admin_getSms",
@@ -7831,91 +7916,6 @@
       ]
     },
     "filename": "src/1_admin-api/06_statistics/02_get_sms.js",
-    "groupTitle": "1._Admin_API_>_6._통계보고서"
-  },
-  {
-    "type": "get",
-    "url": "/admin/v1/statistics/sms/{id}",
-    "title": "02. 발송 내역 상세 조회",
-    "description": "<p>통계보고서 &gt; 평가현황 &gt; 상세보기 &gt; LDF 보기<br/> id: 288497 사용해주세요</p>",
-    "version": "1.0.0",
-    "name": "admin_getSms",
-    "group": "1._Admin_API_>_6._통계보고서",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/ldfs/2884975'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Query": [
-          {
-            "group": "Query",
-            "optional": false,
-            "field": "id",
-            "description": "<p>LDF 식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>LDF 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "lesson",
-            "description": "<p>lesson</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "contentSp",
-            "description": "<p>Stress and Pronunciation</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "contentV",
-            "description": "<p>Vocabulary</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "contentSg",
-            "description": "<p>Sentence Structure &amp; Grammar</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "contentC",
-            "description": "<p>Comment</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": 288497,\n    \"lesson\": \"Jan. 2nd\",\n    \"contentSp\": \"<p><span style=\\\"font-size: 20px\\\">impressed- 감명받은</span></p> <p><span style=\\\"font-size: 20px\\\">tired- 피곤한</span></p> <p><span style=\\\"font-size: 20px\\\">freshman- 1학년, 신입사원</span></p> <p><span style=\\\"font-size: 20px\\\">popular- 인기있는</span></p> <p><span style=\\\"font-size: 20px\\\">each other-&nbsp;</span><span style=\\\"font-size: 20px\\\">서로 서로&nbsp;</span></p> <p><span style=\\\"font-size: 20px\\\">outgoing- 외향적인</span></p> <p><span style=\\\"font-size: 20px\\\">hardworking- 성실한</span></p> <p><span style=\\\"font-size: 20px\\\">mutual- 서로의</span></p>\",\n    \"contentV\": \"<p><span style=\\\"font-size: 20px\\\">&nbsp; socialize- 어울리다</span></p> <p><span style=\\\"font-size: 20px\\\">hit it off- 죽이 잘 맞다</span></p> <p><span style=\\\"font-size: 20px\\\">blow me away- 놀라게하다</span></p> <p><span style=\\\"font-size: 20px\\\">life time partner- 평생동반자</span></p> <p><span style=\\\"font-size: 20px\\\">manage- (겨우) 해내다</span></p> <p><span style=\\\"font-size: 20px\\\">conflict-갈등</span></p>\",\n    \"contentSg\": \"<p>&nbsp;</p>\",\n    \"contentC\": \"<p>&nbsp;</p>\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/06_statistics/06_get_ldf.js",
     "groupTitle": "1._Admin_API_>_6._통계보고서"
   },
   {

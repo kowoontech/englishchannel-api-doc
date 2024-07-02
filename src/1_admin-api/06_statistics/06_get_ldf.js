@@ -4,7 +4,7 @@
  * @apiDescription  통계보고서 > 평가현황 > 상세보기 > LDF 보기<br/>
  * id: 288497 사용해주세요
  * @apiVersion 1.0.0
- * @apiName admin_getSms
+ * @apiName admin_evaluation_ldf
  * @apiGroup 1. Admin API > 6. 통계보고서
  *
  * @apiExample {curl} REQUEST
