@@ -2,7 +2,8 @@
  * @api {post} /admin/v1/login 02. 로그인
  *
  * @apiDescription 어드민 로그인<br/>
- * 모든 API 요청의 header에 Login-Profile=test 를 넣으면 로그인 우회
+ * 모든 API 요청의 header에 Login-Profile=test 를 넣으면 로그인 우회<br/>
+ * Token은 각 요청 Header에 Authorization으로 넣어주시면 됩니다. (Bearer 이런거 없이 토큰만)
  *
  * @apiVersion 1.0.0
  * @apiName admin_login
@@ -23,11 +24,13 @@
  * 
  * @apiSuccess {String} id 회원 식별키
  * @apiSuccess {String} name 이름
+ * @apiSuccess {String} token access token
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 {
     "id": "M1568918323745589",
-    "name": "test"
+    "name": "test",
+    "token": "1234567890"
 }
  */
