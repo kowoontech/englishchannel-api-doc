@@ -2,22 +2,21 @@
  * @api {get} /admin/v1/users/{id}/levelTests/{testId} 30. 레벨테스트 상세조회
  *
  * @apiDescription 회원관리 > 회원  상세 조회 > 테스트 탭 <br/>
- * 없는 데이터가 많으니 id : 1028151 , testId : 6118 사용해주세요 <br/>
- * [NONE, NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS] 는 NONE과 NEVER로만 테스트 해주세요
+ * 없는 데이터가 많으니 id : 1028151 , testId : 6145 사용해주세요 <br/>
+ *
  *
  * @apiVersion 1.0.0
  * @apiName admin_getLevelTest
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/users/1028151/levelTests/6118'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/users/1028151/levelTests/6145'
  *
  * @apiParam (Path) {String} id 회원 식별키
  * @apiParam (Path) {Number} LevelTest 식별키
  * 
  * @apiSuccess {Object[]} levelTest LevelTest 정보
  * @apiSuccess {Long} levelTest.id 테스트 식별키
- * @apiSuccess {String} levelTest.Id 회원 식별키
  * @apiSuccess {String} levelTest.testStartTime 테스트일시(시작) (yyyy-mm-dd HH:mm:ss)
  * @apiSuccess {String} levelTest.testEndTime 테스트일시(끝)(yyyy-mm-dd HH:mm:ss)
  * @apiSuccess {String} levelTest.interviewer Interviewer
@@ -56,10 +55,10 @@
  * @apiSuccess {String} levelTest.recommendedLevel Recommended Level(사용x 아래 recommendedLevel 사용해주세요 )
  * @apiSuccess {String} levelTest.recommendedLevelEtc Etc 이유
  *
- * @apiSuccess {String[]} recommendedLevel Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]
- * @apiSuccess {String[]} vowels vowels(NONE,A,B,C,D,E,F,G,H,I,J,K,L,M,N)
- * @apiSuccess {String[]} consonants consonants(NONE, R,L,P,F,B,V,Z,SH,EZH,CH,G,TTH,TH)
- * @apiSuccess {String[]} studyType studyType(NONE, EC,BE,TS,I,ETC)
+ * @apiSuccess {String[]} recommendedLevel Recommended Level (선택X:0, 순서대로> 10,20,30,40,50,60,70,80,90)
+ * @apiSuccess {String[]} vowels vowels(선택X: 10 / 순서대로 20,30,40,50,60,70,80,90,100,110,120,130,140,150)
+ * @apiSuccess {String[]} consonants consonants(선택 X:0, 순서대로 > 10,20,30,40,50,60,70,80,90,100,110,120,130 )
+ * @apiSuccess {String[]} studyType studyType(선택X :0/ 순서대로 10,20,30,40,50)
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 {

@@ -302,14 +302,14 @@
     "type": "post",
     "url": "/admin/v1/users/{id}/levelTests",
     "title": "31. 레벨 테스트 등록",
-    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 사용해주세요<br/> [NONE, NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS] 는 NONE과 NEVER로만 테스트 해주세요</p>",
+    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 사용해주세요<br/></p>",
     "version": "1.0.0",
     "name": "admin_creatLevelTest",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/1028151/levelTests' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"interviewer\": \"TEST\",\n    \"studyType\": [\"NONE\"],\n    \"studyTypeEtc\": \"TEST4\",\n    \"consonants\": [\"R\"],\n    \"vowels\": [\"D\"],\n    \"clarity\": \"E\",\n    \"intonation\": \"VK\",\n    \"vocabulary\": \"AA\",\n    \"verbsTense\": \"NEVER\",\n    \"agreement\": \"NEVER\",\n    \"prepositions\": \"NEVER\",\n    \"articles\": \"NEVER\",\n    \"plurals\": \"NEVER\",\n    \"others\": \"NEVER\",\n    \"comprehension\": \"AE\",\n    \"confidence\": \"CL\",\n    \"recommendedLevel\":[\"R2\"]\n}\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/1028151/levelTests' \\\n-H \"Content-Type: application/json\" \\\n-d \"  {\n           \"note\" : \"테스트4\",\n           \"interviewer\": \"TEST999\",\n           \"studyType\": [\"NONE\",\"EC\"],\n           \"studyTypeEtc\": \"TEST4\",\n           \"consonants\": [\"R\",\"G\"],\n           \"vowels\": [\"D\",\"J\"],\n           \"clarity\": \"10\",\n           \"intonation\": \"20\",\n           \"vocabulary\": \"30\",\n           \"verbsTense\": \"10 \",\n           \"agreement\": \"10\",\n           \"prepositions\": \"10\",\n           \"articles\": \"40 \",\n           \"plurals\": \"30\",\n           \"others\": \"10\",\n           \"comprehension\": \"10\",\n           \"confidence\": \"20\",\n           \"recommendedLevel\":[\"R2\",\"R3\"]\n       }\"",
         "type": "curl"
       }
     ],
@@ -449,70 +449,70 @@
             "type": "String[]",
             "optional": false,
             "field": "vowels",
-            "description": "<p>vowels [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N]</p>"
+            "description": "<p>vowels [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "clarity",
-            "description": "<p>clarity [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>Clarity(10:hard to understand ,20:average ,30:easy to understand)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "intonation",
-            "description": "<p>intonation [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>Intonation(10:very Korean ,20:a bit Korean,30:acceptable ,40:near native)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "vocabulary",
-            "description": "<p>vocabulary [V,L,A,AA,E]</p>"
+            "description": "<p>Vocabulary(10:very limited ,20:limited ,30:average ,40:above average ,50:extensive)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "verbsTense",
-            "description": "<p>verbsTense [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Verbs tense(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "agreement",
-            "description": "<p>agreement [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Agreement(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "prepositions",
-            "description": "<p>prepositions [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Prepositions(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "articles",
-            "description": "<p>articles [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Articles(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "plurals",
-            "description": "<p>plurals [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Plurals(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "others",
-            "description": "<p>others [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Others(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
@@ -533,21 +533,21 @@
             "type": "String",
             "optional": false,
             "field": "comprehension",
-            "description": "<p>Comprehension How much does learner understand <br/> [선택안함:NONE, AN , SP, MP, AE, E]</p>"
+            "description": "<p>Comprehension How much does learner understand<br/> (10:almost nothing ,20:some parts ,30:most parts ,40:almost everything ,50:everything)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "confidence",
-            "description": "<p>confidence [선택안함:NONE, CL , L, A, AA,VC]</p>"
+            "description": "<p>Confidence(10:completely lacking ,20:lacking ,30:average ,40:above average,50:very confident)</p>"
           },
           {
             "group": "Body",
             "type": "String[]",
             "optional": false,
             "field": "recommendedLevel",
-            "description": "<p>Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"
+            "description": "<p>Recommended Level [NONE(선택안함), R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"
           },
           {
             "group": "Body",
@@ -1250,14 +1250,14 @@
     "type": "get",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
     "title": "30. 레벨테스트 상세조회",
-    "description": "<p>회원관리 &gt; 회원  상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 , testId : 6118 사용해주세요 <br/> [NONE, NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS] 는 NONE과 NEVER로만 테스트 해주세요</p>",
+    "description": "<p>회원관리 &gt; 회원  상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 , testId : 6145 사용해주세요 <br/></p>",
     "version": "1.0.0",
     "name": "admin_getLevelTest",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/1028151/levelTests/6118'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/1028151/levelTests/6145'",
         "type": "curl"
       }
     ],
@@ -1297,13 +1297,6 @@
             "optional": false,
             "field": "levelTest.id",
             "description": "<p>테스트 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "levelTest.Id",
-            "description": "<p>회원 식별키</p>"
           },
           {
             "group": "Success 200",
@@ -1555,28 +1548,28 @@
             "type": "String[]",
             "optional": false,
             "field": "recommendedLevel",
-            "description": "<p>Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"
+            "description": "<p>Recommended Level (선택X:0, 순서대로&gt; 10,20,30,40,50,60,70,80,90)</p>"
           },
           {
             "group": "Success 200",
             "type": "String[]",
             "optional": false,
             "field": "vowels",
-            "description": "<p>vowels(NONE,A,B,C,D,E,F,G,H,I,J,K,L,M,N)</p>"
+            "description": "<p>vowels(선택X: 10 / 순서대로 20,30,40,50,60,70,80,90,100,110,120,130,140,150)</p>"
           },
           {
             "group": "Success 200",
             "type": "String[]",
             "optional": false,
             "field": "consonants",
-            "description": "<p>consonants(NONE, R,L,P,F,B,V,Z,SH,EZH,CH,G,TTH,TH)</p>"
+            "description": "<p>consonants(선택 X:0, 순서대로 &gt; 10,20,30,40,50,60,70,80,90,100,110,120,130 )</p>"
           },
           {
             "group": "Success 200",
             "type": "String[]",
             "optional": false,
             "field": "studyType",
-            "description": "<p>studyType(NONE, EC,BE,TS,I,ETC)</p>"
+            "description": "<p>studyType(선택X :0/ 순서대로 10,20,30,40,50)</p>"
           }
         ]
       },
@@ -4275,14 +4268,14 @@
     "type": "put",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
     "title": "32. 레벨테스트 수정",
-    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭<br/> id : 1028151  / testId: 6118 <br/> [NONE, NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS] 는 NONE과 NEVER로만 테스트 해주세요</p>",
+    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭<br/> id : 1028151  / testId: 6145 <br/></p>",
     "version": "1.0.0",
     "name": "admin_updateLevelTest",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/users/1028151/levelTests/6118'\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"interviewer\": \"TEST\",\n    \"studyType\": [\"NONE\"],\n    \"studyTypeEtc\": \"수정TEST\",\n    \"consonants\":[\"R\"],\n    \"vowels\": [\"D\"],\n    \"clarity\": \"E\",\n    \"intonation\": \"VK\",\n    \"vocabulary\": \"AA\",\n    \"verbsTense\": \"NEVER\",\n    \"agreement\": \"NEVER\",\n    \"prepositions\": \"NEVER\",\n    \"articles\": \"NEVER\",\n    \"plurals\": \"NEVER\",\n    \"others\": \"NEVER\",\n    \"comprehension\": \"AE\",\n    \"confidence\": \"CL\",\n    \"recommendedLevel\": [\"R2\"]\n}\"",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/users/1028151/levelTests/6118'\n-H \"Content-Type: application/json\" \\\n-d \"{\n                  \"note\" : \"수정 테스트4\",\n                  \"interviewer\": \"TEST999\",\n                  \"studyType\": [\"NONE\",\"EC\"],\n                  \"studyTypeEtc\": \"TEST4\",\n                  \"consonants\": [\"R\",\"G\"],\n                  \"vowels\": [\"D\",\"J\"],\n                  \"clarity\": \"10\",\n                  \"intonation\": \"20\",\n                  \"vocabulary\": \"30\",\n                  \"verbsTense\": \"10 \",\n                  \"agreement\": \"10\",\n                  \"prepositions\": \"10\",\n                  \"articles\": \"40 \",\n                  \"plurals\": \"30\",\n                  \"others\": \"10\",\n                  \"comprehension\": \"10\",\n                  \"confidence\": \"20\",\n                  \"recommendedLevel\":[\"R2\",\"R3\"]\n              }\"",
         "type": "curl"
       }
     ],
@@ -4307,13 +4300,6 @@
         "Body": [
           {
             "group": "Body",
-            "type": "Number",
-            "optional": false,
-            "field": "lessonCount",
-            "description": "<p>레슨횟수</p>"
-          },
-          {
-            "group": "Body",
             "type": "String",
             "optional": false,
             "field": "testStartTime",
@@ -4323,15 +4309,8 @@
             "group": "Body",
             "type": "String",
             "optional": false,
-            "field": "testEndTime",
-            "description": "<p>테스트일시(끝)(yyyy-mm-dd HH:mm:ss)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
             "field": "interviewer",
-            "description": "<p>Interviewer</p>"
+            "description": "<p>interviewer Interviewer</p>"
           },
           {
             "group": "Body",
@@ -4388,13 +4367,6 @@
             "optional": false,
             "field": "studyType",
             "description": "<p>What kind of English do you want to study and learn?<br/> [NONE: 선택 없음 , EC: English Conversation,<br/> BE: Business English ,TS:Toeic Speaking , I:Interview ,ETC: ETC]<br></p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "studyTypeEtc",
-            "description": "<p>ETC 이유</p>"
           },
           {
             "group": "Body",
@@ -4457,63 +4429,63 @@
             "type": "String",
             "optional": false,
             "field": "clarity",
-            "description": "<p>clarity [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>Clarity(10:hard to understand ,20:average ,30:easy to understand)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "intonation",
-            "description": "<p>intonation [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>Intonation(10:very Korean ,20:a bit Korean,30:acceptable ,40:near native)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "vocabulary",
-            "description": "<p>vocabulary [V,L,A,AA,E]</p>"
+            "description": "<p>Vocabulary(10:very limited ,20:limited ,30:average ,40:above average ,50:extensive)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "verbsTense",
-            "description": "<p>verbsTense [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Verbs tense(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "agreement",
-            "description": "<p>agreement [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Agreement(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "prepositions",
-            "description": "<p>prepositions [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Prepositions(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "articles",
-            "description": "<p>articles [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Articles(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "plurals",
-            "description": "<p>plurals [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Plurals(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "others",
-            "description": "<p>others [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>Others(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
@@ -4534,21 +4506,21 @@
             "type": "String",
             "optional": false,
             "field": "comprehension",
-            "description": "<p>Comprehension How much does learner understand <br/> [선택안함:NONE, AN , SP, MP, AE, E]</p>"
+            "description": "<p>Comprehension How much does learner understand<br/> (10:almost nothing ,20:some parts ,30:most parts ,40:almost everything ,50:everything)</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "confidence",
-            "description": "<p>confidence [선택안함:NONE, CL , L, A, AA,VC]</p>"
+            "description": "<p>Confidence(10:completely lacking ,20:lacking ,30:average ,40:above average,50:very confident)</p>"
           },
           {
             "group": "Body",
             "type": "String[]",
             "optional": false,
             "field": "recommendedLevel",
-            "description": "<p>Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"
+            "description": "<p>Recommended Level [NONE(선택안함), R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"
           },
           {
             "group": "Body",
