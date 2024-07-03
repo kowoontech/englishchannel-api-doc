@@ -6956,7 +6956,7 @@
   },
   {
     "type": "get",
-    "url": "/admin/v1/consultations/{id}",
+    "url": "/admin/v1/teachers/{id}",
     "title": "02. 강사 상세조회",
     "description": "<p>상세보기/ 수정/삭제 시 사용<br/></p>",
     "version": "1.0.0",

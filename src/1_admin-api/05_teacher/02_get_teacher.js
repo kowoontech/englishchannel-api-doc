@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/consultations/{id} 02. 강사 상세조회
+ * @api {get} /admin/v1/teachers/{id} 02. 강사 상세조회
  *
  * @apiDescription  상세보기/ 수정/삭제 시 사용<br/>
  *
