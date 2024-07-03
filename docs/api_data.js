@@ -1450,63 +1450,63 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "levelTest.clarity",
-            "description": "<p>clarity [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>clarity (10:hard to understand ,20:average ,30:easy to understand)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.intonation",
-            "description": "<p>intonation [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N</p>"
+            "description": "<p>intonation (10:very Korean ,20:a bit Korean,30:acceptable ,40:near native)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.vocabulary",
-            "description": "<p>vocabulary [V,L,A,AA,E]</p>"
+            "description": "<p>vocabulary (10:very limited ,20:limited ,30:average ,40:above average ,50:extensive)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.verbsTense",
-            "description": "<p>verbsTense [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>verbsTense (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.agreement",
-            "description": "<p>agreement [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>agreement (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.prepositions",
-            "description": "<p>prepositions [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>prepositions (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.articles",
-            "description": "<p>articles [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>articles (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.plurals",
-            "description": "<p>plurals [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>plurals (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.others",
-            "description": "<p>others [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]</p>"
+            "description": "<p>others (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Success 200",
@@ -1527,14 +1527,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "levelTest.comprehension",
-            "description": "<p>Comprehension How much does learner understand <br/> [선택안함:NONE, AN , SP, MP, AE, E]</p>"
+            "description": "<p>Comprehension How much does learner understand <br/> (10:almost nothing ,20:some parts ,30:most parts ,40:almost everything ,50:everything)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.confidence",
-            "description": "<p>confidence [선택안함:NONE, CL , L, A, AA,VC]</p>"
+            "description": "<p>confidence (10:completely lacking ,20:lacking ,30:average ,<br/>40:above average,50:very confident)</p>"
           },
           {
             "group": "Success 200",
@@ -1568,8 +1568,8 @@ define({ "api": [
             "group": "Success 200",
             "type": "String[]",
             "optional": false,
-            "field": "consonaants",
-            "description": "<p>consonaants(NONE, R,L,P,F,B,V,Z,SH,EZH,CH,G,TTH,TH)</p>"
+            "field": "consonants",
+            "description": "<p>consonants(NONE, R,L,P,F,B,V,Z,SH,EZH,CH,G,TTH,TH)</p>"
           },
           {
             "group": "Success 200",

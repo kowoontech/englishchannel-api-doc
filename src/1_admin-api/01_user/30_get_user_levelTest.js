@@ -39,26 +39,26 @@
  * @apiSuccess {String} levelTest.futurePlans Future Plans
  * @apiSuccess {String} levelTest.consonants consonants(사용x, 아래 consonants 사용해주세요)
  * @apiSuccess {String} levelTest.vowels vowels(사용x, 아래 vowels 사용해주세요)
- * @apiSuccess {String} levelTest.clarity clarity [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N
- * @apiSuccess {String} levelTest.intonation intonation [NONE:선택, A,B,C,D,E,F,G,H,I,J,K,L,M,N
- * @apiSuccess {String} levelTest.vocabulary vocabulary [V,L,A,AA,E]
- * @apiSuccess {String} levelTest.verbsTense verbsTense [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
- * @apiSuccess {String} levelTest.agreement agreement [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
- * @apiSuccess {String} levelTest.prepositions prepositions [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
- * @apiSuccess {String} levelTest.articles articles [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
- * @apiSuccess {String} levelTest.plurals plurals [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
- * @apiSuccess {String} levelTest.others others [NEVER, SELDOM, SOMETIMES ,USUALLY, ALWAYS]
+ * @apiSuccess {String} levelTest.clarity clarity (10:hard to understand ,20:average ,30:easy to understand)
+ * @apiSuccess {String} levelTest.intonation intonation (10:very Korean ,20:a bit Korean,30:acceptable ,40:near native)
+ * @apiSuccess {String} levelTest.vocabulary vocabulary (10:very limited ,20:limited ,30:average ,40:above average ,50:extensive)
+ * @apiSuccess {String} levelTest.verbsTense verbsTense (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)
+ * @apiSuccess {String} levelTest.agreement agreement (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)
+ * @apiSuccess {String} levelTest.prepositions prepositions (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)
+ * @apiSuccess {String} levelTest.articles articles (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)
+ * @apiSuccess {String} levelTest.plurals plurals (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)
+ * @apiSuccess {String} levelTest.others others (10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)
  * @apiSuccess {String} levelTest.strongPoint strongPoint
  * @apiSuccess {String} levelTest.weakPoint weakPoint
  * @apiSuccess {String} levelTest.comprehension Comprehension How much does learner understand <br/>
-                                        [선택안함:NONE, AN , SP, MP, AE, E]
- * @apiSuccess {String} levelTest.confidence confidence [선택안함:NONE, CL , L, A, AA,VC]
+                                        (10:almost nothing ,20:some parts ,30:most parts ,40:almost everything ,50:everything)
+ * @apiSuccess {String} levelTest.confidence confidence (10:completely lacking ,20:lacking ,30:average ,<br/>40:above average,50:very confident)
  * @apiSuccess {String} levelTest.recommendedLevel Recommended Level(사용x 아래 recommendedLevel 사용해주세요 )
  * @apiSuccess {String} levelTest.recommendedLevelEtc Etc 이유
  *
  * @apiSuccess {String[]} recommendedLevel Recommended Level [NONE, R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]
  * @apiSuccess {String[]} vowels vowels(NONE,A,B,C,D,E,F,G,H,I,J,K,L,M,N)
- * @apiSuccess {String[]} consonaants consonaants(NONE, R,L,P,F,B,V,Z,SH,EZH,CH,G,TTH,TH)
+ * @apiSuccess {String[]} consonants consonants(NONE, R,L,P,F,B,V,Z,SH,EZH,CH,G,TTH,TH)
  * @apiSuccess {String[]} studyType studyType(NONE, EC,BE,TS,I,ETC)
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
