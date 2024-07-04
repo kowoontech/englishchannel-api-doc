@@ -15,8 +15,9 @@
  * @apiSuccess {String} id 강사 식별키
  * @apiSuccess {String} loginId 강사 아이디
  * @apiSuccess {String} name 강사명
- * @apiSuccess {String} nameEn 영어이름 [lastNameEn과 분리해서 이름/성 나눠야할듯]
+ * @apiSuccess {String} nameEn 영어이름
  * @apiSuccess {String} lastNameEn 성
+ * @apiSuccess {String} lastNameEn 이름
  * @apiSuccess {String} password 비밀번호
  * @apiSuccess {String} email 이메일
  * @apiSuccess {String} gender 성별 [F,M]
@@ -38,6 +39,7 @@
     "name": "나기쁨",
     "nameEn": "Joy Na",
     "lastNameEn": "Na",
+    "firstNameEn": "Joy",
     "password": "e10adc3949ba59abbe56e057f20f883e",
     "email": "joyjoyjoy20@naver.com",
     "gender": "F",

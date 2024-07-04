@@ -6982,7 +6982,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "nameEn",
-            "description": "<p>영어이름 [lastNameEn과 분리해서 이름/성 나눠야할듯]</p>"
+            "description": "<p>영어이름</p>"
           },
           {
             "group": "Success 200",
@@ -7073,7 +7073,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": \"M1574925585880330\",\n    \"loginId\": \"joyjoyjoy20@naver.com\",\n    \"name\": \"나기쁨\",\n    \"nameEn\": \"Joy Na\",\n    \"lastNameEn\": \"Na\",\n    \"password\": \"e10adc3949ba59abbe56e057f20f883e\",\n    \"email\": \"joyjoyjoy20@naver.com\",\n    \"gender\": \"F\",\n    \"cellPhone\": \"UdWtv6wc/t4H/Qfph7VnyA==\",\n    \"type\": \"HT\",\n    \"workStartDate\": \"2019-12-02\",\n    \"language\": \"ENGLISH\",\n    \"workTime\": \"PM_16\",\n    \"workType\": \"A\",\n    \"partnerTeacherId\": \"M1567752637796763\",\n    \"active\": false\n}",
+          "content": "HTTP/1.1 200\n{\n    \"id\": \"M1574925585880330\",\n    \"loginId\": \"joyjoyjoy20@naver.com\",\n    \"name\": \"나기쁨\",\n    \"nameEn\": \"Joy Na\",\n    \"lastNameEn\": \"Na\",\n    \"firstNameEn\": \"Joy\",\n    \"password\": \"e10adc3949ba59abbe56e057f20f883e\",\n    \"email\": \"joyjoyjoy20@naver.com\",\n    \"gender\": \"F\",\n    \"cellPhone\": \"UdWtv6wc/t4H/Qfph7VnyA==\",\n    \"type\": \"HT\",\n    \"workStartDate\": \"2019-12-02\",\n    \"language\": \"ENGLISH\",\n    \"workTime\": \"PM_16\",\n    \"workType\": \"A\",\n    \"partnerTeacherId\": \"M1567752637796763\",\n    \"active\": false\n}",
           "type": "json"
         }
       ]
