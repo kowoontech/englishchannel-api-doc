@@ -1116,14 +1116,14 @@ define({ "api": [
     "type": "post",
     "url": "/admin/v1/users/{id}/reservations",
     "title": "09. 예약 등록",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 일정 체크 후 저장</p>",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 일정 체크 후 저장 id: M1699689011700418 사용해주세요 스케줄 출력이 된다면 courseId : 75127 로 하고 scheduleIds를 넘겨주세요.<br/> 스케줄 출력이 안된다면 REQUEST 참고해서 넣어주세요</p>",
     "version": "1.0.0",
     "name": "admin_createUserReservations",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1699689011700418/reservations' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"courseId\": 1,\n    \"scheduleIds\": [10, 11, 12]\n}\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1699689011700418/reservations' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"courseId\": 75127,\n    \"scheduleIds\": [7913176, 7913177, 7913180]\n}\"",
         "type": "curl"
       }
     ],
