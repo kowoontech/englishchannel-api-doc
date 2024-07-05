@@ -6804,6 +6804,130 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/admin/v1/teachers",
+    "title": "08. 강사 등록",
+    "description": "<p>강사관리 &gt; 강사등록 <br/> 동일 loginID가 존재로 에러 발생 시 알려주세요. <br/> 아이디 입력하지 마세요</p>",
+    "version": "1.0.0",
+    "name": "admin_createTeacher",
+    "group": "1._Admin_API_>_5._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/teachers' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"name\":\"zzzz\",\n           \"firstNameEn\":\"firstNameEn4\",\n           \"lastNameEn\":\"lastNameEn4\",\n           \"password\":\"password1\",\n           \"workStartDate\":\"2017-02-03\",\n           \"workTime\":\"SP_10\",\n           \"workType\":\"C\",\n           \"partnerTeacherId\":\"500632\",\n           \"teacherActive\" : true,\n           \"email\" : \"email1\",\n           \"teacherType\" : \"HT\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>이름</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "firstNameEn",
+            "description": "<p>영문 이름(이름)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "lastNameEn",
+            "description": "<p>영문 이름(성)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>이메일</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "password",
+            "description": "<p>비밀번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "loginId",
+            "description": "<p>로그인한 아이디가 들어가니 값 넣지마세요</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>성별 [M 남 , F 여]</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "workStartDate",
+            "description": "<p>근무시작일</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "teacherType",
+            "description": "<p>구분 [HT,LT]</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "workTime",
+            "description": "<p>근무시간 [AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "workType",
+            "description": "<p>근무타입 [A, C]</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "partnerTeacherId",
+            "description": "<p>파트너강사</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "teacherActive",
+            "description": "<p>활동여부 [true/false]</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/08_create_teachers.js",
+    "groupTitle": "1._Admin_API_>_5._강사"
+  },
+  {
+    "type": "post",
     "url": "/admin/v1/teachers/{id}/schedules",
     "title": "06. 강사 스케줄 저장",
     "description": "<p>강사관리 &gt; 강의OPEN(주별)<br/> 선택한 스케줄은 등록하고, 선택하지 않은 스케줄은 삭제한다.</p>",
