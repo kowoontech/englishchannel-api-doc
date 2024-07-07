@@ -302,14 +302,14 @@ define({ "api": [
     "type": "post",
     "url": "/admin/v1/users/{id}/levelTests",
     "title": "31. 레벨 테스트 등록",
-    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 사용해주세요<br/></p>",
+    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 사용해주세요<br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_creatLevelTest",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/1028151/levelTests' \\\n-H \"Content-Type: application/json\" \\\n-d \"  {\n           \"note\" : \"테스트4\",\n           \"interviewer\": \"TEST999\",\n           \"studyType\": [\"NONE\",\"EC\"],\n           \"studyTypeEtc\": \"TEST4\",\n           \"consonants\": [\"R\",\"G\"],\n           \"vowels\": [\"D\",\"J\"],\n           \"clarity\": \"10\",\n           \"intonation\": \"20\",\n           \"vocabulary\": \"30\",\n           \"verbsTense\": \"10 \",\n           \"agreement\": \"10\",\n           \"prepositions\": \"10\",\n           \"articles\": \"40 \",\n           \"plurals\": \"30\",\n           \"others\": \"10\",\n           \"comprehension\": \"10\",\n           \"confidence\": \"20\",\n           \"recommendedLevel\":[\"R2\",\"R3\"]\n       }\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/1028151/levelTests' \\\n-H \"Content-Type: multipart/form-data\" \\\n-F \"note=테스트4\" \\\n-F \"interviewer=TEST999\" \\\n-F \"studyType=NONE\" \\\n-F \"studyType=EC\" \\\n-F \"studyTypeEtc=TEST4\" \\\n-F \"consonants=R\" \\\n-F \"consonants=G\" \\\n-F \"vowels=D\" \\\n-F \"vowels=J\" \\\n-F \"clarity=10\" \\\n-F \"intonation=20\" \\\n-F \"vocabulary=30\" \\\n-F \"verbsTense=10 \" \\\n-F \"agreement=10\" \\\n-F \"prepositions=10\" \\\n-F \"articles=40 \" \\\n-F \"plurals=30\" \\\n-F \"others=10\" \\\n-F \"comprehension=10\" \\\n-F \"confidence=20\" \\\n-F \"recommendedLevel=R2\" \\\n-F \"recommendedLevel=R3\"",
         "type": "curl"
       }
     ],
@@ -369,7 +369,7 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "File",
             "optional": false,
             "field": "file",
             "description": "<p>첨부파일</p>"
@@ -1352,7 +1352,21 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "levelTest.file",
-            "description": "<p>첨부파일</p>"
+            "description": "<p>첨부파일명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "levelTest.originalFile",
+            "description": "<p>실제 파일명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "levelTest.fileUrl",
+            "description": "<p>첨부파일 다운로드 URL</p>"
           },
           {
             "group": "Success 200",
@@ -1576,7 +1590,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": 6118,\n    \"userId\": null,\n    \"testStartTime\": null,\n    \"testEndTime\": null,\n    \"interviewer\": \"TEST\",\n    \"lbt\": null,\n    \"rbt\": null,\n    \"obt\": null,\n    \"testIp\": null,\n    \"file\": null,\n    \"note\": null,\n    \"purpose\": null,\n    \"studyType\": null,\n    \"studyTypeEtc\": \"TEST4\",\n    \"familyBackground\": null,\n    \"usageType\": null,\n    \"occupation\": null,\n    \"spareTime\": null,\n    \"travelAbroad\": null,\n    \"futurePlans\": null,\n    \"consonants\": null,\n    \"vowels\": null,\n    \"clarity\": \"E\",\n    \"intonation\": \"VK\",\n    \"vocabulary\": \"AA\",\n    \"verbsTense\": \"NEVER\",\n    \"agreement\": \"NEVER\",\n    \"prepositions\": \"NEVER\",\n    \"articles\": \"NEVER\",\n    \"plurals\": \"NEVER\",\n    \"others\": \"NEVER\",\n    \"strongPoint\": null,\n    \"weakPoint\": null,\n    \"comprehension\": \"AE\",\n    \"confidence\": \"CL\",\n    \"comments\": null,\n    \"recommendedLevel\": null,\n    \"recommendedLevelEtc\": null\n}",
+          "content": "HTTP/1.1 200\n{\n    \"id\": 6118,\n    \"userId\": null,\n    \"testStartTime\": null,\n    \"testEndTime\": null,\n    \"interviewer\": \"TEST\",\n    \"lbt\": null,\n    \"rbt\": null,\n    \"obt\": null,\n    \"testIp\": null,\n    \"file\": \"1720341620662_다운로드.jpeg\",\n    \"fileUrl\": \"http://localhost:8080/file/download/1720341620662_다운로드.jpeg/다운로드.jpeg\",\n    \"note\": null,\n    \"purpose\": null,\n    \"studyType\": null,\n    \"studyTypeEtc\": \"TEST4\",\n    \"familyBackground\": null,\n    \"usageType\": null,\n    \"occupation\": null,\n    \"spareTime\": null,\n    \"travelAbroad\": null,\n    \"futurePlans\": null,\n    \"consonants\": null,\n    \"vowels\": null,\n    \"clarity\": \"E\",\n    \"intonation\": \"VK\",\n    \"vocabulary\": \"AA\",\n    \"verbsTense\": \"NEVER\",\n    \"agreement\": \"NEVER\",\n    \"prepositions\": \"NEVER\",\n    \"articles\": \"NEVER\",\n    \"plurals\": \"NEVER\",\n    \"others\": \"NEVER\",\n    \"strongPoint\": null,\n    \"weakPoint\": null,\n    \"comprehension\": \"AE\",\n    \"confidence\": \"CL\",\n    \"comments\": null,\n    \"recommendedLevel\": null,\n    \"recommendedLevelEtc\": null\n}",
           "type": "json"
         }
       ]
@@ -4268,14 +4282,14 @@ define({ "api": [
     "type": "put",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
     "title": "32. 레벨테스트 수정",
-    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭<br/> id : 1028151  / testId: 6145 <br/></p>",
+    "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭<br/> id : 1028151  / testId: 6145 <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_updateLevelTest",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/users/1028151/levelTests/6118'\n-H \"Content-Type: application/json\" \\\n-d \"{\n                  \"note\" : \"수정 테스트4\",\n                  \"interviewer\": \"TEST999\",\n                  \"studyType\": [\"NONE\",\"EC\"],\n                  \"studyTypeEtc\": \"TEST4\",\n                  \"consonants\": [\"R\",\"G\"],\n                  \"vowels\": [\"D\",\"J\"],\n                  \"clarity\": \"10\",\n                  \"intonation\": \"20\",\n                  \"vocabulary\": \"30\",\n                  \"verbsTense\": \"10 \",\n                  \"agreement\": \"10\",\n                  \"prepositions\": \"10\",\n                  \"articles\": \"40 \",\n                  \"plurals\": \"30\",\n                  \"others\": \"10\",\n                  \"comprehension\": \"10\",\n                  \"confidence\": \"20\",\n                  \"recommendedLevel\":[\"R2\",\"R3\"]\n              }\"",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/users/1028151/levelTests/6118'\n-H \"Content-Type: multipart/form-data\" \\\n-F \"note=테스트4\" \\\n-F \"interviewer=TEST999\" \\\n-F \"studyType=NONE\" \\\n-F \"studyType=EC\" \\\n-F \"studyTypeEtc=TEST4\" \\\n-F \"consonants=R\" \\\n-F \"consonants=G\" \\\n-F \"vowels=D\" \\\n-F \"vowels=J\" \\\n-F \"clarity=10\" \\\n-F \"intonation=20\" \\\n-F \"vocabulary=30\" \\\n-F \"verbsTense=10 \" \\\n-F \"agreement=10\" \\\n-F \"prepositions=10\" \\\n-F \"articles=40 \" \\\n-F \"plurals=30\" \\\n-F \"others=10\" \\\n-F \"comprehension=10\" \\\n-F \"confidence=20\" \\\n-F \"recommendedLevel=R2\" \\\n-F \"recommendedLevel=R3\"",
         "type": "curl"
       }
     ],
@@ -4342,10 +4356,17 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "File",
             "optional": false,
             "field": "file",
             "description": "<p>첨부파일</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isDeleteFile",
+            "description": "<p>첨부파일 삭제 여부</p>"
           },
           {
             "group": "Body",

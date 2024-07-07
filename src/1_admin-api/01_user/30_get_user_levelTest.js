@@ -24,7 +24,9 @@
  * @apiSuccess {String} levelTest.rbt RBT 테스트결과
  * @apiSuccess {String} levelTest.obt OBT
  * @apiSuccess {String} levelTest.testIp TEST IP
- * @apiSuccess {String} levelTest.file 첨부파일
+ * @apiSuccess {String} levelTest.file 첨부파일명
+ * @apiSuccess {String} levelTest.originalFile 실제 파일명
+ * @apiSuccess {String} levelTest.fileUrl 첨부파일 다운로드 URL
  * @apiSuccess {String} levelTest.note 특이사항
  * @apiSuccess {String} levelTest.purpose  Purpose of Study
  * @apiSuccess {String} levelTest.studyType What kind of English do you want to study and learn?<br/>
@@ -71,7 +73,8 @@
     "rbt": null,
     "obt": null,
     "testIp": null,
-    "file": null,
+    "file": "1720341620662_다운로드.jpeg",
+    "fileUrl": "http://localhost:8080/file/download/1720341620662_다운로드.jpeg/다운로드.jpeg",
     "note": null,
     "purpose": null,
     "studyType": null,

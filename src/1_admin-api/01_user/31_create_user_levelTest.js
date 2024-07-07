@@ -3,35 +3,37 @@
  *
  * @apiDescription 회원관리 > 회원 상세 조회 > 테스트 탭 <br/>
  * 없는 데이터가 많으니 id : 1028151 사용해주세요<br/>
+ * "Content-Type"은 파일이 있어서 "multipart/form-data"로 해주세요
  *
-
  * @apiVersion 1.0.0
  * @apiName admin_creatLevelTest
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X POST 'http://localhost:8080/admin/v1/users/1028151/levelTests' \
- * -H "Content-Type: application/json" \
- * -d "  {
-           "note" : "테스트4",
-           "interviewer": "TEST999",
-           "studyType": ["NONE","EC"],
-           "studyTypeEtc": "TEST4",
-           "consonants": ["R","G"],
-           "vowels": ["D","J"],
-           "clarity": "10",
-           "intonation": "20",
-           "vocabulary": "30",
-           "verbsTense": "10 ",
-           "agreement": "10",
-           "prepositions": "10",
-           "articles": "40 ",
-           "plurals": "30",
-           "others": "10",
-           "comprehension": "10",
-           "confidence": "20",
-           "recommendedLevel":["R2","R3"]
-       }"
+ * -H "Content-Type: multipart/form-data" \
+ * -F "note=테스트4" \
+ * -F "interviewer=TEST999" \
+ * -F "studyType=NONE" \
+ * -F "studyType=EC" \
+ * -F "studyTypeEtc=TEST4" \
+ * -F "consonants=R" \
+ * -F "consonants=G" \
+ * -F "vowels=D" \
+ * -F "vowels=J" \
+ * -F "clarity=10" \
+ * -F "intonation=20" \
+ * -F "vocabulary=30" \
+ * -F "verbsTense=10 " \
+ * -F "agreement=10" \
+ * -F "prepositions=10" \
+ * -F "articles=40 " \
+ * -F "plurals=30" \
+ * -F "others=10" \
+ * -F "comprehension=10" \
+ * -F "confidence=20" \
+ * -F "recommendedLevel=R2" \
+ * -F "recommendedLevel=R3"
  *
  * @apiParam (Path) {String} id 회원 식별키
  * 
@@ -41,7 +43,7 @@
  * @apiParam (Body) {String} rbt RBT 테스트결과
  * @apiParam (Body) {String} obt OBT
  * @apiParam (Body) {String} testIp TEST IP
- * @apiParam (Body) {String} file 첨부파일
+ * @apiParam (Body) {File} file 첨부파일
  * @apiParam (Body) {String} note 특이사항
  * @apiParam (Body) {String} purpose Purpose of Study
  * @apiParam (Body) {String[]} studyType What kind of English do you want to study and learn?<br/>
