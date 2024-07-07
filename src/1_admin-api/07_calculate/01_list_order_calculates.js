@@ -27,6 +27,7 @@
  * @apiSuccess {String} orders.creatorName 처리자
  * @apiSuccess {String} orders.createdOn 주문일시 (yyyy-MM-dd HH:mm:ss)
  * @apiSuccess {String} orders.orderProductName 상품명
+ * @apiSuccess {String} orders.userId 회원 식별키
  * @apiSuccess {String} orders.userName 주문자
  * @apiSuccess {Object[]} orders.payments 결제 목록
  * @apiSuccess {Number} orders.payments.paymentAmount 매출액
