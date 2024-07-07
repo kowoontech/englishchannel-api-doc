@@ -8676,7 +8676,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/sms/send' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"senderPhone\": 010-1111-2222,\n     \"content\": \"문자 받으시오!\",\n     \"reservationDate\": \"2024-07-01 19:00\",\n     \"recipients\": [\n          {\n              \"name\": \"RE-김동하\",\n              \"phone\": \"010-3333-4444\"\n          },\n          {\n              \"name\": \"RE-김하연\",\n              \"phone\": \"010-5555-6666\"\n          },\n          {\n              \"name\": \"RE-서민하\",\n              \"phone\": \"010-7777-8888\"\n          }\n     ]\n}\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/sms/send' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"senderPhone\": \"02-2082-1105\",\n     \"content\": \"문자 받으시오!\",\n     \"reservationDate\": \"2024-07-01 19:00\",\n     \"recipients\": [\n          {\n              \"name\": \"RE-김동하\",\n              \"phone\": \"010-3333-4444\"\n          },\n          {\n              \"name\": \"RE-김하연\",\n              \"phone\": \"010-5555-6666\"\n          },\n          {\n              \"name\": \"RE-서민하\",\n              \"phone\": \"010-7777-8888\"\n          }\n     ]\n}\"",
         "type": "curl"
       }
     ],
@@ -8686,9 +8686,9 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "senderPhone",
-            "description": "<p>발신번호</p>"
+            "description": "<p>발신번호 (필요 없음. 어떤 번호를 입력해도 02-2082-1105로 발송됨)</p>"
           },
           {
             "group": "Body",
@@ -8714,7 +8714,7 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "recipients.name",
             "description": "<p>발송대상 이름</p>"
           },
@@ -8790,7 +8790,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": false,
             "field": "users",
-            "description": "<p>정산 요약 목록</p>"
+            "description": "<p>발송 대상 목록</p>"
           },
           {
             "group": "Success 200",
@@ -8825,13 +8825,181 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n {\n \"users\": [\n     {\n         \"id\": \"M1519648304234104\",\n         \"name\": \"RE-김동하\",\n         \"nameEn\": \"Dongha Kim\",\n         \"cellPhone\": \"oM0uUrU29/y8pX8RhMJowA==\"\n     },\n     {\n         \"id\": \"M1511408494025832\",\n         \"name\": \"RE-김하연\",\n         \"nameEn\": \"Hayeon Kim\",\n         \"cellPhone\": \"1YbnCAQv003mIo7wZSkhjQ==\"\n     },\n     {\n         \"id\": \"M1524297763999142\",\n         \"name\": \"RE-서민하\",\n         \"nameEn\": \"Minha Seo\",\n         \"cellPhone\": \"Tw/eHhP+RYDHm5SISrHs5w==\"\n     }\n ]",
+          "content": "HTTP/1.1 200\n {\n     \"users\": [\n         {\n             \"id\": \"M1519648304234104\",\n             \"name\": \"RE-김동하\",\n             \"nameEn\": \"Dongha Kim\",\n             \"cellPhone\": \"oM0uUrU29/y8pX8RhMJowA==\"\n         },\n         {\n             \"id\": \"M1511408494025832\",\n             \"name\": \"RE-김하연\",\n             \"nameEn\": \"Hayeon Kim\",\n             \"cellPhone\": \"1YbnCAQv003mIo7wZSkhjQ==\"\n         },\n         {\n             \"id\": \"M1524297763999142\",\n             \"name\": \"RE-서민하\",\n             \"nameEn\": \"Minha Seo\",\n             \"cellPhone\": \"Tw/eHhP+RYDHm5SISrHs5w==\"\n         }\n     ]\n }",
           "type": "json"
         }
       ]
     },
     "filename": "src/1_admin-api/08_sms/01_list_sms_users.js",
     "groupTitle": "1._Admin_API_>_8._SMS"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/email/send",
+    "title": "02. Email 발송",
+    "description": "<p>공통 &gt; Email 발송</p>",
+    "version": "1.0.0",
+    "name": "admin_createSendEmail",
+    "group": "1._Admin_API_>_9._Email",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/email/send' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"senderEmail\": \"webmaster@languagecube.kr\",\n     \"title\": \"이메일 테스트!\",\n     \"content\": \"이메일 테스트입니다.\",\n     \"recipients\": [\n         {\n             \"name\": \"테스트\",\n             \"email\": \"test@gmail.com\"\n         }\n     ]\n }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "senderEmail",
+            "description": "<p>발신이메일 (필요 없음. 어떤 이메일을 입력해도 webmaster@languagecube.kr로 발송됨)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>제목</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Object[]",
+            "optional": false,
+            "field": "recipients",
+            "description": "<p>발송대상 목록</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "recipients.name",
+            "description": "<p>발송대상 이름</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "recipients.email",
+            "description": "<p>발송대상 이메일</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/09_email/02_create_send_email.js",
+    "groupTitle": "1._Admin_API_>_9._Email"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/email/users",
+    "title": "01. 발송 대상 목록 조회",
+    "description": "<p>공통 &gt; Email 발송</p>",
+    "version": "1.0.0",
+    "name": "admin_listEmailUsers",
+    "group": "1._Admin_API_>_9._Email",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/email/users?type=S&search=name&keyword=하'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>발송 대상 유형 (S:일반회원, T:강사, A:관리자)</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "search",
+            "description": "<p>검색 조건 (name:이름, id:아이디)</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "keyword",
+            "description": "<p>검색어</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "users",
+            "description": "<p>발송 대상 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "users.id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "users.name",
+            "description": "<p>이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "users.nameEn",
+            "description": "<p>영문 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "users.email",
+            "description": "<p>이메일</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n {\n     \"users\": [\n         {\n             \"id\": \"M1519648304234104\",\n             \"name\": \"RE-김동하\",\n             \"nameEn\": \"Dongha Kim\",\n             \"email\": \"kimdongha1984@gmail.com\"\n         },\n         {\n             \"id\": \"M1511408494025832\",\n             \"name\": \"RE-김하연\",\n             \"nameEn\": \"Hayeon Kim\",\n             \"email\": \"aqua7583@naver.com\"\n         },\n         {\n             \"id\": \"M1524297763999142\",\n             \"name\": \"RE-서민하\",\n             \"nameEn\": \"Minha Seo\",\n             \"email\": \"yellow0824@naver.com\"\n         }\n     ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/09_email/01_list_email_users.js",
+    "groupTitle": "1._Admin_API_>_9._Email"
   },
   {
     "type": " ",

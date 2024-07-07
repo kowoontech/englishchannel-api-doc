@@ -11,7 +11,7 @@
  * curl -i -X POST 'http://localhost:8080/admin/v1/sms/send' \
  * -H "Content-Type: application/json" \
  * -d "{
-     "senderPhone": 010-1111-2222,
+     "senderPhone": "02-2082-1105",
      "content": "문자 받으시오!",
      "reservationDate": "2024-07-01 19:00",
      "recipients": [
@@ -29,11 +29,11 @@
           }
      ]
 }"
- * @apiParam (Body) {String} senderPhone 발신번호
+ * @apiParam (Body) {String} [senderPhone] 발신번호 (필요 없음. 어떤 번호를 입력해도 02-2082-1105로 발송됨)
  * @apiParam (Body) {String} content 내용
  * @apiParam (Body) {String} [reservationDate] 예약발송일때, 일시
  * @apiParam (Body) {Object[]} recipients 발송대상 목록
- * @apiParam (Body) {String} recipients.name 발송대상 이름
+ * @apiParam (Body) {String} [recipients.name] 발송대상 이름
  * @apiParam (Body) {String} recipients.phone 발송대상 휴대폰번호
  *
  * @apiSuccessExample {json} SUCCESS
