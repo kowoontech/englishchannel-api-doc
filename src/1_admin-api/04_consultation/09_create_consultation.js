@@ -1,15 +1,15 @@
 /**
- * @api {put} /admin/v1/consultations/{id} 04. 상담 관리 기본 정보 수정
+ * @api {post} /admin/v1/consultations 09. 상담 관리 등록
  *
- * @apiDescription 상담관리 > 상세관리수정 <br/>
+ * @apiDescription 회원관리 > 상담관리 > 상담등록 <br/>
  * "Content-Type"은 파일이 있어서 "multipart/form-data"로 해주세요
  *
  * @apiVersion 1.0.0
- * @apiName admin_updateConsultation
+ * @apiName admin_createConsultation
  * @apiGroup 1. Admin API > 4. 상담관리
  *
  * @apiExample {curl} REQUEST
- * curl -i -X PUT 'http://localhost:8080/admin/v1/consultations/522' \
+ * curl -i -X PUT 'http://localhost:8080/admin/v1/consultations' \
  * -H "Content-Type: multipart/form-data" \
  * -F "status=NO_CONTACT"\
  * -F "callTime=TIME_06"\
@@ -17,7 +17,7 @@
  * -F "studyPurposes=DEVELOPMENT"\
  * -F "foundPath=RECOMMEND"\
  *
- * @apiParam (Path) {Long} [id] 상담식별키
+ *
  * 
  * @apiParam (Body) {String} type 상담구분 [  P, // 전화상담<br/>
                                           V, // 방문상담<br/>
