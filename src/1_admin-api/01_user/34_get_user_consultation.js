@@ -19,6 +19,9 @@
  * @apiSuccess {String} type 구분
  * @apiSuccess {String} details 상담내용
  * @apiSuccess {String} createdBy 상담직원 식별키
+ * @apiSuccess {String} topFixedYn 상단고정 [체크:Y 아닐시 N]
+ * @apiSuccess {String} fontBoldYn 상담 내용 굵게 [체크:Y 아닐시 N]
+ * @apiSuccess {String} backgroundColor 배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200

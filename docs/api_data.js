@@ -1972,6 +1972,27 @@ define({ "api": [
             "optional": false,
             "field": "createdBy",
             "description": "<p>상담직원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "topFixedYn",
+            "description": "<p>상단고정 [체크:Y 아닐시 N]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "fontBoldYn",
+            "description": "<p>상담 내용 굵게 [체크:Y 아닐시 N]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "backgroundColor",
+            "description": "<p>배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]</p>"
           }
         ]
       },
@@ -4892,6 +4913,27 @@ define({ "api": [
             "optional": false,
             "field": "details",
             "description": "<p>상담내용</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "topFixedYn",
+            "description": "<p>상단고정 [체크:Y 아닐시 N]</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "fontBoldYn",
+            "description": "<p>상담 내용 굵게 [체크:Y 아닐시 N]</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "backgroundColor",
+            "description": "<p>배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]</p>"
           }
         ]
       }
