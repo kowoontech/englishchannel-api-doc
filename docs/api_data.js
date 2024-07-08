@@ -3357,6 +3357,13 @@ define({ "api": [
             "optional": false,
             "field": "orderProducts.orderType",
             "description": "<p>구분</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.retake",
+            "description": "<p>등록구분</p>"
           }
         ]
       },
