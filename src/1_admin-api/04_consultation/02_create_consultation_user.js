@@ -1,7 +1,8 @@
 /**
  * @api {post} /admin/v1/consultations/{id}/users 02. 상담 회원 등록
  *
- * @apiDescription 회원관리 > 상담관리 > 회원등록
+ * @apiDescription 회원관리 > 상담관리 > 회원등록 <br/>
+ *  test id : 14890 , 14967 , 15001 , 15209
  *
  * @apiVersion 1.0.0
  * @apiName admin_createConsultationUser

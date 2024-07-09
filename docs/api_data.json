@@ -6108,7 +6108,7 @@
     "type": "post",
     "url": "/admin/v1/consultations/{id}/users",
     "title": "02. 상담 회원 등록",
-    "description": "<p>회원관리 &gt; 상담관리 &gt; 회원등록</p>",
+    "description": "<p>회원관리 &gt; 상담관리 &gt; 회원등록 <br/> test id : 14890 , 14967 , 15001 , 15209</p>",
     "version": "1.0.0",
     "name": "admin_createConsultationUser",
     "group": "1._Admin_API_>_4._상담관리",
