@@ -7035,14 +7035,14 @@ define({ "api": [
     "type": "post",
     "url": "/admin/v1/teachers",
     "title": "08. 강사 등록",
-    "description": "<p>강사관리 &gt; 강사등록 <br/> 동일 loginID가 존재로 에러 발생 시 알려주세요. <br/> 아이디 입력하지 마세요</p>",
+    "description": "<p>강사관리 &gt; 강사등록 <br/> 동일 loginID가 존재로 에러 발생 시 알려주세요. <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_createTeacher",
     "group": "1._Admin_API_>_5._강사",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/teachers' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"name\":\"zzzz\",\n           \"firstNameEn\":\"firstNameEn4\",\n           \"lastNameEn\":\"lastNameEn4\",\n           \"password\":\"password1\",\n           \"workStartDate\":\"2017-02-03\",\n           \"workTime\":\"SP_10\",\n           \"workType\":\"C\",\n           \"partnerTeacherId\":\"500632\",\n           \"teacherActive\" : true,\n           \"email\" : \"email1\",\n           \"teacherType\" : \"HT\"\n       }\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/teachers' \\\n-H \"Content-Type: multipart/form-data\" \\\n-F \"name=수정2\" \\\n-F \"firstNameEn=jin\" \\\n-F \"password=1234\" \\\n-F \"loginId=loginId3000@naver.com\" \\\n-F \"workType=A\" \\\n-F \"workTime=SP_4\" \\",
         "type": "curl"
       }
     ],
@@ -7052,23 +7052,37 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "name",
             "description": "<p>이름</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "firstNameEn",
-            "description": "<p>영문 이름(이름)</p>"
+            "description": "<p>이름</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "lastNameEn",
-            "description": "<p>영문 이름(성)</p>"
+            "description": "<p>성</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "loginId",
+            "description": "<p>강사아이디</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>비밀번호</p>"
           },
           {
             "group": "Body",
@@ -7080,51 +7094,37 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
-            "field": "password",
-            "description": "<p>비밀번호</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "loginId",
-            "description": "<p>로그인한 아이디가 들어가니 값 넣지마세요</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
             "optional": false,
             "field": "gender",
-            "description": "<p>성별 [M 남 , F 여]</p>"
+            "description": "<p>성별[F,M]</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "workStartDate",
-            "description": "<p>근무시작일</p>"
+            "description": "<p>근무시작일[yyyy-MM-dd]</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
-            "field": "teacherType",
-            "description": "<p>구분 [HT,LT]</p>"
+            "optional": false,
+            "field": "type",
+            "description": "<p>강사타입 [HT, LT]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "workTime",
-            "description": "<p>근무시간 [AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]</p>"
+            "description": "<p>근무시간[AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": false,
             "field": "workType",
-            "description": "<p>근무타입 [A, C]</p>"
+            "description": "<p>근무타입[A, C]</p>"
           },
           {
             "group": "Body",
@@ -7136,9 +7136,23 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "teacherActive",
-            "description": "<p>활동여부 [true/false]</p>"
+            "description": "<p>활동여부 [true:활동, false:비활동]</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "cellPhone",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "File",
+            "optional": false,
+            "field": "file",
+            "description": ""
           }
         ]
       }
@@ -7657,14 +7671,14 @@ define({ "api": [
     "type": "put",
     "url": "/admin/v1/teachers/{id}",
     "title": "03. 강사수정",
-    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 수정</p>",
+    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 수정 <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
-    "name": "admin_updateUser",
+    "name": "admin_updateTeacher",
     "group": "1._Admin_API_>_5._강사",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/500593' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"name\" : \"강사수정222\",\n           \"firstNameEn\" : \"hong\",\n           \"lastNameEn\" : \"gildong\",\n           \"password\" : \"임시 비밀번호\",\n           \"email\": \"ddd@naver.com\",\n           \"gender\" :\"F\",\n           \"workStartDate\" : \"2021-12-12\",\n           \"type\" :\"HT\",\n           \"workTime\" : \"AM_16\",\n           \"workType\" : \"A\",\n           \"partnerTeacherId\" :\"M1567752637796763\",\n           \"active\": true,\n           \"cellPhone\" :\"010-2222-2222\"\n\n       }\"",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/500593' \\\n-H \"Content-Type: multipart/form-data\" \\\n-F \"name=수정2\" \\\n-F \"firstNameEn=jin\" \\\n-F \"password=1234\" \\\n-F \"loginId=loginId6666@naver.com\" \\\n-F \"workType=A\" \\\n-F \"workTime=SP_4\" \\",
         "type": "curl"
       }
     ],
@@ -7768,7 +7782,7 @@ define({ "api": [
             "group": "Body",
             "type": "String",
             "optional": false,
-            "field": "active",
+            "field": "teacherActive",
             "description": "<p>활동여부 [true:활동, false:비활동]</p>"
           },
           {
@@ -7776,6 +7790,13 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "cellPhone",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "File",
+            "optional": false,
+            "field": "file",
             "description": ""
           }
         ]
