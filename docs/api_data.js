@@ -6825,10 +6825,10 @@ define({ "api": [
           },
           {
             "group": "Query",
-            "type": "Number",
+            "type": "String",
             "optional": false,
-            "field": "statusCodes",
-            "description": "<p>처리상태[WAITING(&quot;3&quot;),NO_CONTACT(&quot;4&quot;),UNVISITED(&quot;5&quot;),RESERVED(&quot;6&quot;),NOT_REGISTERED(&quot;7&quot;),REGISTERED(&quot;8&quot;),NO_SHOW(&quot;9&quot;),MISSED(&quot;10&quot;)]</p>"
+            "field": "statuses",
+            "description": "<p>처리상태[WAITING,NO_CONTACT,UNVISITED,RESERVED,NOT_REGISTERED,REGISTERED,NO_SHOW,MISSED]</p>"
           },
           {
             "group": "Query",
