@@ -6890,7 +6890,7 @@
             "type": "String",
             "optional": false,
             "field": "list.status",
-            "description": "<p>처리상태 ( WAITING(대기), NO_CONTACT(컨택금지), UNVISITED,RESERVED ,NOT_REGISTERED, REGISTERED , NO_SHOW, MISSED)</p>"
+            "description": "<p>처리상태 ( WAITING(&quot;3&quot;대기), NO_CONTACT(&quot;4&quot;컨택금지), UNVISITED(&quot;5&quot;),RESERVED(&quot;6&quot;),NOT_REGISTERED(&quot;7&quot;), REGISTERED(&quot;8&quot;),NO_SHOW(&quot;9&quot;), MISSED(&quot;10&quot;),)</p>"
           },
           {
             "group": "Success 200",
