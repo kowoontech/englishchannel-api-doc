@@ -6538,6 +6538,46 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_4._상담관리"
   },
   {
+    "type": "post",
+    "url": "/admin/v1/consultations",
+    "title": "10. 연락처 중복 체크",
+    "description": "<p>상세조회,등록,수정 시 사용<br/></p>",
+    "version": "1.0.0",
+    "name": "admin_getValCellphone",
+    "group": "1._Admin_API_>_4._상담관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/consultations/cellphone'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "cellPhone",
+            "description": "<p>휴대폰번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/04_consultation/10_get_cellphone.js",
+    "groupTitle": "1._Admin_API_>_4._상담관리"
+  },
+  {
     "type": "get",
     "url": "/admin/v1/consultations/history/{id}",
     "title": "08. 추가 상담 목록",
@@ -6793,49 +6833,49 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "createDateFrom",
-            "description": "<p>등록일(시작) [yyyy-MM-dd]</p>"
+            "description": "<p>등록일(시작) (yyyy-MM-dd)</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "createDateTo",
-            "description": "<p>등록일(끝) [yyyy-MM-dd]</p>"
+            "description": "<p>등록일(끝) (yyyy-MM-dd)</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "visitDateFrom",
-            "description": "<p>방문예약일(시작) [yyyy-MM-dd]</p>"
+            "description": "<p>방문예약일(시작) (yyyy-MM-dd)</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "visitDateTo",
-            "description": "<p>방문예약일(끝) [yyyy-MM-dd]</p>"
+            "description": "<p>방문예약일(끝) (yyyy-MM-dd)</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "consultationType",
-            "description": "<p>상담구분[P: 전화상담,V: 방문상담,K: 카카오채널,N: 네이버예약]</p>"
+            "description": "<p>상담구분(P: 전화상담,V: 방문상담,K: 카카오채널,N: 네이버예약)</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "statuses",
-            "description": "<p>처리상태[WAITING,NO_CONTACT,UNVISITED,RESERVED,NOT_REGISTERED,REGISTERED,NO_SHOW,MISSED]</p>"
+            "description": "<p>처리상태(WAITING,NO_CONTACT,UNVISITED,RESERVED,NOT_REGISTERED,REGISTERED,NO_SHOW,MISSED)</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "search",
-            "description": "<p>검색구분[ name:이름, phone: 전화번호 , details :상담내용]</p>"
+            "description": "<p>검색구분( name:이름, phone: 전화번호 , details :상담내용)</p>"
           },
           {
             "group": "Query",
