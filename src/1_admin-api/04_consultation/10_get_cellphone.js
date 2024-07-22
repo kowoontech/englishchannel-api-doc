@@ -1,5 +1,5 @@
 /**
- * @api {post} /admin/v1/consultations 10. 연락처 중복 체크
+ * @api {post} /admin/v1/consultations/cellpnone 10. 연락처 중복 체크
  *
  * @apiDescription 상세조회,등록,수정 시 사용<br/>
  *

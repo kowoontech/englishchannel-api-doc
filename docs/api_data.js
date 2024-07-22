@@ -5982,7 +5982,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "status",
-            "description": "<p>처리상태 [  WAITING(&quot;3&quot;), // 대기<br/> // 컨텍금지<br/> NO_CONTACT(&quot;4&quot;),<br/> UNVISITED(&quot;5&quot;),<br/> RESERVED(&quot;6&quot;),<br/> NOT_REGISTERED(&quot;7&quot;),<br/> REGISTERED(&quot;8&quot;),<br/> NO_SHOW(&quot;9&quot;),<br/> MISSED(&quot;10&quot;),]<br/></p>"
+            "description": "<p>처리상태 [  WAITING, // 대기<br/> // 컨텍금지<br/> NO_CONTACT,<br/> UNVISITED,<br/> RESERVED,<br/> NOT_REGISTERED,<br/> REGISTERED,<br/> NO_SHOW,<br/> MISSED,]<br/></p>"
           },
           {
             "group": "Body",
@@ -6038,7 +6038,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "foundPath",
-            "description": "<p>알게된동기 [    SIGN, // 간판<br/> ONLINE, // 온라인검색<br/> RECOMMEND, // 지인추천<br/> FAN, // 부채<br/> LEAFLET, // 3단리플릿<br/> SUBWAY, // 지하철광고<br/> ALLIANCE, // 기업제휴<br/> ETC, // 기타<br/> ;]</p>"
+            "description": "<p>알게된동기   SIGN, // 간판<br/> ONLINE, // 온라인검색<br/> RECOMMEND, // 지인추천<br/> FAN, // 부채<br/> LEAFLET, // 3단리플릿<br/> SUBWAY, // 지하철광고<br/> ALLIANCE, // 기업제휴<br/> ETC, // 기타<br/> ;</p>"
           },
           {
             "group": "Body",
@@ -6539,7 +6539,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/admin/v1/consultations",
+    "url": "/admin/v1/consultations/cellpnone",
     "title": "10. 연락처 중복 체크",
     "description": "<p>상세조회,등록,수정 시 사용<br/></p>",
     "version": "1.0.0",
