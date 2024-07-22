@@ -4063,7 +4063,7 @@ define({ "api": [
             "group": "Query",
             "optional": true,
             "field": "search",
-            "description": "<p>검색 선택 (name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)</p>"
+            "description": "<p>검색 선택 (all: 전체 , name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)</p>"
           },
           {
             "group": "Query",
