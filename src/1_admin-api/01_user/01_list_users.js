@@ -21,7 +21,7 @@
  * @apiParam (Query) [expireType] 만료구분 (ALL: 전체, EXPIRED: 만료됨, NOT_EXPIRED: 만료안됨)
  * @apiParam (Query) [remainingType] 잔여구분 (ALL: 전체, REMAINING: 잔여있음, NOT_REMAINING: 잔여없음)
  * @apiParam (Query) [limit] 한페이지에 보여줄 회원 수
- * @apiParam (Query) [search] 검색 선택 (all: 전체 , name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)
+ * @apiParam (Query) [search] 검색 선택 (ALL: 전체 , name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)
  * @apiParam (Query) [keyword] 검색어
  * @apiParam (Query) [page] 조회할 페이지
  * @apiParam (Query) [order] 정렬 선택

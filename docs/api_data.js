@@ -4063,7 +4063,7 @@ define({ "api": [
             "group": "Query",
             "optional": true,
             "field": "search",
-            "description": "<p>검색 선택 (all: 전체 , name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)</p>"
+            "description": "<p>검색 선택 (ALL: 전체 , name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)</p>"
           },
           {
             "group": "Query",
@@ -6832,14 +6832,14 @@ define({ "api": [
             "group": "Query",
             "type": "String",
             "optional": false,
-            "field": "createDateFrom",
+            "field": "consultationDateFrom",
             "description": "<p>등록일(시작) (yyyy-MM-dd)</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
-            "field": "createDateTo",
+            "field": "consultationDateTo",
             "description": "<p>등록일(끝) (yyyy-MM-dd)</p>"
           },
           {
