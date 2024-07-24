@@ -6860,14 +6860,14 @@
             "group": "Query",
             "type": "String",
             "optional": false,
-            "field": "consultationType",
+            "field": "type",
             "description": "<p>상담구분(P: 전화상담,V: 방문상담,K: 카카오채널,N: 네이버예약)</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
-            "field": "statuses",
+            "field": "status",
             "description": "<p>처리상태(WAITING,NO_CONTACT,UNVISITED,RESERVED,NOT_REGISTERED,REGISTERED,NO_SHOW,MISSED)</p>"
           },
           {
