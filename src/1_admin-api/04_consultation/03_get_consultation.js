@@ -56,14 +56,14 @@
                                                         TIME_07("70"), // 18:00~20:00<br/>
                                                         TIME_08("80"), // 20:00~21:00<br/>
                                                         TIME_09("90"), // 기타]<br/>
- * @apiSuccess {String} consultation.status 처리상태 WAITING("3"), // 대기<br/>
-                                                   NO_CONTACT("4"),<br/>
-                                                   UNVISITED("5"),<br/>
-                                                   RESERVED("6"),<br/>
-                                                   NOT_REGISTERED("7"),<br/>
-                                                   REGISTERED("8"),<br/>
-                                                   NO_SHOW("9"),<br/>
-                                                   MISSED("10"),<br/>
+ * @apiSuccess {String} consultation.status 처리상태 WAITING // 대기<br/>
+                                                   NO_CONTACT,<br/>
+                                                   UNVISITED,<br/>
+                                                   RESERVED,<br/>
+                                                   NOT_REGISTERED,<br/>
+                                                   REGISTERED,<br/>
+                                                   NO_SHOW,<br/>
+                                                   MISSED,<br/>
  * @apiSuccess {String} consultation.statuses 사용X
  * @apiSuccess {String} consultation.levelTestType  [R 밖에 없음.]
  * @apiSuccess {String} consultation.levelTestAnswer 사용X

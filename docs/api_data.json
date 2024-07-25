@@ -6445,7 +6445,7 @@
             "type": "String",
             "optional": false,
             "field": "consultation.status",
-            "description": "<p>처리상태 WAITING(&quot;3&quot;), // 대기<br/> NO_CONTACT(&quot;4&quot;),<br/> UNVISITED(&quot;5&quot;),<br/> RESERVED(&quot;6&quot;),<br/> NOT_REGISTERED(&quot;7&quot;),<br/> REGISTERED(&quot;8&quot;),<br/> NO_SHOW(&quot;9&quot;),<br/> MISSED(&quot;10&quot;),<br/></p>"
+            "description": "<p>처리상태 WAITING // 대기<br/> NO_CONTACT,<br/> UNVISITED,<br/> RESERVED,<br/> NOT_REGISTERED,<br/> REGISTERED,<br/> NO_SHOW,<br/> MISSED,<br/></p>"
           },
           {
             "group": "Success 200",
