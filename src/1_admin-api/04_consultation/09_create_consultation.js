@@ -19,23 +19,16 @@
  *
  *
  * 
- * @apiParam (Body) {String} type 상담구분 [  P, // 전화상담<br/>
+ * @apiParam (Body) {String} type 상담구분  P, // 전화상담<br/>
                                           V, // 방문상담<br/>
                                           K, // 카카오채널<br/>
                                           N, // 네이버예약<br/>
                                           F, // 온라인상담<br/>
                                           L, // 무료레벨테스트]<br/>
- * @apiParam (Body) {String} status 처리상태 [  WAITING, // 대기<br/>
-                                            // 컨텍금지<br/>
-                                            NO_CONTACT,<br/>
-                                            UNVISITED,<br/>
-                                            RESERVED,<br/>
-                                            NOT_REGISTERED,<br/>
-                                            REGISTERED,<br/>
-                                            NO_SHOW,<br/>
-                                            MISSED,]<br/>
+ * @apiParam (Body) {String} status 처리상태 WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/>
+                                      RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/> REGISTERED:등록완료, NoShow, MISSED:부재중)
  * @apiParam (Body) {String} name 이름
- * @apiParam (Body) {String} gender 성별 [    M: 남성,  F:여성]
+ * @apiParam (Body) {String} gender 성별 ( M: 남성,  F:여성 )
  * @apiParam (Body) {String} callTime 통화 가능 시간 [  TIME_01, // 06:30~08:00<br/>
                                                   TIME_02, // 08:00~10:00<br/>
                                                   TIME_03, // 10:00~12:00<br/>
@@ -67,8 +60,8 @@
  * @apiParam (Body) {String} foundPathNote 알게된 동기 이유
  * @apiParam (Body) {String} job 직업
  * @apiParam (Body) {String} company 회사명
- * @apiParam (Body) {String} consultationDate 상담일
- * @apiParam (Body) {String} visitDate 방문일[yyyy-MM-dd HH:mm:ss]
+ * @apiParam (Body) {String} consultationDate 상담일(yyyy-MM-dd HH:mm:ss)
+ * @apiParam (Body) {String} visitDate 방문일(yyyy-MM-dd HH:mm:ss)
  * @apiParam (Body) {String} details 상담내용
  * @apiParam (Body) {File} file 첨부파일
  *

@@ -37,12 +37,11 @@
  * @apiSuccess {String} list.details 상담내용
  * @apiSuccess {Object[]} list.smsList 회원 목록
  * @apiSuccess {String} list.smsList.content  문자내용
- * @apiSuccess {String} list.smsList.content  문자식별키
- * @apiSuccess {String} list.smsList.content  받는사람핸드폰번호
- * @apiSuccess {String} list.smsList.content  받는사람이름
- * @apiSuccess {String} list.smsList.content  전송날짜(yyyy-MM-dd HH:mm:ss)
- * @apiSuccess {String} list.smsList.content  받는사람이름
- * @apiSuccess {String} list.smsList.content  발송성공여부(SUCCESS)
+ * @apiSuccess {String} list.smsList.smsId  문자식별키
+ * @apiSuccess {String} list.smsList.recipientPhone  받는사람핸드폰번호
+ * @apiSuccess {String} list.smsList.recipientName  받는사람이름
+ * @apiSuccess {String} list.smsList.sendDate  전송날짜(yyyy-MM-dd HH:mm:ss)
+ * @apiSuccess {String} list.smsList.status  발송성공여부(SUCCESS)
 
  * @apiSuccess {Number} totalCount 전체 수
  * @apiSuccess {Number} page 현재 페이지
