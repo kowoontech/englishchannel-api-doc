@@ -6541,7 +6541,7 @@ define({ "api": [
     "type": "post",
     "url": "/admin/v1/consultations/cellpnone",
     "title": "10. 연락처 중복 체크",
-    "description": "<p>상세조회,등록,수정 시 사용<br/></p>",
+    "description": "<p>상세조회,등록,수정 시 사용<br/> 중복된 연락처 확인을 위해서는 {&quot;cellPhone&quot; : &quot;020-3333-3333&quot;} 사용해주세요</p>",
     "version": "1.0.0",
     "name": "admin_getValCellphone",
     "group": "1._Admin_API_>_4._상담관리",
@@ -6566,10 +6566,21 @@ define({ "api": [
       }
     },
     "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>유효성 검사 결과</p>"
+          }
+        ]
+      },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
+          "content": "HTTP/1.1 200\n{\n    \"message\": \"중복된 연락처가 있습니다.\"\n}",
           "type": "json"
         }
       ]
