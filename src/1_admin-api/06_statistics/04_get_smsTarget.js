@@ -8,9 +8,10 @@
  * @apiGroup 1. Admin API > 6. 통계보고서
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/sms/5'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/sms/5/target?search=recipientName&keyword=김민국8'
  *
  * @apiParam (Query) id sms 식별키
+ * @apiParam (Body) search 검색조건 (전체: ALL, 이름:recipientName, 이메일: email)
  *
  * @apiSuccess {Object[]} list 수취인 정보
  * @apiSuccess {String} list.id 수취인 식별키
@@ -23,81 +24,10 @@
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 {
+{
     "list": [
         {
-            "listNumber": 18,
-            "id": 21,
-            "email": null,
-            "recipientPhone": "010-2974-5976",
-            "recipientName": "테스트",
-            "status": "SUCCESS"
-        },
-        {
-            "listNumber": 17,
-            "id": 20,
-            "email": null,
-            "recipientPhone": "010-2974-5976",
-            "recipientName": "테스트",
-            "status": "SUCCESS"
-        },
-        {
-            "listNumber": 16,
-            "id": 19,
-            "email": null,
-            "recipientPhone": "010-2974-5976",
-            "recipientName": "테스트",
-            "status": "WAITING"
-        },
-        {
-            "listNumber": 15,
-            "id": 18,
-            "email": null,
-            "recipientPhone": "010-2974-5976",
-            "recipientName": "테스트",
-            "status": "WAITING"
-        },
-        {
-            "listNumber": 14,
-            "id": 17,
-            "email": null,
-            "recipientPhone": "010-2974-5976",
-            "recipientName": "테스트",
-            "status": "WAITING"
-        },
-        {
-            "listNumber": 13,
-            "id": 16,
-            "email": null,
-            "recipientPhone": "010-2974-5976",
-            "recipientName": "테스트",
-            "status": "WAITING"
-        },
-        {
-            "listNumber": 12,
-            "id": 15,
-            "email": null,
-            "recipientPhone": "010-2974-5976",
-            "recipientName": "테스트",
-            "status": "WAITING"
-        },
-        {
-            "listNumber": 11,
-            "id": 11,
-            "email": "이메일9@naver.com",
-            "recipientPhone": "010-2321-2312",
-            "recipientName": "김민국9",
-            "status": "FAIL"
-        },
-        {
-            "listNumber": 10,
-            "id": 10,
-            "email": "이메일9@naver.com",
-            "recipientPhone": "010-2321-2312",
-            "recipientName": "김민국9",
-            "status": "FAIL"
-        },
-        {
-            "listNumber": 9,
+            "listNumber": 1,
             "id": 9,
             "email": "이메일8@naver.com",
             "recipientPhone": "010-2321-2312",
@@ -105,13 +35,13 @@
             "status": "FAIL"
         }
     ],
-    "totalCount": 18,
+    "totalCount": 1,
     "page": 1,
     "limit": 10,
     "pageSize": 10,
     "startPage": 1,
-    "totalPage": 2,
-    "endPage": 2,
+    "totalPage": 1,
+    "endPage": 1,
     "hasNext": false,
     "isFirst": true,
     "isLast": true,

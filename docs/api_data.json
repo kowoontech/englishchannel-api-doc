@@ -8375,7 +8375,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/sms/5'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/sms/5/target?search=recipientName&keyword=김민국8'",
         "type": "curl"
       }
     ],
@@ -8387,6 +8387,14 @@
             "optional": false,
             "field": "id",
             "description": "<p>sms 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "optional": false,
+            "field": "search",
+            "description": "<p>검색조건 (전체: ALL, 이름:recipientName, 이메일: email)</p>"
           }
         ]
       }
@@ -8441,7 +8449,7 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"listNumber\": 18,\n            \"id\": 21,\n            \"email\": null,\n            \"recipientPhone\": \"010-2974-5976\",\n            \"recipientName\": \"테스트\",\n            \"status\": \"SUCCESS\"\n        },\n        {\n            \"listNumber\": 17,\n            \"id\": 20,\n            \"email\": null,\n            \"recipientPhone\": \"010-2974-5976\",\n            \"recipientName\": \"테스트\",\n            \"status\": \"SUCCESS\"\n        },\n        {\n            \"listNumber\": 16,\n            \"id\": 19,\n            \"email\": null,\n            \"recipientPhone\": \"010-2974-5976\",\n            \"recipientName\": \"테스트\",\n            \"status\": \"WAITING\"\n        },\n        {\n            \"listNumber\": 15,\n            \"id\": 18,\n            \"email\": null,\n            \"recipientPhone\": \"010-2974-5976\",\n            \"recipientName\": \"테스트\",\n            \"status\": \"WAITING\"\n        },\n        {\n            \"listNumber\": 14,\n            \"id\": 17,\n            \"email\": null,\n            \"recipientPhone\": \"010-2974-5976\",\n            \"recipientName\": \"테스트\",\n            \"status\": \"WAITING\"\n        },\n        {\n            \"listNumber\": 13,\n            \"id\": 16,\n            \"email\": null,\n            \"recipientPhone\": \"010-2974-5976\",\n            \"recipientName\": \"테스트\",\n            \"status\": \"WAITING\"\n        },\n        {\n            \"listNumber\": 12,\n            \"id\": 15,\n            \"email\": null,\n            \"recipientPhone\": \"010-2974-5976\",\n            \"recipientName\": \"테스트\",\n            \"status\": \"WAITING\"\n        },\n        {\n            \"listNumber\": 11,\n            \"id\": 11,\n            \"email\": \"이메일9@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국9\",\n            \"status\": \"FAIL\"\n        },\n        {\n            \"listNumber\": 10,\n            \"id\": 10,\n            \"email\": \"이메일9@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국9\",\n            \"status\": \"FAIL\"\n        },\n        {\n            \"listNumber\": 9,\n            \"id\": 9,\n            \"email\": \"이메일8@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국8\",\n            \"status\": \"FAIL\"\n        }\n    ],\n    \"totalCount\": 18,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 2,\n    \"endPage\": 2,\n    \"hasNext\": false,\n    \"isFirst\": true,\n    \"isLast\": true,\n    \"hasPrev\": false\n}",
+          "content": "HTTP/1.1 200\n{\n{\n    \"list\": [\n        {\n            \"listNumber\": 1,\n            \"id\": 9,\n            \"email\": \"이메일8@naver.com\",\n            \"recipientPhone\": \"010-2321-2312\",\n            \"recipientName\": \"김민국8\",\n            \"status\": \"FAIL\"\n        }\n    ],\n    \"totalCount\": 1,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"hasNext\": false,\n    \"isFirst\": true,\n    \"isLast\": true,\n    \"hasPrev\": false\n}",
           "type": "json"
         }
       ]
