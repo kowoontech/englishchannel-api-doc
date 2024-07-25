@@ -8135,28 +8135,28 @@ define({ "api": [
   },
   {
     "type": "delete",
-    "url": "/admin/v1/statistics/sms/{id}",
+    "url": "/admin/v1/statistics/sms",
     "title": "03. 발송 내역 삭제",
-    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/> 데이터가 많지 않아 오류 가능성 높음. id:7 사용. 안될시 알려주세요.</p>",
+    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/></p>",
     "version": "1.0.0",
     "name": "admin_deleteSms",
     "group": "1._Admin_API_>_6._통계보고서",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/statistics/sms/7'",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/statistics/sms'",
         "type": "curl"
       }
     ],
     "parameter": {
       "fields": {
-        "Path": [
+        "Body": [
           {
-            "group": "Path",
-            "type": "String",
-            "optional": true,
-            "field": "id",
-            "description": "<p>sms 식별키</p>"
+            "group": "Body",
+            "type": "Number[]",
+            "optional": false,
+            "field": "smsId",
+            "description": "<p>sms식별키</p>"
           }
         ]
       }
