@@ -6246,7 +6246,7 @@
   },
   {
     "type": "delete",
-    "url": "/admin/v1/consultations/{id}",
+    "url": "/admin/v1/consultations",
     "title": "05. 상담관리 기본정보 삭제",
     "description": "<p>상담관리 &gt; 상세조회 &gt; 삭제</p>",
     "version": "1.0.0",
@@ -6261,12 +6261,12 @@
     ],
     "parameter": {
       "fields": {
-        "Path": [
+        "Body": [
           {
-            "group": "Path",
-            "type": "String",
+            "group": "Body",
+            "type": "String[]",
             "optional": false,
-            "field": "id",
+            "field": "smsId",
             "description": "<p>상담식별키</p>"
           }
         ]
@@ -7532,7 +7532,7 @@
             "group": "Success 200",
             "type": "Boolean",
             "optional": false,
-            "field": "active",
+            "field": "teacherActive",
             "description": "<p>활동여부 [true:활동, false:비활동]</p>"
           }
         ]

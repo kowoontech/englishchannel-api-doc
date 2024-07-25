@@ -28,7 +28,7 @@
  * @apiSuccess {String} workTime 근무시간[AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]
  * @apiSuccess {String} workType 근무타입[A, C]
  * @apiSuccess {String} partnerTeacherId 파트너강사
- * @apiSuccess {Boolean} active 활동여부 [true:활동, false:비활동]
+ * @apiSuccess {Boolean} teacherActive 활동여부 [true:활동, false:비활동]
  *
  *
  * @apiSuccessExample {json} SUCCESS
