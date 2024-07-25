@@ -6688,7 +6688,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "status",
-            "description": "<p>처리상태 [  WAITING(&quot;3&quot;), // 대기<br/> // 컨텍금지<br/> NO_CONTACT(&quot;4&quot;),<br/> UNVISITED(&quot;5&quot;),<br/> RESERVED(&quot;6&quot;),<br/> NOT_REGISTERED(&quot;7&quot;),<br/> REGISTERED(&quot;8&quot;),<br/> NO_SHOW(&quot;9&quot;),<br/> MISSED(&quot;10&quot;),]<br/></p>"
+            "description": "<p>처리상태 WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/> RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/> REGISTERED:등록완료, NoShow, MISSED:부재중)</p>"
           },
           {
             "group": "Body",

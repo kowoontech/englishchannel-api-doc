@@ -25,15 +25,8 @@
                                           N, // 네이버예약<br/>
                                           F, // 온라인상담<br/>
                                           L, // 무료레벨테스트]<br/>
- * @apiParam (Body) {String} status 처리상태 [  WAITING("3"), // 대기<br/>
-                                            // 컨텍금지<br/>
-                                            NO_CONTACT("4"),<br/>
-                                            UNVISITED("5"),<br/>
-                                            RESERVED("6"),<br/>
-                                            NOT_REGISTERED("7"),<br/>
-                                            REGISTERED("8"),<br/>
-                                            NO_SHOW("9"),<br/>
-                                            MISSED("10"),]<br/>
+ * @apiParam (Body) {String} status 처리상태 WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/>
+                                      RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/> REGISTERED:등록완료, NoShow, MISSED:부재중)
  * @apiParam (Body) {String} name 이름
  * @apiParam (Body) {String} gender 성별 [    M: 남성,  F:여성]
  * @apiParam (Body) {String} callTime 통화 가능 시간 [  TIME_01, // 06:30~08:00<br/>
