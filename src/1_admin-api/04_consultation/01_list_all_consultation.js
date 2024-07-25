@@ -26,7 +26,7 @@
  * @apiSuccess {Object[]} list 회원 목록
  * @apiSuccess {String} list.id 예약 식별키
  * @apiSuccess {String} list.type (P:전화상담, V:방문상담, K:카카오채널, N:네이버예약, F:온라인상담, L:무료레벨테스트)
- * @apiSuccess {String} list.status 처리상태 ( WAITING("3"대기), NO_CONTACT("4"컨택금지), UNVISITED("5"),RESERVED("6"),NOT_REGISTERED("7"), REGISTERED("8"),NO_SHOW("9"), MISSED("10"),)
+ * @apiSuccess {String} list.status 처리상태(3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료, 7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)
  * @apiSuccess {String} list.name 회원명
  * @apiSuccess {String} list.phone 전화번호
  * @apiSuccess {String} list.company 회사/직장명
@@ -35,6 +35,14 @@
  * @apiSuccess {String} list.createdOn 등록일
  * @apiSuccess {String} list.creatorName 상담직원
  * @apiSuccess {String} list.details 상담내용
+ * @apiSuccess {Object[]} list.smsList 회원 목록
+ * @apiSuccess {String} list.smsList.content  문자내용
+ * @apiSuccess {String} list.smsList.content  문자식별키
+ * @apiSuccess {String} list.smsList.content  받는사람핸드폰번호
+ * @apiSuccess {String} list.smsList.content  받는사람이름
+ * @apiSuccess {String} list.smsList.content  전송날짜(yyyy-MM-dd HH:mm:ss)
+ * @apiSuccess {String} list.smsList.content  받는사람이름
+ * @apiSuccess {String} list.smsList.content  발송성공여부(SUCCESS)
 
  * @apiSuccess {Number} totalCount 전체 수
  * @apiSuccess {Number} page 현재 페이지

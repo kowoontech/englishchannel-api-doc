@@ -6930,7 +6930,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "list.status",
-            "description": "<p>처리상태 ( WAITING(&quot;3&quot;대기), NO_CONTACT(&quot;4&quot;컨택금지), UNVISITED(&quot;5&quot;),RESERVED(&quot;6&quot;),NOT_REGISTERED(&quot;7&quot;), REGISTERED(&quot;8&quot;),NO_SHOW(&quot;9&quot;), MISSED(&quot;10&quot;),)</p>"
+            "description": "<p>처리상태(3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료, 7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)</p>"
           },
           {
             "group": "Success 200",
@@ -6987,6 +6987,20 @@ define({ "api": [
             "optional": false,
             "field": "list.details",
             "description": "<p>상담내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "list.smsList",
+            "description": "<p>회원 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.smsList.content",
+            "description": "<p>문자내용</p>"
           },
           {
             "group": "Success 200",
