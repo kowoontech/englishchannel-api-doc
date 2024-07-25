@@ -6340,7 +6340,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "consultation.consultationDate",
-            "description": "<p>추천인 식별키</p>"
+            "description": "<p>상담일(yyyy-MM-dd HH:mm:ss)</p>"
           },
           {
             "group": "Success 200",
@@ -6354,7 +6354,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "consultation.gender",
-            "description": "<p>성별 [남:&quot;M&quot;,여:&quot;F&quot;]</p>"
+            "description": "<p>성별 남:&quot;M&quot;,여:&quot;F&quot;</p>"
           },
           {
             "group": "Success 200",
@@ -6388,8 +6388,8 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "consultation.foundPath",
-            "description": "<p>알게된 동기<br/> SIGN(&quot;10&quot;), // 간판<br/> ONLINE(&quot;20&quot;), // 온라인검색<br/> RECOMMEND(&quot;30&quot;), // 지인추천<br/> FAN(&quot;40&quot;), // 부채<br/> LEAFLET(&quot;50&quot;), // 3단리플릿<br/> SUBWAY(&quot;60&quot;), // 지하철광고<br/> ALLIANCE(&quot;70&quot;), // 기업제휴<br/> ETC(&quot;900&quot;), // 기타<br/></p>"
+            "field": "consultation.joinPath",
+            "description": "<p>알게된 동기<br/> SIGN, // 간판<br/> ONLINE, // 온라인검색<br/> RECOMMEND, // 지인추천<br/> FAN, // 부채<br/> LEAFLET, // 3단리플릿<br/> SUBWAY, // 지하철광고<br/> ALLIANCE, // 기업제휴<br/> ETC, // 기타<br/></p>"
           },
           {
             "group": "Success 200",

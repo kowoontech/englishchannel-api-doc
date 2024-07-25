@@ -15,22 +15,22 @@
  * @apiSuccess {Object[]} [consultation] 상담 정보
  * @apiSuccess {String} consultation.id 상담 식별키
  * @apiSuccess {String} consultation.institutionId 추천인 식별키
- * @apiSuccess {String} consultation.consultationDate 추천인 식별키
+ * @apiSuccess {String} consultation.consultationDate 상담일(yyyy-MM-dd HH:mm:ss)
  * @apiSuccess {String} consultation.name 성명
- * @apiSuccess {String} consultation.gender 성별 [남:"M",여:"F"]
+ * @apiSuccess {String} consultation.gender 성별 남:"M",여:"F"
  * @apiSuccess {String} consultation.job 직업
  * @apiSuccess {String} consultation.company 회사명
  * @apiSuccess {String} consultation.phone 번호
  * @apiSuccess {String} consultation.cellPhone 핸드폰번호
- * @apiSuccess {String} consultation.foundPath 알게된 동기<br/>
-                                                    SIGN("10"), // 간판<br/>
-                                                    ONLINE("20"), // 온라인검색<br/>
-                                                    RECOMMEND("30"), // 지인추천<br/>
-                                                    FAN("40"), // 부채<br/>
-                                                    LEAFLET("50"), // 3단리플릿<br/>
-                                                    SUBWAY("60"), // 지하철광고<br/>
-                                                    ALLIANCE("70"), // 기업제휴<br/>
-                                                    ETC("900"), // 기타<br/>
+ * @apiSuccess {String} consultation.joinPath 알게된 동기<br/>
+                                                    SIGN, // 간판<br/>
+                                                    ONLINE, // 온라인검색<br/>
+                                                    RECOMMEND, // 지인추천<br/>
+                                                    FAN, // 부채<br/>
+                                                    LEAFLET, // 3단리플릿<br/>
+                                                    SUBWAY, // 지하철광고<br/>
+                                                    ALLIANCE, // 기업제휴<br/>
+                                                    ETC, // 기타<br/>
  * @apiSuccess {String} consultation.foundPathNote 알게된 동기 설명
  * @apiSuccess {String} consultation.visitDate 방문일자
  * @apiSuccess {String} consultation.details 상담내용
