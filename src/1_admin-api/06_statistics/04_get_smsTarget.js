@@ -14,8 +14,8 @@
  *
  * @apiSuccess {Object[]} list 수취인 정보
  * @apiSuccess {String} list.id 수취인 식별키
- * @apiSuccess {String} target.email 사용x
- * @apiSuccess {String} target.recipientPhone 수취인 메일
+ * @apiSuccess {String} target.email 사용
+ * @apiSuccess {String} target.recipientPhone 수취인 번호
  * @apiSuccess {String} target.recipientName 수취인 이름
  * @apiSuccess {String} target.status 발송상태 (WAITING: 대기, SUCCESS:성공, FAIL: 실패)
  *
@@ -25,6 +25,71 @@
 {
     "list": [
         {
+            "listNumber": 18,
+            "id": 21,
+            "email": null,
+            "recipientPhone": "010-2974-5976",
+            "recipientName": "테스트",
+            "status": "SUCCESS"
+        },
+        {
+            "listNumber": 17,
+            "id": 20,
+            "email": null,
+            "recipientPhone": "010-2974-5976",
+            "recipientName": "테스트",
+            "status": "SUCCESS"
+        },
+        {
+            "listNumber": 16,
+            "id": 19,
+            "email": null,
+            "recipientPhone": "010-2974-5976",
+            "recipientName": "테스트",
+            "status": "WAITING"
+        },
+        {
+            "listNumber": 15,
+            "id": 18,
+            "email": null,
+            "recipientPhone": "010-2974-5976",
+            "recipientName": "테스트",
+            "status": "WAITING"
+        },
+        {
+            "listNumber": 14,
+            "id": 17,
+            "email": null,
+            "recipientPhone": "010-2974-5976",
+            "recipientName": "테스트",
+            "status": "WAITING"
+        },
+        {
+            "listNumber": 13,
+            "id": 16,
+            "email": null,
+            "recipientPhone": "010-2974-5976",
+            "recipientName": "테스트",
+            "status": "WAITING"
+        },
+        {
+            "listNumber": 12,
+            "id": 15,
+            "email": null,
+            "recipientPhone": "010-2974-5976",
+            "recipientName": "테스트",
+            "status": "WAITING"
+        },
+        {
+            "listNumber": 11,
+            "id": 11,
+            "email": "이메일9@naver.com",
+            "recipientPhone": "010-2321-2312",
+            "recipientName": "김민국9",
+            "status": "FAIL"
+        },
+        {
+            "listNumber": 10,
             "id": 10,
             "email": "이메일9@naver.com",
             "recipientPhone": "010-2321-2312",
@@ -32,76 +97,21 @@
             "status": "FAIL"
         },
         {
+            "listNumber": 9,
             "id": 9,
             "email": "이메일8@naver.com",
             "recipientPhone": "010-2321-2312",
             "recipientName": "김민국8",
             "status": "FAIL"
-        },
-        {
-            "id": 8,
-            "email": "이메일7@naver.com",
-            "recipientPhone": "010-2321-2312",
-            "recipientName": "김민국7",
-            "status": "FAIL"
-        },
-        {
-            "id": 7,
-            "email": "이메일6@naver.com",
-            "recipientPhone": "010-2321-2312",
-            "recipientName": "김민국6",
-            "status": "FAIL"
-        },
-        {
-            "id": 6,
-            "email": "이메일5@naver.com",
-            "recipientPhone": "010-2321-2312",
-            "recipientName": "김민국5",
-            "status": "FAIL"
-        },
-        {
-            "id": 5,
-            "email": "이메일5@naver.com",
-            "recipientPhone": "010-2321-2312",
-            "recipientName": "김민국5",
-            "status": "SUCCESS"
-        },
-        {
-            "id": 4,
-            "email": "이메일4@naver.com",
-            "recipientPhone": "010-2321-2312",
-            "recipientName": "김민국4",
-            "status": "SUCCESS"
-        },
-        {
-            "id": 3,
-            "email": "이메일3@naver.com",
-            "recipientPhone": "010-2321-2312",
-            "recipientName": "김민국3",
-            "status": "WAITING"
-        },
-        {
-            "id": 2,
-            "email": "이메일2@naver.com",
-            "recipientPhone": "010-2321-2312",
-            "recipientName": "김민국2",
-            "status": "WAITING"
-        },
-        {
-            "id": 1,
-            "email": "이메일1@naver.com",
-            "recipientPhone": "010-2321-2312",
-            "recipientName": "김민국",
-            "status": "WAITING"
         }
     ],
-    "totalCount": 10,
+    "totalCount": 18,
     "page": 1,
     "limit": 10,
     "pageSize": 10,
     "startPage": 1,
-    "totalPage": 1,
-    "endPage": 1,
+    "totalPage": 2,
+    "endPage": 2,
     "hasNext": false,
     "isFirst": true,
     "isLast": true,
