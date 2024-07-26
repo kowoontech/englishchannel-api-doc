@@ -31,6 +31,8 @@
  * @apiSuccess {String} list.fail SMS 발송 실패
  * @apiSuccess {String} list.recipientName 수취인
  * @apiSuccess {String} list.reservationDate 예약일시
+ * @apiSuccess {String} list.recipientPhone 수신자 번호
+ * @apiSuccess {String} list.senderPhone 발신자번호
  *
  * @apiSuccess {Number} totalCount 전체 수
  * @apiSuccess {Number} page 현재 페이지
@@ -58,6 +60,8 @@
             "fail": 5,
             "waiting": 3,
             "recipientName": "홍길동",
+            "recipientPhone": "010-2321-1234",
+            "senderPhone": "123-456-7899",
             "reservationDate": "2021-12-12 00:00:00"
         },
         {
@@ -71,6 +75,8 @@
             "fail": 1,
             "waiting": 0,
             "recipientName": "홍길동1",
+            "recipientPhone": "010-2321-1234",
+            "senderPhone": "123-456-7899",
             "reservationDate": "2021-12-12 00:00:00"
         },
         {
@@ -84,6 +90,8 @@
             "fail": 0,
             "waiting": 0,
             "recipientName": "홍길동2",
+            "recipientPhone": "010-2321-1234",
+            "senderPhone": "123-456-7899",
             "reservationDate": "2021-12-12 00:00:00"
         }
     ],
@@ -94,9 +102,9 @@
     "totalPage": 1,
     "endPage": 1,
     "startPage": 1,
+    "hasNext": false,
     "isFirst": true,
     "isLast": true,
-    "hasNext": false,
     "hasPrev": false
 }
  */
