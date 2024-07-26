@@ -51,7 +51,7 @@
  * @apiParam (Body) {String[]} studyType What kind of English do you want to study and learn?<br/>
                                          [EC: English Conversation,<br/>
                                          BE: Business English ,TS:Toeic Speaking , I:Interview ,ETC: ETC]<br>
- * @apiParam (Body) {String} studyType ETC 이유
+ * @apiParam (Body) {String} studyTypeETC 이유
  * @apiParam (Body) {String} familyBackground Family Background
  * @apiParam (Body) {String} usageType Company or School
  * @apiParam (Body) {String} occupation  Occupation
@@ -59,7 +59,7 @@
  * @apiParam (Body) {String} Travel Abroad
  * @apiParam (Body) {String} futurePlans Future Plans
  * @apiParam (Body) {String[]} consonants consonants <br/>
-                                        [ R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH]<br/>
+                                        [ R , L, P, F, B, V, S , Z, SH, EZH, CH, G, TTH, TH]<br/>
  * @apiParam (Body) {String[]} vowels vowels [ 순서대로 > A,B,C,D,E,F,G,H,I,J,K,L,M,N]
  * @apiParam (Body) {String} clarity Clarity(10:hard to understand ,20:average ,30:easy to understand)
  * @apiParam (Body) {String} intonation Intonation(10:very Korean ,20:a bit Korean,30:acceptable ,40:near native)

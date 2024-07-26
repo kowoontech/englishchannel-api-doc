@@ -399,6 +399,13 @@
             "group": "Body",
             "type": "String",
             "optional": false,
+            "field": "studyTypeETC",
+            "description": "<p>이유</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
             "field": "familyBackground",
             "description": "<p>Family Background</p>"
           },
@@ -442,7 +449,7 @@
             "type": "String[]",
             "optional": false,
             "field": "consonants",
-            "description": "<p>consonants <br/> [ R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH]<br/></p>"
+            "description": "<p>consonants <br/> [ R , L, P, F, B, V, S , Z, SH, EZH, CH, G, TTH, TH]<br/></p>"
           },
           {
             "group": "Body",
@@ -4421,6 +4428,13 @@
             "group": "Body",
             "type": "String",
             "optional": false,
+            "field": "studyTypeETC",
+            "description": "<p>이유</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
             "field": "familyBackground",
             "description": "<p>Family Background</p>"
           },
@@ -4464,7 +4478,7 @@
             "type": "String[]",
             "optional": false,
             "field": "consonants",
-            "description": "<p>consonants <br/> [ R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH]<br/></p>"
+            "description": "<p>consonants <br/> [ R , L, P, F, B, V, S , Z, SH, EZH, CH, G, TTH, TH]<br/></p>"
           },
           {
             "group": "Body",
