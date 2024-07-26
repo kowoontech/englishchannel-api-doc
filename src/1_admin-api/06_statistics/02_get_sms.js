@@ -14,10 +14,12 @@
  *
  * @apiSuccess {Number} id sms 식별키
  * @apiSuccess {Object[]} target sms 받은 사람들의 정보(smsTarget)
- * @apiSuccess {String} target.id smsTarget 식별키
+ * @apiSuccess {String} target.id smsTarget 받은 사람들에 대한 정보 식별키
  * @apiSuccess {String} target.smsId 사용x
  * @apiSuccess {String} target.email 수취인 메일
- * @apiSuccess {String} target.recipientPhone 발송상태 (WAITING: 대기, SUCCESS:성공, FAIL: 실패)
+ * @apiSuccess {String} target.recipientPhone 수취인 번호
+ * @apiSuccess {String} target.recipientName 수취인 이름
+ * @apiSuccess {String} target.status 발송상태 (WAITING: 대기, SUCCESS:성공, FAIL: 실패)
  * @apiSuccess {String} target.sendDate 발송일
  * @apiSuccess {String} content 내용
  * @apiSuccess {String} reservationDate 예약발송일[yyyy-MM-dd HH:mm:ss]

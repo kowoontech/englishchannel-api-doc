@@ -8321,7 +8321,7 @@
             "type": "String",
             "optional": false,
             "field": "target.id",
-            "description": "<p>smsTarget 식별키</p>"
+            "description": "<p>smsTarget 받은 사람들에 대한 정보 식별키</p>"
           },
           {
             "group": "Success 200",
@@ -8342,6 +8342,20 @@
             "type": "String",
             "optional": false,
             "field": "target.recipientPhone",
+            "description": "<p>수취인 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.recipientName",
+            "description": "<p>수취인 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "target.status",
             "description": "<p>발송상태 (WAITING: 대기, SUCCESS:성공, FAIL: 실패)</p>"
           },
           {
