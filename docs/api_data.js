@@ -8459,7 +8459,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/admin/v1/statistics/sms",
+    "url": "/admin/v1/statistics/successSms",
     "title": "01. 발송 내역 목록",
     "description": "<p>SMS 전송현황 &gt; <br/> 통계보고서 &gt; sms전송현황 &gt; 발송 내역</p>",
     "version": "1.0.0",
@@ -8468,7 +8468,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/sms",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/successSms",
         "type": "curl"
       }
     ],
@@ -8527,6 +8527,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "list.listNumber",
+            "description": "<p>NO</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "list.id",
             "description": "<p>SMS 식별키</p>"
           },
@@ -8555,8 +8562,29 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "list.count",
-            "description": "<p>발송건수(성공/실패)</p>"
+            "field": "list.total",
+            "description": "<p>총 발송 건수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.success",
+            "description": "<p>SMS 발송 성공</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.waiting",
+            "description": "<p>SMS 발송 대기</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.fail",
+            "description": "<p>SMS 발송 실패</p>"
           },
           {
             "group": "Success 200",
@@ -8570,7 +8598,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "list.reservationDate",
-            "description": "<p>예약일시(성공/실패)</p>"
+            "description": "<p>예약일시</p>"
           },
           {
             "group": "Success 200",
@@ -8647,12 +8675,12 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 5,\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\",\n            \"sendDate\": \"2021-12-12T00:00:00\",\n            \"count\": 0,\n            \"recipientName\": \"홍길동\",\n            \"reservationDate\": \"2021-12-12T00:00:00\"\n        },\n        {\n            \"id\": 6,\n            \"senderName\": \"고길동1\",\n            \"content\": \"문자메세지1\",\n            \"sendDate\": \"2021-12-12T00:00:00\",\n            \"count\": 0,\n            \"recipientName\": \"홍길동1\",\n            \"reservationDate\": \"2021-12-12T00:00:00\"\n        },\n        {\n            \"id\": 7,\n            \"senderName\": \"고길동2\",\n            \"content\": \"문자메세지2\",\n            \"sendDate\": \"2021-12-12T00:00:00\",\n            \"count\": 0,\n            \"recipientName\": \"홍길동2\",\n            \"reservationDate\": \"2021-12-12T00:00:00\"\n        },\n        {\n            \"id\": 8,\n            \"senderName\": \"고길동3\",\n            \"content\": \"문자메세지3\",\n            \"sendDate\": \"2021-12-12T00:00:00\",\n            \"count\": 0,\n            \"recipientName\": \"홍길동3\",\n            \"reservationDate\": \"2021-12-12T00:00:00\"\n        }\n    ],\n    \"totalCount\": 4,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"hasNext\": false,\n    \"isFirst\": true,\n    \"isLast\": true,\n    \"hasPrev\": false\n}",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"listNumber\": 3,\n            \"id\": 5,\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\",\n            \"sendDate\": \"2021-12-12 00:00:00\",\n            \"total\": 10,\n            \"success\": 2,\n            \"fail\": 5,\n            \"waiting\": 3,\n            \"recipientName\": \"홍길동\",\n            \"reservationDate\": \"2021-12-12 00:00:00\"\n        },\n        {\n            \"listNumber\": 2,\n            \"id\": 6,\n            \"senderName\": \"고길동1\",\n            \"content\": \"문자메세지1\",\n            \"sendDate\": \"2021-12-12 00:00:00\",\n            \"total\": 1,\n            \"success\": 0,\n            \"fail\": 1,\n            \"waiting\": 0,\n            \"recipientName\": \"홍길동1\",\n            \"reservationDate\": \"2021-12-12 00:00:00\"\n        },\n        {\n            \"listNumber\": 1,\n            \"id\": 7,\n            \"senderName\": \"고길동2\",\n            \"content\": \"문자메세지2\",\n            \"sendDate\": \"2021-12-12 00:00:00\",\n            \"total\": 0,\n            \"success\": 0,\n            \"fail\": 0,\n            \"waiting\": 0,\n            \"recipientName\": \"홍길동2\",\n            \"reservationDate\": \"2021-12-12 00:00:00\"\n        }\n    ],\n    \"totalCount\": 3,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"startPage\": 1,\n    \"isFirst\": true,\n    \"isLast\": true,\n    \"hasNext\": false,\n    \"hasPrev\": false\n}",
           "type": "json"
         }
       ]
     },
-    "filename": "src/1_admin-api/06_statistics/01_list_all_sms.js",
+    "filename": "src/1_admin-api/06_statistics/01_list_all_successSms.js",
     "groupTitle": "1._Admin_API_>_6._통계보고서"
   },
   {

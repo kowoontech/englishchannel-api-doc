@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/statistics/sms 01. 발송 내역 목록
+ * @api {get} /admin/v1/statistics/successSms 01. 발송 내역 목록
  *
  * @apiDescription SMS 전송현황 > <br/>
  * 통계보고서 > sms전송현황 > 발송 내역
@@ -10,7 +10,7 @@
  * @apiGroup 1. Admin API > 6. 통계보고서
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/sms
+ * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/successSms
  *
  * @apiParam (Query) {String} sendDateFrom 발송일 시작 [yyyy-MM-dd]
  * @apiParam (Query) {String} sendDateTo  발송일 종료 [yyyy-MM-dd]
@@ -20,13 +20,17 @@
 
 
  * @apiSuccess {Object[]} list SMS 목록
+ * @apiSuccess {String} list.listNumber NO
  * @apiSuccess {String} list.id SMS 식별키
  * @apiSuccess {String} list.senderName 발송인
  * @apiSuccess {String} list.content  내용
  * @apiSuccess {String} list.sendDate 발송일[yyyy-MM-dd HH:mm:ss]
- * @apiSuccess {String} list.count 발송건수(성공/실패)
+ * @apiSuccess {String} list.total 총 발송 건수
+ * @apiSuccess {String} list.success SMS 발송 성공
+ * @apiSuccess {String} list.waiting SMS 발송 대기
+ * @apiSuccess {String} list.fail SMS 발송 실패
  * @apiSuccess {String} list.recipientName 수취인
- * @apiSuccess {String} list.reservationDate 예약일시(성공/실패)
+ * @apiSuccess {String} list.reservationDate 예약일시
  *
  * @apiSuccess {Number} totalCount 전체 수
  * @apiSuccess {Number} page 현재 페이지
@@ -44,52 +48,55 @@
 {
     "list": [
         {
+            "listNumber": 3,
             "id": 5,
             "senderName": "고길동",
             "content": "문자메세지",
-            "sendDate": "2021-12-12T00:00:00",
-            "count": 0,
+            "sendDate": "2021-12-12 00:00:00",
+            "total": 10,
+            "success": 2,
+            "fail": 5,
+            "waiting": 3,
             "recipientName": "홍길동",
-            "reservationDate": "2021-12-12T00:00:00"
+            "reservationDate": "2021-12-12 00:00:00"
         },
         {
+            "listNumber": 2,
             "id": 6,
             "senderName": "고길동1",
             "content": "문자메세지1",
-            "sendDate": "2021-12-12T00:00:00",
-            "count": 0,
+            "sendDate": "2021-12-12 00:00:00",
+            "total": 1,
+            "success": 0,
+            "fail": 1,
+            "waiting": 0,
             "recipientName": "홍길동1",
-            "reservationDate": "2021-12-12T00:00:00"
+            "reservationDate": "2021-12-12 00:00:00"
         },
         {
+            "listNumber": 1,
             "id": 7,
             "senderName": "고길동2",
             "content": "문자메세지2",
-            "sendDate": "2021-12-12T00:00:00",
-            "count": 0,
+            "sendDate": "2021-12-12 00:00:00",
+            "total": 0,
+            "success": 0,
+            "fail": 0,
+            "waiting": 0,
             "recipientName": "홍길동2",
-            "reservationDate": "2021-12-12T00:00:00"
-        },
-        {
-            "id": 8,
-            "senderName": "고길동3",
-            "content": "문자메세지3",
-            "sendDate": "2021-12-12T00:00:00",
-            "count": 0,
-            "recipientName": "홍길동3",
-            "reservationDate": "2021-12-12T00:00:00"
+            "reservationDate": "2021-12-12 00:00:00"
         }
     ],
-    "totalCount": 4,
+    "totalCount": 3,
     "page": 1,
     "limit": 10,
     "pageSize": 10,
-    "startPage": 1,
     "totalPage": 1,
     "endPage": 1,
-    "hasNext": false,
+    "startPage": 1,
     "isFirst": true,
     "isLast": true,
+    "hasNext": false,
     "hasPrev": false
 }
  */
