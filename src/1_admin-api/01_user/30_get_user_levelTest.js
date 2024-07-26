@@ -58,10 +58,11 @@
  * @apiSuccess {String} levelTest.recommendedLevel Recommended Level(사용x 아래 recommendedLevel 사용해주세요 )
  * @apiSuccess {String} levelTest.recommendedLevelEtc Etc 이유
  *
- * @apiSuccess {String[]} recommendedLevel Recommended Level (순서대로> 10,20,30,40,50,60,70,80,90)
- * @apiSuccess {String[]} vowels vowels(순서대로 20,30,40,50,60,70,80,90,100,110,120,130,140,150)
- * @apiSuccess {String[]} consonants consonants(순서대로 > 10,20,30,40,50,60,70,80,90,100,110,120,130 )
- * @apiSuccess {String[]} studyType studyType( 순서대로 10,20,30,40,50)
+ * @apiSuccess {String[]} recommendedLevel Recommended Level [ R2:Pre// R3:300// R4:400//R5:500 //R6:600//R7:700://R8: 800//R9:900//ETC:ETC]
+ * @apiSuccess {String[]} vowels vowels(순서대로 [ A,B,C,D,E,F,G,H,I,J,K,L,M,N])
+ * @apiSuccess {String[]} consonants consonants(순서대로 [ R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH] )
+ * @apiSuccess {String[]} studyType studyType( [ EC: English Conversation //BE: Business English //TS:Toeic Speaking <br/>
+                                                    I:Interview ,ETC: ETC])
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 {

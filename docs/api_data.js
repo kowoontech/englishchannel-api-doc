@@ -1562,28 +1562,28 @@ define({ "api": [
             "type": "String[]",
             "optional": false,
             "field": "recommendedLevel",
-            "description": "<p>Recommended Level (순서대로&gt; 10,20,30,40,50,60,70,80,90)</p>"
+            "description": "<p>Recommended Level [ R2:Pre// R3:300// R4:400//R5:500 //R6:600//R7:700://R8: 800//R9:900//ETC:ETC]</p>"
           },
           {
             "group": "Success 200",
             "type": "String[]",
             "optional": false,
             "field": "vowels",
-            "description": "<p>vowels(순서대로 20,30,40,50,60,70,80,90,100,110,120,130,140,150)</p>"
+            "description": "<p>vowels(순서대로 [ A,B,C,D,E,F,G,H,I,J,K,L,M,N])</p>"
           },
           {
             "group": "Success 200",
             "type": "String[]",
             "optional": false,
             "field": "consonants",
-            "description": "<p>consonants(순서대로 &gt; 10,20,30,40,50,60,70,80,90,100,110,120,130 )</p>"
+            "description": "<p>consonants(순서대로 [ R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH] )</p>"
           },
           {
             "group": "Success 200",
             "type": "String[]",
             "optional": false,
             "field": "studyType",
-            "description": "<p>studyType( 순서대로 10,20,30,40,50)</p>"
+            "description": "<p>studyType( [ EC: English Conversation //BE: Business English //TS:Toeic Speaking <br/> I:Interview ,ETC: ETC])</p>"
           }
         ]
       },
