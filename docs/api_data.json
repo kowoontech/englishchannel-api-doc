@@ -1250,14 +1250,14 @@
     "type": "get",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
     "title": "30. 레벨테스트 상세조회",
-    "description": "<p>회원관리 &gt; 회원  상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 , testId : 6145 사용해주세요 <br/></p>",
+    "description": "<p>회원관리 &gt; 회원  상세 조회 &gt; 테스트 탭 <br/> 테스트가 필요하다면, id : M1372661465106388 , testId : 6153 사용해주세요 <br/> 회원id 의 회원 이름은 '김기훈' 입니다</p>",
     "version": "1.0.0",
     "name": "admin_getLevelTest",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/1028151/levelTests/6145'",
+        "content": "curl -i -X GET 'localhost:8080/admin/v1/users/M1372661465106388/levelTests/6153'",
         "type": "curl"
       }
     ],
@@ -1562,35 +1562,35 @@
             "type": "String[]",
             "optional": false,
             "field": "recommendedLevel",
-            "description": "<p>Recommended Level (선택X:0, 순서대로&gt; 10,20,30,40,50,60,70,80,90)</p>"
+            "description": "<p>Recommended Level (순서대로&gt; 10,20,30,40,50,60,70,80,90)</p>"
           },
           {
             "group": "Success 200",
             "type": "String[]",
             "optional": false,
             "field": "vowels",
-            "description": "<p>vowels(선택X: 10 / 순서대로 20,30,40,50,60,70,80,90,100,110,120,130,140,150)</p>"
+            "description": "<p>vowels(순서대로 20,30,40,50,60,70,80,90,100,110,120,130,140,150)</p>"
           },
           {
             "group": "Success 200",
             "type": "String[]",
             "optional": false,
             "field": "consonants",
-            "description": "<p>consonants(선택 X:0, 순서대로 &gt; 10,20,30,40,50,60,70,80,90,100,110,120,130 )</p>"
+            "description": "<p>consonants(순서대로 &gt; 10,20,30,40,50,60,70,80,90,100,110,120,130 )</p>"
           },
           {
             "group": "Success 200",
             "type": "String[]",
             "optional": false,
             "field": "studyType",
-            "description": "<p>studyType(선택X :0/ 순서대로 10,20,30,40,50)</p>"
+            "description": "<p>studyType( 순서대로 10,20,30,40,50)</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": 6118,\n    \"userId\": null,\n    \"testStartTime\": null,\n    \"testEndTime\": null,\n    \"interviewer\": \"TEST\",\n    \"lbt\": null,\n    \"rbt\": null,\n    \"obt\": null,\n    \"testIp\": null,\n    \"file\": \"1720341620662_다운로드.jpeg\",\n    \"fileUrl\": \"http://localhost:8080/file/download/1720341620662_다운로드.jpeg/다운로드.jpeg\",\n    \"note\": null,\n    \"purpose\": null,\n    \"studyType\": null,\n    \"studyTypeEtc\": \"TEST4\",\n    \"familyBackground\": null,\n    \"usageType\": null,\n    \"occupation\": null,\n    \"spareTime\": null,\n    \"travelAbroad\": null,\n    \"futurePlans\": null,\n    \"consonants\": null,\n    \"vowels\": null,\n    \"clarity\": \"E\",\n    \"intonation\": \"VK\",\n    \"vocabulary\": \"AA\",\n    \"verbsTense\": \"NEVER\",\n    \"agreement\": \"NEVER\",\n    \"prepositions\": \"NEVER\",\n    \"articles\": \"NEVER\",\n    \"plurals\": \"NEVER\",\n    \"others\": \"NEVER\",\n    \"strongPoint\": null,\n    \"weakPoint\": null,\n    \"comprehension\": \"AE\",\n    \"confidence\": \"CL\",\n    \"comments\": null,\n    \"recommendedLevel\": null,\n    \"recommendedLevelEtc\": null\n}",
+          "content": "HTTP/1.1 200\n{\n    \"levelTest\": {\n        \"id\": 6153,\n        \"userId\": null,\n        \"testStartTime\": null,\n        \"testEndTime\": null,\n        \"interviewer\": \"interviewer\",\n        \"lbt\": \"10\",\n        \"rbt\": null,\n        \"obt\": null,\n        \"testIp\": null,\n        \"note\": null,\n        \"purpose\": null,\n        \"studyTypeEtc\": \"이유\",\n        \"familyBackground\": \"familyBackground\",\n        \"usageType\": null,\n        \"occupation\": null,\n        \"spareTime\": null,\n        \"travelAbroad\": \"travelAbroad\",\n        \"futurePlans\": null,\n        \"clarity\": \"10\",\n        \"intonation\": \"20\",\n        \"vocabulary\": \"30\",\n        \"verbsTense\": null,\n        \"agreement\": null,\n        \"prepositions\": \"40\",\n        \"articles\": null,\n        \"plurals\": null,\n        \"others\": null,\n        \"strongPoint\": \"strongPoint\",\n        \"weakPoint\": null,\n        \"comprehension\": \"10\",\n        \"confidence\": null,\n        \"comments\": null,\n        \"recommendedLevelEtc\": \"recommendedLevelEtc\",\n        \"studyType\": \"30,20\",\n        \"consonants\": \"80,130\",\n        \"vowels\": \"150,40\",\n        \"recommendedLevel\": \"80,90\",\n        \"file\": \"1721961066411_오픈.txt\",\n        \"originalFile\": \"오픈.txt\",\n        \"fileUrl\": \"http://localhost:8080/file/download/1721961066411_오픈.txt/오픈.txt\"\n    },\n    \"studyType\": [\n        \"TS\",\n        \"BE\"\n    ],\n    \"consonants\": [\n        \"SH\",\n        \"TH\"\n    ],\n    \"vowels\": [\n        \"N\",\n        \"C\"\n    ],\n    \"recommendedLevel\": [\n        \"R8\",\n        \"R9\"\n    ]",
           "type": "json"
         }
       ]

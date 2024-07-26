@@ -2,7 +2,8 @@
  * @api {get} /admin/v1/users/{id}/levelTests/{testId} 30. 레벨테스트 상세조회
  *
  * @apiDescription 회원관리 > 회원  상세 조회 > 테스트 탭 <br/>
- * 없는 데이터가 많으니 id : 1028151 , testId : 6145 사용해주세요 <br/>
+ * 테스트가 필요하다면, id : M1372661465106388 , testId : 6153 사용해주세요 <br/>
+ * 회원id 의 회원 이름은 '김기훈' 입니다
  *
  *
  * @apiVersion 1.0.0
@@ -10,7 +11,7 @@
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/users/1028151/levelTests/6145'
+ * curl -i -X GET 'localhost:8080/admin/v1/users/M1372661465106388/levelTests/6153'
  *
  * @apiParam (Path) {String} id 회원 식별키
  * @apiParam (Path) {Number} LevelTest 식별키
@@ -57,51 +58,69 @@
  * @apiSuccess {String} levelTest.recommendedLevel Recommended Level(사용x 아래 recommendedLevel 사용해주세요 )
  * @apiSuccess {String} levelTest.recommendedLevelEtc Etc 이유
  *
- * @apiSuccess {String[]} recommendedLevel Recommended Level (선택X:0, 순서대로> 10,20,30,40,50,60,70,80,90)
- * @apiSuccess {String[]} vowels vowels(선택X: 10 / 순서대로 20,30,40,50,60,70,80,90,100,110,120,130,140,150)
- * @apiSuccess {String[]} consonants consonants(선택 X:0, 순서대로 > 10,20,30,40,50,60,70,80,90,100,110,120,130 )
- * @apiSuccess {String[]} studyType studyType(선택X :0/ 순서대로 10,20,30,40,50)
+ * @apiSuccess {String[]} recommendedLevel Recommended Level (순서대로> 10,20,30,40,50,60,70,80,90)
+ * @apiSuccess {String[]} vowels vowels(순서대로 20,30,40,50,60,70,80,90,100,110,120,130,140,150)
+ * @apiSuccess {String[]} consonants consonants(순서대로 > 10,20,30,40,50,60,70,80,90,100,110,120,130 )
+ * @apiSuccess {String[]} studyType studyType( 순서대로 10,20,30,40,50)
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 {
-    "id": 6118,
-    "userId": null,
-    "testStartTime": null,
-    "testEndTime": null,
-    "interviewer": "TEST",
-    "lbt": null,
-    "rbt": null,
-    "obt": null,
-    "testIp": null,
-    "file": "1720341620662_다운로드.jpeg",
-    "fileUrl": "http://localhost:8080/file/download/1720341620662_다운로드.jpeg/다운로드.jpeg",
-    "note": null,
-    "purpose": null,
-    "studyType": null,
-    "studyTypeEtc": "TEST4",
-    "familyBackground": null,
-    "usageType": null,
-    "occupation": null,
-    "spareTime": null,
-    "travelAbroad": null,
-    "futurePlans": null,
-    "consonants": null,
-    "vowels": null,
-    "clarity": "E",
-    "intonation": "VK",
-    "vocabulary": "AA",
-    "verbsTense": "NEVER",
-    "agreement": "NEVER",
-    "prepositions": "NEVER",
-    "articles": "NEVER",
-    "plurals": "NEVER",
-    "others": "NEVER",
-    "strongPoint": null,
-    "weakPoint": null,
-    "comprehension": "AE",
-    "confidence": "CL",
-    "comments": null,
-    "recommendedLevel": null,
-    "recommendedLevelEtc": null
-}
+    "levelTest": {
+        "id": 6153,
+        "userId": null,
+        "testStartTime": null,
+        "testEndTime": null,
+        "interviewer": "interviewer",
+        "lbt": "10",
+        "rbt": null,
+        "obt": null,
+        "testIp": null,
+        "note": null,
+        "purpose": null,
+        "studyTypeEtc": "이유",
+        "familyBackground": "familyBackground",
+        "usageType": null,
+        "occupation": null,
+        "spareTime": null,
+        "travelAbroad": "travelAbroad",
+        "futurePlans": null,
+        "clarity": "10",
+        "intonation": "20",
+        "vocabulary": "30",
+        "verbsTense": null,
+        "agreement": null,
+        "prepositions": "40",
+        "articles": null,
+        "plurals": null,
+        "others": null,
+        "strongPoint": "strongPoint",
+        "weakPoint": null,
+        "comprehension": "10",
+        "confidence": null,
+        "comments": null,
+        "recommendedLevelEtc": "recommendedLevelEtc",
+        "studyType": "30,20",
+        "consonants": "80,130",
+        "vowels": "150,40",
+        "recommendedLevel": "80,90",
+        "file": "1721961066411_오픈.txt",
+        "originalFile": "오픈.txt",
+        "fileUrl": "http://localhost:8080/file/download/1721961066411_오픈.txt/오픈.txt"
+    },
+    "studyType": [
+        "TS",
+        "BE"
+    ],
+    "consonants": [
+        "SH",
+        "TH"
+    ],
+    "vowels": [
+        "N",
+        "C"
+    ],
+    "recommendedLevel": [
+        "R8",
+        "R9"
+    ]
  */
