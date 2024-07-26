@@ -4415,7 +4415,7 @@
             "type": "String[]",
             "optional": false,
             "field": "studyType",
-            "description": "<p>What kind of English do you want to study and learn?<br/> [NONE: 선택 없음 , EC: English Conversation,<br/> BE: Business English ,TS:Toeic Speaking , I:Interview ,ETC: ETC]<br></p>"
+            "description": "<p>What kind of English do you want to study and learn?<br/> [EC: English Conversation,<br/> BE: Business English ,TS:Toeic Speaking , I:Interview ,ETC: ETC]<br></p>"
           },
           {
             "group": "Body",
@@ -4464,14 +4464,14 @@
             "type": "String[]",
             "optional": false,
             "field": "consonants",
-            "description": "<p>consonants <br/> [NONE : 선택 안함, R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH]<br/></p>"
+            "description": "<p>consonants <br/> [ R , L, P, F, B, V, Z, SH, EZH, CH, G, TTH, TH]<br/></p>"
           },
           {
             "group": "Body",
             "type": "String[]",
             "optional": false,
             "field": "vowels",
-            "description": "<p>vowels [NONE:선택안함, A,B,C,D,E,F,G,H,I,J,K,L,M,N]</p>"
+            "description": "<p>vowels [ 순서대로 &gt; A,B,C,D,E,F,G,H,I,J,K,L,M,N]</p>"
           },
           {
             "group": "Body",
@@ -4569,7 +4569,7 @@
             "type": "String[]",
             "optional": false,
             "field": "recommendedLevel",
-            "description": "<p>Recommended Level [NONE(선택안함), R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"
+            "description": "<p>Recommended Level [ R2:Pre// R3:300// R4:400//R5:500 //R6:600//R7:700://R8: 800//R9:900//ETC:ETC]</p>"
           },
           {
             "group": "Body",
