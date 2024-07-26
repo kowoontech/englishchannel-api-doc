@@ -547,7 +547,7 @@ define({ "api": [
             "type": "String[]",
             "optional": false,
             "field": "recommendedLevel",
-            "description": "<p>Recommended Level [NONE(선택안함), R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]</p>"
+            "description": "<p>Recommended Level [ R2:Pre// R3:300// R4:400//R5:500 //R6:600//R7:700://R8: 800//R9:900//ETC:ETC]</p>"
           },
           {
             "group": "Body",

@@ -74,7 +74,7 @@
                                             (10:almost nothing ,20:some parts ,30:most parts ,40:almost everything ,50:everything)
 
  * @apiParam (Body) {String} confidence Confidence(10:completely lacking ,20:lacking ,30:average ,40:above average,50:very confident)
- * @apiParam (Body) {String[]} recommendedLevel Recommended Level [NONE(선택안함), R2, R3,R4,R5,R6,R6,R7,R8,R9,ETC]
+ * @apiParam (Body) {String[]} recommendedLevel Recommended Level [ R2:Pre// R3:300// R4:400//R5:500 //R6:600//R7:700://R8: 800//R9:900//ETC:ETC]
  * @apiParam (Body) {String} recommendedLevelEtc Etc 이유
  *
  * @apiSuccessExample {json} SUCCESS
