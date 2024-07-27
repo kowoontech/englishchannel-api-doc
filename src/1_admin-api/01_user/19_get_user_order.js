@@ -1,11 +1,11 @@
 /**
- * @api {get} /admin/v1/users/{id}/orders 19. 회원 주문 조회
+ * @api {get} /admin/v1/users/{id}/orders/{orderId} 19. 회원 주문 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 주문 탭
  * 
  *
  * @apiVersion 1.0.0
- * @apiName admin_listUserOrder
+ * @apiName admin_getUserOrder
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST

@@ -2337,6 +2337,162 @@
   },
   {
     "type": "get",
+    "url": "/admin/v1/users/{id}/orders/{orderId}",
+    "title": "19. 회원 주문 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_getUserOrder",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "orderId",
+            "description": "<p>주문 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>주문 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "supplyAmount",
+            "description": "<p>공급가액 합계</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "discountAmount",
+            "description": "<p>할인액 합계</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "billingAmount",
+            "description": "<p>실청구금액 합계</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "refundAmount",
+            "description": "<p>환불금액 합계</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "orderProducts",
+            "description": "<p>주문 상세 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.id",
+            "description": "<p>주문 상세 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.amount",
+            "description": "<p>공급가액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.discountAmount",
+            "description": "<p>할인액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.billingAmount",
+            "description": "<p>실청구금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.refundAmount",
+            "description": "<p>환불금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.productType",
+            "description": "<p>분류</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.createdOn",
+            "description": "<p>주문일시 (yyyy-MM-dd HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.orderType",
+            "description": "<p>구분</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.retake",
+            "description": "<p>등록구분</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": \"O1374064016311096\",\n    \"supplyAmount\": 1320000,\n    \"discountAmount\": 264000,\n    \"billingAmount\": 1056000,\n    \"refundAmount\": 0,\n    \"orderProducts\": [\n        {\n            \"id\": \"I1374064016316423\",\n            \"name\": \"PTG (주2회 3개월)/3개월/24회\",\n            \"amount\": 1320000,\n            \"discountAmount\": 264000,\n            \"billingAmount\": 1056000,\n            \"refundAmount\": 0,\n            \"productType\": \"과정\",\n            \"createdOn\": \"2013-07-17 21:26\",\n            \"orderType\": \"신규\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/19_get_user_order.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/users/{id}/reservations/{reservationId}",
     "title": "14. 회원 예약 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 학습 탭</p>",
@@ -3231,16 +3387,16 @@
   },
   {
     "type": "get",
-    "url": "/admin/v1/users/{id}/orders",
-    "title": "19. 회원 주문 조회",
+    "url": "/admin/v1/users/{id}/orders/{orderId}/payments",
+    "title": "37. 회원 주문 결제/환불 목록 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
-    "name": "admin_listUserOrder",
+    "name": "admin_listUserOrderPayments",
     "group": "1._Admin_API_>_1._회원",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096/payments'",
         "type": "curl"
       }
     ],
@@ -3269,120 +3425,225 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>주문 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "supplyAmount",
-            "description": "<p>공급가액 합계</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "discountAmount",
-            "description": "<p>할인액 합계</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "billingAmount",
-            "description": "<p>실청구금액 합계</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "refundAmount",
-            "description": "<p>환불금액 합계</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "orderProducts",
-            "description": "<p>주문 상세 목록</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "orderProducts.id",
-            "description": "<p>주문 상세 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "orderProducts.amount",
-            "description": "<p>공급가액</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "orderProducts.discountAmount",
-            "description": "<p>할인액</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "orderProducts.billingAmount",
             "description": "<p>실청구금액</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "orderProducts.refundAmount",
+            "field": "paymentAmount",
+            "description": "<p>결제금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "refundAmount",
             "description": "<p>환불금액</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Number",
             "optional": false,
-            "field": "orderProducts.productType",
-            "description": "<p>분류</p>"
+            "field": "receivableAmount",
+            "description": "<p>미수금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "payments",
+            "description": "<p>결제 목록</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "orderProducts.createdOn",
-            "description": "<p>주문일시 (yyyy-MM-dd HH:mm)</p>"
+            "field": "payments.id",
+            "description": "<p>결제 식별키</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "orderProducts.orderType",
-            "description": "<p>구분</p>"
+            "field": "payments.paymentDate",
+            "description": "<p>결제일 (yyyy-MM-dd)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "orderProducts.retake",
-            "description": "<p>등록구분</p>"
+            "field": "payments.type",
+            "description": "<p>결제구분 (취소, 신규, 회수, 환불, 변경)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "payments.paymentMethod",
+            "description": "<p>결제방식 (카드, 예금, 현금)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "payments.paymentAmount",
+            "description": "<p>결제금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "payments.accountHolder",
+            "description": "<p>예금자명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "payments.cardCompany",
+            "description": "<p>카드사</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "payments.cardNumber",
+            "description": "<p>카드번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "payments.installmentMonths",
+            "description": "<p>카드할부 (n개월, 일시불)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "payments.approvalNumber",
+            "description": "<p>카드승인번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "payments.memo",
+            "description": "<p>결제메모</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "payments.modifierName",
+            "description": "<p>처리자</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "payments.isCancellable",
+            "description": "<p>취소 가능 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "refunds",
+            "description": "<p>결제 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "refunds.id",
+            "description": "<p>환불 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "refunds.refundDate",
+            "description": "<p>환불일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "refunds.orderProductName",
+            "description": "<p>상품명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "refunds.refundAmount",
+            "description": "<p>환불금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "refunds.cardAmount",
+            "description": "<p>카드금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "refunds.cashAmount",
+            "description": "<p>현금금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "refunds.depositAmount",
+            "description": "<p>계좌이체금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "refunds.bank",
+            "description": "<p>은행명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "refunds.accountNumber",
+            "description": "<p>계좌번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "refunds.refundReason",
+            "description": "<p>환불사유</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "refunds.modifierName",
+            "description": "<p>처리자</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": \"O1374064016311096\",\n    \"supplyAmount\": 1320000,\n    \"discountAmount\": 264000,\n    \"billingAmount\": 1056000,\n    \"refundAmount\": 0,\n    \"orderProducts\": [\n        {\n            \"id\": \"I1374064016316423\",\n            \"name\": \"PTG (주2회 3개월)/3개월/24회\",\n            \"amount\": 1320000,\n            \"discountAmount\": 264000,\n            \"billingAmount\": 1056000,\n            \"refundAmount\": 0,\n            \"productType\": \"과정\",\n            \"createdOn\": \"2013-07-17 21:26\",\n            \"orderType\": \"신규\"\n        }\n    ]\n}",
+          "content": "HTTP/1.1 200",
           "type": "json"
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/19_get_user_order.js",
+    "filename": "src/1_admin-api/01_user/37_list_user_payments.js",
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
