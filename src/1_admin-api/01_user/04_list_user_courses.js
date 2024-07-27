@@ -78,36 +78,6 @@
             "assistantTeacherName": "김나래",
             "createDate": "2023-07-19",
             "status": "정상"
-        },
-        {
-            "id": 72884,
-            "name": "PTM (주2회 3개월)/26.0회",
-            "lessonCount": 26.0,
-            "assignmentCount": 26.0,
-            "remainCount": 0.0,
-            "startDate": "2023-04-11",
-            "endDate": "2023-07-20",
-            "teacherId": "M1660267538951028",
-            "teacherName": "Adam",
-            "assistantTeacherId": "M1679893566676420",
-            "assistantTeacherName": "Daniel",
-            "createDate": "2023-03-31",
-            "status": "정상"
-        },
-        {
-            "id": 71840,
-            "name": "NEW PT 24회 3개월/24.0회",
-            "lessonCount": 24.0,
-            "assignmentCount": 24.0,
-            "remainCount": 0.0,
-            "startDate": "2023-01-09",
-            "endDate": "2023-04-08",
-            "teacherId": "M1523939117926947",
-            "teacherName": "Airin",
-            "assistantTeacherId": "M1660267538951028",
-            "assistantTeacherName": "Adam",
-            "createDate": "2022-12-30",
-            "status": "정상"
         }
     ],
     "totalCount": 4,
