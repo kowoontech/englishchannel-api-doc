@@ -29,6 +29,11 @@
  * @apiSuccess {String} workType 근무타입[A, C]
  * @apiSuccess {String} partnerTeacherId 파트너강사
  * @apiSuccess {Boolean} teacherActive 활동여부 [true:활동, false:비활동]
+ * @apiSuccess {Object[]} files 첨부파일 목록
+ * @apiSuccess {Number} files.id 첨부파일 식별키
+ * @apiSuccess {String} files.file 파일명
+ * @apiSuccess {String} files.originalFile 실제 파일명
+ * @apiSuccess {String} files.url 다운로드 URL
  *
  *
  * @apiSuccessExample {json} SUCCESS
@@ -50,6 +55,20 @@
     "workTime": "PM_16",
     "workType": "A",
     "partnerTeacherId": "M1567752637796763",
-    "active": false
+    "active": false,
+    "files": [
+        {
+            "id": 1,
+            "file": "1722059534694_1.jpeg",
+            "originalFile": "1.jpeg",
+            "url": "http://englishchannel.co.kr:8080/file/download/1722059534694_1.jpeg/1.jpeg"
+        },
+        {
+            "id": 2,
+            "file": "1722059534694_2.jpeg",
+            "originalFile": "2.jpeg",
+            "url": "http://englishchannel.co.kr:8080/file/download/1722059534694_2.jpeg/2.jpeg"
+        }
+    ]
 }
  */
