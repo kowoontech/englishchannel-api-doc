@@ -6665,8 +6665,8 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "createdName",
-            "description": "<p>등록자</p>"
+            "field": "date",
+            "description": "<p>날짜</p>"
           }
         ]
       },

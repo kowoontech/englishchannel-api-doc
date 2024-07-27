@@ -17,7 +17,7 @@
  * @apiSuccess {Number} id 추가 상담 식별키
  * @apiSuccess {String} details 추가 상담 내용
  * @apiSuccess {String} modifiedName 수정한사람
- * @apiSuccess {String} createdName 등록자
+ * @apiSuccess {String} date 날짜
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
