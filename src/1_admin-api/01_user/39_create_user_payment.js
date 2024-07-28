@@ -18,11 +18,12 @@
  * @apiSuccess {String} type 결제구분 (I:신규, P:회수, T:변경)
  * @apiSuccess {String} paymentDate 결제일 (yyyy-MM-dd)
  * @apiSuccess {Number} [cashAmount] 현금금액
- * @apiSuccess {Number} [depositAmount] 예금금액
  * @apiSuccess {Boolean} [isReceiptIssued] 현금영수증 여부
  * @apiSuccess {String} [receiptNumber] 현금영수증 번호
+ * @apiSuccess {Number} [depositAmount] 예금금액
  * @apiSuccess {String} [accountHolder] 예금자명
  * @apiSuccess {Number} receivableAmount 미수금액
+ * @apiSuccess {String} [recallDate] 회수예정일 (yyyy-MM-dd)
  * @apiSuccess {String} [receivableReason] 미수금사유
  * @apiSuccess {String} [memo] 결제메모
  * @apiSuccess {Object[]} [cards] 카드결제 목록

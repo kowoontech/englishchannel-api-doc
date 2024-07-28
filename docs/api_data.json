@@ -1064,13 +1064,6 @@
           },
           {
             "group": "Success 200",
-            "type": "Number",
-            "optional": true,
-            "field": "depositAmount",
-            "description": "<p>예금금액</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "Boolean",
             "optional": true,
             "field": "isReceiptIssued",
@@ -1085,6 +1078,13 @@
           },
           {
             "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "depositAmount",
+            "description": "<p>예금금액</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "String",
             "optional": true,
             "field": "accountHolder",
@@ -1096,6 +1096,13 @@
             "optional": false,
             "field": "receivableAmount",
             "description": "<p>미수금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "recallDate",
+            "description": "<p>회수예정일 (yyyy-MM-dd)</p>"
           },
           {
             "group": "Success 200",
