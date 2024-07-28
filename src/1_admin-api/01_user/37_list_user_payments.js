@@ -33,7 +33,7 @@
  * @apiSuccess {String} payments.memo 결제메모
  * @apiSuccess {String} payments.modifiedBy 처리자 식별키
  * @apiSuccess {String} payments.modifierName 처리자
- * @apiSuccess {Boolean} payments.isCancellable 취소 가능 여부
+ * @apiSuccess {Boolean} payments.isCancelable 취소 가능 여부
  * @apiSuccess {Object[]} refunds 환불 목록
  * @apiSuccess {String} refunds.id 환불 식별키
  * @apiSuccess {String} refunds.refundDate 환불일 (yyyy-MM-dd)
@@ -71,7 +71,7 @@
  *             "memo": "test",
  *             "modifiedBy": "M1717690790932481",
  *             "modifierName": null,
- *             "isCancellable": false
+ *             "isCancelable": false
  *         },
  *         {
  *             "id": "P1722166023495462",
@@ -89,7 +89,7 @@
  *             "memo": "test",
  *             "modifiedBy": "M1717690790932481",
  *             "modifierName": null,
- *             "isCancellable": false
+ *             "isCancelable": false
  *         }
  *     ],
  *     "refunds": [
