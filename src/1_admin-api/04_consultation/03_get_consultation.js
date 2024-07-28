@@ -41,21 +41,21 @@
                                               N, // 네이버예약<br>
                                               F, // 온라인상담<br>
                                               L, // 무료레벨테스트]
- * @apiSuccess {String} consultation.studyPurpose 공부목적[  COMMON_ENGLISH("10"), // 생활영어<br/>
-                                                         WORK("20"), //업무<br/>
-                                                         STUDY_ABROAD("30"), // 유학<br/>
-                                                         DEVELOPMENT("40"), // 자기개<br/>
-                                                         EMPLOYMENT("50"), // 취업<br/>
-                                                         ETC("60") // 기타]
- * @apiSuccess {String} consultation.callTime 통화가능시간 [  TIME_01("10"), // 06:30~08:00<br/>
-                                                        TIME_02("20"), // 08:00~10:00<br/>
-                                                        TIME_03("30"), // 10:00~12:00<br/>
-                                                        TIME_04("40"), // 12:00~14:00<br/>
-                                                        TIME_05("50"), // 14:00~16:00<br/>
-                                                        TIME_06("60"), // 16:00~18:00<br/>
-                                                        TIME_07("70"), // 18:00~20:00<br/>
-                                                        TIME_08("80"), // 20:00~21:00<br/>
-                                                        TIME_09("90"), // 기타]<br/>
+ * @apiSuccess {String} consultation.studyPurpose 공부목적[  COMMON_ENGLISH, // 생활영어<br/>
+                                                         WORK, //업무<br/>
+                                                         STUDY_ABROAD, // 유학<br/>
+                                                         DEVELOPMENT // 자기개<br/>
+                                                         EMPLOYMENT // 취업<br/>
+                                                         ETC // 기타]
+ * @apiSuccess {String} consultation.callTime 통화가능시간 [  TIME_01, // 06:30~08:00<br/>
+                                                        TIME_02, // 08:00~10:00<br/>
+                                                        TIME_03, // 10:00~12:00<br/>
+                                                        TIME_04, // 12:00~14:00<br/>
+                                                        TIME_05, // 14:00~16:00<br/>
+                                                        TIME_06, // 16:00~18:00<br/>
+                                                        TIME_07, // 18:00~20:00<br/>
+                                                        TIME_08, // 20:00~21:00<br/>
+                                                        TIME_09 // 기타]<br/>
  * @apiSuccess {String} consultation.status 처리상태 WAITING // 대기<br/>
                                                    NO_CONTACT,<br/>
                                                    UNVISITED,<br/>

@@ -6970,14 +6970,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "consultation.studyPurpose",
-            "description": "<p>공부목적[  COMMON_ENGLISH(&quot;10&quot;), // 생활영어<br/> WORK(&quot;20&quot;), //업무<br/> STUDY_ABROAD(&quot;30&quot;), // 유학<br/> DEVELOPMENT(&quot;40&quot;), // 자기개<br/> EMPLOYMENT(&quot;50&quot;), // 취업<br/> ETC(&quot;60&quot;) // 기타]</p>"
+            "description": "<p>공부목적[  COMMON_ENGLISH, // 생활영어<br/> WORK, //업무<br/> STUDY_ABROAD, // 유학<br/> DEVELOPMENT // 자기개<br/> EMPLOYMENT // 취업<br/> ETC // 기타]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "consultation.callTime",
-            "description": "<p>통화가능시간 [  TIME_01(&quot;10&quot;), // 06:30~08:00<br/> TIME_02(&quot;20&quot;), // 08:00~10:00<br/> TIME_03(&quot;30&quot;), // 10:00~12:00<br/> TIME_04(&quot;40&quot;), // 12:00~14:00<br/> TIME_05(&quot;50&quot;), // 14:00~16:00<br/> TIME_06(&quot;60&quot;), // 16:00~18:00<br/> TIME_07(&quot;70&quot;), // 18:00~20:00<br/> TIME_08(&quot;80&quot;), // 20:00~21:00<br/> TIME_09(&quot;90&quot;), // 기타]<br/></p>"
+            "description": "<p>통화가능시간 [  TIME_01, // 06:30~08:00<br/> TIME_02, // 08:00~10:00<br/> TIME_03, // 10:00~12:00<br/> TIME_04, // 12:00~14:00<br/> TIME_05, // 14:00~16:00<br/> TIME_06, // 16:00~18:00<br/> TIME_07, // 18:00~20:00<br/> TIME_08, // 20:00~21:00<br/> TIME_09 // 기타]<br/></p>"
           },
           {
             "group": "Success 200",
