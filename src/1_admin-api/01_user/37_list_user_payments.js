@@ -8,7 +8,7 @@
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096/payments'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments'
  *
  * @apiParam (Path) {String} id 회원 식별키
  * @apiParam (Path) {String} orderId 주문 식별키
@@ -46,4 +46,57 @@
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
+ {
+     "billingAmount": 1450000,
+     "paymentAmount": 0,
+     "refundAmount": 50000,
+     "receivableAmount": 1400000,
+     "payments": [
+         {
+             "id": "PC53609059824328",
+             "paymentDate": "2015-12-15",
+             "type": "신규",
+             "paymentMethod": "현금",
+             "paymentAmount": 50000,
+             "accountHolder": null,
+             "cardCompany": null,
+             "cardNumber": null,
+             "installmentMonths": null,
+             "approvalNumber": null,
+             "memo": null,
+             "modifierName": null,
+             "isCancellable": false
+         },
+         {
+             "id": "PC55434296335477",
+             "paymentDate": "2016-01-05",
+             "type": "환불",
+             "paymentMethod": "현금",
+             "paymentAmount": -50000,
+             "accountHolder": null,
+             "cardCompany": null,
+             "cardNumber": null,
+             "installmentMonths": null,
+             "approvalNumber": null,
+             "memo": "수업포기",
+             "modifierName": null,
+             "isCancellable": true
+         }
+     ],
+     "refunds": [
+         {
+             "id": "R55434296310738",
+             "refundDate": "2016-01-05",
+             "orderProductName": "NEW PT 24회 3개월/3개월/24회",
+             "refundAmount": 50000,
+             "cardAmount": 0,
+             "cashAmount": 50000,
+             "depositAmount": 0,
+             "bank": null,
+             "accountNumber": null,
+             "refundReason": "수업포기",
+             "modifierName": null
+         }
+     ]
+ }
  */
