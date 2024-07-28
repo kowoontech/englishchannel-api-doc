@@ -8763,16 +8763,16 @@
   },
   {
     "type": "get",
-    "url": "/admin/v1/statistics/sms/{id}",
+    "url": "/admin/v1/statistics/evaluations/{id}",
     "title": "06. LDF 상세 조회",
-    "description": "<p>통계보고서 &gt; 평가현황 &gt; 상세보기 &gt; LDF 보기<br/> id: 288497 사용해주세요</p>",
+    "description": "<p>통계보고서 &gt; 평가현황 &gt; 상세보기 &gt; LDF 보기<br/> ldfList 에 있는 ldf 식별키를 사용해 테스트 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_evaluation_ldf",
     "group": "1._Admin_API_>_6._통계보고서",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/ldfs/2884975'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/evaluations/362222'",
         "type": "curl"
       }
     ],
@@ -8838,7 +8838,7 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": 288497,\n    \"lesson\": \"Jan. 2nd\",\n    \"contentSp\": \"<p><span style=\\\"font-size: 20px\\\">impressed- 감명받은</span></p> <p><span style=\\\"font-size: 20px\\\">tired- 피곤한</span></p> <p><span style=\\\"font-size: 20px\\\">freshman- 1학년, 신입사원</span></p> <p><span style=\\\"font-size: 20px\\\">popular- 인기있는</span></p> <p><span style=\\\"font-size: 20px\\\">each other-&nbsp;</span><span style=\\\"font-size: 20px\\\">서로 서로&nbsp;</span></p> <p><span style=\\\"font-size: 20px\\\">outgoing- 외향적인</span></p> <p><span style=\\\"font-size: 20px\\\">hardworking- 성실한</span></p> <p><span style=\\\"font-size: 20px\\\">mutual- 서로의</span></p>\",\n    \"contentV\": \"<p><span style=\\\"font-size: 20px\\\">&nbsp; socialize- 어울리다</span></p> <p><span style=\\\"font-size: 20px\\\">hit it off- 죽이 잘 맞다</span></p> <p><span style=\\\"font-size: 20px\\\">blow me away- 놀라게하다</span></p> <p><span style=\\\"font-size: 20px\\\">life time partner- 평생동반자</span></p> <p><span style=\\\"font-size: 20px\\\">manage- (겨우) 해내다</span></p> <p><span style=\\\"font-size: 20px\\\">conflict-갈등</span></p>\",\n    \"contentSg\": \"<p>&nbsp;</p>\",\n    \"contentC\": \"<p>&nbsp;</p>\"\n}",
+          "content": "HTTP/1.1 200\n{\n    \"id\": 362222,\n    \"lesson\": \"SYM2 Issue 27\",\n    \"contentSp\": \"<p>subtle =SUH+dil</p> <p><br /></p> <p>people=PEE+ppol</p>\",\n    \"contentV\": \"<p>subtle (adj)=when something is not obvious or easy to notice</p> <p>EX: this coffee has a subtle berry taste</p> <p>EX: The facial expression is subtle, but you can tell she is a little uncomfortable</p> <p>EX: I will be subtle, and ask her casually about how she feels since she is so stressed</p> <p><br /></p> <p>to censor (v)/censorship (n)=to block content that is inappropriate</p> <p><br /></p> <p>graphic (adj)=shows too much violence, blood, sexual content, and something offensive</p> <p><br /></p> <p>to try one's damndest to + verb (idiom)=to try really hard to do or avoid something</p> <p><br /></p> <p>buy + something&nbsp; +with + (money, card, online back)</p> <p><br /></p> <p>young adult + fiction/fantasy/scifi</p> <p><br /></p> <p>false advertising (n)=wrong facts in ads</p> <p><br /></p> <p>skeptical/doubtful (adj)=to feel doubt</p> <p><br /></p> <p>predictable (adj)=easy to guess what will happen, can predict it, obvious</p> <p><br /></p> <p>subverts expectations (v+n)=to do something that is unexpected for the audience</p> <p>EX: The Matrix film subverted many people's expectations with the ending.</p> <p><br /></p> <p>nearly live (adj)=not exactly shot live, but very close to live based on time</p> <p><br /></p> <p>to manipulate (v)/manipulator (n)/manipulation (n)=to control people or situations using various hidden methods</p> <p><br /></p> <p>to convey (v)=to show something</p> <p>EX: The actor conveyed a lot of depression when they played that character</p> <p><br /></p> <p>absorb (v)=to take something and put it in side of yourself</p> <p>EX: a sponge absorbs water</p> <p>EX: a person absorbs knowledge</p>\",\n    \"contentSg\": \"<p>I don't much care about that</p> <p>Correction: I don't really care about that</p> <p><br /></p> <p>when I was like teenager</p> <p>Correction: when I was a teenager/ during my teen years/ when I was a teen/ when I was an adolescent</p> <p><br /></p> <p>I can choose to see or not</p> <p>Correction: I can choose to avoid most ads, but commercials are harder to avoid</p> <p><br /></p> <p>people have to think more after watching commercial</p> <p>Correction: people have to be more skeptical when watching a commercial</p>\",\n    \"contentC\": \"<p>https://www.happycow.net/reviews/charlies-grocery-seoul-317701</p>\"\n}",
           "type": "json"
         }
       ]
