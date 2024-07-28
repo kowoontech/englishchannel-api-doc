@@ -10,7 +10,15 @@
  * @apiExample {curl} REQUEST
  * curl -i -X POST 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/orderProducts/I1722163996604145/refund' \
  * -H "Content-Type: application/json" \
- * -d ""
+ * -d "{
+ *     "refundDate": "2024-07-29",
+ *     "cardAmount": 55000,
+ *     "cashAmount": null,
+ *     "depositAmount": null,
+ *     "bank": null,
+ *     "accountNumber": null,
+ *     "refundReason": ""
+ * }"
  *
  * @apiParam (Path) {String} id 회원 식별키
  * @apiParam (Path) {String} orderId 주문 식별키
