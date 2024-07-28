@@ -1549,6 +1549,53 @@ define({ "api": [
   },
   {
     "type": "delete",
+    "url": "/admin/v1/users/{id}/orders/{orderId}",
+    "title": "43. 회원 주문 전체 취소",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_deleteUserOrder",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "orderId",
+            "description": "<p>주문 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/43_delete_user_order.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "delete",
     "url": "/admin/v1/users/{id}/orders/{orderId}/payments/{paymentId}",
     "title": "40. 회원 주문 결제 취소",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
@@ -1599,6 +1646,60 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/40_delete_user_payment.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "delete",
+    "url": "/admin/v1/users/{id}/orders/{orderId}/orderProducts/{orderProductId}",
+    "title": "42. 회원 주문상세 취소",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_deleteUserOrderProduct",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/orderProducts/I1722163996604145'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "orderId",
+            "description": "<p>주문 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "orderProductId",
+            "description": "<p>주문상세 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/42_delete_user_orderProduct.js",
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
