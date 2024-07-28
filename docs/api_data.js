@@ -7411,7 +7411,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "status",
-            "description": "<p>처리상태(WAITING,NO_CONTACT,UNVISITED,RESERVED,NOT_REGISTERED,REGISTERED,NO_SHOW,MISSED)</p>"
+            "description": "<p>처리상태3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료, 7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)</p>"
           },
           {
             "group": "Query",
@@ -7501,7 +7501,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "list.callTime",
-            "description": "<p>통화시간</p>"
+            "description": "<p>통화시간 10 // 06:30~08:00 <br/> 20 // 08:00~10:00 <br/> 30 // 10:00~12:00<br/> 40 // 12:00~14:00<br/> 50 // 14:00~16:00<br/> 60 // 16:00~18:00<br/> 70 // 18:00~20:00<br/> 80, // 20:00~21:00<br/> 90, // 기타</p>"
           },
           {
             "group": "Success 200",
