@@ -6,7 +6,7 @@
  * 첫 조회 시 null , 검색 조건 시 전체일 때 ALL 사용
  *
  * @apiVersion 1.0.0
- * @apiName all_Sms
+ * @apiName all_waitingSms
  * @apiGroup 1. Admin API > 6. 통계보고서
  *
  * @apiExample {curl} REQUEST
