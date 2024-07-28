@@ -16,6 +16,7 @@
  * * TEACHERS:담당강사 목록
  * * CONSULTANTS:상담사 목록
  * * MEMBER_CONSULTATION_TYPES:회원 상담 구분 목록
+ * * CARD_COMPANIES:카드종류 목록
  *
  * @apiSuccess {Object[]} [teachers] 담당강사 목록
  * @apiSuccess {String} teachers.value 담당강사 키
@@ -26,6 +27,9 @@
  * @apiSuccess {Object[]} [memberConsultationTypes] 회원 상담 구분 목록
  * @apiSuccess {String} memberConsultationTypes.value 회원 상담 구분 키
  * @apiSuccess {String} memberConsultationTypes.label 회원 상담 구분명
+ * @apiSuccess {Object[]} [cardCompanies] 카드종류 목록
+ * @apiSuccess {String} cardCompanies.value 카드종류 키
+ * @apiSuccess {String} cardCompanies.label 카드종류
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
@@ -58,6 +62,16 @@
         {
             "value": "PROGRESS",
             "label": "진도"
+        }
+    ],
+    "cardCompanies": [
+        {
+            "value": "KB",
+            "label": "KB"
+        },
+        {
+            "value": "NH",
+            "label": "농협NH"
         }
     ]
  }

@@ -21,7 +21,7 @@ define({ "api": [
             "group": "Query",
             "optional": false,
             "field": "fields",
-            "description": "<p>조회할 옵션 (,로 복수 가능)<br/></p> <ul> <li>TEACHERS:담당강사 목록</li> <li>CONSULTANTS:상담사 목록</li> <li>MEMBER_CONSULTATION_TYPES:회원 상담 구분 목록</li> </ul>"
+            "description": "<p>조회할 옵션 (,로 복수 가능)<br/></p> <ul> <li>TEACHERS:담당강사 목록</li> <li>CONSULTANTS:상담사 목록</li> <li>MEMBER_CONSULTATION_TYPES:회원 상담 구분 목록</li> <li>CARD_COMPANIES:카드종류 목록</li> </ul>"
           }
         ]
       }
@@ -91,13 +91,34 @@ define({ "api": [
             "optional": false,
             "field": "memberConsultationTypes.label",
             "description": "<p>회원 상담 구분명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "cardCompanies",
+            "description": "<p>카드종류 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cardCompanies.value",
+            "description": "<p>카드종류 키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cardCompanies.label",
+            "description": "<p>카드종류</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n {\n    \"teachers\": [\n        {\n            \"value\": \"500982\",\n            \"label\": \"강사수정222\"\n        },\n        {\n            \"value\": \"M1400118325784523\",\n            \"label\": \"한가영\"\n        }\n    ],\n    \"consultants\": [\n        {\n            \"value\": \"U1370839971594082\",\n            \"label\": \"채인숙\"\n        },\n        {\n            \"value\": \"U1629938464848865\",\n            \"label\": \"신원준2\"\n        }\n    ],\n    \"memberConsultationTypes\": [\n        {\n            \"value\": \"COURSE_REGISTRATION\",\n            \"label\": \"수강등록\"\n        },\n        {\n            \"value\": \"PROGRESS\",\n            \"label\": \"진도\"\n        }\n    ]\n }",
+          "content": "HTTP/1.1 200\n {\n    \"teachers\": [\n        {\n            \"value\": \"500982\",\n            \"label\": \"강사수정222\"\n        },\n        {\n            \"value\": \"M1400118325784523\",\n            \"label\": \"한가영\"\n        }\n    ],\n    \"consultants\": [\n        {\n            \"value\": \"U1370839971594082\",\n            \"label\": \"채인숙\"\n        },\n        {\n            \"value\": \"U1629938464848865\",\n            \"label\": \"신원준2\"\n        }\n    ],\n    \"memberConsultationTypes\": [\n        {\n            \"value\": \"COURSE_REGISTRATION\",\n            \"label\": \"수강등록\"\n        },\n        {\n            \"value\": \"PROGRESS\",\n            \"label\": \"진도\"\n        }\n    ],\n    \"cardCompanies\": [\n        {\n            \"value\": \"KB\",\n            \"label\": \"KB\"\n        },\n        {\n            \"value\": \"NH\",\n            \"label\": \"농협NH\"\n        }\n    ]\n }",
           "type": "json"
         }
       ]
@@ -980,6 +1001,169 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/25_create_user_notes.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/users/{id}/orders/{orderId}/payments",
+    "title": "39. 회원 주문 결제 등록",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_createUserOrderPayment",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments' \\\n-H \"Content-Type: application/json\" \\\n-d \"\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "orderId",
+            "description": "<p>주문 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>결제구분 (I:신규, P:회수, T:변경)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "paymentDate",
+            "description": "<p>결제일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "cashAmount",
+            "description": "<p>현금금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "depositAmount",
+            "description": "<p>예금금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": true,
+            "field": "isReceiptIssued",
+            "description": "<p>현금영수증 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "receiptNumber",
+            "description": "<p>현금영수증 번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "accountHolder",
+            "description": "<p>예금자명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "receivableAmount",
+            "description": "<p>미수금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "receivableReason",
+            "description": "<p>미수금사유</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "memo",
+            "description": "<p>결제메모</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "cards",
+            "description": "<p>카드결제 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "cards.amount",
+            "description": "<p>결제금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cards.cardCompany",
+            "description": "<p>카드종류 (카드종류는 '01. 공통 옵션 목록 조회'에서 조회할 수 있습니다.)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cards.cardNumber",
+            "description": "<p>카드번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "cards.installmentMonths",
+            "description": "<p>할개월수 (숫자만, 0 또는 null: 일시불)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "cards.approvalNumber",
+            "description": "<p>승인번호</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/39_create_user_payment.js",
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {
