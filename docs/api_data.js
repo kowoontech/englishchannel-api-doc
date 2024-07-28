@@ -1014,7 +1014,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"type\": \"I\",\n    \"paymentDate\": \"2024-07-28\",\n    \"cashAmount\": null,\n    \"isReceiptIssued\": false,\n    \"receiptNumber\": \"\",\n    \"depositAmount\": null,\n    \"accountHolder\": \"테스터\",\n    \"receivableAmount\": 51000,\n    \"recallDate\": null,\n    \"receivableReason\": \"test\",\n    \"memo\": \"test\",\n    \"cards\": [\n        {\n            \"amount\": 1000,\n            \"cardCompany\": \"KB\",\n            \"cardNumber\": \"12345\",\n            \"installmentMonths\": null,\n            \"approvalNumber\": \"\"\n        },\n        {\n            \"amount\": 1000,\n            \"cardCompany\": \"NH\",\n            \"cardNumber\": \"00000\",\n            \"installmentMonths\": null,\n            \"approvalNumber\": \"\"\n        }\n    ]\n}\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/payments' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"type\": \"I\",\n    \"paymentDate\": \"2024-07-28\",\n    \"cashAmount\": null,\n    \"isReceiptIssued\": false,\n    \"receiptNumber\": \"\",\n    \"depositAmount\": null,\n    \"accountHolder\": \"테스터\",\n    \"receivableAmount\": 51000,\n    \"recallDate\": null,\n    \"receivableReason\": \"test\",\n    \"memo\": \"test\",\n    \"cards\": [\n        {\n            \"amount\": 1000,\n            \"cardCompany\": \"KB\",\n            \"cardNumber\": \"12345\",\n            \"installmentMonths\": null,\n            \"approvalNumber\": \"\"\n        },\n        {\n            \"amount\": 1000,\n            \"cardCompany\": \"NH\",\n            \"cardNumber\": \"00000\",\n            \"installmentMonths\": null,\n            \"approvalNumber\": \"\"\n        }\n    ]\n}\"",
         "type": "curl"
       }
     ],
@@ -1455,7 +1455,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments/P1450151124963516'",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/payments/P1722166023495462'",
         "type": "curl"
       }
     ],
@@ -1475,134 +1475,18 @@ define({ "api": [
             "optional": false,
             "field": "orderId",
             "description": "<p>주문 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "paymentId",
+            "description": "<p>결제 식별키</p>"
           }
         ]
       }
     },
     "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "type",
-            "description": "<p>결제구분 (I:신규, P:회수, T:변경)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "paymentDate",
-            "description": "<p>결제일 (yyyy-MM-dd)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": true,
-            "field": "cashAmount",
-            "description": "<p>현금금액</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Boolean",
-            "optional": true,
-            "field": "isReceiptIssued",
-            "description": "<p>현금영수증 여부</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "receiptNumber",
-            "description": "<p>현금영수증 번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": true,
-            "field": "depositAmount",
-            "description": "<p>예금금액</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "accountHolder",
-            "description": "<p>예금자명</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "receivableAmount",
-            "description": "<p>미수금액</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "recallDate",
-            "description": "<p>회수예정일 (yyyy-MM-dd)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "receivableReason",
-            "description": "<p>미수금사유</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "memo",
-            "description": "<p>결제메모</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": true,
-            "field": "cards",
-            "description": "<p>카드결제 목록</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "cards.amount",
-            "description": "<p>결제금액</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "cards.cardCompany",
-            "description": "<p>카드종류 (카드종류는 '01. 공통 옵션 목록 조회'에서 조회할 수 있습니다.)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "cards.cardNumber",
-            "description": "<p>카드번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": true,
-            "field": "cards.installmentMonths",
-            "description": "<p>할개월수 (숫자만, 0 또는 null: 일시불)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "cards.approvalNumber",
-            "description": "<p>승인번호</p>"
-          }
-        ]
-      },
       "examples": [
         {
           "title": "SUCCESS",
