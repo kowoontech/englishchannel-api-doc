@@ -1607,6 +1607,72 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/admin/v1/templates/1",
+    "title": "38. 특이사항 템플릿",
+    "description": "<p>회원관리 &gt; 회원등록 &gt; 특이사항 필드에 들어 갈 템플릿<br/></p>",
+    "version": "1.0.0",
+    "name": "admin_getRegisterNoteTemplate",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/templates/1'",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>템플릿 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "text",
+            "description": "<p>템플릿</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>템플릿에 대한 설명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "modifiedBy",
+            "description": "<p>작성자 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "modifiedName",
+            "description": "<p>작성자이름</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": 1,\n    \"text\": \"■ 등록조건 : \\n ■ 교재 : \\n ■ 교재이력 : \\n ■ 차량등록 : \\n ■ 기타 : \",\n    \"description\": \"회원 특이사항\",\n    \"modifiedBy\": \"U1658468539178711\",\n    \"modifiedName\": \"박수현\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/38_get_template_registerMemberNote.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/users/{id}",
     "title": "02. 회원 기본정보 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 기본 탭</p>",
