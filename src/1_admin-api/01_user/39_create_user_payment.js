@@ -10,7 +10,35 @@
  * @apiExample {curl} REQUEST
  * curl -i -X POST 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments' \
  * -H "Content-Type: application/json" \
- * -d ""
+ * -d "{
+ *     "type": "I",
+ *     "paymentDate": "2024-07-28",
+ *     "cashAmount": null,
+ *     "isReceiptIssued": false,
+ *     "receiptNumber": "",
+ *     "depositAmount": null,
+ *     "accountHolder": "테스터",
+ *     "receivableAmount": 51000,
+ *     "recallDate": null,
+ *     "receivableReason": "test",
+ *     "memo": "test",
+ *     "cards": [
+ *         {
+ *             "amount": 1000,
+ *             "cardCompany": "KB",
+ *             "cardNumber": "12345",
+ *             "installmentMonths": null,
+ *             "approvalNumber": ""
+ *         },
+ *         {
+ *             "amount": 1000,
+ *             "cardCompany": "NH",
+ *             "cardNumber": "00000",
+ *             "installmentMonths": null,
+ *             "approvalNumber": ""
+ *         }
+ *     ]
+ * }"
  *
  * @apiParam (Path) {String} id 회원 식별키
  * @apiParam (Path) {String} orderId 주문 식별키
