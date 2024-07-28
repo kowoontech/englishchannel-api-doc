@@ -3462,7 +3462,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096/payments'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments'",
         "type": "curl"
       }
     ],
@@ -3704,7 +3704,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
+          "content": "HTTP/1.1 200\n {\n     \"billingAmount\": 1450000,\n     \"paymentAmount\": 0,\n     \"refundAmount\": 50000,\n     \"receivableAmount\": 1400000,\n     \"payments\": [\n         {\n             \"id\": \"PC53609059824328\",\n             \"paymentDate\": \"2015-12-15\",\n             \"type\": \"신규\",\n             \"paymentMethod\": \"현금\",\n             \"paymentAmount\": 50000,\n             \"accountHolder\": null,\n             \"cardCompany\": null,\n             \"cardNumber\": null,\n             \"installmentMonths\": null,\n             \"approvalNumber\": null,\n             \"memo\": null,\n             \"modifierName\": null,\n             \"isCancellable\": false\n         },\n         {\n             \"id\": \"PC55434296335477\",\n             \"paymentDate\": \"2016-01-05\",\n             \"type\": \"환불\",\n             \"paymentMethod\": \"현금\",\n             \"paymentAmount\": -50000,\n             \"accountHolder\": null,\n             \"cardCompany\": null,\n             \"cardNumber\": null,\n             \"installmentMonths\": null,\n             \"approvalNumber\": null,\n             \"memo\": \"수업포기\",\n             \"modifierName\": null,\n             \"isCancellable\": true\n         }\n     ],\n     \"refunds\": [\n         {\n             \"id\": \"R55434296310738\",\n             \"refundDate\": \"2016-01-05\",\n             \"orderProductName\": \"NEW PT 24회 3개월/3개월/24회\",\n             \"refundAmount\": 50000,\n             \"cardAmount\": 0,\n             \"cashAmount\": 50000,\n             \"depositAmount\": 0,\n             \"bank\": null,\n             \"accountNumber\": null,\n             \"refundReason\": \"수업포기\",\n             \"modifierName\": null\n         }\n     ]\n }",
           "type": "json"
         }
       ]
