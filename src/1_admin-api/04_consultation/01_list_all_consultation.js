@@ -10,7 +10,7 @@
  * @apiGroup 1. Admin API > 4. 상담관리
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/consultations?statusCodes=3&statusCodes=7
+ * curl -i -X GET 'http://localhost:8080/admin/v1/consultations?status=4
  *
  * @apiParam (Query) {String} consultationDateFrom 등록일(시작) (yyyy-MM-dd)
  * @apiParam (Query) {String} consultationDateTo 등록일(끝) (yyyy-MM-dd)
@@ -48,6 +48,8 @@
  * @apiSuccess {String} list.smsList.smsId  문자식별키
  * @apiSuccess {String} list.smsList.recipientPhone  받는사람핸드폰번호
  * @apiSuccess {String} list.smsList.recipientName  받는사람이름
+ * @apiSuccess {String} list.smsList.senderPhone  보내는 사람 번호
+ * @apiSuccess {String} list.smsList.senderName  보내는 사람 이름
  * @apiSuccess {String} list.smsList.sendDate  전송날짜(yyyy-MM-dd HH:mm:ss)
  * @apiSuccess {String} list.smsList.status  발송성공여부(SUCCESS)
 
@@ -67,146 +69,197 @@
 {
     "list": [
         {
-            "id": 26268,
-            "type": "N",
-            "status": "7",
-            "name": "원지연:상담완료",
-            "phone": null,
-            "company": null,
-            "callTime": null,
-            "visitDate": "2023-12-30T11:30:00",
-            "createdOn": "2023-12-29T21:48:08",
-            "creatorName": "박지수",
-            "details": "[레테] 12/30(토) 11:30am Steven.T 원지연 010-2727-7972"
-        },
-        {
-            "id": 26223,
-            "type": "N",
-            "status": "7",
-            "name": "유병주:상담완료",
-            "phone": null,
-            "company": null,
-            "callTime": null,
-            "visitDate": "2024-01-02T14:00:00",
-            "createdOn": "2023-12-26T11:19:06",
-            "creatorName": "손진",
-            "details": "[레테] 12/27(수) 14:00pm AlexT 유병주 010-2798-4312>> 21년도 등록고객으로 재상담받기를 원하심. >>예약변경: 상으로 예약상담변경요청하심.  >> [레테] 01/02(화) 14:00pm AlexT 유병주 010-2798-4312"
-        },
-        {
-            "id": 26222,
-            "type": "N",
-            "status": "7",
-            "name": "조승인:상담완료",
-            "phone": null,
-            "company": null,
-            "callTime": null,
-            "visitDate": "2023-12-27T09:30:00",
-            "createdOn": "2023-12-26T11:07:51",
-            "creatorName": "손진",
-            "details": "[레테] 12/27(수) 9:30am OliviaT 조승인 010-3223-7499 "
-        },
-        {
-            "id": 26200,
-            "type": "N",
-            "status": "7",
-            "name": "소현진:상담완료",
-            "phone": null,
-            "company": null,
-            "callTime": null,
-            "visitDate": "2023-12-21T20:30:00",
-            "createdOn": "2023-12-21T14:13:59",
-            "creatorName": "한시내",
-            "details": "[레테] 12/21(목) 20:30pm AlexT 소현진 010-2520-6618"
-        },
-        {
-            "id": 26185,
-            "type": "N",
-            "status": "7",
-            "name": "안솔:상담완료",
-            "phone": null,
-            "company": null,
-            "callTime": null,
-            "visitDate": "2023-12-20T17:30:00",
-            "createdOn": "2023-12-20T07:28:48",
-            "creatorName": "손진",
-            "details": "[레테] 12/20(수) 17:30pm OliviaT 안솔 010-9319-6207"
-        },
-        {
-            "id": 26160,
+            "listNumber": 42,
+            "id": 26306,
             "type": "P",
-            "status": "7",
-            "name": "최시연:상담완료",
-            "phone": null,
-            "company": null,
-            "callTime": null,
-            "visitDate": "2023-12-18T18:30:00",
-            "createdOn": "2023-12-18T17:18:13",
-            "creatorName": "한시내",
-            "details": "[레테] 12/18(월) 18:30pm SadieT 최시연님 010-4142-5723"
+            "status": "4",
+            "name": "test이름1",
+            "cellPhone": "3",
+            "company": "ABC Corp",
+            "callTime": "40",
+            "visitDate": "2021-12-12 00:00:00",
+            "consultationDate": "2021-12-12 00:00:00",
+            "creatorName": null,
+            "details": "11",
+            "smsList": [
+                {
+                    "content": "문자메세지",
+                    "smsId": "5",
+                    "recipientPhone": "3",
+                    "recipientName": "김대한4",
+                    "senderPhone": "123-456-7899",
+                    "senderName": "고길동",
+                    "sendDate": "2012-12-26 00:00:00",
+                    "status": "SUCCESS"
+                },
+                {
+                    "content": "문자메세지",
+                    "smsId": "5",
+                    "recipientPhone": "3",
+                    "recipientName": "김대한3",
+                    "senderPhone": "123-456-7899",
+                    "senderName": "고길동",
+                    "sendDate": "2012-12-25 00:00:00",
+                    "status": "SUCCESS"
+                },
+                {
+                    "content": "문자메세지",
+                    "smsId": "5",
+                    "recipientPhone": "3",
+                    "recipientName": "김대한2",
+                    "senderPhone": "123-456-7899",
+                    "senderName": "고길동",
+                    "sendDate": "2012-12-23 00:00:00",
+                    "status": "SUCCESS"
+                }
+            ]
         },
         {
-            "id": 26159,
-            "type": "V",
-            "status": "7",
-            "name": "유서현:상담완료",
-            "phone": null,
-            "company": null,
-            "callTime": null,
+            "listNumber": 41,
+            "id": 26305,
+            "type": "P",
+            "status": "4",
+            "name": "test이름1",
+            "cellPhone": "010-1111-1111",
+            "company": "ABC Corp",
+            "callTime": "40",
             "visitDate": null,
-            "createdOn": "2023-12-18T17:14:12",
-            "creatorName": "박수현",
-            "details": "예약없이 워크인으로 오셔서 레테없이 상담도와드림. 고3여학생, 어머니와 상의 후 12/22(금)까지 오시면 당일할인 적용해드리기로 함. 증명서(수강확인서,출석확인서)는 어머니 이름으로 발급 해드리기로 함."
+            "consultationDate": null,
+            "creatorName": null,
+            "details": "123",
+            "smsList": []
         },
         {
-            "id": 26153,
-            "type": "N",
-            "status": "7",
-            "name": "윤소민:상담완료",
-            "phone": null,
-            "company": null,
-            "callTime": null,
-            "visitDate": "2023-12-18T20:00:00",
-            "createdOn": "2023-12-18T10:14:01",
-            "creatorName": "박수현",
-            "details": "[레테] 12/18(월) 8:00pm Alex.T 윤소민 010-3096-3175  예약확인전화 드릴때 화상수업도 가능한지 문의하심. 대면수업으로 진행하나 불가시엔 화상,전화수업으로 대체 가능하다고 말씀드림."
+            "listNumber": 40,
+            "id": 26304,
+            "type": "P",
+            "status": "4",
+            "name": "test이름1",
+            "cellPhone": "010-1111-1111",
+            "company": "ABC Corp",
+            "callTime": "40",
+            "visitDate": null,
+            "consultationDate": null,
+            "creatorName": null,
+            "details": "test내용2",
+            "smsList": []
         },
         {
-            "id": 26096,
-            "type": "N",
-            "status": "7",
-            "name": "장이룸:상담완료",
-            "phone": null,
-            "company": null,
-            "callTime": null,
-            "visitDate": "2023-12-13T20:30:00",
-            "createdOn": "2023-12-11T16:49:46",
-            "creatorName": "박지수",
-            "details": "[레테] 12/13(수) 8:30pm Sadie.T 장이룸 010-3844-8052"
+            "listNumber": 39,
+            "id": 26303,
+            "type": "P",
+            "status": "4",
+            "name": "test이름",
+            "cellPhone": "010-1111-1111",
+            "company": "ABC Corp",
+            "callTime": "40",
+            "visitDate": null,
+            "consultationDate": null,
+            "creatorName": null,
+            "details": "test내용2",
+            "smsList": []
         },
         {
-            "id": 26082,
-            "type": "N",
-            "status": "7",
-            "name": "김민철:상담완료",
-            "phone": null,
-            "company": null,
-            "callTime": null,
-            "visitDate": "2023-12-12T10:30:00",
-            "createdOn": "2023-12-08T21:08:02",
-            "creatorName": "한시내",
-            "details": "[레테] 12/9(토) 10:30am SadieT 김민철님 010-7175-5317 >> 방문예약인지 몰랐다고 하시며 취소하심. 월요일에 시간 확인하고 다시 예약하겠다고 하심  >>상담 재예약주심(전화로 시간준수 안내완료) [레테] 12/12(화) 10:30am Olivia.T 김민철 010-7175-5317"
+            "listNumber": 38,
+            "id": 26300,
+            "type": "P",
+            "status": "4",
+            "name": "test이름2",
+            "cellPhone": "010-1111-1111",
+            "company": "ABC Corp",
+            "callTime": "40",
+            "visitDate": "2021-12-12 12:12:12",
+            "consultationDate": "2021-12-12 12:12:12",
+            "creatorName": null,
+            "details": "test내용2",
+            "smsList": []
+        },
+        {
+            "listNumber": 37,
+            "id": 26299,
+            "type": "P",
+            "status": "4",
+            "name": "test이름1",
+            "cellPhone": "010-1111-1111",
+            "company": "ABC Corp",
+            "callTime": "40",
+            "visitDate": "2021-12-12 12:12:12",
+            "consultationDate": "2021-12-12 12:12:12",
+            "creatorName": null,
+            "details": "test내용2",
+            "smsList": []
+        },
+        {
+            "listNumber": 36,
+            "id": 26297,
+            "type": "P",
+            "status": "4",
+            "name": "test이름4",
+            "cellPhone": "010-1111-1113",
+            "company": "ABC Corp",
+            "callTime": "40",
+            "visitDate": "2021-12-12 00:00:00",
+            "consultationDate": null,
+            "creatorName": null,
+            "details": "123",
+            "smsList": []
+        },
+        {
+            "listNumber": 35,
+            "id": 26296,
+            "type": "P",
+            "status": "4",
+            "name": "test이름4",
+            "cellPhone": "010-1111-1113",
+            "company": "ABC Corp",
+            "callTime": "40",
+            "visitDate": null,
+            "consultationDate": null,
+            "creatorName": null,
+            "details": "test내용2",
+            "smsList": []
+        },
+        {
+            "listNumber": 34,
+            "id": 26295,
+            "type": "P",
+            "status": "4",
+            "name": "test이름3",
+            "cellPhone": "010-1111-1113",
+            "company": "ABC Corp",
+            "callTime": "40",
+            "visitDate": "2021-12-12 00:00:00",
+            "consultationDate": "2021-12-12 00:00:00",
+            "creatorName": null,
+            "details": "test내용2",
+            "smsList": []
+        },
+        {
+            "listNumber": 33,
+            "id": 26294,
+            "type": "P",
+            "status": "4",
+            "name": "test이름",
+            "cellPhone": "010-1111-1113",
+            "company": "ABC Corp",
+            "callTime": "40",
+            "visitDate": "2021-12-12 00:00:00",
+            "consultationDate": "2021-12-12 00:00:00",
+            "creatorName": null,
+            "details": "test내용2",
+            "smsList": []
         }
     ],
-    "totalCount": 476,
+    "totalCount": 42,
     "page": 1,
     "limit": 10,
     "pageSize": 10,
     "startPage": 1,
-    "totalPage": 48,
-    "endPage": 10,
-    "hasNext": true,
+    "totalPage": 5,
+    "endPage": 5,
+    "hasNext": false,
+    "hasPrev": false,
     "isFirst": true,
-    "isLast": false,
-    "hasPrev": false
+    "isLast": true
 }
  */
