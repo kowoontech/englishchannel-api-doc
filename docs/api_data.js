@@ -4020,6 +4020,13 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "payments.cardCompany",
+            "description": "<p>카드사 코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "payments.cardCompanyLabel",
             "description": "<p>카드사</p>"
           },
           {
@@ -4031,9 +4038,16 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Number",
             "optional": false,
             "field": "payments.installmentMonths",
+            "description": "<p>카드할부 개월수 (null: 일시불)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "payments.installmentMonthsLabel",
             "description": "<p>카드할부 (n개월, 일시불)</p>"
           },
           {
@@ -4054,6 +4068,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "payments.modifiedBy",
+            "description": "<p>처리자 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "payments.modifierName",
             "description": "<p>처리자</p>"
           },
@@ -4069,7 +4090,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": false,
             "field": "refunds",
-            "description": "<p>결제 목록</p>"
+            "description": "<p>환불 목록</p>"
           },
           {
             "group": "Success 200",
@@ -4153,7 +4174,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n {\n     \"billingAmount\": 1450000,\n     \"paymentAmount\": 0,\n     \"refundAmount\": 50000,\n     \"receivableAmount\": 1400000,\n     \"payments\": [\n         {\n             \"id\": \"PC53609059824328\",\n             \"paymentDate\": \"2015-12-15\",\n             \"type\": \"신규\",\n             \"paymentMethod\": \"현금\",\n             \"paymentAmount\": 50000,\n             \"accountHolder\": null,\n             \"cardCompany\": null,\n             \"cardNumber\": null,\n             \"installmentMonths\": null,\n             \"approvalNumber\": null,\n             \"memo\": null,\n             \"modifierName\": null,\n             \"isCancellable\": false\n         },\n         {\n             \"id\": \"PC55434296335477\",\n             \"paymentDate\": \"2016-01-05\",\n             \"type\": \"환불\",\n             \"paymentMethod\": \"현금\",\n             \"paymentAmount\": -50000,\n             \"accountHolder\": null,\n             \"cardCompany\": null,\n             \"cardNumber\": null,\n             \"installmentMonths\": null,\n             \"approvalNumber\": null,\n             \"memo\": \"수업포기\",\n             \"modifierName\": null,\n             \"isCancellable\": true\n         }\n     ],\n     \"refunds\": [\n         {\n             \"id\": \"R55434296310738\",\n             \"refundDate\": \"2016-01-05\",\n             \"orderProductName\": \"NEW PT 24회 3개월/3개월/24회\",\n             \"refundAmount\": 50000,\n             \"cardAmount\": 0,\n             \"cashAmount\": 50000,\n             \"depositAmount\": 0,\n             \"bank\": null,\n             \"accountNumber\": null,\n             \"refundReason\": \"수업포기\",\n             \"modifierName\": null\n         }\n     ]\n }",
+          "content": "HTTP/1.1 200\n\"{\n    \"billingAmount\": 55000,\n    \"paymentAmount\": 0,\n    \"refundAmount\": 55000,\n    \"receivableAmount\": 0,\n    \"payments\": [\n        {\n            \"id\": \"P1722165476776015\",\n            \"paymentDate\": \"2024-07-28\",\n            \"type\": \"신규\",\n            \"paymentMethod\": \"현금\",\n            \"paymentAmount\": 1000,\n            \"accountHolder\": null,\n            \"cardCompany\": null,\n            \"cardCompanyLabel\": null,\n            \"cardNumber\": null,\n            \"installmentMonths\": null,\n            \"installmentMonthsLabel\": \"일시불\",\n            \"approvalNumber\": null,\n            \"memo\": \"test\",\n            \"modifiedBy\": \"M1717690790932481\",\n            \"modifierName\": null,\n            \"isCancellable\": false\n        },\n        {\n            \"id\": \"P1722166023495462\",\n            \"paymentDate\": \"2024-07-28\",\n            \"type\": \"신규\",\n            \"paymentMethod\": \"예금\",\n            \"paymentAmount\": 1000,\n            \"accountHolder\": \"테스터\",\n            \"cardCompany\": null,\n            \"cardCompanyLabel\": null,\n            \"cardNumber\": null,\n            \"installmentMonths\": null,\n            \"installmentMonthsLabel\": \"일시불\",\n            \"approvalNumber\": null,\n            \"memo\": \"test\",\n            \"modifiedBy\": \"M1717690790932481\",\n            \"modifierName\": null,\n            \"isCancellable\": false\n        }\n    ],\n    \"refunds\": [\n        {\n            \"id\": \"R1722186546729674\",\n            \"refundDate\": \"2024-07-29\",\n            \"orderProductName\": \"PTG (주1회 1개월)/0개월/1회\",\n            \"refundAmount\": 55000,\n            \"cardAmount\": 55000,\n            \"cashAmount\": 0,\n            \"depositAmount\": 0,\n            \"bank\": null,\n            \"accountNumber\": null,\n            \"refundReason\": \"\",\n            \"modifierName\": null\n        }\n    ]\n}\"",
           "type": "json"
         }
       ]
@@ -5906,6 +5927,97 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/27_update_user_notes.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "put",
+    "url": "/admin/v1/users/{id}/orders/{orderId}/payments/paymentId",
+    "title": "44. 회원 주문 결제 수정",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
+    "version": "1.0.0",
+    "name": "admin_updateUserOrderPayment",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/payments/P1722166085902400' \\\n-H \"Content-Type: application/json\" \\\n-d \"\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "orderId",
+            "description": "<p>주문 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "paymentId",
+            "description": "<p>결제 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "modifiedBy",
+            "description": "<p>처리자 식벌키 (처리자는 '01. 공통 옵션 목록 조회'에서 조회할 수 있습니다.)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "cardCompany",
+            "description": "<p>카드종류 (카드종류는 '01. 공통 옵션 목록 조회'에서 조회할 수 있습니다.)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "cardNumber",
+            "description": "<p>카드번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "installmentMonths",
+            "description": "<p>할개월수 (숫자만, 0 또는 null: 일시불)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "approvalNumber",
+            "description": "<p>승인번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/44_update_user_payment.js",
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {

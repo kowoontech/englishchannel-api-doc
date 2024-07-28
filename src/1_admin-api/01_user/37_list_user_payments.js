@@ -24,14 +24,17 @@
  * @apiSuccess {String} payments.paymentMethod 결제방식 (카드, 예금, 현금)
  * @apiSuccess {Number} payments.paymentAmount 결제금액
  * @apiSuccess {String} payments.accountHolder 예금자명
- * @apiSuccess {String} payments.cardCompany 카드사
+ * @apiSuccess {String} payments.cardCompany 카드사 코드
+ * @apiSuccess {String} payments.cardCompanyLabel 카드사
  * @apiSuccess {String} payments.cardNumber 카드번호
- * @apiSuccess {String} payments.installmentMonths 카드할부 (n개월, 일시불)
+ * @apiSuccess {Number} payments.installmentMonths 카드할부 개월수 (null: 일시불)
+ * @apiSuccess {String} payments.installmentMonthsLabel 카드할부 (n개월, 일시불)
  * @apiSuccess {String} payments.approvalNumber 카드승인번호
  * @apiSuccess {String} payments.memo 결제메모
+ * @apiSuccess {String} payments.modifiedBy 처리자 식별키
  * @apiSuccess {String} payments.modifierName 처리자
  * @apiSuccess {Boolean} payments.isCancellable 취소 가능 여부
- * @apiSuccess {Object[]} refunds 결제 목록
+ * @apiSuccess {Object[]} refunds 환불 목록
  * @apiSuccess {String} refunds.id 환불 식별키
  * @apiSuccess {String} refunds.refundDate 환불일 (yyyy-MM-dd)
  * @apiSuccess {String} refunds.orderProductName 상품명
@@ -46,57 +49,63 @@
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
- {
-     "billingAmount": 1450000,
-     "paymentAmount": 0,
-     "refundAmount": 50000,
-     "receivableAmount": 1400000,
-     "payments": [
-         {
-             "id": "PC53609059824328",
-             "paymentDate": "2015-12-15",
-             "type": "신규",
-             "paymentMethod": "현금",
-             "paymentAmount": 50000,
-             "accountHolder": null,
-             "cardCompany": null,
-             "cardNumber": null,
-             "installmentMonths": null,
-             "approvalNumber": null,
-             "memo": null,
-             "modifierName": null,
-             "isCancellable": false
-         },
-         {
-             "id": "PC55434296335477",
-             "paymentDate": "2016-01-05",
-             "type": "환불",
-             "paymentMethod": "현금",
-             "paymentAmount": -50000,
-             "accountHolder": null,
-             "cardCompany": null,
-             "cardNumber": null,
-             "installmentMonths": null,
-             "approvalNumber": null,
-             "memo": "수업포기",
-             "modifierName": null,
-             "isCancellable": true
-         }
-     ],
-     "refunds": [
-         {
-             "id": "R55434296310738",
-             "refundDate": "2016-01-05",
-             "orderProductName": "NEW PT 24회 3개월/3개월/24회",
-             "refundAmount": 50000,
-             "cardAmount": 0,
-             "cashAmount": 50000,
-             "depositAmount": 0,
-             "bank": null,
-             "accountNumber": null,
-             "refundReason": "수업포기",
-             "modifierName": null
-         }
-     ]
- }
+ * "{
+ *     "billingAmount": 55000,
+ *     "paymentAmount": 0,
+ *     "refundAmount": 55000,
+ *     "receivableAmount": 0,
+ *     "payments": [
+ *         {
+ *             "id": "P1722165476776015",
+ *             "paymentDate": "2024-07-28",
+ *             "type": "신규",
+ *             "paymentMethod": "현금",
+ *             "paymentAmount": 1000,
+ *             "accountHolder": null,
+ *             "cardCompany": null,
+ *             "cardCompanyLabel": null,
+ *             "cardNumber": null,
+ *             "installmentMonths": null,
+ *             "installmentMonthsLabel": "일시불",
+ *             "approvalNumber": null,
+ *             "memo": "test",
+ *             "modifiedBy": "M1717690790932481",
+ *             "modifierName": null,
+ *             "isCancellable": false
+ *         },
+ *         {
+ *             "id": "P1722166023495462",
+ *             "paymentDate": "2024-07-28",
+ *             "type": "신규",
+ *             "paymentMethod": "예금",
+ *             "paymentAmount": 1000,
+ *             "accountHolder": "테스터",
+ *             "cardCompany": null,
+ *             "cardCompanyLabel": null,
+ *             "cardNumber": null,
+ *             "installmentMonths": null,
+ *             "installmentMonthsLabel": "일시불",
+ *             "approvalNumber": null,
+ *             "memo": "test",
+ *             "modifiedBy": "M1717690790932481",
+ *             "modifierName": null,
+ *             "isCancellable": false
+ *         }
+ *     ],
+ *     "refunds": [
+ *         {
+ *             "id": "R1722186546729674",
+ *             "refundDate": "2024-07-29",
+ *             "orderProductName": "PTG (주1회 1개월)/0개월/1회",
+ *             "refundAmount": 55000,
+ *             "cardAmount": 55000,
+ *             "cashAmount": 0,
+ *             "depositAmount": 0,
+ *             "bank": null,
+ *             "accountNumber": null,
+ *             "refundReason": "",
+ *             "modifierName": null
+ *         }
+ *     ]
+ * }"
  */
