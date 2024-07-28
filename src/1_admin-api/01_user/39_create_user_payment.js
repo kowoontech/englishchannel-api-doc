@@ -43,23 +43,23 @@
  * @apiParam (Path) {String} id 회원 식별키
  * @apiParam (Path) {String} orderId 주문 식별키
  *
- * @apiSuccess {String} type 결제구분 (I:신규, P:회수, T:변경)
- * @apiSuccess {String} paymentDate 결제일 (yyyy-MM-dd)
- * @apiSuccess {Number} [cashAmount] 현금금액
- * @apiSuccess {Boolean} [isReceiptIssued] 현금영수증 여부
- * @apiSuccess {String} [receiptNumber] 현금영수증 번호
- * @apiSuccess {Number} [depositAmount] 예금금액
- * @apiSuccess {String} [accountHolder] 예금자명
- * @apiSuccess {Number} receivableAmount 미수금액
- * @apiSuccess {String} [recallDate] 회수예정일 (yyyy-MM-dd)
- * @apiSuccess {String} [receivableReason] 미수금사유
- * @apiSuccess {String} [memo] 결제메모
- * @apiSuccess {Object[]} [cards] 카드결제 목록
- * @apiSuccess {Number} cards.amount 결제금액
- * @apiSuccess {String} cards.cardCompany 카드종류 (카드종류는 '01. 공통 옵션 목록 조회'에서 조회할 수 있습니다.)
- * @apiSuccess {String} cards.cardNumber 카드번호
- * @apiSuccess {Number} [cards.installmentMonths] 할개월수 (숫자만, 0 또는 null: 일시불)
- * @apiSuccess {String} [cards.approvalNumber] 승인번호
+ * @apiParam (Body) {String} type 결제구분 (I:신규, P:회수, T:변경)
+ * @apiParam (Body) {String} paymentDate 결제일 (yyyy-MM-dd)
+ * @apiParam (Body) {Number} [cashAmount] 현금금액
+ * @apiParam (Body) {Boolean} [isReceiptIssued] 현금영수증 여부
+ * @apiParam (Body) {String} [receiptNumber] 현금영수증 번호
+ * @apiParam (Body) {Number} [depositAmount] 예금금액
+ * @apiParam (Body) {String} [accountHolder] 예금자명
+ * @apiParam (Body) {Number} receivableAmount 미수금액
+ * @apiParam (Body) {String} [recallDate] 회수예정일 (yyyy-MM-dd)
+ * @apiParam (Body) {String} [receivableReason] 미수금사유
+ * @apiParam (Body) {String} [memo] 결제메모
+ * @apiParam (Body) {Object[]} [cards] 카드결제 목록
+ * @apiParam (Body) {Number} cards.amount 결제금액
+ * @apiParam (Body) {String} cards.cardCompany 카드종류 (카드종류는 '01. 공통 옵션 목록 조회'에서 조회할 수 있습니다.)
+ * @apiParam (Body) {String} cards.cardNumber 카드번호
+ * @apiParam (Body) {Number} [cards.installmentMonths] 할개월수 (숫자만, 0 또는 null: 일시불)
+ * @apiParam (Body) {String} [cards.approvalNumber] 승인번호
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200

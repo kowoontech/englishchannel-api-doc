@@ -16,13 +16,13 @@
  * @apiParam (Path) {String} orderId 주문 식별키
  * @apiParam (Path) {String} orderProductId 주문 상세 식별키
  *
- * @apiSuccess {String} refundDate 환불일 (yyyy-MM-dd)
- * @apiSuccess {Number} [cardAmount] 카드금액
- * @apiSuccess {Number} [cashAmount] 현금금액
- * @apiSuccess {Number} [depositAmount] 계좌이체
- * @apiSuccess {String} [bank] 은행명
- * @apiSuccess {String} [accountNumber] 계좌번호
- * @apiSuccess {String} [refundReason] 환불사유
+ * @apiParam (Body) {String} refundDate 환불일 (yyyy-MM-dd)
+ * @apiParam (Body) {Number} [cardAmount] 카드금액
+ * @apiParam (Body) {Number} [cashAmount] 현금금액
+ * @apiParam (Body) {Number} [depositAmount] 계좌이체
+ * @apiParam (Body) {String} [bank] 은행명
+ * @apiParam (Body) {String} [accountNumber] 계좌번호
+ * @apiParam (Body) {String} [refundReason] 환불사유
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
