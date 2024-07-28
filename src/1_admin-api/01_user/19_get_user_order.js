@@ -19,7 +19,7 @@
  * @apiSuccess {Number} discountAmount 할인액 합계
  * @apiSuccess {Number} billingAmount 실청구금액 합계
  * @apiSuccess {Number} refundAmount 환불금액 합계
- * @apiSuccess {Boolean} isCancelable 취소 가능 여부
+ * @apiSuccess {Boolean} isCancelable 전체 취소 가능 여부
  * @apiSuccess {Object[]} orderProducts 주문 상세 목록
  * @apiSuccess {String} orderProducts.id 주문 상세 식별키
  * @apiSuccess {String} orderProducts.name 상품명

@@ -2928,7 +2928,7 @@
             "type": "Boolean",
             "optional": false,
             "field": "isCancelable",
-            "description": "<p>취소 가능 여부</p>"
+            "description": "<p>전체 취소 가능 여부</p>"
           },
           {
             "group": "Success 200",
