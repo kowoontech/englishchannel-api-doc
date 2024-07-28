@@ -1319,7 +1319,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/orderProducts/I1722163996604145/refund' \\\n-H \"Content-Type: application/json\" \\\n-d \"\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/orderProducts/I1722163996604145/refund' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"refundDate\": \"2024-07-29\",\n    \"cardAmount\": 55000,\n    \"cashAmount\": null,\n    \"depositAmount\": null,\n    \"bank\": null,\n    \"accountNumber\": null,\n    \"refundReason\": \"\"\n}\"",
         "type": "curl"
       }
     ],
