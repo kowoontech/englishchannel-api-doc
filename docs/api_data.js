@@ -1014,7 +1014,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments' \\\n-H \"Content-Type: application/json\" \\\n-d \"\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"type\": \"I\",\n    \"paymentDate\": \"2024-07-28\",\n    \"cashAmount\": null,\n    \"isReceiptIssued\": false,\n    \"receiptNumber\": \"\",\n    \"depositAmount\": null,\n    \"accountHolder\": \"테스터\",\n    \"receivableAmount\": 51000,\n    \"recallDate\": null,\n    \"receivableReason\": \"test\",\n    \"memo\": \"test\",\n    \"cards\": [\n        {\n            \"amount\": 1000,\n            \"cardCompany\": \"KB\",\n            \"cardNumber\": \"12345\",\n            \"installmentMonths\": null,\n            \"approvalNumber\": \"\"\n        },\n        {\n            \"amount\": 1000,\n            \"cardCompany\": \"NH\",\n            \"cardNumber\": \"00000\",\n            \"installmentMonths\": null,\n            \"approvalNumber\": \"\"\n        }\n    ]\n}\"",
         "type": "curl"
       }
     ],
