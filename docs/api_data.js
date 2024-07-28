@@ -9308,6 +9308,211 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/admin/v1/statistics/waitingSms",
+    "title": "07. 대기 내역 목록",
+    "description": "<p>SMS 전송현황 &gt; <br/> 통계보고서 &gt; sms전송현황 &gt; 대기 내역 <br/> 첫 조회 시 null , 검색 조건 시 전체일 때 ALL 사용</p>",
+    "version": "1.0.0",
+    "name": "all_Sms",
+    "group": "1._Admin_API_>_6._통계보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/waitingSms",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "sendType",
+            "description": "<p>구분 [L:LMS , S: SMS] 전체 시 null값 넘겨주세요</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "search",
+            "description": "<p>검색조건[ALL: 전체, recipientPhone: 수신번호,senderPhone:발신번호, content:내용]</p>"
+          },
+          {
+            "group": "Query",
+            "type": "Number",
+            "optional": false,
+            "field": "keyword",
+            "description": "<p>검색내용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "list",
+            "description": "<p>SMS 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "list.smsTarget",
+            "description": "<p>대기 내역 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "list.smsTarget.id",
+            "description": "<p>SMS 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.smsTarget.email",
+            "description": "<p>회원이메일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.smsTarget.recipientPhone",
+            "description": "<p>수신번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.smsTarget.recipientName",
+            "description": "<p>수신자</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.smsTarget.status",
+            "description": "<p>상태(WAITING)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.smsTarget.sendDate",
+            "description": "<p>발송일 (yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.senderPhone",
+            "description": "<p>발송번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.senderName",
+            "description": "<p>발송자</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.content",
+            "description": "<p>문자내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalCount",
+            "description": "<p>전체 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>현재 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 회원 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalPage",
+            "description": "<p>전체 페이지 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "startPage",
+            "description": "<p>페이징 영역에 노출될 첫 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "endPage",
+            "description": "<p>페이징 영역에 노출될 마지막 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasPrev",
+            "description": "<p>전 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasNext",
+            "description": "<p>다음 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isFirst",
+            "description": "<p>첫 페이징 영역 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isLast",
+            "description": "<p>마지막 페이징 영역 여부</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"smsTarget\": {\n                \"id\": 24,\n                \"email\": null,\n                \"recipientPhone\": \"3\",\n                \"recipientName\": \"김대한2\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-12-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 23,\n                \"email\": null,\n                \"recipientPhone\": \"3\",\n                \"recipientName\": \"김대한1\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-12-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 22,\n                \"email\": null,\n                \"recipientPhone\": \"3\",\n                \"recipientName\": \"김대한\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-12-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 3,\n                \"email\": \"이메일3@naver.com\",\n                \"recipientPhone\": \"010-2321-2312\",\n                \"recipientName\": \"김민국3\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-11-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 2,\n                \"email\": \"이메일2@naver.com\",\n                \"recipientPhone\": \"010-2321-2312\",\n                \"recipientName\": \"김민국2\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-11-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 1,\n                \"email\": \"이메일1@naver.com\",\n                \"recipientPhone\": \"010-2321-2312\",\n                \"recipientName\": \"김민국\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-11-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        }\n    ],\n    \"totalCount\": 6,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"endPage\": 1,\n    \"totalPage\": 1,\n    \"hasNext\": false,\n    \"isFirst\": true,\n    \"isLast\": true,\n    \"hasPrev\": false\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/06_statistics/07_list_all_watingSms.js",
+    "groupTitle": "1._Admin_API_>_6._통계보고서"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/statistics/evaluations",
     "title": "05. 평가 현황 목록 / 상세보기",
     "description": "<p>평가현황 &gt; <br/> 통계보고서 &gt; 평가현황 &gt; 전체 목록 조회 + 상세보기</p>",
