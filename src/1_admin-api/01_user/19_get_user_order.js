@@ -21,6 +21,7 @@
  * @apiSuccess {Number} refundAmount 환불금액 합계
  * @apiSuccess {Object[]} orderProducts 주문 상세 목록
  * @apiSuccess {String} orderProducts.id 주문 상세 식별키
+ * @apiSuccess {String} orderProducts.name 상품명
  * @apiSuccess {Number} orderProducts.amount 공급가액
  * @apiSuccess {Number} orderProducts.discountAmount 할인액
  * @apiSuccess {Number} orderProducts.billingAmount 실청구금액
@@ -28,7 +29,6 @@
  * @apiSuccess {String} orderProducts.productType 분류
  * @apiSuccess {String} orderProducts.createdOn 주문일시 (yyyy-MM-dd HH:mm)
  * @apiSuccess {String} orderProducts.orderType 구분
- * @apiSuccess {String} orderProducts.retake 등록구분
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
