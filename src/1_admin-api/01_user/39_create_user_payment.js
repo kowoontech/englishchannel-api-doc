@@ -8,7 +8,7 @@
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
- * curl -i -X POST 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments' \
+ * curl -i -X POST 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/payments' \
  * -H "Content-Type: application/json" \
  * -d "{
  *     "type": "I",
