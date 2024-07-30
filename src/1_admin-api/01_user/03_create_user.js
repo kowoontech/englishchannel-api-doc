@@ -2,7 +2,7 @@
  * @api {post} /admin/v1/users 03. 회원 등록
  *
  * @apiDescription 회원관리 > 회원 등록 <br/>
- *  사용자등록, 직원등록 시 사용
+ *  사용자등록, 직원등록 시 사용 > type 필드는 필수입니다
  *
  * @apiVersion 1.0.0
  * @apiName admin_createUser

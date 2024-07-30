@@ -3,7 +3,8 @@
  *
  * @apiDescription 회원관리 > 회원 목록 조회<br/>
  * 모든 파라미터는 안넘기면 전체<br/>
- * 전체가 명시되어 있는 셀렉트박스는 "ALL"을 넘겨도 전체
+ * 전체가 명시되어 있는 셀렉트박스는 "ALL"을 넘겨도 전체<br/>
+ *  사용자등록, 직원등록 시 사용 > type 필드는 필수입니다
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUsers
@@ -12,6 +13,7 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users?createDateFrom=2023-01-01&createDateTo=2023-12-31&page=1&registerType=REGISTERED&status=ACTIVE&teacherId=M1594795852631377&courseStatus=NOT_ATTENDING&expireType=EXPIRED&remainingType=NOT_REMAINING'
  *
+ * @apiParam (Query) {String} [type] 사용자 인지 직원인지 구분 (사용자:S , 직원: A)
  * @apiParam (Query) [createDateFrom] 가입일자 검색 ~부터 (yyyy-mm-dd)
  * @apiParam (Query) [createDateTo] 가입일자 검색 ~까지 (yyyy-mm-dd)
  * @apiParam (Query) [registerType] 등록구분 (ALL: 전체, REGISTERED: 등록회원, UNREGISTERED: 미등록회원)
