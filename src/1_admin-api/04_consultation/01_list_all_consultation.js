@@ -17,7 +17,9 @@
  * @apiParam (Query) {String} visitDateFrom 방문예약일(시작) (yyyy-MM-dd)
  * @apiParam (Query) {String} visitDateTo 방문예약일(끝) (yyyy-MM-dd)
  * @apiParam (Query) {String} type 상담구분(P: 전화상담,V: 방문상담,K: 카카오채널,N: 네이버예약)
- * @apiParam (Query) {Number} status 처리상태3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료, 7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)
+ * @apiParam (Query) {Number} status 처리상태 (WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/>
+                                              RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/>
+                                              REGISTERED:등록완료, NoShow, MISSED:부재중)
  * @apiParam (Query) {String} search 검색구분( name:이름, phone: 전화번호 , details :상담내용)
  * @apiParam (Query) {String} keyword 검색내용
  * @apiParam (Query) {Number} limit 한페이지에 보여줄 회원 수
@@ -26,7 +28,7 @@
  * @apiSuccess {Object[]} list 회원 목록
  * @apiSuccess {String} list.id 예약 식별키
  * @apiSuccess {String} list.type (P:전화상담, V:방문상담, K:카카오채널, N:네이버예약, F:온라인상담, L:무료레벨테스트)
- * @apiSuccess {Number} list.처리상태 (WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/>
+ * @apiSuccess {Number} list.status 처리상태 (WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/>
                                                                    RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/>
                                                                    REGISTERED:등록완료, NoShow, MISSED:부재중)
  * @apiSuccess {String} list.name 회원명
