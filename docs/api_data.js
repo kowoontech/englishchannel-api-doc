@@ -9487,7 +9487,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "sendType",
-            "description": "<p>구분 [L:LMS , S: SMS] 전체 시 null값 넘겨주세요</p>"
+            "description": "<p>구분 [ALL:전체, L:LMS , S: SMS]</p>"
           },
           {
             "group": "Query",
@@ -9862,7 +9862,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "sendType",
-            "description": "<p>구분 [L:LMS , S: SMS] 전체 시 null값 넘겨주세요</p>"
+            "description": "<p>구분 [ALL:전체, L:LMS , S: SMS]</p>"
           },
           {
             "group": "Query",

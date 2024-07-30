@@ -12,7 +12,7 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/waitingSms
  *
- * @apiParam (Query) {String} sendType 구분 [L:LMS , S: SMS] 전체 시 null값 넘겨주세요
+ * @apiParam (Query) {String} sendType 구분 [ALL:전체, L:LMS , S: SMS]
  * @apiParam (Query) {String} search 검색조건[ALL: 전체, recipientPhone: 수신번호,senderPhone:발신번호, content:내용]
  * @apiParam (Query) {Number} keyword 검색내용
 

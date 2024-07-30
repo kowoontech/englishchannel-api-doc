@@ -14,7 +14,7 @@
  *
  * @apiParam (Query) {String} sendDateFrom 발송일 시작 [yyyy-MM-dd]
  * @apiParam (Query) {String} sendDateTo  발송일 종료 [yyyy-MM-dd]
- * @apiParam (Query) {String} sendType 구분 [L:LMS , S: SMS] 전체 시 null값 넘겨주세요
+ * @apiParam (Query) {String} sendType 구분 [ALL:전체, L:LMS , S: SMS]
  * @apiParam (Query) {String} search 검색조건[content: 내용,senderName:발송인]
  * @apiParam (Query) {Number} keyword 검색내용
 
