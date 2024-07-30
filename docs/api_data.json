@@ -7863,8 +7863,8 @@
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "list.status",
-            "description": "<p>처리상태(3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료, 7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)</p>"
+            "field": "list.",
+            "description": "<p>처리상태 (WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/> RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/> REGISTERED:등록완료, NoShow, MISSED:부재중)</p>"
           },
           {
             "group": "Success 200",
@@ -7892,7 +7892,7 @@
             "type": "String",
             "optional": false,
             "field": "list.callTime",
-            "description": "<p>통화시간 10 // 06:30~08:00 <br/> 20 // 08:00~10:00 <br/> 30 // 10:00~12:00<br/> 40 // 12:00~14:00<br/> 50 // 14:00~16:00<br/> 60 // 16:00~18:00<br/> 70 // 18:00~20:00<br/> 80, // 20:00~21:00<br/> 90, // 기타</p>"
+            "description": "<p>통화시간 TIME_01 // 06:30~08:00 <br/> TIME_02 // 08:00~10:00 <br/> TIME_03 // 10:00~12:00<br/> TIME_04 // 12:00~14:00<br/> TIME_05 // 14:00~16:00<br/> TIME_06 // 16:00~18:00<br/> TIME_07 // 18:00~20:00<br/> TIME_08, // 20:00~21:00<br/> TIME_09, // 기타</p>"
           },
           {
             "group": "Success 200",

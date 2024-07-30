@@ -26,19 +26,21 @@
  * @apiSuccess {Object[]} list 회원 목록
  * @apiSuccess {String} list.id 예약 식별키
  * @apiSuccess {String} list.type (P:전화상담, V:방문상담, K:카카오채널, N:네이버예약, F:온라인상담, L:무료레벨테스트)
- * @apiSuccess {Number} list.status 처리상태(3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료, 7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)
+ * @apiSuccess {Number} list.처리상태 (WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/>
+                                                                   RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/>
+                                                                   REGISTERED:등록완료, NoShow, MISSED:부재중)
  * @apiSuccess {String} list.name 회원명
  * @apiSuccess {String} list.phone 전화번호
  * @apiSuccess {String} list.company 회사/직장명
- * @apiSuccess {String} list.callTime 통화시간 10 // 06:30~08:00 <br/>
-                                             20 // 08:00~10:00 <br/>
-                                             30 // 10:00~12:00<br/>
-                                             40 // 12:00~14:00<br/>
-                                             50 // 14:00~16:00<br/>
-                                             60 // 16:00~18:00<br/>
-                                             70 // 18:00~20:00<br/>
-                                             80, // 20:00~21:00<br/>
-                                             90, // 기타
+ * @apiSuccess {String} list.callTime 통화시간 TIME_01 // 06:30~08:00 <br/>
+                                             TIME_02 // 08:00~10:00 <br/>
+                                             TIME_03 // 10:00~12:00<br/>
+                                             TIME_04 // 12:00~14:00<br/>
+                                             TIME_05 // 14:00~16:00<br/>
+                                             TIME_06 // 16:00~18:00<br/>
+                                             TIME_07 // 18:00~20:00<br/>
+                                             TIME_08, // 20:00~21:00<br/>
+                                             TIME_09, // 기타
  * @apiSuccess {String} list.visitDate 방문일정
  * @apiSuccess {String} list.createdOn 등록일
  * @apiSuccess {String} list.creatorName 상담직원
