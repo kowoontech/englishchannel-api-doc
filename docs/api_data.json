@@ -603,7 +603,7 @@
     "type": "post",
     "url": "/admin/v1/users",
     "title": "03. 회원 등록",
-    "description": "<p>회원관리 &gt; 회원 등록</p>",
+    "description": "<p>회원관리 &gt; 회원 등록 <br/> 사용자등록, 직원등록 시 사용</p>",
     "version": "1.0.0",
     "name": "admin_createUser",
     "group": "1._Admin_API_>_1._회원",
@@ -714,6 +714,13 @@
             "optional": true,
             "field": "isReceiveSms",
             "description": "<p>SMS 수신 여부</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "type",
+            "description": "<p>사용자 인지 직원인지 구분 (사용자:S , 직원: A)</p>"
           },
           {
             "group": "Body",
