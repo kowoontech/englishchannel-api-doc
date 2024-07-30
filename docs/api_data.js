@@ -718,7 +718,7 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "type",
             "description": "<p>사용자 인지 직원인지 구분 (사용자:S , 직원: A)</p>"
           },
@@ -4840,7 +4840,7 @@ define({ "api": [
           {
             "group": "Query",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "type",
             "description": "<p>사용자 인지 직원인지 구분 (사용자:S , 직원: A)</p>"
           },

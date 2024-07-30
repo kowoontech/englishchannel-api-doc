@@ -59,7 +59,7 @@
  * @apiParam (Body) {String} [phoneType] 유선전화 유형 (H:자택, C:직장)
  * @apiParam (Body) {String} cellPhone 휴대전화번호 
  * @apiParam (Body) {Boolean} [isReceiveSms] SMS 수신 여부
- * @apiParam (Body) {String} [type] 사용자 인지 직원인지 구분 (사용자:S , 직원: A)
+ * @apiParam (Body) {String} type 사용자 인지 직원인지 구분 (사용자:S , 직원: A)
  * @apiParam (Body) {Boolean} [isOfficeWorker] 직장인 여부
  * @apiParam (Body) {String} [company] 직장/학교
  * @apiParam (Body) {String} [position] 직책/학과
