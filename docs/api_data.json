@@ -5648,6 +5648,53 @@
   },
   {
     "type": "put",
+    "url": "/admin/v1/templates/1",
+    "title": "45. 템플릿 수정",
+    "description": "<p>회원관리 &gt; 회원 등록 / 수정 &gt; 특이사항</p>",
+    "version": "1.0.0",
+    "name": "admin_updateTemplate",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/templates/1' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"text\" : \"수정template3\",\n           \"description\" : \"수정test용3\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "text",
+            "description": "<p>템플릿</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>템플릿에 대한 설명</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/45_update_template.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "put",
     "url": "/admin/v1/users/{id}",
     "title": "20. 회원 수정",
     "description": "<p>회원관리 &gt; 기본 탭</p>",
@@ -6253,53 +6300,6 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/44_update_user_payment.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
-  },
-  {
-    "type": "put",
-    "url": "/admin/v1/templates/1",
-    "title": "45. 템플릿 수정",
-    "description": "<p>회원관리 &gt; 회원 등록 / 수정 &gt; 특이사항</p>",
-    "version": "1.0.0",
-    "name": "admin_updateUserOrderPayment",
-    "group": "1._Admin_API_>_1._회원",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/templates/1' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"text\" : \"수정template3\",\n           \"description\" : \"수정test용3\"\n       }\"",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Body": [
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "text",
-            "description": "<p>템플릿</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "description",
-            "description": "<p>템플릿에 대한 설명</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/01_user/45_update_template.js",
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {

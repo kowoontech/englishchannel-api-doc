@@ -4,7 +4,7 @@
  * @apiDescription 회원관리 > 회원 등록 / 수정 > 특이사항
  *
  * @apiVersion 1.0.0
- * @apiName admin_updateUserOrderPayment
+ * @apiName admin_updateTemplate
  * @apiGroup 1. Admin API > 1. 회원
  *
  * @apiExample {curl} REQUEST
