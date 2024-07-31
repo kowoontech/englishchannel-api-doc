@@ -204,7 +204,7 @@
   {
     "type": "get",
     "url": "/admin/v1/commonCode",
-    "title": "04. 공통코드 목록",
+    "title": "06. 공통코드 목록",
     "description": "<p>공통 코드 목록 <br/></p>",
     "version": "1.0.0",
     "name": "admin_listCommonCode",
@@ -266,7 +266,7 @@
             "type": "String",
             "optional": false,
             "field": "commonCode.useYn",
-            "description": "<p>활성 여부 ()</p>"
+            "description": "<p>활성여부(Y:활성,N:비활성)</p>"
           }
         ]
       },
@@ -278,7 +278,59 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/00_common/04_list_commonCode.js",
+    "filename": "src/1_admin-api/00_common/06_list_commonCode.js",
+    "groupTitle": "1._Admin_API_>_0._공통_API"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/commonCode",
+    "title": "04. 코드 그룹 목록",
+    "description": "<p>코드 그룹 목록 <br/> 하드코딩 된 테이블입니다. 공통코드 등록, 수정 시 사용합니다.</p>",
+    "version": "1.0.0",
+    "name": "admin_listGroupCode",
+    "group": "1._Admin_API_>_0._공통_API",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/commonCodeGroup'",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "commonCodeGroup",
+            "description": "<p>코드 그룹 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "commonCode.codeGroup",
+            "description": "<p>그룹코드 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "commonCode.codeGroupName",
+            "description": "<p>그룹코드명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"commonCodeGroup\": [\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\"\n        },\n        {\n            \"codeGroup\": 200,\n            \"codeGroupName\": \"처리상태\"\n        },\n        {\n            \"codeGroup\": 300,\n            \"codeGroupName\": \"카드종류\"\n        },\n        {\n            \"codeGroup\": 400,\n            \"codeGroupName\": \"근무시간\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/00_common/04_list_codeGroup.js",
     "groupTitle": "1._Admin_API_>_0._공통_API"
   },
   {
@@ -6201,6 +6253,53 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/44_update_user_payment.js",
+    "groupTitle": "1._Admin_API_>_1._회원"
+  },
+  {
+    "type": "put",
+    "url": "/admin/v1/templates/1",
+    "title": "45. 템플릿 수정",
+    "description": "<p>회원관리 &gt; 회원 등록 / 수정 &gt; 특이사항</p>",
+    "version": "1.0.0",
+    "name": "admin_updateUserOrderPayment",
+    "group": "1._Admin_API_>_1._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/templates/1' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"text\" : \"수정template3\",\n           \"description\" : \"수정test용3\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "text",
+            "description": "<p>템플릿</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>템플릿에 대한 설명</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/45_update_template.js",
     "groupTitle": "1._Admin_API_>_1._회원"
   },
   {

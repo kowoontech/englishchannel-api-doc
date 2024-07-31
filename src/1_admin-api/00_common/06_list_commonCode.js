@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/commonCode 04. 공통코드 목록
+ * @api {get} /admin/v1/commonCode 06. 공통코드 목록
  *
  * @apiDescription 공통 코드 목록 <br/>
  *
@@ -18,7 +18,7 @@
  * @apiSuccess {Number} commonCode.code 코드 식별키
  * @apiSuccess {String} commonCode.name 코드명
  * @apiSuccess {Number} commonCode.sort 코드순서
- * @apiSuccess {String} commonCode.useYn 활성 여부 ()
+ * @apiSuccess {String} commonCode.useYn 활성여부(Y:활성,N:비활성)
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
