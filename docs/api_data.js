@@ -127,6 +127,86 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_0._공통_API"
   },
   {
+    "type": "get",
+    "url": "/admin/v1/commonCode",
+    "title": "04. 공통코드 목록",
+    "description": "<p>공통 코드 목록 <br/></p>",
+    "version": "1.0.0",
+    "name": "admin_listCommonCode",
+    "group": "1._Admin_API_>_0._공통_API",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/localhost:8080/admin/v1/commonCode'",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "commonCode",
+            "description": "<p>공통코드목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "commonCode.codeGroup",
+            "description": "<p>그룹코드 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "commonCode.codeGroupName",
+            "description": "<p>그룹코드명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "commonCode.code",
+            "description": "<p>코드 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "commonCode.name",
+            "description": "<p>코드명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "commonCode.sort",
+            "description": "<p>코드순서</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "commonCode.useYn",
+            "description": "<p>활성 여부 ()</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"commonCode\": [\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 11,\n            \"name\": \"수정\",\n            \"sort\": 5,\n            \"useYn\": \"Y\"\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 12,\n            \"name\": \"이메일상담12\",\n            \"sort\": 3,\n            \"useYn\": \"Y\"\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 13,\n            \"name\": \"이메일상담13\",\n            \"sort\": 3,\n            \"useYn\": null\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 14,\n            \"name\": \"이메일상담14\",\n            \"sort\": 3,\n            \"useYn\": null\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 15,\n            \"name\": \"이메일상담15\",\n            \"sort\": 3,\n            \"useYn\": null\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 16,\n            \"name\": \"이메일상담16\",\n            \"sort\": 3,\n            \"useYn\": \"N\"\n        },\n        {\n            \"codeGroup\": 200,\n            \"codeGroupName\": \"처리상태\",\n            \"code\": 20,\n            \"name\": \"이메일상담16\",\n            \"sort\": 3,\n            \"useYn\": \"N\"\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 200,\n            \"name\": \"이메일상담2\",\n            \"sort\": 1,\n            \"useYn\": \"Y\"\n        },\n        {\n            \"codeGroup\": 200,\n            \"codeGroupName\": \"처리상태\",\n            \"code\": 200,\n            \"name\": \"처리상태1\",\n            \"sort\": 2,\n            \"useYn\": \"Y\"\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 300,\n            \"name\": \"이메일상담3\",\n            \"sort\": 1,\n            \"useYn\": \"Y\"\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 400,\n            \"name\": \"이메일상담4\",\n            \"sort\": 1,\n            \"useYn\": \"Y\"\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 500,\n            \"name\": \"이메일상담5\",\n            \"sort\": 1,\n            \"useYn\": null\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 600,\n            \"name\": \"이메일상담6\",\n            \"sort\": 2,\n            \"useYn\": null\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 700,\n            \"name\": \"이메일상담7\",\n            \"sort\": 2,\n            \"useYn\": \"Y\"\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 800,\n            \"name\": \"이메일상담8\",\n            \"sort\": 3,\n            \"useYn\": \"Y\"\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 900,\n            \"name\": \"이메일상담9\",\n            \"sort\": 3,\n            \"useYn\": \"Y\"\n        },\n        {\n            \"codeGroup\": 100,\n            \"codeGroupName\": \"상담구분\",\n            \"code\": 1000,\n            \"name\": \"이메일상담10\",\n            \"sort\": 3,\n            \"useYn\": \"Y\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/00_common/04_list_commonCode.js",
+    "groupTitle": "1._Admin_API_>_0._공통_API"
+  },
+  {
     "type": "post",
     "url": "/admin/v1/login",
     "title": "02. 로그인",
