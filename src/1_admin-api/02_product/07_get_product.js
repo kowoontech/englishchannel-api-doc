@@ -15,7 +15,8 @@
  *
  * @apiSuccess {String} id 상품 식별키
  * @apiSuccess {String} consultationDate 상담날짜 (yyyy-mm-dd HH:mm)
- * @apiSuccess {String} type 과정여부 체크(CURRICULUM시에 체크, null 체크X)
+ * @apiSuccess {String} type 과정여부 체크(CURRICULUM시에 체크<br/>
+                                             null,CONTENTS, DEVICE,TEXTBOOK,PACKAGE : 체크되지않은것)
  * @apiSuccess {String} lessonType 상담내용
  * @apiSuccess {String} name 상담직원 식별키
  * @apiSuccess {String} price 상단고정 [체크:Y 아닐시 N]

@@ -11232,7 +11232,7 @@
             "type": "String",
             "optional": false,
             "field": "type",
-            "description": "<p>과정여부 체크(CURRICULUM시에 체크, null 체크X)</p>"
+            "description": "<p>과정여부 체크(CURRICULUM시에 체크<br/> null,CONTENTS, DEVICE,TEXTBOOK,PACKAGE : 체크되지않은것)</p>"
           },
           {
             "group": "Success 200",
