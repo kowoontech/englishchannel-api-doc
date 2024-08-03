@@ -16,7 +16,7 @@
            "price": 13000
        }"
  *
- * @apiParam (Body) {String} type 과정여부 (체크박스 선택 시 '과정'/ 선택하지 않을 시 null)
+ * @apiParam (Body) {String} type 과정여부 (체크박스 선택 시 'CURRICULUM'/ 선택하지 않을 시 null)
  * @apiParam (Body) {String} name 상품명
  * @apiParam (Body) {Number} price 가격
  *

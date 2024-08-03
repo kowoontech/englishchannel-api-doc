@@ -6458,7 +6458,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "type",
-            "description": "<p>과정여부 (체크박스 선택 시 '과정'/ 선택하지 않을 시 null)</p>"
+            "description": "<p>과정여부 (체크박스 선택 시 'CURRICULUM'/ 선택하지 않을 시 null)</p>"
           },
           {
             "group": "Body",
@@ -6539,41 +6539,41 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "type",
-            "description": "<p>구분</p>"
+            "description": "<p>과정여부 체크(CURRICULUM시에 체크, null 체크X)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "details",
+            "field": "lessonType",
             "description": "<p>상담내용</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "createdBy",
+            "field": "name",
             "description": "<p>상담직원 식별키</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "topFixedYn",
+            "field": "price",
             "description": "<p>상단고정 [체크:Y 아닐시 N]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "fontBoldYn",
+            "field": "quantityUnit",
             "description": "<p>상담 내용 굵게 [체크:Y 아닐시 N]</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "backgroundColor",
+            "field": "options",
             "description": "<p>배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]</p>"
           }
         ]
@@ -6872,7 +6872,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "type",
-            "description": "<p>과정여부 (체크박스 선택 시 '과정'/ 선택하지 않을 시 null)</p>"
+            "description": "<p>과정여부 (체크박스 선택 시 'CURRICULUM'/ 선택하지 않을 시 null)</p>"
           },
           {
             "group": "Body",
