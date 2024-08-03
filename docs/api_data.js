@@ -423,7 +423,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/logout'",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/logout' \\\n-H \"Authorization: 19fa536a-6aab-49c0-bf3f-099e050e1583\"",
         "type": "curl"
       }
     ],
@@ -6491,106 +6491,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/admin/v1/products/{id}",
-    "title": "07. 상품 조회",
-    "description": "<p>상품관리 &gt; 상품 조회</p>",
-    "version": "1.0.0",
-    "name": "admin_getUserConsultation",
-    "group": "1._Admin_API_>_2._상품",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/products/P1722476566849400'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Path": [
-          {
-            "group": "Path",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>상품 식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>상품 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "consultationDate",
-            "description": "<p>상담날짜 (yyyy-mm-dd HH:mm)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "type",
-            "description": "<p>구분</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "details",
-            "description": "<p>상담내용</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "createdBy",
-            "description": "<p>상담직원 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "topFixedYn",
-            "description": "<p>상단고정 [체크:Y 아닐시 N]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "fontBoldYn",
-            "description": "<p>상담 내용 굵게 [체크:Y 아닐시 N]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "backgroundColor",
-            "description": "<p>배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": \"P1722476566849400\",\n    \"type\": \"패키지\",\n    \"language\": \"영어\",\n    \"lessonType\": \"PT\",\n    \"name\": \"패키지1\",\n    \"price\": 13000,\n    \"quantityUnit\": \"개\",\n    \"options\": [\n        \"SILVER\",\n        \"SILVER\"\n    ],\n    \"sort\": 82\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/02_product/07_get_product.js",
-    "groupTitle": "1._Admin_API_>_2._상품"
-  },
-  {
-    "type": "get",
     "url": "/admin/v1/products/languages",
     "title": "02. 상품 언어 목록 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
@@ -11136,5 +11036,104 @@ define({ "api": [
     },
     "filename": "src/1_admin-api/00_error.js",
     "groupTitle": "1._Admin_API"
+  },
+  {
+    "type": "post",
+    "url": "/mobile/v1/login",
+    "title": "01. 로그인",
+    "description": "<p>모바일 로그인<br/> 모든 API 요청의 header에 Login-Profile=test 를 넣으면 로그인 우회<br/> Token은 각 요청 Header에 Authorization으로 넣어주시면 됩니다. (Bearer 이런거 없이 토큰만)</p>",
+    "version": "1.0.0",
+    "name": "mobile_login",
+    "group": "2._Mobile_API_>_0._공통_API",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/mobile/v1/login' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"id\": \"123123123123@naver.com\",\n    \"password\": \"1111\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>로그인 아이디</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>비밀번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>access token</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n {\n     \"id\": \"M1479127681680503\",\n     \"name\": \"Level test\",\n     \"token\": \"aff5f649-afa2-4e78-b1e3-96943cf98236\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/00_common/01_login.js",
+    "groupTitle": "2._Mobile_API_>_0._공통_API"
+  },
+  {
+    "type": "post",
+    "url": "/mobile/v1/logout",
+    "title": "02. 로그아웃",
+    "description": "<p>모바일 로그아웃</p>",
+    "version": "1.0.0",
+    "name": "mobile_logout",
+    "group": "2._Mobile_API_>_0._공통_API",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/mobile/v1/logout' \\\n-H \"Authorization: 19fa536a-6aab-49c0-bf3f-099e050e1583\"",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/00_common/02_logout.js",
+    "groupTitle": "2._Mobile_API_>_0._공통_API"
   }
 ] });
