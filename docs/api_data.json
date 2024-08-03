@@ -10993,7 +10993,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/reservations/schedules?date=2024-01-31'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/reservations/schedules?date=2023-12-23'",
         "type": "curl"
       }
     ],
@@ -11058,6 +11058,13 @@
             "group": "Success 200",
             "type": "String",
             "optional": true,
+            "field": "schedules.reservations.userId",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
             "field": "schedules.reservations.userName",
             "description": "<p>회원명</p>"
           },
@@ -11084,6 +11091,13 @@
           },
           {
             "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "schedules.reservations.courseId",
+            "description": "<p>수강 식별키</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Boolean",
             "optional": false,
             "field": "schedules.reservations.isRetakeRequired",
@@ -11101,7 +11115,7 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
+          "content": "HTTP/1.1 200\n\"{\n    \"schedules\": [\n        {\n            \"time\": \"10:00\",\n            \"reservations\": [\n                {\n                    \"reservationId\": 2603082,\n                    \"teacherId\": \"M1657064932771055\",\n                    \"teacherName\": \"김나래\",\n                    \"userId\": \"M1699681314379069\",\n                    \"userName\": \"정보희:홀딩01/22\",\n                    \"textbook\": \"HT:프랭크기초 / LT:SN1 Trial\",\n                    \"status\": \"N\",\n                    \"statusLabel\": \"결석\",\n                    \"courseId\": 75125,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                },\n                {\n                    \"reservationId\": null,\n                    \"teacherId\": \"M1661138591404520\",\n                    \"teacherName\": \"최태연\",\n                    \"userId\": null,\n                    \"userName\": null,\n                    \"textbook\": null,\n                    \"status\": null,\n                    \"statusLabel\": null,\n                    \"courseId\": null,\n                    \"isRetakeRequired\": false,\n                    \"isReported\": false\n                }\n            ]\n        },\n        {\n            \"time\": \"10:30\",\n            \"reservations\": [\n                {\n                    \"reservationId\": 2602697,\n                    \"teacherId\": \"M1657064932771055\",\n                    \"teacherName\": \"김나래\",\n                    \"userId\": \"M1646878409829108\",\n                    \"userName\": \"이승아\",\n                    \"textbook\": \"어션완결\",\n                    \"status\": \"Y\",\n                    \"statusLabel\": \"출석\",\n                    \"courseId\": 75214,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                },\n                {\n                    \"reservationId\": 2619796,\n                    \"teacherId\": \"M1661138591404520\",\n                    \"teacherName\": \"최태연\",\n                    \"userId\": \"M1700470397854458\",\n                    \"userName\": \"이인희\",\n                    \"textbook\": \"TTT1\",\n                    \"status\": \"Y\",\n                    \"statusLabel\": \"출석\",\n                    \"courseId\": 75183,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                }\n            ]\n        }\n    ]\n}\"",
           "type": "json"
         }
       ]
