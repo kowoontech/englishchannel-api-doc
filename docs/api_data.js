@@ -6531,57 +6531,64 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "consultationDate",
-            "description": "<p>상담날짜 (yyyy-mm-dd HH:mm)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
             "field": "type",
             "description": "<p>과정여부 체크(CURRICULUM시에 체크<br/> null,CONTENTS, DEVICE,TEXTBOOK,PACKAGE : 체크되지않은것)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
-            "optional": false,
+            "optional": true,
+            "field": "language",
+            "description": "<p>언어(EN:영어, CN:중국어, JP:일본어, KR:한국어)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
             "field": "lessonType",
-            "description": "<p>상담내용</p>"
+            "description": "<p>수업유형(PT, TT, GT)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "name",
-            "description": "<p>상담직원 식별키</p>"
+            "description": "<p>상품명</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "price",
-            "description": "<p>상단고정 [체크:Y 아닐시 N]</p>"
+            "description": "<p>가격</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "quantityUnit",
-            "description": "<p>상담 내용 굵게 [체크:Y 아닐시 N]</p>"
+            "description": "<p>수량(단위)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "options",
+            "description": "<p>옵션목록</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
-            "optional": false,
-            "field": "options",
-            "description": "<p>배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]</p>"
+            "optional": true,
+            "field": "sort",
+            "description": "<p>정렬순서</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": \"P1722476566849400\",\n    \"type\": \"패키지\",\n    \"language\": \"영어\",\n    \"lessonType\": \"PT\",\n    \"name\": \"패키지1\",\n    \"price\": 13000,\n    \"quantityUnit\": \"개\",\n    \"options\": [\n        \"SILVER\",\n        \"SILVER\"\n    ],\n    \"sort\": 82\n}",
+          "content": "HTTP/1.1 200\n{\n    \"id\": \"P1722478832696425\",\n    \"type\": \"TEXTBOOK\",\n    \"language\": \"영어\",\n    \"lessonType\": \"PT\",\n    \"name\": \"패키지1\",\n    \"price\": 13000,\n    \"quantityUnit\": \"개\",\n    \"options\": [\n        \"SILVER\",\n        \"SILVER\"\n    ],\n    \"sort\": 82\n}",
           "type": "json"
         }
       ]

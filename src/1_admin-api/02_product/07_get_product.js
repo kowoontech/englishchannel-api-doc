@@ -14,20 +14,21 @@
  * @apiParam (Path) {String} id 상품 식별키
  *
  * @apiSuccess {String} id 상품 식별키
- * @apiSuccess {String} consultationDate 상담날짜 (yyyy-mm-dd HH:mm)
  * @apiSuccess {String} type 과정여부 체크(CURRICULUM시에 체크<br/>
                                              null,CONTENTS, DEVICE,TEXTBOOK,PACKAGE : 체크되지않은것)
- * @apiSuccess {String} lessonType 상담내용
- * @apiSuccess {String} name 상담직원 식별키
- * @apiSuccess {String} price 상단고정 [체크:Y 아닐시 N]
- * @apiSuccess {String} quantityUnit 상담 내용 굵게 [체크:Y 아닐시 N]
- * @apiSuccess {String} options 배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]
+ * @apiSuccess {String} [language] 언어(EN:영어, CN:중국어, JP:일본어, KR:한국어)
+ * @apiSuccess {String} [lessonType] 수업유형(PT, TT, GT)
+ * @apiSuccess {String} name 상품명
+ * @apiSuccess {String} price 가격
+ * @apiSuccess {String} [quantityUnit] 수량(단위)
+ * @apiSuccess {Object[]} [options] 옵션목록
+ * @apiSuccess {String} [sort] 정렬순서
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 {
-    "id": "P1722476566849400",
-    "type": "패키지",
+    "id": "P1722478832696425",
+    "type": "TEXTBOOK",
     "language": "영어",
     "lessonType": "PT",
     "name": "패키지1",
