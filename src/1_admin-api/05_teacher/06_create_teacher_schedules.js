@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_createTeacherSchedules
- * @apiGroup 1. Admin API > 5. 강사
+ * @apiGroup 1. Admin API > 05. 강사
  *
  * @apiExample {curl} REQUEST
  * curl -i -X POST 'http://localhost:8080/admin/v1/teachers/M1695013438115743/schedules'

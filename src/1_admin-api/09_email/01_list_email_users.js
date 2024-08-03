@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_listEmailUsers
- * @apiGroup 1. Admin API > 9. Email
+ * @apiGroup 1. Admin API > 09. Email
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/email/users?type=S&search=name&keyword=하'

@@ -7,7 +7,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName all_Sms
- * @apiGroup 1. Admin API > 6. 통계보고서
+ * @apiGroup 1. Admin API > 06. 통계보고서
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/successSms

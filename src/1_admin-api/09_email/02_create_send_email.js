@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_createSendEmail
- * @apiGroup 1. Admin API > 9. Email
+ * @apiGroup 1. Admin API > 09. Email
  *
  * @apiExample {curl} REQUEST
  * curl -i -X POST 'http://localhost:8080/admin/v1/email/send' \

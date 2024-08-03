@@ -7,7 +7,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_login
- * @apiGroup 1. Admin API > 0. 공통 API
+ * @apiGroup 1. Admin API > 00. 공통
  *
  * @apiExample {curl} REQUEST
  * curl -i -X POST 'http://localhost:8080/admin/v1/login' \

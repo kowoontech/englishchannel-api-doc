@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_updateUserOrderPayment
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X PUT 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/payments/P1722166085902400' \

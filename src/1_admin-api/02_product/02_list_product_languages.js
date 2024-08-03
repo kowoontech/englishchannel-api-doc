@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_listProductLanguages
- * @apiGroup 1. Admin API > 2. 상품
+ * @apiGroup 1. Admin API > 02. 상품
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/products/languages'

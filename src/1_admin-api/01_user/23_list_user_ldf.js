@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUserLdfs
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
  *  curl -i -X GET 'http://localhost:8080/admin/v1/users/M1654741178072018/ldfs
