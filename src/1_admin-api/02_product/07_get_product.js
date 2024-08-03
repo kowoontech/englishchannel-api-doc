@@ -1,12 +1,12 @@
 /**
- * @api {get} /admin/v1/products/{id} 07. 상품 조회
+ * @api {get} /admin/v1/products/{id} 07. 상품 상세 조회
  *
  * @apiDescription 상품관리 > 상품 조회
  * 
  *
  * @apiVersion 1.0.0
- * @apiName admin_getUserConsultation
- * @apiGroup 1. Admin API > 2. 상품
+ * @apiName admin_getUserProduct
+ * @apiGroup 1. Admin API > 02. 상품
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/products/P1722476566849400'
