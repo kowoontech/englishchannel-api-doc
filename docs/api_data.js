@@ -6,7 +6,7 @@ define({ "api": [
     "description": "<p>공통 코드 관리</p>",
     "version": "1.0.0",
     "name": "admin_createCommonCode",
-    "group": "1._Admin_API_>_0._공통_API",
+    "group": "1._Admin_API_>_00._공통",
     "examples": [
       {
         "title": "REQUEST",
@@ -72,7 +72,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/00_common/05_create_commonCode.js",
-    "groupTitle": "1._Admin_API_>_0._공통_API"
+    "groupTitle": "1._Admin_API_>_00._공통"
   },
   {
     "type": "get",
@@ -81,7 +81,7 @@ define({ "api": [
     "description": "<p>어드민 옵션에 필요한 데이터 목록 조회<br/> 강사 목록<br/> 상담사 목록</p>",
     "version": "1.0.0",
     "name": "admin_getOptions",
-    "group": "1._Admin_API_>_0._공통_API",
+    "group": "1._Admin_API_>_00._공통",
     "examples": [
       {
         "title": "REQUEST",
@@ -199,7 +199,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/00_common/01_get_options.js",
-    "groupTitle": "1._Admin_API_>_0._공통_API"
+    "groupTitle": "1._Admin_API_>_00._공통"
   },
   {
     "type": "get",
@@ -208,7 +208,7 @@ define({ "api": [
     "description": "<p>공통 코드 목록 <br/></p>",
     "version": "1.0.0",
     "name": "admin_listCommonCode",
-    "group": "1._Admin_API_>_0._공통_API",
+    "group": "1._Admin_API_>_00._공통",
     "examples": [
       {
         "title": "REQUEST",
@@ -279,7 +279,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/00_common/06_list_commonCode.js",
-    "groupTitle": "1._Admin_API_>_0._공통_API"
+    "groupTitle": "1._Admin_API_>_00._공통"
   },
   {
     "type": "get",
@@ -288,7 +288,7 @@ define({ "api": [
     "description": "<p>코드 그룹 목록 <br/> 하드코딩 된 테이블입니다. 공통코드 등록, 수정 시 사용합니다.</p>",
     "version": "1.0.0",
     "name": "admin_listGroupCode",
-    "group": "1._Admin_API_>_0._공통_API",
+    "group": "1._Admin_API_>_00._공통",
     "examples": [
       {
         "title": "REQUEST",
@@ -331,7 +331,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/00_common/04_list_codeGroup.js",
-    "groupTitle": "1._Admin_API_>_0._공통_API"
+    "groupTitle": "1._Admin_API_>_00._공통"
   },
   {
     "type": "post",
@@ -340,7 +340,7 @@ define({ "api": [
     "description": "<p>어드민 로그인<br/> 모든 API 요청의 header에 Login-Profile=test 를 넣으면 로그인 우회<br/> Token은 각 요청 Header에 Authorization으로 넣어주시면 됩니다. (Bearer 이런거 없이 토큰만)</p>",
     "version": "1.0.0",
     "name": "admin_login",
-    "group": "1._Admin_API_>_0._공통_API",
+    "group": "1._Admin_API_>_00._공통",
     "examples": [
       {
         "title": "REQUEST",
@@ -410,7 +410,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/00_common/02_login.js",
-    "groupTitle": "1._Admin_API_>_0._공통_API"
+    "groupTitle": "1._Admin_API_>_00._공통"
   },
   {
     "type": "post",
@@ -419,11 +419,11 @@ define({ "api": [
     "description": "<p>어드민 로그아웃</p>",
     "version": "1.0.0",
     "name": "admin_logout",
-    "group": "1._Admin_API_>_0._공통_API",
+    "group": "1._Admin_API_>_00._공통",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/logout'",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/logout' \\\n-H \"Authorization: 19fa536a-6aab-49c0-bf3f-099e050e1583\"",
         "type": "curl"
       }
     ],
@@ -437,7 +437,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/00_common/03_logout.js",
-    "groupTitle": "1._Admin_API_>_0._공통_API"
+    "groupTitle": "1._Admin_API_>_00._공통"
   },
   {
     "type": "delete",
@@ -446,7 +446,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 상세조회 &gt; 테스트탭 <br/> id : 1028151  / testId : 6118</p>",
     "version": "1.0.0",
     "name": "admin_User_DELETE_LevelTest",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -484,7 +484,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/33_delete_user_levelTest.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "delete",
@@ -493,7 +493,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 예약 &gt; 예약등록 &gt; TIP</p>",
     "version": "1.0.0",
     "name": "admin_User_Note",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -524,7 +524,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/28_delete_user_notes.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "post",
@@ -533,7 +533,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 사용해주세요<br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_creatLevelTest",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -804,7 +804,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/31_create_user_levelTest.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "post",
@@ -813,7 +813,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 등록 <br/> 사용자등록, 직원등록 시 사용 &gt; type 필드는 필수입니다</p>",
     "version": "1.0.0",
     "name": "admin_createUser",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1075,7 +1075,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/03_create_user.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "post",
@@ -1084,7 +1084,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_createUserConsultation",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1159,7 +1159,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/17_create_user_consultation.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "post",
@@ -1168,7 +1168,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
     "version": "1.0.0",
     "name": "admin_createUserNote",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1215,7 +1215,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/25_create_user_notes.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "post",
@@ -1224,7 +1224,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_createUserOrderPayment",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1383,7 +1383,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/39_create_user_payment.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "post",
@@ -1392,7 +1392,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_createUserOrderProduct",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1520,7 +1520,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/22_create_user_order_product.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "post",
@@ -1529,7 +1529,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_createUserOrderRefund",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1625,7 +1625,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/41_create_user_refund.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "post",
@@ -1634,7 +1634,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 일정 체크 후 저장 id: M1699689011700418 사용해주세요 스케줄 출력이 된다면 courseId : 75127 로 하고 scheduleIds를 넘겨주세요.<br/> 스케줄 출력이 안된다면 REQUEST 참고해서 넣어주세요</p>",
     "version": "1.0.0",
     "name": "admin_createUserReservations",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1672,7 +1672,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/09_create_user_reservations.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "delete",
@@ -1681,7 +1681,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 기본 탭</p>",
     "version": "1.0.0",
     "name": "admin_deleteUser",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1712,7 +1712,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/21_delete_user.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "delete",
@@ -1721,7 +1721,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_deleteUserConsultation",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1759,7 +1759,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/36_delete_user_consultation.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "delete",
@@ -1768,7 +1768,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_deleteUserOrder",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1806,7 +1806,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/43_delete_user_order.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "delete",
@@ -1815,7 +1815,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_deleteUserOrderPayment",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1860,7 +1860,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/40_delete_user_payment.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "delete",
@@ -1869,7 +1869,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_deleteUserOrderProduct",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -1914,7 +1914,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/42_delete_user_orderProduct.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -1923,7 +1923,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원  상세 조회 &gt; 테스트 탭 <br/> 테스트가 필요하다면, id : M1372661465106388 , testId : 6153 사용해주세요 <br/> 회원id 의 회원 이름은 '김기훈' 입니다</p>",
     "version": "1.0.0",
     "name": "admin_getLevelTest",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -2266,7 +2266,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/30_get_user_levelTest.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -2275,7 +2275,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원등록 &gt; 특이사항 필드에 들어 갈 템플릿<br/></p>",
     "version": "1.0.0",
     "name": "admin_getRegisterNoteTemplate",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -2332,7 +2332,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/38_get_template_registerMemberNote.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -2341,7 +2341,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 기본 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUser",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -2634,7 +2634,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/02_get_user.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -2643,7 +2643,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserConsultation",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -2741,7 +2741,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/34_get_user_consultation.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -2750,7 +2750,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 수강 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserCourse",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -2890,7 +2890,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/11_get_user_course.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -2899,7 +2899,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; LDF 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserLdf",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -3004,7 +3004,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/24_get_user_ldf.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -3013,7 +3013,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
     "version": "1.0.0",
     "name": "admin_getUserNote",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -3062,7 +3062,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/26_get_user_notes.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -3071,7 +3071,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserOrder",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -3232,7 +3232,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/19_get_user_order.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -3241,7 +3241,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 학습 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserReservation",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -3332,7 +3332,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/14_get_user_reservation.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -3341,7 +3341,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserConsultations",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -3418,7 +3418,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/16_list_user_consultations.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -3427,7 +3427,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 수강 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserCourseHistories",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -3595,7 +3595,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/13_list_user_course_histories.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -3604,7 +3604,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 과정 정보<br/> 회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 과정 정보<br/> 회원관리 &gt; 회원 목록 조회 &gt; 수강 탭<br/></p>",
     "version": "1.0.0",
     "name": "admin_listUserCourses",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -3827,7 +3827,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/04_list_user_courses.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -3836,7 +3836,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; LDF 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserLdfs",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -4024,7 +4024,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/23_list_user_ldf.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -4033,7 +4033,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP <br/> modifiedBy null일 시에는 createdOn와 creatorName 출력 <br/> modifiedBy null이 아닐 시에는 modifiedOn, modifierName 출력</p>",
     "version": "1.0.0",
     "name": "admin_listUserNotes",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -4126,7 +4126,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/10_list_user_notes.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -4135,7 +4135,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserOrderPayments",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -4408,7 +4408,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/37_list_user_payments.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -4417,7 +4417,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserOrders",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -4522,7 +4522,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/18_list_user_orders.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -4531,7 +4531,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭<br/> 회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 최근 5회 수강현황<br/> 회원관리 &gt; 회원 목록 조회 &gt; 학습 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserReservations",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -4776,7 +4776,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/05_list_user_reservations.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -4785,7 +4785,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 주별<br/> 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
     "version": "1.0.0",
     "name": "admin_listUserSchedulesByDate",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -4923,7 +4923,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/08_list_user_schedules_by_date.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -4932,7 +4932,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 일별<br/> 조회할 날짜의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
     "version": "1.0.0",
     "name": "admin_listUserSchedulesByTime",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -4990,7 +4990,7 @@ define({ "api": [
             "type": "Number",
             "optional": true,
             "field": "schedules.reservations.scheduleId",
-            "description": "<p>예약 식별키</p>"
+            "description": "<p>스케줄 식별키</p>"
           },
           {
             "group": "Success 200",
@@ -5024,7 +5024,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/07_list_user_schedules_by_time.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -5033,7 +5033,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회<br/> 모든 파라미터는 안넘기면 전체<br/> 전체가 명시되어 있는 셀렉트박스는 &quot;ALL&quot;을 넘겨도 전체<br/> 사용자등록, 직원등록 시 사용 &gt; type 필드는 필수입니다</p>",
     "version": "1.0.0",
     "name": "admin_listUsers",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -5285,7 +5285,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/01_list_users.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "get",
@@ -5294,7 +5294,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt;  회원 상세 조회&gt; 테스트탭</p>",
     "version": "1.0.0",
     "name": "admin_list_LevelTest",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -5350,7 +5350,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/29_list_user_levelTest.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "put",
@@ -5359,7 +5359,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭<br/> id : 1028151  / testId: 6145 <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_updateLevelTest",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -5644,7 +5644,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/32_update_user_levelTest.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "put",
@@ -5653,7 +5653,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 등록 / 수정 &gt; 특이사항</p>",
     "version": "1.0.0",
     "name": "admin_updateTemplate",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -5691,7 +5691,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/45_update_template.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "put",
@@ -5700,7 +5700,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 기본 탭</p>",
     "version": "1.0.0",
     "name": "admin_updateUser",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -5964,7 +5964,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/20_update_user.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "put",
@@ -5973,7 +5973,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_updateUserConsultation",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -6055,7 +6055,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/35_update_user_consultation.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "put",
@@ -6064,7 +6064,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 수강 탭</p>",
     "version": "1.0.0",
     "name": "admin_updateUserCourse",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -6160,7 +6160,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/12_update_user_course.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "put",
@@ -6169,7 +6169,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 기본 탭 &gt; 예약 &gt; 예약등록 &gt; TIP</p>",
     "version": "1.0.0",
     "name": "admin_updateUserNote",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -6209,7 +6209,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/27_update_user_notes.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "put",
@@ -6218,7 +6218,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_updateUserOrderPayment",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -6300,7 +6300,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/44_update_user_payment.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "put",
@@ -6309,7 +6309,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 학습 탭 &gt; 학사보고서 등록/수정</p>",
     "version": "1.0.0",
     "name": "admin_updateUserReservation",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -6363,7 +6363,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/15_update_user_reservation.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "put",
@@ -6372,7 +6372,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 체크 후 예약 취소</p>",
     "version": "1.0.0",
     "name": "admin_updateUserReservations",
-    "group": "1._Admin_API_>_1._회원",
+    "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
         "title": "REQUEST",
@@ -6433,7 +6433,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/01_user/06_update_user_reservations.js",
-    "groupTitle": "1._Admin_API_>_1._회원"
+    "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
     "type": "post",
@@ -6442,7 +6442,7 @@ define({ "api": [
     "description": "<p>상품관리 &gt; 상품등록</p>",
     "version": "1.0.0",
     "name": "admin_createUserOrderRefund",
-    "group": "1._Admin_API_>_2._상품",
+    "group": "1._Admin_API_>_02._상품",
     "examples": [
       {
         "title": "REQUEST",
@@ -6458,7 +6458,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "type",
-            "description": "<p>과정여부 (체크박스 선택 시 '과정'/ 선택하지 않을 시 null)</p>"
+            "description": "<p>과정여부 (체크박스 선택 시 'CURRICULUM'/ 선택하지 않을 시 null)</p>"
           },
           {
             "group": "Body",
@@ -6487,107 +6487,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/02_product/05_create_products.js",
-    "groupTitle": "1._Admin_API_>_2._상품"
-  },
-  {
-    "type": "get",
-    "url": "/admin/v1/products/{id}",
-    "title": "07. 상품 조회",
-    "description": "<p>상품관리 &gt; 상품 조회</p>",
-    "version": "1.0.0",
-    "name": "admin_getUserConsultation",
-    "group": "1._Admin_API_>_2._상품",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/products/P1722476566849400'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Path": [
-          {
-            "group": "Path",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>상품 식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>상품 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "consultationDate",
-            "description": "<p>상담날짜 (yyyy-mm-dd HH:mm)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "type",
-            "description": "<p>구분</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "details",
-            "description": "<p>상담내용</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "createdBy",
-            "description": "<p>상담직원 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "topFixedYn",
-            "description": "<p>상단고정 [체크:Y 아닐시 N]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "fontBoldYn",
-            "description": "<p>상담 내용 굵게 [체크:Y 아닐시 N]</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "backgroundColor",
-            "description": "<p>배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": \"P1722476566849400\",\n    \"type\": \"패키지\",\n    \"language\": \"영어\",\n    \"lessonType\": \"PT\",\n    \"name\": \"패키지1\",\n    \"price\": 13000,\n    \"quantityUnit\": \"개\",\n    \"options\": [\n        \"SILVER\",\n        \"SILVER\"\n    ],\n    \"sort\": 82\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/02_product/07_get_product.js",
-    "groupTitle": "1._Admin_API_>_2._상품"
+    "groupTitle": "1._Admin_API_>_02._상품"
   },
   {
     "type": "get",
@@ -6596,7 +6496,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_listProductLanguages",
-    "group": "1._Admin_API_>_2._상품",
+    "group": "1._Admin_API_>_02._상품",
     "examples": [
       {
         "title": "REQUEST",
@@ -6639,7 +6539,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/02_product/02_list_product_languages.js",
-    "groupTitle": "1._Admin_API_>_2._상품"
+    "groupTitle": "1._Admin_API_>_02._상품"
   },
   {
     "type": "get",
@@ -6648,7 +6548,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_listProductLessonTypes",
-    "group": "1._Admin_API_>_2._상품",
+    "group": "1._Admin_API_>_02._상품",
     "examples": [
       {
         "title": "REQUEST",
@@ -6691,7 +6591,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/02_product/03_list_product_lesson_types.js",
-    "groupTitle": "1._Admin_API_>_2._상품"
+    "groupTitle": "1._Admin_API_>_02._상품"
   },
   {
     "type": "get",
@@ -6700,7 +6600,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_listProductTypes",
-    "group": "1._Admin_API_>_2._상품",
+    "group": "1._Admin_API_>_02._상품",
     "examples": [
       {
         "title": "REQUEST",
@@ -6743,7 +6643,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/02_product/01_list_product_types.js",
-    "groupTitle": "1._Admin_API_>_2._상품"
+    "groupTitle": "1._Admin_API_>_02._상품"
   },
   {
     "type": "get",
@@ -6752,7 +6652,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_listProducts",
-    "group": "1._Admin_API_>_2._상품",
+    "group": "1._Admin_API_>_02._상품",
     "examples": [
       {
         "title": "REQUEST",
@@ -6847,7 +6747,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/02_product/04_list_products.js",
-    "groupTitle": "1._Admin_API_>_2._상품"
+    "groupTitle": "1._Admin_API_>_02._상품"
   },
   {
     "type": "put",
@@ -6856,7 +6756,7 @@ define({ "api": [
     "description": "<p>상품관리 &gt; 수정</p>",
     "version": "1.0.0",
     "name": "admin_updateUserOrderPayment",
-    "group": "1._Admin_API_>_2._상품",
+    "group": "1._Admin_API_>_02._상품",
     "examples": [
       {
         "title": "REQUEST",
@@ -6872,7 +6772,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "type",
-            "description": "<p>과정여부 (체크박스 선택 시 '과정'/ 선택하지 않을 시 null)</p>"
+            "description": "<p>과정여부 (체크박스 선택 시 'CURRICULUM'/ 선택하지 않을 시 null)</p>"
           },
           {
             "group": "Body",
@@ -6901,7 +6801,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/02_product/06_update_products.js",
-    "groupTitle": "1._Admin_API_>_2._상품"
+    "groupTitle": "1._Admin_API_>_02._상품"
   },
   {
     "type": "get",
@@ -6910,7 +6810,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 학사보고서<br/> 회원관리 &gt; 학사보고서 &gt; 수정/등록 시 사용</p>",
     "version": "1.0.0",
     "name": "admin_getReport",
-    "group": "1._Admin_API_>_3._학사보고서",
+    "group": "1._Admin_API_>_03._학사보고서",
     "examples": [
       {
         "title": "REQUEST",
@@ -7015,7 +6915,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/03_report/02_get_report.js",
-    "groupTitle": "1._Admin_API_>_3._학사보고서"
+    "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
   {
     "type": "put",
@@ -7024,7 +6924,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 학사보고서 <br/></p>",
     "version": "1.0.0",
     "name": "admin_updateReport",
-    "group": "1._Admin_API_>_3._학사보고서",
+    "group": "1._Admin_API_>_03._학사보고서",
     "examples": [
       {
         "title": "REQUEST",
@@ -7085,7 +6985,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/03_report/03_update_report.js",
-    "groupTitle": "1._Admin_API_>_3._학사보고서"
+    "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
   {
     "type": "get",
@@ -7094,7 +6994,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 학사보고서<br/> 회원관리 &gt; 학사보고서</p>",
     "version": "1.0.0",
     "name": "listReport",
-    "group": "1._Admin_API_>_3._학사보고서",
+    "group": "1._Admin_API_>_03._학사보고서",
     "examples": [
       {
         "title": "REQUEST",
@@ -7349,7 +7249,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/03_report/01_list_report.js",
-    "groupTitle": "1._Admin_API_>_3._학사보고서"
+    "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
   {
     "type": "post",
@@ -7358,7 +7258,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 상담관리 &gt; 상담등록 <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_createConsultation",
-    "group": "1._Admin_API_>_4._상담관리",
+    "group": "1._Admin_API_>_04._상담관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -7501,7 +7401,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/09_create_consultation.js",
-    "groupTitle": "1._Admin_API_>_4._상담관리"
+    "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
     "type": "post",
@@ -7510,7 +7410,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 상담관리 &gt; 회원등록 <br/> test id : 14890 , 14967 , 15001 , 15209</p>",
     "version": "1.0.0",
     "name": "admin_createConsultationUser",
-    "group": "1._Admin_API_>_4._상담관리",
+    "group": "1._Admin_API_>_04._상담관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -7552,7 +7452,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/02_create_consultation_user.js",
-    "groupTitle": "1._Admin_API_>_4._상담관리"
+    "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
     "type": "post",
@@ -7561,7 +7461,7 @@ define({ "api": [
     "description": "<p>상담관리 &gt; 상세페이지조회 &gt; 추가 상담 이력 <br/> 상세 페이지 누를 시 상담 식별키 넘겨 받음-&gt; 식별키 가지고 추가 상담 이력 출력</p>",
     "version": "1.0.0",
     "name": "admin_createUserConsultation",
-    "group": "1._Admin_API_>_4._상담관리",
+    "group": "1._Admin_API_>_04._상담관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -7601,7 +7501,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/06_create_consultationHistory.js",
-    "groupTitle": "1._Admin_API_>_4._상담관리"
+    "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
     "type": "delete",
@@ -7610,7 +7510,7 @@ define({ "api": [
     "description": "<p>상담관리 &gt; 상세조회 페이지</p>",
     "version": "1.0.0",
     "name": "admin_deleteConsultationHistory",
-    "group": "1._Admin_API_>_4._상담관리",
+    "group": "1._Admin_API_>_04._상담관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -7641,7 +7541,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/07_delete_consultationHistory.js",
-    "groupTitle": "1._Admin_API_>_4._상담관리"
+    "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
     "type": "delete",
@@ -7650,7 +7550,7 @@ define({ "api": [
     "description": "<p>상담관리 &gt; 상세조회 &gt; 삭제</p>",
     "version": "1.0.0",
     "name": "admin_deleteUser",
-    "group": "1._Admin_API_>_4._상담관리",
+    "group": "1._Admin_API_>_04._상담관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -7681,7 +7581,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/05_delete_consultation.js",
-    "groupTitle": "1._Admin_API_>_4._상담관리"
+    "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
     "type": "get",
@@ -7690,7 +7590,7 @@ define({ "api": [
     "description": "<p>수정/삭제 시 사용<br/></p>",
     "version": "1.0.0",
     "name": "admin_getOptions",
-    "group": "1._Admin_API_>_4._상담관리",
+    "group": "1._Admin_API_>_04._상담관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -7934,7 +7834,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/03_get_consultation.js",
-    "groupTitle": "1._Admin_API_>_4._상담관리"
+    "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
     "type": "post",
@@ -7943,7 +7843,7 @@ define({ "api": [
     "description": "<p>상세조회,등록,수정 시 사용<br/> 중복된 연락처 확인을 위해서는 {&quot;cellPhone&quot; : &quot;020-3333-3333&quot;} 사용해주세요</p>",
     "version": "1.0.0",
     "name": "admin_getValCellphone",
-    "group": "1._Admin_API_>_4._상담관리",
+    "group": "1._Admin_API_>_04._상담관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -7985,7 +7885,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/10_get_cellphone.js",
-    "groupTitle": "1._Admin_API_>_4._상담관리"
+    "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
     "type": "get",
@@ -7994,7 +7894,7 @@ define({ "api": [
     "description": "<p>상담관리 &gt; 상세페이지 조회 &gt; 추가 상담 이력 <br/> 상세 페이지 들어올 때 상담 식별키 가져옴</p>",
     "version": "1.0.0",
     "name": "admin_listUserNotes",
-    "group": "1._Admin_API_>_4._상담관리",
+    "group": "1._Admin_API_>_04._상담관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -8057,7 +7957,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/08_list_consultationHistory.js",
-    "groupTitle": "1._Admin_API_>_4._상담관리"
+    "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
     "type": "put",
@@ -8066,7 +7966,7 @@ define({ "api": [
     "description": "<p>상담관리 &gt; 상세관리수정 <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_updateConsultation",
-    "group": "1._Admin_API_>_4._상담관리",
+    "group": "1._Admin_API_>_04._상담관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -8218,7 +8118,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/04_update_consultation.js",
-    "groupTitle": "1._Admin_API_>_4._상담관리"
+    "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
     "type": "get",
@@ -8227,7 +8127,7 @@ define({ "api": [
     "description": "<p>회원관리 &gt; 상담관리 &gt; 상담고객<br/> 모든 파라미터는 안넘기면 전체<br/> 파마미터의 [전체] checkbox 선택 시 나머지 checkbox 선택 제거</p>",
     "version": "1.0.0",
     "name": "all_consultation",
-    "group": "1._Admin_API_>_4._상담관리",
+    "group": "1._Admin_API_>_04._상담관리",
     "examples": [
       {
         "title": "REQUEST",
@@ -8542,7 +8442,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/01_list_all_consultation.js",
-    "groupTitle": "1._Admin_API_>_4._상담관리"
+    "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
     "type": "post",
@@ -8551,7 +8451,7 @@ define({ "api": [
     "description": "<p>강사관리 &gt; 강사등록 <br/> 동일 loginID가 존재로 에러 발생 시 알려주세요. <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_createTeacher",
-    "group": "1._Admin_API_>_5._강사",
+    "group": "1._Admin_API_>_05._강사",
     "examples": [
       {
         "title": "REQUEST",
@@ -8680,7 +8580,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/05_teacher/08_create_teachers.js",
-    "groupTitle": "1._Admin_API_>_5._강사"
+    "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
     "type": "post",
@@ -8689,7 +8589,7 @@ define({ "api": [
     "description": "<p>강사관리 &gt; 강의OPEN(주별)<br/> 선택한 스케줄은 등록하고, 선택하지 않은 스케줄은 삭제한다.</p>",
     "version": "1.0.0",
     "name": "admin_createTeacherSchedules",
-    "group": "1._Admin_API_>_5._강사",
+    "group": "1._Admin_API_>_05._강사",
     "examples": [
       {
         "title": "REQUEST",
@@ -8764,7 +8664,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/05_teacher/06_create_teacher_schedules.js",
-    "groupTitle": "1._Admin_API_>_5._강사"
+    "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
     "type": "delete",
@@ -8773,7 +8673,7 @@ define({ "api": [
     "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/> 데이터가 많지 않아 오류 가능성 높음. M1594795852631377 안될시 알려주세요.</p>",
     "version": "1.0.0",
     "name": "admin_deleteUser",
-    "group": "1._Admin_API_>_5._강사",
+    "group": "1._Admin_API_>_05._강사",
     "examples": [
       {
         "title": "REQUEST",
@@ -8804,7 +8704,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/05_teacher/04_delete_teacher.js",
-    "groupTitle": "1._Admin_API_>_5._강사"
+    "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
     "type": "get",
@@ -8813,7 +8713,7 @@ define({ "api": [
     "description": "<p>상세보기/ 수정/삭제 시 사용<br/></p>",
     "version": "1.0.0",
     "name": "admin_getOptions",
-    "group": "1._Admin_API_>_5._강사",
+    "group": "1._Admin_API_>_05._강사",
     "examples": [
       {
         "title": "REQUEST",
@@ -8994,7 +8894,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/05_teacher/02_get_teacher.js",
-    "groupTitle": "1._Admin_API_>_5._강사"
+    "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
     "type": "get",
@@ -9003,7 +8903,7 @@ define({ "api": [
     "description": "<p>강사관리 &gt; 출석률/결석률</p>",
     "version": "1.0.0",
     "name": "admin_listTeacherAttendances",
-    "group": "1._Admin_API_>_5._강사",
+    "group": "1._Admin_API_>_05._강사",
     "examples": [
       {
         "title": "REQUEST",
@@ -9127,7 +9027,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/05_teacher/07_list_teacher_attendances.js",
-    "groupTitle": "1._Admin_API_>_5._강사"
+    "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
     "type": "get",
@@ -9136,7 +9036,7 @@ define({ "api": [
     "description": "<p>강사관리 &gt; 강의OPEN(주별)<br/> 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
     "version": "1.0.0",
     "name": "admin_listTeacherSchedules",
-    "group": "1._Admin_API_>_5._강사",
+    "group": "1._Admin_API_>_05._강사",
     "examples": [
       {
         "title": "REQUEST",
@@ -9213,7 +9113,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/05_teacher/05_list_teacher_schedules.js",
-    "groupTitle": "1._Admin_API_>_5._강사"
+    "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
     "type": "put",
@@ -9222,7 +9122,7 @@ define({ "api": [
     "description": "<p>강사관리 &gt; 강사상세조회 &gt; 수정 <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_updateTeacher",
-    "group": "1._Admin_API_>_5._강사",
+    "group": "1._Admin_API_>_05._강사",
     "examples": [
       {
         "title": "REQUEST",
@@ -9367,7 +9267,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/05_teacher/03_update_teacher.js",
-    "groupTitle": "1._Admin_API_>_5._강사"
+    "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
     "type": "get",
@@ -9376,7 +9276,7 @@ define({ "api": [
     "description": "<p>강사관리 &gt; <br/> 제대로된 데이터가 별로 없어서 오류 가능성 높으니 계약기간 제외하고 테스트 해주세요</p>",
     "version": "1.0.0",
     "name": "all_consultation",
-    "group": "1._Admin_API_>_5._강사",
+    "group": "1._Admin_API_>_05._강사",
     "examples": [
       {
         "title": "REQUEST",
@@ -9586,7 +9486,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/05_teacher/01_list_all_teacher.js",
-    "groupTitle": "1._Admin_API_>_5._강사"
+    "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
     "type": "delete",
@@ -9595,7 +9495,7 @@ define({ "api": [
     "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/></p>",
     "version": "1.0.0",
     "name": "admin_deleteSms",
-    "group": "1._Admin_API_>_6._통계보고서",
+    "group": "1._Admin_API_>_06._통계보고서",
     "examples": [
       {
         "title": "REQUEST",
@@ -9626,7 +9526,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/06_statistics/03_delete_sms.js",
-    "groupTitle": "1._Admin_API_>_6._통계보고서"
+    "groupTitle": "1._Admin_API_>_06._통계보고서"
   },
   {
     "type": "get",
@@ -9635,7 +9535,7 @@ define({ "api": [
     "description": "<p>통계보고서 &gt; 평가현황 &gt; 상세보기 &gt; LDF 보기<br/> ldfList 에 있는 ldf 식별키를 사용해 테스트 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_evaluation_ldf",
-    "group": "1._Admin_API_>_6._통계보고서",
+    "group": "1._Admin_API_>_06._통계보고서",
     "examples": [
       {
         "title": "REQUEST",
@@ -9711,7 +9611,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/06_statistics/06_get_ldf.js",
-    "groupTitle": "1._Admin_API_>_6._통계보고서"
+    "groupTitle": "1._Admin_API_>_06._통계보고서"
   },
   {
     "type": "get",
@@ -9720,7 +9620,7 @@ define({ "api": [
     "description": "<p>통계보고서 &gt; sms전송현황 &gt; 상세 조회<br/> id: 5 사용해주세요</p>",
     "version": "1.0.0",
     "name": "admin_getSms",
-    "group": "1._Admin_API_>_6._통계보고서",
+    "group": "1._Admin_API_>_06._통계보고서",
     "examples": [
       {
         "title": "REQUEST",
@@ -9831,7 +9731,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/06_statistics/02_get_sms.js",
-    "groupTitle": "1._Admin_API_>_6._통계보고서"
+    "groupTitle": "1._Admin_API_>_06._통계보고서"
   },
   {
     "type": "get",
@@ -9840,7 +9740,7 @@ define({ "api": [
     "description": "<p>통계보고서 &gt; sms전송현황 &gt; 목록 조회&gt; 대상자보기<br/></p>",
     "version": "1.0.0",
     "name": "admin_getSmsTarget",
-    "group": "1._Admin_API_>_6._통계보고서",
+    "group": "1._Admin_API_>_06._통계보고서",
     "examples": [
       {
         "title": "REQUEST",
@@ -9924,7 +9824,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/06_statistics/04_get_smsTarget.js",
-    "groupTitle": "1._Admin_API_>_6._통계보고서"
+    "groupTitle": "1._Admin_API_>_06._통계보고서"
   },
   {
     "type": "get",
@@ -9933,7 +9833,7 @@ define({ "api": [
     "description": "<p>SMS 전송현황 &gt; <br/> 통계보고서 &gt; sms전송현황 &gt; 발송 내역</p>",
     "version": "1.0.0",
     "name": "all_Sms",
-    "group": "1._Admin_API_>_6._통계보고서",
+    "group": "1._Admin_API_>_06._통계보고서",
     "examples": [
       {
         "title": "REQUEST",
@@ -10164,7 +10064,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/06_statistics/01_list_all_successSms.js",
-    "groupTitle": "1._Admin_API_>_6._통계보고서"
+    "groupTitle": "1._Admin_API_>_06._통계보고서"
   },
   {
     "type": "get",
@@ -10173,7 +10073,7 @@ define({ "api": [
     "description": "<p>평가현황 &gt; <br/> 통계보고서 &gt; 평가현황 &gt; 전체 목록 조회 + 상세보기</p>",
     "version": "1.0.0",
     "name": "all_evaluation",
-    "group": "1._Admin_API_>_6._통계보고서",
+    "group": "1._Admin_API_>_06._통계보고서",
     "examples": [
       {
         "title": "REQUEST",
@@ -10313,7 +10213,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/06_statistics/05_list_all_evaluations.js",
-    "groupTitle": "1._Admin_API_>_6._통계보고서"
+    "groupTitle": "1._Admin_API_>_06._통계보고서"
   },
   {
     "type": "get",
@@ -10322,7 +10222,7 @@ define({ "api": [
     "description": "<p>SMS 전송현황 &gt; <br/> 통계보고서 &gt; sms전송현황 &gt; 대기 내역 <br/> 첫 조회 시 null , 검색 조건 시 전체일 때 ALL 사용</p>",
     "version": "1.0.0",
     "name": "all_waitingSms",
-    "group": "1._Admin_API_>_6._통계보고서",
+    "group": "1._Admin_API_>_06._통계보고서",
     "examples": [
       {
         "title": "REQUEST",
@@ -10518,7 +10418,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/06_statistics/07_list_all_watingSms.js",
-    "groupTitle": "1._Admin_API_>_6._통계보고서"
+    "groupTitle": "1._Admin_API_>_06._통계보고서"
   },
   {
     "type": "get",
@@ -10527,7 +10427,7 @@ define({ "api": [
     "description": "<p>정산관리 &gt; 기간별정산관리</p>",
     "version": "1.0.0",
     "name": "admin_listOrderCalculates",
-    "group": "1._Admin_API_>_7._정산",
+    "group": "1._Admin_API_>_07._정산",
     "examples": [
       {
         "title": "REQUEST",
@@ -10744,7 +10644,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/07_calculate/01_list_order_calculates.js",
-    "groupTitle": "1._Admin_API_>_7._정산"
+    "groupTitle": "1._Admin_API_>_07._정산"
   },
   {
     "type": "post",
@@ -10753,7 +10653,7 @@ define({ "api": [
     "description": "<p>공통 &gt; SMS 발송</p>",
     "version": "1.0.0",
     "name": "admin_createSendSms",
-    "group": "1._Admin_API_>_8._SMS",
+    "group": "1._Admin_API_>_08._SMS",
     "examples": [
       {
         "title": "REQUEST",
@@ -10819,7 +10719,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/08_sms/02_create_send_sms.js",
-    "groupTitle": "1._Admin_API_>_8._SMS"
+    "groupTitle": "1._Admin_API_>_08._SMS"
   },
   {
     "type": "get",
@@ -10828,7 +10728,7 @@ define({ "api": [
     "description": "<p>공통 &gt; SMS 발송</p>",
     "version": "1.0.0",
     "name": "admin_listSmsUsers",
-    "group": "1._Admin_API_>_8._SMS",
+    "group": "1._Admin_API_>_08._SMS",
     "examples": [
       {
         "title": "REQUEST",
@@ -10912,7 +10812,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/08_sms/01_list_sms_users.js",
-    "groupTitle": "1._Admin_API_>_8._SMS"
+    "groupTitle": "1._Admin_API_>_08._SMS"
   },
   {
     "type": "post",
@@ -10921,7 +10821,7 @@ define({ "api": [
     "description": "<p>공통 &gt; Email 발송</p>",
     "version": "1.0.0",
     "name": "admin_createSendEmail",
-    "group": "1._Admin_API_>_9._Email",
+    "group": "1._Admin_API_>_09._Email",
     "examples": [
       {
         "title": "REQUEST",
@@ -10987,7 +10887,7 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/09_email/02_create_send_email.js",
-    "groupTitle": "1._Admin_API_>_9._Email"
+    "groupTitle": "1._Admin_API_>_09._Email"
   },
   {
     "type": "get",
@@ -10996,7 +10896,7 @@ define({ "api": [
     "description": "<p>공통 &gt; Email 발송</p>",
     "version": "1.0.0",
     "name": "admin_listEmailUsers",
-    "group": "1._Admin_API_>_9._Email",
+    "group": "1._Admin_API_>_09._Email",
     "examples": [
       {
         "title": "REQUEST",
@@ -11080,7 +10980,248 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/09_email/01_list_email_users.js",
-    "groupTitle": "1._Admin_API_>_9._Email"
+    "groupTitle": "1._Admin_API_>_09._Email"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/reservations/schedules",
+    "title": "01. 스케줄 조회",
+    "description": "<p>강의시간표, 학사보고서</p>",
+    "version": "1.0.0",
+    "name": "admin_listSchedules",
+    "group": "1._Admin_API_>_10._스케줄",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/reservations/schedules?date=2023-12-23'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "date",
+            "description": "<p>조회할 날짜 (yyyy-MM-dd)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>스케줄</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.time",
+            "description": "<p>시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules.reservations",
+            "description": "<p>예약 목록, 예약이 없으면 optional 필드는 모두 null</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "schedules.reservations.reservationId",
+            "description": "<p>예약 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.teacherId",
+            "description": "<p>강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.teacherName",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "schedules.reservations.userId",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "schedules.reservations.userName",
+            "description": "<p>회원명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "schedules.reservations.textbook",
+            "description": "<p>교재</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "schedules.reservations.status",
+            "description": "<p>예약 상태 (Y: 출석, N: 결석, R: 예약)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "schedules.reservations.statusLabel",
+            "description": "<p>예약 상태명 (출석, 결석, 예약)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "schedules.reservations.courseId",
+            "description": "<p>수강 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "schedules.reservations.isRetakeRequired",
+            "description": "<p>재등록 필요 여부 (true: 재등록 필요)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "schedules.reservations.isReported",
+            "description": "<p>학사보고서 등록 여부 (true: 학사보고서 등록)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\"{\n    \"schedules\": [\n        {\n            \"time\": \"10:00\",\n            \"reservations\": [\n                {\n                    \"reservationId\": 2603082,\n                    \"teacherId\": \"M1657064932771055\",\n                    \"teacherName\": \"김나래\",\n                    \"userId\": \"M1699681314379069\",\n                    \"userName\": \"정보희:홀딩01/22\",\n                    \"textbook\": \"HT:프랭크기초 / LT:SN1 Trial\",\n                    \"status\": \"N\",\n                    \"statusLabel\": \"결석\",\n                    \"courseId\": 75125,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                },\n                {\n                    \"reservationId\": null,\n                    \"teacherId\": \"M1661138591404520\",\n                    \"teacherName\": \"최태연\",\n                    \"userId\": null,\n                    \"userName\": null,\n                    \"textbook\": null,\n                    \"status\": null,\n                    \"statusLabel\": null,\n                    \"courseId\": null,\n                    \"isRetakeRequired\": false,\n                    \"isReported\": false\n                }\n            ]\n        },\n        {\n            \"time\": \"10:30\",\n            \"reservations\": [\n                {\n                    \"reservationId\": 2602697,\n                    \"teacherId\": \"M1657064932771055\",\n                    \"teacherName\": \"김나래\",\n                    \"userId\": \"M1646878409829108\",\n                    \"userName\": \"이승아\",\n                    \"textbook\": \"어션완결\",\n                    \"status\": \"Y\",\n                    \"statusLabel\": \"출석\",\n                    \"courseId\": 75214,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                },\n                {\n                    \"reservationId\": 2619796,\n                    \"teacherId\": \"M1661138591404520\",\n                    \"teacherName\": \"최태연\",\n                    \"userId\": \"M1700470397854458\",\n                    \"userName\": \"이인희\",\n                    \"textbook\": \"TTT1\",\n                    \"status\": \"Y\",\n                    \"statusLabel\": \"출석\",\n                    \"courseId\": 75183,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                }\n            ]\n        }\n    ]\n}\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/10_schedule/01_list_schedules.js",
+    "groupTitle": "1._Admin_API_>_10._스케줄"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/products/{id}",
+    "title": "07. 상품 조회",
+    "description": "<p>상품관리 &gt; 상품 조회</p>",
+    "version": "1.0.0",
+    "name": "admin_getUserConsultation",
+    "group": "1._Admin_API_>_2._상품",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/products/P1722476566849400'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>상품 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>상품 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "consultationDate",
+            "description": "<p>상담날짜 (yyyy-mm-dd HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>과정여부 체크(CURRICULUM시에 체크, null 체크X)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lessonType",
+            "description": "<p>상담내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>상담직원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "price",
+            "description": "<p>상단고정 [체크:Y 아닐시 N]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "quantityUnit",
+            "description": "<p>상담 내용 굵게 [체크:Y 아닐시 N]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "options",
+            "description": "<p>배경색 [10:배경색 없음, 20:주황색, 30:노랑색, 40형광색]</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": \"P1722476566849400\",\n    \"type\": \"패키지\",\n    \"language\": \"영어\",\n    \"lessonType\": \"PT\",\n    \"name\": \"패키지1\",\n    \"price\": 13000,\n    \"quantityUnit\": \"개\",\n    \"options\": [\n        \"SILVER\",\n        \"SILVER\"\n    ],\n    \"sort\": 82\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/02_product/07_get_product.js",
+    "groupTitle": "1._Admin_API_>_2._상품"
   },
   {
     "type": " ",
@@ -11136,5 +11277,104 @@ define({ "api": [
     },
     "filename": "src/1_admin-api/00_error.js",
     "groupTitle": "1._Admin_API"
+  },
+  {
+    "type": "post",
+    "url": "/mobile/v1/login",
+    "title": "01. 로그인",
+    "description": "<p>모바일 로그인<br/> 모든 API 요청의 header에 Login-Profile=test 를 넣으면 로그인 우회<br/> Token은 각 요청 Header에 Authorization으로 넣어주시면 됩니다. (Bearer 이런거 없이 토큰만)</p>",
+    "version": "1.0.0",
+    "name": "mobile_login",
+    "group": "2._Mobile_API_>_00._공통",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/mobile/v1/login' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"id\": \"123123123123@naver.com\",\n    \"password\": \"1111\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>로그인 아이디</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>비밀번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>access token</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n {\n     \"id\": \"M1479127681680503\",\n     \"name\": \"Level test\",\n     \"token\": \"aff5f649-afa2-4e78-b1e3-96943cf98236\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/00_common/01_login.js",
+    "groupTitle": "2._Mobile_API_>_00._공통"
+  },
+  {
+    "type": "post",
+    "url": "/mobile/v1/logout",
+    "title": "02. 로그아웃",
+    "description": "<p>모바일 로그아웃</p>",
+    "version": "1.0.0",
+    "name": "mobile_logout",
+    "group": "2._Mobile_API_>_00._공통",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/mobile/v1/logout' \\\n-H \"Authorization: 19fa536a-6aab-49c0-bf3f-099e050e1583\"",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/00_common/02_logout.js",
+    "groupTitle": "2._Mobile_API_>_00._공통"
   }
 ] });
