@@ -7,7 +7,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUserReservations
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1427783489308244/reservations?courseId=52506'

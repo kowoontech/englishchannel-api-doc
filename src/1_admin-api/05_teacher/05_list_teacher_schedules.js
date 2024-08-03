@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_listTeacherSchedules
- * @apiGroup 1. Admin API > 5. 강사
+ * @apiGroup 1. Admin API > 05. 강사
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/teachers/M1695013438115743/schedules?dateFrom=2023-10-04&dateTo=2023-10-05'

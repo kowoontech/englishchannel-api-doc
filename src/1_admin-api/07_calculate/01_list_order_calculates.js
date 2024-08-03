@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_listOrderCalculates
- * @apiGroup 1. Admin API > 7. 정산
+ * @apiGroup 1. Admin API > 07. 정산
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/orders/calculates?dateFrom=2023-12-01&dateTo=2023-12-31&creatorName=박지수'

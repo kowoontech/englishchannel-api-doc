@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUserSchedulesByTime
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1699689011700418/schedules/by-time?date=2024-01-31'
@@ -18,7 +18,7 @@
  * @apiSuccess {Object[]} schedules 스케줄
  * @apiSuccess {String} schedules.time 시간 (HH:mm)
  * @apiSuccess {Object[]} schedules.reservations 예약 목록
- * @apiSuccess {Number} [schedules.reservations.scheduleId] 예약 식별키
+ * @apiSuccess {Number} [schedules.reservations.scheduleId] 스케줄 식별키
  * @apiSuccess {String} schedules.reservations.teacherId 강사 식별키
  * @apiSuccess {String} schedules.reservations.teacherName 강사명
  * @apiSuccess {String} schedules.reservations.status 예약 상태 (NONE:스케줄 없음, USERS:조회 대상 회원의 예약, AVAILABLE:예약 가능, FULL:예약 매진)

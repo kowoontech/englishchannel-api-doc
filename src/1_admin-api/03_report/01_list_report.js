@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName listReport
- * @apiGroup 1. Admin API > 3. 학사보고서
+ * @apiGroup 1. Admin API > 03. 학사보고서
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/reservations/report?dateFrom=2024-01-01&dateTo=2024-01-31&reportCondition=REPORT&reportSort=TIME'

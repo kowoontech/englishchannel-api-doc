@@ -5,7 +5,7 @@
  * ldfList 에 있는 ldf 식별키를 사용해 테스트 해주세요
  * @apiVersion 1.0.0
  * @apiName admin_evaluation_ldf
- * @apiGroup 1. Admin API > 6. 통계보고서
+ * @apiGroup 1. Admin API > 06. 통계보고서
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/evaluations/362222'

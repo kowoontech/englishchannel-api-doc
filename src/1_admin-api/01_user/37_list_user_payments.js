@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUserOrderPayments
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments'

@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUserCourseHistories
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1672401688362469/courses/75615/histories'

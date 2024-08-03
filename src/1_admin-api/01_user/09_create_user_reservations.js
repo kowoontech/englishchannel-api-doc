@@ -7,7 +7,7 @@
  * 스케줄 출력이 안된다면 REQUEST 참고해서 넣어주세요
  * @apiVersion 1.0.0
  * @apiName admin_createUserReservations
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X POST 'http://localhost:8080/admin/v1/users/M1699689011700418/reservations' \

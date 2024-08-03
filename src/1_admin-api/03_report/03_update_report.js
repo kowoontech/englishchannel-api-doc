@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_updateReport
- * @apiGroup 1. Admin API > 3. 학사보고서
+ * @apiGroup 1. Admin API > 03. 학사보고서
  *
  * @apiExample {curl} REQUEST
  * curl -i -X PUT 'http://localhost:8080/admin/v1/reservations/report/1317329'

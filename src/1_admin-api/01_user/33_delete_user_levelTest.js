@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_User_DELETE_LevelTest
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X DELETE 'http://localhost:8080/admin/v1/users/1028151/levelTests/6118'

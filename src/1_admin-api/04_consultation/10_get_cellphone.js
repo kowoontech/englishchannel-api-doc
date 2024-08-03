@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_getValCellphone
- * @apiGroup 1. Admin API > 4. 상담관리
+ * @apiGroup 1. Admin API > 04. 상담관리
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/consultations/cellphone'

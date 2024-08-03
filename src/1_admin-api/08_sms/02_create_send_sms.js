@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_createSendSms
- * @apiGroup 1. Admin API > 8. SMS
+ * @apiGroup 1. Admin API > 08. SMS
  *
  * @apiExample {curl} REQUEST
  * curl -i -X POST 'http://localhost:8080/admin/v1/sms/send' \

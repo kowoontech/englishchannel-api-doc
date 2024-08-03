@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_getUserOrder
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096'

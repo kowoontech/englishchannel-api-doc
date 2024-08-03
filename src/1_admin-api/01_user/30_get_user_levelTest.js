@@ -8,7 +8,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_getLevelTest
- * @apiGroup 1. Admin API > 1. 회원
+ * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'localhost:8080/admin/v1/users/M1372661465106388/levelTests/6153'
