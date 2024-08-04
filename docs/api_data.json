@@ -11456,5 +11456,148 @@
     },
     "filename": "src/2_mobile-api/00_common/02_logout.js",
     "groupTitle": "2._Mobile_API_>_00._공통"
+  },
+  {
+    "type": "get",
+    "url": "/mobile/v1/main",
+    "title": "01. 메인화면 데이터 조회",
+    "description": "<p>메인화면에 필요한 데이터 조회 <br/> 로그인 필수 <br/> 수강 목록</p>",
+    "version": "1.0.0",
+    "name": "mobile_getMainData",
+    "group": "2._Mobile_API_>_01._메인",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/mobile/v1/main' \\\n-H \"Authorization: 2191d3aa-d33d-4677-9da0-44556277ab39\"",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "courses",
+            "description": "<p>수강 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.id",
+            "description": "<p>수강 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.productName",
+            "description": "<p>수강명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.startDate",
+            "description": "<p>수강 시작일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.endDate",
+            "description": "<p>수강 종료일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.lessonCount",
+            "description": "<p>레슨 횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.remainCount",
+            "description": "<p>잔여 횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.attendanceCount",
+            "description": "<p>완료 횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.reservationCount",
+            "description": "<p>예약 횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "courses.reservations",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.reservations.id",
+            "description": "<p>예약 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.reservations.date",
+            "description": "<p>예약일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.reservations.startTime",
+            "description": "<p>시작 시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.reservations.endTime",
+            "description": "<p>종료 시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.reservations.teacherId",
+            "description": "<p>강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courses.reservations.teacherName",
+            "description": "<p>강사명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\"{\n    \"courses\": [\n        {\n            \"id\": 71840,\n            \"productName\": \"NEW PT 24회 3개월\",\n            \"startDate\": \"2023-01-09\",\n            \"endDate\": \"2023-04-08\",\n            \"lessonCount\": 24.0,\n            \"remainCount\": 0.0,\n            \"attendanceCount\": 24.0,\n            \"reservationCount\": 0.0,\n            \"reservations\": []\n        },\n        {\n            \"id\": 72884,\n            \"productName\": \"PTM (주2회 3개월)\",\n            \"startDate\": \"2023-04-11\",\n            \"endDate\": \"2023-07-20\",\n            \"lessonCount\": 26.0,\n            \"remainCount\": 0.0,\n            \"attendanceCount\": 26.0,\n            \"reservationCount\": 0.0,\n            \"reservations\": []\n        }\n    ]\n}\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/01_main/01_get_main_data.js",
+    "groupTitle": "2._Mobile_API_>_01._메인"
   }
 ]
