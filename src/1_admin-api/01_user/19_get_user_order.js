@@ -9,7 +9,7 @@
  * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360'
  *
  * @apiParam (Path) {String} id 회원 식별키
  * @apiParam (Path) {String} orderId 주문 식별키
@@ -28,30 +28,37 @@
  * @apiSuccess {Number} orderProducts.billingAmount 실청구금액
  * @apiSuccess {Number} orderProducts.refundAmount 환불금액
  * @apiSuccess {String} orderProducts.productType 분류
+ * @apiSuccess {Boolean} orderProducts.hasReservations 예약 여부 (true: 예약 있음)
+ * @apiSuccess {Boolean} orderProducts.hasPayments 결제 여부 (true: 결제 있음)
  * @apiSuccess {String} orderProducts.createdOn 주문일시 (yyyy-MM-dd HH:mm)
  * @apiSuccess {String} orderProducts.orderType 구분
  * @apiSuccess {Boolean} orderProducts.refundType 환불 구분 (CANCELABLE: 취소 가능, REFUNDABLE: 환불 가능, REFUNDED: 환불 완료)
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
-{
-    "id": "O1374064016311096",
-    "supplyAmount": 1320000,
-    "discountAmount": 264000,
-    "billingAmount": 1056000,
-    "refundAmount": 0,
-    "orderProducts": [
-        {
-            "id": "I1374064016316423",
-            "name": "PTG (주2회 3개월)/3개월/24회",
-            "amount": 1320000,
-            "discountAmount": 264000,
-            "billingAmount": 1056000,
-            "refundAmount": 0,
-            "productType": "과정",
-            "createdOn": "2013-07-17 21:26",
-            "orderType": "신규"
-        }
-    ]
-}
+ * "{
+ *     "id": "O1722163996604360",
+ *     "supplyAmount": 55000,
+ *     "discountAmount": 0,
+ *     "billingAmount": 55000,
+ *     "refundAmount": 55000,
+ *     "orderProducts": [
+ *         {
+ *             "id": "I1722163996604145",
+ *             "name": "PTG (주1회 1개월)/0개월/1회",
+ *             "amount": 55000,
+ *             "discountAmount": 0,
+ *             "billingAmount": 55000,
+ *             "refundAmount": 55000,
+ *             "productType": "과정",
+ *             "createdOn": "2024-07-28 19:53",
+ *             "orderType": "신규",
+ *             "refundType": "REFUNDED",
+ *             "retake": false,
+ *             "hasReservations": false,
+ *             "hasPayments": true
+ *         }
+ *     ],
+ *     "isCancelable": false
+ * }"
  */

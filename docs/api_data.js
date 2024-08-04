@@ -3075,7 +3075,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/O1374064016311096'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360'",
         "type": "curl"
       }
     ],
@@ -3202,6 +3202,20 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "orderProducts.hasReservations",
+            "description": "<p>예약 여부 (true: 예약 있음)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "orderProducts.hasPayments",
+            "description": "<p>결제 여부 (true: 결제 있음)</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "orderProducts.createdOn",
@@ -3226,7 +3240,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"id\": \"O1374064016311096\",\n    \"supplyAmount\": 1320000,\n    \"discountAmount\": 264000,\n    \"billingAmount\": 1056000,\n    \"refundAmount\": 0,\n    \"orderProducts\": [\n        {\n            \"id\": \"I1374064016316423\",\n            \"name\": \"PTG (주2회 3개월)/3개월/24회\",\n            \"amount\": 1320000,\n            \"discountAmount\": 264000,\n            \"billingAmount\": 1056000,\n            \"refundAmount\": 0,\n            \"productType\": \"과정\",\n            \"createdOn\": \"2013-07-17 21:26\",\n            \"orderType\": \"신규\"\n        }\n    ]\n}",
+          "content": "HTTP/1.1 200\n\"{\n    \"id\": \"O1722163996604360\",\n    \"supplyAmount\": 55000,\n    \"discountAmount\": 0,\n    \"billingAmount\": 55000,\n    \"refundAmount\": 55000,\n    \"orderProducts\": [\n        {\n            \"id\": \"I1722163996604145\",\n            \"name\": \"PTG (주1회 1개월)/0개월/1회\",\n            \"amount\": 55000,\n            \"discountAmount\": 0,\n            \"billingAmount\": 55000,\n            \"refundAmount\": 55000,\n            \"productType\": \"과정\",\n            \"createdOn\": \"2024-07-28 19:53\",\n            \"orderType\": \"신규\",\n            \"refundType\": \"REFUNDED\",\n            \"retake\": false,\n            \"hasReservations\": false,\n            \"hasPayments\": true\n        }\n    ],\n    \"isCancelable\": false\n}\"",
           "type": "json"
         }
       ]
