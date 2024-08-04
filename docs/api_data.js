@@ -11607,6 +11607,13 @@ define({ "api": [
             "optional": false,
             "field": "courses.reservations.teacherName",
             "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "courses.reservations.isCancelable",
+            "description": "<p>취소 가능 여부</p>"
           }
         ]
       },
@@ -11620,6 +11627,64 @@ define({ "api": [
     },
     "filename": "src/2_mobile-api/01_main/01_get_main_data.js",
     "groupTitle": "2._Mobile_API_>_01._메인"
+  },
+  {
+    "type": "get",
+    "url": "/mobile/v1/reservations/times",
+    "title": "02. 예약 가능한 시간 목록 조회",
+    "description": "<p>시간별, 강사별 예약</p>",
+    "version": "1.0.0",
+    "name": "mobile_getReservationTimes",
+    "group": "2._Mobile_API_>_02._예약",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/mobile/v1/reservations/times?date=2024-01-31&teacherIds=M1400118325784523&teacherIds=M1691559227102239'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>조회 날짜 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": true,
+            "field": "teacherIds",
+            "description": "<p>강사 식별키 (복수), 강사 먼저 선택했을 경우 사용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": false,
+            "field": "times",
+            "description": "<p>시간 목록</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\"{\n    \"times\": [\n        \"13:00\",\n        \"13:30\",\n        \"13:40\",\n        \"13:50\",\n        \"14:00\",\n        \"14:10\",\n        \"14:20\",\n        \"14:30\",\n        \"14:40\",\n        \"14:50\"\n    ]\n}\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/reservation/02_get_reservation_times.js",
+    "groupTitle": "2._Mobile_API_>_02._예약"
   },
   {
     "type": "put",

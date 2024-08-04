@@ -29,6 +29,7 @@
  * @apiSuccess {String} courses.reservations.endTime 종료 시간 (HH:mm)
  * @apiSuccess {String} courses.reservations.teacherId 강사 식별키
  * @apiSuccess {String} courses.reservations.teacherName 강사명
+ * @apiSuccess {Boolean} courses.reservations.isCancelable 취소 가능 여부
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
