@@ -3757,7 +3757,7 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "status",
+            "field": "list.status",
             "description": "<p>상태</p>"
           },
           {
@@ -4711,6 +4711,27 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.cancelDate",
+            "description": "<p>취소일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.cancelerName",
+            "description": "<p>취소자</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "list.isCancel",
+            "description": "<p>취소 여부</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "totalCount",
@@ -4784,7 +4805,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 1366328,\n            \"teacherName\": \"송예희\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-03-05 (Mon)\",\n            \"startTime\": \"08:00\",\n            \"endTime\": \"08:30\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-02-23\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"1:1 inter 17(done) 두번째 다이얼로그 마무리. 주요표현들을 모두 잘기억하고계심.\"\n        },\n        {\n            \"id\": 1366327,\n            \"teacherName\": \"Brett\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-03-05 (Mon)\",\n            \"startTime\": \"07:30\",\n            \"endTime\": \"08:00\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-02-23\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"FT about his weekend and how his daughters are doing and what kind of alcohol he drinks when he goes out.\"\n        }\n    ],\n    \"totalCount\": 38,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 4,\n    \"endPage\": 4,\n    \"hasNext\": false,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": true\n}",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 1366328,\n            \"teacherName\": \"송예희\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-03-05 (Mon)\",\n            \"startTime\": \"08:00\",\n            \"endTime\": \"08:30\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-02-23\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"1:1 inter 17(done) 두번째 다이얼로그 마무리. 주요표현들을 모두 잘기억하고계심.\",\n            \"cancelDate\": null,\n            \"cancelerName\": null,\n            \"isCancel\": false\n        },\n        {\n            \"id\": 1366327,\n            \"teacherName\": \"Brett\",\n            \"lessonType\": \"PT\",\n            \"date\": \"2018-03-05 (Mon)\",\n            \"startTime\": \"07:30\",\n            \"endTime\": \"08:00\",\n            \"attendanceStatus\": \"출석\",\n            \"modifierName\": \"김조희\",\n            \"modifiedOn\": \"2018-02-23\",\n            \"courseName\": \"PTM (주2회 6개월)/29.0회\",\n            \"report\": \"FT about his weekend and how his daughters are doing and what kind of alcohol he drinks when he goes out.\",\n            \"cancelDate\": null,\n            \"cancelerName\": null,\n            \"isCancel\": false\n        }\n    ],\n    \"totalCount\": 38,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 4,\n    \"endPage\": 4,\n    \"hasNext\": false,\n    \"hasPrev\": false,\n    \"isFirst\": true,\n    \"isLast\": true\n}",
           "type": "json"
         }
       ]
@@ -11599,5 +11620,98 @@ define({ "api": [
     },
     "filename": "src/2_mobile-api/01_main/01_get_main_data.js",
     "groupTitle": "2._Mobile_API_>_01._메인"
+  },
+  {
+    "type": "put",
+    "url": "/mobile/v1/reservations/cancel",
+    "title": "01. 예약 취소",
+    "description": "<p>취소할 예약 선택 후 취소</p>",
+    "version": "1.0.0",
+    "name": "mobile_updateCancelReservations",
+    "group": "2._Mobile_API_>_02._예약",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/mobile/v1/reservations/cancel' \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: 2191d3aa-d33d-4677-9da0-44556277ab39\"\n-d \"{\n    \"ids\": [\n        2621757\n    ],\n    \"cancelReason\": \"test\"\n}\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number[]",
+            "optional": false,
+            "field": "ids",
+            "description": "<p>취소할 예약 식별키 목록</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "cancelReason",
+            "description": "<p>취소 사유</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "cancelReservations",
+            "description": "<p>취소 예약 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cancelReservations.cancelDate",
+            "description": "<p>취소일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cancelReservations.date",
+            "description": "<p>수업일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cancelReservations.startTime",
+            "description": "<p>수업시작시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cancelReservations.endTime",
+            "description": "<p>수업종료시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cancelReservations.teacherName",
+            "description": "<p>강사명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\"{\n    \"cancelReservations\": [\n        {\n            \"cancelDate\": \"2024-08-04\",\n            \"date\": \"2024-01-26\",\n            \"startTime\": \"19:00\",\n            \"endTime\": \"19:30\",\n            \"teacherName\": null\n        }\n    ]\n}\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/reservation/01_update_cancel_reservations.js",
+    "groupTitle": "2._Mobile_API_>_02._예약"
   }
 ] });

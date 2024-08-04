@@ -36,7 +36,10 @@
  * @apiSuccess {String} list.modifiedOn 처리일 (yyyy-MM-dd)
  * @apiSuccess {String} list.courseName 과정명
  * @apiSuccess {String} list.report 학사보고서
- * 
+ * @apiSuccess {String} list.cancelDate 취소일 (yyyy-MM-dd)
+ * @apiSuccess {String} list.cancelerName 취소자
+ * @apiSuccess {Boolean} list.isCancel 취소 여부
+ *
  * @apiSuccess {Number} totalCount 전체 예약 수
  * @apiSuccess {Number} page 현재 페이지
  * @apiSuccess {Number} limit 한페이지에 보여줄 예약 수
@@ -63,7 +66,10 @@
             "modifierName": "김조희",
             "modifiedOn": "2018-02-23",
             "courseName": "PTM (주2회 6개월)/29.0회",
-            "report": "1:1 inter 17(done) 두번째 다이얼로그 마무리. 주요표현들을 모두 잘기억하고계심."
+            "report": "1:1 inter 17(done) 두번째 다이얼로그 마무리. 주요표현들을 모두 잘기억하고계심.",
+            "cancelDate": null,
+            "cancelerName": null,
+            "isCancel": false
         },
         {
             "id": 1366327,
@@ -76,7 +82,10 @@
             "modifierName": "김조희",
             "modifiedOn": "2018-02-23",
             "courseName": "PTM (주2회 6개월)/29.0회",
-            "report": "FT about his weekend and how his daughters are doing and what kind of alcohol he drinks when he goes out."
+            "report": "FT about his weekend and how his daughters are doing and what kind of alcohol he drinks when he goes out.",
+            "cancelDate": null,
+            "cancelerName": null,
+            "isCancel": false
         }
     ],
     "totalCount": 38,
