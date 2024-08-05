@@ -14,8 +14,8 @@
  * @apiParam (Query) {String} [times] 선택한 시간 (복수), 시간 먼저 선택했을 경우 사용
  *
  * @apiSuccess {Object[]} teachers 강사 목록
- * @apiSuccess {Object[]} teachers.id 강사 식별키
- * @apiSuccess {Object[]} teachers.name 강사명
+ * @apiSuccess {String} teachers.id 강사 식별키
+ * @apiSuccess {String} teachers.name 강사명
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200

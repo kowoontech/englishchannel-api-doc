@@ -11675,14 +11675,14 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "String",
             "optional": false,
             "field": "teachers.id",
             "description": "<p>강사 식별키</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "String",
             "optional": false,
             "field": "teachers.name",
             "description": "<p>강사명</p>"
