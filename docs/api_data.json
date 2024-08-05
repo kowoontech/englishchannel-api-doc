@@ -11630,6 +11630,78 @@
   },
   {
     "type": "get",
+    "url": "/mobile/v1/reservations/teachers",
+    "title": "03. 예약 가능한 강사 목록 조회",
+    "description": "<p>시간별, 강사별 예약</p>",
+    "version": "1.0.0",
+    "name": "mobile_getReservationTeachers",
+    "group": "2._Mobile_API_>_02._예약",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/mobile/v1/reservations/teachers?date=2024-01-31&times=13:00&times=13:30'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>조회 날짜 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": true,
+            "field": "times",
+            "description": "<p>선택한 시간 (복수), 시간 먼저 선택했을 경우 사용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "teachers",
+            "description": "<p>강사 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "teachers.id",
+            "description": "<p>강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "teachers.name",
+            "description": "<p>강사명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\"{\n    \"teachers\": [\n        {\n            \"id\": \"M1657064932771055\",\n            \"name\": \"김나래\"\n        },\n        {\n            \"id\": \"M1661138591404520\",\n            \"name\": \"최태연\"\n        },\n        {\n            \"id\": \"M1691559227102239\",\n            \"name\": \"Sadie\"\n        }\n    ]\n}\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/02_reservation/03_get_reservation_teachers.js",
+    "groupTitle": "2._Mobile_API_>_02._예약"
+  },
+  {
+    "type": "get",
     "url": "/mobile/v1/reservations/times",
     "title": "02. 예약 가능한 시간 목록 조회",
     "description": "<p>시간별, 강사별 예약</p>",
@@ -11683,7 +11755,7 @@
         }
       ]
     },
-    "filename": "src/2_mobile-api/reservation/02_get_reservation_times.js",
+    "filename": "src/2_mobile-api/02_reservation/02_get_reservation_times.js",
     "groupTitle": "2._Mobile_API_>_02._예약"
   },
   {
@@ -11776,7 +11848,7 @@
         }
       ]
     },
-    "filename": "src/2_mobile-api/reservation/01_update_cancel_reservations.js",
+    "filename": "src/2_mobile-api/02_reservation/01_update_cancel_reservations.js",
     "groupTitle": "2._Mobile_API_>_02._예약"
   }
 ]
