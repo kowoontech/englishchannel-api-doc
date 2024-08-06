@@ -8646,6 +8646,74 @@
     "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
+    "type": "put",
+    "url": "/admin/v1/teachers/cgt",
+    "title": "11. CGT 스케줄 등록",
+    "description": "<p>강사관리 &gt; CGT스케줄 &gt; 등록 <br/></p>",
+    "version": "1.0.0",
+    "name": "admin_createCgt",
+    "group": "1._Admin_API_>_05._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/cgt' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"date\":\"2023-11-04\",\n           \"startTime\":\"07:30\",\n           \"teacherId\":\"M1695013438115743\",\n           \"type\":\"CGT\",\n           \"reservationLimit\":4\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>예약일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>예약시간(HH:mm)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>강사식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>수강명(CGT로 넘겨주세요)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "reservationLimit",
+            "description": "<p>정원(추가된기능으로 최대4입니다)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/11_create_cgt.js",
+    "groupTitle": "1._Admin_API_>_05._강사"
+  },
+  {
     "type": "post",
     "url": "/admin/v1/teachers",
     "title": "08. 강사 등록",
