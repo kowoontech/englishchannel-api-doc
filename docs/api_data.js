@@ -8696,7 +8696,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "reservationLimit",
-            "description": "<p>정원(추가된기능으로 최대4입니다)</p>"
+            "description": "<p>정원</p>"
           }
         ]
       }
@@ -9460,6 +9460,16 @@ define({ "api": [
       }
     },
     "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "Number[]",
+            "description": "<p>예약가능시간</p>"
+          }
+        ]
+      },
       "examples": [
         {
           "title": "SUCCESS",

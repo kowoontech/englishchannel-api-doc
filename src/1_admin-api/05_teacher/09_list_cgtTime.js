@@ -19,7 +19,7 @@
  * @apiParam (Body) {String} date 예약날짜(yyyy-MM-dd)
  * @apiParam (Body) {String} teacherId 강사 식별키
  *
- *
+ * @apiSuccess Number[]  예약가능시간
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 [
