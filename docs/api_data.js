@@ -9465,7 +9465,7 @@ define({ "api": [
           {
             "group": "Success 200",
             "optional": false,
-            "field": "Number[]",
+            "field": "String[]",
             "description": "<p>예약가능시간</p>"
           }
         ]
