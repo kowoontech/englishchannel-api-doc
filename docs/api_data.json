@@ -8058,7 +8058,7 @@
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "cellPhone",
             "description": "<p>휴대폰번호</p>"
           }
@@ -9314,6 +9314,53 @@
       ]
     },
     "filename": "src/1_admin-api/05_teacher/05_list_teacher_schedules.js",
+    "groupTitle": "1._Admin_API_>_05._강사"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/teachers/cgttimes",
+    "title": "09. CGT 등록 가능 시간",
+    "description": "<p>강사관리 &gt; CGT스케줄 &gt; 등록 &gt; 예약일시의 시간 <br/></p>",
+    "version": "1.0.0",
+    "name": "admin_list_cgtTime",
+    "group": "1._Admin_API_>_05._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/teachers/cgttimes'\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"date\":\"2023-11-04\",\n           \"teacherId\":\"M1695013438115743\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>예약날짜(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>강사 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n[\n    \"06:30:00\",\n    \"08:30:00\",\n    \"09:00:00\",\n    \"09:30:00\",\n    \"10:00:00\"\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/09_list_cgtTime.js",
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {

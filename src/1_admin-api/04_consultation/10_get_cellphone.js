@@ -11,7 +11,7 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/consultations/cellphone'
  *
- * @apiParam (Body) {String} [cellPhone] 휴대폰번호
+ * @apiParam (Body) {String} cellPhone 휴대폰번호
  *
  * @apiSuccess {String} message 유효성 검사 결과
 
