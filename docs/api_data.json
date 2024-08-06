@@ -8936,6 +8936,46 @@
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
+    "type": "put",
+    "url": "/admin/v1/teachers/deletecgt",
+    "title": "12. CGT 스케줄 삭제",
+    "description": "<p>강사관리 &gt; CGT스케줄 &gt; 삭제 <br/></p>",
+    "version": "1.0.0",
+    "name": "admin_deleteCgt",
+    "group": "1._Admin_API_>_05._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/deletecgt' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"schedules\":[9525255,9525256]\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>스케줄식별키 (목록 내 있는 schedules안에 id값들)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/12_delete_cgt.js",
+    "groupTitle": "1._Admin_API_>_05._강사"
+  },
+  {
     "type": "delete",
     "url": "/admin/v1/teachers/{id}",
     "title": "04. 강사삭제",
