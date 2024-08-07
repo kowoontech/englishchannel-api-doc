@@ -10845,14 +10845,14 @@ define({ "api": [
     "type": "get",
     "url": "/admin/v1/statistics/waitingSms",
     "title": "07. 대기 내역 목록",
-    "description": "<p>SMS 전송현황 &gt; <br/> 통계보고서 &gt; sms전송현황 &gt; 대기 내역 <br/> 첫 조회 시 null , 검색 조건 시 전체일 때 ALL 사용</p>",
+    "description": "<p>SMS 전송현황 &gt; <br/> 통계보고서 &gt; sms전송현황 &gt; 대기 내역 <br/> 검색 조건 시 전체일 때 ALL 사용</p>",
     "version": "1.0.0",
     "name": "all_waitingSms",
     "group": "1._Admin_API_>_06._통계보고서",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/waitingSms",
+        "content": "curl -i -X GET 'localhost:8080/admin/v1/statistics/waitingSms?search=senderPhone&keyword=123-456-7899'",
         "type": "curl"
       }
     ],
@@ -10891,7 +10891,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": false,
             "field": "list",
-            "description": "<p>SMS 목록</p>"
+            "description": "<p>SMS 대기목록</p>"
           },
           {
             "group": "Success 200",
@@ -10946,6 +10946,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "list.sendType",
+            "description": "<p>구분(S:SMS, L:LMS)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "list.senderPhone",
             "description": "<p>발송번호</p>"
           },
@@ -10962,6 +10969,13 @@ define({ "api": [
             "optional": false,
             "field": "list.content",
             "description": "<p>문자내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.count",
+            "description": "<p>발송건수(1로 고정임)</p>"
           },
           {
             "group": "Success 200",
@@ -11038,7 +11052,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"smsTarget\": {\n                \"id\": 24,\n                \"email\": null,\n                \"recipientPhone\": \"3\",\n                \"recipientName\": \"김대한2\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-12-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 23,\n                \"email\": null,\n                \"recipientPhone\": \"3\",\n                \"recipientName\": \"김대한1\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-12-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 22,\n                \"email\": null,\n                \"recipientPhone\": \"3\",\n                \"recipientName\": \"김대한\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-12-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 3,\n                \"email\": \"이메일3@naver.com\",\n                \"recipientPhone\": \"010-2321-2312\",\n                \"recipientName\": \"김민국3\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-11-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 2,\n                \"email\": \"이메일2@naver.com\",\n                \"recipientPhone\": \"010-2321-2312\",\n                \"recipientName\": \"김민국2\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-11-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 1,\n                \"email\": \"이메일1@naver.com\",\n                \"recipientPhone\": \"010-2321-2312\",\n                \"recipientName\": \"김민국\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-11-12 00:00:00\"\n            },\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\"\n        }\n    ],\n    \"totalCount\": 6,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"endPage\": 1,\n    \"totalPage\": 1,\n    \"hasNext\": false,\n    \"isFirst\": true,\n    \"isLast\": true,\n    \"hasPrev\": false\n}",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"smsTarget\": {\n                \"id\": 24,\n                \"email\": null,\n                \"recipientPhone\": \"3\",\n                \"recipientName\": \"김대한2\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-12-12 00:00:00\"\n            },\n            \"sendType\": \"S\",\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\",\n            \"count\": 1\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 23,\n                \"email\": null,\n                \"recipientPhone\": \"3\",\n                \"recipientName\": \"김대한1\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-12-12 00:00:00\"\n            },\n            \"sendType\": \"S\",\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\",\n            \"count\": 1\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 22,\n                \"email\": null,\n                \"recipientPhone\": \"3\",\n                \"recipientName\": \"김대한\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-12-12 00:00:00\"\n            },\n            \"sendType\": \"S\",\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\",\n            \"count\": 1\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 11,\n                \"email\": \"이메일9@naver.com\",\n                \"recipientPhone\": \"010-2321-2312\",\n                \"recipientName\": \"김민국9\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-11-12 00:00:00\"\n            },\n            \"sendType\": \"L\",\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동1\",\n            \"content\": \"문자메세지1\",\n            \"count\": 1\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 3,\n                \"email\": \"이메일3@naver.com\",\n                \"recipientPhone\": \"010-2321-2312\",\n                \"recipientName\": \"김민국3\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-11-12 00:00:00\"\n            },\n            \"sendType\": \"S\",\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\",\n            \"count\": 1\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 2,\n                \"email\": \"이메일2@naver.com\",\n                \"recipientPhone\": \"010-2321-2312\",\n                \"recipientName\": \"김민국2\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-11-12 00:00:00\"\n            },\n            \"sendType\": \"S\",\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\",\n            \"count\": 1\n        },\n        {\n            \"smsTarget\": {\n                \"id\": 1,\n                \"email\": \"이메일1@naver.com\",\n                \"recipientPhone\": \"010-2321-2312\",\n                \"recipientName\": \"김민국\",\n                \"status\": \"WAITING\",\n                \"sendDate\": \"2012-11-12 00:00:00\"\n            },\n            \"sendType\": \"S\",\n            \"senderPhone\": \"123-456-7899\",\n            \"senderName\": \"고길동\",\n            \"content\": \"문자메세지\",\n            \"count\": 1\n        }\n    ],\n    \"totalCount\": 7,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"totalPage\": 1,\n    \"startPage\": 1,\n    \"endPage\": 1,\n    \"hasNext\": false,\n    \"isFirst\": true,\n    \"isLast\": true,\n    \"hasPrev\": false\n}",
           "type": "json"
         }
       ]

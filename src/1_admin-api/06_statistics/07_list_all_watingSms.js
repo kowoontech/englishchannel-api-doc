@@ -3,21 +3,21 @@
  *
  * @apiDescription SMS 전송현황 > <br/>
  * 통계보고서 > sms전송현황 > 대기 내역 <br/>
- * 첫 조회 시 null , 검색 조건 시 전체일 때 ALL 사용
+ * 검색 조건 시 전체일 때 ALL 사용
  *
  * @apiVersion 1.0.0
  * @apiName all_waitingSms
  * @apiGroup 1. Admin API > 06. 통계보고서
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/waitingSms
+ * curl -i -X GET 'localhost:8080/admin/v1/statistics/waitingSms?search=senderPhone&keyword=123-456-7899'
  *
  * @apiParam (Query) {String} sendType 구분 [ALL:전체, L:LMS , S: SMS]
  * @apiParam (Query) {String} search 검색조건[ALL: 전체, recipientPhone: 수신번호,senderPhone:발신번호, content:내용]
  * @apiParam (Query) {Number} keyword 검색내용
 
 
- * @apiSuccess {Object[]} list SMS 목록
+ * @apiSuccess {Object[]} list SMS 대기목록
  * @apiSuccess {Object[]} list.smsTarget 대기 내역 정보
  * @apiSuccess {Number} list.smsTarget.id SMS 식별키
  * @apiSuccess {String} list.smsTarget.email 회원이메일
@@ -25,9 +25,11 @@
  * @apiSuccess {String} list.smsTarget.recipientName 수신자
  * @apiSuccess {String} list.smsTarget.status 상태(WAITING)
  * @apiSuccess {String} list.smsTarget.sendDate 발송일 (yyyy-MM-dd HH:mm:ss)
+ * @apiSuccess {String} list.sendType 구분(S:SMS, L:LMS)
  * @apiSuccess {String} list.senderPhone 발송번호
  * @apiSuccess {String} list.senderName 발송자
  * @apiSuccess {String} list.content 문자내용
+ * @apiSuccess {String} list.count 발송건수(1로 고정임)
  *
  * @apiSuccess {Number} totalCount 전체 수
  * @apiSuccess {Number} page 현재 페이지
@@ -53,9 +55,11 @@
                 "status": "WAITING",
                 "sendDate": "2012-12-12 00:00:00"
             },
+            "sendType": "S",
             "senderPhone": "123-456-7899",
             "senderName": "고길동",
-            "content": "문자메세지"
+            "content": "문자메세지",
+            "count": 1
         },
         {
             "smsTarget": {
@@ -66,9 +70,11 @@
                 "status": "WAITING",
                 "sendDate": "2012-12-12 00:00:00"
             },
+            "sendType": "S",
             "senderPhone": "123-456-7899",
             "senderName": "고길동",
-            "content": "문자메세지"
+            "content": "문자메세지",
+            "count": 1
         },
         {
             "smsTarget": {
@@ -79,9 +85,26 @@
                 "status": "WAITING",
                 "sendDate": "2012-12-12 00:00:00"
             },
+            "sendType": "S",
             "senderPhone": "123-456-7899",
             "senderName": "고길동",
-            "content": "문자메세지"
+            "content": "문자메세지",
+            "count": 1
+        },
+        {
+            "smsTarget": {
+                "id": 11,
+                "email": "이메일9@naver.com",
+                "recipientPhone": "010-2321-2312",
+                "recipientName": "김민국9",
+                "status": "WAITING",
+                "sendDate": "2012-11-12 00:00:00"
+            },
+            "sendType": "L",
+            "senderPhone": "123-456-7899",
+            "senderName": "고길동1",
+            "content": "문자메세지1",
+            "count": 1
         },
         {
             "smsTarget": {
@@ -92,9 +115,11 @@
                 "status": "WAITING",
                 "sendDate": "2012-11-12 00:00:00"
             },
+            "sendType": "S",
             "senderPhone": "123-456-7899",
             "senderName": "고길동",
-            "content": "문자메세지"
+            "content": "문자메세지",
+            "count": 1
         },
         {
             "smsTarget": {
@@ -105,9 +130,11 @@
                 "status": "WAITING",
                 "sendDate": "2012-11-12 00:00:00"
             },
+            "sendType": "S",
             "senderPhone": "123-456-7899",
             "senderName": "고길동",
-            "content": "문자메세지"
+            "content": "문자메세지",
+            "count": 1
         },
         {
             "smsTarget": {
@@ -118,18 +145,20 @@
                 "status": "WAITING",
                 "sendDate": "2012-11-12 00:00:00"
             },
+            "sendType": "S",
             "senderPhone": "123-456-7899",
             "senderName": "고길동",
-            "content": "문자메세지"
+            "content": "문자메세지",
+            "count": 1
         }
     ],
-    "totalCount": 6,
+    "totalCount": 7,
     "page": 1,
     "limit": 10,
     "pageSize": 10,
+    "totalPage": 1,
     "startPage": 1,
     "endPage": 1,
-    "totalPage": 1,
     "hasNext": false,
     "isFirst": true,
     "isLast": true,
