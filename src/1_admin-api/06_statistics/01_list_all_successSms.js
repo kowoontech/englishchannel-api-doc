@@ -10,7 +10,7 @@
  * @apiGroup 1. Admin API > 06. 통계보고서
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/successSms
+ * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/successSms?sendType=ALL
  *
  * @apiParam (Query) {String} sendDateFrom 발송일 시작 [yyyy-MM-dd]
  * @apiParam (Query) {String} sendDateTo  발송일 종료 [yyyy-MM-dd]
@@ -27,8 +27,9 @@
  * @apiSuccess {String} list.sendDate 발송일[yyyy-MM-dd HH:mm:ss]
  * @apiSuccess {String} list.total 총 발송 건수
  * @apiSuccess {String} list.success SMS 발송 성공
- * @apiSuccess {String} list.waiting SMS 발송 대기
  * @apiSuccess {String} list.fail SMS 발송 실패
+ * @apiSuccess {String} list.waiting SMS 발송 대기
+ * @apiSuccess {String} list.sendType 구분(L:LMS , S: SMS)
  * @apiSuccess {String} list.recipientName 수취인
  * @apiSuccess {String} list.reservationDate 예약일시
  * @apiSuccess {String} list.recipientPhone 수신자 번호
@@ -50,22 +51,23 @@
 {
     "list": [
         {
-            "listNumber": 3,
+            "listNumber": 4,
             "id": 5,
             "senderName": "고길동",
             "content": "문자메세지",
             "sendDate": "2021-12-12 00:00:00",
-            "total": 10,
-            "success": 2,
-            "fail": 5,
-            "waiting": 3,
+            "total": 17,
+            "success": 5,
+            "fail": 6,
+            "waiting": 6,
+            "sendType": "S",
             "recipientName": "홍길동",
             "recipientPhone": "010-2321-1234",
             "senderPhone": "123-456-7899",
             "reservationDate": "2021-12-12 00:00:00"
         },
         {
-            "listNumber": 2,
+            "listNumber": 3,
             "id": 6,
             "senderName": "고길동1",
             "content": "문자메세지1",
@@ -74,13 +76,14 @@
             "success": 0,
             "fail": 1,
             "waiting": 0,
+            "sendType": "L",
             "recipientName": "홍길동1",
             "recipientPhone": "010-2321-1234",
             "senderPhone": "123-456-7899",
             "reservationDate": "2021-12-12 00:00:00"
         },
         {
-            "listNumber": 1,
+            "listNumber": 2,
             "id": 7,
             "senderName": "고길동2",
             "content": "문자메세지2",
@@ -89,22 +92,39 @@
             "success": 0,
             "fail": 0,
             "waiting": 0,
+            "sendType": null,
+            "recipientName": "홍길동2",
+            "recipientPhone": "010-2321-1234",
+            "senderPhone": "123-456-7899",
+            "reservationDate": "2021-12-12 00:00:00"
+        },
+        {
+            "listNumber": 1,
+            "id": 19,
+            "senderName": "고길동2",
+            "content": "문자메세지2",
+            "sendDate": "2021-12-12 00:00:00",
+            "total": 0,
+            "success": 0,
+            "fail": 0,
+            "waiting": 0,
+            "sendType": null,
             "recipientName": "홍길동2",
             "recipientPhone": "010-2321-1234",
             "senderPhone": "123-456-7899",
             "reservationDate": "2021-12-12 00:00:00"
         }
     ],
-    "totalCount": 3,
+    "totalCount": 4,
     "page": 1,
     "limit": 10,
     "pageSize": 10,
-    "totalPage": 1,
     "endPage": 1,
     "startPage": 1,
-    "hasNext": false,
+    "totalPage": 1,
     "isFirst": true,
     "isLast": true,
+    "hasNext": false,
     "hasPrev": false
 }
  */
