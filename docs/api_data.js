@@ -10489,7 +10489,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "search",
-            "description": "<p>검색조건[content: 내용,senderName:발송인]</p>"
+            "description": "<p>검색조건[ALL:전체, content: 내용,senderName:발송인]</p>"
           },
           {
             "group": "Query",
