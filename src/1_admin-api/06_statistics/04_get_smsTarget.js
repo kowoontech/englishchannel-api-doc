@@ -12,6 +12,7 @@
  *
  * @apiParam (Query) id sms 식별키
  * @apiParam (Body) search 검색조건 (전체: ALL, 이름:recipientName, 이메일: email)
+ * @apiParam (Body) keyword 검색내용
  *
  * @apiSuccess {Object[]} list 수취인 정보
  * @apiSuccess {String} list.id 수취인 식별키
