@@ -12362,5 +12362,222 @@
     },
     "filename": "src/2_mobile-api/02_reservation/01_update_cancel_reservations.js",
     "groupTitle": "2._Mobile_API_>_02._예약"
+  },
+  {
+    "type": "get",
+    "url": "/mobile/v1/feedback",
+    "title": "01.피드백 목록",
+    "description": "<ul> <li>완료 레슨 피드백 : 현재 날짜 기준으로 진행된 수업에 대한 예약 정보<br/> - 레슨 피드백 상세 화면(레슨피드백보기):피드백 목록에 ldf 필드에 피드백 상세 화면에 대한 정보 있음<br/></li> </ul>",
+    "version": "1.0.0",
+    "name": "mobile_listFeedback",
+    "group": "2._Mobile_API_>_03._레슨피드백",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/mobile/v1/feedback?isLdf=true&date=2023-01-10&time=00:00:00'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "boolean",
+            "optional": false,
+            "field": "isLdf",
+            "description": "<p>false를 기본값으로 넘겨주세요 <br/> (LDF가 포함된 완료 피드백만 조회 할때 true / 완료 피드백 전체 조회 시 false)</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>오늘날짜(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "time",
+            "description": "<p>현재시간(HH:mm)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "feedbacks",
+            "description": "<p>레슨피드백 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.date",
+            "description": "<p>예약일자</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.startTime",
+            "description": "<p>예약수업시간(시작)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.endTime",
+            "description": "<p>예약수업시간(끝)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "feedbacks.ldf",
+            "description": "<p>ldf 정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feedbacks.ldf.id",
+            "description": "<p>ldf식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.ldf.lesson",
+            "description": "<p>lesson(ldf상세조회 시 information안에 Lesson)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.ldf.contentSp",
+            "description": "<p>Stress and Pronunciation</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.ldf.contentV",
+            "description": "<p>Vocabulary</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.ldf.contentSg",
+            "description": "<p>Sentence Structure&amp;Grammar</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.ldf.contentC",
+            "description": "<p>Comment</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "feedbacks.ldf.grade",
+            "description": "<p>평점</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.ldf.evaluation",
+            "description": "<p>평가</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.attendanceStatus",
+            "description": "<p>출결상태(Y:출석, N:결석 , R:예약)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "feedbacks.teacherName",
+            "description": "<p>강사명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\"[\n        {\n            \"date\": \"2023-01-09\",\n            \"startTime\": \"20:30:00\",\n            \"endTime\": \"21:00:00\",\n            \"ldf\": null,\n            \"attendanceStatus\": \"N\",\n            \"teacherName\": \"Alex\"\n        },\n        {\n            \"date\": \"2023-01-09\",\n            \"startTime\": \"21:00:00\",\n            \"endTime\": \"21:30:00\",\n            \"ldf\": null,\n            \"attendanceStatus\": \"N\",\n            \"teacherName\": \"최태연\"\n        },\n        {\n            \"date\": \"2023-01-03\",\n            \"startTime\": \"20:30:00\",\n            \"endTime\": \"21:00:00\",\n            \"ldf\": {\n                \"id\": 288928,\n                \"lesson\": \"45294\",\n                \"contentSp\": \"<p>What did you do on New Year's Day? (새해)&nbsp;</p> <p><br /></p> <p>Most of the concert goers were not local.</p> <p><br /></p> <p>fireworks 불꽃놀이&nbsp;</p> <p><br /></p> <p>Jeju Island is warmer than Seoul.&nbsp;</p> <p><br /></p> <p>There are many concerts at the end of the year.&nbsp;</p> <p><br /></p> <p>anime&nbsp; 일본 animation&nbsp;</p> <p><br /></p> <p>We're taking a girls' trip to Japan&nbsp;</p>\",\n                \"contentV\": \"<p>I upload TO my social media. (SNS)&nbsp;</p> <p>I POST to my social media.&nbsp;</p> <p><br /></p> <p>engaged 약혼&nbsp;</p> <p>wedding 결혼식&nbsp;</p> <p><br /></p> <p>I want to HAVE a wedding.&nbsp;</p> <p><br /></p> <p>busy (adjective)&nbsp;</p> <p>I AM busy.&nbsp;</p> <p><br /></p>\",\n                \"contentSg\": \"<p>&nbsp;</p>\",\n                \"contentC\": \"<p>&nbsp;</p>\",\n                \"grade\": null,\n                \"evaluation\": null\n            },\n            \"attendanceStatus\": \"Y\",\n            \"teacherName\": \"Steven\"\n        },\n        {\n            \"date\": \"2023-01-03\",\n            \"startTime\": \"21:00:00\",\n            \"endTime\": \"21:30:00\",\n            \"ldf\": {\n                \"id\": 288932,\n                \"lesson\": \"기본영어회화 01-03\",\n                \"contentSp\": \"new year's resolution 새해 다짐&nbsp; <p>go on a diet&nbsp;</p> <p>hang up 전화를 끊다/hang out with ~~어울리다&nbsp;</p> <p>전화를 받다 pick up the phone&nbsp;</p> <p><br></p> <p>he brought some coffee to me /he brought me some coffee</p> <p>he drank a lot of water&nbsp;</p> <p>drink-drank-drunken&nbsp;&nbsp;</p> <p>why did you hang up the phone?</p> <p>why you hung up the phone?</p> <p>he left 태백 3 years ago&nbsp;</p> <p>we got hurt&nbsp;</p> <p>have a hangover&nbsp;</p> <p>he had a hangover last night&nbsp;</p> <p><br></p>\",\n                \"contentV\": \"<p>&nbsp;</p>\",\n                \"contentSg\": \"<p>get hurt 상처를 받은 것&nbsp;</p> <p>did you break a window?</p> <p>break up with 헤어지다&nbsp;</p> <p>did you break up with your boyfriend ?</p> <p>hometown 고향&nbsp;</p> <p>when did you leave your hometown&nbsp;</p> <p>i left my hometown 5 years ago&nbsp;</p> <p>did you hang up the phone first?&nbsp;</p> <p>he doesn't pick up the phone</p> <p>do you need my help?&nbsp;</p> <p>i need your help &lt;&lt;<span style=\\\"color: #0000ff\\\">i could use some help&nbsp;</span></p> <p><br></p>\",\n                \"contentC\": \"<p>&nbsp;</p>\",\n                \"grade\": null,\n                \"evaluation\": null\n            },\n            \"attendanceStatus\": \"N\",\n            \"teacherName\": \"최태연\"\n        },\n        {\n            \"date\": \"2023-01-02\",\n            \"startTime\": \"20:30:00\",\n            \"endTime\": \"21:00:00\",\n            \"ldf\": null,\n            \"attendanceStatus\": \"N\",\n            \"teacherName\": \"Adam\"\n        },\n        {\n            \"date\": \"2023-01-02\",\n            \"startTime\": \"21:00:00\",\n            \"endTime\": \"21:30:00\",\n            \"ldf\": null,\n            \"attendanceStatus\": \"N\",\n            \"teacherName\": \"최태연\"\n        },\n        {\n            \"date\": \"2022-12-27\",\n            \"startTime\": \"20:30:00\",\n            \"endTime\": \"21:00:00\",\n            \"ldf\": null,\n            \"attendanceStatus\": \"Y\",\n            \"teacherName\": \"Steven\"\n        },\n        {\n            \"date\": \"2022-12-27\",\n            \"startTime\": \"21:00:00\",\n            \"endTime\": \"21:30:00\",\n            \"ldf\": null,\n            \"attendanceStatus\": \"Y\",\n            \"teacherName\": \"최태연\"\n        },\n        {\n            \"date\": \"2022-12-26\",\n            \"startTime\": \"20:30:00\",\n            \"endTime\": \"21:00:00\",\n            \"ldf\": null,\n            \"attendanceStatus\": \"N\",\n            \"teacherName\": \"Alex\"\n        },\n        {\n            \"date\": \"2022-12-26\",\n            \"startTime\": \"21:00:00\",\n            \"endTime\": \"21:30:00\",\n            \"ldf\": null,\n            \"attendanceStatus\": \"N\",\n            \"teacherName\": \"최태연\"\n        },\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/03_feedback/01_list_feedback.js",
+    "groupTitle": "2._Mobile_API_>_03._레슨피드백"
+  },
+  {
+    "type": "put",
+    "url": "/mobile/v1/feedback",
+    "title": "02. 레슨피드백 평점 등록",
+    "description": "<p>Ldf 상세 조회 시 평점과 평가 등록</p>",
+    "version": "1.0.0",
+    "name": "mobile_updateFeedback",
+    "group": "2._Mobile_API_>_03._레슨피드백",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http:/localhost:8080/mobile/v1/feedback' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"id\":291785,\n           \"grade\":4.5,\n           \"evaluation\" : \"재확인\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Ldf 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "grade",
+            "description": "<p>평점</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "evaluation",
+            "description": "<p>평가</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/03_feedback/02_update_feedback_evaluation.js",
+    "groupTitle": "2._Mobile_API_>_03._레슨피드백"
   }
 ]
