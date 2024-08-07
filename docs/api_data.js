@@ -12384,9 +12384,9 @@ define({ "api": [
           {
             "group": "Query",
             "type": "boolean",
-            "optional": false,
+            "optional": true,
             "field": "isLdf",
-            "description": "<p>false를 기본값으로 넘겨주세요 <br/> (LDF가 포함된 완료 피드백만 조회 할때 true / 완료 피드백 전체 조회 시 false)</p>"
+            "description": "<p>LDF가 포함된 완료 피드백만 조회 할때 true / 완료 피드백 전체 조회 시 false</p>"
           },
           {
             "group": "Query",

@@ -11,8 +11,7 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/mobile/v1/feedback?isLdf=true&date=2023-01-10&time=00:00:00'
  *
- * @apiParam (Query) {boolean} isLdf false를 기본값으로 넘겨주세요 <br/>
- *                             (LDF가 포함된 완료 피드백만 조회 할때 true / 완료 피드백 전체 조회 시 false)
+ * @apiParam (Query) {boolean} [isLdf] LDF가 포함된 완료 피드백만 조회 할때 true / 완료 피드백 전체 조회 시 false
  * @apiParam (Query) {String} date 오늘날짜(yyyy-MM-dd)
  * @apiParam (Query) {String} time 현재시간(HH:mm)
  *
