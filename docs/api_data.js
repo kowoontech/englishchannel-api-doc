@@ -8003,7 +8003,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "consultation.status",
-            "description": "<p>처리상태 WAITING // 대기<br/> NO_CONTACT,<br/> UNVISITED,<br/> RESERVED,<br/> NOT_REGISTERED,<br/> REGISTERED,<br/> NO_SHOW,<br/> MISSED,<br/></p>"
+            "description": "<p>처리상태 (3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료,<br/> 7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)</p>"
           },
           {
             "group": "Success 200",
@@ -8257,7 +8257,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "status",
-            "description": "<p>처리상태 WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/> RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/> REGISTERED:등록완료, NoShow, MISSED:부재중)</p>"
+            "description": "<p>(3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료,<br/> 7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)</p>"
           },
           {
             "group": "Body",
@@ -8434,10 +8434,10 @@ define({ "api": [
           },
           {
             "group": "Query",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "status",
-            "description": "<p>처리상태 (WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/> RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/> REGISTERED:등록완료, NoShow, MISSED:부재중)</p>"
+            "description": "<p>처리상태  (3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료,<br/> 7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)</p>"
           },
           {
             "group": "Query",
@@ -8499,7 +8499,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "list.status",
-            "description": "<p>처리상태 (WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/> RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/> REGISTERED:등록완료, NoShow, MISSED:부재중)</p>"
+            "description": "<p>처리상태 (3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료,<br/> 7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)</p>"
           },
           {
             "group": "Success 200",

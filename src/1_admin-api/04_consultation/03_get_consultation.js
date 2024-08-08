@@ -56,14 +56,8 @@
                                                         TIME_07, // 18:00~20:00<br/>
                                                         TIME_08, // 20:00~21:00<br/>
                                                         TIME_09 // 기타]<br/>
- * @apiSuccess {String} consultation.status 처리상태 WAITING // 대기<br/>
-                                                   NO_CONTACT,<br/>
-                                                   UNVISITED,<br/>
-                                                   RESERVED,<br/>
-                                                   NOT_REGISTERED,<br/>
-                                                   REGISTERED,<br/>
-                                                   NO_SHOW,<br/>
-                                                   MISSED,<br/>
+ * @apiSuccess {String} consultation.status 처리상태 (3:대기중, 4:컨택금지, 5:미방문(통화완료), 6:예약완료,<br/>
+                                                   7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)
  * @apiSuccess {String} consultation.statuses 사용X
  * @apiSuccess {String} consultation.levelTestType  [R 밖에 없음.]
  * @apiSuccess {String} consultation.levelTestAnswer 사용X
