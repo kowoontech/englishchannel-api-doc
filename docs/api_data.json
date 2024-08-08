@@ -8819,7 +8819,7 @@
             "group": "Body",
             "type": "String",
             "optional": false,
-            "field": "teacherActive",
+            "field": "active",
             "description": "<p>활동여부 [true:활동, false:비활동]</p>"
           },
           {
@@ -9154,7 +9154,7 @@
             "group": "Success 200",
             "type": "Boolean",
             "optional": false,
-            "field": "teacherActive",
+            "field": "active",
             "description": "<p>활동여부 [true:활동, false:비활동]</p>"
           },
           {
@@ -9596,7 +9596,7 @@
             "group": "Body",
             "type": "String",
             "optional": false,
-            "field": "teacherActive",
+            "field": "active",
             "description": "<p>활동여부 [true:활동, false:비활동]</p>"
           },
           {
