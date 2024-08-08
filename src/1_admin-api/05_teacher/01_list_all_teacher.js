@@ -11,18 +11,18 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/teachers?active=INACTIVE&type=LT&search=name&keyword=Da
  *
- * @apiParam (Query) {String} contractDateFrom 계약기간 [yyyy-MM-dd]
- * @apiParam (Query) {String} contractDateTo  계약기간[yyyy-MM-dd]
- * @apiParam (Query) {String} active 활동 [INACTIVE:비활동/ACTIVE:활동] . 기본값 '활동'으로
- * @apiParam (Query) {String} type 구분[HT, LT]
- * @apiParam (Query) {String} search 검색조건[name: 이름,loginId:아이디,email:이메일]
+ * @apiParam (Query) {String} [contractDateFrom] 계약기간 [yyyy-MM-dd]
+ * @apiParam (Query) {String} [contractDateTo]  계약기간[yyyy-MM-dd]
+ * @apiParam (Query) {boolean} active 활동 (true/false) . 기본값 '활동(true)'으로
+ * @apiParam (Query) {String} type 구분(HT, LT), 초기값 '전체'는 null
+ * @apiParam (Query) {String} search 검색조건(ALL:전체name: 이름,loginId:아이디,email:이메일)
  * @apiParam (Query) {Number} keyword 검색내용
  * @apiParam (Query) {Number} limit 한페이지에 보여줄 강사 수
  * @apiParam (Query) {Number} page 현재 페이지
 
  * @apiSuccess {Object[]} list 강사 목록
  * @apiSuccess {String} list.userId 강사 식별키
- * @apiSuccess {String} list.type 구분[HT, LT]
+ * @apiSuccess {String} list.type 구분(HT, LT)
  * @apiSuccess {String} list.teacherName  강사명
  * @apiSuccess {String} list.workTime 근무시간[AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]
  * @apiSuccess {String} list.sort 순번

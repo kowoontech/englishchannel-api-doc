@@ -9903,37 +9903,37 @@ define({ "api": [
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "contractDateFrom",
             "description": "<p>계약기간 [yyyy-MM-dd]</p>"
           },
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "contractDateTo",
             "description": "<p>계약기간[yyyy-MM-dd]</p>"
           },
           {
             "group": "Query",
-            "type": "String",
+            "type": "boolean",
             "optional": false,
             "field": "active",
-            "description": "<p>활동 [INACTIVE:비활동/ACTIVE:활동] . 기본값 '활동'으로</p>"
+            "description": "<p>활동 (true/false) . 기본값 '활동(true)'으로</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "type",
-            "description": "<p>구분[HT, LT]</p>"
+            "description": "<p>구분(HT, LT), 초기값 '전체'는 null</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "search",
-            "description": "<p>검색조건[name: 이름,loginId:아이디,email:이메일]</p>"
+            "description": "<p>검색조건(ALL:전체name: 이름,loginId:아이디,email:이메일)</p>"
           },
           {
             "group": "Query",
@@ -9981,7 +9981,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "list.type",
-            "description": "<p>구분[HT, LT]</p>"
+            "description": "<p>구분(HT, LT)</p>"
           },
           {
             "group": "Success 200",
