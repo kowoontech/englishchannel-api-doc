@@ -11,8 +11,8 @@
  * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/sms/5/target?search=recipientName&keyword=김민국8'
  *
  * @apiParam (Query) id sms 식별키
- * @apiParam (Body) search 검색조건 (전체: ALL, 이름:recipientName, 이메일: email)
- * @apiParam (Body) keyword 검색내용
+ * @apiParam (Query) search 검색조건 (전체: ALL, 이름:recipientName, 이메일: email)
+ * @apiParam (Query) keyword 검색내용
  *
  * @apiSuccess {Object[]} list 수취인 정보
  * @apiSuccess {String} list.id 수취인 식별키

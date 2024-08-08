@@ -10427,17 +10427,15 @@ define({ "api": [
             "optional": false,
             "field": "id",
             "description": "<p>sms 식별키</p>"
-          }
-        ],
-        "Body": [
+          },
           {
-            "group": "Body",
+            "group": "Query",
             "optional": false,
             "field": "search",
             "description": "<p>검색조건 (전체: ALL, 이름:recipientName, 이메일: email)</p>"
           },
           {
-            "group": "Body",
+            "group": "Query",
             "optional": false,
             "field": "keyword",
             "description": "<p>검색내용</p>"
