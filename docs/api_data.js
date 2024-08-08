@@ -19,7 +19,7 @@ define({ "api": [
         "Body": [
           {
             "group": "Body",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "codeGroup",
             "description": "<p>코드그룹 식별키</p>"
@@ -33,14 +33,14 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "code",
             "description": "<p>코드 식별키</p>"
           },
           {
             "group": "Body",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "name",
             "description": "<p>코드명</p>"
@@ -228,7 +228,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "commonCode.codeGroup",
             "description": "<p>그룹코드 식별키</p>"
@@ -242,7 +242,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "commonCode.code",
             "description": "<p>코드 식별키</p>"
@@ -308,7 +308,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "commonCode.codeGroup",
             "description": "<p>그룹코드 식별키</p>"

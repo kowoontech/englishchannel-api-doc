@@ -13,7 +13,7 @@
  *
  *
  * @apiSuccess {Object[]} commonCodeGroup 코드 그룹 목록
- * @apiSuccess {Number} commonCode.codeGroup 그룹코드 식별키
+ * @apiSuccess {String} commonCode.codeGroup 그룹코드 식별키
  * @apiSuccess {String} commonCode.codeGroupName 그룹코드명
  *
  * @apiSuccessExample {json} SUCCESS

@@ -13,9 +13,9 @@
  *
  *
  * @apiSuccess {Object[]} commonCode 공통코드목록
- * @apiSuccess {Number} commonCode.codeGroup 그룹코드 식별키
+ * @apiSuccess {String} commonCode.codeGroup 그룹코드 식별키
  * @apiSuccess {String} commonCode.codeGroupName 그룹코드명
- * @apiSuccess {Number} commonCode.code 코드 식별키
+ * @apiSuccess {String} commonCode.code 코드 식별키
  * @apiSuccess {String} commonCode.name 코드명
  * @apiSuccess {Number} commonCode.sort 코드순서
  * @apiSuccess {String} commonCode.useYn 활성여부(Y:활성,N:비활성)
