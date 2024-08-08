@@ -6,7 +6,7 @@
  *                 - 39.회원주문결제등록: 카드종류(300)<br/>
  *
  * @apiVersion 1.0.0
- * @apiName admin_listCommonCode
+ * @apiName admin_listCode
  * @apiGroup 1. Admin API > 00. 공통
  *
  * @apiExample {curl} REQUEST
