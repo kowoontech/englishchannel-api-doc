@@ -1,7 +1,7 @@
 /**
- * @api {get} /admin/v1/commonCode 06. 공통코드 목록
+ * @api {get} /admin/v1/commonCode 06. 공통코드 목록(공통코드관리페이지)
  *
- * @apiDescription 공통 코드 목록 <br/>
+ * @apiDescription 공통 코드 관리 페이지의 공통 코드 목록 <br/>
  *
  *
  * @apiVersion 1.0.0

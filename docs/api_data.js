@@ -204,8 +204,8 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/commonCode",
-    "title": "06. 공통코드 목록",
-    "description": "<p>공통 코드 목록 <br/></p>",
+    "title": "06. 공통코드 목록(공통코드관리페이지)",
+    "description": "<p>공통 코드 관리 페이지의 공통 코드 목록 <br/></p>",
     "version": "1.0.0",
     "name": "admin_listCommonCode",
     "group": "1._Admin_API_>_00._공통",
@@ -279,6 +279,64 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/00_common/06_list_commonCode.js",
+    "groupTitle": "1._Admin_API_>_00._공통"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/code/{codeGroupId}",
+    "title": "07. 공통코드 목록",
+    "description": "<p>셀렉트박스 리스트 조회 시 사용 <br/> - 상담관리 : 상담구분(100) , 처리상태(200)<br/> - 39.회원주문결제등록: 카드종류(300)<br/></p>",
+    "version": "1.0.0",
+    "name": "admin_listCommonCode",
+    "group": "1._Admin_API_>_00._공통",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/code/100'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "codeGroupId",
+            "description": "<p>공통코드식별키(상담구분:100/ 처리상태:200/ 카드종류:300/ 근무시간:400)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "code",
+            "description": "<p>코드식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>코드명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/00_common/07_list_code.js",
     "groupTitle": "1._Admin_API_>_00._공통"
   },
   {
