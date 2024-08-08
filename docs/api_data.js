@@ -8817,7 +8817,7 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
             "description": "<p>활동여부 [true:활동, false:비활동]</p>"
@@ -9594,7 +9594,7 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
             "description": "<p>활동여부 [true:활동, false:비활동]</p>"
@@ -9916,7 +9916,7 @@ define({ "api": [
           },
           {
             "group": "Query",
-            "type": "boolean",
+            "type": "Boolean",
             "optional": false,
             "field": "active",
             "description": "<p>활동 (true/false) . 기본값 '활동(true)'으로</p>"
