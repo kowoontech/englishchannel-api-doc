@@ -8,10 +8,10 @@
  * @apiGroup 2. Mobile API > 02. 예약
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/mobile/v1/reservations/teachers?date=2024-01-31&times=13:00&times=13:30'
+ * curl -i -X GET 'http://localhost:8080/mobile/v1/reservations/teachers?date=2024-01-31&time=13:00'
  *
  * @apiParam (Query) {String} date 조회 날짜 (yyyy-MM-dd)
- * @apiParam (Query) {String} [times] 선택한 시간 (복수), 시간 먼저 선택했을 경우 사용
+ * @apiParam (Query) {String} [time] 앞에서 선택한 시간, 시간 먼저 선택했을 경우 사용
  *
  * @apiSuccess {Object[]} teachers 강사 목록
  * @apiSuccess {String} teachers.id 강사 식별키
