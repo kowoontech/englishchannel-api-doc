@@ -623,14 +623,14 @@ define({ "api": [
             "type": "String",
             "optional": true,
             "field": "interviewer",
-            "description": "<p>[interviewer] Interviewer</p>"
+            "description": "<p>interviewer Interviewer</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": true,
             "field": "lbt",
-            "description": "<p>[LBT 테스트결과]</p>"
+            "description": "<p>LBT 테스트결과</p>"
           },
           {
             "group": "Body",
@@ -656,7 +656,7 @@ define({ "api": [
           {
             "group": "Body",
             "type": "File",
-            "optional": false,
+            "optional": true,
             "field": "file",
             "description": "<p>첨부파일</p>"
           },
@@ -775,77 +775,77 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "agreement",
             "description": "<p>Agreement(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "prepositions",
             "description": "<p>Prepositions(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "articles",
             "description": "<p>Articles(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "plurals",
             "description": "<p>Plurals(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "others",
             "description": "<p>Others(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "strongPoint",
             "description": "<p>strongPoint</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "weakPoint",
             "description": "<p>weakPoint</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "comprehension",
             "description": "<p>Comprehension How much does learner understand<br/> (10:almost nothing ,20:some parts ,30:most parts ,40:almost everything ,50:everything)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "confidence",
             "description": "<p>Confidence(10:completely lacking ,20:lacking ,30:average ,40:above average,50:very confident)</p>"
           },
           {
             "group": "Body",
-            "type": "String[]",
-            "optional": false,
+            "type": "String",
+            "optional": true,
             "field": "recommendedLevel",
             "description": "<p>Recommended Level [ R2:Pre// R3:300// R4:400//R5:500 //R6:600//R7:700://R8: 800//R9:900//ETC:ETC]</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "recommendedLevelEtc",
             "description": "<p>Etc 이유</p>"
           }
@@ -5482,49 +5482,49 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "testStartTime",
             "description": "<p>테스트일시(시작) (yyyy-mm-dd HH:mm:ss)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "interviewer",
             "description": "<p>interviewer Interviewer</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "lbt",
             "description": "<p>LBT 테스트결과</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "rbt",
             "description": "<p>RBT 테스트결과</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "obt",
             "description": "<p>OBT</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "testIp",
             "description": "<p>TEST IP</p>"
           },
           {
             "group": "Body",
             "type": "File",
-            "optional": false,
+            "optional": true,
             "field": "file",
             "description": "<p>첨부파일</p>"
           },
@@ -5538,182 +5538,182 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "note",
             "description": "<p>특이사항</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "purpose",
             "description": "<p>Purpose of Study</p>"
           },
           {
             "group": "Body",
             "type": "String[]",
-            "optional": false,
+            "optional": true,
             "field": "studyType",
             "description": "<p>What kind of English do you want to study and learn?<br/> [EC: English Conversation,<br/> BE: Business English ,TS:Toeic Speaking , I:Interview ,ETC: ETC]<br></p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "studyTypeETC",
             "description": "<p>이유</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "familyBackground",
             "description": "<p>Family Background</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "usageType",
             "description": "<p>Company or School</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "occupation",
             "description": "<p>Occupation</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "spareTime",
             "description": "<p>Spare Time</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "Travel",
             "description": "<p>Abroad</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "futurePlans",
             "description": "<p>Future Plans</p>"
           },
           {
             "group": "Body",
             "type": "String[]",
-            "optional": false,
+            "optional": true,
             "field": "consonants",
             "description": "<p>consonants <br/> [ R , L, P, F, B, V, S , Z, SH, EZH, CH, G, TTH, TH]<br/></p>"
           },
           {
             "group": "Body",
             "type": "String[]",
-            "optional": false,
+            "optional": true,
             "field": "vowels",
             "description": "<p>vowels [ 순서대로 &gt; A,B,C,D,E,F,G,H,I,J,K,L,M,N]</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "clarity",
             "description": "<p>Clarity(10:hard to understand ,20:average ,30:easy to understand)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "intonation",
             "description": "<p>Intonation(10:very Korean ,20:a bit Korean,30:acceptable ,40:near native)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "vocabulary",
             "description": "<p>Vocabulary(10:very limited ,20:limited ,30:average ,40:above average ,50:extensive)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "verbsTense",
             "description": "<p>Verbs tense(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "agreement",
             "description": "<p>Agreement(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "prepositions",
             "description": "<p>Prepositions(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "articles",
             "description": "<p>Articles(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "plurals",
             "description": "<p>Plurals(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "others",
             "description": "<p>Others(10:Never ,20:Seldom ,30:Sometimes,40:Usually,50:Always)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "strongPoint",
             "description": "<p>strongPoint</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "weakPoint",
             "description": "<p>weakPoint</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "comprehension",
             "description": "<p>Comprehension How much does learner understand<br/> (10:almost nothing ,20:some parts ,30:most parts ,40:almost everything ,50:everything)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "confidence",
             "description": "<p>Confidence(10:completely lacking ,20:lacking ,30:average ,40:above average,50:very confident)</p>"
           },
           {
             "group": "Body",
-            "type": "String[]",
-            "optional": false,
+            "type": "String",
+            "optional": true,
             "field": "recommendedLevel",
             "description": "<p>Recommended Level [ R2:Pre// R3:300// R4:400//R5:500 //R6:600//R7:700://R8: 800//R9:900//ETC:ETC]</p>"
           },
