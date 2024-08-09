@@ -13,7 +13,7 @@
  * @apiParam (Query) {String} date 조회 날짜 (yyyy-MM-dd)
  * @apiParam (Query) {String} time 앞에서 선택한 시간
  *
- * @apiSuccess {Object[]} schedules 스케줄 목록
+ * @apiSuccess {Object[]} schedules 스케줄 목록, 비어있으면 30분만 예약 팝업 노출
  * @apiSuccess {Number} schedules.id 스케줄 식별키
  * @apiSuccess {String} schedules.teacherId 강사 식별키
  * @apiSuccess {String} schedules.teacherName 강사명

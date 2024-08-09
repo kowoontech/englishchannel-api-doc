@@ -12166,7 +12166,7 @@ define({ "api": [
             "type": "Object[]",
             "optional": false,
             "field": "schedules",
-            "description": "<p>스케줄 목록</p>"
+            "description": "<p>스케줄 목록, 비어있으면 30분만 예약 팝업 노출</p>"
           },
           {
             "group": "Success 200",
