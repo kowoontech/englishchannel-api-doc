@@ -623,14 +623,14 @@ define({ "api": [
             "type": "String",
             "optional": true,
             "field": "interviewer",
-            "description": "<p>interviewer Interviewer</p>"
+            "description": "<p>[interviewer] Interviewer</p>"
           },
           {
             "group": "Body",
             "type": "String",
             "optional": true,
             "field": "lbt",
-            "description": "<p>LBT 테스트결과</p>"
+            "description": "<p>[LBT 테스트결과]</p>"
           },
           {
             "group": "Body",
