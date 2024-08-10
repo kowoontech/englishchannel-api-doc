@@ -12054,6 +12054,27 @@ define({ "api": [
             "group": "Success 200",
             "type": "Object[]",
             "optional": false,
+            "field": "teachers",
+            "description": "<p>강사 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teachers.id",
+            "description": "<p>강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teachers.name",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
             "field": "schedules",
             "description": "<p>스케줄</p>"
           },
@@ -12153,7 +12174,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n\"{\n    \"schedules\": [\n        {\n            \"time\": \"10:00\",\n            \"reservations\": [\n                {\n                    \"reservationId\": 2603082,\n                    \"teacherId\": \"M1657064932771055\",\n                    \"teacherName\": \"김나래\",\n                    \"userId\": \"M1699681314379069\",\n                    \"userName\": \"정보희:홀딩01/22\",\n                    \"textbook\": \"HT:프랭크기초 / LT:SN1 Trial\",\n                    \"status\": \"N\",\n                    \"statusLabel\": \"결석\",\n                    \"courseId\": 75125,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                },\n                {\n                    \"reservationId\": null,\n                    \"teacherId\": \"M1661138591404520\",\n                    \"teacherName\": \"최태연\",\n                    \"userId\": null,\n                    \"userName\": null,\n                    \"textbook\": null,\n                    \"status\": null,\n                    \"statusLabel\": null,\n                    \"courseId\": null,\n                    \"isRetakeRequired\": false,\n                    \"isReported\": false\n                }\n            ]\n        },\n        {\n            \"time\": \"10:30\",\n            \"reservations\": [\n                {\n                    \"reservationId\": 2602697,\n                    \"teacherId\": \"M1657064932771055\",\n                    \"teacherName\": \"김나래\",\n                    \"userId\": \"M1646878409829108\",\n                    \"userName\": \"이승아\",\n                    \"textbook\": \"어션완결\",\n                    \"status\": \"Y\",\n                    \"statusLabel\": \"출석\",\n                    \"courseId\": 75214,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                },\n                {\n                    \"reservationId\": 2619796,\n                    \"teacherId\": \"M1661138591404520\",\n                    \"teacherName\": \"최태연\",\n                    \"userId\": \"M1700470397854458\",\n                    \"userName\": \"이인희\",\n                    \"textbook\": \"TTT1\",\n                    \"status\": \"Y\",\n                    \"statusLabel\": \"출석\",\n                    \"courseId\": 75183,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                }\n            ]\n        }\n    ]\n}\"",
+          "content": "HTTP/1.1 200\n\"{\n    \"teachers\": [\n        {\n            \"id\": \"M1657064932771055\",\n            \"name\": \"김나래\"\n        },\n        {\n            \"id\": \"M1661138591404520\",\n            \"name\": \"최태연\"\n        }\n    ],\n    \"schedules\": [\n        {\n            \"time\": \"10:00\",\n            \"reservations\": [\n                {\n                    \"reservationId\": 2603082,\n                    \"teacherId\": \"M1657064932771055\",\n                    \"teacherName\": \"김나래\",\n                    \"userId\": \"M1699681314379069\",\n                    \"userName\": \"정보희:홀딩01/22\",\n                    \"textbook\": \"HT:프랭크기초 / LT:SN1 Trial\",\n                    \"status\": \"N\",\n                    \"statusLabel\": \"결석\",\n                    \"courseId\": 75125,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                },\n                {\n                    \"reservationId\": null,\n                    \"teacherId\": \"M1661138591404520\",\n                    \"teacherName\": \"최태연\",\n                    \"userId\": null,\n                    \"userName\": null,\n                    \"textbook\": null,\n                    \"status\": null,\n                    \"statusLabel\": null,\n                    \"courseId\": null,\n                    \"isRetakeRequired\": false,\n                    \"isReported\": false\n                }\n            ]\n        },\n        {\n            \"time\": \"10:30\",\n            \"reservations\": [\n                {\n                    \"reservationId\": 2602697,\n                    \"teacherId\": \"M1657064932771055\",\n                    \"teacherName\": \"김나래\",\n                    \"userId\": \"M1646878409829108\",\n                    \"userName\": \"이승아\",\n                    \"textbook\": \"어션완결\",\n                    \"status\": \"Y\",\n                    \"statusLabel\": \"출석\",\n                    \"courseId\": 75214,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                },\n                {\n                    \"reservationId\": 2619796,\n                    \"teacherId\": \"M1661138591404520\",\n                    \"teacherName\": \"최태연\",\n                    \"userId\": \"M1700470397854458\",\n                    \"userName\": \"이인희\",\n                    \"textbook\": \"TTT1\",\n                    \"status\": \"Y\",\n                    \"statusLabel\": \"출석\",\n                    \"courseId\": 75183,\n                    \"isRetakeRequired\": true,\n                    \"isReported\": false\n                }\n            ]\n        }\n    ]\n}\"",
           "type": "json"
         }
       ]

@@ -12,6 +12,9 @@
  * 
  * @apiParam (Query) date 조회할 날짜 (yyyy-MM-dd)
  *
+ * @apiSuccess {Object[]} teachers 강사 목록
+ * @apiSuccess {String} teachers.id 강사 식별키
+ * @apiSuccess {String} teachers.name 강사명
  * @apiSuccess {Object[]} schedules 스케줄
  * @apiSuccess {String} schedules.time 시간 (HH:mm)
  * @apiSuccess {Object[]} schedules.reservations 예약 목록, 예약이 없으면 optional 필드는 모두 null
@@ -30,6 +33,16 @@
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
  * "{
+ *     "teachers": [
+ *         {
+ *             "id": "M1657064932771055",
+ *             "name": "김나래"
+ *         },
+ *         {
+ *             "id": "M1661138591404520",
+ *             "name": "최태연"
+ *         }
+ *     ],
  *     "schedules": [
  *         {
  *             "time": "10:00",
