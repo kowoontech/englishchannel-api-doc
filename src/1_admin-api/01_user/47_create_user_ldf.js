@@ -25,10 +25,10 @@
  *
  * @apiParam (Body) {Number} reservationId ldf 목록에 가지고 있는 reservation의 식별키
  * @apiParam (Body) {String} [lesson] Lesson
- * @apiParam (Body) {Number} [contentSp] Stress and Pronunciation
- * @apiParam (Body) {Boolean} [contentV] Vocabulary
+ * @apiParam (Body) {String} [contentSp] Stress and Pronunciation
+ * @apiParam (Body) {String} [contentV] Vocabulary
  * @apiParam (Body) {String} [contentSg] Sentence Structure & Grammar
- * @apiParam (Body) {Number} [contentC] Comment
+ * @apiParam (Body) {String} [contentC] Comment
  *
  *
  * @apiSuccessExample {json} SUCCESS

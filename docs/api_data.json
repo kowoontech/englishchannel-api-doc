@@ -1262,14 +1262,14 @@
           },
           {
             "group": "Body",
-            "type": "Number",
+            "type": "String",
             "optional": true,
             "field": "contentSp",
             "description": "<p>Stress and Pronunciation</p>"
           },
           {
             "group": "Body",
-            "type": "Boolean",
+            "type": "String",
             "optional": true,
             "field": "contentV",
             "description": "<p>Vocabulary</p>"
@@ -1283,7 +1283,7 @@
           },
           {
             "group": "Body",
-            "type": "Number",
+            "type": "String",
             "optional": true,
             "field": "contentC",
             "description": "<p>Comment</p>"
@@ -6518,6 +6518,83 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/12_update_user_course.js",
+    "groupTitle": "1._Admin_API_>_01._회원"
+  },
+  {
+    "type": "put",
+    "url": "/admin/v1/users/ldfs/{id}",
+    "title": "47. ldf 수정",
+    "description": "<p>강사 계정 로그인 : 회원목록 &gt; ldf탭 &gt; 수정<br/></p>",
+    "version": "1.0.0",
+    "name": "admin_updateUserLdf",
+    "group": "1._Admin_API_>_01._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/ldfs/368396' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"lesson\":\"수정3lesson\",\n           \"contentSp\": \"수정3contentSp\",\n           \"contentV\": \"수정3contentV\",\n           \"contentSg\": \"수정3contentSg\",\n           \"contentC\": \"수정3contentC\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ldf 식별키(ldf 목록에 가지고 있는)</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "lesson",
+            "description": "<p>Lesson</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "contentSp",
+            "description": "<p>Stress and Pronunciation</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "contentV",
+            "description": "<p>Vocabulary</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "contentSg",
+            "description": "<p>Sentence Structure &amp; Grammar</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "contentC",
+            "description": "<p>Comment</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/48_update_user_ldf.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
