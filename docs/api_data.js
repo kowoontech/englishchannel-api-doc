@@ -12567,6 +12567,120 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/mobile/v1/reservations/schedules",
+    "title": "06. 스케줄 목록 조회",
+    "description": "<p>캘린더에서 선택한 년월의 스케줄 목록 조회</p>",
+    "version": "1.0.0",
+    "name": "mobile_getReservationSchedules",
+    "group": "2._Mobile_API_>_02._예약",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/mobile/v1/reservations/schedules?yearMonth=2024-10'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "yearMonth",
+            "description": "<p>조회 년월 (yyyy-MM)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>스케줄 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.date",
+            "description": "<p>수업일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules.reservations",
+            "description": "<p>예약 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "schedules.reservations.id",
+            "description": "<p>예약 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.startTime",
+            "description": "<p>시작 시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.endTime",
+            "description": "<p>종료 시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.attendanceStatus",
+            "description": "<p>출석 상태 코드 (R)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.attendanceStatusLabel",
+            "description": "<p>출석 상태 (예약)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.teacherName",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "schedules.reservations.isCancelable",
+            "description": "<p>취소 가능 여부</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\"{\n    \"schedules\": [\n        {\n            \"date\": \"2024-10-01\",\n            \"reservations\": []\n        },\n        {\n            \"date\": \"2024-10-10\",\n            \"reservations\": [\n                {\n                    \"id\": 2626313,\n                    \"startTime\": \"18:00\",\n                    \"endTime\": \"18:30\",\n                    \"attendanceStatus\": \"R\",\n                    \"attendanceStatusLabel\": \"예약\",\n                    \"teacherName\": \"정지은\",\n                    \"isCancelable\": true\n                },\n                {\n                    \"id\": 2626314,\n                    \"startTime\": \"18:30\",\n                    \"endTime\": \"19:00\",\n                    \"attendanceStatus\": \"R\",\n                    \"attendanceStatusLabel\": \"예약\",\n                    \"teacherName\": \"정지은\",\n                    \"isCancelable\": true\n                }\n            ]\n        },\n        {\n            \"date\": \"2024-10-31\",\n            \"reservations\": []\n        }\n    ]\n}\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/02_reservation/06_get_reservation_schedules.js",
+    "groupTitle": "2._Mobile_API_>_02._예약"
+  },
+  {
+    "type": "get",
     "url": "/mobile/v1/reservations/schedules/remain",
     "title": "04. 예약 가능한 나머지 스케줄 목록 조회",
     "description": "<p>시간별, 강사별 예약</p>",
@@ -12655,7 +12769,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "src/2_mobile-api/02_reservation/04_get_reservation_schedules.js",
+    "filename": "src/2_mobile-api/02_reservation/04_get_reservation_schedules_remain.js",
     "groupTitle": "2._Mobile_API_>_02._예약"
   },
   {
