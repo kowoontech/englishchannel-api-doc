@@ -12389,6 +12389,74 @@ define({ "api": [
     "groupTitle": "2._Mobile_API_>_01._메인"
   },
   {
+    "type": "post",
+    "url": "/mobile/v1/reservations",
+    "title": "05. 예약하기",
+    "description": "<p>강사/시간/나머지 스케줄 선택 후 최종 예약하기</p>",
+    "version": "1.0.0",
+    "name": "mobile_createReservations",
+    "group": "2._Mobile_API_>_02._예약",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/mobile/v1/reservations' \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: 2191d3aa-d33d-4677-9da0-44556277ab39\"\n-d \"\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "courseId",
+            "description": "<p>메인에서 예약 시작할때 선택되어 있던 수강 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>수업일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "time",
+            "description": "<p>수업시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>강사 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "remainScheduleId",
+            "description": "<p>마지막에 선택한 나머지 스케줄 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/02_reservation/05_create_reservations.js",
+    "groupTitle": "2._Mobile_API_>_02._예약"
+  },
+  {
     "type": "get",
     "url": "/mobile/v1/reservations/schedules/remain",
     "title": "04. 예약 가능한 나머지 스케줄 목록 조회",
