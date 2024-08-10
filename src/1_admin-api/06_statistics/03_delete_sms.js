@@ -1,7 +1,7 @@
 /**
  * @api {delete} /admin/v1/statistics/sms  03. 발송 내역 삭제
  *
- * @apiDescription 강사관리 > 강사상세조회 > 삭제 <br/>
+ * @apiDescription 통계보고서 > SMS현황> 발송내역 > 삭제 <br/>
  *
  *
  * @apiVersion 1.0.0

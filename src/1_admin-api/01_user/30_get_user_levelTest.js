@@ -30,7 +30,7 @@
  * @apiSuccess {String} levelTest.fileUrl 첨부파일 다운로드 URL
  * @apiSuccess {String} levelTest.note 특이사항
  * @apiSuccess {String} levelTest.purpose  Purpose of Study
- * @apiSuccess {String} levelTest.studyType What kind of English do you want to study and learn?<br/>
+ * @apiSuccess {String} [levelTest.studyType] What kind of English do you want to study and learn?<br/>
                                     (사용x , 아래 studyType 사용해주세요)
  * @apiSuccess {String} levelTest.studyTypeEtc ETC 이유
  * @apiSuccess {String} levelTest.familyBackground  Family Background
@@ -39,8 +39,8 @@
  * @apiSuccess {String} levelTest.spareTime Spare Time
  * @apiSuccess {String} levelTest.Travel Abroad
  * @apiSuccess {String} levelTest.futurePlans Future Plans
- * @apiSuccess {String} levelTest.consonants consonants(사용x, 아래 consonants 사용해주세요)
- * @apiSuccess {String} levelTest.vowels vowels(사용x, 아래 vowels 사용해주세요)
+ * @apiSuccess {String} [levelTest.consonants] consonants(사용x, 아래 consonants 사용해주세요)
+ * @apiSuccess {String} [levelTest.vowels] vowels(사용x, 아래 vowels 사용해주세요)
  * @apiSuccess {String} levelTest.clarity clarity (10:hard to understand ,20:average ,30:easy to understand)
  * @apiSuccess {String} levelTest.intonation intonation (10:very Korean ,20:a bit Korean,30:acceptable ,40:near native)
  * @apiSuccess {String} levelTest.vocabulary vocabulary (10:very limited ,20:limited ,30:average ,40:above average ,50:extensive)
@@ -55,7 +55,7 @@
  * @apiSuccess {String} levelTest.comprehension Comprehension How much does learner understand <br/>
                                         (10:almost nothing ,20:some parts ,30:most parts ,40:almost everything ,50:everything)
  * @apiSuccess {String} levelTest.confidence confidence (10:completely lacking ,20:lacking ,30:average ,<br/>40:above average,50:very confident)
- * @apiSuccess {String} levelTest.recommendedLevel Recommended Level(사용x 아래 recommendedLevel 사용해주세요 )
+ * @apiSuccess {String} [levelTest.recommendedLevel] Recommended Level(사용x 아래 recommendedLevel 사용해주세요 )
  * @apiSuccess {String} levelTest.recommendedLevelEtc Etc 이유
  *
  * @apiSuccess {String[]} recommendedLevel Recommended Level [ R2:Pre// R3:300// R4:400//R5:500 //R6:600//R7:700://R8: 800//R9:900//ETC:ETC]

@@ -2113,7 +2113,7 @@
           {
             "group": "Success 200",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "levelTest.studyType",
             "description": "<p>What kind of English do you want to study and learn?<br/> (사용x , 아래 studyType 사용해주세요)</p>"
           },
@@ -2169,14 +2169,14 @@
           {
             "group": "Success 200",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "levelTest.consonants",
             "description": "<p>consonants(사용x, 아래 consonants 사용해주세요)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "levelTest.vowels",
             "description": "<p>vowels(사용x, 아래 vowels 사용해주세요)</p>"
           },
@@ -2274,7 +2274,7 @@
           {
             "group": "Success 200",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "levelTest.recommendedLevel",
             "description": "<p>Recommended Level(사용x 아래 recommendedLevel 사용해주세요 )</p>"
           },
@@ -5378,6 +5378,187 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/01_list_users.js",
+    "groupTitle": "1._Admin_API_>_01._회원"
+  },
+  {
+    "type": "get",
+    "url": "/teacher/v1/users",
+    "title": "46. 강사 계정 - 회원목록",
+    "description": "<p>강사 계정 로그인 시 회원 목록 <br/></p>",
+    "version": "1.0.0",
+    "name": "admin_listUsers_teacherPage",
+    "group": "1._Admin_API_>_01._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/teacher/v1/users?today=false'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "boolean",
+            "optional": false,
+            "field": "today",
+            "description": "<p>학생 구분 (전체: false / 오늘예약 : true)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "teacherId",
+            "description": "<p>강사 강사식별키</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "search",
+            "description": "<p>검색조건</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "keyword",
+            "description": "<p>검색내용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "list",
+            "description": "<p>회원 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.name",
+            "description": "<p>이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.textbook",
+            "description": "<p>교재</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.startTime",
+            "description": "<p>수업시간(시작)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.endTime",
+            "description": "<p>수업시간(종료)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.teacherName",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalCount",
+            "description": "<p>전체 회원 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>현재 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 회원 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalPage",
+            "description": "<p>전체 페이지 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "startPage",
+            "description": "<p>페이징 영역에 노출될 첫 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "endPage",
+            "description": "<p>페이징 영역에 노출될 마지막 페이지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasPrev",
+            "description": "<p>전 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "hasNext",
+            "description": "<p>다음 페이징 영역 존재 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isFirst",
+            "description": "<p>첫 페이징 영역 여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "isLast",
+            "description": "<p>마지막 페이징 영역 여부</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": \"M1723209450019027\",\n            \"name\": \"학생1\",\n            \"textbook\": \"교재11\",\n            \"startTime\": null,\n            \"endTime\": null,\n            \"teacherName\": null\n        },\n        {\n            \"id\": \"M1723209393285284\",\n            \"name\": \"학생1\",\n            \"textbook\": \"교재11\",\n            \"startTime\": null,\n            \"endTime\": null,\n            \"teacherName\": null\n        },\n        {\n            \"id\": \"M1723185874746952\",\n            \"name\": \"강사테스트\",\n            \"textbook\": null,\n            \"startTime\": null,\n            \"endTime\": null,\n            \"teacherName\": null\n        },\n        {\n            \"id\": \"M1723181199400889\",\n            \"name\": \"TEST이름\",\n            \"textbook\": null,\n            \"startTime\": null,\n            \"endTime\": null,\n            \"teacherName\": null\n        },\n        {\n            \"id\": \"M1723181139822358\",\n            \"name\": \"TEST이름\",\n            \"textbook\": null,\n            \"startTime\": null,\n            \"endTime\": null,\n            \"teacherName\": null\n        },\n        {\n            \"id\": \"M1723181061269819\",\n            \"name\": \"TEST이름\",\n            \"textbook\": null,\n            \"startTime\": null,\n            \"endTime\": null,\n            \"teacherName\": null\n        },\n        {\n            \"id\": \"M1723180727681590\",\n            \"name\": \"TEST이름\",\n            \"textbook\": null,\n            \"startTime\": null,\n            \"endTime\": null,\n            \"teacherName\": null\n        },\n        {\n            \"id\": \"M1723180073783614\",\n            \"name\": \"TEST이름\",\n            \"textbook\": null,\n            \"startTime\": null,\n            \"endTime\": null,\n            \"teacherName\": null\n        },\n        {\n            \"id\": \"M1723180046288196\",\n            \"name\": \"TEST이름\",\n            \"textbook\": null,\n            \"startTime\": null,\n            \"endTime\": null,\n            \"teacherName\": null\n        },\n        {\n            \"id\": \"M1723179793913079\",\n            \"name\": \"TEST이름\",\n            \"textbook\": null,\n            \"startTime\": null,\n            \"endTime\": null,\n            \"teacherName\": null\n        }\n    ],\n    \"totalCount\": 4921,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"endPage\": 10,\n    \"startPage\": 1,\n    \"totalPage\": 493,\n    \"hasNext\": true,\n    \"isFirst\": true,\n    \"isLast\": false,\n    \"hasPrev\": false\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/46_list_users_teacherPage.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -10163,7 +10344,7 @@
     "type": "delete",
     "url": "/admin/v1/statistics/sms",
     "title": "03. 발송 내역 삭제",
-    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/></p>",
+    "description": "<p>통계보고서 &gt; SMS현황&gt; 발송내역 &gt; 삭제 <br/></p>",
     "version": "1.0.0",
     "name": "admin_deleteSms",
     "group": "1._Admin_API_>_06._통계보고서",
