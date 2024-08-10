@@ -7180,7 +7180,7 @@ define({ "api": [
     "type": "put",
     "url": "/admin/v1/reservations/report/{reservationId}",
     "title": "03. 학사보고서 수정/등록",
-    "description": "<p>회원관리 &gt; 학사보고서 <br/></p>",
+    "description": "<p>회원관리 &gt; 학사보고서 <br/> 강의시간표 조회 시 회원의 출결 상태 (출석,결석,출결 취소)를 바꿀 때 사용.</p>",
     "version": "1.0.0",
     "name": "admin_updateReport",
     "group": "1._Admin_API_>_03._학사보고서",
@@ -7213,21 +7213,21 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "todayLesson",
             "description": "<p>Today's Lesson</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "report",
             "description": "<p>보고서(Lesson Content and Feedback)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "nextLesson",
             "description": "<p>Next Lesson</p>"
           }
