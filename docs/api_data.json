@@ -8953,14 +8953,14 @@
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "workTime",
-            "description": "<p>근무시간 (AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4)</p>"
+            "description": "<p>근무시간 (NULL, AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4)</p>"
           },
           {
             "group": "Body",
             "type": "Object[]",
-            "optional": true,
+            "optional": false,
             "field": "schedules",
             "description": "<p>선택한 스케줄 목록</p>"
           },

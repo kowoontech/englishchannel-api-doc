@@ -96,8 +96,8 @@
  * 
  * @apiParam (Body) {String} dateFrom 조회 시작일 (yyyy-MM-dd, 조회 시작일 ~ 종료일 사이의 선택하지 않은 스케줄은 모두 삭제)
  * @apiParam (Body) {String} dateTo 조회 종료일 (yyyy-MM-dd)
- * @apiParam (Body) {String} workTime 근무시간 (AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4)
- * @apiParam (Body) {Object[]} [schedules] 선택한 스케줄 목록
+ * @apiParam (Body) {String} [workTime] 근무시간 (NULL, AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4)
+ * @apiParam (Body) {Object[]} schedules 선택한 스케줄 목록
  * @apiParam (Body) {String} schedules.date 날짜 (yyyy-MM-dd)
  * @apiParam (Body) {String} schedules.time 시간 (HH:mm)
  *
