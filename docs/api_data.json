@@ -8742,28 +8742,28 @@
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "consultationDateFrom",
             "description": "<p>등록일(시작) (yyyy-MM-dd)</p>"
           },
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "consultationDateTo",
             "description": "<p>등록일(끝) (yyyy-MM-dd)</p>"
           },
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "visitDateFrom",
             "description": "<p>방문예약일(시작) (yyyy-MM-dd)</p>"
           },
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "visitDateTo",
             "description": "<p>방문예약일(끝) (yyyy-MM-dd)</p>"
           },
@@ -8784,14 +8784,14 @@
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "search",
             "description": "<p>검색구분( name:이름, phone: 전화번호 , details :상담내용)</p>"
           },
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "keyword",
             "description": "<p>검색내용</p>"
           },
