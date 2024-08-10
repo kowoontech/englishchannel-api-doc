@@ -341,7 +341,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/admin/v1/commonCode",
+    "url": "/admin/v1/commonCodeGroup",
     "title": "04. 코드 그룹 목록",
     "description": "<p>코드 그룹 목록 <br/> 하드코딩 된 테이블입니다. 공통코드 등록, 수정 시 사용합니다.</p>",
     "version": "1.0.0",

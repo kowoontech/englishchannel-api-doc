@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/commonCode 04. 코드 그룹 목록
+ * @api {get} /admin/v1/commonCodeGroup 04. 코드 그룹 목록
  *
  * @apiDescription 코드 그룹 목록 <br/>
  * 하드코딩 된 테이블입니다. 공통코드 등록, 수정 시 사용합니다.
