@@ -12476,7 +12476,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/mobile/v1/reservations' \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: 2191d3aa-d33d-4677-9da0-44556277ab39\"\n-d \"\"",
+        "content": "curl -i -X POST 'http://localhost:8080/mobile/v1/reservations' \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: 2191d3aa-d33d-4677-9da0-44556277ab39\"\n-d \"{\n    \"courseId\": 75615,\n    \"date\": \"2024-10-10\",\n    \"time\": \"18:00\",\n    \"teacherId\": \"M1681990831501448\",\n    \"remainScheduleId\": 9525312\n}\"",
         "type": "curl"
       }
     ],
@@ -12522,10 +12522,42 @@ define({ "api": [
       }
     },
     "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>수업일 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>수업시간 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.time",
+            "description": "<p>수업시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.teacherName",
+            "description": "<p>강사명</p>"
+          }
+        ]
+      },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
+          "content": "HTTP/1.1 200\n\"{\n    \"date\": \"2024-10-10\",\n    \"schedules\": [\n        {\n            \"time\": \"18:00\",\n            \"teacherName\": \"정지은\"\n        },\n        {\n            \"time\": \"18:30\",\n            \"teacherName\": \"정지은\"\n        }\n    ]\n}\"",
           "type": "json"
         }
       ]
@@ -12767,7 +12799,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X PUT 'http://localhost:8080/mobile/v1/reservations/cancel' \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: 2191d3aa-d33d-4677-9da0-44556277ab39\"\n-d \"{\n    \"ids\": [\n        2621757\n    ],\n    \"cancelReason\": \"test\"\n}\"",
+        "content": "curl -i -X PUT 'http://localhost:8080/mobile/v1/reservations/cancel' \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: 2191d3aa-d33d-4677-9da0-44556277ab39\"\n-d \"{\n    \"ids\": [\n        2626311, 2626312\n    ],\n    \"cancelReason\": \"test\"\n}\"",
         "type": "curl"
       }
     ],
@@ -12841,7 +12873,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n\"{\n    \"cancelReservations\": [\n        {\n            \"cancelDate\": \"2024-08-04\",\n            \"date\": \"2024-01-26\",\n            \"startTime\": \"19:00\",\n            \"endTime\": \"19:30\",\n            \"teacherName\": null\n        }\n    ]\n}\"",
+          "content": "HTTP/1.1 200\n\"{\n    \"cancelReservations\": [\n        {\n            \"cancelDate\": \"2024-08-11\",\n            \"date\": \"2024-10-10\",\n            \"startTime\": \"18:00\",\n            \"endTime\": \"18:30\",\n            \"teacherName\": \"정지은\"\n        },\n        {\n            \"cancelDate\": \"2024-08-11\",\n            \"date\": \"2024-10-10\",\n            \"startTime\": \"18:30\",\n            \"endTime\": \"19:00\",\n            \"teacherName\": \"정지은\"\n        }\n    ]\n}\"",
           "type": "json"
         }
       ]
