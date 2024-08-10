@@ -7297,7 +7297,7 @@ define({ "api": [
           {
             "group": "Query",
             "optional": false,
-            "field": "courseStatus",
+            "field": "reportSort",
             "description": "<p>정렬순서 ( TIME: 시간, TEACHER: 강사)</p>"
           },
           {
@@ -8799,14 +8799,14 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "firstNameEn",
             "description": "<p>이름</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "lastNameEn",
             "description": "<p>성</p>"
           },
@@ -8834,21 +8834,21 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "gender",
             "description": "<p>성별[F,M]</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "workStartDate",
             "description": "<p>근무시작일[yyyy-MM-dd]</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "teacherType",
             "description": "<p>강사타입 [HT, LT]</p>"
           },
@@ -8862,14 +8862,14 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "workType",
             "description": "<p>근무타입[A, C]</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "partnerTeacherId",
             "description": "<p>파트너강사</p>"
           },
@@ -8883,14 +8883,14 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "cellPhone",
             "description": ""
           },
           {
             "group": "Body",
             "type": "File",
-            "optional": false,
+            "optional": true,
             "field": "files",
             "description": "<p>첨부파일 (같은 파라미터명으로 여러 파일 가능)</p>"
           }
@@ -9037,7 +9037,7 @@ define({ "api": [
     "type": "delete",
     "url": "/admin/v1/teachers/{id}",
     "title": "04. 강사삭제",
-    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/> 데이터가 많지 않아 오류 가능성 높음. M1594795852631377 안될시 알려주세요.</p>",
+    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/></p>",
     "version": "1.0.0",
     "name": "admin_deleteUser",
     "group": "1._Admin_API_>_05._강사",
@@ -9576,14 +9576,14 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "firstNameEn",
             "description": "<p>이름</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "lastNameEn",
             "description": "<p>성</p>"
           },
@@ -9618,7 +9618,7 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "workStartDate",
             "description": "<p>근무시작일[yyyy-MM-dd]</p>"
           },
@@ -9639,7 +9639,7 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "workType",
             "description": "<p>근무타입[A, C]</p>"
           },
@@ -9660,7 +9660,7 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "cellPhone",
             "description": ""
           },
@@ -9674,7 +9674,7 @@ define({ "api": [
           {
             "group": "Body",
             "type": "File",
-            "optional": false,
+            "optional": true,
             "field": "files",
             "description": "<p>첨부파일 (같은 파라미터명으로 여러 파일 가능)</p>"
           }
@@ -9989,14 +9989,14 @@ define({ "api": [
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "search",
             "description": "<p>검색조건(ALL:전체name: 이름,loginId:아이디,email:이메일)</p>"
           },
           {
             "group": "Query",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "keyword",
             "description": "<p>검색내용</p>"
           },
@@ -10505,7 +10505,7 @@ define({ "api": [
     "type": "get",
     "url": "/admin/v1/statistics/successSms",
     "title": "01. 발송 내역 목록",
-    "description": "<p>SMS 전송현황 &gt; <br/> 통계보고서 &gt; sms전송현황 &gt; 발송 내역</p>",
+    "description": "<p>SMS 전송현황 &gt; <br/> 통계보고서 &gt; sms전송현황 &gt; 발송 내역<br/></p>",
     "version": "1.0.0",
     "name": "all_Sms",
     "group": "1._Admin_API_>_06._통계보고서",
@@ -12467,7 +12467,7 @@ define({ "api": [
           {
             "group": "Query",
             "type": "boolean",
-            "optional": true,
+            "optional": false,
             "field": "isLdf",
             "description": "<p>LDF가 포함된 완료 피드백만 조회 할때 true / 완료 피드백 전체 조회 시 false</p>"
           },

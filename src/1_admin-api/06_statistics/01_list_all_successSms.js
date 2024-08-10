@@ -2,7 +2,8 @@
  * @api {get} /admin/v1/statistics/successSms 01. 발송 내역 목록
  *
  * @apiDescription SMS 전송현황 > <br/>
- * 통계보고서 > sms전송현황 > 발송 내역
+ * 통계보고서 > sms전송현황 > 발송 내역<br/>
+ *
  *
  *
  * @apiVersion 1.0.0

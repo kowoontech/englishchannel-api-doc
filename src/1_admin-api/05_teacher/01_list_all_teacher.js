@@ -15,8 +15,8 @@
  * @apiParam (Query) {String} [contractDateTo]  계약기간[yyyy-MM-dd]
  * @apiParam (Query) {Boolean} active 활동 (true/false) . 기본값 '활동(true)'으로
  * @apiParam (Query) {String} type 구분(HT, LT), 초기값 '전체'는 null
- * @apiParam (Query) {String} search 검색조건(ALL:전체name: 이름,loginId:아이디,email:이메일)
- * @apiParam (Query) {Number} keyword 검색내용
+ * @apiParam (Query) {String} [search] 검색조건(ALL:전체name: 이름,loginId:아이디,email:이메일)
+ * @apiParam (Query) {Number} [keyword] 검색내용
  * @apiParam (Query) {Number} limit 한페이지에 보여줄 강사 수
  * @apiParam (Query) {Number} page 현재 페이지
 

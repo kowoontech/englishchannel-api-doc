@@ -16,7 +16,7 @@
  * @apiParam (Query) teacherId 강사식별키
  * @apiParam (Query) search 검색 선택(이름)
  * @apiParam (Query) keyword 검색어
- * @apiParam (Query) courseStatus 정렬순서 ( TIME: 시간, TEACHER: 강사)
+ * @apiParam (Query) reportSort 정렬순서 ( TIME: 시간, TEACHER: 강사)
  * @apiParam (Query) reportCondition 검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)
  * @apiParam (Query) limit 한페이지에 보여줄 회원 수
  * @apiParam (Query) page 조회할 페이지
