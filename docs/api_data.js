@@ -1221,6 +1221,90 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/admin/v1/users/{id}/ldfs",
+    "title": "47. ldf 등록",
+    "description": "<p>강사 계정 로그인 : 회원목록 &gt; ldf탭 &gt; 등록<br/> test: reservationId : 2431378</p>",
+    "version": "1.0.0",
+    "name": "admin_createUserLdf",
+    "group": "1._Admin_API_>_01._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1654741178072018/ldfs' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"reservationId\":2431385,\n           \"lesson\":\"lesson\",\n           \"contentSp\": \"contentSp\",\n           \"contentV\": \"contentV\",\n           \"contentSg\": \"contentSg\",\n           \"contentC\": \"contentC\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "reservationId",
+            "description": "<p>ldf 목록에 가지고 있는 reservation의 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "lesson",
+            "description": "<p>Lesson</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "contentSp",
+            "description": "<p>Stress and Pronunciation</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "contentV",
+            "description": "<p>Vocabulary</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "contentSg",
+            "description": "<p>Sentence Structure &amp; Grammar</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "contentC",
+            "description": "<p>Comment</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/47_create_user_ldf.js",
+    "groupTitle": "1._Admin_API_>_01._회원"
+  },
+  {
+    "type": "post",
     "url": "/admin/v1/users/{id}/notes",
     "title": "25. 비고등록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
