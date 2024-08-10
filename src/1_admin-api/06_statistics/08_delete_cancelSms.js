@@ -5,7 +5,7 @@
  *
  *
  * @apiVersion 1.0.0
- * @apiName admin_deleteSms
+ * @apiName admin_deleteCancelSms
  * @apiGroup 1. Admin API > 06. 통계보고서
  *
  * @apiExample {curl} REQUEST

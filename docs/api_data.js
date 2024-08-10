@@ -10463,6 +10463,46 @@ define({ "api": [
   },
   {
     "type": "delete",
+    "url": "/admin/v1/statistics/cancelSms",
+    "title": "08. SMS 예약취소",
+    "description": "<p>통계보고서 &gt; SMS현황&gt; 대기내역 &gt; 예약취소 <br/></p>",
+    "version": "1.0.0",
+    "name": "admin_deleteCancelSms",
+    "group": "1._Admin_API_>_06._통계보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/statistics/cancelSms'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number[]",
+            "optional": false,
+            "field": "id",
+            "description": "<p>sms식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/06_statistics/08_delete_cancelSms.js",
+    "groupTitle": "1._Admin_API_>_06._통계보고서"
+  },
+  {
+    "type": "delete",
     "url": "/admin/v1/statistics/sms",
     "title": "03. 발송 내역 삭제",
     "description": "<p>통계보고서 &gt; SMS현황&gt; 발송내역 &gt; 삭제 <br/></p>",
@@ -10499,46 +10539,6 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/06_statistics/03_delete_sms.js",
-    "groupTitle": "1._Admin_API_>_06._통계보고서"
-  },
-  {
-    "type": "delete",
-    "url": "/admin/v1/statistics/cancelSms",
-    "title": "08. SMS 예약취소",
-    "description": "<p>통계보고서 &gt; SMS현황&gt; 대기내역 &gt; 예약취소 <br/></p>",
-    "version": "1.0.0",
-    "name": "admin_deleteSms",
-    "group": "1._Admin_API_>_06._통계보고서",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/statistics/cancelSms'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Body": [
-          {
-            "group": "Body",
-            "type": "Number[]",
-            "optional": false,
-            "field": "id",
-            "description": "<p>sms식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/06_statistics/08_delete_cancelSms.js",
     "groupTitle": "1._Admin_API_>_06._통계보고서"
   },
   {
