@@ -9376,46 +9376,6 @@
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
-    "type": "delete",
-    "url": "/admin/v1/teachers/{id}",
-    "title": "04. 강사삭제",
-    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 삭제 <br/></p>",
-    "version": "1.0.0",
-    "name": "admin_deleteUser",
-    "group": "1._Admin_API_>_05._강사",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/teachers/M1594795852631377'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Path": [
-          {
-            "group": "Path",
-            "type": "String",
-            "optional": true,
-            "field": "id",
-            "description": "<p>강사식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/05_teacher/04_delete_teacher.js",
-    "groupTitle": "1._Admin_API_>_05._강사"
-  },
-  {
     "type": "get",
     "url": "/admin/v1/teachers/{id}",
     "title": "02. 강사 상세조회",
@@ -9884,8 +9844,8 @@
   {
     "type": "put",
     "url": "/admin/v1/teachers/{id}",
-    "title": "03. 강사수정",
-    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 수정 <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
+    "title": "03. 강사수정/삭제",
+    "description": "<p>강사관리 &gt; 강사상세조회 &gt; 수정 / 삭제 <br/> 삭제 : active를 false로 수정 <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_updateTeacher",
     "group": "1._Admin_API_>_05._강사",
@@ -10539,6 +10499,46 @@
       ]
     },
     "filename": "src/1_admin-api/06_statistics/03_delete_sms.js",
+    "groupTitle": "1._Admin_API_>_06._통계보고서"
+  },
+  {
+    "type": "delete",
+    "url": "/admin/v1/statistics/cancelSms",
+    "title": "08. SMS 예약취소",
+    "description": "<p>통계보고서 &gt; SMS현황&gt; 대기내역 &gt; 예약취소 <br/></p>",
+    "version": "1.0.0",
+    "name": "admin_deleteSms",
+    "group": "1._Admin_API_>_06._통계보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/statistics/cancelSms'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number[]",
+            "optional": false,
+            "field": "id",
+            "description": "<p>sms식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/06_statistics/08_delete_cancelSms.js",
     "groupTitle": "1._Admin_API_>_06._통계보고서"
   },
   {

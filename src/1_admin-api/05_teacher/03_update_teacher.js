@@ -1,7 +1,8 @@
 /**
- * @api {put} /admin/v1/teachers/{id} 03. 강사수정
+ * @api {put} /admin/v1/teachers/{id} 03. 강사수정/삭제
  *
- * @apiDescription 강사관리 > 강사상세조회 > 수정 <br/>
+ * @apiDescription 강사관리 > 강사상세조회 > 수정 / 삭제 <br/>
+ * 삭제 : active를 false로 수정 <br/>
  *"Content-Type"은 파일이 있어서 "multipart/form-data"로 해주세요
  *
  * @apiVersion 1.0.0
