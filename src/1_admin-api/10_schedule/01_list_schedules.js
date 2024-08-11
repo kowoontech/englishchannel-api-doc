@@ -12,6 +12,9 @@
  * 
  * @apiParam (Query) date 조회할 날짜 (yyyy-MM-dd)
  *
+ * @apiSuccess {Object[]} teachers 강사 목록
+ * @apiSuccess {String} teachers.id 강사 식별키
+ * @apiSuccess {String} teachers.name 강사명
  * @apiSuccess {Object[]} schedules 스케줄
  * @apiSuccess {String} schedules.time 시간 (HH:mm)
  * @apiSuccess {Object[]} schedules.reservations 예약 목록, 예약이 없으면 optional 필드는 모두 null
@@ -20,6 +23,7 @@
  * @apiSuccess {String} schedules.reservations.teacherName 강사명
  * @apiSuccess {String} [schedules.reservations.userId] 회원 식별키
  * @apiSuccess {String} [schedules.reservations.userName] 회원명
+ * @apiSuccess {String} [schedules.reservations.email] 이메일
  * @apiSuccess {String} [schedules.reservations.textbook] 교재
  * @apiSuccess {String} [schedules.reservations.status] 예약 상태 (Y: 출석, N: 결석, R: 예약)
  * @apiSuccess {String} [schedules.reservations.statusLabel] 예약 상태명 (출석, 결석, 예약)
@@ -30,6 +34,16 @@
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
  * "{
+ *     "teachers": [
+ *         {
+ *             "id": "M1657064932771055",
+ *             "name": "김나래"
+ *         },
+ *         {
+ *             "id": "M1661138591404520",
+ *             "name": "최태연"
+ *         }
+ *     ],
  *     "schedules": [
  *         {
  *             "time": "10:00",
@@ -40,6 +54,7 @@
  *                     "teacherName": "김나래",
  *                     "userId": "M1699681314379069",
  *                     "userName": "정보희:홀딩01/22",
+ *                     "email": "j-cia@daum.net",
  *                     "textbook": "HT:프랭크기초 / LT:SN1 Trial",
  *                     "status": "N",
  *                     "statusLabel": "결석",
@@ -71,6 +86,7 @@
  *                     "teacherName": "김나래",
  *                     "userId": "M1646878409829108",
  *                     "userName": "이승아",
+ *                     "email": "wapdoowap@naver.com",
  *                     "textbook": "어션완결",
  *                     "status": "Y",
  *                     "statusLabel": "출석",
@@ -84,6 +100,7 @@
  *                     "teacherName": "최태연",
  *                     "userId": "M1700470397854458",
  *                     "userName": "이인희",
+ *                     "email": "lunaluna5526@naver.com",
  *                     "textbook": "TTT1",
  *                     "status": "Y",
  *                     "statusLabel": "출석",

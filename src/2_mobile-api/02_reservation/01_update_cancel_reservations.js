@@ -13,7 +13,7 @@
  * -H "Authorization: 2191d3aa-d33d-4677-9da0-44556277ab39"
  * -d "{
  *     "ids": [
- *         2621757
+ *         2626311, 2626312
  *     ],
  *     "cancelReason": "test"
  * }"
@@ -33,11 +33,18 @@
  * "{
  *     "cancelReservations": [
  *         {
- *             "cancelDate": "2024-08-04",
- *             "date": "2024-01-26",
- *             "startTime": "19:00",
- *             "endTime": "19:30",
- *             "teacherName": null
+ *             "cancelDate": "2024-08-11",
+ *             "date": "2024-10-10",
+ *             "startTime": "18:00",
+ *             "endTime": "18:30",
+ *             "teacherName": "정지은"
+ *         },
+ *         {
+ *             "cancelDate": "2024-08-11",
+ *             "date": "2024-10-10",
+ *             "startTime": "18:30",
+ *             "endTime": "19:00",
+ *             "teacherName": "정지은"
  *         }
  *     ]
  * }"
