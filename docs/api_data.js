@@ -7592,7 +7592,7 @@ define({ "api": [
     "type": "get",
     "url": "/admin/v1/reservations/report",
     "title": "01. 학사보고서 목록 조회",
-    "description": "<p>회원관리 &gt; 학사보고서<br/> 회원관리 &gt; 학사보고서</p>",
+    "description": "<p>회원관리 &gt; 학사보고서<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/> 계정에 동일한 api를 사용하기 위해 userType 추가했습니다. 강사 계정 페이지 조회 시 사용할 api는 userType=T 필수값입니다.</p>",
     "version": "1.0.0",
     "name": "listReport",
     "group": "1._Admin_API_>_03._학사보고서",
@@ -7620,19 +7620,19 @@ define({ "api": [
           },
           {
             "group": "Query",
-            "optional": false,
+            "optional": true,
             "field": "teacherId",
             "description": "<p>강사식별키</p>"
           },
           {
             "group": "Query",
-            "optional": false,
+            "optional": true,
             "field": "search",
             "description": "<p>검색 선택(이름)</p>"
           },
           {
             "group": "Query",
-            "optional": false,
+            "optional": true,
             "field": "keyword",
             "description": "<p>검색어</p>"
           },
@@ -7647,6 +7647,12 @@ define({ "api": [
             "optional": false,
             "field": "reportCondition",
             "description": "<p>검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "userType",
+            "description": "<p>계정구분 (강사:T , 운영자: A)</p>"
           },
           {
             "group": "Query",
