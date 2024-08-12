@@ -12,6 +12,8 @@
  * curl -i -X GET 'http://localhost:8080/admin/v1/products/list'
  * 
  *
+ * @apiParam (Query) {String} type 현재 판매 중인 상품 여부
+ *
  *
  * @apiSuccess {String} id 상품 식별키
  * @apiSuccess {String} name 상품명

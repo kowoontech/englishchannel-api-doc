@@ -5385,6 +5385,13 @@
             "group": "Success 200",
             "type": "Number",
             "optional": false,
+            "field": "list.notBook",
+            "description": "<p>미부킹</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
             "field": "totalCount",
             "description": "<p>전체 회원 수</p>"
           },
@@ -7318,6 +7325,19 @@
         "type": "curl"
       }
     ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>현재 판매 중인 상품 여부</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [

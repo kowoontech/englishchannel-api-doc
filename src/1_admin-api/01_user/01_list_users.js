@@ -38,6 +38,7 @@
  * @apiSuccess {String} [list.company] 회사/직장명
  * @apiSuccess {String} [list.expirationDate] 만료일
  * @apiSuccess {Number} list.remainingCount 잔여횟수
+ * @apiSuccess {Number} list.notBook 미부킹
  * @apiSuccess {Number} totalCount 전체 회원 수
  * @apiSuccess {Number} page 현재 페이지
  * @apiSuccess {Number} limit 한페이지에 보여줄 회원 수
