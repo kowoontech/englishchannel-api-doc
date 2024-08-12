@@ -24,6 +24,7 @@
  * @apiSuccess {String} list.userId 강사 식별키
  * @apiSuccess {String} list.type 구분(HT, LT)
  * @apiSuccess {String} list.teacherName  강사명
+ * @apiSuccess {String} list.teacherEnName  강사영문명
  * @apiSuccess {String} list.workTime 근무시간[AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]
  * @apiSuccess {String} list.sort 순번
  * @apiSuccess {String} list.email 이메일

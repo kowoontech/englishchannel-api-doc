@@ -5506,6 +5506,18 @@
             "optional": true,
             "field": "keyword",
             "description": "<p>검색내용</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "limit",
+            "description": "<p>한페이지에 보여줄 회원 수</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "page",
+            "description": "<p>조회할 페이지</p>"
           }
         ]
       }
@@ -9168,14 +9180,14 @@
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "teacherType",
             "description": "<p>강사타입 [HT, LT]</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "workTime",
             "description": "<p>근무시간[AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]</p>"
           },
@@ -10332,6 +10344,13 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "list.teacherEnName",
+            "description": "<p>강사영문명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "list.workTime",
             "description": "<p>근무시간[AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]</p>"
           },
@@ -10437,6 +10456,107 @@
       ]
     },
     "filename": "src/1_admin-api/05_teacher/01_list_all_teacher.js",
+    "groupTitle": "1._Admin_API_>_05._강사"
+  },
+  {
+    "type": "get",
+    "url": "/teacher/v1/teachers",
+    "title": "13. 강사계정: 강사목록(영문포함)",
+    "description": "<p>강사 계정 페이지 &gt; 강사 목록 조회 &gt; <br/> 페이징처리X , 단순 목록 조회 시 사용</p>",
+    "version": "1.0.0",
+    "name": "all_teacherPage",
+    "group": "1._Admin_API_>_05._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/teacher/v1/teachers'",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "listNumber",
+            "description": "<p>목록번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "userId",
+            "description": "<p>강사식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "type",
+            "description": "<p>강사타입(LT:외국인강사,HT:한국인강사)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teacherName",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teacherEnName",
+            "description": "<p>강사영문명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>강사 email</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "cellPhone",
+            "description": "<p>강사 핸드폰번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "workTime",
+            "description": "<p>강사 시간 타입(AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "sort",
+            "description": "<p>순번</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "boolean",
+            "optional": true,
+            "field": "active",
+            "description": "<p>활동여부(활동:true,비활동:false)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n[\n    {\n        \"listNumber\": 0,\n        \"userId\": \"M1594795852631377\",\n        \"type\": \"LT\",\n        \"teacherName\": \"Steven\",\n        \"teacherEnName\": \"Steven Trecek\",\n        \"email\": \"sjtrecek@gmail.com\",\n        \"cellPhone\": \"m+r8K+/oSue6/4ypbr44XA==\",\n        \"workTime\": null,\n        \"sort\": 0,\n        \"active\": true\n    },\n    {\n        \"listNumber\": 0,\n        \"userId\": \"M1681990831501448\",\n        \"type\": \"HT\",\n        \"teacherName\": \"정지은\",\n        \"teacherEnName\": \"Grace \",\n        \"email\": \"nansilverya@hanmail.net\",\n        \"cellPhone\": \"3m8tI6TQJNhTNq3m/Z4OCg==\",\n        \"workTime\": null,\n        \"sort\": 36,\n        \"active\": true\n    },\n    {\n        \"listNumber\": 0,\n        \"userId\": \"M1691559227102239\",\n        \"type\": \"LT\",\n        \"teacherName\": \"Sadie\",\n        \"teacherEnName\": \"Sadie Rose\",\n        \"email\": \"sadie.rose320@gmail.com\",\n        \"cellPhone\": \"7ENYpiRFRKBxPco0BXgo1A==\",\n        \"workTime\": null,\n        \"sort\": 0,\n        \"active\": true\n    },\n    {\n        \"listNumber\": 0,\n        \"userId\": \"M1693558129675151\",\n        \"type\": \"LT\",\n        \"teacherName\": \"Tyler\",\n        \"teacherEnName\": \"Tyler Tran\",\n        \"email\": \"tytn2017@gmail.com\",\n        \"cellPhone\": \"Jo6hJocYWTcHnbhkaqAOvg==\",\n        \"workTime\": null,\n        \"sort\": 0,\n        \"active\": true\n    },\n    {\n        \"listNumber\": 0,\n        \"userId\": \"M1723370523381628\",\n        \"type\": \"HT\",\n        \"teacherName\": \"TEST이름\",\n        \"teacherEnName\": null,\n        \"email\": \"email.naver.com\",\n        \"cellPhone\": null,\n        \"workTime\": null,\n        \"sort\": 0,\n        \"active\": true\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/13_list_all_teacherPage.js",
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
