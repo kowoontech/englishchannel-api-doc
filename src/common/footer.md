@@ -40,6 +40,7 @@
 |         | Admin API > 04. 상담관리 : 03. 상담고객 상세조회 -  객체 하나로 수정했습니다 (필드명수정( *joinPath->foundPath / *studyPurpose-> studyPurposes)<br/><br/> | 2024.08.11 |
 |         | Admin API > 05. 강사 : 13.강사계정:강사목록 추가                                                                                          | 2024.08.12 |
 |         | Admin API > 01. 회원 : 01.회원목록조회 : 미부킹 필드 추가                                                                                    | 2024.08.12 |
+|         | Admin API > 01. 회원 : 46.회원목록 : email 필드 추가                                                                                    | 2024.08.12 |
             
             
 <br/>

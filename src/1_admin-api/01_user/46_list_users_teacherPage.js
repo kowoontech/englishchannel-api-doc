@@ -25,6 +25,7 @@
  * @apiSuccess {String} list.startTime 수업시간(시작)
  * @apiSuccess {String} list.endTime 수업시간(종료)
  * @apiSuccess {String} list.teacherName 강사명
+ * @apiSuccess {String} list.email 회원이메일
  * @apiSuccess {Number} totalCount 전체 회원 수
  * @apiSuccess {Number} page 현재 페이지
  * @apiSuccess {Number} limit 한페이지에 보여줄 회원 수
