@@ -9482,7 +9482,7 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "type",
+            "field": "teacherType",
             "description": "<p>강사타입 [HT, LT]</p>"
           },
           {

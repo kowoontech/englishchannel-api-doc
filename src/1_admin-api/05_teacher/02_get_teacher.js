@@ -22,7 +22,7 @@
  * @apiSuccess {String} email 이메일
  * @apiSuccess {String} gender 성별 [F,M]
  * @apiSuccess {String} cellPhone 전화번호
- * @apiSuccess {String} type 강사타입 [HT, LT]
+ * @apiSuccess {String} teacherType 강사타입 [HT, LT]
  * @apiSuccess {String} workStartDate 근무시작일[yyyy-MM-dd]
  * @apiSuccess {String} language 언어 [ ENGLISH, CHINESE, JAPANESE]
  * @apiSuccess {String} workTime 근무시간[AM_16, PM_16, SP_16, AM_8, PM_8, SP_10, SP_4]
