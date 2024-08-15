@@ -26,12 +26,9 @@
  * @apiSuccess {Object[]} list.schedules 스케줄정보(일정)
  * @apiSuccess {String} list.schedules.id  스케줄 식별키
  * @apiSuccess {String} [list.schedules.date] 날짜(사용X, 위에 있는 '예약일자' 사용)
- * @apiSuccess {String} [list.schedules.startTime]  시작시간(사용X,)
- * @apiSuccess {String} [list.schedules.cgtTime]  CGT구분을 위한 컬럼(사용X,)
- * @apiSuccess {String} [list.schedules.workTime] 강사근무시간(사용X,)
- * @apiSuccess {String} [list.schedules.type] CGT/COURSE (사용X,CGT스케쥴일 시 CGT)
- * @apiSuccess {String} [list.schedules.reservationLimit] 정원(사용X, 위에 reservationLimit 사용)
- * @apiSuccess {String} [list.schedules.reservationCount] 현재예약인원(사용X, 위에 reservationCount 사용)
+ * @apiSuccess {String} [list.schedules.startTime]  시작시간
+ * @apiSuccess {String} [list.schedules.cgtTime]  CGT구분을 위한 컬럼
+ * @apiSuccess {String} [list.schedules.type]  CGT구분을 위한 컬럼
 
 
  * @apiSuccess {Number} totalCount 전체 수
@@ -51,79 +48,41 @@
     "list": [
         {
             "id": 1,
-            "teacherId": "M1695013438115743",
-            "teacherName": "서안나1",
-            "date": "2024-11-05",
-            "startTime": "09:00:00",
-            "endTime": "10:00:00",
-            "reservationLimit": 1,
+            "teacherId": "M1723613351792159",
+            "teacherName": "TEST",
+            "date": "2024-08-16",
+            "startTime": "09:30",
+            "endTime": "10:30",
+            "reservationLimit": 0,
             "reservationCount": 0,
             "schedules": [
                 {
-                    "id": 9525259,
-                    "date": "2024-11-05",
+                    "id": 9525351,
+                    "date": "2024-08-16",
                     "startTime": "09:30:00",
-                    "cgtTime": "09:00:00",
-                    "workTime": "AM_16",
-                    "type": "CGT",
-                    "reservationLimit": 1,
-                    "reservationCount": 0
+                    "cgtTime": "09:30:00",
+                    "type": "CGT"
                 },
                 {
-                    "id": 9525258,
-                    "date": "2024-11-05",
-                    "startTime": "09:00:00",
-                    "cgtTime": "09:00:00",
-                    "workTime": "AM_16",
-                    "type": "CGT",
-                    "reservationLimit": 1,
-                    "reservationCount": 0
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "teacherId": "M1695013438115743",
-            "teacherName": "서안나1",
-            "date": "2023-11-04",
-            "startTime": "07:30:00",
-            "endTime": "08:30:00",
-            "reservationLimit": 1,
-            "reservationCount": 0,
-            "schedules": [
-                {
-                    "id": 9525292,
-                    "date": "2023-11-04",
-                    "startTime": "08:00:00",
-                    "cgtTime": "07:30:00",
-                    "workTime": "AM_16",
-                    "type": "CGT",
-                    "reservationLimit": 1,
-                    "reservationCount": 0
-                },
-                {
-                    "id": 9525291,
-                    "date": "2023-11-04",
-                    "startTime": "07:30:00",
-                    "cgtTime": "07:30:00",
-                    "workTime": "AM_16",
-                    "type": "CGT",
-                    "reservationLimit": 1,
-                    "reservationCount": 0
+                    "id": 9525345,
+                    "date": "2024-08-16",
+                    "startTime": "10:00:00",
+                    "cgtTime": "09:30:00",
+                    "type": "CGT"
                 }
             ]
         }
     ],
-    "totalCount": 2,
+    "totalCount": 1,
     "page": 1,
     "limit": 10,
     "pageSize": 10,
-    "totalPage": 1,
-    "endPage": 1,
     "startPage": 1,
-    "isFirst": true,
-    "isLast": true,
+    "endPage": 1,
+    "totalPage": 1,
+    "hasPrev": false,
     "hasNext": false,
-    "hasPrev": false
+    "isFirst": true,
+    "isLast": true
 }
  */

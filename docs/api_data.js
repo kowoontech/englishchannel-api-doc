@@ -1251,7 +1251,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "reservationId",
-            "description": "<p>ldf 목록에 가지고 있는 reservation의 식별키</p>"
+            "description": "<p>ldf 목록에 가지고 있는 ldfId(ldf식별키)</p>"
           },
           {
             "group": "Body",
@@ -9092,7 +9092,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "startTime",
-            "description": "<p>예약시간(HH:mm)</p>"
+            "description": "<p>예약시간(HH:mm:ss)</p>"
           },
           {
             "group": "Body",
@@ -9128,6 +9128,67 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/05_teacher/11_create_cgt.js",
+    "groupTitle": "1._Admin_API_>_05._강사"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/teachers/reservationCgt",
+    "title": "14. CGT 예약",
+    "description": "<p>강사관리 &gt; CGT스케줄 &gt; 목록 &gt; 회원 예약 <br/> 예약자 인원 클릭 시 예약자 명단 확인 가능. 추가 수강생 예약</p>",
+    "version": "1.0.0",
+    "name": "admin_createCgt",
+    "group": "1._Admin_API_>_05._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/reservationCgt' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"schedules\":[9525345,9525351],\n           \"date\" : \"2024-08-16\",\n           \"teacherId\":\"M1723613351792159\",\n           \"userId\":\"1029034\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>schedule 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>날짜 (HH:mm:ss)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>강사식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>회원식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/14_create_reservationcgt.js",
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
@@ -10139,42 +10200,21 @@ define({ "api": [
             "type": "String",
             "optional": true,
             "field": "list.schedules.startTime",
-            "description": "<p>시작시간(사용X,)</p>"
+            "description": "<p>시작시간</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": true,
             "field": "list.schedules.cgtTime",
-            "description": "<p>CGT구분을 위한 컬럼(사용X,)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "list.schedules.workTime",
-            "description": "<p>강사근무시간(사용X,)</p>"
+            "description": "<p>CGT구분을 위한 컬럼</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": true,
             "field": "list.schedules.type",
-            "description": "<p>CGT/COURSE (사용X,CGT스케쥴일 시 CGT)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "list.schedules.reservationLimit",
-            "description": "<p>정원(사용X, 위에 reservationLimit 사용)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "list.schedules.reservationCount",
-            "description": "<p>현재예약인원(사용X, 위에 reservationCount 사용)</p>"
+            "description": "<p>CGT구분을 위한 컬럼</p>"
           },
           {
             "group": "Success 200",
@@ -10251,7 +10291,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 1,\n            \"teacherId\": \"M1695013438115743\",\n            \"teacherName\": \"서안나1\",\n            \"date\": \"2024-11-05\",\n            \"startTime\": \"09:00:00\",\n            \"endTime\": \"10:00:00\",\n            \"reservationLimit\": 1,\n            \"reservationCount\": 0,\n            \"schedules\": [\n                {\n                    \"id\": 9525259,\n                    \"date\": \"2024-11-05\",\n                    \"startTime\": \"09:30:00\",\n                    \"cgtTime\": \"09:00:00\",\n                    \"workTime\": \"AM_16\",\n                    \"type\": \"CGT\",\n                    \"reservationLimit\": 1,\n                    \"reservationCount\": 0\n                },\n                {\n                    \"id\": 9525258,\n                    \"date\": \"2024-11-05\",\n                    \"startTime\": \"09:00:00\",\n                    \"cgtTime\": \"09:00:00\",\n                    \"workTime\": \"AM_16\",\n                    \"type\": \"CGT\",\n                    \"reservationLimit\": 1,\n                    \"reservationCount\": 0\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"teacherId\": \"M1695013438115743\",\n            \"teacherName\": \"서안나1\",\n            \"date\": \"2023-11-04\",\n            \"startTime\": \"07:30:00\",\n            \"endTime\": \"08:30:00\",\n            \"reservationLimit\": 1,\n            \"reservationCount\": 0,\n            \"schedules\": [\n                {\n                    \"id\": 9525292,\n                    \"date\": \"2023-11-04\",\n                    \"startTime\": \"08:00:00\",\n                    \"cgtTime\": \"07:30:00\",\n                    \"workTime\": \"AM_16\",\n                    \"type\": \"CGT\",\n                    \"reservationLimit\": 1,\n                    \"reservationCount\": 0\n                },\n                {\n                    \"id\": 9525291,\n                    \"date\": \"2023-11-04\",\n                    \"startTime\": \"07:30:00\",\n                    \"cgtTime\": \"07:30:00\",\n                    \"workTime\": \"AM_16\",\n                    \"type\": \"CGT\",\n                    \"reservationLimit\": 1,\n                    \"reservationCount\": 0\n                }\n            ]\n        }\n    ],\n    \"totalCount\": 2,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"totalPage\": 1,\n    \"endPage\": 1,\n    \"startPage\": 1,\n    \"isFirst\": true,\n    \"isLast\": true,\n    \"hasNext\": false,\n    \"hasPrev\": false\n}",
+          "content": "HTTP/1.1 200\n{\n    \"list\": [\n        {\n            \"id\": 1,\n            \"teacherId\": \"M1723613351792159\",\n            \"teacherName\": \"TEST\",\n            \"date\": \"2024-08-16\",\n            \"startTime\": \"09:30\",\n            \"endTime\": \"10:30\",\n            \"reservationLimit\": 0,\n            \"reservationCount\": 0,\n            \"schedules\": [\n                {\n                    \"id\": 9525351,\n                    \"date\": \"2024-08-16\",\n                    \"startTime\": \"09:30:00\",\n                    \"cgtTime\": \"09:30:00\",\n                    \"type\": \"CGT\"\n                },\n                {\n                    \"id\": 9525345,\n                    \"date\": \"2024-08-16\",\n                    \"startTime\": \"10:00:00\",\n                    \"cgtTime\": \"09:30:00\",\n                    \"type\": \"CGT\"\n                }\n            ]\n        }\n    ],\n    \"totalCount\": 1,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pageSize\": 10,\n    \"startPage\": 1,\n    \"endPage\": 1,\n    \"totalPage\": 1,\n    \"hasPrev\": false,\n    \"hasNext\": false,\n    \"isFirst\": true,\n    \"isLast\": true\n}",
           "type": "json"
         }
       ]

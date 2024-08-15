@@ -23,7 +23,7 @@
  * @apiParam (Path) {String} id 회원 식별키
  *
  *
- * @apiParam (Body) {Number} reservationId ldf 목록에 가지고 있는 reservation의 식별키
+ * @apiParam (Body) {Number} reservationId ldf 목록에 가지고 있는 ldfId(ldf식별키)
  * @apiParam (Body) {String} [lesson] Lesson
  * @apiParam (Body) {String} [contentSp] Stress and Pronunciation
  * @apiParam (Body) {String} [contentV] Vocabulary
