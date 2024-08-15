@@ -9133,7 +9133,7 @@
   {
     "type": "post",
     "url": "/admin/v1/teachers/reservationCgt",
-    "title": "14. CGT 예약",
+    "title": "14. CGT 예약(운영자)",
     "description": "<p>강사관리 &gt; CGT스케줄 &gt; 목록 &gt; 회원 예약 <br/> 예약자 인원 클릭 시 예약자 명단 확인 가능. 추가 수강생 예약</p>",
     "version": "1.0.0",
     "name": "admin_createCgt",
@@ -9189,6 +9189,67 @@
       ]
     },
     "filename": "src/1_admin-api/05_teacher/14_create_reservationcgt.js",
+    "groupTitle": "1._Admin_API_>_05._강사"
+  },
+  {
+    "type": "delete",
+    "url": "/admin/v1/teachers/reservationCgt",
+    "title": "15. CGT 예약취소(운영자)",
+    "description": "<p>강사관리 &gt; CGT스케줄 &gt; 목록 &gt; 예약 취소 <br/> 예약자 인원 클릭 시 예약자 명단 확인 가능. 추가 수강생 예약</p>",
+    "version": "1.0.0",
+    "name": "admin_createCgt",
+    "group": "1._Admin_API_>_05._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/reservationCgt' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"schedules\":[9525345,9525351],\n           \"date\" : \"2024-08-16\",\n           \"teacherId\":\"M1723613351792159\",\n           \"userId\":\"1029034\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>schedule 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>날짜 (HH:mm:ss)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>강사식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>회원식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/15_delete_cgtcancel.js",
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {

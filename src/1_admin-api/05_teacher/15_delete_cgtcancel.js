@@ -1,7 +1,7 @@
 /**
- * @api {post} /admin/v1/teachers/reservationCgt 14. CGT 예약(운영자)
+ * @api {delete} /admin/v1/teachers/reservationCgt 15. CGT 예약취소(운영자)
  *
- * @apiDescription 강사관리 > CGT스케줄 > 목록 > 회원 예약 <br/>
+ * @apiDescription 강사관리 > CGT스케줄 > 목록 > 예약 취소 <br/>
  *  예약자 인원 클릭 시 예약자 명단 확인 가능. 추가 수강생 예약
  *
  * @apiVersion 1.0.0
