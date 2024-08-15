@@ -21,6 +21,7 @@
  * @apiSuccess {String} list.date 예약일자
  * @apiSuccess {String} list.startTime 예약시간(시작,HH:mm)
  * @apiSuccess {String} list.endTime 예약시간(끝,HH:mm)
+ * @apiSuccess {String} list.cgtTime CGT시간
  * @apiSuccess {String} list.reservationLimit 정원
  * @apiSuccess {String} list.reservationCount 현재예약인원
  * @apiSuccess {Object[]} list.schedules 스케줄정보(일정)
@@ -53,8 +54,9 @@
             "date": "2024-08-16",
             "startTime": "09:30",
             "endTime": "10:30",
-            "reservationLimit": 0,
-            "reservationCount": 0,
+            "cgtTime": "09:30:00",
+            "reservationLimit": 4,
+            "reservationCount": 3,
             "schedules": [
                 {
                     "id": 9525351,
@@ -71,18 +73,45 @@
                     "type": "CGT"
                 }
             ]
+        },
+        {
+            "id": 2,
+            "teacherId": "M1723613351792159",
+            "teacherName": "TEST",
+            "date": "2024-08-16",
+            "startTime": "12:00",
+            "endTime": "13:30",
+            "cgtTime": "12:00:00",
+            "reservationLimit": 8,
+            "reservationCount": 0,
+            "schedules": [
+                {
+                    "id": 9525348,
+                    "date": "2024-08-16",
+                    "startTime": "12:30:00",
+                    "cgtTime": "12:00:00",
+                    "type": "CGT"
+                },
+                {
+                    "id": 9525347,
+                    "date": "2024-08-16",
+                    "startTime": "12:00:00",
+                    "cgtTime": "12:00:00",
+                    "type": "CGT"
+                }
+            ]
         }
     ],
-    "totalCount": 1,
+    "totalCount": 2,
     "page": 1,
     "limit": 10,
     "pageSize": 10,
-    "startPage": 1,
     "endPage": 1,
+    "startPage": 1,
     "totalPage": 1,
-    "hasPrev": false,
     "hasNext": false,
     "isFirst": true,
-    "isLast": true
+    "isLast": true,
+    "hasPrev": false
 }
  */

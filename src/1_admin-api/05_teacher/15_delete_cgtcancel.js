@@ -5,7 +5,7 @@
  *  예약자 인원 클릭 시 예약자 명단 확인 가능. 추가 수강생 예약
  *
  * @apiVersion 1.0.0
- * @apiName admin_createCgt
+ * @apiName admin_cancelcgt
  * @apiGroup 1. Admin API > 05. 강사
  *
  * @apiExample {curl} REQUEST
@@ -20,7 +20,7 @@
  *
  * 
  * @apiParam (Body) {Number[]} schedules schedule 식별키
- * @apiParam (Body) {String} date 날짜 (HH:mm:ss)
+ * @apiParam (Body) {String} date 날짜 (yyyy-MM-dd)
  * @apiParam (Body) {String} teacherId 강사식별키
  * @apiParam (Body) {String} userId 회원식별키
  *

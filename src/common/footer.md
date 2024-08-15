@@ -44,6 +44,7 @@
 |         | Admin API > 01. 회원 : 47. : ldf등록 필드명 수정 (reservationId-> ldfId)                                                               | 2024.08.15 |
 |         | Admin API > 05. 강사 : CGT 14.예약 추가                                                                                             | 2024.08.15 |
 |         | Admin API > 05. 강사 : CGT 15.예약 취소                                                                                             | 2024.08.15 |
+|         | Admin API > 05. 강사 : CGT 16.CGT 예약자 목록                                                                                        | 2024.08.15 |
             
             
 <br/>

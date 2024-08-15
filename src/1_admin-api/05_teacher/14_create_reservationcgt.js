@@ -20,7 +20,7 @@
  *
  * 
  * @apiParam (Body) {Number[]} schedules schedule 식별키
- * @apiParam (Body) {String} date 날짜 (HH:mm:ss)
+ * @apiParam (Body) {String} date 날짜 (yyyy-MM-dd)
  * @apiParam (Body) {String} teacherId 강사식별키
  * @apiParam (Body) {String} userId 회원식별키
  *
