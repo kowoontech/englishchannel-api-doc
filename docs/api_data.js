@@ -10030,6 +10030,73 @@ define({ "api": [
       }
     },
     "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>회원 이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>날짜(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>CGT시작시간(시작,HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>CGT종료시간(시작,HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cgtTime",
+            "description": "<p>CGT시간</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reservationLimit",
+            "description": "<p>정원</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>스케줄</p>"
+          }
+        ]
+      },
       "examples": [
         {
           "title": "SUCCESS",

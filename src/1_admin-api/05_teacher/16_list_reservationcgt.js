@@ -25,6 +25,18 @@
  * @apiParam (Body) {String} cgtTime CGT시간(HH:mm:ss)
  *
  *
+
+* @apiSuccess {String} userId 회원 식별키
+* @apiSuccess {String} name 회원 이름
+* @apiSuccess {String} date 날짜(yyyy-MM-dd)
+* @apiSuccess {String} startTime CGT시작시간(시작,HH:mm:ss)
+* @apiSuccess {String} endTime CGT종료시간(시작,HH:mm:ss)
+* @apiSuccess {String} teacherId 강사 식별키
+* @apiSuccess {String} cgtTime CGT시간
+* @apiSuccess {String} reservationLimit 정원
+* @apiSuccess {Object[]} schedules 스케줄
+
+
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 
