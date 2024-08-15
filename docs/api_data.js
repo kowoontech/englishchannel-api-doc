@@ -9197,7 +9197,7 @@ define({ "api": [
     "title": "14. CGT 예약(운영자)",
     "description": "<p>강사관리 &gt; CGT스케줄 &gt; 목록 &gt; 회원 예약 <br/> 예약자 인원 클릭 시 예약자 명단 확인 가능. 추가 수강생 예약</p>",
     "version": "1.0.0",
-    "name": "admin_createCgt",
+    "name": "admin_createCgtmember",
     "group": "1._Admin_API_>_05._강사",
     "examples": [
       {

@@ -5,7 +5,7 @@
  *  예약자 인원 클릭 시 예약자 명단 확인 가능. 추가 수강생 예약
  *
  * @apiVersion 1.0.0
- * @apiName admin_createCgt
+ * @apiName admin_createCgtmember
  * @apiGroup 1. Admin API > 05. 강사
  *
  * @apiExample {curl} REQUEST
