@@ -32,9 +32,7 @@
 * @apiSuccess {String} startTime CGT시작시간(시작,HH:mm:ss)
 * @apiSuccess {String} endTime CGT종료시간(시작,HH:mm:ss)
 * @apiSuccess {String} teacherId 강사 식별키
-* @apiSuccess {String} cgtTime CGT시간
-* @apiSuccess {String} reservationLimit 정원
-* @apiSuccess {Object[]} schedules 스케줄
+* @apiSuccess {Number[]} schedules 스케줄
 
 
  * @apiSuccessExample {json} SUCCESS
