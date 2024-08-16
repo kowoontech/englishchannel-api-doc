@@ -9254,67 +9254,6 @@
   },
   {
     "type": "post",
-    "url": "/admin/v1/teachers/reservationCgt",
-    "title": "14. CGT 예약(운영자)",
-    "description": "<p>강사관리 &gt; CGT스케줄 &gt; 목록 &gt; 회원 예약 <br/> 예약자 인원 클릭 시 예약자 명단 확인 가능. 추가 수강생 예약</p>",
-    "version": "1.0.0",
-    "name": "admin_createCgtmember",
-    "group": "1._Admin_API_>_05._강사",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/reservationCgt' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"schedules\":[9525345,9525351],\n           \"date\" : \"2024-08-16\",\n           \"teacherId\":\"M1723613351792159\",\n           \"userId\":\"1029034\"\n       }\"",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Body": [
-          {
-            "group": "Body",
-            "type": "Number[]",
-            "optional": false,
-            "field": "schedules",
-            "description": "<p>schedule 식별키</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "date",
-            "description": "<p>날짜 (yyyy-MM-dd)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "teacherId",
-            "description": "<p>강사식별키</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "userId",
-            "description": "<p>회원식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/2_mobile-api/02_reservation/09_create_reservationcgtUser.js",
-    "groupTitle": "1._Admin_API_>_05._강사"
-  },
-  {
-    "type": "post",
     "url": "/admin/v1/teachers",
     "title": "08. 강사 등록",
     "description": "<p>강사관리 &gt; 강사등록 <br/> 동일 loginID가 존재로 에러 발생 시 알려주세요. <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
@@ -12900,6 +12839,67 @@
     },
     "filename": "src/2_mobile-api/01_main/01_get_main_data.js",
     "groupTitle": "2._Mobile_API_>_01._메인"
+  },
+  {
+    "type": "post",
+    "url": "/admin/v1/teachers/reservationCgt",
+    "title": "14. CGT 예약(운영자)",
+    "description": "<p>강사관리 &gt; CGT스케줄 &gt; 목록 &gt; 회원 예약 <br/> 예약자 인원 클릭 시 예약자 명단 확인 가능. 추가 수강생 예약</p>",
+    "version": "1.0.0",
+    "name": "admin_createCgtmember",
+    "group": "2._Mobile_API_>_02._예약",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/reservationCgt' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"schedules\":[9525345,9525351],\n           \"date\" : \"2024-08-16\",\n           \"teacherId\":\"M1723613351792159\",\n           \"userId\":\"1029034\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>schedule 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>날짜 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>강사식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>회원식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/02_reservation/09_create_reservationcgtUser.js",
+    "groupTitle": "2._Mobile_API_>_02._예약"
   },
   {
     "type": "delete",

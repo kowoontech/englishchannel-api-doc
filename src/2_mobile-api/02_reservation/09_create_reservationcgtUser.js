@@ -6,7 +6,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_createCgtmember
- * @apiGroup 1. Admin API > 05. 강사
+ * @apiGroup 2. Mobile API > 02. 예약
  *
  * @apiExample {curl} REQUEST
  * curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/reservationCgt' \
