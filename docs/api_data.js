@@ -12304,7 +12304,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "search",
-            "description": "<p>검색 조건 (name:이름, id:아이디)</p>"
+            "description": "<p>검색 조건 (name:이름, loginId:아이디)</p>"
           },
           {
             "group": "Query",

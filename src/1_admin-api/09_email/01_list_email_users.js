@@ -11,7 +11,7 @@
  * curl -i -X GET 'http://localhost:8080/admin/v1/email/users?type=S&search=name&keyword=하'
  *
  * @apiParam (Query) {String} type 발송 대상 유형 (S:일반회원, T:강사, A:관리자)
- * @apiParam (Query) {String} search 검색 조건 (name:이름, id:아이디)
+ * @apiParam (Query) {String} search 검색 조건 (name:이름, loginId:아이디)
  * @apiParam (Query) {String} keyword 검색어
 
  * @apiSuccess {Object[]} users 발송 대상 목록
