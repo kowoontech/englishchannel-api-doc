@@ -12841,67 +12841,6 @@ define({ "api": [
     "groupTitle": "2._Mobile_API_>_01._메인"
   },
   {
-    "type": "post",
-    "url": "/admin/v1/teachers/reservationCgt",
-    "title": "14. CGT 예약(운영자)",
-    "description": "<p>강사관리 &gt; CGT스케줄 &gt; 목록 &gt; 회원 예약 <br/> 예약자 인원 클릭 시 예약자 명단 확인 가능. 추가 수강생 예약</p>",
-    "version": "1.0.0",
-    "name": "admin_createCgtmember",
-    "group": "2._Mobile_API_>_02._예약",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/reservationCgt' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"schedules\":[9525345,9525351],\n           \"date\" : \"2024-08-16\",\n           \"teacherId\":\"M1723613351792159\",\n           \"userId\":\"1029034\"\n       }\"",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Body": [
-          {
-            "group": "Body",
-            "type": "Number[]",
-            "optional": false,
-            "field": "schedules",
-            "description": "<p>schedule 식별키</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "date",
-            "description": "<p>날짜 (yyyy-MM-dd)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "teacherId",
-            "description": "<p>강사식별키</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "userId",
-            "description": "<p>회원식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/2_mobile-api/02_reservation/09_create_reservationcgtUser.js",
-    "groupTitle": "2._Mobile_API_>_02._예약"
-  },
-  {
     "type": "delete",
     "url": "/mobile/v1/reservations/cgt",
     "title": "08. CGT 예약취소(회원)",
@@ -12939,6 +12878,46 @@ define({ "api": [
       ]
     },
     "filename": "src/2_mobile-api/02_reservation/08_delete_cgtcancelUser.js",
+    "groupTitle": "2._Mobile_API_>_02._예약"
+  },
+  {
+    "type": "post",
+    "url": "/mobile/v1/reservations/cgt",
+    "title": "09. CGT 예약(회원)",
+    "description": "<p>모바일 &gt; 메인 &gt; cgt예약버튼 &gt; 예약 취소 <br/></p>",
+    "version": "1.0.0",
+    "name": "mobile_createCgt",
+    "group": "2._Mobile_API_>_02._예약",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/mobile/v1/reservations/cgt' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"schedules\":[9525345,9525351]\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "Number[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>schedule 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/02_reservation/09_create_reservationcgtUser.js",
     "groupTitle": "2._Mobile_API_>_02._예약"
   },
   {
@@ -13787,6 +13766,65 @@ define({ "api": [
     },
     "filename": "src/2_mobile-api/03_feedback/02_update_feedback_evaluation.js",
     "groupTitle": "2._Mobile_API_>_03._레슨피드백"
+  },
+  {
+    "type": "get",
+    "url": "mobile/v1/myinfo",
+    "title": "02. 내정보보기",
+    "description": "<p>햄버거 메뉴 &gt; 더보기 &gt; 접속정보</p>",
+    "version": "1.0.0",
+    "name": "mobile_getmyinfo",
+    "group": "2._Mobile_API_>_04._회원정보",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/mobile/v1/myinfo'",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "loginId",
+            "description": "<p>로그인아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>회원이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "courseStatus",
+            "description": "<p>수강상태(ATTENDING:수강중, WAITING:수강대기중, COMPLETE:수강완료, null: 수강 기록 없음)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\"{\n        \"id\": \"M1723792542723767\",\n        \"loginId\": \"duswls3000\",\n        \"name\": \"회원테스트\",\n        \"courseStatus\": null\n    }\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/04_user/02_get_myinfo.js",
+    "groupTitle": "2._Mobile_API_>_04._회원정보"
   },
   {
     "type": "put",
