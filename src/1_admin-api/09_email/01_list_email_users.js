@@ -19,29 +19,41 @@
  * @apiSuccess {String} users.name 이름
  * @apiSuccess {String} users.nameEn 영문 이름
  * @apiSuccess {String} users.email 이메일
+ * @apiSuccess {String} users.loginId 아이디
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
  {
-     "users": [
-         {
-             "id": "M1519648304234104",
-             "name": "RE-김동하",
-             "nameEn": "Dongha Kim",
-             "email": "kimdongha1984@gmail.com"
-         },
-         {
-             "id": "M1511408494025832",
-             "name": "RE-김하연",
-             "nameEn": "Hayeon Kim",
-             "email": "aqua7583@naver.com"
-         },
-         {
-             "id": "M1524297763999142",
-             "name": "RE-서민하",
-             "nameEn": "Minha Seo",
-             "email": "yellow0824@naver.com"
-         }
-     ]
+{
+    "users": [
+        {
+            "id": "M1519648304234104",
+            "name": "RE-김동하",
+            "nameEn": "Dongha Kim",
+            "loginId": "huggun@hanmail.net",
+            "email": "kimdongha1984@gmail.com"
+        },
+        {
+            "id": "M1511408494025832",
+            "name": "RE-김하연",
+            "nameEn": "Hayeon Kim",
+            "loginId": "aqua7583@naver.com",
+            "email": "aqua7583@naver.com"
+        },
+        {
+            "id": "M1524297763999142",
+            "name": "RE-서민하",
+            "nameEn": "Minha Seo",
+            "loginId": "yellow0824@naver.com",
+            "email": "yellow0824@naver.com"
+        },
+        {
+            "id": "M1502520988970956",
+            "name": "RE-이하늘",
+            "nameEn": "Ha-neul Lee",
+            "loginId": "skyfl94@naver.com",
+            "email": "skyfl94@naver.com"
+        },
+
  }
  */

@@ -12353,13 +12353,20 @@ define({ "api": [
             "optional": false,
             "field": "users.email",
             "description": "<p>이메일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "users.loginId",
+            "description": "<p>아이디</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n {\n     \"users\": [\n         {\n             \"id\": \"M1519648304234104\",\n             \"name\": \"RE-김동하\",\n             \"nameEn\": \"Dongha Kim\",\n             \"email\": \"kimdongha1984@gmail.com\"\n         },\n         {\n             \"id\": \"M1511408494025832\",\n             \"name\": \"RE-김하연\",\n             \"nameEn\": \"Hayeon Kim\",\n             \"email\": \"aqua7583@naver.com\"\n         },\n         {\n             \"id\": \"M1524297763999142\",\n             \"name\": \"RE-서민하\",\n             \"nameEn\": \"Minha Seo\",\n             \"email\": \"yellow0824@naver.com\"\n         }\n     ]\n }",
+          "content": "HTTP/1.1 200\n {\n{\n    \"users\": [\n        {\n            \"id\": \"M1519648304234104\",\n            \"name\": \"RE-김동하\",\n            \"nameEn\": \"Dongha Kim\",\n            \"loginId\": \"huggun@hanmail.net\",\n            \"email\": \"kimdongha1984@gmail.com\"\n        },\n        {\n            \"id\": \"M1511408494025832\",\n            \"name\": \"RE-김하연\",\n            \"nameEn\": \"Hayeon Kim\",\n            \"loginId\": \"aqua7583@naver.com\",\n            \"email\": \"aqua7583@naver.com\"\n        },\n        {\n            \"id\": \"M1524297763999142\",\n            \"name\": \"RE-서민하\",\n            \"nameEn\": \"Minha Seo\",\n            \"loginId\": \"yellow0824@naver.com\",\n            \"email\": \"yellow0824@naver.com\"\n        },\n        {\n            \"id\": \"M1502520988970956\",\n            \"name\": \"RE-이하늘\",\n            \"nameEn\": \"Ha-neul Lee\",\n            \"loginId\": \"skyfl94@naver.com\",\n            \"email\": \"skyfl94@naver.com\"\n        },\n\n }",
           "type": "json"
         }
       ]
