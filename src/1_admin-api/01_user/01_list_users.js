@@ -4,7 +4,8 @@
  * @apiDescription 회원관리 > 회원 목록 조회<br/>
  * 모든 파라미터는 안넘기면 전체<br/>
  * 전체가 명시되어 있는 셀렉트박스는 "ALL"을 넘겨도 전체<br/>
- *  사용자등록, 직원등록 시 사용 > type 필드는 필수입니다
+ *  사용자등록, 직원등록 시 사용 > type 필드는 필수입니다<br/>
+ *  정렬기능 > 이름: name , 이메일: email , 수강만료일: expirationDate , 가입일: createDate , 잔여횟수: remainingCount , 미부킹: notBook
  *
  * @apiVersion 1.0.0
  * @apiName admin_listUsers
@@ -26,7 +27,7 @@
  * @apiParam (Query) [search] 검색 선택 (ALL: 전체 , name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)
  * @apiParam (Query) [keyword] 검색어
  * @apiParam (Query) [page] 조회할 페이지
- * @apiParam (Query) [order] 정렬 선택
+ * @apiParam (Query) [order] 정렬 선택(이름: name , 이메일: email , 수강만료일: expirationDate , 가입일: createDate , 잔여횟수: remainingCount , 미부킹: notBook)
  * @apiParam (Query) [direction] 정렬 방향 (ASD: 오름차순, DESC: 내림차순)
  *
  * @apiSuccess {Object[]} list 회원 목록
