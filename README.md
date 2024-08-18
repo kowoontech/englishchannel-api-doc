@@ -1,5 +1,5 @@
 # LMS API Doc
-* https://unialto.github.io/lms-api-doc/
+* https://kowoontech/englishchannel-api-doc/
 
 ### Install node
 ```shell
