@@ -5304,7 +5304,7 @@
             "group": "Query",
             "optional": true,
             "field": "order",
-            "description": "<p>정렬 선택(이름: name , 이메일: email , 수강만료일: expirationDate , 가입일: createDate , 잔여횟수: remainingCount , 미부킹: notBook)</p>"
+            "description": "<p>정렬 선택(이름: name , 이메일: email , 수강만료일: endDate , 가입일: createDate , 잔여횟수: remainingCount)</p>"
           },
           {
             "group": "Query",

@@ -27,7 +27,7 @@
  * @apiParam (Query) [search] 검색 선택 (ALL: 전체 , name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)
  * @apiParam (Query) [keyword] 검색어
  * @apiParam (Query) [page] 조회할 페이지
- * @apiParam (Query) [order] 정렬 선택(이름: name , 이메일: email , 수강만료일: expirationDate , 가입일: createDate , 잔여횟수: remainingCount , 미부킹: notBook)
+ * @apiParam (Query) [order] 정렬 선택(이름: name , 이메일: email , 수강만료일: endDate , 가입일: createDate , 잔여횟수: remainingCount)
  * @apiParam (Query) [direction] 정렬 방향 (ASD: 오름차순, DESC: 내림차순)
  *
  * @apiSuccess {Object[]} list 회원 목록
