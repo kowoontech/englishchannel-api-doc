@@ -10095,6 +10095,69 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
+    "type": "get",
+    "url": "/admin/v1/teachers/worked",
+    "title": "17. 기간별 강사 목록",
+    "description": "<p>강사관리 <br/> 해당 기간에 일한 강사 목록</p>",
+    "version": "1.0.0",
+    "name": "admin_listworkTeacher",
+    "group": "1._Admin_API_>_05._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/admin/v1/teachers/worked?dateFrom=2023-01-01&dateTo=2023-01-31' \\",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "dateFrom",
+            "description": "<p>조회할 날짜 ~부터 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "dateTo",
+            "description": "<p>조회할 날짜 ~까지 (yyyy-MM-dd)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>강사식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>강사이름</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\n[\n    {\n        \"teacherId\": \"M1515756140981038\",\n        \"name\": \"임정은\"\n    },\n    {\n        \"teacherId\": \"M1594795852631377\",\n        \"name\": \"Steven\"\n    },\n    {\n        \"teacherId\": \"M1660267538951028\",\n        \"name\": \"Adam\"\n    },\n    {\n        \"teacherId\": \"M1400118325784523\",\n        \"name\": \"한가영\"\n    },\n    {\n        \"teacherId\": \"M1487640799950353\",\n        \"name\": \"Alex\"\n    },\n    {\n        \"teacherId\": \"M1523939117926947\",\n        \"name\": \"Airin\"\n    },\n    {\n        \"teacherId\": \"M1661138591404520\",\n        \"name\": \"최태연\"\n    },\n    {\n        \"teacherId\": \"M1657064932771055\",\n        \"name\": \"김나래\"\n    },\n    {\n        \"teacherId\": \"M1649713933516571\",\n        \"name\": \"황재희\"\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/17_list_workTeacher.js",
+    "groupTitle": "1._Admin_API_>_05._강사"
+  },
+  {
     "type": "put",
     "url": "/admin/v1/teachers/{id}",
     "title": "03. 강사수정/삭제",
