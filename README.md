@@ -1,5 +1,5 @@
 # LMS API Doc
-* http://kowoontech.github.io/englishchannel-api-doc/
+* https://kowoontech.github.io/englishchannel-api-doc/
 
 ### Install node
 ```shell
