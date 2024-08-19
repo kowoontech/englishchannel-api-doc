@@ -11521,16 +11521,23 @@
           {
             "group": "Query",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "date",
             "description": "<p>수업일 [yyyy-MM-dd]</p>"
           },
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "search",
             "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "keyword",
+            "description": "<p>검색구분(필수값: name)</p>"
           }
         ]
       }

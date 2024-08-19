@@ -12,8 +12,9 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http:/admin/v1/statistics/evaluations?date=2023-12-04
  *
- * @apiParam (Query) {String} [date] 수업일 [yyyy-MM-dd]
- * @apiParam (Query) {String} search  강사명
+ * @apiParam (Query) {String} date 수업일 [yyyy-MM-dd]
+ * @apiParam (Query) {String} [search]  강사명
+ * @apiParam (Query) {String} keyword  검색구분(필수값: name)
 
 
 
