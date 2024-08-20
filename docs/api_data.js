@@ -7709,7 +7709,7 @@ define({ "api": [
             "group": "Query",
             "optional": false,
             "field": "order",
-            "description": "<p>정렬 선택</p>"
+            "description": "<p>정렬 선택 (이름: name , 수강시간:date , 과정:courseName , 잔여횟수: remainingCount , 예약횟수: assignmentCount , lessonCount: 수강회차)</p>"
           },
           {
             "group": "Query",
