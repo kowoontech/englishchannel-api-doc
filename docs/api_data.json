@@ -10629,6 +10629,18 @@
             "optional": false,
             "field": "page",
             "description": "<p>현재 페이지</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "order",
+            "description": "<p>정렬 선택(구분: type , 이름: name , 이메일: email , 근무시간: workTime , 순서: sort ,<br/></p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "direction",
+            "description": "<p>정렬 방향 (ASD: 오름차순, DESC: 내림차순)</p>"
           }
         ]
       }

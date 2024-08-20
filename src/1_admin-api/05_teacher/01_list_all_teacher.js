@@ -19,6 +19,9 @@
  * @apiParam (Query) {Number} [keyword] 검색내용
  * @apiParam (Query) {Number} limit 한페이지에 보여줄 강사 수
  * @apiParam (Query) {Number} page 현재 페이지
+ * @apiParam (Query) [order] 정렬 선택(구분: type , 이름: name , 이메일: email , 근무시간: workTime , 순서: sort ,<br/>
+ * @apiParam (Query) [direction] 정렬 방향 (ASD: 오름차순, DESC: 내림차순)
+
 
  * @apiSuccess {Object[]} list 강사 목록
  * @apiSuccess {String} list.userId 강사 식별키
