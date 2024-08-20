@@ -11255,6 +11255,69 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/admin/v1/statistics/evaluations/users",
+    "title": "09. 평가한 학생 목록",
+    "description": "<p>통계보고서 &gt; 평가현황 <br/> 해당 기간에 평가한 학생 목록</p>",
+    "version": "1.0.0",
+    "name": "admin_lisldfUser",
+    "group": "1._Admin_API_>_06._통계보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/statistics/evaluations/users?dateFrom=2023-02-01&dateTo=2023-02-28' \\",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "dateFrom",
+            "description": "<p>조회할 날짜 ~부터 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "dateTo",
+            "description": "<p>조회할 날짜 ~까지 (yyyy-MM-dd)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>회원식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>회원명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\n[\n    {\n        \"userId\": \"M1672207477162387\",\n        \"name\": \"최원보\"\n    },\n    {\n        \"userId\": \"M1666947941196642\",\n        \"name\": \"정보연\"\n    },\n    {\n        \"userId\": \"M1676335706733128\",\n        \"name\": \"이의종\"\n    },\n    {\n        \"userId\": \"M1676620115349486\",\n        \"name\": \"RE:손운룡\"\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/06_statistics/09_list_ldfUser.js",
+    "groupTitle": "1._Admin_API_>_06._통계보고서"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/statistics/successSms",
     "title": "01. 발송 내역 목록",
     "description": "<p>SMS 전송현황 &gt; <br/> 통계보고서 &gt; sms전송현황 &gt; 발송 내역<br/></p>",
@@ -11547,13 +11610,6 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "detailId",
-            "description": "<p>목록 식별키 (상세보기)</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "teacherName",
@@ -11589,66 +11645,17 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "ldfList",
-            "description": "<p>상세보기 내 LDF 목록</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "ldfList.id",
-            "description": "<p>LDF 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "ldfList.date",
-            "description": "<p>수업일(날짜)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "ldfList.startTime",
-            "description": "<p>수업일(시작시간)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "ldfList.endTime",
-            "description": "<p>수업일(종료시간)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "ldfList.userName",
-            "description": "<p>학습자</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "ldfList.grade",
-            "description": "<p>별점</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "ldfList.evaluation",
-            "description": "<p>설명</p>"
+            "field": "date",
+            "description": "<p>검색시작일</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n[\n    {\n        \"detailId\": 1,\n        \"teacherName\": \"Tyler\",\n        \"teacherId\": \"M1693558129675151\",\n        \"gradeCount\": 1,\n        \"gradeAvg\": 4.0,\n        \"total\": 4.0,\n        \"ldfList\": [\n            {\n                \"id\": 362222,\n                \"date\": \"2023-12-01\",\n                \"startTime\": \"19:30:00\",\n                \"endTime\": \"20:00:00\",\n                \"userName\": \"조예진\",\n                \"grade\": 4.0,\n                \"evaluation\": \"평가평가\"\n            },\n            {\n                \"id\": 362241,\n                \"date\": \"2023-12-01\",\n                \"startTime\": \"20:30:00\",\n                \"endTime\": \"21:00:00\",\n                \"userName\": \"RE:이승민\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 362600,\n                \"date\": \"2023-12-04\",\n                \"startTime\": \"18:30:00\",\n                \"endTime\": \"19:00:00\",\n                \"userName\": \"RE:박규은\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 362658,\n                \"date\": \"2023-12-04\",\n                \"startTime\": \"21:30:00\",\n                \"endTime\": \"22:00:00\",\n                \"userName\": \"RE:문해화\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 362896,\n                \"date\": \"2023-12-05\",\n                \"startTime\": \"19:00:00\",\n                \"endTime\": \"19:30:00\",\n                \"userName\": \"조예나\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 362922,\n                \"date\": \"2023-12-05\",\n                \"startTime\": \"19:30:00\",\n                \"endTime\": \"20:00:00\",\n                \"userName\": \"RE:박규은\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 362946,\n                \"date\": \"2023-12-05\",\n                \"startTime\": \"20:00:00\",\n                \"endTime\": \"20:30:00\",\n                \"userName\": \"김한나:환불\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 362970,\n                \"date\": \"2023-12-05\",\n                \"startTime\": \"21:00:00\",\n                \"endTime\": \"21:30:00\",\n                \"userName\": \"RE:김윤아\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363208,\n                \"date\": \"2023-12-06\",\n                \"startTime\": \"18:30:00\",\n                \"endTime\": \"19:00:00\",\n                \"userName\": \"RE:박규은\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363227,\n                \"date\": \"2023-12-06\",\n                \"startTime\": \"19:30:00\",\n                \"endTime\": \"20:00:00\",\n                \"userName\": \"RE:이우열\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363251,\n                \"date\": \"2023-12-06\",\n                \"startTime\": \"20:30:00\",\n                \"endTime\": \"21:00:00\",\n                \"userName\": \"RE:이수아\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363263,\n                \"date\": \"2023-12-06\",\n                \"startTime\": \"21:30:00\",\n                \"endTime\": \"22:00:00\",\n                \"userName\": \"RE:김희진\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363492,\n                \"date\": \"2023-12-07\",\n                \"startTime\": \"18:30:00\",\n                \"endTime\": \"19:00:00\",\n                \"userName\": \"김한나:환불\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363531,\n                \"date\": \"2023-12-07\",\n                \"startTime\": \"19:30:00\",\n                \"endTime\": \"20:00:00\",\n                \"userName\": \"RE:박규은\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363551,\n                \"date\": \"2023-12-07\",\n                \"startTime\": \"20:30:00\",\n                \"endTime\": \"21:00:00\",\n                \"userName\": \"RE:김윤아\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363830,\n                \"date\": \"2023-12-08\",\n                \"startTime\": \"18:30:00\",\n                \"endTime\": \"19:00:00\",\n                \"userName\": \"RE:박규은\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363869,\n                \"date\": \"2023-12-08\",\n                \"startTime\": \"20:30:00\",\n                \"endTime\": \"21:00:00\",\n                \"userName\": \"방수윤\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363896,\n                \"date\": \"2023-12-08\",\n                \"startTime\": \"21:30:00\",\n                \"endTime\": \"22:00:00\",\n                \"userName\": \"RE:김소이\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 363981,\n                \"date\": \"2023-12-09\",\n                \"startTime\": \"14:30:00\",\n                \"endTime\": \"15:00:00\",\n                \"userName\": \"김이은\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 364240,\n                \"date\": \"2023-12-11\",\n                \"startTime\": \"18:30:00\",\n                \"endTime\": \"19:00:00\",\n                \"userName\": \"RE:박규은\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 364288,\n                \"date\": \"2023-12-11\",\n                \"startTime\": \"21:30:00\",\n                \"endTime\": \"22:00:00\",\n                \"userName\": \"최서영\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 364567,\n                \"date\": \"2023-12-12\",\n                \"startTime\": \"19:00:00\",\n                \"endTime\": \"19:30:00\",\n                \"userName\": \"조예진\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 364591,\n                \"date\": \"2023-12-12\",\n                \"startTime\": \"19:30:00\",\n                \"endTime\": \"20:00:00\",\n                \"userName\": \"RE:박규은\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },\n            {\n                \"id\": 364632,\n                \"date\": \"2023-12-12\",\n                \"startTime\": \"21:30:00\",\n                \"endTime\": \"22:00:00\",\n                \"userName\": \"양세오\",\n                \"grade\": 0.0,\n                \"evaluation\": null\n            },",
+          "content": "HTTP/1.1 200\n[\n    {\n        \"teacherName\": \"최태연\",\n        \"teacherId\": \"M1661138591404520\",\n        \"gradeCount\": 9,\n        \"gradeAvg\": 5.0,\n        \"total\": 45.0,\n        \"date\": \"2023-02-01\"\n    },\n    {\n        \"teacherName\": \"김나래\",\n        \"teacherId\": \"M1657064932771055\",\n        \"gradeCount\": 1,\n        \"gradeAvg\": 5.0,\n        \"total\": 5.0,\n        \"date\": \"2023-02-01\"\n    },\n    {\n        \"teacherName\": \"임정은\",\n        \"teacherId\": \"M1515756140981038\",\n        \"gradeCount\": 1,\n        \"gradeAvg\": 5.0,\n        \"total\": 5.0,\n        \"date\": \"2023-02-01\"\n    },\n    {\n        \"teacherName\": \"Adam\",\n        \"teacherId\": \"M1660267538951028\",\n        \"gradeCount\": 1,\n        \"gradeAvg\": 3.0,\n        \"total\": 3.0,\n        \"date\": \"2023-02-01\"\n    }\n]",
           "type": "json"
         }
       ]
