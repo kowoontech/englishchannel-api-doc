@@ -23,6 +23,9 @@
  * @apiParam (Query) {String} [keyword] 검색내용
  * @apiParam (Query) {Number} limit 한페이지에 보여줄 회원 수
  * @apiParam (Query) {Number} page 현재 페이지
+ * @apiParam (Query) [order] 정렬 선택(상담구분: type , 처리상태: status , 성명: name , 전화번호: cellPhone , 직장: company ,<br/>
+                                      통화가능시간: callTime , 방문예약:visitDate , 등록일시:createdBy , 상담직원:modifiedBy , 상담내용: details)
+ * @apiParam (Query) [direction] 정렬 방향 (ASD: 오름차순, DESC: 내림차순)
 
  * @apiSuccess {Object[]} list 회원 목록
  * @apiSuccess {String} list.id 예약 식별키

@@ -8825,6 +8825,18 @@ define({ "api": [
             "optional": false,
             "field": "page",
             "description": "<p>현재 페이지</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "order",
+            "description": "<p>정렬 선택(상담구분: type , 처리상태: status , 성명: name , 전화번호: cellPhone , 직장: company ,<br/> 통화가능시간: callTime , 방문예약:visitDate , 등록일시:createdBy , 상담직원:modifiedBy , 상담내용: details)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "direction",
+            "description": "<p>정렬 방향 (ASD: 오름차순, DESC: 내림차순)</p>"
           }
         ]
       }
