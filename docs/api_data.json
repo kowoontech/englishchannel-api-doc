@@ -1324,7 +1324,7 @@
           {
             "group": "Query",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "id",
             "description": "<p>과정 회원 식별키</p>"
           }
@@ -1333,14 +1333,14 @@
           {
             "group": "Body",
             "type": "Number",
-            "optional": true,
+            "optional": false,
             "field": "courseId",
             "description": "<p>강의 식별키(오른쪽에 있는 과정의 식별키와 일치)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "content",
             "description": "<p>비고 내용</p>"
           }
@@ -13877,13 +13877,20 @@
             "optional": false,
             "field": "teacherName",
             "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ldfYN",
+            "description": "<p>ldf유무</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n\"[\n          {\n                \"id\": 2614109,\n                \"date\": \"2024-01-03\",\n                \"startTime\": \"18:00\",\n                \"endTime\": \"18:30\",\n                \"attendanceStatus\": \"Y\",\n                \"teacherName\": \"Olivia1\"\n            },\n            {\n                \"id\": 2614108,\n                \"date\": \"2024-01-03\",\n                \"startTime\": \"17:30\",\n                \"endTime\": \"18:00\",\n                \"attendanceStatus\": \"Y\",\n                \"teacherName\": \"Olivia1\"\n            },\n            {\n                \"id\": 2611455,\n                \"date\": \"2023-12-08\",\n                \"startTime\": \"13:00\",\n                \"endTime\": \"13:30\",\n                \"attendanceStatus\": \"Y\",\n                \"teacherName\": \"Alex\"\n            },\"",
+          "content": "HTTP/1.1 200\n\"[\n     {\n         \"id\": 2614109,\n         \"date\": \"2024-01-03\",\n         \"startTime\": \"06:00 PM\",\n         \"endTime\": \"06:30 PM\",\n         \"attendanceStatus\": \"Y\",\n         \"teacherName\": \"Olivia1\",\n         \"ldfYN\": \"N\"\n     },\n     {\n         \"id\": 2614108,\n         \"date\": \"2024-01-03\",\n         \"startTime\": \"05:30 PM\",\n         \"endTime\": \"06:00 PM\",\n         \"attendanceStatus\": \"Y\",\n         \"teacherName\": \"Olivia1\",\n         \"ldfYN\": \"N\"\n     },\n     {\"",
           "type": "json"
         }
       ]

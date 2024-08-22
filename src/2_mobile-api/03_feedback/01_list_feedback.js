@@ -19,33 +19,29 @@
  * @apiSuccess {String} endTime 예약수업시간(끝)
  * @apiSuccess {String} attendanceStatus 출결상태(Y:출석, N:결석 , R:예약)
  * @apiSuccess {String} teacherName 강사명
+ * @apiSuccess {String} ldfYN ldf유무
 
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
  * "[
-          {
-                "id": 2614109,
-                "date": "2024-01-03",
-                "startTime": "18:00",
-                "endTime": "18:30",
-                "attendanceStatus": "Y",
-                "teacherName": "Olivia1"
-            },
-            {
-                "id": 2614108,
-                "date": "2024-01-03",
-                "startTime": "17:30",
-                "endTime": "18:00",
-                "attendanceStatus": "Y",
-                "teacherName": "Olivia1"
-            },
-            {
-                "id": 2611455,
-                "date": "2023-12-08",
-                "startTime": "13:00",
-                "endTime": "13:30",
-                "attendanceStatus": "Y",
-                "teacherName": "Alex"
-            },"
+     {
+         "id": 2614109,
+         "date": "2024-01-03",
+         "startTime": "06:00 PM",
+         "endTime": "06:30 PM",
+         "attendanceStatus": "Y",
+         "teacherName": "Olivia1",
+         "ldfYN": "N"
+     },
+     {
+         "id": 2614108,
+         "date": "2024-01-03",
+         "startTime": "05:30 PM",
+         "endTime": "06:00 PM",
+         "attendanceStatus": "Y",
+         "teacherName": "Olivia1",
+         "ldfYN": "N"
+     },
+     {"
  */
