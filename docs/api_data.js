@@ -5673,6 +5673,264 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/admin/v1/templates/excel/users",
+    "title": "49. 회원 목록 엑셀",
+    "description": "<p>회원관리 &gt; 회원 목록 엑셀다운로드<br/> 존재하지 않는 데이터들이 있어 기존 프로그램의 모든 필드 출력이 불가합니다.</p>",
+    "version": "1.0.0",
+    "name": "admin_listUsersexcel",
+    "group": "1._Admin_API_>_01._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/templates/excel/users?createDateFrom=2023-01-01&createDateTo=2023-01-31&registerType=ALL&status=ALL&keyword=이&search=ALL'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>사용자 인지 직원인지 구분 (사용자:S , 직원: A)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "createDateFrom",
+            "description": "<p>가입일자 검색 ~부터 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "createDateTo",
+            "description": "<p>가입일자 검색 ~까지 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "registerType",
+            "description": "<p>등록구분 (ALL: 전체, REGISTERED: 등록회원, UNREGISTERED: 미등록회원)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "status",
+            "description": "<p>상태 (ALL: 전체, ACTIVE: 활동, INACTIVE: 비활동)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "teacherId",
+            "description": "<p>담당강사 ID</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "courseStatus",
+            "description": "<p>수강상태 (ALL: 전체, ATTENDING: 수강중, NOT_ATTENDING: 비수강중, WAITING: 대기중)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "expireType",
+            "description": "<p>만료구분 (ALL: 전체, EXPIRED: 만료됨, NOT_EXPIRED: 만료안됨)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "remainingType",
+            "description": "<p>잔여구분 (ALL: 전체, REMAINING: 잔여있음, NOT_REMAINING: 잔여없음)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "search",
+            "description": "<p>검색 선택 (ALL: 전체 , name: 이름, loginId: 아이디, email: 이메일, company: 회사/직장명, phone: 전화번호, cellPhone: 휴대전화번호)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "keyword",
+            "description": "<p>검색어</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "loginId",
+            "description": "<p>아이디</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>이메일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "nameEn",
+            "description": "<p>영어이름</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>성별</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>유선전화</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cellPhone",
+            "description": "<p>휴대폰번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "isReceiveSms",
+            "description": "<p>sms수신여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "isReceiveEmail",
+            "description": "<p>이메일수신여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "zipcode",
+            "description": "<p>우편번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>주소1</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "detailedAddress",
+            "description": "<p>주소2</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "isOfficeWorker",
+            "description": "<p>직장인여부</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "company",
+            "description": "<p>직장/학교</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "position",
+            "description": "<p>직책/학과</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "joinPath",
+            "description": "<p>가입경로  SIGN(&quot;10&quot;), // 간판 <br/> ONLINE(&quot;20&quot;), // 온라인검색<br/> RECOMMEND(&quot;30&quot;), // 지인추천<br/> FAN(&quot;40&quot;), // 부채<br/> LEAFLET(&quot;50&quot;), // 3단리플릿<br/> SUBWAY(&quot;60&quot;), // 지하철광고<br/> ALLIANCE(&quot;70&quot;), // 기업제휴<br/> ETC(&quot;900&quot;), // 기타<br/></p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "language",
+            "description": "<p>학습희망</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "etcLanguage",
+            "description": "<p>기타희망</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "languageSkill",
+            "description": "<p>외국어실력</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "active",
+            "description": "<p>상태</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "createdOn",
+            "description": "<p>등록일</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n[\n    {\n        \"id\": \"M1674731989462953\",\n        \"loginId\": \"skyx8957@icloud.com\",\n        \"email\": \"skyx8957@icloud.com\",\n        \"name\": \"RE:이윤재\",\n        \"nameEn\": null,\n        \"gender\": \"M\",\n        \"phone\": \"010-5020-0547\",\n        \"cellPhone\": \"syDqwywkULi+3CCo05xafg==\",\n        \"isReceiveSms\": true,\n        \"isReceiveEmail\": true,\n        \"zipcode\": null,\n        \"address\": null,\n        \"detailedAddress\": null,\n        \"isOfficeWorker\": true,\n        \"company\": \"한일프로텍\",\n        \"position\": null,\n        \"joinPath\": null,\n        \"language\": null,\n        \"etcLanguage\": null,\n        \"languageSkill\": \"SJPT:,HKC:,TOEIC:,TSC:,기타:,TOEIC-S:,OPIc:\",\n        \"active\": true,\n        \"createdOn\": \"2023-01-26\"\n    },\n    {\n        \"id\": \"M1675149143911667\",\n        \"loginId\": \"shlee@ktikorea.com\",\n        \"email\": \"99rokp@daum.net\",\n        \"name\": \"이상훈\",\n        \"nameEn\": null,\n        \"gender\": \"M\",\n        \"phone\": null,\n        \"cellPhone\": \"6XiAr/9E8Mng/vx0oErUkA==\",\n        \"isReceiveSms\": true,\n        \"isReceiveEmail\": true,\n        \"zipcode\": null,\n        \"address\": null,\n        \"detailedAddress\": null,\n        \"isOfficeWorker\": true,\n        \"company\": \"KTI Korea\",\n        \"position\": null,\n        \"joinPath\": \"SIGN\",\n        \"language\": null,\n        \"etcLanguage\": null,\n        \"languageSkill\": \"SJPT:,HKC:,TOEIC:,TSC:,기타:,TOEIC-S:,OPIc:\",\n        \"active\": true,\n        \"createdOn\": \"2023-01-31\"\n    },\n    {\n        \"id\": \"M1675165735705529\",\n        \"loginId\": \"mvpking1@naver.com\",\n        \"email\": \"mvpking1@naver.com\",\n        \"name\": \"이범관\",\n        \"nameEn\": null,\n        \"gender\": \"M\",\n        \"phone\": null,\n        \"cellPhone\": \"4RteJamYqYMKh7RwdSIPeg==\",\n        \"isReceiveSms\": true,\n        \"isReceiveEmail\": true,\n        \"zipcode\": null,\n        \"address\": null,\n        \"detailedAddress\": null,\n        \"isOfficeWorker\": true,\n        \"company\": \"직장인\",\n        \"position\": null,\n        \"joinPath\": \"RECOMMEND\",\n        \"language\": null,\n        \"etcLanguage\": null,\n        \"languageSkill\": \"SJPT:,HKC:,TOEIC:,TSC:,기타:,TOEIC-S:,OPIc:\",\n        \"active\": true,\n        \"createdOn\": \"2023-01-31\"\n    }\n]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/49_list_usersexcel.js",
+    "groupTitle": "1._Admin_API_>_01._회원"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/users/{id}/levelTests",
     "title": "29. 레벨 테스트 목록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt;  회원 상세 조회&gt; 테스트탭</p>",
