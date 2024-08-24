@@ -22,6 +22,9 @@
  * @apiSuccess {Number} courses.remainCount 잔여 횟수
  * @apiSuccess {Number} courses.attendanceCount 완료 횟수
  * @apiSuccess {Number} courses.reservationCount 예약 횟수
+ * @apiSuccess {Number} courses.totalAttendanceCount 전체 출석 횟수
+ * @apiSuccess {Number} courses.totalReservationCount 전체 예약 횟수
+ * @apiSuccess {Number} courses.totalAttendanceRate 출석률(전체출석/전체예약)
  * @apiSuccess {Object[]} courses.reservations
  * @apiSuccess {Number} courses.reservations.id 예약 식별키
  * @apiSuccess {String} courses.reservations.date 예약일 (yyyy-MM-dd)
@@ -30,6 +33,7 @@
  * @apiSuccess {String} courses.reservations.teacherId 강사 식별키
  * @apiSuccess {String} courses.reservations.teacherName 강사명
  * @apiSuccess {Boolean} courses.reservations.isCancelable 취소 가능 여부
+
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200

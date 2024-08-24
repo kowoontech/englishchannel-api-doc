@@ -13450,6 +13450,27 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.totalAttendanceCount",
+            "description": "<p>전체 출석 횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.totalReservationCount",
+            "description": "<p>전체 예약 횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.totalAttendanceRate",
+            "description": "<p>출석률(전체출석/전체예약)</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Object[]",
             "optional": false,
             "field": "courses.reservations",
