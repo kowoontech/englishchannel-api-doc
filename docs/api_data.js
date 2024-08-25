@@ -9182,14 +9182,14 @@ define({ "api": [
             "group": "Query",
             "type": "String",
             "optional": true,
-            "field": "consultationDateFrom",
+            "field": "createDateFrom",
             "description": "<p>등록일(시작) (yyyy-MM-dd)</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": true,
-            "field": "consultationDateTo",
+            "field": "createDateTo",
             "description": "<p>등록일(끝) (yyyy-MM-dd)</p>"
           },
           {

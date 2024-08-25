@@ -12,8 +12,8 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/consultations?status=4
  *
- * @apiParam (Query) {String} [consultationDateFrom] 등록일(시작) (yyyy-MM-dd)
- * @apiParam (Query) {String} [consultationDateTo] 등록일(끝) (yyyy-MM-dd)
+ * @apiParam (Query) {String} [createDateFrom] 등록일(시작) (yyyy-MM-dd)
+ * @apiParam (Query) {String} [createDateTo] 등록일(끝) (yyyy-MM-dd)
  * @apiParam (Query) {String} [visitDateFrom] 방문예약일(시작) (yyyy-MM-dd)
  * @apiParam (Query) {String} [visitDateTo] 방문예약일(끝) (yyyy-MM-dd)
  * @apiParam (Query) {String} type 상담구분(P: 전화상담,V: 방문상담,K: 카카오채널,N: 네이버예약)
