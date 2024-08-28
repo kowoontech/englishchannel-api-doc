@@ -28,8 +28,8 @@
  * @apiParam (Body) {String} status 처리상태 WAITING:대기중, 컨텍금지:컨택금지, UNVISITED:미방문(통화완료)<br/>
                                       RESERVED:예약완료, NOT_REGISTERED:미등록(상담완료), <br/> REGISTERED:등록완료, NoShow, MISSED:부재중)
  * @apiParam (Body) {String} name 이름
- * @apiParam (Body) {String} gender 성별 ( M: 남성,  F:여성 )
- * @apiParam (Body) {String} callTime 통화 가능 시간 [  TIME_01, // 06:30~08:00<br/>
+ * @apiParam (Body) {String} [gender] 성별 ( M: 남성,  F:여성 )
+ * @apiParam (Body) {String} [callTime] 통화 가능 시간 [  TIME_01, // 06:30~08:00<br/>
                                                   TIME_02, // 08:00~10:00<br/>
                                                   TIME_03, // 10:00~12:00<br/>
                                                   TIME_04, // 12:00~14:00<br/>
@@ -38,10 +38,10 @@
                                                   TIME_07, // 18:00~20:00<br/>
                                                   TIME_08, // 20:00~21:00<br/>
                                                   TIME_09,]<br/>
- * @apiParam (Body) {String} phone 전화번호
+ * @apiParam (Body) {String} [phone] 전화번호
  * @apiParam (Body) {String} cellPhone 핸드폰번호
  * @apiParam (Body) {String} email 이메일
- * @apiParam (Body) {String[]} studyPurposes 공부목적[  COMMON_ENGLISH, // 생활영어<br/>
+ * @apiParam (Body) {String[]} [studyPurposes] 공부목적[  COMMON_ENGLISH, // 생활영어<br/>
                                                     WORK, //업무<br/>
                                                     STUDY_ABROAD, // 유학<br/>
                                                     DEVELOPMENT, // 자기개<br/>
@@ -57,13 +57,13 @@
                                                   ALLIANCE, // 기업제휴<br/>
                                                   ETC, // 기타<br/>
                                                   ;
- * @apiParam (Body) {String} foundPathNote 알게된 동기 이유
- * @apiParam (Body) {String} job 직업
- * @apiParam (Body) {String} company 회사명
- * @apiParam (Body) {String} consultationDate 상담일(yyyy-MM-dd HH:mm:ss)
- * @apiParam (Body) {String} visitDate 방문일(yyyy-MM-dd HH:mm:ss)
- * @apiParam (Body) {String} details 상담내용
- * @apiParam (Body) {File} file 첨부파일
+ * @apiParam (Body) {String} [foundPathNote] 알게된 동기 이유
+ * @apiParam (Body) {String} [job] 직업
+ * @apiParam (Body) {String} [company] 회사명
+ * @apiParam (Body) {String} [consultationDate] 상담일(yyyy-MM-dd HH:mm:ss)
+ * @apiParam (Body) {String} [visitDate] 방문일(yyyy-MM-dd HH:mm:ss)
+ * @apiParam (Body) {String} [details] 상담내용
+ * @apiParam (Body) {File} [file] 첨부파일
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200

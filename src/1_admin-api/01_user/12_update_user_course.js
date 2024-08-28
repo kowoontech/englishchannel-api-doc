@@ -28,6 +28,7 @@
  * @apiParam (Body) {String} [reservations.cancelReason] 취소 사유
  * @apiParam (Body) {String} teacherId 담임강사 실별키
  * @apiParam (Body) {String} [assistantTeacherId] 부담임강사 식별키
+ * @apiParam (Body) {String} [status] 상태 (WAITING: 대기, NORMAL: 정상, CANCEL: 취소)
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200

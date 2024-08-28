@@ -6788,6 +6788,13 @@
             "optional": true,
             "field": "assistantTeacherId",
             "description": "<p>부담임강사 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "status",
+            "description": "<p>상태 (WAITING: 대기, NORMAL: 정상, CANCEL: 취소)</p>"
           }
         ]
       }
@@ -8361,21 +8368,21 @@
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "gender",
             "description": "<p>성별 ( M: 남성,  F:여성 )</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "callTime",
             "description": "<p>통화 가능 시간 [  TIME_01, // 06:30~08:00<br/> TIME_02, // 08:00~10:00<br/> TIME_03, // 10:00~12:00<br/> TIME_04, // 12:00~14:00<br/> TIME_05, // 14:00~16:00<br/> TIME_06, // 16:00~18:00<br/> TIME_07, // 18:00~20:00<br/> TIME_08, // 20:00~21:00<br/> TIME_09,]<br/></p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "phone",
             "description": "<p>전화번호</p>"
           },
@@ -8396,7 +8403,7 @@
           {
             "group": "Body",
             "type": "String[]",
-            "optional": false,
+            "optional": true,
             "field": "studyPurposes",
             "description": "<p>공부목적[  COMMON_ENGLISH, // 생활영어<br/> WORK, //업무<br/> STUDY_ABROAD, // 유학<br/> DEVELOPMENT, // 자기개<br/> EMPLOYMENT, // 취업<br/> ETC // 기타<br/> ;]</p>"
           },
@@ -8410,49 +8417,49 @@
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "foundPathNote",
             "description": "<p>알게된 동기 이유</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "job",
             "description": "<p>직업</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "company",
             "description": "<p>회사명</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "consultationDate",
             "description": "<p>상담일(yyyy-MM-dd HH:mm:ss)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "visitDate",
             "description": "<p>방문일(yyyy-MM-dd HH:mm:ss)</p>"
           },
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "details",
             "description": "<p>상담내용</p>"
           },
           {
             "group": "Body",
             "type": "File",
-            "optional": false,
+            "optional": true,
             "field": "file",
             "description": "<p>첨부파일</p>"
           }
