@@ -37,7 +37,7 @@
  *
  * @apiParam (Path) {String} id 회원 식별키
  * 
- * @apiParam (Body) {String} testStartTime 테스트일시(시작) (yyyy-mm-dd HH:mm:ss)
+ * @apiParam (Body) {String} testStartTime 테스트일시(시작) (yyyy-mm-dd HH:mm)
  * @apiParam (Body) {String} [interviewer] interviewer Interviewer
  * @apiParam (Body) {String} [lbt] LBT 테스트결과
  * @apiParam (Body) {String} [rbt] RBT 테스트결과

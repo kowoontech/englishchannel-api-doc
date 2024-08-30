@@ -616,7 +616,7 @@
             "type": "String",
             "optional": false,
             "field": "testStartTime",
-            "description": "<p>테스트일시(시작) (yyyy-mm-dd HH:mm:ss)</p>"
+            "description": "<p>테스트일시(시작) (yyyy-mm-dd HH:mm)</p>"
           },
           {
             "group": "Body",
@@ -2115,14 +2115,14 @@
             "type": "String",
             "optional": false,
             "field": "levelTest.testStartTime",
-            "description": "<p>테스트일시(시작) (yyyy-mm-dd HH:mm:ss)</p>"
+            "description": "<p>테스트일시(시작) (yyyy-mm-dd HH:mm)</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "levelTest.testEndTime",
-            "description": "<p>테스트일시(끝)(yyyy-mm-dd HH:mm:ss)</p>"
+            "description": "<p>테스트일시(끝)(yyyy-mm-dd HH:mm)</p>"
           },
           {
             "group": "Success 200",
@@ -3388,6 +3388,104 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/19_get_user_order.js",
+    "groupTitle": "1._Admin_API_>_01._회원"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/users/{id}/orders/{orderId}/payments/{paymentId}",
+    "title": "50. 회원 주문 결제 상세조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문탭</p>",
+    "version": "1.0.0",
+    "name": "admin_getUserPayment",
+    "group": "1._Admin_API_>_01._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/api/admin/v1/users/M1724922936146796/orders/O1724939709739071/payments/P1724992366486176'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "orderId",
+            "description": "<p>주문 식별키</p>"
+          },
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "paymentId",
+            "description": "<p>결제 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>결제 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "modifiedBy",
+            "description": "<p>처리자 식벌키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "cardCompany",
+            "description": "<p>카드종류</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "cardNumber",
+            "description": "<p>카드번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "installmentMonths",
+            "description": "<p>할개월수 (숫자만, 0 또는 null: 일시불)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "approvalNumber",
+            "description": "<p>승인번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"id\": \"P1724992366486176\",\n    \"cardCompany\": \"KB\",\n    \"cardNumber\": \"1212343412123434\",\n    \"approvalNumber\": \"123\",\n    \"modifiedBy\": \"U1370839971594082\",\n    \"modifiedName\": \"채인숙\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/50_get_user_payment.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -6033,7 +6131,7 @@
             "type": "String",
             "optional": true,
             "field": "testStartTime",
-            "description": "<p>테스트일시(시작) (yyyy-mm-dd HH:mm:ss)</p>"
+            "description": "<p>테스트일시(시작) (yyyy-mm-dd HH:mm)</p>"
           },
           {
             "group": "Body",

@@ -18,8 +18,8 @@
  * 
  * @apiSuccess {Object[]} levelTest LevelTest 정보
  * @apiSuccess {Long} levelTest.id 테스트 식별키
- * @apiSuccess {String} levelTest.testStartTime 테스트일시(시작) (yyyy-mm-dd HH:mm:ss)
- * @apiSuccess {String} levelTest.testEndTime 테스트일시(끝)(yyyy-mm-dd HH:mm:ss)
+ * @apiSuccess {String} levelTest.testStartTime 테스트일시(시작) (yyyy-mm-dd HH:mm)
+ * @apiSuccess {String} levelTest.testEndTime 테스트일시(끝)(yyyy-mm-dd HH:mm)
  * @apiSuccess {String} levelTest.interviewer Interviewer
  * @apiSuccess {String} levelTest.lbt LBT 테스트결과
  * @apiSuccess {String} levelTest.rbt RBT 테스트결과
