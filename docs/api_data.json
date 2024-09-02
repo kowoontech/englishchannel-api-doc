@@ -498,6 +498,81 @@
     "groupTitle": "1._Admin_API_>_00._공통"
   },
   {
+    "type": "put",
+    "url": "api/admin/v1/commonCode/{codeId}",
+    "title": "08. 공통 코드 수정",
+    "description": "<p>공통 코드 관리</p>",
+    "version": "1.0.0",
+    "name": "admin_updateCommonCode",
+    "group": "1._Admin_API_>_00._공통",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/api/admin/v1/commonCode/7' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"codeGroup\":200,\n           \"codeGroupName\": \"처리상태\",\n           \"name\": \"처리상태수정\",\n           \"sort\": 2,\n           \"useYn\":\"Y\"\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "codeGroup",
+            "description": "<p>코드그룹 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "codeGroupName",
+            "description": "<p>코드그룹명</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "code",
+            "description": "<p>코드 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>코드명</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "sort",
+            "description": "<p>순위</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "useYn",
+            "description": "<p>활성여부(Y:활성,N:비활성)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/00_common/08_update_commonCode.js",
+    "groupTitle": "1._Admin_API_>_00._공통"
+  },
+  {
     "type": "delete",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
     "title": "33. 레벨테스트 삭제",
