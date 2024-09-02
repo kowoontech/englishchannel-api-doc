@@ -18,6 +18,8 @@
            "useYn":"Y"
        }"
  *
+ * @apiParam (Query) codeId 코드 식별키
+ *
  * @apiParam (Body) {String} [codeGroup] 코드그룹 식별키
  * @apiParam (Body) {String} [codeGroupName] 코드그룹명
  * @apiParam (Body) {String} [code] 코드 식별키

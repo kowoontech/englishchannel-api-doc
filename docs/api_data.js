@@ -514,6 +514,14 @@ define({ "api": [
     ],
     "parameter": {
       "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "codeId",
+            "description": "<p>코드 식별키</p>"
+          }
+        ],
         "Body": [
           {
             "group": "Body",
