@@ -9894,16 +9894,9 @@
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
-            "field": "firstNameEn",
-            "description": "<p>이름</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "lastNameEn",
-            "description": "<p>성</p>"
+            "optional": false,
+            "field": "nameEn",
+            "description": "<p>영어이름</p>"
           },
           {
             "group": "Body",
@@ -9978,9 +9971,9 @@
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "cellPhone",
-            "description": ""
+            "description": "<p>전화번호</p>"
           },
           {
             "group": "Body",
@@ -10809,15 +10802,8 @@
             "group": "Body",
             "type": "String",
             "optional": true,
-            "field": "firstNameEn",
-            "description": "<p>이름</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "lastNameEn",
-            "description": "<p>성</p>"
+            "field": "nameEn",
+            "description": "<p>영어이름</p>"
           },
           {
             "group": "Body",
@@ -10829,7 +10815,7 @@
           {
             "group": "Body",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "password",
             "description": "<p>비밀번호</p>"
           },
@@ -10894,7 +10880,7 @@
             "type": "String",
             "optional": true,
             "field": "cellPhone",
-            "description": ""
+            "description": "<p>전화번호</p>"
           },
           {
             "group": "Body",

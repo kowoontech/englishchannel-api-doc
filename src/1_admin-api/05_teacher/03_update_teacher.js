@@ -22,10 +22,9 @@
  * @apiParam (Path) {String} [id] 강사 식별키
  * 
  * @apiParam (Body) {String} name 이름
- * @apiParam (Body) {String} [firstNameEn] 이름
- * @apiParam (Body) {String} [lastNameEn] 성
+ * @apiParam (Body) {String} [nameEn] 영어이름
  * @apiParam (Body) {String} loginId 강사아이디
- * @apiParam (Body) {String} password 비밀번호
+ * @apiParam (Body) {String} [password] 비밀번호
  * @apiParam (Body) {String} email 이메일
  * @apiParam (Body) {String} gender 성별[F,M]
  * @apiParam (Body) {String} [workStartDate] 근무시작일[yyyy-MM-dd]
@@ -34,7 +33,7 @@
  * @apiParam (Body) {String} [workType] 근무타입[A, C]
  * @apiParam (Body) {String} partnerTeacherId 파트너강사
  * @apiParam (Body) {Boolean} active 활동여부 [true:활동, false:비활동]
- * @apiParam (Body) {String} [cellPhone]
+ * @apiParam (Body) {String} [cellPhone] 전화번호
  * @apiParam (Body) {Number[]} deleteFiles (삭제할 파일 id 목록)
  * @apiParam (Body) {File} [files] 첨부파일 (같은 파라미터명으로 여러 파일 가능)
  *
