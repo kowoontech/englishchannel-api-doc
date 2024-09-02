@@ -20,9 +20,6 @@
  *
  * @apiParam (Query) codeId 코드 식별키
  *
- * @apiParam (Body) {String} [codeGroup] 코드그룹 식별키
- * @apiParam (Body) {String} [codeGroupName] 코드그룹명
- * @apiParam (Body) {String} [code] 코드 식별키
  * @apiParam (Body) {String} [name] 코드명
  * @apiParam (Body) {Number} [sort] 순위
  * @apiParam (Body) {String} [useYn] 활성여부(Y:활성,N:비활성)

@@ -527,27 +527,6 @@
             "group": "Body",
             "type": "String",
             "optional": true,
-            "field": "codeGroup",
-            "description": "<p>코드그룹 식별키</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "codeGroupName",
-            "description": "<p>코드그룹명</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "code",
-            "description": "<p>코드 식별키</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
             "field": "name",
             "description": "<p>코드명</p>"
           },
