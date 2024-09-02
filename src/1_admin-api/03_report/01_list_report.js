@@ -11,19 +11,19 @@
  * @apiGroup 1. Admin API > 03. 학사보고서
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/reservations/report?dateFrom=2024-01-01&dateTo=2024-01-31&reportCondition=REPORT&reportSort=TIME'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/reservations/report?dateFrom=2024-01-01&dateTo=2024-01-31&reportCondition=REPORT'
  *
  * @apiParam (Query) dateFrom 가입일자 검색 ~부터 (yyyy-mm-dd)
  * @apiParam (Query) dateTo 가입일자 검색 ~까지 (yyyy-mm-dd)
  * @apiParam (Query) [teacherId] 강사식별키
  * @apiParam (Query) [search] 검색 선택(이름)
  * @apiParam (Query) [keyword] 검색어
- * @apiParam (Query) reportSort 정렬순서 ( TIME: 시간, TEACHER: 강사)
  * @apiParam (Query) reportCondition 검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)
  * @apiParam (Query) userType 계정구분 (강사:T , 운영자: A)
  * @apiParam (Query) limit 한페이지에 보여줄 회원 수
  * @apiParam (Query) page 조회할 페이지
- * @apiParam (Query) order 정렬 선택 (이름: name , 수강시간:date , 과정:courseName , 잔여횟수: remainingCount , 예약횟수: assignmentCount , lessonCount: 수강회차)
+ * @apiParam (Query) order 정렬 선택 (정렬순서 강사우선 or 강사 : teacher / 정렬순서 시간우선 or 수강시간: date / 회원명: name , 과정:courseName ,<br/>
+                                        잔여횟수: remainingCount , 예약횟수: assignmentCount , lessonCount: 수강회차)
  * @apiParam (Query) direction 정렬 방향 (ASD: 오름차순, DESC: 내림차순)
  *
  * @apiSuccess {Object[]} list 학사 보고서 목록

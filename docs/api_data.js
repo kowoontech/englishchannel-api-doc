@@ -8063,7 +8063,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/reservations/report?dateFrom=2024-01-01&dateTo=2024-01-31&reportCondition=REPORT&reportSort=TIME'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/reservations/report?dateFrom=2024-01-01&dateTo=2024-01-31&reportCondition=REPORT'",
         "type": "curl"
       }
     ],
@@ -8103,12 +8103,6 @@ define({ "api": [
           {
             "group": "Query",
             "optional": false,
-            "field": "reportSort",
-            "description": "<p>정렬순서 ( TIME: 시간, TEACHER: 강사)</p>"
-          },
-          {
-            "group": "Query",
-            "optional": false,
             "field": "reportCondition",
             "description": "<p>검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)</p>"
           },
@@ -8134,7 +8128,7 @@ define({ "api": [
             "group": "Query",
             "optional": false,
             "field": "order",
-            "description": "<p>정렬 선택 (이름: name , 수강시간:date , 과정:courseName , 잔여횟수: remainingCount , 예약횟수: assignmentCount , lessonCount: 수강회차)</p>"
+            "description": "<p>정렬 선택 (정렬순서 강사우선 or 강사 : teacher / 정렬순서 시간우선 or 수강시간: date / 회원명: name , 과정:courseName ,<br/> 잔여횟수: remainingCount , 예약횟수: assignmentCount , lessonCount: 수강회차)</p>"
           },
           {
             "group": "Query",
