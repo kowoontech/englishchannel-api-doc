@@ -34,6 +34,8 @@
  * @apiParam (Body) {String} partnerTeacherId 파트너강사
  * @apiParam (Body) {Boolean} active 활동여부 [true:활동, false:비활동]
  * @apiParam (Body) {String} [cellPhone] 전화번호
+ * @apiParam (Body) {Number} [sort] 순번
+ * @apiParam (Body) {String} [memo] 메모
  * @apiParam (Body) {Number[]} deleteFiles (삭제할 파일 id 목록)
  * @apiParam (Body) {File} [files] 첨부파일 (같은 파라미터명으로 여러 파일 가능)
  *

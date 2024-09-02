@@ -9977,6 +9977,13 @@ define({ "api": [
           },
           {
             "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "memo",
+            "description": "<p>메모</p>"
+          },
+          {
+            "group": "Body",
             "type": "File",
             "optional": true,
             "field": "files",
@@ -10881,6 +10888,20 @@ define({ "api": [
             "optional": true,
             "field": "cellPhone",
             "description": "<p>전화번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "sort",
+            "description": "<p>순번</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "memo",
+            "description": "<p>메모</p>"
           },
           {
             "group": "Body",
