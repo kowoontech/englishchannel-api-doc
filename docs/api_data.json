@@ -13634,6 +13634,13 @@
             "group": "Success 200",
             "type": "Number",
             "optional": false,
+            "field": "courses.totalNonAttendanceCount",
+            "description": "<p>전체 결석 횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
             "field": "courses.totalAttendanceRate",
             "description": "<p>출석률(전체출석/전체예약)</p>"
           },
