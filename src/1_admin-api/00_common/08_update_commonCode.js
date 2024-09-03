@@ -22,7 +22,7 @@
  *
  * @apiParam (Body) {String} [name] 코드명
  * @apiParam (Body) {Number} [sort] 순위
- * @apiParam (Body) {String} [useYn] 활성여부(Y:활성,N:비활성)
+ * @apiParam (Body) {String} useYn 활성여부(Y:활성,N:비활성)
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200

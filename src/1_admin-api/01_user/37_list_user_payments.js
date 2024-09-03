@@ -8,7 +8,7 @@
  * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments'
+ * curl -i -X GET 'http://localhost:8080/api/admin/v1/users/1038929/orders/O1523931572152363/payments'
  *
  * @apiParam (Path) {String} id 회원 식별키
  * @apiParam (Path) {String} orderId 주문 식별키
@@ -24,8 +24,8 @@
  * @apiSuccess {String} payments.paymentMethod 결제방식 (카드, 예금, 현금)
  * @apiSuccess {Number} payments.paymentAmount 결제금액
  * @apiSuccess {String} payments.accountHolder 예금자명
- * @apiSuccess {String} payments.cardCompany 카드사 코드
- * @apiSuccess {String} payments.cardCompanyLabel 카드사
+ * @apiSuccess {String} payments.code 카드사번호
+ * @apiSuccess {String} payments.codeName 카드사
  * @apiSuccess {String} payments.cardNumber 카드번호
  * @apiSuccess {Number} payments.installmentMonths 카드할부 개월수 (null: 일시불)
  * @apiSuccess {String} payments.installmentMonthsLabel 카드할부 (n개월, 일시불)
@@ -50,62 +50,30 @@
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
  * "{
- *     "billingAmount": 55000,
- *     "paymentAmount": 0,
- *     "refundAmount": 55000,
- *     "receivableAmount": 0,
- *     "payments": [
- *         {
- *             "id": "P1722165476776015",
- *             "paymentDate": "2024-07-28",
- *             "type": "신규",
- *             "paymentMethod": "현금",
- *             "paymentAmount": 1000,
- *             "accountHolder": null,
- *             "cardCompany": null,
- *             "cardCompanyLabel": null,
- *             "cardNumber": null,
- *             "installmentMonths": null,
- *             "installmentMonthsLabel": "일시불",
- *             "approvalNumber": null,
- *             "memo": "test",
- *             "modifiedBy": "M1717690790932481",
- *             "modifierName": null,
- *             "isCancelable": false
- *         },
- *         {
- *             "id": "P1722166023495462",
- *             "paymentDate": "2024-07-28",
- *             "type": "신규",
- *             "paymentMethod": "예금",
- *             "paymentAmount": 1000,
- *             "accountHolder": "테스터",
- *             "cardCompany": null,
- *             "cardCompanyLabel": null,
- *             "cardNumber": null,
- *             "installmentMonths": null,
- *             "installmentMonthsLabel": "일시불",
- *             "approvalNumber": null,
- *             "memo": "test",
- *             "modifiedBy": "M1717690790932481",
- *             "modifierName": null,
- *             "isCancelable": false
- *         }
- *     ],
- *     "refunds": [
- *         {
- *             "id": "R1722186546729674",
- *             "refundDate": "2024-07-29",
- *             "orderProductName": "PTG (주1회 1개월)/0개월/1회",
- *             "refundAmount": 55000,
- *             "cardAmount": 55000,
- *             "cashAmount": 0,
- *             "depositAmount": 0,
- *             "bank": null,
- *             "accountNumber": null,
- *             "refundReason": "",
- *             "modifierName": null
- *         }
- *     ]
- * }"
+        "billingAmount": 1830000,
+        "paymentAmount": 1830000,
+        "refundAmount": 0,
+        "receivableAmount": 0,
+        "payments": [
+            {
+                "id": "PD10170249385538",
+                "paymentDate": "2018-04-17",
+                "type": "신규",
+                "paymentMethod": "카드",
+                "paymentAmount": 1830000,
+                "accountHolder": null,
+                "code": "2090011",
+                "codeName": "하나",
+                "cardNumber": "7sBuyxaJxOCSDDIJ/J2ld3QK4s5EObspl6ZA7ZdiyYc=",
+                "installmentMonths": 3,
+                "installmentMonthsLabel": "3개월",
+                "approvalNumber": "04254398",
+                "memo": null,
+                "modifiedBy": "U1504679573048501",
+                "modifierName": "박윤수",
+                "isCancelable": true
+            }
+        ],
+        "refunds": []
+    }"
  */

@@ -540,7 +540,7 @@ define({ "api": [
           {
             "group": "Body",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "useYn",
             "description": "<p>활성여부(Y:활성,N:비활성)</p>"
           }
@@ -4455,7 +4455,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1450151088851593/orders/O1450151124963516/payments'",
+        "content": "curl -i -X GET 'http://localhost:8080/api/admin/v1/users/1038929/orders/O1523931572152363/payments'",
         "type": "curl"
       }
     ],
@@ -4563,14 +4563,14 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "payments.cardCompany",
-            "description": "<p>카드사 코드</p>"
+            "field": "payments.code",
+            "description": "<p>카드사번호</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "payments.cardCompanyLabel",
+            "field": "payments.codeName",
             "description": "<p>카드사</p>"
           },
           {
@@ -4718,7 +4718,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n\"{\n    \"billingAmount\": 55000,\n    \"paymentAmount\": 0,\n    \"refundAmount\": 55000,\n    \"receivableAmount\": 0,\n    \"payments\": [\n        {\n            \"id\": \"P1722165476776015\",\n            \"paymentDate\": \"2024-07-28\",\n            \"type\": \"신규\",\n            \"paymentMethod\": \"현금\",\n            \"paymentAmount\": 1000,\n            \"accountHolder\": null,\n            \"cardCompany\": null,\n            \"cardCompanyLabel\": null,\n            \"cardNumber\": null,\n            \"installmentMonths\": null,\n            \"installmentMonthsLabel\": \"일시불\",\n            \"approvalNumber\": null,\n            \"memo\": \"test\",\n            \"modifiedBy\": \"M1717690790932481\",\n            \"modifierName\": null,\n            \"isCancelable\": false\n        },\n        {\n            \"id\": \"P1722166023495462\",\n            \"paymentDate\": \"2024-07-28\",\n            \"type\": \"신규\",\n            \"paymentMethod\": \"예금\",\n            \"paymentAmount\": 1000,\n            \"accountHolder\": \"테스터\",\n            \"cardCompany\": null,\n            \"cardCompanyLabel\": null,\n            \"cardNumber\": null,\n            \"installmentMonths\": null,\n            \"installmentMonthsLabel\": \"일시불\",\n            \"approvalNumber\": null,\n            \"memo\": \"test\",\n            \"modifiedBy\": \"M1717690790932481\",\n            \"modifierName\": null,\n            \"isCancelable\": false\n        }\n    ],\n    \"refunds\": [\n        {\n            \"id\": \"R1722186546729674\",\n            \"refundDate\": \"2024-07-29\",\n            \"orderProductName\": \"PTG (주1회 1개월)/0개월/1회\",\n            \"refundAmount\": 55000,\n            \"cardAmount\": 55000,\n            \"cashAmount\": 0,\n            \"depositAmount\": 0,\n            \"bank\": null,\n            \"accountNumber\": null,\n            \"refundReason\": \"\",\n            \"modifierName\": null\n        }\n    ]\n}\"",
+          "content": "HTTP/1.1 200\n\"{\n        \"billingAmount\": 1830000,\n        \"paymentAmount\": 1830000,\n        \"refundAmount\": 0,\n        \"receivableAmount\": 0,\n        \"payments\": [\n            {\n                \"id\": \"PD10170249385538\",\n                \"paymentDate\": \"2018-04-17\",\n                \"type\": \"신규\",\n                \"paymentMethod\": \"카드\",\n                \"paymentAmount\": 1830000,\n                \"accountHolder\": null,\n                \"code\": \"2090011\",\n                \"codeName\": \"하나\",\n                \"cardNumber\": \"7sBuyxaJxOCSDDIJ/J2ld3QK4s5EObspl6ZA7ZdiyYc=\",\n                \"installmentMonths\": 3,\n                \"installmentMonthsLabel\": \"3개월\",\n                \"approvalNumber\": \"04254398\",\n                \"memo\": null,\n                \"modifiedBy\": \"U1504679573048501\",\n                \"modifierName\": \"박윤수\",\n                \"isCancelable\": true\n            }\n        ],\n        \"refunds\": []\n    }\"",
           "type": "json"
         }
       ]
