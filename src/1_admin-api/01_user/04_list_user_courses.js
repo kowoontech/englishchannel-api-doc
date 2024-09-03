@@ -32,7 +32,7 @@
  * @apiSuccess {String} [list.assistantTeacherId] 부담임강사 식별키
  * @apiSuccess {String} [list.assistantTeacherName] 부담임강사명
  * @apiSuccess {String} list.createDate 등록일 (yyyy-mm-dd)
- * @apiSuccess {String} list.status 상태
+ * @apiSuccess {String} list.status 상태(대기:WAITING, 정상:NORMAL, 취소:CANCEL)
  * 
  * @apiSuccess {Number} totalCount 전체 과정 수
  * @apiSuccess {Number} page 현재 페이지

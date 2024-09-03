@@ -4073,7 +4073,7 @@
             "type": "String",
             "optional": false,
             "field": "list.status",
-            "description": "<p>상태</p>"
+            "description": "<p>상태(대기:WAITING, 정상:NORMAL, 취소:CANCEL)</p>"
           },
           {
             "group": "Success 200",
