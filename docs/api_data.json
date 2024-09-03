@@ -1432,7 +1432,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/payments' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"type\": \"I\",\n    \"paymentDate\": \"2024-07-28\",\n    \"cashAmount\": null,\n    \"isReceiptIssued\": false,\n    \"receiptNumber\": \"\",\n    \"depositAmount\": null,\n    \"accountHolder\": \"테스터\",\n    \"receivableAmount\": 51000,\n    \"recallDate\": null,\n    \"receivableReason\": \"test\",\n    \"memo\": \"test\",\n    \"cards\": [\n        {\n            \"amount\": 1000,\n            \"cardCompany\": \"KB\",\n            \"cardNumber\": \"12345\",\n            \"installmentMonths\": null,\n            \"approvalNumber\": \"\"\n        },\n        {\n            \"amount\": 1000,\n            \"cardCompany\": \"NH\",\n            \"cardNumber\": \"00000\",\n            \"installmentMonths\": null,\n            \"approvalNumber\": \"\"\n        }\n    ]\n}\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/payments' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"type\": \"I\",\n           \"paymentDate\": \"2024-07-28\",\n           \"cashAmount\": null,\n           \"isReceiptIssued\": false,\n           \"receiptNumber\": \"\",\n           \"depositAmount\": null,\n           \"accountHolder\": \"테스터\",\n           \"receivableAmount\": 440000,\n           \"recallDate\": null,\n           \"receivableReason\": \"test\",\n           \"memo\": \"test\",\n           \"cards\": [\n               {\n                   \"amount\": 10000,\n                   \"code\": \"2090073\",\n                   \"cardNumber\": \"12345\",\n                   \"installmentMonths\": 0,\n                   \"approvalNumber\": \"\"\n               },\n               {\n                   \"amount\": 30000,\n                   \"code\": \"2090074\",\n                   \"cardNumber\": \"00000\",\n                   \"installmentMonths\": 0,\n                   \"approvalNumber\": \"\"\n               }\n           ]\n       }\"",
         "type": "curl"
       }
     ],
@@ -1550,8 +1550,8 @@
             "group": "Body",
             "type": "String",
             "optional": false,
-            "field": "cards.cardCompany",
-            "description": "<p>카드종류 (카드종류는 '01. 공통 옵션 목록 조회'에서 조회할 수 있습니다.)</p>"
+            "field": "cards.code",
+            "description": "<p>카드종류(코드)</p>"
           },
           {
             "group": "Body",

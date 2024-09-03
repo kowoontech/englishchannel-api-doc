@@ -11,34 +11,34 @@
  * curl -i -X POST 'http://localhost:8080/admin/v1/users/M1722002661204896/orders/O1722163996604360/payments' \
  * -H "Content-Type: application/json" \
  * -d "{
- *     "type": "I",
- *     "paymentDate": "2024-07-28",
- *     "cashAmount": null,
- *     "isReceiptIssued": false,
- *     "receiptNumber": "",
- *     "depositAmount": null,
- *     "accountHolder": "테스터",
- *     "receivableAmount": 51000,
- *     "recallDate": null,
- *     "receivableReason": "test",
- *     "memo": "test",
- *     "cards": [
- *         {
- *             "amount": 1000,
- *             "cardCompany": "KB",
- *             "cardNumber": "12345",
- *             "installmentMonths": null,
- *             "approvalNumber": ""
- *         },
- *         {
- *             "amount": 1000,
- *             "cardCompany": "NH",
- *             "cardNumber": "00000",
- *             "installmentMonths": null,
- *             "approvalNumber": ""
- *         }
- *     ]
- * }"
+           "type": "I",
+           "paymentDate": "2024-07-28",
+           "cashAmount": null,
+           "isReceiptIssued": false,
+           "receiptNumber": "",
+           "depositAmount": null,
+           "accountHolder": "테스터",
+           "receivableAmount": 440000,
+           "recallDate": null,
+           "receivableReason": "test",
+           "memo": "test",
+           "cards": [
+               {
+                   "amount": 10000,
+                   "code": "2090073",
+                   "cardNumber": "12345",
+                   "installmentMonths": 0,
+                   "approvalNumber": ""
+               },
+               {
+                   "amount": 30000,
+                   "code": "2090074",
+                   "cardNumber": "00000",
+                   "installmentMonths": 0,
+                   "approvalNumber": ""
+               }
+           ]
+       }"
  *
  * @apiParam (Path) {String} id 회원 식별키
  * @apiParam (Path) {String} orderId 주문 식별키
@@ -56,7 +56,7 @@
  * @apiParam (Body) {String} [memo] 결제메모
  * @apiParam (Body) {Object[]} [cards] 카드결제 목록
  * @apiParam (Body) {Number} cards.amount 결제금액
- * @apiParam (Body) {String} cards.cardCompany 카드종류 (카드종류는 '01. 공통 옵션 목록 조회'에서 조회할 수 있습니다.)
+ * @apiParam (Body) {String} cards.code 카드종류(코드)
  * @apiParam (Body) {String} cards.cardNumber 카드번호
  * @apiParam (Body) {Number} [cards.installmentMonths] 할개월수 (숫자만, 0 또는 null: 일시불)
  * @apiParam (Body) {String} [cards.approvalNumber] 승인번호
