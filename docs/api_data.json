@@ -14176,7 +14176,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/mobile/v1/reservations/times?date=2024-01-31&teacherId=M1400118325784523'",
+        "content": "curl -i -X GET 'http://localhost:8080/api/mobile/v1/reservations/times?date=2024-04-01&teacherId=M1400118325784523'",
         "type": "curl"
       }
     ],
@@ -14215,7 +14215,7 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n\"{\n    \"times\": [\n        \"13:00\",\n        \"13:30\",\n        \"13:40\",\n        \"13:50\",\n        \"14:00\",\n        \"14:10\",\n        \"14:20\",\n        \"14:30\",\n        \"14:40\",\n        \"14:50\"\n    ]\n}\"",
+          "content": "HTTP/1.1 200\n\"{\n    \"times\": [\n        \"01:00 PM\",\n        \"01:30 PM\",\n        \"02:00 PM\",\n        \"02:30 PM\",\n        \"03:00 PM\",\n        \"03:30 PM\",\n        \"04:00 PM\",\n        \"04:30 PM\",\n        \"06:00 PM\",\n        \"06:30 PM\",\n        \"07:00 PM\",\n        \"07:30 PM\"\n    ]\n}\"",
           "type": "json"
         }
       ]
