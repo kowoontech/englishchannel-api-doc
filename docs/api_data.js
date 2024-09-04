@@ -13714,6 +13714,92 @@ define({ "api": [
     "groupTitle": "2._Mobile_API_>_01._메인"
   },
   {
+    "type": "get",
+    "url": "api/mobile/v1/main/reservations",
+    "title": "02. 예약목록조회",
+    "description": "<p>main화면 다음 예약 레슨 <br/></p>",
+    "version": "1.0.0",
+    "name": "mobile_listReservations",
+    "group": "2._Mobile_API_>_01._메인",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/api/mobile/v1/main/reservations'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>조회 날짜 (yyyy-MM-dd)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>예약 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teacherName",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>시작시간(HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>종료시간(HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>수업일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attendanceStatus",
+            "description": "<p>출석상태(R:예약, A:출석, N:결석)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\n[\n    {\n        \"id\": 2732287,\n        \"date\": \"2024-09-04\",\n        \"startTime\": \"08:30\",\n        \"endTime\": \"09:00\",\n        \"attendanceStatus\": \"R\",\n        \"teacherName\": \"TEST이름\"\n    },\n    {\n        \"id\": 2732288,\n        \"date\": \"2024-09-04\",\n        \"startTime\": \"09:00\",\n        \"endTime\": \"09:30\",\n        \"attendanceStatus\": \"R\",\n        \"teacherName\": \"TEST이름\"\n    },\n    {\n        \"id\": 2732295,\n        \"date\": \"2024-09-16\",\n        \"startTime\": \"08:00\",\n        \"endTime\": \"08:30\",\n        \"attendanceStatus\": \"R\",\n        \"teacherName\": \"서안나\"\n    },\n    {\n        \"id\": 2732296,\n        \"date\": \"2024-09-16\",\n        \"startTime\": \"08:30\",\n        \"endTime\": \"09:00\",\n        \"attendanceStatus\": \"R\",\n        \"teacherName\": \"서안나\"\n    },\n    {\n        \"id\": 2732297,\n        \"date\": \"2024-09-16\",\n        \"startTime\": \"09:00\",\n        \"endTime\": \"09:30\",\n        \"attendanceStatus\": \"R\",\n        \"teacherName\": \"서안나\"\n    }\n]\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/01_main/02_list_reservations.js",
+    "groupTitle": "2._Mobile_API_>_01._메인"
+  },
+  {
     "type": "delete",
     "url": "/mobile/v1/reservations/cgt",
     "title": "08. CGT 예약취소(회원)",
