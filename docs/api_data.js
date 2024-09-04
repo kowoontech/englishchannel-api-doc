@@ -14327,7 +14327,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/mobile/v1/reservations/cgt?date=2024-08-05'",
+        "content": "curl -i -X GET 'http://localhost:8080/api/mobile/v1/reservations/cgt?date=2024-09-04'",
         "type": "curl"
       }
     ],
@@ -14356,7 +14356,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "schedules.id",
             "description": "<p>스케줄 식별키</p>"
@@ -14402,13 +14402,34 @@ define({ "api": [
             "optional": false,
             "field": "schedules.date",
             "description": "<p>수업일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservationId",
+            "description": "<p>예약식별키(0이면 로그인한 회원은 예약 안한 상태)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservationCount",
+            "description": "<p>예약인원</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservationLimit",
+            "description": "<p>제한인원</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n\"{\n[\n    {\n        \"schedules\": [\n            {\n                \"id\": 9525351,\n                \"teacherId\": \"M1723613351792159\",\n                \"teacherName\": \"TEST\",\n                \"date\": \"2024-08-16\",\n                \"cgtTime\": \"09:30:00\",\n                \"startTime\": \"09:30\",\n                \"endTime\": \"10:00\"\n            },\n            {\n                \"id\": 9525345,\n                \"teacherId\": \"M1723613351792159\",\n                \"teacherName\": \"TEST\",\n                \"date\": \"2024-08-16\",\n                \"cgtTime\": \"09:30:00\",\n                \"startTime\": \"10:00\",\n                \"endTime\": \"10:30\"\n            }\n        ]\n    },\n    {\n        \"schedules\": [\n            {\n                \"id\": 9525347,\n                \"teacherId\": \"M1723613351792159\",\n                \"teacherName\": \"TEST\",\n                \"date\": \"2024-08-16\",\n                \"cgtTime\": \"12:00:00\",\n                \"startTime\": \"12:00\",\n                \"endTime\": \"12:30\"\n            },\n            {\n                \"id\": 9525348,\n                \"teacherId\": \"M1723613351792159\",\n                \"teacherName\": \"TEST\",\n                \"date\": \"2024-08-16\",\n                \"cgtTime\": \"12:00:00\",\n                \"startTime\": \"12:30\",\n                \"endTime\": \"13:00\"\n            }\n        ]\n    }\n]\n}\"",
+          "content": "HTTP/1.1 200\n\"{\n[\n    {\n        \"schedules\": [\n            {\n                \"id\": 9878677,\n                \"teacherId\": \"M1725182283443744\",\n                \"teacherName\": \"TEST이름\",\n                \"date\": \"2024-09-04\",\n                \"cgtTime\": \"08:30:00\",\n                \"startTime\": \"08:30\",\n                \"reservationCount\": 1,\n                \"reservationLimit\": 2,\n                \"reservationId\": 2732287,\n                \"endTime\": \"09:00\"\n            },\n            {\n                \"id\": 9878678,\n                \"teacherId\": \"M1725182283443744\",\n                \"teacherName\": \"TEST이름\",\n                \"date\": \"2024-09-04\",\n                \"cgtTime\": \"08:30:00\",\n                \"startTime\": \"09:00\",\n                \"reservationCount\": 1,\n                \"reservationLimit\": 2,\n                \"reservationId\": 2732288,\n                \"endTime\": \"09:30\"\n            }\n        ]\n    },\n    {\n        \"schedules\": [\n            {\n                \"id\": 9878673,\n                \"teacherId\": \"M1725182283443744\",\n                \"teacherName\": \"TEST이름\",\n                \"date\": \"2024-09-04\",\n                \"cgtTime\": \"06:30:00\",\n                \"startTime\": \"06:30\",\n                \"reservationCount\": 0,\n                \"reservationLimit\": 4,\n                \"reservationId\": 0,\n                \"endTime\": \"07:00\"\n            },\n            {\n                \"id\": 9878674,\n                \"teacherId\": \"M1725182283443744\",\n                \"teacherName\": \"TEST이름\",\n                \"date\": \"2024-09-04\",\n                \"cgtTime\": \"06:30:00\",\n                \"startTime\": \"07:00\",\n                \"reservationCount\": 0,\n                \"reservationLimit\": 4,\n                \"reservationId\": 0,\n                \"endTime\": \"07:30\"\n            }\n        ]\n    }\n]\n}\"",
           "type": "json"
         }
       ]
