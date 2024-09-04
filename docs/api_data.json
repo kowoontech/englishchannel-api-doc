@@ -14511,6 +14511,135 @@
   },
   {
     "type": "get",
+    "url": "/mobile/v1/feedback/completion",
+    "title": "04. 완료 레슨 피드백 목록",
+    "description": "<ul> <li></li> </ul>",
+    "version": "1.0.0",
+    "name": "mobile_listCompleteFeedback",
+    "group": "2._Mobile_API_>_03._레슨피드백",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/api/mobile/v1/feedback/completion'",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>예약식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>예약일자</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>예약수업시간(시작)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>예약수업시간(끝)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attendanceStatus",
+            "description": "<p>출결상태(Y:출석, N:결석 , R:예약)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "teacherName",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "ldfId",
+            "description": "<p>ldf 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lesson",
+            "description": "<p>lesson</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contentSp",
+            "description": "<p>Stress and Pronunciation</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contentV",
+            "description": "<p>Vocabulary</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contentSg",
+            "description": "<p>Sentence Structure &amp; Gramm</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contentC",
+            "description": "<p>Comment</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "grade",
+            "description": "<p>평점</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "evaluation",
+            "description": "<p>평가</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\"[\n     {\n         \"id\": 2614109,\n         \"date\": \"2024-01-03\",\n         \"startTime\": \"06:00 PM\",\n         \"endTime\": \"06:30 PM\",\n         \"attendanceStatus\": \"Y\",\n         \"teacherName\": \"Olivia1\",\n         \"ldfYN\": \"N\"\n     },\n     {\n         \"id\": 2614108,\n         \"date\": \"2024-01-03\",\n         \"startTime\": \"05:30 PM\",\n         \"endTime\": \"06:00 PM\",\n         \"attendanceStatus\": \"Y\",\n         \"teacherName\": \"Olivia1\",\n         \"ldfYN\": \"N\"\n     },\n     {\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/03_feedback/04_list_CompleteFeedback.js",
+    "groupTitle": "2._Mobile_API_>_03._레슨피드백"
+  },
+  {
+    "type": "get",
     "url": "/mobile/v1/feedback",
     "title": "01.피드백 목록",
     "description": "<ul> <li>현재 날짜 기준으로 진행된 수업에 대한 예약 정보<br/></li> </ul>",
