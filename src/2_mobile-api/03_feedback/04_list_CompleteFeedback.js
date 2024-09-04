@@ -30,24 +30,54 @@
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
- * "[
-     {
-         "id": 2614109,
-         "date": "2024-01-03",
-         "startTime": "06:00 PM",
-         "endTime": "06:30 PM",
-         "attendanceStatus": "Y",
-         "teacherName": "Olivia1",
-         "ldfYN": "N"
-     },
-     {
-         "id": 2614108,
-         "date": "2024-01-03",
-         "startTime": "05:30 PM",
-         "endTime": "06:00 PM",
-         "attendanceStatus": "Y",
-         "teacherName": "Olivia1",
-         "ldfYN": "N"
-     },
-     {"
+ * [
+       {
+           "id": 2263980,
+           "date": "2022.04.27 Wed",
+           "startTime": "01:30 PM",
+           "endTime": "02:00 PM",
+           "attendanceStatus": "Y",
+           "teacherName": "황재희",
+           "ldfId": 90553,
+           "lesson": "FreeClassJan13",
+           "contentSp": "<p>pharmacy-[farmasey]&nbsp;</p><p><br/></p><p>cough-[coff]&nbsp;</p><p><br/></p><p>syrup-[si-rup]&nbsp;(notshirup)&nbsp;</p>",
+           "contentV": "<p>tofillaprescription-toprepareaprescription&nbsp;</p><p><br/></p><p>ailment-ongoingillness&nbsp;</p><p><br/></p><p><br/></p>",
+           "contentSg": "<p>Atfirst..............</p><p><br/></p><p>WhenIfirststartedIwassonervousIshookalot.&nbsp;</p><p><br/></p><p>Themovieisscary.</p><p><br/></p><p>Hefeelsscared.&nbsp;</p><p><br/></p><p>WhenshouldI(dosomething)?</p><p><br/></p><p>WhenshouldIeatameal?&nbsp;</p><p><br/></p><p>Intwohourstherewillbeafireworkshow.</p><p><br/></p><p>Comebackinthreedays.&nbsp;</p>",
+           "contentC": "<p>Adoctorishandingoveranoteforaninjection.&nbsp;</p><p><br/></p><p>Amaninapharmacyispointingatthemedicineforarunnynose.&nbsp;</p><p><br/></p><p>Apharmacistisdenyingarequestbyawoman.&nbsp;</p>",
+           "grade": null,
+           "evaluation": null
+       },
+       {
+           "id": 2265702,
+           "date": "2022.04.30 Sat",
+           "startTime": "03:00 PM",
+           "endTime": "03:30 PM",
+           "attendanceStatus": "Y",
+           "teacherName": "황재희",
+           "ldfId": 111454,
+           "lesson": "1",
+           "contentSp": "<p>&nbsp;</p>",
+           "contentV": "<p><spanstyle=\"font-size:22px\">Breath</span></p><p><br></p><p><spanstyle=\"font-size:22px\">Breathe<br></span></p><p><spanstyle=\"font-size:22px\"><br></span></p><p><spanstyle=\"font-size:22px\">Habitat=whereananimallives</span></p><p><spanstyle=\"font-size:22px\"><br></span></p><p><spanstyle=\"font-size:22px\">Gills=howafishbreathes<br></span></p><p><spanstyle=\"font-size:22px\"><br></span></p><p><spanstyle=\"font-size:22px\">Takein=absorb<br></span></p><p><spanstyle=\"font-size:22px\"><br></span></p><p><spanstyle=\"font-size:22px\">12&nbsp;=Midnight/Noon<br></span></p><p><spanstyle=\"font-size:22px\"><br></span></p><p><spanstyle=\"font-size:22px\"></span></p>",
+           "contentSg": "<p>&nbsp;</p>",
+           "contentC": "<p>&nbsp;</p>",
+           "grade": null,
+           "evaluation": null
+       },
+       {
+           "id": 2476347,
+           "date": "2023.04.26 Wed",
+           "startTime": "02:00 PM",
+           "endTime": "02:30 PM",
+           "attendanceStatus": "Y",
+           "teacherName": "김나래",
+           "ldfId": 313523,
+           "lesson": ".",
+           "contentSp": "<p>&nbsp;</p>",
+           "contentV": "<p>*baseball:<spanstyle='color:#000000'>야구</span></p><p><br/></p><p><br/></p>",
+           "contentSg": "<p>either/neither</p><p><br/></p><p>차이점??</p><p><br/></p><p>-</p><p>-</p><p>-</p><p>-</p><p>-</p><p><br/></p><p><br/></p>",
+           "contentC": "<p>&nbsp;</p>",
+           "grade": null,
+           "evaluation": null
+       }
+   ]"
  */
