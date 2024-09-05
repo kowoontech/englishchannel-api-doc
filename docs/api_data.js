@@ -8734,6 +8734,46 @@ define({ "api": [
   },
   {
     "type": "delete",
+    "url": "/admin/v1/consultations",
+    "title": "05. 상담관리 기본정보 삭제",
+    "description": "<p>상담관리 &gt; 상세조회 &gt; 삭제</p>",
+    "version": "1.0.0",
+    "name": "admin_deleteConsultation",
+    "group": "1._Admin_API_>_04._상담관리",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/consultations/634'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>상담식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/04_consultation/05_delete_consultation.js",
+    "groupTitle": "1._Admin_API_>_04._상담관리"
+  },
+  {
+    "type": "delete",
     "url": "/admin/v1/consultations/history/{id}",
     "title": "07. 추가 상담 삭제",
     "description": "<p>상담관리 &gt; 상세조회 페이지</p>",
@@ -8770,46 +8810,6 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/04_consultation/07_delete_consultationHistory.js",
-    "groupTitle": "1._Admin_API_>_04._상담관리"
-  },
-  {
-    "type": "delete",
-    "url": "/admin/v1/consultations",
-    "title": "05. 상담관리 기본정보 삭제",
-    "description": "<p>상담관리 &gt; 상세조회 &gt; 삭제</p>",
-    "version": "1.0.0",
-    "name": "admin_deleteUser",
-    "group": "1._Admin_API_>_04._상담관리",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/consultations/634'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Body": [
-          {
-            "group": "Body",
-            "type": "String[]",
-            "optional": false,
-            "field": "smsId",
-            "description": "<p>상담식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/04_consultation/05_delete_consultation.js",
     "groupTitle": "1._Admin_API_>_04._상담관리"
   },
   {
