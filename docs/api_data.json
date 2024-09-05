@@ -8734,7 +8734,7 @@
   },
   {
     "type": "delete",
-    "url": "/admin/v1/consultations/{id}",
+    "url": "api/admin/v1/consultations/{id}",
     "title": "05. 상담관리 기본정보 삭제",
     "description": "<p>상담관리 &gt; 상세조회 &gt; 삭제</p>",
     "version": "1.0.0",
