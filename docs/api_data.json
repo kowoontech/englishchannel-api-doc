@@ -7323,7 +7323,7 @@
   },
   {
     "type": "post",
-    "url": "admin/v1/products",
+    "url": "api/admin/v1/products",
     "title": "05. 상품 등록",
     "description": "<p>상품관리 &gt; 상품등록</p>",
     "version": "1.0.0",
@@ -7332,7 +7332,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/products' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"type\": \"과정\",\n           \"name\": \"패키지1\",\n           \"price\": 13000\n       }\"",
+        "content": "curl -i -X POST 'http://localhost:8080/api/admin/v1/products' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"name\":\"테스트상품\",\n           \"curriculumYN\":\"Y\",\n           \"price\":60000\n       }\"",
         "type": "curl"
       }
     ],
@@ -7343,8 +7343,8 @@
             "group": "Body",
             "type": "String",
             "optional": false,
-            "field": "type",
-            "description": "<p>과정여부 (체크박스 선택 시 'CURRICULUM'/ 선택하지 않을 시 null)</p>"
+            "field": "curriculumYN",
+            "description": "<p>과정여부 (Y:과정 , N:이외)</p>"
           },
           {
             "group": "Body",

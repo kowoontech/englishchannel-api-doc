@@ -1,5 +1,5 @@
 /**
- * @api {post} admin/v1/products 05. 상품 등록
+ * @api {post} api/admin/v1/products 05. 상품 등록
  *
  * @apiDescription 상품관리 > 상품등록
  *
@@ -8,16 +8,16 @@
  * @apiGroup 1. Admin API > 02. 상품
  *
  * @apiExample {curl} REQUEST
- * curl -i -X POST 'http://localhost:8080/admin/v1/products' \
+ * curl -i -X POST 'http://localhost:8080/api/admin/v1/products' \
  * -H "Content-Type: application/json" \
  * -d "{
-           "type": "과정",
-           "name": "패키지1",
-           "price": 13000
+           "name":"테스트상품",
+           "curriculumYN":"Y",
+           "price":60000
        }"
  *
  *
- * @apiParam (Body) {String} type 과정여부 (체크박스 선택 시 'CURRICULUM'/ 선택하지 않을 시 null)
+ * @apiParam (Body) {String} curriculumYN 과정여부 (Y:과정 , N:이외)
  * @apiParam (Body) {String} name 상품명
  * @apiParam (Body) {Number} price 가격
  *
