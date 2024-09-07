@@ -14,14 +14,10 @@
  * @apiParam (Path) {String} id 상품 식별키
  *
  * @apiSuccess {String} id 상품 식별키
- * @apiSuccess {String} curriculumYN 과정여부 체크
- * @apiSuccess {String} [language] 언어(EN:영어, CN:중국어, JP:일본어, KR:한국어)
- * @apiSuccess {String} [lessonType] 수업유형(PT, TT, GT)
+ * @apiSuccess {String} curriculumYN 과정(수강)여부 체크
  * @apiSuccess {String} name 상품명
  * @apiSuccess {String} price 가격
- * @apiSuccess {String} [quantityUnit] 수량(단위)
- * @apiSuccess {Object[]} [options] 옵션목록
- * @apiSuccess {String} [sort] 정렬순서
+ * @apiSuccess {String} quantityUnit 수량(단위)
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200

@@ -7418,21 +7418,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "curriculumYN",
-            "description": "<p>과정여부 체크</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "language",
-            "description": "<p>언어(EN:영어, CN:중국어, JP:일본어, KR:한국어)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "lessonType",
-            "description": "<p>수업유형(PT, TT, GT)</p>"
+            "description": "<p>과정(수강)여부 체크</p>"
           },
           {
             "group": "Success 200",
@@ -7451,23 +7437,9 @@ define({ "api": [
           {
             "group": "Success 200",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "quantityUnit",
             "description": "<p>수량(단위)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": true,
-            "field": "options",
-            "description": "<p>옵션목록</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "sort",
-            "description": "<p>정렬순서</p>"
           }
         ]
       },
@@ -7745,7 +7717,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/products/list",
-    "title": "08. 주문관리 > 상품 목록",
+    "title": "08. 홈페이지관리 > 상품목록조회",
     "description": "<p>주문관리 &gt; 상품 목록 조회</p>",
     "version": "1.0.0",
     "name": "admin_listProducts_management",
@@ -7757,19 +7729,6 @@ define({ "api": [
         "type": "curl"
       }
     ],
-    "parameter": {
-      "fields": {
-        "Query": [
-          {
-            "group": "Query",
-            "type": "String",
-            "optional": false,
-            "field": "type",
-            "description": "<p>현재 판매 중인 상품 여부</p>"
-          }
-        ]
-      }
-    },
     "success": {
       "fields": {
         "Success 200": [
@@ -7798,15 +7757,15 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "type",
-            "description": "<p>(상세화면에서 CURRICULUM: 과정여부 체크된 것<br/> null,CONTENTS, DEVICE,TEXTBOOK,PACKAGE : 체크되지않은것)</p>"
+            "field": "curriculumYN",
+            "description": "<p>과정여부 (Y:과정 , N:이외)</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n[\n    {\n        \"id\": \"P1722559046496207\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1722558926239420\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1722558905397978\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1722558830672512\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1722558805460371\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1722556893281030\",\n        \"name\": \"패키지이름\",\n        \"price\": 12000,\n        \"type\": \"PACKAGE\"\n    },\n    {\n        \"id\": \"P1722556834089167\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1722556783698895\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1722556007318912\",\n        \"name\": \"과정111\",\n        \"price\": 13000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1722555561655498\",\n        \"name\": \"과정111\",\n        \"price\": 13000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1722554946190682\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1722490344592901\",\n        \"name\": \"패키지1\",\n        \"price\": 13000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1722478885795929\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"PACKAGE\"\n    },\n    {\n        \"id\": \"P1722478832696425\",\n        \"name\": \"패키지1\",\n        \"price\": 13000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1722478594529166\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"PACKAGE\"\n    },\n    {\n        \"id\": \"P1722478523511589\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"PACKAGE\"\n    },\n    {\n        \"id\": \"P1722477961323174\",\n        \"name\": null,\n        \"price\": 0,\n        \"type\": \"PACKAGE\"\n    },\n    {\n        \"id\": \"P1722476566849400\",\n        \"name\": \"패키지1\",\n        \"price\": 13000,\n        \"type\": \"PACKAGE\"\n    },\n    {\n        \"id\": \"P1722476414205200\",\n        \"name\": \"과정6\",\n        \"price\": 13000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1350566344583803\",\n        \"name\": \"중국어 CUBE 1\",\n        \"price\": 15000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566453785520\",\n        \"name\": \"Next Step - Meeting\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566465417574\",\n        \"name\": \"Next Step - Negotiations\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566488827595\",\n        \"name\": \"Next Step - Customer Service\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566520132509\",\n        \"name\": \"Next Step - Interview\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566540151135\",\n        \"name\": \"Next Step - Hotel\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566566057604\",\n        \"name\": \"Next Step - Airport\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566585140918\",\n        \"name\": \"Next Step - Banking1\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566595661747\",\n        \"name\": \"Next Step - Banking2\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566615655511\",\n        \"name\": \"Next Step - Golf\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566637163627\",\n        \"name\": \"Next Step - in Flight\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566735444807\",\n        \"name\": \"Plug-in 30분\",\n        \"price\": 30000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1350566928359647\",\n        \"name\": \"맥북에어 - 11.6(128 Flash)\",\n        \"price\": 1390000,\n        \"type\": \"DEVICE\"\n    },\n    {\n        \"id\": \"P1352098696544281\",\n        \"name\": \"아이패드 미니 - 16G\",\n        \"price\": 420000,\n        \"type\": \"DEVICE\"\n    },\n    {\n        \"id\": \"P1352098762823637\",\n        \"name\": \"아이패드 미니 - 32G\",\n        \"price\": 540000,\n        \"type\": \"DEVICE\"\n    },\n    {\n        \"id\": \"P1352098835580142\",\n        \"name\": \"아이패드 미니 - 64G\",\n        \"price\": 660000,\n        \"type\": \"DEVICE\"\n    },\n    {\n        \"id\": \"P1352098897939225\",\n        \"name\": \"아이패드4 - 32G\",\n        \"price\": 740000,\n        \"type\": \"DEVICE\"\n    },\n    {\n        \"id\": \"P1357195231862759\",\n        \"name\": \"MISEC/미수금정보\",\n        \"price\": 0,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1361351419323243\",\n        \"name\": \"Next Step - Meeting\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361351478500938\",\n        \"name\": \"Next Step - Negotiations\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361351523179460\",\n        \"name\": \"Next Step - Customer Service\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361351562919081\",\n        \"name\": \"Next Step - Interview\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361351611766688\",\n        \"name\": \"Next Step - Hotel\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361351643010697\",\n        \"name\": \"Next Step - Airport\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361351677322920\",\n        \"name\": \"Next Step - Banking1\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361351723763253\",\n        \"name\": \"Next Step - Banking2\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361351762137021\",\n        \"name\": \"Next Step - Golf\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361351796074723\",\n        \"name\": \"Next Step - in Flight\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361352005581359\",\n        \"name\": \"Next Step - Hospital\",\n        \"price\": 90000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1361352132392303\",\n        \"name\": \"Next Step - Hospital\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1361514930881960\",\n        \"name\": \"PTM (주2회 3개월)\",\n        \"price\": 60000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1361958543920047\",\n        \"name\": \"First Choice\",\n        \"price\": 18000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1361958587296434\",\n        \"name\": \"one:one\",\n        \"price\": 23000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1361958640682899\",\n        \"name\": \"Market Leader Pre-Inter\",\n        \"price\": 22000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1361958707921831\",\n        \"name\": \"Voca in Use\",\n        \"price\": 22000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1363236393144588\",\n        \"name\": \"무료체험_Next Step - Hospital\",\n        \"price\": 0,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1363942256811053\",\n        \"name\": \"맥북에어  - 11.6(64 Flash)\",\n        \"price\": 1290000,\n        \"type\": \"DEVICE\"\n    },\n    {\n        \"id\": \"P1364295608035901\",\n        \"name\": \"PTG (주2회 3개월)\",\n        \"price\": 55000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1364375717944669\",\n        \"name\": \"PTM (주2회 6개월)\",\n        \"price\": 58000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1366362304202222\",\n        \"name\": \"Beanstalk 1\",\n        \"price\": 10000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1370404771897634\",\n        \"name\": \"Market Leader-Intermediate\",\n        \"price\": 29000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1370406769937315\",\n        \"name\": \"Market Leader-pre intermediate\",\n        \"price\": 29000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1370423957848299\",\n        \"name\": \"PT/TT (구로)\",\n        \"price\": 37500,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1425279988311032\",\n        \"name\": \"NEW PT 24회 3개월\",\n        \"price\": 65000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1425280052646471\",\n        \"name\": \"NEW TT 24회 3개월\",\n        \"price\": 65000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1502855319872286\",\n        \"name\": \"Smart Choice Starter(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1502855341952212\",\n        \"name\": \"Smart Choice 1(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1502855358260400\",\n        \"name\": \"Smart Choice 2(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1545895635956364\",\n        \"name\": \"Business Result Intermediate(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1545895667807809\",\n        \"name\": \"Business Result Upper-intermediate(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1545895678477639\",\n        \"name\": \"Business Result Elementary(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1550827522833369\",\n        \"name\": \"2nd BR Elementary(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1550827545093023\",\n        \"name\": \"2nd BR Upper-intermediate(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1550827558702657\",\n        \"name\": \"2nd BR Intermediate(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1550827747588318\",\n        \"name\": \"Communicating in Business English(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1575887209875705\",\n        \"name\": \"Business Essentials Book 1(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"c300\",\n        \"name\": \"CUBE 300\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1620907124055360\",\n        \"name\": \"단기과정\",\n        \"price\": 70000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"c400\",\n        \"name\": \"CUBE 400\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"c500\",\n        \"name\": \"CUBE 500\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"c600\",\n        \"name\": \"CUBE 600\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"c700\",\n        \"name\": \"CUBE 700\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"c800\",\n        \"name\": \"CUBE 800\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"c900\",\n        \"name\": \"CUBE 900\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"P1350556710397836\",\n        \"name\": \"PTG (주1회 1개월)\",\n        \"price\": 55000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1350556747894625\",\n        \"name\": \"PTG (주2회 6개월)\",\n        \"price\": 53000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1350556829139032\",\n        \"name\": \"TTE (주1회 1개월)\",\n        \"price\": 62000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1350556852378513\",\n        \"name\": \"TTE (주2회 3개월)\",\n        \"price\": 60000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1575887230426294\",\n        \"name\": \"Business Essentials Book 2(mp3)\",\n        \"price\": 0,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350556874574950\",\n        \"name\": \"TTE (주2회 6개월)\",\n        \"price\": 58000,\n        \"type\": \"CURRICULUM\"\n    },\n    {\n        \"id\": \"P1350564934045170\",\n        \"name\": \"CUBE 300\",\n        \"price\": 15000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350564945662343\",\n        \"name\": \"CUBE 400\",\n        \"price\": 15000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350564956765554\",\n        \"name\": \"CUBE 500\",\n        \"price\": 15000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566292292050\",\n        \"name\": \"CUBE 600\",\n        \"price\": 15000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566301004245\",\n        \"name\": \"CUBE 700\",\n        \"price\": 15000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566314462525\",\n        \"name\": \"CUBE 800\",\n        \"price\": 15000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"P1350566326017717\",\n        \"name\": \"CUBE 900\",\n        \"price\": 15000,\n        \"type\": \"TEXTBOOK\"\n    },\n    {\n        \"id\": \"tsi\",\n        \"name\": \"토익스피킹 Intensive\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"tspre\",\n        \"name\": \"토익스피킹 Pre-Course\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"tsr\",\n        \"name\": \"토익스피킹 Regular\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    },\n    {\n        \"id\": \"tst\",\n        \"name\": \"토익스피킹 Test\",\n        \"price\": 135000,\n        \"type\": \"CONTENTS\"\n    }\n]",
+          "content": "HTTP/1.1 200\n{\n[\n    {\n        \"id\": \"P1722559046496207\",\n        \"name\": null,\n        \"price\": 0,\n        \"curriculumYN\": \"Y\"\n    },\n    {\n        \"id\": \"P1722558926239420\",\n        \"name\": null,\n        \"price\": 0,\n        \"curriculumYN\": \"N\"\n    },\n\n\n\n]",
           "type": "json"
         }
       ]
