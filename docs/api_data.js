@@ -13341,6 +13341,53 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_10._스케줄"
   },
   {
+    "type": "put",
+    "url": "api/admin/v1/reservations/attendanceStatus",
+    "title": "02. 출결처리 변경 api",
+    "description": "<p>강의시간표 출결 변경 api <br/> 강의 시간표 조회 시 예약된 회원의 출결 수정을 위해 사용 <br/></p>",
+    "version": "1.0.0",
+    "name": "admin_updateAttendanceStatus",
+    "group": "1._Admin_API_>_10._스케줄",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/api/admin/v1/reservations/attendanceStatus' \\\n-H \"Content-Type: multipart/form-data\" \\\n-d \"{\n           \"attendanceStatus\" : \"R\",\n           \"reservationId\": 2731922\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "attendanceStatus",
+            "description": "<p>출결상태(Y:출석,N:결석,R:예약)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "reservationId",
+            "description": "<p>예약 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/10_schedule/02_update_attendanceStatus.js",
+    "groupTitle": "1._Admin_API_>_10._스케줄"
+  },
+  {
     "type": " ",
     "url": "{code:'에러코드',message:'에러메시지'}",
     "title": "00. 공통 에러 코드",
