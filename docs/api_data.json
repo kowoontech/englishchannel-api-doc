@@ -1600,7 +1600,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/products' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n    \"productId\": \"P1350556710397836\",\n    \"months\": 3,\n    \"quantity\": 12,\n    \"teacherId\": \"M1400118325784523\",\n    \"assistantTeacherId\": \"M1695013438115743\",\n    \"discountAmount\": 100,\n    \"billingAmount\": 54900\n}\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/products' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"productId\":\"P1725650808085698\",\n           \"months\": 1,\n           \"quantity\":6,\n           \"teacherId\":\"M1709859614116619\",\n           \"assistantTeacherId\":\"M1681990831501448\",\n           \"isRetake\":true,\n           \"retakeTeacherId\":\"M1681990831501448\",\n           \"retakeNote\":\"수업만족\",\n           \"billingAmount\":70000\n       }\"",
         "type": "curl"
       }
     ],
@@ -1718,7 +1718,7 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n {\n    \"orderId\": \"O1717904811849755\"\n}",
+          "content": "HTTP/1.1 200\n {\n    \"orderId\": \"O1725653297500048\"\n}",
           "type": "json"
         }
       ]
@@ -7417,8 +7417,8 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "type",
-            "description": "<p>과정여부 체크(CURRICULUM시에 체크<br/> null,CONTENTS, DEVICE,TEXTBOOK,PACKAGE : 체크되지않은것)</p>"
+            "field": "curriculumYN",
+            "description": "<p>과정여부 체크</p>"
           },
           {
             "group": "Success 200",

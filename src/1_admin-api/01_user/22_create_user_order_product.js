@@ -11,14 +11,16 @@
  * curl -i -X POST 'http://localhost:8080/admin/v1/users/M1374063899995477/orders/products' \
  * -H "Content-Type: application/json" \
  * -d "{
-    "productId": "P1350556710397836",
-    "months": 3,
-    "quantity": 12,
-    "teacherId": "M1400118325784523",
-    "assistantTeacherId": "M1695013438115743",
-    "discountAmount": 100,
-    "billingAmount": 54900
-}"
+           "productId":"P1725650808085698",
+           "months": 1,
+           "quantity":6,
+           "teacherId":"M1709859614116619",
+           "assistantTeacherId":"M1681990831501448",
+           "isRetake":true,
+           "retakeTeacherId":"M1681990831501448",
+           "retakeNote":"수업만족",
+           "billingAmount":70000
+       }"
  *
  * @apiParam (Path) {String} id 회원 식별키
  * 
@@ -40,6 +42,6 @@
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
  {
-    "orderId": "O1717904811849755"
+    "orderId": "O1725653297500048"
 }
  */

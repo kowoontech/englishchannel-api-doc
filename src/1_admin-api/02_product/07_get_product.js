@@ -14,8 +14,7 @@
  * @apiParam (Path) {String} id 상품 식별키
  *
  * @apiSuccess {String} id 상품 식별키
- * @apiSuccess {String} type 과정여부 체크(CURRICULUM시에 체크<br/>
-                                             null,CONTENTS, DEVICE,TEXTBOOK,PACKAGE : 체크되지않은것)
+ * @apiSuccess {String} curriculumYN 과정여부 체크
  * @apiSuccess {String} [language] 언어(EN:영어, CN:중국어, JP:일본어, KR:한국어)
  * @apiSuccess {String} [lessonType] 수업유형(PT, TT, GT)
  * @apiSuccess {String} name 상품명
