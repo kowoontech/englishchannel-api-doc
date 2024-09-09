@@ -4717,7 +4717,7 @@ define({ "api": [
             "group": "Success 200",
             "type": "Object[]",
             "optional": false,
-            "field": "orderProductIds",
+            "field": "orderProduct",
             "description": "<p>주문상품정보</p>"
           },
           {
