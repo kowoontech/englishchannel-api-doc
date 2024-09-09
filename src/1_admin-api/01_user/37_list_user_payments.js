@@ -46,6 +46,8 @@
  * @apiSuccess {String} refunds.accountNumber 계좌번호
  * @apiSuccess {String} refunds.refundReason 환불사유
  * @apiSuccess {String} refunds.modifierName 처리자
+ * @apiSuccess {Object[]} orderProductIds 주문상품정보
+ * @apiSuccess {String} orderProductIds.orderProductIds 주문상품들 식별키
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200

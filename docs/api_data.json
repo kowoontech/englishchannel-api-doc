@@ -4712,6 +4712,20 @@
             "optional": false,
             "field": "refunds.modifierName",
             "description": "<p>처리자</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "orderProductIds",
+            "description": "<p>주문상품정보</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProductIds.orderProductIds",
+            "description": "<p>주문상품들 식별키</p>"
           }
         ]
       },
