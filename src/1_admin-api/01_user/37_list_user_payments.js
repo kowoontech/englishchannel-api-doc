@@ -52,30 +52,33 @@
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
  * "{
-        "billingAmount": 1830000,
-        "paymentAmount": 1830000,
+        "billingAmount": 10000,
+        "paymentAmount": 10000,
         "refundAmount": 0,
         "receivableAmount": 0,
         "payments": [
             {
-                "id": "PD10170249385538",
-                "paymentDate": "2018-04-17",
+                "id": "P1725850024703510",
+                "paymentDate": "2024-09-07",
                 "type": "신규",
-                "paymentMethod": "카드",
-                "paymentAmount": 1830000,
+                "paymentMethod": "현금",
+                "paymentAmount": 10000,
                 "accountHolder": null,
-                "code": "2090011",
-                "codeName": "하나",
-                "cardNumber": "7sBuyxaJxOCSDDIJ/J2ld3QK4s5EObspl6ZA7ZdiyYc=",
-                "installmentMonths": 3,
-                "installmentMonthsLabel": "3개월",
-                "approvalNumber": "04254398",
+                "code": null,
+                "codeName": null,
+                "cardNumber": null,
+                "installmentMonths": null,
+                "installmentMonthsLabel": "일시불",
+                "approvalNumber": null,
                 "memo": null,
-                "modifiedBy": "U1504679573048501",
-                "modifierName": "박윤수",
+                "modifiedBy": "U1370839971594082",
+                "modifierName": "채인숙",
                 "isCancelable": true
             }
         ],
-        "refunds": []
+        "refunds": [],
+        "orderProductIds": [
+            "I1725850004659555"
+        ]
     }"
  */
