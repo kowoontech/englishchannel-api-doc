@@ -37,7 +37,7 @@
  * @apiSuccess {String} levelTest.usageType Company or School
  * @apiSuccess {String} levelTest.occupation Occupation
  * @apiSuccess {String} levelTest.spareTime Spare Time
- * @apiSuccess {String} levelTest.Travel Abroad
+ * @apiSuccess {String} levelTest.travelAbroad TravelAbroad
  * @apiSuccess {String} levelTest.futurePlans Future Plans
  * @apiSuccess {String} [levelTest.consonants] consonants(사용x, 아래 consonants 사용해주세요)
  * @apiSuccess {String} [levelTest.vowels] vowels(사용x, 아래 vowels 사용해주세요)

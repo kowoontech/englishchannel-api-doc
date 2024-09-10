@@ -56,7 +56,7 @@
  * @apiParam (Body) {String} [usageType] Company or School
  * @apiParam (Body) {String} [occupation]  Occupation
  * @apiParam (Body) {String} [spareTime] Spare Time
- * @apiParam (Body) {String} [Travel] Abroad
+ * @apiParam (Body) {String} [travelAbroad] Travel Abroad
  * @apiParam (Body) {String} [futurePlans] Future Plans
  * @apiParam (Body) {String[]} [consonants] consonants <br/>
                                         [ R , L, P, F, B, V, S , Z, SH, EZH, CH, G, TTH, TH]<br/>

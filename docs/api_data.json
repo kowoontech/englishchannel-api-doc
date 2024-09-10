@@ -782,8 +782,8 @@
             "group": "Body",
             "type": "String",
             "optional": true,
-            "field": "Travel",
-            "description": "<p>Abroad</p>"
+            "field": "travelAbroad",
+            "description": "<p>Travel Abroad</p>"
           },
           {
             "group": "Body",
@@ -2302,8 +2302,8 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "levelTest.Travel",
-            "description": "<p>Abroad</p>"
+            "field": "levelTest.travelAbroad",
+            "description": "<p>TravelAbroad</p>"
           },
           {
             "group": "Success 200",
@@ -6304,8 +6304,8 @@
             "group": "Body",
             "type": "String",
             "optional": true,
-            "field": "Travel",
-            "description": "<p>Abroad</p>"
+            "field": "travelAbroad",
+            "description": "<p>Travel Abroad</p>"
           },
           {
             "group": "Body",
