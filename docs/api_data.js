@@ -9673,7 +9673,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "list.company",
-            "description": "<p>회사/직장명</p>"
+            "description": "<p>회사</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "list.job",
+            "description": "<p>직업</p>"
           },
           {
             "group": "Success 200",

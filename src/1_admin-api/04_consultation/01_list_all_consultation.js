@@ -34,7 +34,8 @@
                                             7:미등록(상담완료), 8:등록완료, 9:NoShow, 10:부재중)
  * @apiSuccess {String} list.name 회원명
  * @apiSuccess {String} list.phone 전화번호
- * @apiSuccess {String} list.company 회사/직장명
+ * @apiSuccess {String} list.company 회사
+ * @apiSuccess {String} list.job 직업
  * @apiSuccess {String} list.callTime 통화시간 TIME_01 // 06:30~08:00 <br/>
                                              TIME_02 // 08:00~10:00 <br/>
                                              TIME_03 // 10:00~12:00<br/>
