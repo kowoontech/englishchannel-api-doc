@@ -12,7 +12,7 @@
  * curl -i -X GET 'http://localhost:8080/admin/v1/statistics/evaluations/ldf?date=2023-01-01&teacherId=M1661138591404520' \
  *
  *
- * @apiParam (Query) date 조회하려는 월(평가현황목록의 date,yyyy-MM-dd )
+ * @apiParam (Query) date 조회하려는 월(평가현황목록의 date,yyyy-MM )
  * @apiParam (Query) teacherId 조회할 강사식별키
 
 

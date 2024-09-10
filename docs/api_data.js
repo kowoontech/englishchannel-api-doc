@@ -12158,7 +12158,7 @@ define({ "api": [
             "group": "Query",
             "optional": false,
             "field": "date",
-            "description": "<p>조회하려는 월(평가현황목록의 date,yyyy-MM-dd )</p>"
+            "description": "<p>조회하려는 월(평가현황목록의 date,yyyy-MM )</p>"
           },
           {
             "group": "Query",
