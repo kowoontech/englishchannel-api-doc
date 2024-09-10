@@ -4712,27 +4712,13 @@ define({ "api": [
             "optional": false,
             "field": "refunds.modifierName",
             "description": "<p>처리자</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "orderProduct",
-            "description": "<p>주문상품정보</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "orderProductIds.orderProductIds",
-            "description": "<p>주문상품들 식별키</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n\"{\n        \"billingAmount\": 10000,\n        \"paymentAmount\": 10000,\n        \"refundAmount\": 0,\n        \"receivableAmount\": 0,\n        \"payments\": [\n            {\n                \"id\": \"P1725850024703510\",\n                \"paymentDate\": \"2024-09-07\",\n                \"type\": \"신규\",\n                \"paymentMethod\": \"현금\",\n                \"paymentAmount\": 10000,\n                \"accountHolder\": null,\n                \"code\": null,\n                \"codeName\": null,\n                \"cardNumber\": null,\n                \"installmentMonths\": null,\n                \"installmentMonthsLabel\": \"일시불\",\n                \"approvalNumber\": null,\n                \"memo\": null,\n                \"modifiedBy\": \"U1370839971594082\",\n                \"modifierName\": \"채인숙\",\n                \"isCancelable\": true\n            }\n        ],\n        \"refunds\": [],\n        \"orderProductIds\": [\n            \"I1725850004659555\"\n        ]\n    }\"",
+          "content": "HTTP/1.1 200\n\"{\n        \"billingAmount\": 10000,\n        \"paymentAmount\": 10000,\n        \"refundAmount\": 0,\n        \"receivableAmount\": 0,\n        \"payments\": [\n            {\n                \"id\": \"P1725850024703510\",\n                \"paymentDate\": \"2024-09-07\",\n                \"type\": \"신규\",\n                \"paymentMethod\": \"현금\",\n                \"paymentAmount\": 10000,\n                \"accountHolder\": null,\n                \"code\": null,\n                \"codeName\": null,\n                \"cardNumber\": null,\n                \"installmentMonths\": null,\n                \"installmentMonthsLabel\": \"일시불\",\n                \"approvalNumber\": null,\n                \"memo\": null,\n                \"modifiedBy\": \"U1370839971594082\",\n                \"modifierName\": \"채인숙\",\n                \"isCancelable\": true\n            }\n        ],\n        \"refunds\": [],\n    }\"",
           "type": "json"
         }
       ]
@@ -8629,6 +8615,246 @@ define({ "api": [
             "optional": false,
             "field": "id",
             "description": "<p>상담 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>이름</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "firstNameEn",
+            "description": "<p>영문 이름(이름)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "lastNameEn",
+            "description": "<p>영문 이름(성)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "nickname",
+            "description": "<p>닉네임</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "textbook",
+            "description": "<p>교재</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "loginId",
+            "description": "<p>아이디</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>이메일</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "isReceiveEmail",
+            "description": "<p>이메일 수신 여부</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>비밀번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>성별 (M:남, F:여)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "phone",
+            "description": "<p>유선전화</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "phoneType",
+            "description": "<p>유선전화 유형 (H:자택, C:직장)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "cellPhone",
+            "description": "<p>휴대전화번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "isReceiveSms",
+            "description": "<p>SMS 수신 여부</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>사용자 인지 직원인지 구분 (사용자:S , 직원: A)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "isOfficeWorker",
+            "description": "<p>직장인 여부</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "company",
+            "description": "<p>직장/학교</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "position",
+            "description": "<p>직책/학과</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "note",
+            "description": "<p>특이사항</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "isActive",
+            "description": "<p>활동 여부</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "zipcode",
+            "description": "<p>우편번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "address",
+            "description": "<p>주소</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "detailedAddress",
+            "description": "<p>상세 주소</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "addressType",
+            "description": "<p>주소 유형 (H:자택, C:직장)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "joinPath",
+            "description": "<p>가입 경로 ( SIGN:간판, ONLINE:온라인검색, RECOMMEND:지인추천, FAN:부채, LEAFLET:3단리플릿, SUBWAY:지하철광고, ALLIANCE:기업제휴,  ETC: 기타)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String[]",
+            "optional": true,
+            "field": "languages",
+            "description": "<p>학습희망언어 목록 (EN:영어, CN:중국어, JP:일본어, KR:한국어, ETC:기타)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "etcLanguage",
+            "description": "<p>학습희망언어 기타</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Object[]",
+            "optional": true,
+            "field": "languageSkills",
+            "description": "<p>외국어실력 목록</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "languageSkills.languageTest",
+            "description": "<p>외국어시험 (SJPT, HKC, TOEIC, TSC, TOEIC-S, OPIc, 기타)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "languageSkills.score",
+            "description": "<p>외국어시험 점수 (900점이상, 800-900점, ...)</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "foreignCountry",
+            "description": "<p>외국거주경험 국가명</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "foreignPeriod",
+            "description": "<p>외국거주경험 기간</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "foreignPurpose",
+            "description": "<p>외국거주경험 목적</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String[]",
+            "optional": true,
+            "field": "coursePurposes",
+            "description": "<p>수강의 목적 (STUDY_ABROAD:유학, TEST:시험, EMPLOYMENT:취업, WORK:업무, DEVELOPMENT:자기계발)</p>"
           }
         ]
       }
