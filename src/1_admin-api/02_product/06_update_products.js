@@ -11,12 +11,12 @@
  * curl -i -X PUT 'http://localhost:8080/admin/v1/products/P1722475920322505' \
  * -H "Content-Type: application/json" \
  * -d "{
-           "type": "과정",
-           "name": "패키지1",
-           "price": 13000
-       }"
+                  "name":"테스트상품",
+                  "curriculumYN":"Y",
+                  "price":60000
+              }"
  *
- * @apiParam (Body) {String} type 과정여부 (체크박스 선택 시 'CURRICULUM'/ 선택하지 않을 시 null)
+ * @apiParam (Body) {String} curriculumYN 과정여부 (Y:과정 , N:이외)
  * @apiParam (Body) {String} name 상품명
  * @apiParam (Body) {Number} price 가격
  *
