@@ -13116,6 +13116,13 @@ define({ "api": [
           },
           {
             "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "sendType",
+            "description": "<p>문자타입 (S: SMS / L :LMS)</p>"
+          },
+          {
+            "group": "Body",
             "type": "Object[]",
             "optional": false,
             "field": "recipients",

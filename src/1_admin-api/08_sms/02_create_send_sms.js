@@ -32,6 +32,7 @@
  * @apiParam (Body) {String} [senderPhone] 발신번호 (필요 없음. 어떤 번호를 입력해도 02-2082-1105로 발송됨)
  * @apiParam (Body) {String} content 내용
  * @apiParam (Body) {String} [reservationDate] 예약발송일때, 일시
+ * @apiParam (Body) {String} sendType 문자타입 (S: SMS / L :LMS)
  * @apiParam (Body) {Object[]} recipients 발송대상 목록
  * @apiParam (Body) {String} [recipients.name] 발송대상 이름
  * @apiParam (Body) {String} recipients.phone 발송대상 휴대폰번호
