@@ -4,7 +4,7 @@
  * @apiDescription 상품관리 > 수정
  *
  * @apiVersion 1.0.0
- * @apiName admin_updateUserOrderPayment
+ * @apiName admin_updateUserOrderProduct
  * @apiGroup 1. Admin API > 02. 상품
  *
  * @apiExample {curl} REQUEST
