@@ -3414,7 +3414,14 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "orderProducts.amount",
-            "description": "<p>공급가액</p>"
+            "description": "<p>금액</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.paymentAmount",
+            "description": "<p>결제금액</p>"
           },
           {
             "group": "Success 200",

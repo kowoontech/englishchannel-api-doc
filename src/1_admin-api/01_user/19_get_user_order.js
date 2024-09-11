@@ -23,7 +23,8 @@
  * @apiSuccess {Object[]} orderProducts 주문 상세 목록
  * @apiSuccess {String} orderProducts.id 주문 상세 식별키
  * @apiSuccess {String} orderProducts.name 상품명
- * @apiSuccess {Number} orderProducts.amount 공급가액
+ * @apiSuccess {Number} orderProducts.amount 금액
+ * @apiSuccess {Number} orderProducts.paymentAmount 결제금액
  * @apiSuccess {Number} orderProducts.discountAmount 할인액
  * @apiSuccess {Number} orderProducts.billingAmount 실청구금액
  * @apiSuccess {Number} orderProducts.refundAmount 환불금액
