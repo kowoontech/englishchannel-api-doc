@@ -15,7 +15,7 @@
  *
  * @apiParam (Path) {String} id 회원 식별키
  * 
- * @apiParam (Query) status 조회할 수강 상태 (VALID: 기본 조회, ATTENDING: 수강중, WAITING: 대기중, COMPLETE: 수강완료, REFUND: 환불)
+ * @apiParam (Query) status 조회할 수강 상태 (VALID: 기본 조회, ATTENDING: 수강중, WAITING: 대기중, COMPLETE: 수강완료, REFUND: 환불 예약가능:AVAILABLE)
  * @apiParam (Query) [limit] 한페이지에 보여줄 과정 수
  * @apiParam (Query) [page] 조회할 페이지
  *

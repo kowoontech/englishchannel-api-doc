@@ -3991,7 +3991,7 @@
             "group": "Query",
             "optional": false,
             "field": "status",
-            "description": "<p>조회할 수강 상태 (VALID: 기본 조회, ATTENDING: 수강중, WAITING: 대기중, COMPLETE: 수강완료, REFUND: 환불)</p>"
+            "description": "<p>조회할 수강 상태 (VALID: 기본 조회, ATTENDING: 수강중, WAITING: 대기중, COMPLETE: 수강완료, REFUND: 환불 예약가능:AVAILABLE)</p>"
           },
           {
             "group": "Query",

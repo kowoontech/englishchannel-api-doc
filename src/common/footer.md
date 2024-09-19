@@ -84,6 +84,7 @@
 |         | Admin API  > 02. 상품 : 06. 상품 수정 : curriculumYN 사용하며 필드 변경                                                                     | 2024.09.07 |
 |         | Admin API  > 02. 상품 : 09. 상품삭제 api 추가                                                                                         | 2024.09.07 |
 |         | Admin API  > 01. 회원 : 19. 회원 주문 조회 : paymentAmount추가, amount 필드명 변경                                                           | 2024.09.07 |
+|         | Admin API  > 01. 회원 : 04. 회원 과정(수강) 목록 조회 : status에  AVAILABLE 추가                                                             | 2024.09.19 |
             
             
 <br/>
