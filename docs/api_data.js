@@ -3453,6 +3453,27 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.months",
+            "description": "<p>개월수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "orderProducts.quantity",
+            "description": "<p>횟수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "orderProducts.productName",
+            "description": "<p>상품명</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Boolean",
             "optional": false,
             "field": "orderProducts.hasReservations",

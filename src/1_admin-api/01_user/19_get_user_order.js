@@ -29,6 +29,9 @@
  * @apiSuccess {Number} orderProducts.billingAmount 실청구금액
  * @apiSuccess {Number} orderProducts.refundAmount 환불금액
  * @apiSuccess {String} orderProducts.productType 분류
+ * @apiSuccess {Number} orderProducts.months 개월수
+ * @apiSuccess {Number} orderProducts.quantity 횟수
+ * @apiSuccess {String} orderProducts.productName 상품명
  * @apiSuccess {Boolean} orderProducts.hasReservations 예약 여부 (true: 예약 있음)
  * @apiSuccess {Boolean} orderProducts.hasPayments 결제 여부 (true: 결제 있음)
  * @apiSuccess {String} orderProducts.createdOn 주문일시 (yyyy-MM-dd HH:mm)
