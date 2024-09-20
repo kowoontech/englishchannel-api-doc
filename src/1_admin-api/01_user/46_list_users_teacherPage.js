@@ -13,7 +13,7 @@
  *
  * @apiParam (Query) {boolean} today 학생 구분 (전체: false / 오늘예약 : true)
  * @apiParam (Query) [teacherId] 강사 강사식별키
- * @apiParam (Query) [search] 검색조건
+ * @apiParam (Query) [search] 검색조건 [ALL:전체 , name: 이름, email:이메일 , company: 회사명, cellPhone: 전화번호]
  * @apiParam (Query) [keyword] 검색내용
  * @apiParam (Query) [limit] 한페이지에 보여줄 회원 수
  * @apiParam (Query) [page] 조회할 페이지
