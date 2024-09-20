@@ -5430,13 +5430,6 @@
         "Query": [
           {
             "group": "Query",
-            "type": "String",
-            "optional": false,
-            "field": "type",
-            "description": "<p>사용자 인지 직원인지 구분 (사용자:S , 직원: A)</p>"
-          },
-          {
-            "group": "Query",
             "optional": true,
             "field": "createDateFrom",
             "description": "<p>가입일자 검색 ~부터 (yyyy-mm-dd)</p>"
