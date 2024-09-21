@@ -13333,22 +13333,36 @@ define({ "api": [
             "group": "Query",
             "type": "String",
             "optional": false,
-            "field": "type",
-            "description": "<p>발송 대상 유형 (S:일반회원, T:강사, A:관리자)</p>"
+            "field": "sendDateFrom",
+            "description": "<p>발송일 시작 [yyyy-MM-dd]</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "sendDateTo",
+            "description": "<p>발송일 종료 [yyyy-MM-dd]</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "sendType",
+            "description": "<p>구분 [ALL:전체, L:LMS , S: SMS]</p>"
           },
           {
             "group": "Query",
             "type": "String",
             "optional": false,
             "field": "search",
-            "description": "<p>검색 조건 (name:이름, id:아이디)</p>"
+            "description": "<p>검색조건[ALL:전체, content: 내용,senderName:발송인]</p>"
           },
           {
             "group": "Query",
-            "type": "String",
+            "type": "Number",
             "optional": false,
             "field": "keyword",
-            "description": "<p>검색어</p>"
+            "description": "<p>검색내용</p>"
           }
         ]
       }

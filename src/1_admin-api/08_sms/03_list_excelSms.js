@@ -11,9 +11,11 @@
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080//api/admin/v1/templates/excel/sms'
  *
- * @apiParam (Query) {String} type 발송 대상 유형 (S:일반회원, T:강사, A:관리자)
- * @apiParam (Query) {String} search 검색 조건 (name:이름, id:아이디)
- * @apiParam (Query) {String} keyword 검색어
+ * @apiParam (Query) {String} sendDateFrom 발송일 시작 [yyyy-MM-dd]
+ * @apiParam (Query) {String} sendDateTo  발송일 종료 [yyyy-MM-dd]
+ * @apiParam (Query) {String} sendType 구분 [ALL:전체, L:LMS , S: SMS]
+ * @apiParam (Query) {String} search 검색조건[ALL:전체, content: 내용,senderName:발송인]
+ * @apiParam (Query) {Number} keyword 검색내용
  *
  * @apiSuccess {Number} id 식별키
  * @apiSuccess {String} senderPhone 발송자번호
