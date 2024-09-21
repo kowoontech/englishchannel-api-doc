@@ -11181,6 +11181,62 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
+    "type": "put",
+    "url": "/admin/v1/teachers/sort",
+    "title": "18. 강사 순서 변경",
+    "description": "<p>강사관리 &gt; 목록 조회 &gt; 순서변경 <br/></p>",
+    "version": "1.0.0",
+    "name": "admin_updateTeacherSort",
+    "group": "1._Admin_API_>_05._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X PUT 'http://localhost:8080/api/admin/v1/teachers/sort'\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"userId\":\"M1726648755607877\",\n           \"sort\" : 4\n       }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": true,
+            "field": "id",
+            "description": "<p>강사 식별키</p>"
+          }
+        ],
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>강사 식별키</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": false,
+            "field": "sort",
+            "description": "<p>순서</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/18_update_teacherSort.js",
+    "groupTitle": "1._Admin_API_>_05._강사"
+  },
+  {
     "type": "get",
     "url": "/admin/v1/teachers/cgt",
     "title": "10. CGT 목록",
