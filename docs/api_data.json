@@ -13312,6 +13312,127 @@
     "groupTitle": "1._Admin_API_>_08._SMS"
   },
   {
+    "type": "get",
+    "url": "/admin/v1/templates/excel/sms",
+    "title": "03. sms 엑셀",
+    "description": "<p>SMS전송현황&gt; 엑셀 다운로드<br/></p>",
+    "version": "1.0.0",
+    "name": "listSmsexcel",
+    "group": "1._Admin_API_>_08._SMS",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080//api/admin/v1/templates/excel/sms'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>발송 대상 유형 (S:일반회원, T:강사, A:관리자)</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "search",
+            "description": "<p>검색 조건 (name:이름, id:아이디)</p>"
+          },
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "keyword",
+            "description": "<p>검색어</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "senderPhone",
+            "description": "<p>발송자번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "createdBy",
+            "description": "<p>발송자식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "senderName",
+            "description": "<p>발송자(이름)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>발송날짜</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "time",
+            "description": "<p>발송시간</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "sendType",
+            "description": "<p>발송타입[SMS:S , LMS:L]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "status",
+            "description": "<p>발송상태[WAITING, SUCCESS, FAIL]</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n[\n    {\n        \"id\": 31,\n        \"senderPhone\": \"0220821105\",\n        \"createdBy\": \"U1370839971594082\",\n        \"senderName\": \"채인숙\",\n        \"content\": \"123123123123123\",\n        \"date\": \"2024-09-20\",\n        \"time\": \"21:26:17\",\n        \"sendType\": null,\n        \"status\": \"WAITING\"\n    },\n    {",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/08_sms/03_list_excelSms.js",
+    "groupTitle": "1._Admin_API_>_08._SMS"
+  },
+  {
     "type": "post",
     "url": "/admin/v1/email/send",
     "title": "02. Email 발송",
