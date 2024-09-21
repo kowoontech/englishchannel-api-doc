@@ -15,7 +15,6 @@
            "sort" : 4
        }"
  *
- * @apiParam (Path) {String} [id] 강사 식별키
  * 
  * @apiParam (Body) {String} userId 강사 식별키
  * @apiParam (Body) {Number} sort 순서

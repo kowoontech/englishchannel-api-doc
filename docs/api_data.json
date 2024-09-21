@@ -11197,15 +11197,6 @@
     ],
     "parameter": {
       "fields": {
-        "Path": [
-          {
-            "group": "Path",
-            "type": "String",
-            "optional": true,
-            "field": "id",
-            "description": "<p>강사 식별키</p>"
-          }
-        ],
         "Body": [
           {
             "group": "Body",
