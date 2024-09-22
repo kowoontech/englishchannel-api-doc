@@ -12412,14 +12412,14 @@
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "sendDateFrom",
             "description": "<p>발송일 시작 [yyyy-MM-dd]</p>"
           },
           {
             "group": "Query",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "sendDateTo",
             "description": "<p>발송일 종료 [yyyy-MM-dd]</p>"
           },
@@ -12439,8 +12439,8 @@
           },
           {
             "group": "Query",
-            "type": "Number",
-            "optional": false,
+            "type": "String",
+            "optional": true,
             "field": "keyword",
             "description": "<p>검색내용</p>"
           }
