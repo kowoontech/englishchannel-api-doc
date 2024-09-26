@@ -1,5 +1,5 @@
 /**
- * @api {delete} /admin/v1/users/notes/{id} 28. 비고 삭제
+ * @api {delete} /admin/v1/users/notes/{id} 29. 비고 삭제
  *
  * @apiDescription 회원관리 > 예약 > 예약등록 > TIP
  *

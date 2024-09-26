@@ -1,5 +1,5 @@
 /**
- * @api {delete} /admin/v1/users/{id}/orders/{orderId}/payments/{paymentId} 40. 회원 주문 결제 취소
+ * @api {delete} /admin/v1/users/{id}/orders/{orderId}/payments/{paymentId} 41. 회원 주문 결제 취소
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 주문 탭
  *

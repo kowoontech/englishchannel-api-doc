@@ -1,5 +1,5 @@
 /**
- * @api {post} /admin/v1/users/{id}/consultations 17. 회원 상담 등록
+ * @api {post} /admin/v1/users/{id}/consultations 18. 회원 상담 등록
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 상담 탭
  *

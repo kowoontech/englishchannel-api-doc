@@ -1,5 +1,5 @@
 /**
- * @api {delete} /admin/v1/users/{id} 21. 회원 삭제
+ * @api {delete} /admin/v1/users/{id} 22. 회원 삭제
  *
  * @apiDescription 회원관리 > 기본 탭
  *

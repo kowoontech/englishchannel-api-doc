@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/courses/{courseId} 11. 회원 수강 조회
+ * @api {get} /admin/v1/users/{id}/courses/{courseId} 12. 회원 수강 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 수강 탭
  * 

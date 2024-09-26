@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/users/{id}/consultations/{consultationId} 35. 회원 상담 수정
+ * @api {put} /admin/v1/users/{id}/consultations/{consultationId} 36. 회원 상담 수정
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 상담 탭
  *

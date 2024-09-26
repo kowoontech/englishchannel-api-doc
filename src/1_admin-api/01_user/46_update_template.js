@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/templates/1 45. 템플릿 수정
+ * @api {put} /admin/v1/templates/1 46. 템플릿 수정
  *
  * @apiDescription 회원관리 > 회원 등록 / 수정 > 특이사항
  *

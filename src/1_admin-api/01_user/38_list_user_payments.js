@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/orders/{orderId}/payments 37. 회원 주문 결제/환불 목록 조회
+ * @api {get} /admin/v1/users/{id}/orders/{orderId}/payments 38. 회원 주문 결제/환불 목록 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 주문 탭
  *

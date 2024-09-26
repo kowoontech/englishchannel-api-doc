@@ -562,7 +562,7 @@ define({ "api": [
   {
     "type": "delete",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
-    "title": "33. 레벨테스트 삭제",
+    "title": "34. 레벨테스트 삭제",
     "description": "<p>회원관리 &gt; 상세조회 &gt; 테스트탭 <br/> id : 1028151  / testId : 6118</p>",
     "version": "1.0.0",
     "name": "admin_User_DELETE_LevelTest",
@@ -609,7 +609,7 @@ define({ "api": [
   {
     "type": "delete",
     "url": "/admin/v1/users/notes/{id}",
-    "title": "28. 비고 삭제",
+    "title": "29. 비고 삭제",
     "description": "<p>회원관리 &gt; 예약 &gt; 예약등록 &gt; TIP</p>",
     "version": "1.0.0",
     "name": "admin_User_Note",
@@ -649,7 +649,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/admin/v1/users/{id}/levelTests",
-    "title": "31. 레벨 테스트 등록",
+    "title": "32. 레벨 테스트 등록",
     "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭 <br/> 없는 데이터가 많으니 id : 1028151 사용해주세요<br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_creatLevelTest",
@@ -1200,7 +1200,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/admin/v1/users/{id}/consultations",
-    "title": "17. 회원 상담 등록",
+    "title": "18. 회원 상담 등록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_createUserConsultation",
@@ -1284,7 +1284,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/admin/v1/users/{id}/ldfs",
-    "title": "47. ldf 등록",
+    "title": "48. ldf 등록",
     "description": "<p>강사 계정 로그인 : 회원목록 &gt; ldf탭 &gt; 등록<br/> test: reservationId : 2431378</p>",
     "version": "1.0.0",
     "name": "admin_createUserLdf",
@@ -1368,7 +1368,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/admin/v1/users/{id}/notes",
-    "title": "25. 비고등록",
+    "title": "26. 비고등록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
     "version": "1.0.0",
     "name": "admin_createUserNote",
@@ -1424,7 +1424,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/admin/v1/users/{id}/orders/{orderId}/payments",
-    "title": "39. 회원 주문 결제 등록",
+    "title": "40. 회원 주문 결제 등록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_createUserOrderPayment",
@@ -1592,7 +1592,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/admin/v1/users/{id}/orders/products",
-    "title": "22. 회원 주문 상품 등록 (주문 등록)",
+    "title": "23. 회원 주문 상품 등록 (주문 등록)",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_createUserOrderProduct",
@@ -1729,7 +1729,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/admin/v1/users/{id}/orders/{orderId}/orderProducts/{orderProductId}/refund",
-    "title": "41. 회원 주문 환불 등록",
+    "title": "42. 회원 주문 환불 등록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_createUserOrderRefund",
@@ -1881,7 +1881,7 @@ define({ "api": [
   {
     "type": "delete",
     "url": "/admin/v1/users/{id}",
-    "title": "21. 회원 삭제",
+    "title": "22. 회원 삭제",
     "description": "<p>회원관리 &gt; 기본 탭</p>",
     "version": "1.0.0",
     "name": "admin_deleteUser",
@@ -1921,7 +1921,7 @@ define({ "api": [
   {
     "type": "delete",
     "url": "/admin/v1/users/{id}/consultations/{consultationId}",
-    "title": "36. 회원 상담 삭제",
+    "title": "37. 회원 상담 삭제",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_deleteUserConsultation",
@@ -1968,7 +1968,7 @@ define({ "api": [
   {
     "type": "delete",
     "url": "/admin/v1/users/{id}/orders/{orderId}",
-    "title": "43. 회원 주문 전체 취소",
+    "title": "44. 회원 주문 전체 취소",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_deleteUserOrder",
@@ -2015,7 +2015,7 @@ define({ "api": [
   {
     "type": "delete",
     "url": "/admin/v1/users/{id}/orders/{orderId}/payments/{paymentId}",
-    "title": "40. 회원 주문 결제 취소",
+    "title": "41. 회원 주문 결제 취소",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_deleteUserOrderPayment",
@@ -2069,7 +2069,7 @@ define({ "api": [
   {
     "type": "delete",
     "url": "/admin/v1/users/{id}/orders/{orderId}/orderProducts/{orderProductId}",
-    "title": "42. 회원 주문상세 취소",
+    "title": "43. 회원 주문상세 취소",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_deleteUserOrderProduct",
@@ -2123,7 +2123,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
-    "title": "30. 레벨테스트 상세조회",
+    "title": "31. 레벨테스트 상세조회",
     "description": "<p>회원관리 &gt; 회원  상세 조회 &gt; 테스트 탭 <br/> 테스트가 필요하다면, id : M1372661465106388 , testId : 6153 사용해주세요 <br/> 회원id 의 회원 이름은 '김기훈' 입니다</p>",
     "version": "1.0.0",
     "name": "admin_getLevelTest",
@@ -2475,7 +2475,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/templates/1",
-    "title": "38. 특이사항 템플릿",
+    "title": "39. 특이사항 템플릿",
     "description": "<p>회원관리 &gt; 회원등록 &gt; 특이사항 필드에 들어 갈 템플릿<br/></p>",
     "version": "1.0.0",
     "name": "admin_getRegisterNoteTemplate",
@@ -2843,7 +2843,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/consultations/{consultationId}",
-    "title": "34. 회원 상담 상세 조회",
+    "title": "35. 회원 상담 상세 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserConsultation",
@@ -2950,7 +2950,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/courses/{courseId}",
-    "title": "11. 회원 수강 조회",
+    "title": "12. 회원 수강 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 수강 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserCourse",
@@ -3099,7 +3099,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/ldfs/{ldfId}",
-    "title": "24. 회원 LDF 상세 조회",
+    "title": "25. 회원 LDF 상세 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; LDF 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserLdf",
@@ -3213,7 +3213,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/notes/{noteId}",
-    "title": "26. 비고 상세 조회",
+    "title": "27. 비고 상세 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP(비고)</p>",
     "version": "1.0.0",
     "name": "admin_getUserNote",
@@ -3271,7 +3271,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/orders/{orderId}",
-    "title": "19. 회원 주문 조회",
+    "title": "20. 회원 주문 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserOrder",
@@ -3483,7 +3483,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/orders/{orderId}/payments/{paymentId}",
-    "title": "50. 회원 주문 결제 상세조회",
+    "title": "51. 회원 주문 결제 상세조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserPayment",
@@ -3581,7 +3581,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/reservations/{reservationId}",
-    "title": "14. 회원 예약 조회",
+    "title": "15. 회원 예약 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 학습 탭</p>",
     "version": "1.0.0",
     "name": "admin_getUserReservation",
@@ -3681,7 +3681,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/consultations",
-    "title": "16. 회원 상담 목록 조회",
+    "title": "17. 회원 상담 목록 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserConsultations",
@@ -3767,7 +3767,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/courses/{courseId}/histories",
-    "title": "13. 회원 수강관리이력 조회",
+    "title": "14. 회원 수강관리이력 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 수강 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserCourseHistories",
@@ -4176,7 +4176,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/ldfs",
-    "title": "23. 회원 LDF 목록 조회",
+    "title": "24. 회원 LDF 목록 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; LDF 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserLdfs",
@@ -4373,7 +4373,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/notes",
-    "title": "10. 회원 비고 목록 조회",
+    "title": "11. 회원 비고 목록 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; TIP <br/> modifiedBy null일 시에는 createdOn와 creatorName 출력 <br/> modifiedBy null이 아닐 시에는 modifiedOn, modifierName 출력</p>",
     "version": "1.0.0",
     "name": "admin_listUserNotes",
@@ -4475,7 +4475,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/orders/{orderId}/payments",
-    "title": "37. 회원 주문 결제/환불 목록 조회",
+    "title": "38. 회원 주문 결제/환불 목록 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserOrderPayments",
@@ -4757,7 +4757,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/orders",
-    "title": "18. 회원 주문 목록 조회",
+    "title": "19. 회원 주문 목록 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_listUserOrders",
@@ -5802,7 +5802,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/teacher/v1/users",
-    "title": "46. 강사 계정 - 회원목록",
+    "title": "47. 강사 계정 - 회원목록",
     "description": "<p>강사 계정 로그인 시 회원 목록 <br/></p>",
     "version": "1.0.0",
     "name": "admin_listUsers_teacherPage",
@@ -6002,7 +6002,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/templates/excel/users",
-    "title": "49. 회원 목록 엑셀",
+    "title": "50. 회원 목록 엑셀",
     "description": "<p>회원관리 &gt; 회원 목록 엑셀다운로드<br/> 존재하지 않는 데이터들이 있어 기존 프로그램의 모든 필드 출력이 불가합니다.</p>",
     "version": "1.0.0",
     "name": "admin_listUsersexcel",
@@ -6260,7 +6260,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/levelTests",
-    "title": "29. 레벨 테스트 목록",
+    "title": "30. 레벨 테스트 목록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt;  회원 상세 조회&gt; 테스트탭</p>",
     "version": "1.0.0",
     "name": "admin_list_LevelTest",
@@ -6325,7 +6325,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/admin/v1/users/{id}/levelTests/{testId}",
-    "title": "32. 레벨테스트 수정",
+    "title": "33. 레벨테스트 수정",
     "description": "<p>회원관리 &gt; 회원 상세 조회 &gt; 테스트 탭<br/> id : 1028151  / testId: 6145 <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_updateLevelTest",
@@ -6619,7 +6619,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/admin/v1/templates/1",
-    "title": "45. 템플릿 수정",
+    "title": "46. 템플릿 수정",
     "description": "<p>회원관리 &gt; 회원 등록 / 수정 &gt; 특이사항</p>",
     "version": "1.0.0",
     "name": "admin_updateTemplate",
@@ -6666,7 +6666,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/admin/v1/users/{id}",
-    "title": "20. 회원 수정",
+    "title": "21. 회원 수정",
     "description": "<p>회원관리 &gt; 기본 탭</p>",
     "version": "1.0.0",
     "name": "admin_updateUser",
@@ -6939,7 +6939,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/admin/v1/users/{id}/consultations/{consultationId}",
-    "title": "35. 회원 상담 수정",
+    "title": "36. 회원 상담 수정",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 상담 탭</p>",
     "version": "1.0.0",
     "name": "admin_updateUserConsultation",
@@ -7030,7 +7030,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/admin/v1/users/{id}/courses/{courseId}",
-    "title": "12. 회원 수강 수정",
+    "title": "13. 회원 수강 수정",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 수강 탭</p>",
     "version": "1.0.0",
     "name": "admin_updateUserCourse",
@@ -7142,7 +7142,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/admin/v1/users/ldfs/{id}",
-    "title": "47. ldf 수정",
+    "title": "49. ldf 수정",
     "description": "<p>강사 계정 로그인 : 회원목록 &gt; ldf탭 &gt; 수정<br/></p>",
     "version": "1.0.0",
     "name": "admin_updateUserLdf",
@@ -7219,7 +7219,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/admin/v1/users/notes/{id}",
-    "title": "27. 비고 수정",
+    "title": "28. 비고 수정",
     "description": "<p>회원관리 &gt; 기본 탭 &gt; 예약 &gt; 예약등록 &gt; TIP</p>",
     "version": "1.0.0",
     "name": "admin_updateUserNote",
@@ -7268,7 +7268,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/admin/v1/users/{id}/orders/{orderId}/payments/{paymentId}",
-    "title": "44. 회원 주문 결제 수정",
+    "title": "45. 회원 주문 결제 수정",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 주문 탭</p>",
     "version": "1.0.0",
     "name": "admin_updateUserOrderPayment",
@@ -7359,7 +7359,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/admin/v1/users/{id}/reservations/{reservationId}",
-    "title": "15. 회원 예약 수정(학사보고서)",
+    "title": "16. 회원 예약 수정(학사보고서)",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 학습 탭 &gt; 학사보고서 등록/수정</p>",
     "version": "1.0.0",
     "name": "admin_updateUserReservation",

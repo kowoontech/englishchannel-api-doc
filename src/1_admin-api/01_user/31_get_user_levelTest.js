@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/levelTests/{testId} 30. 레벨테스트 상세조회
+ * @api {get} /admin/v1/users/{id}/levelTests/{testId} 31. 레벨테스트 상세조회
  *
  * @apiDescription 회원관리 > 회원  상세 조회 > 테스트 탭 <br/>
  * 테스트가 필요하다면, id : M1372661465106388 , testId : 6153 사용해주세요 <br/>

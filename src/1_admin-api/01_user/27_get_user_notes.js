@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/notes/{noteId} 26. 비고 상세 조회
+ * @api {get} /admin/v1/users/{id}/notes/{noteId} 27. 비고 상세 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭 > 예약 등록 > TIP(비고)
  *

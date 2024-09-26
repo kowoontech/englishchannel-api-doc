@@ -1,5 +1,5 @@
 /**
- * @api {post} /admin/v1/users/{id}/levelTests 31. 레벨 테스트 등록
+ * @api {post} /admin/v1/users/{id}/levelTests 32. 레벨 테스트 등록
  *
  * @apiDescription 회원관리 > 회원 상세 조회 > 테스트 탭 <br/>
  * 없는 데이터가 많으니 id : 1028151 사용해주세요<br/>

@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/users/ldfs/{id} 47. ldf 수정
+ * @api {put} /admin/v1/users/ldfs/{id} 49. ldf 수정
  *
  * @apiDescription 강사 계정 로그인 : 회원목록 > ldf탭 > 수정<br/>
  *

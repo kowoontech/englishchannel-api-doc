@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/orders/{orderId} 19. 회원 주문 조회
+ * @api {get} /admin/v1/users/{id}/orders/{orderId} 20. 회원 주문 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 주문 탭
  * 

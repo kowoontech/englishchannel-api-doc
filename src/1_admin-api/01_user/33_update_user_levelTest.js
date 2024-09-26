@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/users/{id}/levelTests/{testId} 32. 레벨테스트 수정
+ * @api {put} /admin/v1/users/{id}/levelTests/{testId} 33. 레벨테스트 수정
  *
  * @apiDescription 회원관리 > 회원 상세 조회 > 테스트 탭<br/>
  * id : 1028151  / testId: 6145 <br/>

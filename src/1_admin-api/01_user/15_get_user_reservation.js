@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/reservations/{reservationId} 14. 회원 예약 조회
+ * @api {get} /admin/v1/users/{id}/reservations/{reservationId} 15. 회원 예약 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 학습 탭
  *

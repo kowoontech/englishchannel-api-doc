@@ -1,5 +1,5 @@
 /**
- * @api {delete} /admin/v1/users/{id}/consultations/{consultationId} 36. 회원 상담 삭제
+ * @api {delete} /admin/v1/users/{id}/consultations/{consultationId} 37. 회원 상담 삭제
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 상담 탭
  * 

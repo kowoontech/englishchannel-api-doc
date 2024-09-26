@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/notes 10. 회원 비고 목록 조회
+ * @api {get} /admin/v1/users/{id}/notes 11. 회원 비고 목록 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭 > 예약 등록 > TIP <br/>
  * modifiedBy null일 시에는 createdOn와 creatorName 출력 <br/>

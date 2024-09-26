@@ -1,5 +1,5 @@
 /**
- * @api {get} /teacher/v1/users 46. 강사 계정 - 회원목록
+ * @api {get} /teacher/v1/users 47. 강사 계정 - 회원목록
  *
  * @apiDescription 강사 계정 로그인 시 회원 목록 <br/>
  *

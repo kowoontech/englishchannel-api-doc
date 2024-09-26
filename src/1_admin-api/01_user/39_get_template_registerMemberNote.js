@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/templates/1 38. 특이사항 템플릿
+ * @api {get} /admin/v1/templates/1 39. 특이사항 템플릿
  *
  * @apiDescription 회원관리 > 회원등록 > 특이사항 필드에 들어 갈 템플릿<br/>
  *

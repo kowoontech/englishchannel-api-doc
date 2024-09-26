@@ -1,5 +1,5 @@
 /**
- * @api {post} /admin/v1/users/{id}/orders/products 22. 회원 주문 상품 등록 (주문 등록)
+ * @api {post} /admin/v1/users/{id}/orders/products 23. 회원 주문 상품 등록 (주문 등록)
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 상담 탭
  *

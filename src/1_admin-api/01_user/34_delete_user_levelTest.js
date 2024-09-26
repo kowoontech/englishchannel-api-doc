@@ -1,5 +1,5 @@
 /**
- * @api {delete} /admin/v1/users/{id}/levelTests/{testId} 33. 레벨테스트 삭제
+ * @api {delete} /admin/v1/users/{id}/levelTests/{testId} 34. 레벨테스트 삭제
  *
  * @apiDescription 회원관리 > 상세조회 > 테스트탭 <br/>
  * id : 1028151  / testId : 6118

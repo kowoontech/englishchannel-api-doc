@@ -1,5 +1,5 @@
 /**
- * @api {delete} /admin/v1/users/{id}/orders/{orderId} 43. 회원 주문 전체 취소
+ * @api {delete} /admin/v1/users/{id}/orders/{orderId} 44. 회원 주문 전체 취소
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 주문 탭
  *

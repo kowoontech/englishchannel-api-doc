@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/users/{id}/courses/{courseId} 12. 회원 수강 수정
+ * @api {put} /admin/v1/users/{id}/courses/{courseId} 13. 회원 수강 수정
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 수강 탭
  *

@@ -1,5 +1,5 @@
 /**
- * @api {post} /admin/v1/users/{id}/ldfs 47. ldf 등록
+ * @api {post} /admin/v1/users/{id}/ldfs 48. ldf 등록
  *
  * @apiDescription 강사 계정 로그인 : 회원목록 > ldf탭 > 등록<br/>
  * test: reservationId : 2431378

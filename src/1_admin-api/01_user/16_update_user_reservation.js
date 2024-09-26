@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/users/{id}/reservations/{reservationId} 15. 회원 예약 수정(학사보고서)
+ * @api {put} /admin/v1/users/{id}/reservations/{reservationId} 16. 회원 예약 수정(학사보고서)
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 학습 탭 > 학사보고서 등록/수정
  *

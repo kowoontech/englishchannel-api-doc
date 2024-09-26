@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/users/{id} 20. 회원 수정
+ * @api {put} /admin/v1/users/{id} 21. 회원 수정
  *
  * @apiDescription 회원관리 > 기본 탭
  *

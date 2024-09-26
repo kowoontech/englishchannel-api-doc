@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/ldfs/{ldfId} 24. 회원 LDF 상세 조회
+ * @api {get} /admin/v1/users/{id}/ldfs/{ldfId} 25. 회원 LDF 상세 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > LDF 탭
  *

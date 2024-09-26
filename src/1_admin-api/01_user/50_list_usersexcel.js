@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/templates/excel/users 49. 회원 목록 엑셀
+ * @api {get} /admin/v1/templates/excel/users 50. 회원 목록 엑셀
  *
  * @apiDescription 회원관리 > 회원 목록 엑셀다운로드<br/>
  *                  존재하지 않는 데이터들이 있어 기존 프로그램의 모든 필드 출력이 불가합니다.

@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/consultations 16. 회원 상담 목록 조회
+ * @api {get} /admin/v1/users/{id}/consultations 17. 회원 상담 목록 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 상담 탭
  * 

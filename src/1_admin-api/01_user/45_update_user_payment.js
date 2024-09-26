@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/users/{id}/orders/{orderId}/payments/{paymentId} 44. 회원 주문 결제 수정
+ * @api {put} /admin/v1/users/{id}/orders/{orderId}/payments/{paymentId} 45. 회원 주문 결제 수정
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 주문 탭
  *

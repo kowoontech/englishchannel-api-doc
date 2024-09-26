@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/levelTests 29. 레벨 테스트 목록
+ * @api {get} /admin/v1/users/{id}/levelTests 30. 레벨 테스트 목록
  *
  * @apiDescription 회원관리 > 회원 목록 조회 >  회원 상세 조회> 테스트탭
  * 
