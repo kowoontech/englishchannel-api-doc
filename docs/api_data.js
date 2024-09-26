@@ -1834,7 +1834,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/admin/v1/users/{id}/reservations",
-    "title": "09. 예약 등록",
+    "title": "10. 예약 등록",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 일정 체크 후 저장 id: M1699689011700418 사용해주세요 스케줄 출력이 된다면 courseId : 75127 로 하고 scheduleIds를 넘겨주세요.<br/> 스케줄 출력이 안된다면 REQUEST 참고해서 넣어주세요</p>",
     "version": "1.0.0",
     "name": "admin_createUserReservations",
@@ -5293,7 +5293,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/users/{id}/schedules/by-date",
-    "title": "08. 회원 날짜별 스케줄 조회",
+    "title": "09. 회원 날짜별 스케줄 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 주별<br/> 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
     "version": "1.0.0",
     "name": "admin_listUserSchedulesByDate",

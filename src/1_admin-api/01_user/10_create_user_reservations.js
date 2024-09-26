@@ -1,5 +1,5 @@
 /**
- * @api {post} /admin/v1/users/{id}/reservations 09. 예약 등록
+ * @api {post} /admin/v1/users/{id}/reservations 10. 예약 등록
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭 > 예약 등록 > 일정 체크 후 저장
  * id: M1699689011700418 사용해주세요
