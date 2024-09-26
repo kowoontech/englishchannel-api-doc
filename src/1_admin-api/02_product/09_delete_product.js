@@ -5,7 +5,7 @@
  *
  * @apiVersion 1.0.0
  * @apiName admin_deleteProduct
- * @apiGroup 1. Admin API > 01. 회원
+ * @apiGroup 1. Admin API > 02. 상품
  *
  * @apiExample {curl} REQUEST
  * curl -i -X DELETE 'http://localhost:8080/admin/v1/users/M1701411293447353'
