@@ -5292,11 +5292,112 @@
   },
   {
     "type": "get",
+    "url": "/admin/v1/users/{id}/schedules/by-time",
+    "title": "07. 회원 시간별 스케줄 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 일별<br/> 조회할 날짜의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
+    "version": "1.0.0",
+    "name": "admin_listUserSchedulesByTime",
+    "group": "1._Admin_API_>_01._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1699689011700418/schedules/by-time?date=2024-01-31'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "date",
+            "description": "<p>조회할 날짜 (yyyy-MM-dd)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>스케줄</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.time",
+            "description": "<p>시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules.reservations",
+            "description": "<p>예약 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "schedules.reservations.scheduleId",
+            "description": "<p>스케줄 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.teacherId",
+            "description": "<p>강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.teacherName",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.status",
+            "description": "<p>예약 상태 (NONE:스케줄 없음, USERS:조회 대상 회원의 예약, AVAILABLE:예약 가능, FULL:예약 매진)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"schedules\": [\n        {\n            \"time\": \"06:00\",\n            \"reservations\": [\n                {\n                    \"scheduleId\": null,\n                    \"teacherId\": \"M1400118325784523\",\n                    \"teacherName\": \"한가영\",\n                    \"status\": \"NONE\"\n                },\n                {\n                    \"scheduleId\": null,\n                    \"teacherId\": \"M1695013438115743\",\n                    \"teacherName\": \"서안나\",\n                    \"status\": \"NONE\"\n                }\n            ]\n        },\n        {\n            \"time\": \"06:30\",\n            \"reservations\": [\n                {\n                    \"scheduleId\": null,\n                    \"teacherId\": \"M1400118325784523\",\n                    \"teacherName\": \"한가영\",\n                    \"status\": \"NONE\"\n                },\n                {\n                    \"scheduleId\": null,\n                    \"teacherId\": \"M1695013438115743\",\n                    \"teacherName\": \"서안나\",\n                    \"status\": \"NONE\"\n                }\n            ]\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/07_list_user_schedules_by_time.js",
+    "groupTitle": "1._Admin_API_>_01._회원"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/users/{id}/schedules/by-week",
     "title": "09. 회원 날짜에 주별 스케줄 조회",
     "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 주별<br/> 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
     "version": "1.0.0",
-    "name": "admin_listUserSchedulesByDate",
+    "name": "admin_listUserSchedulesByWeek",
     "group": "1._Admin_API_>_01._회원",
     "examples": [
       {
@@ -5435,107 +5536,6 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/09_list_user_schedules_by_week.js",
-    "groupTitle": "1._Admin_API_>_01._회원"
-  },
-  {
-    "type": "get",
-    "url": "/admin/v1/users/{id}/schedules/by-time",
-    "title": "07. 회원 시간별 스케줄 조회",
-    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 일별<br/> 조회할 날짜의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
-    "version": "1.0.0",
-    "name": "admin_listUserSchedulesByTime",
-    "group": "1._Admin_API_>_01._회원",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1699689011700418/schedules/by-time?date=2024-01-31'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Path": [
-          {
-            "group": "Path",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>회원 식별키</p>"
-          }
-        ],
-        "Query": [
-          {
-            "group": "Query",
-            "optional": false,
-            "field": "date",
-            "description": "<p>조회할 날짜 (yyyy-MM-dd)</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "schedules",
-            "description": "<p>스케줄</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "schedules.time",
-            "description": "<p>시간 (HH:mm)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "schedules.reservations",
-            "description": "<p>예약 목록</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": true,
-            "field": "schedules.reservations.scheduleId",
-            "description": "<p>스케줄 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "schedules.reservations.teacherId",
-            "description": "<p>강사 식별키</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "schedules.reservations.teacherName",
-            "description": "<p>강사명</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "schedules.reservations.status",
-            "description": "<p>예약 상태 (NONE:스케줄 없음, USERS:조회 대상 회원의 예약, AVAILABLE:예약 가능, FULL:예약 매진)</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"schedules\": [\n        {\n            \"time\": \"06:00\",\n            \"reservations\": [\n                {\n                    \"scheduleId\": null,\n                    \"teacherId\": \"M1400118325784523\",\n                    \"teacherName\": \"한가영\",\n                    \"status\": \"NONE\"\n                },\n                {\n                    \"scheduleId\": null,\n                    \"teacherId\": \"M1695013438115743\",\n                    \"teacherName\": \"서안나\",\n                    \"status\": \"NONE\"\n                }\n            ]\n        },\n        {\n            \"time\": \"06:30\",\n            \"reservations\": [\n                {\n                    \"scheduleId\": null,\n                    \"teacherId\": \"M1400118325784523\",\n                    \"teacherName\": \"한가영\",\n                    \"status\": \"NONE\"\n                },\n                {\n                    \"scheduleId\": null,\n                    \"teacherId\": \"M1695013438115743\",\n                    \"teacherName\": \"서안나\",\n                    \"status\": \"NONE\"\n                }\n            ]\n        }\n    ]\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/01_user/07_list_user_schedules_by_time.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {

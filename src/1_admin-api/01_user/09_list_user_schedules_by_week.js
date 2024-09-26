@@ -5,7 +5,7 @@
  * 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.
  *
  * @apiVersion 1.0.0
- * @apiName admin_listUserSchedulesByDate
+ * @apiName admin_listUserSchedulesByWeek
  * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
