@@ -1875,7 +1875,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/09_create_user_reservations.js",
+    "filename": "src/1_admin-api/01_user/10_create_user_reservations.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
