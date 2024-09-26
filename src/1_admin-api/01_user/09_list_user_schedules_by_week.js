@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/users/{id}/schedules/by-date 09. 회원 날짜별 스케줄 조회
+ * @api {get} /admin/v1/users/{id}/schedules/by-week 09. 회원 날짜에 주별 스케줄 조회
  *
  * @apiDescription 회원관리 > 회원 목록 조회 > 예약 탭 > 예약 등록 > 주별<br/>
  * 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.
