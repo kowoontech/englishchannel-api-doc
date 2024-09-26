@@ -9,7 +9,7 @@
  * @apiGroup 1. Admin API > 01. 회원
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1699689011700418/schedules/by-date?dateFrom=2024-01-24&dateTo=2024-01-31&teacherId=M1661138591404520&assistantTeacherId=M1657064932771055'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/users/M1699689011700418/schedules/by-week?dateMonth=2024-01&week=4&teacherId=M1661138591404520&assistantTeacherId=M1657064932771055'
  * 
  * @apiParam (Path) {String} id 회원 식별키
  *
