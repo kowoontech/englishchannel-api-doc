@@ -603,7 +603,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/33_delete_user_levelTest.js",
+    "filename": "src/1_admin-api/01_user/34_delete_user_levelTest.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -643,7 +643,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/28_delete_user_notes.js",
+    "filename": "src/1_admin-api/01_user/29_delete_user_notes.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -923,7 +923,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/31_create_user_levelTest.js",
+    "filename": "src/1_admin-api/01_user/32_create_user_levelTest.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -1278,7 +1278,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/17_create_user_consultation.js",
+    "filename": "src/1_admin-api/01_user/18_create_user_consultation.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -1362,7 +1362,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/47_create_user_ldf.js",
+    "filename": "src/1_admin-api/01_user/48_create_user_ldf.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -1418,7 +1418,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/25_create_user_notes.js",
+    "filename": "src/1_admin-api/01_user/26_create_user_notes.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -1586,7 +1586,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/39_create_user_payment.js",
+    "filename": "src/1_admin-api/01_user/40_create_user_payment.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -1723,7 +1723,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/22_create_user_order_product.js",
+    "filename": "src/1_admin-api/01_user/23_create_user_order_product.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -1828,7 +1828,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/41_create_user_refund.js",
+    "filename": "src/1_admin-api/01_user/42_create_user_refund.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -1875,7 +1875,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/09_create_user_reservations.js",
+    "filename": "src/1_admin-api/01_user/10_create_user_reservations.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -1915,7 +1915,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/21_delete_user.js",
+    "filename": "src/1_admin-api/01_user/22_delete_user.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -1962,7 +1962,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/36_delete_user_consultation.js",
+    "filename": "src/1_admin-api/01_user/37_delete_user_consultation.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -2009,7 +2009,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/43_delete_user_order.js",
+    "filename": "src/1_admin-api/01_user/44_delete_user_order.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -2063,7 +2063,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/40_delete_user_payment.js",
+    "filename": "src/1_admin-api/01_user/41_delete_user_payment.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -2117,7 +2117,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/42_delete_user_orderProduct.js",
+    "filename": "src/1_admin-api/01_user/43_delete_user_orderProduct.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -2469,7 +2469,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/30_get_user_levelTest.js",
+    "filename": "src/1_admin-api/01_user/31_get_user_levelTest.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -2535,7 +2535,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/38_get_template_registerMemberNote.js",
+    "filename": "src/1_admin-api/01_user/39_get_template_registerMemberNote.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -2944,7 +2944,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/34_get_user_consultation.js",
+    "filename": "src/1_admin-api/01_user/35_get_user_consultation.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -3093,7 +3093,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/11_get_user_course.js",
+    "filename": "src/1_admin-api/01_user/12_get_user_course.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -3207,7 +3207,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/24_get_user_ldf.js",
+    "filename": "src/1_admin-api/01_user/25_get_user_ldf.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -3265,7 +3265,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/26_get_user_notes.js",
+    "filename": "src/1_admin-api/01_user/27_get_user_notes.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -3477,7 +3477,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/19_get_user_order.js",
+    "filename": "src/1_admin-api/01_user/20_get_user_order.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -3575,7 +3575,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/50_get_user_payment.js",
+    "filename": "src/1_admin-api/01_user/51_get_user_payment.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -3675,7 +3675,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/14_get_user_reservation.js",
+    "filename": "src/1_admin-api/01_user/15_get_user_reservation.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -3761,7 +3761,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/16_list_user_consultations.js",
+    "filename": "src/1_admin-api/01_user/17_list_user_consultations.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -3938,7 +3938,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/13_list_user_course_histories.js",
+    "filename": "src/1_admin-api/01_user/14_list_user_course_histories.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -4367,7 +4367,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/23_list_user_ldf.js",
+    "filename": "src/1_admin-api/01_user/24_list_user_ldf.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -4469,7 +4469,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/10_list_user_notes.js",
+    "filename": "src/1_admin-api/01_user/11_list_user_notes.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -4751,7 +4751,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/37_list_user_payments.js",
+    "filename": "src/1_admin-api/01_user/38_list_user_payments.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -4865,7 +4865,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/18_list_user_orders.js",
+    "filename": "src/1_admin-api/01_user/19_list_user_orders.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -5288,6 +5288,153 @@
       ]
     },
     "filename": "src/1_admin-api/01_user/08_list_user_schedules_by_date.js",
+    "groupTitle": "1._Admin_API_>_01._회원"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/users/{id}/schedules/by-date",
+    "title": "08. 회원 날짜별 스케줄 조회",
+    "description": "<p>회원관리 &gt; 회원 목록 조회 &gt; 예약 탭 &gt; 예약 등록 &gt; 주별<br/> 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
+    "version": "1.0.0",
+    "name": "admin_listUserSchedulesByDate",
+    "group": "1._Admin_API_>_01._회원",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/users/M1699689011700418/schedules/by-date?dateFrom=2024-01-24&dateTo=2024-01-31&teacherId=M1661138591404520&assistantTeacherId=M1657064932771055'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>회원 식별키</p>"
+          }
+        ],
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "dateMonth",
+            "description": "<p>조회할 날짜 (yyyy-MM)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "week",
+            "description": "<p>조회할 주차</p>"
+          },
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "teacherId",
+            "description": "<p>조회할 담임강사 식별키</p>"
+          },
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "assistantTeacherId",
+            "description": "<p>조회할 부담임 강사 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>스케줄</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.time",
+            "description": "<p>시간 (HH:mm)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules.reservations",
+            "description": "<p>예약 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.date",
+            "description": "<p>날짜 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "schedules.reservations.teacherScheduleId",
+            "description": "<p>담임강사 스케줄 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.teacherStatus",
+            "description": "<p>담임강사 예약 상태 (NONE:스케줄 없음, USERS:조회 대상 회원의 예약, AVAILABLE:예약 가능, FULL:예약 매진)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "schedules.reservations.assistantTeacherScheduleId",
+            "description": "<p>부담임강사 스케줄 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.assistantTeacherStatus",
+            "description": "<p>부담임강사 예약 상태 (NONE:스케줄 없음, USERS:조회 대상 회원의 예약, AVAILABLE:예약 가능, FULL:예약 매진)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules.reservations.teachers",
+            "description": "<p>강사 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "schedules.reservations.teachers.id",
+            "description": "<p>강사 식별키</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.reservations.teachers.name",
+            "description": "<p>강사명</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"schedules\": [\n        {\n            \"time\": \"06:00\",\n            \"reservations\": [\n                {\n                    \"date\": \"2024-01-24\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                },\n                {\n                    \"date\": \"2024-01-25\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                }\n            ]\n        },\n        {\n            \"time\": \"06:30\",\n            \"reservations\": [\n                {\n                    \"date\": \"2024-01-24\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                },\n                {\n                    \"date\": \"2024-01-25\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                }\n            ]\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/01_user/09_list_user_schedules_by_week.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -5849,7 +5996,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/46_list_users_teacherPage.js",
+    "filename": "src/1_admin-api/01_user/47_list_users_teacherPage.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -6107,7 +6254,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/49_list_usersexcel.js",
+    "filename": "src/1_admin-api/01_user/50_list_usersexcel.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -6172,7 +6319,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/29_list_user_levelTest.js",
+    "filename": "src/1_admin-api/01_user/30_list_user_levelTest.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -6466,7 +6613,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/32_update_user_levelTest.js",
+    "filename": "src/1_admin-api/01_user/33_update_user_levelTest.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -6513,7 +6660,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/45_update_template.js",
+    "filename": "src/1_admin-api/01_user/46_update_template.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -6786,7 +6933,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/20_update_user.js",
+    "filename": "src/1_admin-api/01_user/21_update_user.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -6877,7 +7024,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/35_update_user_consultation.js",
+    "filename": "src/1_admin-api/01_user/36_update_user_consultation.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -6989,7 +7136,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/12_update_user_course.js",
+    "filename": "src/1_admin-api/01_user/13_update_user_course.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -7066,7 +7213,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/48_update_user_ldf.js",
+    "filename": "src/1_admin-api/01_user/49_update_user_ldf.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -7115,7 +7262,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/27_update_user_notes.js",
+    "filename": "src/1_admin-api/01_user/28_update_user_notes.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -7206,7 +7353,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/44_update_user_payment.js",
+    "filename": "src/1_admin-api/01_user/45_update_user_payment.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
@@ -7269,7 +7416,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/01_user/15_update_user_reservation.js",
+    "filename": "src/1_admin-api/01_user/16_update_user_reservation.js",
     "groupTitle": "1._Admin_API_>_01._회원"
   },
   {
