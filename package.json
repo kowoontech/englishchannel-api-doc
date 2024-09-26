@@ -2,5 +2,6 @@
   "name": "lms-api-doc",
   "version": "1.0.0",
   "dependencies": {
+    "apidoc": "^1.2.0"
   }
 }

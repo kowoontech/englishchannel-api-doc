@@ -1880,46 +1880,6 @@
   },
   {
     "type": "delete",
-    "url": "/admin/v1/products/{id}",
-    "title": "09. 상품 삭제",
-    "description": "<p>상품관리 &gt; 삭제</p>",
-    "version": "1.0.0",
-    "name": "admin_deleteProduct",
-    "group": "1._Admin_API_>_01._회원",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/users/M1701411293447353'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Path": [
-          {
-            "group": "Path",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>상품 식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/02_product/09_delete_product.js",
-    "groupTitle": "1._Admin_API_>_01._회원"
-  },
-  {
-    "type": "delete",
     "url": "/admin/v1/users/{id}",
     "title": "21. 회원 삭제",
     "description": "<p>회원관리 &gt; 기본 탭</p>",
@@ -7434,6 +7394,46 @@
       ]
     },
     "filename": "src/1_admin-api/02_product/05_create_products.js",
+    "groupTitle": "1._Admin_API_>_02._상품"
+  },
+  {
+    "type": "delete",
+    "url": "/admin/v1/products/{id}",
+    "title": "09. 상품 삭제",
+    "description": "<p>상품관리 &gt; 삭제</p>",
+    "version": "1.0.0",
+    "name": "admin_deleteProduct",
+    "group": "1._Admin_API_>_02._상품",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/admin/v1/users/M1701411293447353'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>상품 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/02_product/09_delete_product.js",
     "groupTitle": "1._Admin_API_>_02._상품"
   },
   {
