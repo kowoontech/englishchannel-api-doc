@@ -13728,7 +13728,7 @@
     "title": "03. LDF Email 발송",
     "description": "<p>공통 &gt; Email 발송</p>",
     "version": "1.0.0",
-    "name": "admin_createSendEmail",
+    "name": "admin_createSendLDFEmail",
     "group": "1._Admin_API_>_09._Email",
     "examples": [
       {

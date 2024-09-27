@@ -4,7 +4,7 @@
  * @apiDescription 공통 > Email 발송
  *
  * @apiVersion 1.0.0
- * @apiName admin_createSendEmail
+ * @apiName admin_createSendLDFEmail
  * @apiGroup 1. Admin API > 09. Email
  *
  * @apiExample {curl} REQUEST
@@ -36,4 +36,3 @@
  */
 
 
- 
