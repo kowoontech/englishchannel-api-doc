@@ -1,5 +1,5 @@
 /**
- * @api {post} /admin/v1/email/send 03. LDF Email 발송
+ * @api {post} /admin/v1/email/ldf/send 03. LDF Email 발송
  *
  * @apiDescription 공통 > Email 발송
  *

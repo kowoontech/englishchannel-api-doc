@@ -13724,7 +13724,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/admin/v1/email/send",
+    "url": "/admin/v1/email/ldf/send",
     "title": "03. LDF Email 발송",
     "description": "<p>공통 &gt; Email 발송</p>",
     "version": "1.0.0",
