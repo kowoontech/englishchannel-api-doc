@@ -11,7 +11,8 @@
  * curl -i -X POST 'http://localhost:8080/admin/v1/email/ldf/send' \
  * -H "Content-Type: application/json" \
  * -d "{
-     "receiverEmail": "zombi@languagecube.kr",
+     "email": "zombi@languagecube.kr",
+     "name": "조원빈",
      "title": "이메일 테스트!",
      "lesson": "이메일 테스트입니다.",
      "lessonDate": "이메일 테스트입니다.",
@@ -21,7 +22,8 @@
      "contentSg": "테스트",
      "contentC": "테스트"
  }"
- * @apiParam (Body) {String} receiverEmail 수신이메일 
+ * @apiParam (Body) {String} email 수신자 이메일 
+ * @apiParam (Body) {String} name 수신자 이름
  * @apiParam (Body) {String} title 제목
  * @apiParam (Body) {String} lesson 강의 이름
  * @apiParam (Body) {String} lessonDate 강의 시간

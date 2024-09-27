@@ -13733,7 +13733,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/email/ldf/send' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"receiverEmail\": \"zombi@languagecube.kr\",\n     \"title\": \"이메일 테스트!\",\n     \"lesson\": \"이메일 테스트입니다.\",\n     \"lessonDate\": \"이메일 테스트입니다.\",\n     \"teacher\": \"teacher@languagecube.kr\",\n     \"contentSp\": \"테스트\",\n     \"contentV\": \"테스트\",\n     \"contentSg\": \"테스트\",\n     \"contentC\": \"테스트\"\n }\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/email/ldf/send' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"email\": \"zombi@languagecube.kr\",\n     \"name\": \"조원빈\",\n     \"title\": \"이메일 테스트!\",\n     \"lesson\": \"이메일 테스트입니다.\",\n     \"lessonDate\": \"이메일 테스트입니다.\",\n     \"teacher\": \"teacher@languagecube.kr\",\n     \"contentSp\": \"테스트\",\n     \"contentV\": \"테스트\",\n     \"contentSg\": \"테스트\",\n     \"contentC\": \"테스트\"\n }\"",
         "type": "curl"
       }
     ],
@@ -13744,8 +13744,15 @@
             "group": "Body",
             "type": "String",
             "optional": false,
-            "field": "receiverEmail",
-            "description": "<p>수신이메일</p>"
+            "field": "email",
+            "description": "<p>수신자 이메일</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>수신자 이름</p>"
           },
           {
             "group": "Body",
