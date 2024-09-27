@@ -18,6 +18,7 @@
  * @apiParam (Query) teacherId 조회할 담임강사 식별키
  * @apiParam (Query) assistantTeacherId 조회할 부담임 강사 식별키
  *
+ * @apiSuccess {Number} week 달의 주차
  * @apiSuccess {Object[]} schedules 스케줄
  * @apiSuccess {String} schedules.time 시간 (HH:mm)
  * @apiSuccess {Object[]} schedules.reservations 예약 목록
@@ -33,6 +34,7 @@
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
 {
+    "week": 5,
     "schedules": [
         {
             "time": "06:00",

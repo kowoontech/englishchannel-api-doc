@@ -5450,6 +5450,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "week",
+            "description": "<p>달의 주차</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Object[]",
             "optional": false,
             "field": "schedules",
@@ -5530,7 +5537,7 @@
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n{\n    \"schedules\": [\n        {\n            \"time\": \"06:00\",\n            \"reservations\": [\n                {\n                    \"date\": \"2024-01-24\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                },\n                {\n                    \"date\": \"2024-01-25\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                }\n            ]\n        },\n        {\n            \"time\": \"06:30\",\n            \"reservations\": [\n                {\n                    \"date\": \"2024-01-24\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                },\n                {\n                    \"date\": \"2024-01-25\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                }\n            ]\n        }\n    ]\n}",
+          "content": "HTTP/1.1 200\n{\n    \"week\": 5,\n    \"schedules\": [\n        {\n            \"time\": \"06:00\",\n            \"reservations\": [\n                {\n                    \"date\": \"2024-01-24\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                },\n                {\n                    \"date\": \"2024-01-25\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                }\n            ]\n        },\n        {\n            \"time\": \"06:30\",\n            \"reservations\": [\n                {\n                    \"date\": \"2024-01-24\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                },\n                {\n                    \"date\": \"2024-01-25\",\n                    \"teacherScheduleId\": null,\n                    \"teacherStatus\": \"NONE\",\n                    \"assistantTeacherScheduleId\": null,\n                    \"assistantTeacherStatus\": \"NONE\",\n                    \"teachers\": []\n                }\n            ]\n        }\n    ]\n}",
           "type": "json"
         }
       ]
