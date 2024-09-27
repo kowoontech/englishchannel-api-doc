@@ -13723,6 +13723,102 @@
     "groupTitle": "1._Admin_API_>_09._Email"
   },
   {
+    "type": "post",
+    "url": "/admin/v1/email/send",
+    "title": "03. LDF Email 발송",
+    "description": "<p>공통 &gt; Email 발송</p>",
+    "version": "1.0.0",
+    "name": "admin_createSendEmail",
+    "group": "1._Admin_API_>_09._Email",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/email/ldf/send' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"receiverEmail\": \"zombi@languagecube.kr\",\n     \"title\": \"이메일 테스트!\",\n     \"lesson\": \"이메일 테스트입니다.\",\n     \"lessonDate\": \"이메일 테스트입니다.\",\n     \"teacher\": \"teacher@languagecube.kr\",\n     \"contentSp\": \"테스트\",\n     \"contentV\": \"테스트\",\n     \"contentSg\": \"테스트\",\n     \"contentC\": \"테스트\"\n }\"",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "receiverEmail",
+            "description": "<p>수신이메일</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>제목</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "lesson",
+            "description": "<p>강의 이름</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "lessonDate",
+            "description": "<p>강의 시간</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "teacher",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "contentSp",
+            "description": "<p>Stress and Pronunciation에 들어갈 내용</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "contentV",
+            "description": "<p>Vocabulary에 들어갈 내용</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "contentSg",
+            "description": "<p>Sentence Structure &amp; Grammar 에 들어갈 내용</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "contentC",
+            "description": "<p>Comment 에 들어갈 내용</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/09_email/03_create_send_ldf_email.js",
+    "groupTitle": "1._Admin_API_>_09._Email"
+  },
+  {
     "type": "get",
     "url": "/admin/v1/email/users",
     "title": "01. 발송 대상 목록 조회",
