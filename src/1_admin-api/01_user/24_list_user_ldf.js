@@ -25,7 +25,7 @@
  * @apiSuccess {String} list.teacherName 강사명
  * @apiSuccess {Number} list.attendanceStatus 출석여부(출석/ 결석/ 예약) 출석 시 등록 버튼 출력.
  * @apiSuccess {Number} list.ldfId  LDF 파일 유무 (파일이 있을 시 LDF 식별키/없을 시 NULL)
- * @apiSuccess {Number} list.email 이메일 발송 여부 (send: 발송됨, null: 발송안됨)
+ * @apiSuccess {Number} list.email 이메일 발송 여부 (SENT: 발송됨, null: 발송안됨)
  * @apiSuccess {Number} page 현재 페이지
  * @apiSuccess {Number} limit 한페이지에 보여줄 회원 수
  * @apiSuccess {Number} totalPage 전체 페이지 수

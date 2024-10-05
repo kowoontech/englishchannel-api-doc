@@ -4299,7 +4299,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "list.email",
-            "description": "<p>이메일 발송 여부 (send: 발송됨, null: 발송안됨)</p>"
+            "description": "<p>이메일 발송 여부 (SENT: 발송됨, null: 발송안됨)</p>"
           },
           {
             "group": "Success 200",
