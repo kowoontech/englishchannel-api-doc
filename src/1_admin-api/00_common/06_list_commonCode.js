@@ -10,8 +10,9 @@
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/localhost:8080/admin/v1/commonCode'
- *
- *
+ * 
+ * @apiParam (Query) [codeGroup] 그룹코드 식별키
+ * 
  * @apiSuccess {Object[]} commonCode 공통코드목록
  * @apiSuccess {String} commonCode.codeGroup 그룹코드 식별키
  * @apiSuccess {String} commonCode.codeGroupName 그룹코드명

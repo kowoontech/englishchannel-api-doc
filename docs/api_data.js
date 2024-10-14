@@ -274,6 +274,18 @@ define({ "api": [
         "type": "curl"
       }
     ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "codeGroup",
+            "description": "<p>그룹코드 식별키</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
