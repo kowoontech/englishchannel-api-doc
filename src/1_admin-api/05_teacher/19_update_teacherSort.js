@@ -1,5 +1,5 @@
 /**
- * @api {put} /admin/v1/teachers/sort 18. 강사 순서 변경
+ * @api {put} /admin/v1/teachers/sort 19. 강사 순서 변경
  *
  * @apiDescription 강사관리 > 목록 조회 > 순서변경 <br/>
  *

@@ -10290,7 +10290,7 @@
   {
     "type": "post",
     "url": "/admin/v1/teachers",
-    "title": "08. 강사 등록",
+    "title": "09. 강사 등록",
     "description": "<p>강사관리 &gt; 강사등록 <br/> 동일 loginID가 존재로 에러 발생 시 알려주세요. <br/> &quot;Content-Type&quot;은 파일이 있어서 &quot;multipart/form-data&quot;로 해주세요</p>",
     "version": "1.0.0",
     "name": "admin_createTeacher",
@@ -10422,7 +10422,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/05_teacher/08_create_teachers.js",
+    "filename": "src/1_admin-api/05_teacher/09_create_teachers.js",
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
@@ -10742,7 +10742,7 @@
   {
     "type": "get",
     "url": "/admin/v1/teachers/attendances",
-    "title": "07. 출석/결석률 조회",
+    "title": "07. 출석/결석률 조회(월)",
     "description": "<p>강사관리 &gt; 출석률/결석률</p>",
     "version": "1.0.0",
     "name": "admin_listTeacherAttendances",
@@ -10874,6 +10874,139 @@
   },
   {
     "type": "get",
+    "url": "/admin/v1/teachers/attendances",
+    "title": "08. 출석/결석률 조회(일)",
+    "description": "<p>강사관리 &gt; 출석률/결석률</p>",
+    "version": "1.0.0",
+    "name": "admin_listTeacherAttendances",
+    "group": "1._Admin_API_>_05._강사",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/teachers/attendances?status=Y&yearMonth=2024-01'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "status",
+            "description": "<p>조회할 출결상태 (Y:출석, N:결석)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "yearMonthDay",
+            "description": "<p>조회할 년월 (yyyy-MM-dd)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules",
+            "description": "<p>출결 스케줄</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.date",
+            "description": "<p>날짜 (yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schedules.attendances",
+            "description": "<p>날짜별 강사 출석/결석 목록 (HT-&gt;LT 순서, AVG 포함)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "schedules.attendances.name",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "schedules.attendances.reservationCount",
+            "description": "<p>전체 예약 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "schedules.attendances.attendanceCount",
+            "description": "<p>출석/결석 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "schedules.attendances.attendanceRate",
+            "description": "<p>출석/결석률</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "totalAttendances",
+            "description": "<p>출석/결석률 합계</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "totalAttendances.name",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalAttendances.reservationCount",
+            "description": "<p>전체 예약 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalAttendances.attendanceCount",
+            "description": "<p>출석/결석 수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "totalAttendances.attendanceRate",
+            "description": "<p>출석/결석률</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n{\n    \"schedules\": [\n        {\n            \"date\": \"2024-01-01\",\n            \"attendances\": [\n                {\n                    \"name\": \"한가영\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"서안나\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"김나래\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"최태연\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"정지은\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"HT Avg.\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"Steven\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"Alex\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"Olivia\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"Sadie\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"Tyler\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"LT Avg.\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                }\n            ]\n        },\n        {\n            \"date\": \"2024-01-02\",\n            \"attendances\": [\n                {\n                    \"name\": \"한가영\",\n                    \"reservationCount\": 0,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"서안나\",\n                    \"reservationCount\": 2,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"김나래\",\n                    \"reservationCount\": 14,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"최태연\",\n                    \"reservationCount\": 10,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"정지은\",\n                    \"reservationCount\": 6,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"HT Avg.\",\n                    \"reservationCount\": 32,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"Steven\",\n                    \"reservationCount\": 4,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"Alex\",\n                    \"reservationCount\": 13,\n                    \"attendanceCount\": 2,\n                    \"attendanceRate\": \"15.38\"\n                },\n                {\n                    \"name\": \"Olivia\",\n                    \"reservationCount\": 8,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"Sadie\",\n                    \"reservationCount\": 11,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"Tyler\",\n                    \"reservationCount\": 6,\n                    \"attendanceCount\": 0,\n                    \"attendanceRate\": \"0.00\"\n                },\n                {\n                    \"name\": \"LT Avg.\",\n                    \"reservationCount\": 42,\n                    \"attendanceCount\": 2,\n                    \"attendanceRate\": \"4.76\"\n                }\n            ]\n        }\n    ],\n    \"totalAttendances\": [\n        {\n            \"name\": \"한가영\",\n            \"reservationCount\": 218,\n            \"attendanceCount\": 2,\n            \"attendanceRate\": \"0.92\"\n        },\n        {\n            \"name\": \"서안나\",\n            \"reservationCount\": 49,\n            \"attendanceCount\": 0,\n            \"attendanceRate\": \"0.00\"\n        },\n        {\n            \"name\": \"김나래\",\n            \"reservationCount\": 148,\n            \"attendanceCount\": 2,\n            \"attendanceRate\": \"1.35\"\n        },\n        {\n            \"name\": \"최태연\",\n            \"reservationCount\": 70,\n            \"attendanceCount\": 6,\n            \"attendanceRate\": \"8.57\"\n        },\n        {\n            \"name\": \"정지은\",\n            \"reservationCount\": 60,\n            \"attendanceCount\": 4,\n            \"attendanceRate\": \"6.67\"\n        },\n        {\n            \"name\": \"HT Avg.\",\n            \"reservationCount\": 545,\n            \"attendanceCount\": 14,\n            \"attendanceRate\": \"2.57\"\n        },\n        {\n            \"name\": \"Steven\",\n            \"reservationCount\": 48,\n            \"attendanceCount\": 0,\n            \"attendanceRate\": \"0.00\"\n        },\n        {\n            \"name\": \"Alex\",\n            \"reservationCount\": 146,\n            \"attendanceCount\": 2,\n            \"attendanceRate\": \"1.37\"\n        },\n        {\n            \"name\": \"Olivia\",\n            \"reservationCount\": 62,\n            \"attendanceCount\": 0,\n            \"attendanceRate\": \"0.00\"\n        },\n        {\n            \"name\": \"Sadie\",\n            \"reservationCount\": 210,\n            \"attendanceCount\": 5,\n            \"attendanceRate\": \"2.38\"\n        },\n        {\n            \"name\": \"Tyler\",\n            \"reservationCount\": 44,\n            \"attendanceCount\": 1,\n            \"attendanceRate\": \"2.27\"\n        },\n        {\n            \"name\": \"LT Avg.\",\n            \"reservationCount\": 510,\n            \"attendanceCount\": 8,\n            \"attendanceRate\": \"1.57\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/05_teacher/08_list_teacher_attendances_date.js",
+    "groupTitle": "1._Admin_API_>_05._강사"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/teachers/{id}/schedules",
     "title": "05. 강사 스케줄 조회",
     "description": "<p>강사관리 &gt; 강의OPEN(주별)<br/> 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.</p>",
@@ -10961,7 +11094,7 @@
   {
     "type": "post",
     "url": "/admin/v1/teachers/cgttimes",
-    "title": "09. CGT 등록 가능 시간",
+    "title": "16. CGT 등록 가능 시간",
     "description": "<p>강사관리 &gt; CGT스케줄 &gt; 등록 &gt; 예약일시의 시간 <br/></p>",
     "version": "1.0.0",
     "name": "admin_list_cgtTime",
@@ -11012,13 +11145,13 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/05_teacher/09_list_cgtTime.js",
+    "filename": "src/1_admin-api/05_teacher/16_list_cgtTime.js",
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
     "type": "get",
     "url": "/admin/v1/teachers/reservationCgt",
-    "title": "16. CGT 예약자 목록",
+    "title": "17. CGT 예약자 목록",
     "description": "<p>강사관리 &gt; CGT스케줄 &gt; 목록 &gt; 예약자 <br/> 예약자 인원 클릭 시 예약자 명단</p>",
     "version": "1.0.0",
     "name": "admin_listcgtmember",
@@ -11126,13 +11259,13 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/05_teacher/16_list_reservationcgt.js",
+    "filename": "src/1_admin-api/05_teacher/17_list_reservationcgt.js",
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
     "type": "get",
     "url": "/admin/v1/teachers/worked",
-    "title": "17. 기간별 강사 목록",
+    "title": "18. 기간별 강사 목록",
     "description": "<p>강사관리 <br/> 해당 기간에 일한 강사 목록</p>",
     "version": "1.0.0",
     "name": "admin_listworkTeacher",
@@ -11189,7 +11322,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/05_teacher/17_list_workTeacher.js",
+    "filename": "src/1_admin-api/05_teacher/18_list_workTeacher.js",
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {
@@ -11356,7 +11489,7 @@
   {
     "type": "put",
     "url": "/admin/v1/teachers/sort",
-    "title": "18. 강사 순서 변경",
+    "title": "19. 강사 순서 변경",
     "description": "<p>강사관리 &gt; 목록 조회 &gt; 순서변경 <br/></p>",
     "version": "1.0.0",
     "name": "admin_updateTeacherSort",
@@ -11397,7 +11530,7 @@
         }
       ]
     },
-    "filename": "src/1_admin-api/05_teacher/18_update_teacherSort.js",
+    "filename": "src/1_admin-api/05_teacher/19_update_teacherSort.js",
     "groupTitle": "1._Admin_API_>_05._강사"
   },
   {

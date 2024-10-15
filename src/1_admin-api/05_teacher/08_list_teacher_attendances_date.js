@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/teachers/attendances 07. 출석/결석률 조회(월)
+ * @api {get} /admin/v1/teachers/attendances 08. 출석/결석률 조회(일)
  *
  * @apiDescription 강사관리 > 출석률/결석률
  *
@@ -11,7 +11,7 @@
  * curl -i -X GET 'http://localhost:8080/admin/v1/teachers/attendances?status=Y&yearMonth=2024-01'
  *
  * @apiParam (Query) status 조회할 출결상태 (Y:출석, N:결석)
- * @apiParam (Query) yearMonth 조회할 년월 (yyyy-MM)
+ * @apiParam (Query) yearMonthDay 조회할 년월 (yyyy-MM-dd)
  *
  * @apiSuccess {Object[]} schedules 출결 스케줄
  * @apiSuccess {String} schedules.date 날짜 (yyyy-MM-dd)

@@ -1,5 +1,5 @@
 /**
- * @api {post} /admin/v1/teachers/cgttimes 09. CGT 등록 가능 시간
+ * @api {post} /admin/v1/teachers/cgttimes 16. CGT 등록 가능 시간
  *
  * @apiDescription 강사관리 > CGT스케줄 > 등록 > 예약일시의 시간 <br/>
  *

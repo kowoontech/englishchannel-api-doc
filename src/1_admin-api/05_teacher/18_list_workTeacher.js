@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/teachers/worked 17. 기간별 강사 목록
+ * @api {get} /admin/v1/teachers/worked 18. 기간별 강사 목록
  *
  * @apiDescription 강사관리 <br/>
  *  해당 기간에 일한 강사 목록

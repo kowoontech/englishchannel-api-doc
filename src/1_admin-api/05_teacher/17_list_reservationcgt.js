@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/teachers/reservationCgt 16. CGT 예약자 목록
+ * @api {get} /admin/v1/teachers/reservationCgt 17. CGT 예약자 목록
  *
  * @apiDescription 강사관리 > CGT스케줄 > 목록 > 예약자 <br/>
  *  예약자 인원 클릭 시 예약자 명단

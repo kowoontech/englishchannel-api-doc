@@ -1,5 +1,5 @@
 /**
- * @api {post} /admin/v1/teachers 08. 강사 등록
+ * @api {post} /admin/v1/teachers 09. 강사 등록
  *
  * @apiDescription 강사관리 > 강사등록 <br/>
  * 동일 loginID가 존재로 에러 발생 시 알려주세요. <br/>
