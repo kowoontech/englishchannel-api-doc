@@ -10878,12 +10878,12 @@ define({ "api": [
     "title": "08. 출석/결석률 조회(일)",
     "description": "<p>강사관리 &gt; 출석률/결석률</p>",
     "version": "1.0.0",
-    "name": "admin_listTeacherAttendances",
+    "name": "admin_listTeacherAttendances_date",
     "group": "1._Admin_API_>_05._강사",
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/teachers/attendances?status=Y&yearMonth=2024-01'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/teachers/attendances?status=Y&yearMonthDay=2024-01-01'",
         "type": "curl"
       }
     ],
@@ -10900,7 +10900,7 @@ define({ "api": [
             "group": "Query",
             "optional": false,
             "field": "yearMonthDay",
-            "description": "<p>조회할 년월 (yyyy-MM-dd)</p>"
+            "description": "<p>조회할 년월일 (yyyy-MM-dd)</p>"
           }
         ]
       }
