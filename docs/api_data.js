@@ -10874,7 +10874,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/admin/v1/teachers/attendances",
+    "url": "/admin/v1/teachers/attendances/by-date",
     "title": "08. 출석/결석률 조회(일)",
     "description": "<p>강사관리 &gt; 출석률/결석률</p>",
     "version": "1.0.0",

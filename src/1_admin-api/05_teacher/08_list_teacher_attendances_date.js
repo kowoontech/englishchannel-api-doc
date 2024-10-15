@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/teachers/attendances 08. 출석/결석률 조회(일)
+ * @api {get} /admin/v1/teachers/attendances/by-date 08. 출석/결석률 조회(일)
  *
  * @apiDescription 강사관리 > 출석률/결석률
  *
