@@ -10883,7 +10883,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/teachers/attendances?status=Y&yearMonthDay=2024-01-01'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/teachers/attendances/by-date?status=Y&yearMonthDay=2024-01-01'",
         "type": "curl"
       }
     ],

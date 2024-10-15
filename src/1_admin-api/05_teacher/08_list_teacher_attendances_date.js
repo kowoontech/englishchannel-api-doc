@@ -8,7 +8,7 @@
  * @apiGroup 1. Admin API > 05. 강사
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/teachers/attendances?status=Y&yearMonthDay=2024-01-01'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/teachers/attendances/by-date?status=Y&yearMonthDay=2024-01-01'
  *
  * @apiParam (Query) status 조회할 출결상태 (Y:출석, N:결석)
  * @apiParam (Query) yearMonthDay 조회할 년월일 (yyyy-MM-dd)
