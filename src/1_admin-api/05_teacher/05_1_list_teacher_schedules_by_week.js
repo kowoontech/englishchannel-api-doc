@@ -1,12 +1,12 @@
 /**
- * @api {get} /admin/v1/teachers/{id}/schedules/by-week 05. 강사 스케줄 조회
+ * @api {get} /admin/v1/teachers/{id}/schedules/by-week 05-1. 강사 스케줄 조회
  *
  * @apiDescription 강사관리 > 강의OPEN(주별)<br/>
  * 조회할 기간의 6:00~23:30 까지의 스케줄을 조회한다.
  *
  * @apiVersion 1.0.0
  * @apiName admin_listTeacherSchedulesByWeek
- * @apiGroup 1. Admin API > 05. 강사
+ * @apiGroup 1. Admin API > 05-1. 강사
  *
  * @apiExample {curl} REQUEST
  * curl -i -X GET 'http://localhost:8080/admin/v1/teachers/M1695013438115743/schedules?dateFrom=2023-10-04&dateTo=2023-10-05'
