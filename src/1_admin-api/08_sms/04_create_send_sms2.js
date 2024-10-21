@@ -4,7 +4,7 @@
  * @apiDescription 공통 > SMS 발송
  *
  * @apiVersion 1.0.0
- * @apiName admin_createSendSms
+ * @apiName admin_createSendSms2
  * @apiGroup 1. Admin API > 08. SMS
  *
  * @apiExample {curl} REQUEST

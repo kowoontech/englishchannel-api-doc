@@ -13670,7 +13670,7 @@
     "title": "02. SMS 발송",
     "description": "<p>공통 &gt; SMS 발송</p>",
     "version": "1.0.0",
-    "name": "admin_createSendSms",
+    "name": "admin_createSendSms2",
     "group": "1._Admin_API_>_08._SMS",
     "examples": [
       {
