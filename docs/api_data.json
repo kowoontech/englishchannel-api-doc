@@ -13593,7 +13593,7 @@
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/sms/send' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"senderPhone\": \"02-2082-1105\",\n     \"content\": \"문자 받으시오!\",\n     \"reservationDate\": \"2024-07-01 19:00\",\n     \"recipients\": [\n          {\n              \"name\": \"RE-김동하\",\n              \"phone\": \"010-3333-4444\"\n          },\n          {\n              \"name\": \"RE-김하연\",\n              \"phone\": \"010-5555-6666\"\n          },\n          {\n              \"name\": \"RE-서민하\",\n              \"phone\": \"010-7777-8888\"\n          }\n     ]\n}\"",
+        "content": "curl -i -X POST 'http://localhost:8080/admin/v1/sms/send' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"senderPhone\": \"02-2082-1105\",\n     \"content\": \"문자 받으시오!\",\n     \"reservationDate\": \"2024-07-01 19:00\",\n     \"recipients\": [\n          {\n              \"name\": \"RE-김동하\",\n              \"phone\": \"010-3333-4444\",\n              \"email\": \"kim@naver.com\"\n          },\n          {\n              \"name\": \"RE-김하연\",\n              \"phone\": \"010-5555-6666\",\n              \"email\": \"kim2@naver.com\"\n          },\n          {\n              \"name\": \"RE-서민하\",\n              \"phone\": \"010-7777-8888\",\n              \"email\": \"ha@naver.com\"\n          }\n     ]\n}\"",
         "type": "curl"
       }
     ],
@@ -13646,8 +13646,8 @@
             "group": "Body",
             "type": "String",
             "optional": false,
-            "field": "recipients.phone",
-            "description": "<p>발송대상 휴대폰번호</p>"
+            "field": "recipients.email",
+            "description": "<p>발송대상 이메일주소</p>"
           }
         ]
       }
@@ -13662,81 +13662,6 @@
       ]
     },
     "filename": "src/1_admin-api/08_sms/02_create_send_sms.js",
-    "groupTitle": "1._Admin_API_>_08._SMS"
-  },
-  {
-    "type": "post",
-    "url": "/admin/v2/sms/send",
-    "title": "04. SMS 발송",
-    "description": "<p>공통 &gt; SMS 발송</p>",
-    "version": "1.0.0",
-    "name": "admin_createSendSms2",
-    "group": "1._Admin_API_>_08._SMS",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/admin/v2/sms/send' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n     \"senderPhone\": \"02-2082-1105\",\n     \"content\": \"문자 받으시오!\",\n     \"reservationDate\": \"2024-07-01 19:00\",\n     \"recipients\": [\n          {\n              \"id\": \"M1394086415674055\"\n          },\n          {\n              \"id\": \"M1394086415674056\"\n          }\n     ]\n}\"",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Body": [
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "senderPhone",
-            "description": "<p>발신번호 (필요 없음. 어떤 번호를 입력해도 02-2082-1105로 발송됨)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "content",
-            "description": "<p>내용</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "reservationDate",
-            "description": "<p>예약발송일때, 일시</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "sendType",
-            "description": "<p>문자타입 (S: SMS / L :LMS)</p>"
-          },
-          {
-            "group": "Body",
-            "type": "Object[]",
-            "optional": false,
-            "field": "recipients",
-            "description": "<p>발송대상 목록</p>"
-          },
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": true,
-            "field": "recipients.id",
-            "description": "<p>발송대상 아이디</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/08_sms/04_create_send_sms2.js",
     "groupTitle": "1._Admin_API_>_08._SMS"
   },
   {

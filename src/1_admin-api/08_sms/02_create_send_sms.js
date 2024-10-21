@@ -17,15 +17,18 @@
      "recipients": [
           {
               "name": "RE-김동하",
-              "phone": "010-3333-4444"
+              "phone": "010-3333-4444",
+              "email": "kim@naver.com"
           },
           {
               "name": "RE-김하연",
-              "phone": "010-5555-6666"
+              "phone": "010-5555-6666",
+              "email": "kim2@naver.com"
           },
           {
               "name": "RE-서민하",
-              "phone": "010-7777-8888"
+              "phone": "010-7777-8888",
+              "email": "ha@naver.com"
           }
      ]
 }"
@@ -35,7 +38,7 @@
  * @apiParam (Body) {String} sendType 문자타입 (S: SMS / L :LMS)
  * @apiParam (Body) {Object[]} recipients 발송대상 목록
  * @apiParam (Body) {String} [recipients.name] 발송대상 이름
- * @apiParam (Body) {String} recipients.phone 발송대상 휴대폰번호
+ * @apiParam (Body) {String} recipients.email 발송대상 이메일주소 
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
