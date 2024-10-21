@@ -1,5 +1,5 @@
 /**
- * @api {post} /admin/v2/sms/send 02. SMS 발송
+ * @api {post} /admin/v2/sms/send 04. SMS 발송
  *
  * @apiDescription 공통 > SMS 발송
  *
