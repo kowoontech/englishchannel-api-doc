@@ -39,7 +39,9 @@
  * @apiSuccess {Number} list.assignmentCount 출석회차
  * @apiSuccess {Number} list.assignmentCount 출석회차
  * @apiSuccess {Number} list.attendanceStatus 출석여부(출석, 결석, 예약)
- * @apiSuccess {Number} list.report 학사보고서(null일시 등록버튼 / 예약식별키일시 수정버튼)
+ * @apiSuccess {Number} list.content 학사보고서(null일시 등록버튼 / 예약식별키일시 수정버튼)
+ * @apiSuccess {Number} list.todayLesson today lesson
+ * @apiSuccess {Number} list.nextLesson next lesson
  * @apiSuccess {Number} totalCount 전체 예약 수
  * @apiSuccess {Number} page 현재 페이지
  * @apiSuccess {Number} limit 한페이지에 보여줄 페이지 수
@@ -67,133 +69,9 @@
             "remainCount": 5.0,
             "assignmentCount": 21.0,
             "attendanceStatus": "예약",
-            "report": null
-        },
-        {
-            "id": 2621583,
-            "date": "2024-01-31 (Wed)",
-            "startTime": "21:30",
-            "endTime": "22:00",
-            "teacherName": "김나래",
-            "userName": "RE:김동우",
-            "courseName": "PTM (주2회 3개월)",
-            "lessonCount": 55.0,
-            "remainCount": 43.0,
-            "assignmentCount": 12.0,
-            "attendanceStatus": "예약",
-            "report": null
-        },
-        {
-            "id": 2624691,
-            "date": "2024-01-31 (Wed)",
-            "startTime": "21:00",
-            "endTime": "21:30",
-            "teacherName": "한가영",
-            "userName": "조아라",
-            "courseName": "NEW PT 24회 3개월",
-            "lessonCount": 26.0,
-            "remainCount": 5.0,
-            "assignmentCount": 21.0,
-            "attendanceStatus": "예약",
-            "report": null
-        },
-        {
-            "id": 2621582,
-            "date": "2024-01-31 (Wed)",
-            "startTime": "21:00",
-            "endTime": "21:30",
-            "teacherName": "김나래",
-            "userName": "RE:김동우",
-            "courseName": "PTM (주2회 3개월)",
-            "lessonCount": 55.0,
-            "remainCount": 43.0,
-            "assignmentCount": 12.0,
-            "attendanceStatus": "예약",
-            "report": null
-        },
-        {
-            "id": 2621249,
-            "date": "2024-01-31 (Wed)",
-            "startTime": "20:30",
-            "endTime": "21:00",
-            "teacherName": "김나래",
-            "userName": "RE:김동우",
-            "courseName": "PTM (주2회 3개월)",
-            "lessonCount": 55.0,
-            "remainCount": 43.0,
-            "assignmentCount": 12.0,
-            "attendanceStatus": "예약",
-            "report": null
-        },
-        {
-            "id": 2620327,
-            "date": "2024-01-31 (Wed)",
-            "startTime": "20:30",
-            "endTime": "21:00",
-            "teacherName": "한가영",
-            "userName": "정혜정:홀딩2/16",
-            "courseName": "NEW PT 24회 3개월",
-            "lessonCount": 26.0,
-            "remainCount": 8.0,
-            "assignmentCount": 18.0,
-            "attendanceStatus": "예약",
-            "report": null
-        },
-        {
-            "id": 2621248,
-            "date": "2024-01-31 (Wed)",
-            "startTime": "20:00",
-            "endTime": "20:30",
-            "teacherName": "김나래",
-            "userName": "RE:김동우",
-            "courseName": "PTM (주2회 3개월)",
-            "lessonCount": 55.0,
-            "remainCount": 43.0,
-            "assignmentCount": 12.0,
-            "attendanceStatus": "예약",
-            "report": null
-        },
-        {
-            "id": 2620326,
-            "date": "2024-01-31 (Wed)",
-            "startTime": "20:00",
-            "endTime": "20:30",
-            "teacherName": "한가영",
-            "userName": "정혜정:홀딩2/16",
-            "courseName": "NEW PT 24회 3개월",
-            "lessonCount": 26.0,
-            "remainCount": 8.0,
-            "assignmentCount": 18.0,
-            "attendanceStatus": "예약",
-            "report": null
-        },
-        {
-            "id": 2622149,
-            "date": "2024-01-31 (Wed)",
-            "startTime": "19:30",
-            "endTime": "20:00",
-            "teacherName": "Sadie",
-            "userName": "박지혜A",
-            "courseName": "NEW PT 24회 3개월",
-            "lessonCount": 26.0,
-            "remainCount": 2.0,
-            "assignmentCount": 24.0,
-            "attendanceStatus": "예약",
-            "report": null
-        },
-        {
-            "id": 2621936,
-            "date": "2024-01-31 (Wed)",
-            "startTime": "19:30",
-            "endTime": "20:00",
-            "teacherName": "한가영",
-            "userName": "김동희",
-            "courseName": "NEW PT 24회 3개월",
-            "lessonCount": 27.5,
-            "remainCount": 17.0,
-            "assignmentCount": 10.5,
-            "attendanceStatus": "예약",
-            "report": null
+            "content": null,
+            "todayLesson": null,
+            "nextLesson": null
         }
     ],
     "totalCount": 1055,
