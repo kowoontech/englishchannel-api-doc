@@ -14,7 +14,7 @@
  * -H "Content-Type: application/json" \
  * -d "{
            "attendanceStatus" :"Y",
-           "report" : "중간",
+           "content" : "중간",
            "todayLesson": "처음",
            "nextLesson":"마지막"
        }"
@@ -23,7 +23,7 @@
  *
  * @apiParam (Body) {String} attendanceStatus 참석여부(Y:출석 , N:결석, R:예약)
  * @apiParam (Body) {String} [todayLesson] Today's Lesson
- * @apiParam (Body) {String} [report] 보고서(Lesson Content and Feedback)
+ * @apiParam (Body) {String} [content] 보고서(Lesson Content and Feedback)
  * @apiParam (Body) {String} [nextLesson] Next Lesson
  *
  * @apiSuccessExample {json} SUCCESS

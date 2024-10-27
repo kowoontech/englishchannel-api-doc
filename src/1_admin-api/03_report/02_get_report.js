@@ -19,7 +19,7 @@
  * @apiSuccess {String} endTime 종료시간
  * @apiSuccess {String} attendanceStatus 참석여부(Y:출석 , N:결석, R:예약)
  * @apiSuccess {String} todayLesson Today's Lesson
- * @apiSuccess {String} report 보고서(Lesson Content and Feedback)
+ * @apiSuccess {String} content 보고서(Lesson Content and Feedback)
  * @apiSuccess {String} nextLesson Next Lesson
  * @apiSuccess {String} userName 학생명
  * @apiSuccess {String} courseName 강의명
@@ -32,7 +32,7 @@
     "startTime": "07:30",
     "endTime": "08:00",
     "attendanceStatus": "Y",
-    "report": "중간",
+    "content": "중간",
     "todayLesson": "처음",
     "nextLesson": "마지막",
     "userName": "전연호",
