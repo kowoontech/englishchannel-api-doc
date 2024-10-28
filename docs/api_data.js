@@ -75,6 +75,46 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_00._공통"
   },
   {
+    "type": "put",
+    "url": "api/admin/v1/commonCode/{codeId}",
+    "title": "08. 공통 코드 수정",
+    "description": "<p>공통 코드 관리</p>",
+    "version": "1.0.0",
+    "name": "admin_deleteCommonCode",
+    "group": "1._Admin_API_>_00._공통",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X DELETE 'http://localhost:8080/api/admin/v1/commonCode/{id}'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Path": [
+          {
+            "group": "Path",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>코드 식별키</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/00_common/09_delete_commonCode.js",
+    "groupTitle": "1._Admin_API_>_00._공통"
+  },
+  {
     "type": "get",
     "url": "/admin/v1/options",
     "title": "01. 공통 옵션 목록 조회",
@@ -8685,6 +8725,170 @@ define({ "api": [
       ]
     },
     "filename": "src/1_admin-api/03_report/04_list_excelReport.js",
+    "groupTitle": "1._Admin_API_>_03._학사보고서"
+  },
+  {
+    "type": "get",
+    "url": "/admin/v1/templates/excel/report",
+    "title": "04. 학사보고서 엑셀",
+    "description": "<p>회원관리 &gt; 학사보고서 &gt; 엑셀 다운로드 시 필요한 학사보고서 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/> 계정에 동일한 api를 사용하기 위해 userType 추가했습니다. 강사 계정 페이지 조회 시 사용할 api는 userType=T 필수값입니다.<br/></p>",
+    "version": "1.0.0",
+    "name": "listReportexcel",
+    "group": "1._Admin_API_>_03._학사보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/templates/excel/report?dateFrom=2023-01-01&dateTo=2023-01-31&userType=A&keyword=김보경'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "dateFrom",
+            "description": "<p>가입일자 검색 ~부터 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "dateTo",
+            "description": "<p>가입일자 검색 ~까지 (yyyy-mm-dd)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "teacherId",
+            "description": "<p>강사식별키</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "keyword",
+            "description": "<p>검색어</p>"
+          },
+          {
+            "group": "Query",
+            "optional": true,
+            "field": "reportCondition",
+            "description": "<p>검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)</p>"
+          },
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "userType",
+            "description": "<p>계정구분 (강사:T , 운영자: A)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>(예약식별키 no)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>수강시간(날짜)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>수강시간(시작)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>수강시간(종료)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "userName",
+            "description": "<p>회원명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "cellPhone",
+            "description": "<p>휴대폰번호번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonCount",
+            "description": "<p>수강회차</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "remainCount",
+            "description": "<p>잔여회차</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "assignmentCount",
+            "description": "<p>출석회차</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attendanceStatus",
+            "description": "<p>출석여부(출석, 결석, 예약)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>content학사보고서내용</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "todayLesson",
+            "description": "<p>todayLesson</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "nextLesson",
+            "description": "<p>nextLesson</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n    {\n        \"no\": 2408099,\n        \"date\": \"2023-01-03\",\n        \"startTime\": \"16:30:00\",\n        \"endTime\": \"17:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2408100,\n        \"date\": \"2023-01-03\",\n        \"startTime\": \"17:00:00\",\n        \"endTime\": \"17:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397062,\n        \"date\": \"2023-01-10\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397063,\n        \"date\": \"2023-01-10\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397070,\n        \"date\": \"2023-01-13\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397071,\n        \"date\": \"2023-01-13\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397064,\n        \"date\": \"2023-01-17\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397065,\n        \"date\": \"2023-01-17\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397072,\n        \"date\": \"2023-01-20\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397073,\n        \"date\": \"2023-01-20\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397074,\n        \"date\": \"2023-01-27\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397075,\n        \"date\": \"2023-01-27\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397066,\n        \"date\": \"2023-01-31\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397067,\n        \"date\": \"2023-01-31\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/03_report/05_count.js",
     "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
   {
