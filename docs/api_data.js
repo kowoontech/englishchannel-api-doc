@@ -75,46 +75,6 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_00._공통"
   },
   {
-    "type": "put",
-    "url": "api/admin/v1/commonCode/{codeId}",
-    "title": "09. 공통 코드 삭제",
-    "description": "<p>공통 코드 관리</p>",
-    "version": "1.0.0",
-    "name": "admin_deleteCommonCode",
-    "group": "1._Admin_API_>_00._공통",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X DELETE 'http://localhost:8080/api/admin/v1/commonCode/{id}'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Path": [
-          {
-            "group": "Path",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>코드 식별키</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/00_common/09_delete_commonCode.js",
-    "groupTitle": "1._Admin_API_>_00._공통"
-  },
-  {
     "type": "get",
     "url": "/admin/v1/options",
     "title": "01. 공통 옵션 목록 조회",
@@ -551,7 +511,7 @@ define({ "api": [
   },
   {
     "type": "put",
-    "url": "api/admin/v1/commonCode/{codeId}",
+    "url": "api/admin/v1/commonCode/{codeGroup}/{code}",
     "title": "08. 공통 코드 수정",
     "description": "<p>공통 코드 관리</p>",
     "version": "1.0.0",
@@ -560,18 +520,24 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X POST 'http://localhost:8080/api/admin/v1/commonCode/7' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"codeGroup\":200,\n           \"codeGroupName\": \"처리상태\",\n           \"name\": \"처리상태수정\",\n           \"sort\": 2,\n           \"useYn\":\"Y\"\n       }\"",
+        "content": "curl -i -X PUT 'http://localhost:8080/api/admin/v1/commonCode/{codeGroup}/{code}' \\\n-H \"Content-Type: application/json\" \\\n-d \"{\n           \"codeGroupName\": \"처리상태\",\n           \"name\": \"처리상태수정\",\n           \"sort\": 2,\n           \"useYn\":\"Y\"\n       }\"",
         "type": "curl"
       }
     ],
     "parameter": {
       "fields": {
-        "Query": [
+        "Path": [
           {
-            "group": "Query",
+            "group": "Path",
             "optional": false,
-            "field": "codeId",
-            "description": "<p>코드 식별키</p>"
+            "field": "codeGroup",
+            "description": "<p>코드 그룹</p>"
+          },
+          {
+            "group": "Path",
+            "optional": false,
+            "field": "code",
+            "description": "<p>코드</p>"
           }
         ],
         "Body": [
