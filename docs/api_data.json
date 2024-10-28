@@ -77,7 +77,7 @@
   {
     "type": "put",
     "url": "api/admin/v1/commonCode/{codeId}",
-    "title": "08. 공통 코드 수정",
+    "title": "09. 공통 코드 삭제",
     "description": "<p>공통 코드 관리</p>",
     "version": "1.0.0",
     "name": "admin_deleteCommonCode",

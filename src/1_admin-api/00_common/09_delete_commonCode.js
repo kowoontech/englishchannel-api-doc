@@ -1,5 +1,5 @@
 /**
- * @api {put} api/admin/v1/commonCode/{codeId} 08. 공통 코드 수정
+ * @api {put} api/admin/v1/commonCode/{codeId} 09. 공통 코드 삭제 
  *
  * @apiDescription 공통 코드 관리
  *
