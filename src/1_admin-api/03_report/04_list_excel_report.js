@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/templates/excel/report 04. 학사보고서 엑셀111
+ * @api {get} /admin/v1/templates/excel/report 04. 학사보고서 엑셀
  *
  * @apiDescription 회원관리 > 학사보고서 > 엑셀 다운로드 시 필요한 학사보고서 목록<br/>
  * 운영자 계정 : 회원관리 > 학사보고서 <br/>
