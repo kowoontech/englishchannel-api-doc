@@ -8254,7 +8254,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/admin/v1/reservations/noreport",
-    "title": "05. 학사보고서 미작성 목록",
+    "title": "05. 학사보고서 미작성 목록 조회",
     "description": "<p>회원관리 &gt; 학사보고서 &gt; 학사보고서 미작성 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/></p>",
     "version": "1.0.0",
     "name": "listNoReport",

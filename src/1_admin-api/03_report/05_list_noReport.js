@@ -1,5 +1,5 @@
 /**
- * @api {get} /admin/v1/reservations/noreport 05. 학사보고서 미작성 목록
+ * @api {get} /admin/v1/reservations/noreport 05. 학사보고서 미작성 목록 조회
  *
  * @apiDescription 회원관리 > 학사보고서 > 학사보고서 미작성 목록<br/>
  * 운영자 계정 : 회원관리 > 학사보고서 <br/>
