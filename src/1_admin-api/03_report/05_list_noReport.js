@@ -15,7 +15,7 @@
  * @apiParam (Query) yearMonth 년월(yyyy-MM)
  *
  * @apiSuccess {Object[]} reports 학사 보고서 목록
- * @apiSuccess {long} reports.teacherId 강사 식별키(예약식별키)
+ * @apiSuccess {String} reports.teacherId 강사 식별키(예약식별키)
  * @apiSuccess {String} reports.name 강사명
  * @apiSuccess {String} reports.total 전체 건수
  * @apiSuccess {Object[]} reports.noReport 날짜별 미작성 리스트

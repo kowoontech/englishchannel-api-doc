@@ -8290,7 +8290,7 @@
           },
           {
             "group": "Success 200",
-            "type": "long",
+            "type": "String",
             "optional": false,
             "field": "reports.teacherId",
             "description": "<p>강사 식별키(예약식별키)</p>"
