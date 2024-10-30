@@ -8253,9 +8253,9 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/admin/v1/templates/excel/report",
-    "title": "04. 학사보고서 미작성리스트",
-    "description": "<p>회원관리 &gt; 학사보고서 &gt; 엑셀 다운로드 시 필요한 학사보고서 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/> 계정에 동일한 api를 사용하기 위해 userType 추가했습니다. 강사 계정 페이지 조회 시 사용할 api는 userType=T 필수값입니다.<br/></p>",
+    "url": "//admin/v1/reservations/noreport",
+    "title": "05. 학사보고서 미작성 목록",
+    "description": "<p>회원관리 &gt; 학사보고서 &gt; 학사보고서 미작성 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/></p>",
     "version": "1.0.0",
     "name": "listNoReport",
     "group": "1._Admin_API_>_03._학사보고서",

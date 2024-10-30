@@ -1,11 +1,9 @@
 /**
- * @api {get} /admin/v1/templates/excel/report 04. 학사보고서 미작성리스트
+ * @api {get} //admin/v1/reservations/noreport 05. 학사보고서 미작성 목록
  *
- * @apiDescription 회원관리 > 학사보고서 > 엑셀 다운로드 시 필요한 학사보고서 목록<br/>
+ * @apiDescription 회원관리 > 학사보고서 > 학사보고서 미작성 목록<br/>
  * 운영자 계정 : 회원관리 > 학사보고서 <br/>
  * 강사 계정 : 학사보고서 <br/>
- * 계정에 동일한 api를 사용하기 위해 userType 추가했습니다. 강사 계정 페이지 조회 시 사용할 api는 userType=T 필수값입니다.<br/>
- *
  *
  * @apiVersion 1.0.0
  * @apiName listNoReport
