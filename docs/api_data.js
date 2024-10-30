@@ -8336,6 +8336,48 @@ define({ "api": [
             "optional": false,
             "field": "reports.noReport.holiday",
             "description": "<p>요일</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "totals",
+            "description": "<p>합</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "totals.total",
+            "description": "<p>합</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "totals.noReport",
+            "description": "<p>미작성 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "totals.noReport.date",
+            "description": "<p>날짜</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "totals.noReport.count",
+            "description": "<p>건수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "totals.noReport.holiday",
+            "description": "<p>요일</p>"
           }
         ]
       },

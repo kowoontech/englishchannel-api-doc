@@ -22,6 +22,12 @@
  * @apiSuccess {String} reports.noReport.date 날짜
  * @apiSuccess {String} reports.noReport.count 건수
  * @apiSuccess {String} reports.noReport.holiday 요일
+ * @apiSuccess {Object[]} totals 합
+ * @apiSuccess {Integer} totals.total 합
+ * @apiSuccess {Object[]} totals.noReport 미작성 목록
+ * @apiSuccess {String} totals.noReport.date 날짜
+ * @apiSuccess {String} totals.noReport.count 건수
+ * @apiSuccess {String} totals.noReport.holiday 요일
  *
  * @apiSuccessExample {json} SUCCESS
  * HTTP/1.1 200
