@@ -8794,8 +8794,8 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/admin/v1/reservations/noreport",
-    "title": "06. 테스트",
+    "url": "/admin/v1/reservations/test/noreport",
+    "title": "05. 테스트",
     "description": "<p>회원관리 &gt; 학사보고서 &gt; 학사보고서 미작성 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/></p>",
     "version": "1.0.0",
     "name": "listTest",
@@ -8819,7 +8819,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "src/1_admin-api/03_report/06_list_test.js",
+    "filename": "src/1_admin-api/03_report/05_list_test.js",
     "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
   {
