@@ -8253,6 +8253,105 @@
   },
   {
     "type": "get",
+    "url": "/admin/v1/templates/excel/report",
+    "title": "04. 학사보고서 미작성리스트",
+    "description": "<p>회원관리 &gt; 학사보고서 &gt; 엑셀 다운로드 시 필요한 학사보고서 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/> 계정에 동일한 api를 사용하기 위해 userType 추가했습니다. 강사 계정 페이지 조회 시 사용할 api는 userType=T 필수값입니다.<br/></p>",
+    "version": "1.0.0",
+    "name": "listNoReport",
+    "group": "1._Admin_API_>_03._학사보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/templates/excel/report?dateFrom=2023-01-01&dateTo=2023-01-31&userType=A&keyword=김보경'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "yearMonth",
+            "description": "<p>년월(yyyy-MM)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "reports",
+            "description": "<p>학사 보고서 목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "long",
+            "optional": false,
+            "field": "reports.teacherId",
+            "description": "<p>강사 식별키(예약식별키)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reports.name",
+            "description": "<p>강사명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reports.total",
+            "description": "<p>전체 건수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "reports.noReport",
+            "description": "<p>날짜별 미작성 리스트</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reports.noReport.date",
+            "description": "<p>날짜</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reports.noReport.count",
+            "description": "<p>건수</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reports.noReport.holiday",
+            "description": "<p>요일</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n {\n  \"reports\": [\n    {\n      \"teacherId\": \"M1729308976238224\",\n      \"name\": \"테스트강사\",\n      \"total\": 0,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    },\n    {\n      \"teacherId\": \"M1400118325784523\",\n      \"name\": \"한가영\",\n      \"total\": 4,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 1, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 3, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    },\n    {\n      \"teacherId\": \"M1729240753428900\",\n      \"name\": \"박수현\",\n      \"total\": 0,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    },\n    {\n      \"teacherId\": \"M1594795852631377\",\n      \"name\": \"Steven\",\n      \"total\": 0,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    },\n    {\n      \"teacherId\": \"M1695013438115743\",\n      \"name\": \"서안나\",\n      \"total\": 0,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    },\n    {\n      \"teacherId\": \"M1657064932771055\",\n      \"name\": \"김나래\",\n      \"total\": 0,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    },\n    {\n      \"teacherId\": \"M1713239402907750\",\n      \"name\": \"박제은\",\n      \"total\": 0,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    },\n    {\n      \"teacherId\": \"M1698204875465368\",\n      \"name\": \"Olivia\",\n      \"total\": 0,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    },\n    {\n      \"teacherId\": \"M1691559227102239\",\n      \"name\": \"Sadie\",\n      \"total\": 0,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    },\n    {\n      \"teacherId\": \"M1709859614116619\",\n      \"name\": \"Austin\",\n      \"total\": 0,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    }\n  ],\n  \"total\": [\n    {\n      \"total\": 0,\n      \"noReport\": [\n        {\"date\": \"2024-10-01\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-02\", \"count\": 1, \"holiday\": 0},\n        {\"date\": \"2024-10-03\", \"count\": 3, \"holiday\": 1},\n        {\"date\": \"2024-10-04\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-05\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-06\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-07\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-08\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-09\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-10\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-11\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-12\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-13\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-14\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-15\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-16\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-17\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-18\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-19\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-20\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-21\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-22\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-23\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-24\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-25\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-26\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-27\", \"count\": 0, \"holiday\": 1},\n        {\"date\": \"2024-10-28\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-29\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-30\", \"count\": 0, \"holiday\": 0},\n        {\"date\": \"2024-10-31\", \"count\": 0, \"holiday\": 0}\n      ]\n    }\n  ],\n  \"teachers\": [\n    {\"id\": \"M1729308976238224\", \"name\": \"테스트강사\"},\n    {\"id\": \"M1400118325784523\", \"name\": \"한가영\"},\n    {\"id\": \"M1729240753428900\", \"name\": \"박수현\"},\n    {\"id\": \"M1594795852631377\", \"name\": \"Steven\"},\n    {\"id\": \"M1695013438115743\", \"name\": \"서안나\"},\n    {\"id\": \"M1657064932771055\", \"name\": \"김나래\"},\n    {\"id\": \"M1661138591404520\", \"name\": \"최태연\"},\n    {\"id\": \"M1681990831501448\", \"name\": \"정지은\"},\n    {\"id\": \"M1713239402907750\", \"name\": \"박제은\"},\n    {\"id\": \"M1698204875465368\", \"name\": \"Olivia\"},\n    {\"id\": \"M1691559227102239\", \"name\": \"Sadie\"},\n    {\"id\": \"M1709859614116619\", \"name\": \"Austin\"}\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/1_admin-api/03_report/05_list_noReport.js",
+    "groupTitle": "1._Admin_API_>_03._학사보고서"
+  },
+  {
+    "type": "get",
     "url": "/admin/v1/reservations/report",
     "title": "01. 학사보고서 목록 조회",
     "description": "<p>회원관리 &gt; 학사보고서<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/> 계정에 동일한 api를 사용하기 위해 userType 추가했습니다. 강사 계정 페이지 조회 시 사용할 api는 userType=T 필수값입니다.</p>",
@@ -8691,170 +8790,6 @@
       ]
     },
     "filename": "src/1_admin-api/03_report/04_list_excelReport.js",
-    "groupTitle": "1._Admin_API_>_03._학사보고서"
-  },
-  {
-    "type": "get",
-    "url": "/admin/v1/templates/excel/report",
-    "title": "04. 학사보고서 엑셀",
-    "description": "<p>회원관리 &gt; 학사보고서 &gt; 엑셀 다운로드 시 필요한 학사보고서 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/> 계정에 동일한 api를 사용하기 위해 userType 추가했습니다. 강사 계정 페이지 조회 시 사용할 api는 userType=T 필수값입니다.<br/></p>",
-    "version": "1.0.0",
-    "name": "listReportexcel",
-    "group": "1._Admin_API_>_03._학사보고서",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/templates/excel/report?dateFrom=2023-01-01&dateTo=2023-01-31&userType=A&keyword=김보경'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Query": [
-          {
-            "group": "Query",
-            "optional": true,
-            "field": "dateFrom",
-            "description": "<p>가입일자 검색 ~부터 (yyyy-mm-dd)</p>"
-          },
-          {
-            "group": "Query",
-            "optional": true,
-            "field": "dateTo",
-            "description": "<p>가입일자 검색 ~까지 (yyyy-mm-dd)</p>"
-          },
-          {
-            "group": "Query",
-            "optional": true,
-            "field": "teacherId",
-            "description": "<p>강사식별키</p>"
-          },
-          {
-            "group": "Query",
-            "optional": true,
-            "field": "keyword",
-            "description": "<p>검색어</p>"
-          },
-          {
-            "group": "Query",
-            "optional": true,
-            "field": "reportCondition",
-            "description": "<p>검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)</p>"
-          },
-          {
-            "group": "Query",
-            "optional": false,
-            "field": "userType",
-            "description": "<p>계정구분 (강사:T , 운영자: A)</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>(예약식별키 no)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "date",
-            "description": "<p>수강시간(날짜)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "startTime",
-            "description": "<p>수강시간(시작)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "endTime",
-            "description": "<p>수강시간(종료)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "userName",
-            "description": "<p>회원명</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "cellPhone",
-            "description": "<p>휴대폰번호번호</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "lessonCount",
-            "description": "<p>수강회차</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "remainCount",
-            "description": "<p>잔여회차</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "assignmentCount",
-            "description": "<p>출석회차</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "attendanceStatus",
-            "description": "<p>출석여부(출석, 결석, 예약)</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "content",
-            "description": "<p>content학사보고서내용</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "todayLesson",
-            "description": "<p>todayLesson</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "nextLesson",
-            "description": "<p>nextLesson</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n    {\n        \"no\": 2408099,\n        \"date\": \"2023-01-03\",\n        \"startTime\": \"16:30:00\",\n        \"endTime\": \"17:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2408100,\n        \"date\": \"2023-01-03\",\n        \"startTime\": \"17:00:00\",\n        \"endTime\": \"17:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397062,\n        \"date\": \"2023-01-10\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397063,\n        \"date\": \"2023-01-10\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397070,\n        \"date\": \"2023-01-13\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397071,\n        \"date\": \"2023-01-13\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397064,\n        \"date\": \"2023-01-17\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397065,\n        \"date\": \"2023-01-17\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397072,\n        \"date\": \"2023-01-20\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397073,\n        \"date\": \"2023-01-20\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397074,\n        \"date\": \"2023-01-27\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397075,\n        \"date\": \"2023-01-27\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397066,\n        \"date\": \"2023-01-31\",\n        \"startTime\": \"13:00:00\",\n        \"endTime\": \"13:30:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    },\n    {\n        \"no\": 2397067,\n        \"date\": \"2023-01-31\",\n        \"startTime\": \"13:30:00\",\n        \"endTime\": \"14:00:00\",\n        \"attendanceStatus\": \"Y\",\n        \"content\": null,\n        \"todayLesson\": null,\n        \"nextLesson\": null,\n        \"userName\": \"김보경\",\n        \"cellPhone\": \"xZ95fw2jfA26BoRQut0mRw==\",\n        \"lessoncount\": 24.0,\n        \"assignedLessonCount\": 24.0,\n        \"remainingLessonCount\": 0.0\n    }",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/1_admin-api/03_report/05_count.js",
     "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
   {
