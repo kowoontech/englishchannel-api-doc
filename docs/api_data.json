@@ -8631,7 +8631,7 @@
   {
     "type": "get",
     "url": "/admin/v1/templates/excel/report",
-    "title": "04. 학사보고서 엑셀",
+    "title": "04. 학사보고서 엑셀111",
     "description": "<p>회원관리 &gt; 학사보고서 &gt; 엑셀 다운로드 시 필요한 학사보고서 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/> 계정에 동일한 api를 사용하기 위해 userType 추가했습니다. 강사 계정 페이지 조회 시 사용할 api는 userType=T 필수값입니다.<br/></p>",
     "version": "1.0.0",
     "name": "listReportexcel",
@@ -8790,49 +8790,6 @@
       ]
     },
     "filename": "src/1_admin-api/03_report/04_list_excel_report.js",
-    "groupTitle": "1._Admin_API_>_03._학사보고서"
-  },
-  {
-    "type": "get",
-    "url": "/admin/v1/reservations/test/noreport",
-    "title": "05. 테스트",
-    "description": "<p>회원관리 &gt; 학사보고서 &gt; 학사보고서 미작성 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/></p>",
-    "version": "1.0.0",
-    "name": "listTest",
-    "group": "1._Admin_API_>_03._학사보고서",
-    "examples": [
-      {
-        "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/reservation/test?yearMonth=2023-01'",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Query": [
-          {
-            "group": "Query",
-            "optional": false,
-            "field": "yearMonth",
-            "description": "<p>년월(yyyy-MM)</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "list",
-            "description": "<p>학사 보고서 목록</p>"
-          }
-        ]
-      }
-    },
-    "filename": "src/1_admin-api/03_report/05_list_test.js",
     "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
   {
