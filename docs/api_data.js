@@ -8793,6 +8793,36 @@ define({ "api": [
     "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
   {
+    "type": "get",
+    "url": "/admin/v1/reservations/noreport",
+    "title": "06. 테스트",
+    "description": "<p>회원관리 &gt; 학사보고서 &gt; 학사보고서 미작성 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/></p>",
+    "version": "1.0.0",
+    "name": "listTest",
+    "group": "1._Admin_API_>_03._학사보고서",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/reservation/test?yearMonth=2023-01'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "optional": false,
+            "field": "yearMonth",
+            "description": "<p>년월(yyyy-MM)</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/1_admin-api/03_report/06_list_test.js",
+    "groupTitle": "1._Admin_API_>_03._학사보고서"
+  },
+  {
     "type": "post",
     "url": "/admin/v1/consultations",
     "title": "09. 상담 관리 등록",
