@@ -1,5 +1,5 @@
 /**
- * @api {get} //admin/v1/reservations/noreport 05. 학사보고서 미작성 목록
+ * @api {get} /admin/v1/reservations/noreport 05. 학사보고서 미작성 목록
  *
  * @apiDescription 회원관리 > 학사보고서 > 학사보고서 미작성 목록<br/>
  * 운영자 계정 : 회원관리 > 학사보고서 <br/>
@@ -10,7 +10,7 @@
  * @apiGroup 1. Admin API > 03. 학사보고서
  *
  * @apiExample {curl} REQUEST
- * curl -i -X GET 'http://localhost:8080/admin/v1/templates/excel/report?dateFrom=2023-01-01&dateTo=2023-01-31&userType=A&keyword=김보경'
+ * curl -i -X GET 'http://localhost:8080/admin/v1/reservation/noreport?yearMonth=2023-01'
  *
  * @apiParam (Query) yearMonth 년월(yyyy-MM)
  *

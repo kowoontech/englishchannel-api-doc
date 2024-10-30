@@ -8253,7 +8253,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "//admin/v1/reservations/noreport",
+    "url": "/admin/v1/reservations/noreport",
     "title": "05. 학사보고서 미작성 목록",
     "description": "<p>회원관리 &gt; 학사보고서 &gt; 학사보고서 미작성 목록<br/> 운영자 계정 : 회원관리 &gt; 학사보고서 <br/> 강사 계정 : 학사보고서 <br/></p>",
     "version": "1.0.0",
@@ -8262,7 +8262,7 @@ define({ "api": [
     "examples": [
       {
         "title": "REQUEST",
-        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/templates/excel/report?dateFrom=2023-01-01&dateTo=2023-01-31&userType=A&keyword=김보경'",
+        "content": "curl -i -X GET 'http://localhost:8080/admin/v1/reservation/noreport?yearMonth=2023-01'",
         "type": "curl"
       }
     ],
