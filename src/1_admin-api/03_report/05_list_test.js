@@ -13,4 +13,6 @@
  * curl -i -X GET 'http://localhost:8080/admin/v1/reservation/test?yearMonth=2023-01'
  *
  * @apiParam (Query) yearMonth 년월(yyyy-MM)
+ * 
+ * @apiSuccess {Object[]} list 학사 보고서 목록
  */

@@ -8819,6 +8819,19 @@ define({ "api": [
         ]
       }
     },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "list",
+            "description": "<p>학사 보고서 목록</p>"
+          }
+        ]
+      }
+    },
     "filename": "src/1_admin-api/03_report/05_list_test.js",
     "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
