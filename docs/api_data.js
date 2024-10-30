@@ -8347,7 +8347,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "src/1_admin-api/03_report/05_list_noReport.js",
+    "filename": "src/1_admin-api/03_report/05_list_no_report.js",
     "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
   {
@@ -8789,7 +8789,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "src/1_admin-api/03_report/04_list_excelReport.js",
+    "filename": "src/1_admin-api/03_report/04_list_excel_report.js",
     "groupTitle": "1._Admin_API_>_03._학사보고서"
   },
   {
