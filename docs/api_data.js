@@ -14840,6 +14840,13 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "courses.roundedTotalAttendanceRate",
+            "description": "<p>출석률(전체출석/전체예약)</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Object[]",
             "optional": false,
             "field": "courses.reservations",
@@ -14899,7 +14906,7 @@ define({ "api": [
       "examples": [
         {
           "title": "SUCCESS",
-          "content": "HTTP/1.1 200\n\"{\n    \"courses\": [\n        {\n            \"id\": 71840,\n            \"productName\": \"NEW PT 24회 3개월\",\n            \"startDate\": \"2023-01-09\",\n            \"endDate\": \"2023-04-08\",\n            \"lessonCount\": 24.0,\n            \"remainCount\": 0.0,\n            \"attendanceCount\": 24.0,\n            \"reservationCount\": 0.0,\n            \"reservations\": []\n        },\n        {\n            \"id\": 72884,\n            \"productName\": \"PTM (주2회 3개월)\",\n            \"startDate\": \"2023-04-11\",\n            \"endDate\": \"2023-07-20\",\n            \"lessonCount\": 26.0,\n            \"remainCount\": 0.0,\n            \"attendanceCount\": 26.0,\n            \"reservationCount\": 0.0,\n            \"reservations\": []\n        }\n    ]\n}\"",
+          "content": "HTTP/1.1 200\n\"{\n    \"courses\": [\n        {\n            \"id\": 71840,\n            \"productName\": \"NEW PT 24회 3개월\",\n            \"startDate\": \"2023-01-09\",\n            \"endDate\": \"2023-04-08\",\n            \"lessonCount\": 24.0,\n            \"remainCount\": 0.0,\n            \"attendanceCount\": 24.0,\n            \"reservationCount\": 0.0,\n            \"roundedTotalAttendanceRate\": 0,\n            \"reservations\": []\n        },\n        {\n            \"id\": 72884,\n            \"productName\": \"PTM (주2회 3개월)\",\n            \"startDate\": \"2023-04-11\",\n            \"endDate\": \"2023-07-20\",\n            \"lessonCount\": 26.0,\n            \"remainCount\": 0.0,\n            \"attendanceCount\": 26.0,\n            \"reservationCount\": 0.0,\n            \"reservations\": []\n        }\n    ]\n}\"",
           "type": "json"
         }
       ]

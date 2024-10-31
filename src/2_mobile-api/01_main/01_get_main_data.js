@@ -26,6 +26,7 @@
  * @apiSuccess {Number} courses.totalReservationCount 전체 예약 횟수
  * @apiSuccess {Number} courses.totalNonAttendanceCount 전체 결석 횟수
  * @apiSuccess {Number} courses.totalAttendanceRate 출석률(전체출석/전체예약)
+ * @apiSuccess {Number} courses.roundedTotalAttendanceRate 출석률(전체출석/전체예약)
  * @apiSuccess {Object[]} courses.reservations
  * @apiSuccess {Number} courses.reservations.id 예약 식별키
  * @apiSuccess {String} courses.reservations.date 예약일 (yyyy-MM-dd)
@@ -49,6 +50,7 @@
  *             "remainCount": 0.0,
  *             "attendanceCount": 24.0,
  *             "reservationCount": 0.0,
+ *             "roundedTotalAttendanceRate": 0,
  *             "reservations": []
  *         },
  *         {
