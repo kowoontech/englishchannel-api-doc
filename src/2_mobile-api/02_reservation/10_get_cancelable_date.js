@@ -1,5 +1,5 @@
 /**
- * @api {get} /mobile/v1/reservations/times 10. 예약 취소 가능여부
+ * @api {get} /mobile/v1/reservations/cancelable 10. 예약 취소 가능여부
  *
  * @apiDescription 시간별, 강사별 예약
  *

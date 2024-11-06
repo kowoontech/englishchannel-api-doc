@@ -15182,7 +15182,7 @@
   },
   {
     "type": "get",
-    "url": "/mobile/v1/reservations/times",
+    "url": "/mobile/v1/reservations/cancelable",
     "title": "10. 예약 취소 가능여부",
     "description": "<p>시간별, 강사별 예약</p>",
     "version": "1.0.0",
