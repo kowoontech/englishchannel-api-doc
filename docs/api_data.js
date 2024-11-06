@@ -15182,6 +15182,57 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/mobile/v1/reservations/times",
+    "title": "10. 예약 취소 가능여부",
+    "description": "<p>시간별, 강사별 예약</p>",
+    "version": "1.0.0",
+    "name": "mobile_getCancelableDate",
+    "group": "2._Mobile_API_>_02._예약",
+    "examples": [
+      {
+        "title": "REQUEST",
+        "content": "curl -i -X GET 'http://localhost:8080/api/mobile/v1/reservations/cancelable?date=2024-04-01'",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Query": [
+          {
+            "group": "Query",
+            "type": "String",
+            "optional": false,
+            "field": "date",
+            "description": "<p>조회 날짜 (yyyy-MM-dd)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "cancelable",
+            "description": "<p>취소 가능 여부</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SUCCESS",
+          "content": "HTTP/1.1 200\n\"{\n    \"cancelable\": \"false\"\n}\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/2_mobile-api/02_reservation/10_get_cancelable_date.js",
+    "groupTitle": "2._Mobile_API_>_02._예약"
+  },
+  {
+    "type": "get",
     "url": "/mobile/v1/reservations/schedules",
     "title": "06. 스케줄 목록 조회",
     "description": "<p>캘린더에서 선택한 년월의 스케줄 목록 조회</p>",
