@@ -8444,7 +8444,7 @@
             "group": "Query",
             "optional": false,
             "field": "reportCondition",
-            "description": "<p>검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)</p>"
+            "description": "<p>검색조건 (ALL: 전체, COMPLETED: 출석, PENDING: 미작성)</p>"
           },
           {
             "group": "Query",

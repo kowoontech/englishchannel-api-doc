@@ -18,7 +18,7 @@
  * @apiParam (Query) [teacherId] 강사식별키
  * @apiParam (Query) [search] 검색 선택(이름)
  * @apiParam (Query) [keyword] 검색어
- * @apiParam (Query) reportCondition 검색조건 (ALL: 전체, ATTENDANCE: 출석, REPORT: 미작성)
+ * @apiParam (Query) reportCondition 검색조건 (ALL: 전체, COMPLETED: 출석, PENDING: 미작성)
  * @apiParam (Query) userType 계정구분 (강사:T , 운영자: A)
  * @apiParam (Query) limit 한페이지에 보여줄 회원 수
  * @apiParam (Query) page 조회할 페이지
